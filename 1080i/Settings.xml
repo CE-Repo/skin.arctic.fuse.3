@@ -316,7 +316,7 @@
                                         <label2>skin.arctic.fuse.3</label2>
                                         <icon>special://skin/extras/icons/gauge.png</icon>
                                         <onclick>SetProperty(CustomDialogSettingsItems,DialogCustom_VideoOSD_Items,Home)</onclick>
-                                        <onclick>SetProperty(CustomDialogSettingsTitle,$LOCALIZE[31430]: $LOCALIZE[31434],Home)</onclick>
+                                        <onclick>SetProperty(CustomDialogSettingsTitle,$LOCALIZE[31434],Home)</onclick>
                                         <onclick>ActivateWindow(1118)</onclick>
                                     </item>
                                     <item>
@@ -324,7 +324,7 @@
                                         <label2>skin.arctic.fuse.3</label2>
                                         <icon>special://skin/extras/icons/circle-info.png</icon>
                                         <onclick>SetProperty(CustomDialogSettingsItems,DialogCustom_VideoInfo_Items,Home)</onclick>
-                                        <onclick>SetProperty(CustomDialogSettingsTitle,$LOCALIZE[31430]: $LOCALIZE[12003],Home)</onclick>
+                                        <onclick>SetProperty(CustomDialogSettingsTitle,$LOCALIZE[12003],Home)</onclick>
                                         <onclick>ActivateWindow(1118)</onclick>
                                     </item>
                                     <item>

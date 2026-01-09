@@ -39,7 +39,7 @@
             <selected>Skin.HasSetting(HomeSwitcher.EnableIcons)</selected>
         </include>
 
-        <include content="Settings_Button" description="Glass">
+        <!-- <include content="Settings_Button" description="Glass">
             <param name="dialog">false</param>
             <param name="window">skinsettings</param>
             <param name="baseid">$PARAM[baseid]</param>
@@ -49,7 +49,7 @@
             <label>$LOCALIZE[31309]</label>
             <onclick>Skin.ToggleSetting(HomeSwitcher.EnableBacking)</onclick>
             <selected>Skin.HasSetting(HomeSwitcher.EnableBacking)</selected>
-        </include>
+        </include> -->
 
         <include content="Settings_Label" description="Layout">
             <param name="window">skinsettings</param>
@@ -939,7 +939,7 @@
             <top>10</top>
             <height>auto</height>
             <autoscroll>false</autoscroll>
-            <label>$LOCALIZE[31095]: (AR) taiseer999, (DE) peat80  jamal2362, (PT) Havokdan, (IT) seppiola, (UA) dmt1z, (FR) Bindou, (ES) gtkingbuild, (RU) StellaLupus, (FI) Lam4hound, (ZH) kalifun[CR][CR]To all my amazing supporters on Ko-fi, thank-you! You're all legends. Cheers![CR][CR]Shoutout to this month's supporters:[CR]Zenboy dannydarko Bindou Adamosborne83 Ronin Luca Bob Dynhus MikeSiLVO Ivan booyakafoo EZ44[CR][CR]All time top 10:[CR]Adamosborne83 Leo Jathlon77 DSanchez Blu-Rayx Qirat77 booyakafoo ludovik35 Blacky Anthrax</label>
+            <label>To all my amazing supporters on Ko-fi, thank-you! You're all legends. Cheers!</label>
             <left>40</left>
             <right>40</right>
             <visible>Container(10000).HasFocus($PARAM[baseid])</visible>
