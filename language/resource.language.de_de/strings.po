@@ -1,0 +1,3213 @@
+# Kodi Media Center language file
+# Addon Name: Arctic Fuse 2
+# Addon Name: skin.arctic.fuse.2
+# Addon Provider: jurialmunkey
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"POT-Creation-Date: \n"
+"PO-Revision-Date: \n"
+"Last-Translator: jamal2362\n"
+"Language-Team: \n"
+"Language: de\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Poedit 3.5\n"
+
+msgctxt "#31000"
+msgid "Live TV / PVR"
+msgstr "Live-TV / PVR"
+
+#: /1080i/Includes_MediaFilter.xml
+msgctxt "#31001"
+msgid "In-Progress Episodes"
+msgstr "Angefangene Episoden"
+
+#: /1080i/Includes_Shortcuts_Window.xml
+msgctxt "#31002"
+msgid "Hub window selector"
+msgstr "Hubfenster-Selektor"
+
+#: /1080i/Custom_1115_Dialog_WindowShortcuts.xml
+msgctxt "#31003"
+msgid "Submenu list"
+msgstr "Untermenü-Liste"
+
+#: /1080i/Custom_1115_Dialog_Shortcuts_Window.xml
+msgctxt "#31004"
+msgid "Sets the current hub to be used as the default home window."
+msgstr "Legt den aktuellen Hub als Startseite fest."
+
+#: /1080i/Custom_1115_Dialog_Shortcuts_Window.xml
+msgctxt "#31005"
+msgid "Choose global spotlight"
+msgstr "Globales Rampenlicht-Widget wählen"
+
+msgctxt "#31006"
+msgid "Location"
+msgstr "Standort"
+
+#: /1080i/Includes_Shortcuts_Window.xml
+msgctxt "#31007"
+msgid "Changes the header label shown at the top of the hub window."
+msgstr "Ändert die angezeigte Überschrift des Hubfensters."
+
+#: /1080i/Includes_Shortcuts_Window.xml
+msgctxt "#31008"
+msgid "Switches the hub between a classic widget-only layout and a complex layout of widget categories and spotlights."
+msgstr "Wechselt das Hub-Layout (Klassisches Nur-Widgets-Layout <> Komplexes Layout mit Widget-Kategorien und Rampenlicht-Eintrag)."
+
+#: /1080i/Includes_Shortcuts_Window.xml
+msgctxt "#31009"
+msgid "Widget Customisation"
+msgstr "Widget-Anpassung"
+
+#: /1080i/Includes_Shortcuts_Window.xml
+msgctxt "#31010"
+msgid "Welcome to the Arctic Fuse widget customisation screen!"
+msgstr "Willkommen im Arctic Fuse Widget-Anpassungsbildschirm!"
+
+#: /1080i/Includes_Shortcuts_Window.xml
+msgctxt "#31011"
+msgid "Edit menu"
+msgstr "Menü anpassen"
+
+#: /1080i/Includes_Shortcuts_Window.xml
+msgctxt "#31012"
+msgid "Use the hub window selector to change which window is being customised."
+msgstr "Verwende den Hubfenster-Selektor um das anzupassende Fenster zu ändern."
+
+#: /1080i/Includes_Shortcuts_Window.xml
+msgctxt "#31013"
+msgid "Your changes are automatically saved."
+msgstr "Änderungen werden automatisch gespeichert."
+
+#: /1080i/Includes_Shortcuts_Window.xml
+msgctxt "#31014"
+msgid "Prebuilt default widget sets are available from the \"Prebuilt\" icon."
+msgstr "Standard-Widgetsätze sind über das \"Vorgefertigt\"-Icon verfügbar."
+
+msgctxt "#31015"
+msgid "Order"
+msgstr "Reihenfolge"
+
+msgctxt "#31016"
+msgid "Sort by"
+msgstr "Sortierung"
+
+#: /1080i/Includes_Shortcuts_Window.xml
+msgctxt "#31017"
+msgid "Widget Groups"
+msgstr "Widget-Gruppen"
+
+msgctxt "#31018"
+msgid "Recommendations"
+msgstr "Empfehlungen"
+
+#: /shortcuts/842.DATA.xml
+msgctxt "#31019"
+msgid "Next Aired Trakt"
+msgstr "Nächste Ausstrahlung (Trakt)"
+
+#: /shortcuts/842.DATA.xml
+msgctxt "#31020"
+msgid "Next Aired Library"
+msgstr "Nächste Ausstrahlung (Bibliothek)"
+
+#: /1080i/Custom_1132_Window_Addons.xml
+msgctxt "#31021"
+msgid "Repositories"
+msgstr "Paketquellen"
+
+msgctxt "#31022"
+msgid "items"
+msgstr "Einträge"
+
+msgctxt "#31023"
+msgid "Loading"
+msgstr "Lade"
+
+msgctxt "#31024"
+msgid "Critics Consensus"
+msgstr "Kritiker-Konsens"
+
+#: /1080i/SkinSettings.xml
+msgctxt "#31025"
+msgid "Item"
+msgstr "Eintrag"
+
+#: /1080i/Includes_Labels.xml
+msgctxt "#31026"
+msgid "Hub"
+msgstr "Hub"
+
+#: /1080i/Includes_Shortcuts_Window.xml
+msgctxt "#31027"
+msgid "Edit the widgets used in the search window."
+msgstr "Editiere die Widgets des Suchfensters."
+
+msgctxt "#31028"
+msgid "Outline"
+msgstr "Handlung"
+
+#: /1080i/Includes_Items.xml
+msgctxt "#31029"
+msgid "Images"
+msgstr "Bilder"
+
+#: /1080i/Includes_Labels.xml
+msgctxt "#31030"
+msgid "Critics"
+msgstr "Kritiken"
+
+#: /1080i/Includes_Shortcuts_Window.xml
+msgctxt "#31031"
+msgid "Edit the options and power menu."
+msgstr "Editiere die Optionen und das Powermenü."
+
+#: /1080i/DialogPVRChannelManager.xml
+msgctxt "#31032"
+msgid "Apply"
+msgstr "Anwenden"
+
+msgctxt "#31033"
+msgid "People"
+msgstr "Personen"
+
+msgctxt "#31034"
+msgid "Cast member"
+msgstr "Darsteller"
+
+msgctxt "#31035"
+msgid "Crew member"
+msgstr "Crewmitglied"
+
+#: /1080i/SkinSettings.xml
+msgctxt "#31036"
+msgid "Mouse-friendly widgets"
+msgstr "Mausfreundliche Widgets"
+
+#: /1080i/Includes_Shortcuts_Window.xml
+msgctxt "#31037"
+msgid "Complex"
+msgstr "Komplex"
+
+#: /1080i/Includes_Labels.xml
+msgctxt "#31038"
+msgid "Directing"
+msgstr "Regieführung"
+
+#: /1080i/Includes_Labels.xml
+msgctxt "#31039"
+msgid "Writing"
+msgstr "Drehbuch"
+
+msgctxt "#31040"
+msgid "Use as widget"
+msgstr "Als Widget verwenden"
+
+#: /1080i/Includes_Items.xml
+msgctxt "#31041"
+msgid "Similar"
+msgstr "Ähnlich"
+
+#: /1080i/Includes_Labels.xml
+msgctxt "#31042"
+msgid "Clock"
+msgstr "Uhr"
+
+msgctxt "#31043"
+msgid "Flat (No Gradient)"
+msgstr "Flach (Ohne Farbverlauf)"
+
+#: /1080i/SkinSettings.xml
+msgctxt "#31044"
+msgid "Viewtypes"
+msgstr "Ansichtstypen"
+
+#: /1080i/Includes_Labels.xml
+msgctxt "#31045"
+msgid "Landscape"
+msgstr "Landschaft"
+
+#: /1080i/Includes_Search.xml
+msgctxt "#31046"
+msgid "No Results"
+msgstr "Keine Ergebnisse"
+
+#: /1080i/Custom_1154_Dialog_SearchDiscover_Sort.xml
+msgctxt "#31047"
+msgid "Popularity"
+msgstr "Berühmtheit"
+
+#: /1080i/Includes_Search.xml
+msgctxt "#31048"
+msgid "Sort"
+msgstr "Sortieren"
+
+msgctxt "#31049"
+msgid "Default Widgets"
+msgstr "Standard-Widgets"
+
+#: /1080i/Includes_Search.xml
+msgctxt "#31050"
+msgid "Crew"
+msgstr "Crew"
+
+#: /1080i/Custom_1153_Dialog_SearchDiscover_Actors.xml
+msgctxt "#31051"
+msgid "Person"
+msgstr "Person"
+
+#: /1080i/Includes_Labels.xml
+msgctxt "#31052"
+msgid "Sound"
+msgstr "Ton"
+
+msgctxt "#31053"
+msgid "Profile"
+msgstr "Profil"
+
+msgctxt "#31054"
+msgid "Liked by"
+msgstr "Geliked von"
+
+msgctxt "#31055"
+msgid "out of"
+msgstr "von"
+
+msgctxt "#31056"
+msgid "critics"
+msgstr "Kritiken"
+
+msgctxt "#31057"
+msgid "Years Old"
+msgstr "Jahre alt"
+
+#: /1080i/Includes_Views_Wall.xml
+msgctxt "#31058"
+msgid "Wall Ring"
+msgstr "Wand - Ring"
+
+#: /1080i/Includes_Labels.xml
+msgctxt "#31059"
+msgid "Vertical"
+msgstr "Vertikal"
+
+#: /1080i/Includes_Labels.xml
+msgctxt "#31060"
+msgid "Horizontal"
+msgstr "Horizontal"
+
+#: /shortcuts/template.xml
+msgctxt "#31061"
+msgid "User rating"
+msgstr "Nutzerbewertung"
+
+#: /shortcuts/template.xml
+msgctxt "#31062"
+msgid "Playlist order"
+msgstr "Playlist-Reihenfolge"
+
+#: /shortcuts/template.xml
+msgctxt "#31063"
+msgid "Watched episodes"
+msgstr "Angesehene Episoden"
+
+msgctxt "#31064"
+msgid "Awards"
+msgstr "Auszeichnungen"
+
+msgctxt "#31065"
+msgid "Creator"
+msgstr "Schöpfer"
+
+#: /1080i/Includes_Search.xml
+msgctxt "#31066"
+msgid "Discover"
+msgstr "Entdecken"
+
+#: /1080i/Includes_Labels.xml
+msgctxt "#31067"
+msgid "Cinematography"
+msgstr "Kameraführung"
+
+#: /1080i/Includes_Labels.xml
+msgctxt "#31068"
+msgid "Experimental"
+msgstr "Experimentell"
+
+#: /1080i/SkinSettings.xml
+msgctxt "#31069"
+msgid "Background video"
+msgstr "Video im Hintergrund"
+
+#: /1080i/Includes_Labels.xml
+msgctxt "#31070"
+msgid "Fixed aspect ratio"
+msgstr "Festes Bildseitenverhältnis"
+
+msgctxt "#31071"
+msgid "Playback Speed"
+msgstr "Wiedergabegeschwindigkeit"
+
+#: /1080i/Includes_Labels.xml
+msgctxt "#31072"
+msgid "Art Department"
+msgstr "Künstlerische Leitung"
+
+msgctxt "#31073"
+msgid "mins"
+msgstr "Min"
+
+msgctxt "#31074"
+msgid "hr"
+msgstr "Std"
+
+#: /1080i/Includes_Labels.xml
+msgctxt "#31075"
+msgid "Editing"
+msgstr "Bearbeitung"
+
+#: /1080i/Includes_Labels.xml
+msgctxt "#31076"
+msgid "Starring"
+msgstr "Filme mit"
+
+msgctxt "#31077"
+msgid "More Information"
+msgstr "Mehr Informationen"
+
+#: /1080i/Includes_Labels.xml
+msgctxt "#31078"
+msgid "The prebuilt icon provides options to install various different default widget and menu sets."
+msgstr "Das Voreingestellt-Icon stellt verschiedene Widget- und Menü-Sets zur Installation bereit."
+
+#: /1080i/Includes_Labels.xml
+msgctxt "#31079"
+msgid "Using this option will override parts of your existing configuration."
+msgstr "Diese Option überschreibt Teile deiner aktuellen Konfiguration."
+
+#: /1080i/Includes_Labels.xml
+msgctxt "#31080"
+msgid "Rebuilding forces Skin Variables to generate the skin XML files for your current configuration."
+msgstr "Eine Neuerstellung erzwingt die Erzeugung der XML-Dateien des Skins für deine aktuelle Konfiguration."
+
+#: /1080i/Includes_Labels.xml
+msgctxt "#31081"
+msgid "Rebuilding is required to make your changes visible in the skin."
+msgstr "Die Neuerstellung wird benötigt um die Änderungen im Skin sichtbar zu machen."
+
+#: /1080i/SkinSettings.xml
+msgctxt "#31082"
+msgid "Wall orientation"
+msgstr "Wand-Orientierung"
+
+#: /1080i/Includes_Labels.xml
+msgctxt "#31083"
+msgid "Combined"
+msgstr "Kombiniert"
+
+#: /1080i/Includes_Shortcuts_Window.xml
+msgctxt "#31084"
+msgid "Categories using a submenu to select widgets will not use global widgets because submenu widgets disable the widget stack."
+msgstr "Kategorien mit Untermenüs benutzen keine globalen Widgets weil die Untermenü-Widgets den Widget-Stapel deaktivieren."
+
+msgctxt "#31085"
+msgid "Live TV"
+msgstr "Live-TV"
+
+msgctxt "#31086"
+msgid "Customise options"
+msgstr "Optionen anpassen"
+
+#: /1080i/Includes_Shortcuts_Window.xml
+msgctxt "#31087"
+msgid "Global widgets are displayed for all categories at the end of the widget stack."
+msgstr "Globale Widgets werden für alle Kategorien am Ende des Widget-Stapels angezeigt."
+
+#: /1080i/VideoOSDBookmarks.xml
+msgctxt "#31088"
+msgid "No bookmarks"
+msgstr "Keine Lesezeichen"
+
+#: /1080i/VideoOSDBookmarks.xml
+msgctxt "#31089"
+msgid "Add a bookmark here"
+msgstr "Lesezeichen hier hinzufügen"
+
+msgctxt "#31090"
+msgid "In-Progress"
+msgstr "Angefangen"
+
+#: /1080i/Includes_SkinSettings.xml
+msgctxt "#31091"
+msgid "Add a \"more items\" folder to widgets with item limits"
+msgstr "Hinzufügen eines Ordners \"Weitere Artikel\" zu Widgets mit Artikelgrenzen"
+
+#: /1080i/SkinSettings.xml /1080i/Includes_Shortcuts_Window.xml
+msgctxt "#31092"
+msgid "Detailed information"
+msgstr "Detaillierte Informationen"
+
+#: /1080i/SkinSettings.xml
+msgctxt "#31093"
+msgid "Border style"
+msgstr "Kantenoptik"
+
+#: /1080i/SkinSettings.xml
+msgctxt "#31094"
+msgid "Mouse pointer size"
+msgstr "Größe des Mauszeigers"
+
+#: /1080i/SkinSettings.xml
+msgctxt "#31095"
+msgid "Translations"
+msgstr "Übersetzungen"
+
+#: /1080i/Includes_Shortcuts_Options.xml
+msgctxt "#31096"
+msgid "Use spotlight"
+msgstr "Rampenlicht-Widget verwenden"
+
+#: /1080i/Includes_SkinSettings.xml
+msgctxt "#31097"
+msgid "Customise ratings"
+msgstr "Bewertungen anpassen"
+
+#: /1080i/SkinSettings.xml /1080i/Includes_Items.xml
+msgctxt "#31098"
+msgid "Gallery"
+msgstr "Galerie"
+
+#: /1080i/Includes_Labels.xml
+msgctxt "#31099"
+msgid "Last aired"
+msgstr "Letzte Ausstrahlung"
+
+#: /1080i/Includes_Views_Row.xml
+msgctxt "#31100"
+msgid "Board Row"
+msgstr "Reihe - Tafel"
+
+#: /1080i/Includes_Views_Wall.xml
+msgctxt "#31101"
+msgid "Wall Board"
+msgstr "Wand - Tafel"
+
+#: /1080i/Includes_Labels.xml
+msgctxt "#31102"
+msgid "Prebuilt Configuration"
+msgstr "Voreingestellte Konfiguration"
+
+msgctxt "#31103"
+msgid "Widgets"
+msgstr "Widgets"
+
+#: /1080i/Includes_Labels.xml
+msgctxt "#31104"
+msgid "Rebuild XML"
+msgstr "XML neu erstellen"
+
+msgctxt "#31105"
+msgid "Spotlight"
+msgstr "Im Rampenlicht"
+
+#: /1080i/SkinSettings.xml
+msgctxt "#31106"
+msgid "Viewmode"
+msgstr "Ansichtsmodus"
+
+#: /1080i/Custom_1116_Dialog_Shortcuts.xml
+msgctxt "#31107"
+msgid "Combine widgets"
+msgstr "Kombiniere Widgets"
+
+msgctxt "#31108"
+msgid "Collections"
+msgstr "Kollektionen"
+
+#: /1080i/SkinSettings.xml
+msgctxt "#31109"
+msgid "Viewline"
+msgstr "Sichtlinie"
+
+#: /1080i/Custom_1116_Dialog_Shortcuts.xml
+msgctxt "#31110"
+msgid "Use combined list"
+msgstr "Kombinierte Liste verwenden"
+
+msgctxt "#31111"
+msgid "Poster Row"
+msgstr "Reihe - Poster"
+
+msgctxt "#31112"
+msgid "Landscape Row"
+msgstr "Reihe - Breitbild"
+
+msgctxt "#31113"
+msgid "Square Row"
+msgstr "Reihe - Quadratisch"
+
+#: /1080i/SkinSettings.xml
+msgctxt "#31114"
+msgid "Hubs"
+msgstr "Hubs"
+
+#: /1080i/SkinSettings.xml
+msgctxt "#31115"
+msgid "Australian summer"
+msgstr "Australischer Sommer"
+
+#: /1080i/SkinSettings.xml
+msgctxt "#31116"
+msgid "Winter frost"
+msgstr "Winterfrost"
+
+#: /1080i/DialogPlayerProcessInfo.xml
+msgctxt "#31117"
+msgid "RAM"
+msgstr "RAM"
+
+#: /1080i/Includes_Labels.xml
+msgctxt "#31118"
+msgid "Expanded"
+msgstr "Ausgedehnt"
+
+#: /1080i/DialogPlayerProcessInfo.xml
+msgctxt "#31119"
+msgid "EOTF and Gamut"
+msgstr "EOTF und Farbskala"
+
+#: /1080i/Includes_Views_List.xml
+msgctxt "#31120"
+msgid "List Basic"
+msgstr "Liste - Einfach"
+
+msgctxt "#31121"
+msgid "Square List"
+msgstr "Liste - Quadratisch"
+
+#: /1080i/Includes_MediaFilter.xml
+msgctxt "#31122"
+msgid "Watchlist"
+msgstr "Watchliste"
+
+#: /1080i/Includes_MediaFilter.xml
+msgctxt "#31123"
+msgid "On Deck"
+msgstr "An Deck"
+
+msgctxt "#31124"
+msgid "Indicator"
+msgstr "Indikator"
+
+msgctxt "#31125"
+msgid "Invert Text Colour"
+msgstr "Textfarbe invertieren"
+
+#: /1080i/SkinSettings.xml
+msgctxt "#31126"
+msgid "Options menu"
+msgstr "Optionsmenü"
+
+#: /1080i/SkinSettings.xml
+msgctxt "#31127"
+msgid "Left footer"
+msgstr "Linke Fußzeile"
+
+#: /1080i/Includes_MediaFilter.xml
+msgctxt "#31128"
+msgid "Trending"
+msgstr "Im Trend"
+
+msgctxt "#31129"
+msgid "Up next in"
+msgstr "Als nächstes in"
+
+msgctxt "#31130"
+msgid "seconds"
+msgstr "Sekunden"
+
+msgctxt "#31131"
+msgid "Continue watching in"
+msgstr "Weiter Ansehen in"
+
+#: /1080i/Includes_MediaFilter.xml
+msgctxt "#31132"
+msgid "History"
+msgstr "Verlauf"
+
+msgctxt "#31133"
+msgid "Set the type and add rules to create a smart playlist. These playlists are dynamic and include all media items from your database which apply to your chosen rules."
+msgstr "Bestimme Typ und Regeln um eine smarte Playliste zu erzeugen. Diese Playlisten sind dynamisch und beinhalten alle Medien der Datenbank die den ausgewählten Regel entsprechen."
+
+#: /1080i/Includes_Labels.xml
+msgctxt "#31134"
+msgid "Playing"
+msgstr "Es läuft"
+
+#: /1080i/Includes_Views.xml
+msgctxt "#31135"
+msgid "Page"
+msgstr "Seite"
+
+#: /1080i/Includes_Labels.xml
+msgctxt "#31136"
+msgid "Slide"
+msgstr "Gleiten"
+
+#: /1080i/SkinSettings.xml /1080i/Includes_Labels.xml
+msgctxt "#31137"
+msgid "Detailed"
+msgstr "Detailliert"
+
+msgctxt "#31138"
+msgid "Aqua Classic"
+msgstr "Klassisches Wasser"
+
+msgctxt "#31139"
+msgid "Tropical Sunset"
+msgstr "Tropischer Sonnenuntergang"
+
+msgctxt "#31140"
+msgid "Miami Vaporwave"
+msgstr "Dampfwelle aus Miami"
+
+msgctxt "#31141"
+msgid "Plain Monochrome"
+msgstr "Schlichtes Monochrom"
+
+msgctxt "#31142"
+msgid "Total Duration"
+msgstr "Laufzeit"
+
+#: /1080i/Includes_Labels.xml
+msgctxt "#31143"
+msgid "Classic"
+msgstr "Klassisch"
+
+#: /1080i/SkinSettings.xml
+msgctxt "#31144"
+msgid "Initial focus"
+msgstr "Ausgangsfokus"
+
+msgctxt "#31145"
+msgid "Initialising Skin"
+msgstr "Initialisiere Skin"
+
+#: /1080i/SkinSettings.xml
+msgctxt "#31146"
+msgid "Profile image and logo"
+msgstr "Profilbild und Logo"
+
+#: /1080i/Includes_Shortcuts_Window.xml
+msgctxt "#31147"
+msgid "More"
+msgstr "Mehr"
+
+#: /1080i/Includes_DialogInfo.xml
+msgctxt "#31148"
+msgid "Explore"
+msgstr "Erkunden"
+
+#: /1080i/Custom_1115_Dialog_Shortcuts_Window.xml
+msgctxt "#31149"
+msgid "Edit spotlight"
+msgstr "Rampenlicht-Widget anpassen"
+
+#: /1080i/Includes_Labels.xml
+msgctxt "#31150"
+msgid "Categories"
+msgstr "Kategorien"
+
+#: /1080i/Includes_Items.xml
+msgctxt "#31151"
+msgid "Search and options"
+msgstr "Suche und Optionen"
+
+#: /1080i/DialogAddonSettings.xml
+msgctxt "#31152"
+msgid "Combined Square"
+msgstr "Kombiniert - Quadratisch"
+
+#: /1080i/DialogAddonSettings.xml
+msgctxt "#31153"
+msgid "Combined Landscape"
+msgstr "Kombiniert - Landschaft"
+
+msgctxt "#31154"
+msgid "Misc options"
+msgstr "Diverse Optionen"
+
+#: /1080i/DialogAddonSettings.xml
+msgctxt "#31155"
+msgid "Combined Poster"
+msgstr "Kombiniert - Poster"
+
+#: /1080i/Custom_1115_Dialog_Shortcuts_Window.xml
+msgctxt "#31156"
+msgid "Edit categories and widgets"
+msgstr "Kategorien und Widgets anpassen"
+
+#: /1080i/Custom_1115_Dialog_Shortcuts_Window.xml
+msgctxt "#31157"
+msgid "Category items appear as a vertical menu at the left of the home screen."
+msgstr "Kategorie-Einträge erscheinen als vertikales Menü auf der Startseite links."
+
+#: /1080i/Includes_Keyboard_Mini.xml
+msgctxt "#31158"
+msgid "Layout"
+msgstr "Layout"
+
+#: /1080i/Custom_1120_VideoInfo_Details.xml
+msgctxt "#31159"
+msgid "Version"
+msgstr "Version"
+
+msgctxt "#31160"
+msgid "REC"
+msgstr "REC"
+
+#: /1080i/Custom_1115_Dialog_Shortcuts_Window.xml
+msgctxt "#31161"
+msgid "Edit the widgets shown in the hub."
+msgstr "Editiere die angezeigten Widgets des Hubs."
+
+#: /1080i/Includes_Labels.xml
+msgctxt "#31162"
+msgid "Hide"
+msgstr "Ausblenden"
+
+#: /1080i/Custom_1115_Dialog_Shortcuts_Window.xml
+msgctxt "#31163"
+msgid "Customise hubs"
+msgstr "Hubs anpassen"
+
+#: /1080i/Custom_1115_Dialog_Shortcuts_Window.xml
+msgctxt "#31164"
+msgid "Global widgets are shown at the end of the widget stack for all categories in the hub."
+msgstr "Globale Widgets werden im Hub für alle Kategorien am Ende des Widget-Stapels angezeigt."
+
+#: /1080i/SkinSettings.xml
+msgctxt "#31165"
+msgid "Seekbar behaviour on delayed pause"
+msgstr "Suchleisten-Verhalten bei verzögerter Pause"
+
+#: /1080i/SkinSettings.xml
+msgctxt "#31166"
+msgid "Back"
+msgstr "Zurück"
+
+#: /1080i/Includes_Labels.xml
+msgctxt "#31167"
+msgid "Logo"
+msgstr "Logo"
+
+#: /1080i/Includes_Views_List.xml
+msgctxt "#31168"
+msgid "List Square"
+msgstr "Liste - Quadratisch"
+
+#: /1080i/Includes_Labels.xml
+msgctxt "#31169"
+msgid "Birthday"
+msgstr "Geburtstag"
+
+#: /1080i/Custom_1115_Dialog_Shortcuts_Window.xml
+msgctxt "#31170"
+msgid "Note"
+msgstr "Notiz"
+
+#: /1080i/SkinSettings.xml
+msgctxt "#31171"
+msgid "On-screen keyboard size"
+msgstr "Größe der Bildschirmtastatur"
+
+#: /1080i/Custom_1115_Dialog_Shortcuts_Window.xml
+msgctxt "#31172"
+msgid "Global widgets are not shown for categories in combined widget mode."
+msgstr "Globale Widgets werden im kombinierten Widget-Modus nicht angezeigt."
+
+#: /1080i/SkinSettings.xml
+msgctxt "#31173"
+msgid "Scroll"
+msgstr "Scrollen"
+
+msgctxt "#31174"
+msgid "Navigation"
+msgstr "Navigation"
+
+#: /1080i/Custom_1115_Dialog_Shortcuts_Window.xml
+msgctxt "#31175"
+msgid "These widgets are in addition to any widgets for the specific category."
+msgstr "Dies sind zusätzliche Widgets zu allen Widgets der spezifischen Kategorie."
+
+#: /1080i/SkinSettings.xml
+msgctxt "#31176"
+msgid "Home focus and navigation"
+msgstr "Fokus und Navigation der Startseite"
+
+msgctxt "#31177"
+msgid "Menus"
+msgstr "Menüs"
+
+#: /1080i/SkinSettings.xml
+msgctxt "#31178"
+msgid "Info line"
+msgstr "Infozeile"
+
+#: /1080i/Includes_Search.xml
+msgctxt "#31179"
+msgid "Keyword"
+msgstr "Stichwort"
+
+msgctxt "#31180"
+msgid "Furniture"
+msgstr "Ausstattung"
+
+#: /1080i/Includes_DialogInfo.xml
+msgctxt "#31181"
+msgid "Scheduled"
+msgstr "Geplant"
+
+#: /1080i/SkinSettings.xml
+msgctxt "#31182"
+msgid "EPG and channels style"
+msgstr "EPG- und Kanal-Stil"
+
+#: /1080i/Includes_Info.xml
+msgctxt "#31183"
+msgid "times"
+msgstr "Mal"
+
+#: /1080i/Includes_Info.xml
+msgctxt "#31184"
+msgid "Ends"
+msgstr "Endet"
+
+msgctxt "#31185"
+msgid "Autoscroll"
+msgstr "Automatisches Scrollen"
+
+msgctxt "#31186"
+msgid "Behaviour"
+msgstr "Verhalten"
+
+msgctxt "#31187"
+msgid "Autoscroll time interval"
+msgstr "Zeitintervall für automatisches Scrollen"
+
+msgctxt "#31188"
+msgid "Limit"
+msgstr "Eintragslimit"
+
+msgctxt "#31189"
+msgid "Autoclose OSD after X seconds"
+msgstr "OSD automatisch schließen nach"
+
+#: /1080i/Includes_Info.xml
+msgctxt "#31190"
+msgid "time"
+msgstr "Zeit"
+
+#: /1080i/SkinSettings.xml
+msgctxt "#31191"
+msgid "Optional details"
+msgstr "Optionale Details"
+
+#: /1080i/Includes_Labels.xml
+msgctxt "#31192"
+msgid "Ends at time"
+msgstr "Endet um"
+
+#: /1080i/SkinSettings.xml
+msgctxt "#31193"
+msgid "Expanding clock"
+msgstr "Erweiternde Uhr"
+
+#: /1080i/Includes_Info.xml
+msgctxt "#31194"
+msgid "Album duration"
+msgstr "Albumlänge"
+
+#: /1080i/Includes_Labels.xml
+msgctxt "#31195"
+msgid "Light"
+msgstr "Hell"
+
+msgctxt "#31196"
+msgid "Up Next"
+msgstr "Als Nächstes"
+
+#: /1080i/SkinSettings.xml
+msgctxt "#31197"
+msgid "Skin theme"
+msgstr "Thema des Skins"
+
+#: /1080i/Includes_Info.xml
+msgctxt "#31198"
+msgid "Track duration"
+msgstr "Titellänge"
+
+#: /1080i/SkinSettings.xml
+msgctxt "#31199"
+msgid "Date and time"
+msgstr "Datum und Zeit"
+
+#: /1080i/Includes_Info.xml
+msgctxt "#31200"
+msgid "Added on"
+msgstr "Hinzugefügt am"
+
+#: /1080i/Custom_1115_Dialog_Shortcuts_Window.xml
+msgctxt "#31201"
+msgid "Use a label to differentiate this hub from others."
+msgstr "Benutze eine Überschrift um diesen Hub von anderen zu unterscheiden."
+
+msgctxt "#31202"
+msgid "Ratings"
+msgstr "Bewertungen"
+
+msgctxt "#31203"
+msgid "Customise"
+msgstr "Anpassen"
+
+#: /1080i/SkinSettings.xml
+msgctxt "#31204"
+msgid "Customise dialog background"
+msgstr "Dialoghintergrund anpassen"
+
+#: /1080i/Includes_Labels.xml
+msgctxt "#31205"
+msgid "Codecs and providers"
+msgstr "Codecs und Provider"
+
+#: /1080i/Includes_Labels.xml
+msgctxt "#31206"
+msgid "Item count"
+msgstr "Eintragszähler"
+
+#: /1080i/SkinSettings.xml
+msgctxt "#31207"
+msgid "Codecs"
+msgstr "Codecs"
+
+#: /1080i/SkinSettings.xml /1080i/SkinSettings.xml
+msgctxt "#31208"
+msgid "Header"
+msgstr "Kopfzeile"
+
+#: /1080i/Includes_Labels.xml
+msgctxt "#31209"
+msgid "Boxes"
+msgstr "Boxen"
+
+#: /1080i/Includes_Labels.xml
+msgctxt "#31210"
+msgid "Series Premiere"
+msgstr "Serienpremiere"
+
+#: /1080i/Includes_Labels.xml
+msgctxt "#31211"
+msgid "Season Premiere"
+msgstr "Staffelpremiere"
+
+#: /1080i/Includes_Labels.xml
+msgctxt "#31212"
+msgid "Mid-Season Premiere"
+msgstr "Premiere 2. Staffelhälfte"
+
+msgctxt "#31213"
+msgid "Visualisation settings"
+msgstr "Einstellungsmenü der Visualisierung"
+
+#: /1080i/Includes_Labels.xml
+msgctxt "#31214"
+msgid "Series Finale"
+msgstr "Serienfinale"
+
+#: /1080i/Includes_Labels.xml
+msgctxt "#31215"
+msgid "Season Finale"
+msgstr "Staffelfinale"
+
+msgctxt "#31216"
+msgid "Video decoder"
+msgstr "Video-Decoder"
+
+msgctxt "#31217"
+msgid "Pixel format"
+msgstr "Pixelformat"
+
+#: /1080i/Includes_Labels.xml
+msgctxt "#31218"
+msgid "Mid-Season Finale"
+msgstr "Finale 1. Staffelhälfte"
+
+#: /1080i/SkinSettings.xml
+msgctxt "#31219"
+msgid "Left header"
+msgstr "Linke Kopfzeile"
+
+#: /1080i/Includes_Items.xml
+msgctxt "#31220"
+msgid "Purple"
+msgstr "Lila"
+
+#: /1080i/Includes_Items.xml
+msgctxt "#31221"
+msgid "Slate"
+msgstr "Schiefer"
+
+#: /1080i/Includes_Items.xml
+msgctxt "#31222"
+msgid "Coal"
+msgstr "Kohle"
+
+msgctxt "#31223"
+msgid "Gridlines"
+msgstr "Gitterlinien"
+
+#: /1080i/Includes_Items.xml
+msgctxt "#31224"
+msgid "Pink"
+msgstr "Rosa"
+
+#: /1080i/Includes_Items.xml
+msgctxt "#31225"
+msgid "Chalk"
+msgstr "Kreide"
+
+#: /1080i/Includes_Items.xml
+msgctxt "#31226"
+msgid "Blush"
+msgstr "Errötend"
+
+#: /1080i/Includes_Items.xml
+msgctxt "#31227"
+msgid "Premiere"
+msgstr "Premiere"
+
+#: /1080i/Custom_1115_Dialog_ColourPresets.xml
+msgctxt "#31228"
+msgid "Aqua"
+msgstr "Wasser"
+
+#: /1080i/Custom_1115_Dialog_ColourPresets.xml
+msgctxt "#31229"
+msgid "Vaporwave"
+msgstr "Dampfwelle"
+
+#: /1080i/Includes_Items.xml
+msgctxt "#31230"
+msgid "Calendar"
+msgstr "Kalender"
+
+#: /1080i/SkinSettings.xml
+msgctxt "#31231"
+msgid "Customise highlight colours"
+msgstr "Highlight-Farben anpassen"
+
+#: /1080i/Custom_1111_Dialog_ColourPicker.xml
+msgctxt "#31232"
+msgid "Gradient"
+msgstr "Verlaufsfarbe"
+
+msgctxt "#31233"
+msgid "Seek to"
+msgstr "Suche bis"
+
+msgctxt "#31234"
+msgid "Customise indicators"
+msgstr "Indikatoren anpassen"
+
+msgctxt "#31235"
+msgid "Indicators"
+msgstr "Indikatoren"
+
+msgctxt "#31236"
+msgid "Collection"
+msgstr "Kollektion"
+
+msgctxt "#31237"
+msgid "Progress"
+msgstr "Fortschritt"
+
+#: /1080i/Includes_Labels.xml
+msgctxt "#31238"
+msgid "Coral"
+msgstr "Koralle"
+
+msgctxt "#31239"
+msgid "Footer"
+msgstr "Fußzeile"
+
+#: /1080i/Custom_1115_Dialog_ColourPresets.xml
+msgctxt "#31240"
+msgid "Tropical"
+msgstr "Tropisch"
+
+#: /1080i/SkinSettings.xml
+msgctxt "#31241"
+msgid "Colour scheme"
+msgstr "Farbschema"
+
+#: /1080i/Includes_Items.xml
+msgctxt "#31242"
+msgid "Blue Slate"
+msgstr "Blauer Schiefer"
+
+#: /1080i/Includes_Items.xml
+msgctxt "#31243"
+msgid "Midnight Purple"
+msgstr "Mitternächtliches Lila"
+
+msgctxt "#31244"
+msgid "Now playing"
+msgstr "Läuft gerade"
+
+msgctxt "#31245"
+msgid "Autoscroll labels"
+msgstr "Labels automatisch scrollen"
+
+msgctxt "#31246"
+msgid "Autoscroll textboxes"
+msgstr "Textboxen automatisch scrollen"
+
+#: /1080i/SkinSettings.xml
+msgctxt "#31247"
+msgid "Colour highlight"
+msgstr "Highlight Einfärben"
+
+msgctxt "#31248"
+msgid "Building includes"
+msgstr "Erstelle Inhalte"
+
+msgctxt "#31249"
+msgid "Waiting for PVR"
+msgstr "Warte auf PVR"
+
+#: /1080i/SkinSettings.xml
+msgctxt "#31250"
+msgid "Highlight"
+msgstr "Highlight"
+
+#: /1080i/SkinSettings.xml
+msgctxt "#31251"
+msgid "Analog clock"
+msgstr "Analoguhr"
+
+msgctxt "#31252"
+msgid "Catch-up"
+msgstr "Aufholen"
+
+#: /1080i/SkinSettings.xml
+msgctxt "#31253"
+msgid "Move between widget groups"
+msgstr "Zwischen Widget-Gruppen bewegen"
+
+#: /1080i/Includes_Labels.xml
+msgctxt "#31254"
+msgid "Performance"
+msgstr "Leistung"
+
+msgctxt "#31255"
+msgid "Customise startup image"
+msgstr "Startbild anpassen"
+
+msgctxt "#31256"
+msgid "Resource Usage"
+msgstr "Resourcenverwendung"
+
+msgctxt "#31257"
+msgid "Memory"
+msgstr "Speicher"
+
+msgctxt "#31258"
+msgid "CPU"
+msgstr "CPU"
+
+msgctxt "#31259"
+msgid "FPS"
+msgstr "FPS"
+
+msgctxt "#31260"
+msgid "AR"
+msgstr "AR"
+
+msgctxt "#31261"
+msgid "px"
+msgstr "px"
+
+msgctxt "#31262"
+msgid "Hz"
+msgstr "Hz"
+
+msgctxt "#31263"
+msgid "bits"
+msgstr "Bits"
+
+msgctxt "#31264"
+msgid "Revenue"
+msgstr "Einnahmen"
+
+msgctxt "#31265"
+msgid "Budget"
+msgstr "Budget"
+
+#: /1080i/Includes_Items.xml
+msgctxt "#31266"
+msgid "Menu expands to display labels"
+msgstr "Menü für Labels expandieren"
+
+#: /1080i/Includes_Labels.xml
+msgctxt "#31267"
+msgid "Quality"
+msgstr "Qualität"
+
+#: /1080i/Includes_Labels.xml
+msgctxt "#31268"
+msgid "Fake"
+msgstr "Fake"
+
+#: /1080i/Includes_Labels.xml
+msgctxt "#31269"
+msgid "Real"
+msgstr "Real"
+
+msgctxt "#31270"
+msgid "Single image"
+msgstr "Einzelnes Bild"
+
+msgctxt "#31271"
+msgid "Image folder"
+msgstr "Ordner mit Bildern"
+
+#: /1080i/Includes_Search_View.xml
+msgctxt "#31272"
+msgid "Searching"
+msgstr "Suche"
+
+#: /1080i/SkinSettings.xml /1080i/Includes_MediaFilter.xml
+msgctxt "#31273"
+msgid "Access scrollbar"
+msgstr "Scrollbalken aufrufen"
+
+#: /1080i/Includes_Items.xml
+msgctxt "#31274"
+msgid "Icon"
+msgstr "Icon"
+
+#: /1080i/SkinSettings.xml
+msgctxt "#31275"
+msgid "Customise search"
+msgstr "Suche anpassen"
+
+#: /1080i/SkinSettings.xml
+msgctxt "#31276"
+msgid "Widgets mode sets navigation to loop on left and right."
+msgstr "Im Widget-Modus navigiert man links und rechts in einer Schleife."
+
+#: /1080i/SkinSettings.xml
+msgctxt "#31277"
+msgid "Ensure that your device has an alternative mode of accessing the menu and settings before selecting this option."
+msgstr "Bitte vor Auswahl dieser Option eine alternative Zugangsmöglichkeit zu Menü und Einstellungen sicherstellen."
+
+#: /1080i/Custom_1115_Dialog_Shortcuts_Window.xml
+msgctxt "#31278"
+msgid "Switch the hub from a basic widgets-only layout to more advanced modes with additional features."
+msgstr "Wechsle von einem einfachen Widget-Layout zu fortgeschrittenen Hubs mit zusätzlichen Funktionen."
+
+msgctxt "#31279"
+msgid "Studio icons"
+msgstr "Studio-Icons"
+
+#: /1080i/Custom_1115_Dialog_Shortcuts_Window.xml
+msgctxt "#31280"
+msgid "Basic is a simple widgets-only mode."
+msgstr "Einfach ist ein simpler Modus mit nur Widgets."
+
+#: /1080i/Includes_Labels.xml
+msgctxt "#31281"
+msgid "Welcome"
+msgstr "Willkommen"
+
+#: /1080i/Includes_Shortcuts_Pallette.xml
+msgctxt "#31282"
+msgid "Widget"
+msgstr "Widget"
+
+#: /1080i/Includes_Info.xml
+msgctxt "#31283"
+msgid "Played"
+msgstr "Gespielt"
+
+#: /1080i/Includes_Labels.xml
+msgctxt "#31284"
+msgid "Discover movies and tvshows on TMDb."
+msgstr "Entdecke Filme und Serien bei TMDb."
+
+msgctxt "#31285"
+msgid "Classification (MPAA)"
+msgstr "Einstufung (MPAA)"
+
+msgctxt "#31286"
+msgid "Won"
+msgstr "Gewonnen"
+
+msgctxt "#31287"
+msgid "Nominated for"
+msgstr "Nominiert für"
+
+#: /1080i/Includes_Labels.xml
+msgctxt "#31288"
+msgid "Explore now."
+msgstr "Jetzt Erkunden."
+
+#: /1080i/SkinSettings.xml
+msgctxt "#31289"
+msgid "Touch mode"
+msgstr "Touch-Modus"
+
+#: /1080i/script-wikipedia.xml
+msgctxt "#31290"
+msgid "Attribution"
+msgstr "Zuschreibung"
+
+#: /1080i/Includes_Labels.xml
+msgctxt "#31291"
+msgid "Search for movies$COMMA tvshows$COMMA and more."
+msgstr "Suche nach Filmen$COMMA Serien$COMMA und mehr."
+
+#: /1080i/SkinSettings.xml
+msgctxt "#31292"
+msgid "Text labels"
+msgstr "Text-Labels"
+
+msgctxt "#31293"
+msgid "Cast and more info"
+msgstr "Darsteller und weitere Informationen"
+
+msgctxt "#31294"
+msgid "Bookmarks and chapters"
+msgstr "Lesezeichen und Kapitel"
+
+msgctxt "#31295"
+msgid "Channels"
+msgstr "Kanäle"
+
+msgctxt "#31296"
+msgid "Playlist"
+msgstr "Playlist"
+
+#: /1080i/SkinSettings.xml
+msgctxt "#31297"
+msgid "Extra fanart"
+msgstr "Extra-Fanart"
+
+msgctxt "#31298"
+msgid "Movies and tv shows starring this actor"
+msgstr "Filme und Serien des Darstellers"
+
+msgctxt "#31299"
+msgid "Information is loading"
+msgstr "Information wird geladen"
+
+#: /1080i/SkinSettings.xml
+msgctxt "#31300"
+msgid "Customise window background"
+msgstr "Fensterhintergrund anpassen"
+
+#: /1080i/Includes_Labels.xml
+msgctxt "#31301"
+msgid "Crew"
+msgstr "Crew"
+
+msgctxt "#31302"
+msgid "Management options"
+msgstr "Verwaltungsoptionen"
+
+#: /1080i/SkinSettings.xml
+msgctxt "#31303"
+msgid "Customise fallback image folder"
+msgstr "Fallback-Bildordner anpassen"
+
+#: /1080i/Includes_Search.xml
+msgctxt "#31304"
+msgid "lists"
+msgstr "Listen"
+
+#: /1080i/Custom_1115_Dialog_Shortcuts_Window.xml
+msgctxt "#31305"
+msgid "Detailed adds an information panel."
+msgstr "Detailliert fügt ein Infopanel hinzu."
+
+#: /1080i/Custom_1115_Dialog_Shortcuts_Window.xml
+msgctxt "#31306"
+msgid "Advanced adds categories and spotlights."
+msgstr "Fortgeschritten fügt Kategorien und Rampenlicht-Widgets hinzu."
+
+#: /1080i/Includes_DialogInfo.xml
+msgctxt "#31307"
+msgid "Instrument"
+msgstr "Instrument"
+
+#: /1080i/Includes_DialogInfo.xml
+msgctxt "#31308"
+msgid "Mood"
+msgstr "Stimmung"
+
+#: /1080i/Includes_Labels.xml
+msgctxt "#31309"
+msgid "Glass"
+msgstr "Glas"
+
+#: /1080i/Custom_1161_Dialog_Weather.xml
+msgctxt "#31310"
+msgid "Expand"
+msgstr "Ausklappen"
+
+#: /1080i/Custom_1161_Dialog_Weather.xml
+msgctxt "#31311"
+msgid "Weekly"
+msgstr "Wöchentlich"
+
+#: /1080i/SkinSettings.xml
+msgctxt "#31312"
+msgid "Spinner"
+msgstr "Kreisel"
+
+#: /1080i/Custom_1116_Dialog_Shortcuts.xml
+msgctxt "#31313"
+msgid "Always visible"
+msgstr "Immer sichtbar"
+
+#: /1080i/Custom_1115_Dialog_Shortcuts_Window.xml
+msgctxt "#31314"
+msgid "Advanced mode is only available in horizontal hub windows."
+msgstr "Fortgeschritten ist nur in horizontalen Hubfenstern verfügbar."
+
+#: /1080i/Custom_1115_Dialog_Shortcuts_Window.xml
+msgctxt "#31315"
+msgid "Hub windows other than classic home may not have access to the settings window in their default configuration."
+msgstr "Andere Hubfenster als das klassische Hauptmenü haben möglicherweise standardmäßig keinen Zugriff auf die Einstellungen."
+
+#: /1080i/Includes_Labels.xml
+msgctxt "#31316"
+msgid "Dark glass"
+msgstr "Dunkles Glas"
+
+#: /1080i/SkinSettings.xml
+msgctxt "#31317"
+msgid "Ribbon"
+msgstr "Band"
+
+#: /1080i/Includes_Views.xml
+msgctxt "#31318"
+msgid "Combined Circle"
+msgstr "Kreis (Kombiniert)"
+
+#: /1080i/Includes_MediaFilter.xml
+msgctxt "#31319"
+msgid "View"
+msgstr "Ansicht"
+
+#: /1080i/Includes_Views.xml
+msgctxt "#31320"
+msgid "Square"
+msgstr "Quadratisch"
+
+#: /1080i/Includes_SkinSettings.xml
+msgctxt "#31321"
+msgid "Select viewtypes"
+msgstr "Ansichtstypen auswählen"
+
+#: /1080i/SkinSettings.xml /1080i/Includes_Labels.xml
+msgctxt "#31322"
+msgid "Age"
+msgstr "Alter"
+
+#: /1080i/Includes_Views.xml
+msgctxt "#31323"
+msgid "Combined Card"
+msgstr "Karte (Kombiniert)"
+
+#: /1080i/SkinSettings.xml
+msgctxt "#31324"
+msgid "Content"
+msgstr "Inhalt"
+
+#: /1080i/Includes_Views.xml
+msgctxt "#31325"
+msgid "Combined Board"
+msgstr "Tafel (Kombiniert)"
+
+#: /1080i/Includes_Views_Row.xml
+msgctxt "#31326"
+msgid "Quad Row"
+msgstr "Quad (Reihe)"
+
+#: /1080i/Includes_Shortcuts_Options.xml
+msgctxt "#31327"
+msgid "Choose category spotlight"
+msgstr "Rampenlicht-Inhalt für Kategorien auswählen"
+
+#: /1080i/Custom_1116_Dialog_Shortcuts.xml
+msgctxt "#31328"
+msgid "Edit widgets"
+msgstr "Widgets anpassen"
+
+#: /1080i/Includes_Labels.xml
+msgctxt "#31329"
+msgid "Text"
+msgstr "Text"
+
+#: /1080i/Includes_Labels.xml
+msgctxt "#31330"
+msgid "Crop"
+msgstr "Beschneiden"
+
+#: /1080i/SkinSettings.xml
+msgctxt "#31331"
+msgid "Background style"
+msgstr "Hintergrund-Stil"
+
+#: /1080i/Includes_Search_Filter.xml
+msgctxt "#31332"
+msgid "New search"
+msgstr "Neue Suche"
+
+#: /1080i/Includes_Lists.xml
+msgctxt "#31333"
+msgid "Quad"
+msgstr "Quad"
+
+msgctxt "#31334"
+msgid "Comments"
+msgstr "Kommentare"
+
+#: /1080i/GameOSD.xml
+msgctxt "#31335"
+msgid "Game menu"
+msgstr "Spiele-Menü"
+
+#: /1080i/GameOSD.xml
+msgctxt "#31336"
+msgid "Select + X"
+msgstr "Select + X"
+
+#: /1080i/GameOSD.xml
+msgctxt "#31337"
+msgid "Select + Start"
+msgstr "Select + Start"
+
+#: /1080i/Includes_Items.xml
+msgctxt "#31338"
+msgid "Select + Right Stick"
+msgstr "Select + Rechter Stick"
+
+#: /1080i/Includes_Views_Wall.xml
+msgctxt "#31339"
+msgid "Wall Quad"
+msgstr "Quad (Wand)"
+
+#: /1080i/SkinSettings.xml
+msgctxt "#31340"
+msgid "Reset skin to defaults"
+msgstr "Skin auf Standard zurücksetzen"
+
+#: /1080i/Includes_Labels.xml
+msgctxt "#31341"
+msgid "Combined Quad"
+msgstr "Quad (Kombiniert)"
+
+#: /1080i/Includes_Views_Row.xml
+msgctxt "#31342"
+msgid "Disc Row"
+msgstr "Disk (Reihe)"
+
+#: /1080i/Includes_Views_Wall.xml
+msgctxt "#31343"
+msgid "Wall Disc"
+msgstr "Disk (Wand)"
+
+#: /1080i/Includes_Widgets.xml
+msgctxt "#31344"
+msgid "Combined Disc"
+msgstr "Disk (Kombiniert)"
+
+#: /1080i/Custom_1115_Dialog_Shortcuts_Window.xml
+msgctxt "#31345"
+msgid "Advanced mode applies a horizontal category layout."
+msgstr "Im erweiterten Modus wird ein horizontales Kategorielayout verwendet."
+
+msgctxt "#31346"
+msgid "More by this artist"
+msgstr "Mehr von diesem Interpreten"
+
+#: /1080i/Includes_DialogInfo.xml
+msgctxt "#31347"
+msgid "Photography"
+msgstr "Fotografie"
+
+msgctxt "#31348"
+msgid "Channel EPG"
+msgstr "Kanal-EPG"
+
+#: /1080i/SkinSettings.xml
+msgctxt "#31349"
+msgid "Up"
+msgstr "Hoch"
+
+msgctxt "#31350"
+msgid "Thanks"
+msgstr "Danke"
+
+#: /1080i/SkinSettings.xml
+msgctxt "#31351"
+msgid "Kodi forces content to refresh on playback start and stop."
+msgstr "Kodi erzwingt eine Aktualisierung der Inhalte beim Starten und Stoppen der Wiedergabe."
+
+#: /1080i/SkinSettings.xml
+msgctxt "#31352"
+msgid "Autoplaying trailers will trigger frequent plugin reloading."
+msgstr "Die automatische Wiedergabe von Trailern führt zu einem häufigen Nachladen des Plugins."
+
+#: /1080i/Includes_Labels.xml
+msgctxt "#31353"
+msgid "Elapsed"
+msgstr "Vergangen"
+
+#: /1080i/Includes_Labels.xml
+msgctxt "#31354"
+msgid "Remaining"
+msgstr "Verbleibend"
+
+#: /1080i/SkinSettings.xml
+msgctxt "#31355"
+msgid "Seekbar time display"
+msgstr "Zeitanzeige der Suchleiste"
+
+#: /1080i/Includes_Items.xml
+msgctxt "#31356"
+msgid "Use online cast"
+msgstr "Online-Cast verwenden"
+
+#: /1080i/SkinSettings.xml /1080i/Includes_Items.xml
+msgctxt "#31357"
+msgid "Artwork Overlay"
+msgstr "Artwork-Overlay"
+
+msgctxt "#31358"
+msgid "Waiting for plugins"
+msgstr "Warte auf Plugins"
+
+#: /shortcuts/generator/data/setup/powermainmenu_item.xml
+msgctxt "#31359"
+msgid "Switch user"
+msgstr "Benutzer wechseln"
+
+#: /1080i/SkinSettings.xml
+msgctxt "#31360"
+msgid "No support is provided. Use at your own risk."
+msgstr "Es wird kein Support angeboten. Die Verwendung erfolgt auf eigene Gefahr."
+
+#: /1080i/SkinSettings.xml
+msgctxt "#31361"
+msgid "Do NOT report issues while this setting is enabled."
+msgstr "Melden Sie KEINE Probleme, wenn diese Einstellung aktiviert ist."
+
+#: /1080i/Includes_Items.xml
+msgctxt "#31362"
+msgid "Side items"
+msgstr "Seitliche Einträge"
+
+#: /1080i/Includes_Items.xml
+msgctxt "#31363"
+msgid "Menu items"
+msgstr "Menü-Einträge"
+
+#: /shortcuts/powersubmenu.DATA.xml
+msgctxt "#31364"
+msgid "Reload"
+msgstr "Neu Laden"
+
+#: /1080i/DialogContextMenu.xml
+msgctxt "#31365"
+msgid "Node"
+msgstr "Knoten"
+
+#: /1080i/Includes_Labels.xml
+msgctxt "#31366"
+msgid "Uncropped"
+msgstr "Unbeschnitten"
+
+#: /1080i/SkinSettings.xml
+msgctxt "#31367"
+msgid "This feature is experimental and may cause degraded system performance or other issues."
+msgstr "Diese Funktion ist experimentell und kann zu einer verminderten Systemleistung oder anderen Problemen führen."
+
+#: /1080i/Includes_Search_View.xml
+msgctxt "#31368"
+msgid "Searching for"
+msgstr "Suche nach"
+
+#: /1080i/Includes_Items.xml
+msgctxt "#31369"
+msgid "Video file"
+msgstr "Video-Datei"
+
+#: /1080i/Custom_1172_Dialog_SideMenu.xml
+msgctxt "#31370"
+msgid "Switch profile"
+msgstr "Profil wechseln"
+
+msgctxt "#31371"
+msgid "Sorted by"
+msgstr "Sortiert nach"
+
+#: /1080i/Includes_Items.xml
+msgctxt "#31372"
+msgid "Options tray"
+msgstr "Options-Tray"
+
+#: /1080i/Includes_DialogInfo.xml
+msgctxt "#31373"
+msgid "from"
+msgstr "von"
+
+#: /1080i/SkinSettings.xml
+msgctxt "#31374"
+msgid "Reset skin settings to defaults"
+msgstr "Skin auf Standard zurücksetzen"
+
+msgctxt "#31375"
+msgid "Install zip"
+msgstr "ZIP Installieren"
+
+#: /1080i/SkinSettings.xml
+msgctxt "#31376"
+msgid "Reset discover search history"
+msgstr "Suchverlauf (Entdecken) löschen"
+
+#: /1080i/Includes_Shortcuts_Window.xml
+msgctxt "#31377"
+msgid "Next window"
+msgstr "Nächstes Fenster"
+
+msgctxt "#31378"
+msgid "Foreign"
+msgstr "Ausländisch"
+
+#: /1080i/Custom_1116_Dialog_Shortcuts.xml
+msgctxt "#31379"
+msgid "Edit categories"
+msgstr "Kategorien anpassen"
+
+msgctxt "#31380"
+msgid "Forecast"
+msgstr "Vorhersage"
+
+msgctxt "#31381"
+msgid "Returning"
+msgstr "Wiederkehrend"
+
+msgctxt "#31382"
+msgid "All items"
+msgstr "Alle Einträge"
+
+msgctxt "#31383"
+msgid "Production"
+msgstr "Produktion"
+
+#: /1080i/SkinSettings.xml
+msgctxt "#31384"
+msgid "Tray labels"
+msgstr "Tray-Labels"
+
+#: /1080i/SkinSettings.xml
+msgctxt "#31385"
+msgid "Secondary"
+msgstr "Sekundär"
+
+#: /1080i/SkinSettings.xml
+msgctxt "#31386"
+msgid "Primary"
+msgstr "Primär"
+
+#: /1080i/Includes_Labels.xml
+msgctxt "#31387"
+msgid "Contextual"
+msgstr "Kontextabhängig"
+
+#: /1080i/Custom_1116_Dialog_Shortcuts.xml
+msgctxt "#31388"
+msgid "Seed"
+msgstr "Auswahlquelle"
+
+#: /1080i/Custom_1116_Dialog_Shortcuts.xml
+msgctxt "#31389"
+msgid "Parent widget"
+msgstr "Übergeordnetes Widget"
+
+msgctxt "#31390"
+msgid "Release Year"
+msgstr "Erscheinungsjahr"
+
+#: /1080i/Includes_Labels.xml
+msgctxt "#31391"
+msgid "Minimal"
+msgstr "Minimal"
+
+#: /1080i/Includes_Labels.xml
+msgctxt "#31392"
+msgid "Explore Widgets"
+msgstr "Erkundungs-Widgets"
+
+#: /1080i/Includes_Items.xml Shorter label for use in info dialog buttons
+msgctxt "#31393"
+msgid "Trailer"
+msgstr "Trailer"
+
+#: /1080i/SkinSettings.xml
+msgctxt "#31394"
+msgid "Picture-in-picture video"
+msgstr "Bild-in-Bild-Video"
+
+#: /1080i/Custom_1180_Wizard.xml
+msgctxt "#31395"
+msgid "Choose prebuilt widget configuration"
+msgstr "Vorgefertigte Widget-Konfiguration auswählen"
+
+msgctxt "#31396"
+msgid "Recent Movies"
+msgstr "Neueste Filme"
+
+msgctxt "#31397"
+msgid "Recent Tv Shows"
+msgstr "Neueste Serien"
+
+msgctxt "#31398"
+msgid "New Movies"
+msgstr "Neue Filme"
+
+msgctxt "#31399"
+msgid "New TV Shows"
+msgstr "Neue Serien"
+
+msgctxt "#31400"
+msgid "New Episodes"
+msgstr "Neue Episoden"
+
+msgctxt "#31401"
+msgid "New Artists"
+msgstr "Neue Interpreten"
+
+msgctxt "#31402"
+msgid "New Albums"
+msgstr "Neue Alben"
+
+msgctxt "#31403"
+msgid "In-Progress TV Shows"
+msgstr "Angefangene Serien"
+
+msgctxt "#31404"
+msgid "In-Progress Movies"
+msgstr "Angefangene Filme"
+
+msgctxt "#31405"
+msgid "Top Albums"
+msgstr "Top-Alben"
+
+msgctxt "#31406"
+msgid "Top Rated Movies"
+msgstr "Höchstbewertete Filme"
+
+msgctxt "#31407"
+msgid "Top Rated TV Shows"
+msgstr "Höchstbewertete Serien"
+
+msgctxt "#31408"
+msgid "Random Movies"
+msgstr "Zufällige Filme"
+
+msgctxt "#31409"
+msgid "Random TV Shows"
+msgstr "Zufällige Serien"
+
+msgctxt "#31410"
+msgid "Random Episodes"
+msgstr "Zufällige Episoden"
+
+msgctxt "#31411"
+msgid "Random Songs"
+msgstr "Zufällige Songs"
+
+msgctxt "#31412"
+msgid "Random Albums"
+msgstr "Zufällige Alben"
+
+msgctxt "#31413"
+msgid "All Movies"
+msgstr "Alle Filme"
+
+msgctxt "#31414"
+msgid "All TV Shows"
+msgstr "Alle Serien"
+
+msgctxt "#31415"
+msgid "Movies and TV Shows"
+msgstr "Filme und Serien"
+
+#: /1080i/SkinSettings.xml
+msgctxt "#31416"
+msgid "Secondary button"
+msgstr "Sekundäre Schaltfläche"
+
+msgctxt "#31417"
+msgid "Random Artists"
+msgstr "Zufällige Interpreten"
+
+#: /1080i/Includes_Views_Row.xml
+msgctxt "#31418"
+msgid "Circle Row"
+msgstr "Reihe - Kreis"
+
+#: /1080i/Includes_Labels.xml
+msgctxt "#31419"
+msgid "Overview"
+msgstr "Übersicht"
+
+#: /1080i/SkinSettings.xml
+msgctxt "#31420"
+msgid "Apps"
+msgstr "Apps"
+
+msgctxt "#31421"
+msgid "Choose submenu list"
+msgstr "Untermenü-Liste wählen"
+
+#: /1080i/SkinSettings.xml
+msgctxt "#31422"
+msgid "Categories style"
+msgstr "Kategorie-Stil"
+
+#: /1080i/Includes_Labels.xml
+msgctxt "#31423"
+msgid "Card"
+msgstr "Karte"
+
+#: /1080i/Includes_Labels.xml
+msgctxt "#31424"
+msgid "Board"
+msgstr "Tafel"
+
+#: /1080i/Includes_Labels.xml
+msgctxt "#31425"
+msgid "Labels"
+msgstr "Labels"
+
+#: /1080i/Includes_Labels.xml
+msgctxt "#31426"
+msgid "Light dialogs"
+msgstr "Helle Dialoge"
+
+#: /1080i/Home.xml
+msgctxt "#31427"
+msgid "Initialising"
+msgstr "Initialisiere"
+
+#: /1080i/SkinSettings.xml
+msgctxt "#31428"
+msgid "Hide widget initialisation behind splash"
+msgstr "Widget-Initialisierung unter Startbild verbergen"
+
+#: /1080i/Includes_Items.xml
+msgctxt "#31429"
+msgid "Chapters"
+msgstr "Kapitel"
+
+#: /1080i/Includes_SkinSettings.xml
+msgctxt "#31430"
+msgid "Customise style"
+msgstr "Stil anpassen"
+
+#: /1080i/SkinSettings.xml /1080i/Includes_Views_Row.xml
+msgctxt "#31431"
+msgid "Circle"
+msgstr "Kreis"
+
+#: /1080i/Includes_Items.xml
+msgctxt "#31432"
+msgid "Adaptive"
+msgstr "Adaptiv"
+
+#: /1080i/SkinSettings.xml
+msgctxt "#31433"
+msgid "Additional tags"
+msgstr "Zusätzliche Tags"
+
+#: /1080i/SkinSettings.xml
+msgctxt "#31434"
+msgid "Video OSD"
+msgstr "Video-OSD"
+
+#: /1080i/SkinSettings.xml
+msgctxt "#31435"
+msgid "TMDbHelper lookups"
+msgstr "TMDbHelper-Aussehen"
+
+#: /1080i/SkinSettings.xml
+msgctxt "#31436"
+msgid "Cycle background extrafanart"
+msgstr "Zufällige Änderung des Hintergrunds für extra Fanart"
+
+msgctxt "#31437"
+msgid "Choose spotlight"
+msgstr "Rampenlicht-Widget auswählen"
+
+#: /1080i/Includes_Labels.xml
+msgctxt "#31438"
+msgid "Simple"
+msgstr "Einfach"
+
+#: /1080i/Includes_Items.xml
+msgctxt "#31439"
+msgid "Large"
+msgstr "Groß"
+
+#: /1080i/Includes_Items.xml
+msgctxt "#31440"
+msgid "Extra Large"
+msgstr "Extra Groß"
+
+#: /1080i/Includes_Items.xml
+msgctxt "#31441"
+msgid "FlixArt Size"
+msgstr "FlixArt-Größe"
+
+#: /1080i/Includes_Labels.xml
+msgctxt "#31442"
+msgid "Parent"
+msgstr "Übergeordnet"
+
+#: /1080i/Custom_1116_Dialog_Shortcuts.xml
+msgctxt "#31443"
+msgid "Open path in dialog"
+msgstr "Pfad im Dialog öffnen"
+
+#: /1080i/Settings.xml
+msgctxt "#31444"
+msgid "Customisation"
+msgstr "Personalisierung"
+
+#: /1080i/SkinSettings.xml
+msgctxt "#31445"
+msgid "Replace search with discover"
+msgstr "Ersetze Suche durch Entdecken"
+
+#: /1080i/SkinSettings.xml
+msgctxt "#31446"
+msgid "Bump"
+msgstr "Anstoßen"
+
+#: /1080i/Includes_Labels.xml
+msgctxt "#31447"
+msgid "Kodi logo"
+msgstr "Kodi-Logo"
+
+#: /1080i/SkinSettings.xml
+msgctxt "#31448"
+msgid "This category contains customisation options for"
+msgstr "Diese Kategorie enthält Anpassungsoptionen für"
+
+#: /1080i/Custom_1180_Wizard.xml
+msgctxt "#31449"
+msgid "Setup wizard"
+msgstr "Setup-Assistent"
+
+#: /1080i/Includes_Labels.xml
+msgctxt "#31450"
+msgid "Text only"
+msgstr "Nur Text"
+
+#: /1080i/Custom_1180_Wizard.xml
+msgctxt "#31451"
+msgid "Compound"
+msgstr "Verbunden"
+
+#: /1080i/Custom_1180_Wizard.xml
+msgctxt "#31452"
+msgid "Composite"
+msgstr "Zusammengesetzt"
+
+#: /1080i/Includes_Labels.xml
+msgctxt "#31453"
+msgid "Choose colour theme"
+msgstr "Farbschema auswählen"
+
+#: /1080i/Includes_Labels.xml
+msgctxt "#31454"
+msgid "Choose dialog style"
+msgstr "Dialog-Stil auswählen"
+
+#: /1080i/Includes_Labels.xml
+msgctxt "#31455"
+msgid "Choose layout style"
+msgstr "Layout-Stil auswählen"
+
+#: /1080i/Custom_1115_Dialog_WideSettings.xml
+msgctxt "#31456"
+msgid "Prebuilt"
+msgstr "Vorgefertigt"
+
+#: /1080i/SkinSettings.xml
+msgctxt "#31457"
+msgid "Scrollbar"
+msgstr "Scrollleiste"
+
+#: /1080i/Includes_Labels.xml
+msgctxt "#31458"
+msgid "Monochrome"
+msgstr "Monochrom"
+
+#: /1080i/Includes_Labels.xml
+msgctxt "#31459"
+msgid "Letter"
+msgstr "Buchstabe"
+
+#: /1080i/SkinSettings.xml /1080i/MusicOSD.xml
+msgctxt "#31460"
+msgid "Customise visualisation"
+msgstr "Visualisierung anpassen"
+
+#: /1080i/Includes_Items.xml
+msgctxt "#31461"
+msgid "Choose preset"
+msgstr "Wähle Voreinstellung"
+
+#: /1080i/Includes_Views_Wall.xml
+msgctxt "#31462"
+msgid "Wall Banner"
+msgstr "Wand - Banner"
+
+#: /1080i/Includes_Views.xml
+msgctxt "#31463"
+msgid "Filter and view options"
+msgstr "Filter- und Ansichtsoptionen"
+
+#: /1080i/Includes_Views.xml
+msgctxt "#31464"
+msgid "Filter and view options"
+msgstr "Filter- und Ansichtsoptionen"
+
+#: /1080i/Custom_1161_Dialog_Weather.xml
+msgctxt "#31465"
+msgid "Rain chance"
+msgstr "Regenwahrscheinlichkeit"
+
+#: /1080i/Includes_SkinSettings.xml
+msgctxt "#31466"
+msgid "Blur background"
+msgstr "Unscharfer Hintergrund"
+
+#: /1080i/Includes_Items.xml
+msgctxt "#31467"
+msgid "Tiles configuration"
+msgstr "Kacheln konfigurieren"
+
+#: /1080i/Includes_Items.xml
+msgctxt "#31468"
+msgid "Tile layout"
+msgstr "Kachel-Layout"
+
+#: /1080i/Includes_Items.xml
+msgctxt "#31469"
+msgid "Choose shortcut"
+msgstr "Verknüpfung wählen"
+
+#: /1080i/Custom_1161_Dialog_Weather.xml
+msgctxt "#31470"
+msgid "Wind gusts"
+msgstr "Windböen"
+
+#: /1080i/Custom_1161_Dialog_Weather.xml
+msgctxt "#31471"
+msgid "Fire danger"
+msgstr "Brandgefahr"
+
+#: /1080i/Custom_1161_Dialog_Weather.xml
+msgctxt "#31472"
+msgid "Rain since 9am"
+msgstr "Regen seit 9 Uhr morgens"
+
+#: /1080i/Custom_1161_Dialog_Weather.xml
+msgctxt "#31473"
+msgid "Radar"
+msgstr "Radar"
+
+#: /1080i/Includes_Labels.xml
+msgctxt "#31474"
+msgid "Each menu item has its own widget group."
+msgstr "Jeder Menü-Eintrag hat seine eigene Widget-Gruppe."
+
+#: /1080i/Includes_Labels.xml
+msgctxt "#31475"
+msgid "The spotlight is a special fullscreen widget designed to showcase one item at a time."
+msgstr "Das Rampenlicht ist ein speziell entworfenes Vollbild-Widget welches einen wechselnden Widget-Eintrag präsentiert."
+
+#: /1080i/SkinSettings.xml
+msgctxt "#31476"
+msgid "This category contains acknowledgements, contributions, and thanks."
+msgstr "Diese Kategorie enthält Danksagungen, Beiträge und Anerkennungen."
+
+#: /1080i/SkinSettings.xml /1080i/Includes_Items.xml
+msgctxt "#31477"
+msgid "Progress percentage"
+msgstr "Fortschritt in Prozent"
+
+#: /1080i/Includes_Labels.xml
+msgctxt "#31478"
+msgid "by"
+msgstr "von"
+
+#: /1080i/Includes_Views_List.xml
+msgctxt "#31479"
+msgid "List Media"
+msgstr "Liste - Medien"
+
+#: /1080i/Includes_Views_List.xml
+msgctxt "#31480"
+msgid "List Flixart"
+msgstr "Liste - FlixArt"
+
+#: /1080i/SkinSettings.xml
+msgctxt "#31481"
+msgid "Play trailers automatically"
+msgstr "Trailer automatisch abspielen"
+
+#: /1080i/SkinSettings.xml
+msgctxt "#31482"
+msgid "Trailers"
+msgstr "Trailer"
+
+#: /1080i/Custom_1123_Dialog_Trailer.xml
+msgctxt "#31483"
+msgid "Replay"
+msgstr "Wiederholung"
+
+#: /1080i/Includes_Labels.xml
+msgctxt "#31484"
+msgid "Pause"
+msgstr "Pause"
+
+#: /1080i/Custom_1123_Dialog_Trailer.xml
+msgctxt "#31485"
+msgid "Stop"
+msgstr "Stop"
+
+#: /1080i/Includes_Labels.xml
+msgctxt "#31486"
+msgid "Dialog"
+msgstr "Dialog"
+
+#: /1080i/SkinSettings.xml
+msgctxt "#31487"
+msgid "and"
+msgstr "und"
+
+#: /1080i/Includes_Labels.xml
+msgctxt "#31488"
+msgid "Category items appear as a horizontal menu at the top of the hub window."
+msgstr "Kategorie-Einträge erscheinen oben als horizontales Menü im Hubfenster."
+
+#: /1080i/Includes_Labels.xml
+msgctxt "#31489"
+msgid "Each category can define its own set of vertically stacked widgets OR use a submenu as a horizontal widget selector."
+msgstr "Jede Kategorie kann ihr eigenes Set vertikal gestapelter Widgets definieren ODER ein Untermenü als horizontalen Widget-Selektor verwenden."
+
+#: /1080i/Includes_Labels.xml
+msgctxt "#31490"
+msgid "Cancelled"
+msgstr "Abgesetzt"
+
+#: /1080i/SkinSettings.xml
+msgctxt "#31491"
+msgid "Miscellaneous"
+msgstr "Verschiedenes"
+
+#: /1080i/Includes_Actions.xml
+msgctxt "#31492"
+msgid "Add-ons hub"
+msgstr "Addons-Hub"
+
+#: /1080i/Includes_Labels.xml
+msgctxt "#31493"
+msgid "Ended"
+msgstr "Beendet"
+
+#: /1080i/Custom_1115_Dialog_Shortcuts.xml
+msgctxt "#31494"
+msgid "Rebuild"
+msgstr "Übernehmen"
+
+#: /1080i/Includes_Labels.xml
+msgctxt "#31495"
+msgid "Unlocked"
+msgstr "Entsperrt"
+
+#: /1080i/Includes_Items.xml
+msgctxt "#31496"
+msgid "Customise widgets"
+msgstr "Widgets anpassen"
+
+#: /1080i/SkinSettings.xml
+msgctxt "#31497"
+msgid "Minimise menu"
+msgstr "Menü minimieren"
+
+#: /1080i/Includes_Labels.xml
+msgctxt "#31498"
+msgid "Released"
+msgstr "Veröffentlicht"
+
+#: /1080i/Includes_Labels.xml
+msgctxt "#31499"
+msgid "In-Production"
+msgstr "In Produktion"
+
+#: /1080i/Includes_Search.xml
+msgctxt "#31500"
+msgid "There were no [LOWERCASE]$VAR[Label_SearchStyle][/LOWERCASE] results found for"
+msgstr "Beim [LOWERCASE]$VAR[Label_SearchStyle][/LOWERCASE] keine Ergebnisse gefunden für"
+
+#: /1080i/Includes_Search.xml
+msgctxt "#31501"
+msgid "Please try another search"
+msgstr "Versuche einen anderen Suchbegriff"
+
+#: /1080i/Includes_Labels.xml
+msgctxt "#31502"
+msgid "More Options"
+msgstr "Mehr Optionen"
+
+#: /1080i/DialogVideoVersion.xml
+msgctxt "#31503"
+msgid "Extras"
+msgstr "Extras"
+
+#: /1080i/Includes_Labels.xml
+msgctxt "#31504"
+msgid "Planned"
+msgstr "Geplant"
+
+#: /1080i/SkinSettings.xml
+msgctxt "#31505"
+msgid "Skin user login screen on startup"
+msgstr "Anmeldebildschirm beim Starten anzeigen"
+
+#: /1080i/SkinSettings.xml
+msgctxt "#31506"
+msgid "Individual skin user widget configurations"
+msgstr "Individuelle Benutzerkonfigurationen der Widgets"
+
+#: /1080i/SkinSettings.xml
+msgctxt "#31507"
+msgid "pseudo profiles"
+msgstr "Pseudo-Profile"
+
+#: /1080i/Custom_1195_SkinUserLoginScreen.xml
+msgctxt "#31508"
+msgid "Loading skin user profiles"
+msgstr "Lade Benutzerprofile des Skins"
+
+#: /1080i/SkinSettings.xml
+msgctxt "#31509"
+msgid "Holiday"
+msgstr "Feiertage"
+
+#: /1080i/SkinSettings.xml
+msgctxt "#31510"
+msgid "Holiday themes"
+msgstr "Feiertagsthemen"
+
+#: /1080i/Custom_1115_Dialog_Shortcuts.xml
+msgctxt "#31511"
+msgid "Shortcut"
+msgstr "Verknüpfung"
+
+#: /1080i/Includes_Labels.xml
+msgctxt "#31512"
+msgid "Classic mode"
+msgstr "Klassischer Modus"
+
+#: /1080i/Includes_Labels.xml
+msgctxt "#31513"
+msgid "Side Menu Icons"
+msgstr "Seitenmenü-Icons"
+
+#: /1080i/Includes_Labels.xml
+msgctxt "#31514"
+msgid "Global Widgets"
+msgstr "Globale Widgets"
+
+#: /1080i/Includes_Labels.xml
+msgctxt "#31515"
+msgid "Main Items"
+msgstr "Haupteinträge"
+
+#: /1080i/Custom_1115_Dialog_Shortcuts.xml
+msgctxt "#31516"
+msgid "Edit items"
+msgstr "Einträge anpassen"
+
+#: /1080i/Custom_1115_Dialog_Shortcuts.xml
+msgctxt "#31517"
+msgid "Reverse order"
+msgstr "Sortierrichtung umdrehen"
+
+#: /1080i/Custom_1115_Dialog_Shortcuts.xml
+msgctxt "#31518"
+msgid "Highlight type"
+msgstr "Highlight-Typ"
+
+#: /1080i/Includes_SkinSettings.xml
+msgctxt "#31519"
+msgid "Empty widget placeholder"
+msgstr "Platzhalter für leeres Widget"
+
+#: /1080i/Includes_Weather_Radar.xml
+msgctxt "#31520"
+msgid "Cloudiness"
+msgstr "Bewölkung"
+
+#: /1080i/Custom_1115_Dialog_Shortcuts.xml
+msgctxt "#31521"
+msgid "Edit global widgets"
+msgstr "Globale Widgets anpassen"
+
+#: /1080i/Includes_SkinSettings.xml
+msgctxt "#31522"
+msgid "Hiding empty widgets may cause positioning issues after video playback."
+msgstr "Das Ausblenden leerer Widgets kann nach der Videowiedergabe zu Positionierungsproblemen führen."
+
+#: /1080i/Includes_SkinSettings.xml
+msgctxt "#31523"
+msgid "It is recommended to delete any unused widgets from your configuration instead of hiding them."
+msgstr "Es wird empfohlen, nicht verwendete Widgets aus Ihrer Konfiguration zu löschen, anstatt sie auszublenden."
+
+#: /1080i/Includes_SkinSettings.xml
+msgctxt "#31524"
+msgid "There is also an overhead refresh cost to performance associated with hiding empty widgets."
+msgstr "Das Ausblenden von leeren Widgets ist mit einem Mehraufwand für die Leistung verbunden."
+
+#: /1080i/Includes_Weather_Radar.xml
+msgctxt "#31525"
+msgid "Visibility"
+msgstr "Sichtbarkeit"
+
+#: /1080i/Includes_Weather_Forecast.xml
+msgctxt "#31526"
+msgid "Hour"
+msgstr "Stunde"
+
+#: /1080i/Includes_Weather_Forecast.xml
+msgctxt "#31527"
+msgid "Later"
+msgstr "Später"
+
+#: /1080i/Includes_Weather_Forecast.xml
+msgctxt "#31528"
+msgid "Particulate"
+msgstr "Feinstaub"
+
+#: /1080i/Includes_Weather_Forecast.xml
+msgctxt "#31529"
+msgid "Ozone"
+msgstr "Ozon"
+
+#: /1080i/Includes_Weather_Forecast.xml
+msgctxt "#31530"
+msgid "Solar radiation"
+msgstr "Sonneneinstrahlung"
+
+#: /1080i/Includes_Weather_Forecast.xml
+msgctxt "#31531"
+msgid "Carbon monoxide"
+msgstr "Kohlenmonoxid"
+
+#: /1080i/Includes_Weather.xml
+msgctxt "#31532"
+msgid "Charts"
+msgstr "Diagramme"
+
+#: /1080i/Custom_1115_Dialog_Shortcuts.xml
+msgctxt "#31533"
+msgid "Add list"
+msgstr "Liste hinzufügen"
+
+#: /1080i/Custom_1115_Dialog_Shortcuts.xml
+msgctxt "#31534"
+msgid "Del list"
+msgstr "Liste löschen"
+
+#: /1080i/Custom_1115_Dialog_Shortcuts.xml
+msgctxt "#31535"
+msgid "Restore"
+msgstr "Wiederherstellung"
+
+#: /1080i/Custom_1115_Dialog_Shortcuts.xml
+msgctxt "#31536"
+msgid "Choose fallback image folder"
+msgstr "Ordner mit Fallback-Bildern wählen"
+
+#: /1080i/Custom_1115_Dialog_Shortcuts.xml
+msgctxt "#31537"
+msgid "Edit submenu items"
+msgstr "Untermenü-Einträge anpassen"
+
+#: /1080i/Includes_SkinSettings.xml
+msgctxt "#31538"
+msgid "Customise viewtypes"
+msgstr "Ansichtstypen anpassen"
+
+#: /1080i/Includes_Items.xml
+msgctxt "#31539"
+msgid "Use online gallery"
+msgstr "Online-Galerie verwenden"
+
+#: /1080i/Includes_Items.xml
+msgctxt "#31540"
+msgid "Use online collection"
+msgstr "Online-Sammlung verwenden"
+
+#: /1080i/Includes_Labels.xml
+msgctxt "#31541"
+msgid "Next episode"
+msgstr "Nächste Episode"
+
+#: /1080i/Includes_Labels.xml
+msgctxt "#31542"
+msgid "Last episode"
+msgstr "Letzte Episode"
+
+#: /1080i/Includes_Labels.xml
+msgctxt "#31543"
+msgid "Anticipated"
+msgstr "Erwartet"
+
+#: /1080i/Includes_Labels.xml
+msgctxt "#31544"
+msgid "Airing"
+msgstr "Ausstrahlung"
+
+#: /1080i/Includes_Labels.xml
+msgctxt "#31545"
+msgid "Premiering"
+msgstr "Uraufführung"
+
+#: /1080i/Includes_Labels.xml
+msgctxt "#31546"
+msgid "TBC"
+msgstr "Unbestätigt"
+
+#: /1080i/Includes_Labels.xml
+msgctxt "#31547"
+msgid "Yesterday"
+msgstr "Gestern"
+
+#: /1080i/Includes_Items.xml
+msgctxt "#31548"
+msgid "Use detailed status"
+msgstr "Detaillierten Status verwenden"
+
+#: /1080i/Custom_1115_Dialog_Shortcuts_Window.xml
+msgctxt "#31549"
+msgid "Choose which hub window to use as the home screen."
+msgstr "Wähle das Hub-Fenster, das als Startbildschirm verwendet werden soll."
+
+#: /1080i/SkinSettings.xml
+msgctxt "#31550"
+msgid "Change the visibility level of skin settings."
+msgstr "Sichtbarkeitsstufe der Skin-Einstellungen ändern."
+
+#: /1080i/Custom_1115_Dialog_Shortcuts_Window.xml
+msgctxt "#31551"
+msgid "Use as home"
+msgstr "Als Startseite nutzen"
+
+#: /1080i/Includes_SkinSettings.xml
+msgctxt "#31552"
+msgid "Settings level"
+msgstr "Einstellungsebene"
+
+#: /1080i/Custom_1175_Dialog_Discover.xml
+msgctxt "#31553"
+msgid "Query"
+msgstr "Suchanfrage"
+
+#: /1080i/SkinSettings.xml
+msgctxt "#31554"
+msgid "Wall Poster"
+msgstr "Wand - Poster"
+
+#: /1080i/Includes_Views_Wall.xml
+msgctxt "#31555"
+msgid "Wall Landscape"
+msgstr "Wand - Landschaft"
+
+#: /1080i/Includes_Views_Wall.xml
+msgctxt "#31556"
+msgid "Wall Square"
+msgstr "Wand - Quadratisch"
+
+#: /1080i/Includes_Views_Wall.xml
+msgctxt "#31557"
+msgid "Wall Circle"
+msgstr "Wand - Kreis"
+
+#: /1080i/Includes_Actions.xml
+msgctxt "#31558"
+msgid "Signpost"
+msgstr "Wegweiser"
+
+#: /1080i/Includes_Views_List.xml
+msgctxt "#31559"
+msgid "List Details"
+msgstr "Liste - Details"
+
+#: /1080i/Includes_Items.xml
+msgctxt "#31560"
+msgid "Bright White"
+msgstr "Helles Weiß"
+
+#: /1080i/Includes_Views_Wall.xml
+msgctxt "#31561"
+msgid "Wall Overview"
+msgstr "Übersicht - Wand"
+
+#: /1080i/Includes_Views_Row.xml
+msgctxt "#31562"
+msgid "Overview Row"
+msgstr "Übersicht - Reihe"
+
+#: /1080i/Includes_Views_Row.xml
+msgctxt "#31563"
+msgid "Card Row"
+msgstr "Reihe - Karten"
+
+#: /1080i/Includes_SkinSettings.xml
+msgctxt "#31564"
+msgid "General appearance and widget layout customisations."
+msgstr "Allgemeine Anpassungen des Aussehens und des Widget-Layouts."
+
+#: /1080i/Includes_SkinSettings.xml
+msgctxt "#31565"
+msgid "Detailed adjustments and additional hub customisations."
+msgstr "Detaillierte Anpassungen und zusätzliche Hub-Anpassungen."
+
+#: /1080i/Includes_SkinSettings.xml
+msgctxt "#31566"
+msgid "Development tools and experimental options."
+msgstr "Entwicklungswerkzeuge und experimentelle Optionen."
+
+#: /1080i/Custom_1116_Dialog_Shortcuts.xml
+msgctxt "#31567"
+msgid "Add a single item or a list of several items?"
+msgstr "Ein einzelnes Element oder eine Liste mit mehreren Elementen hinzufügen?"
+
+#: /1080i/Custom_1116_Dialog_Shortcuts.xml
+msgctxt "#31568"
+msgid "Add new item(s)"
+msgstr "Neue(s) Element(e) hinzufügen"
+
+#: /1080i/Custom_1116_Dialog_Shortcuts.xml
+msgctxt "#31569"
+msgid "Add item"
+msgstr "Element hinzufügen"
+
+#: /1080i/Custom_1116_Dialog_Shortcuts.xml
+msgctxt "#31570"
+msgid "Delete item(s)"
+msgstr "Element(e) löschen"
+
+#: /1080i/Custom_1116_Dialog_Shortcuts.xml
+msgctxt "#31571"
+msgid "Delete a single item or a list of several items?"
+msgstr "Ein einzelnes Element oder eine Liste mit mehreren Elementen löschen?"
+
+#: /1080i/Custom_1116_Dialog_Shortcuts.xml
+msgctxt "#31572"
+msgid "Delete item"
+msgstr "Element löschen"
+
+#: /1080i/Custom_1116_Dialog_Shortcuts.xml
+msgctxt "#31573"
+msgid "Delete list"
+msgstr "Liste löschen"
+
+#: /1080i/Custom_1115_Dialog_Shortcuts_Window.xml
+msgctxt "#31574"
+msgid "Unhide hubs"
+msgstr "Hubs einblenden"
+
+#: /1080i/Custom_1115_Dialog_Shortcuts_Window.xml
+msgctxt "#31575"
+msgid "Click to toggle hub window customisation options."
+msgstr "Klicke hier, um die Optionen zur Anpassung des Hub-Fensters zu aktivieren."
+
+#: /1080i/Includes_SkinSettings.xml
+msgctxt "#31576"
+msgid "Seekbar delayed pause time"
+msgstr "Seekbar verzögerte Pausenzeit"
+
+#: /1080i/Includes_SkinSettings.xml
+msgctxt "#31577"
+msgid "Expanded info on OSD controls"
+msgstr "Erweiterte Informationen über OSD-Steuerungen"
+
+#: /1080i/Includes_SkinSettings.xml
+msgctxt "#31578"
+msgid "Expanded info landscape art"
+msgstr "Erweiterte Informationen zur Landschaftsdarstellung"
+
+#: /1080i/Includes_ButtonMenu.xml
+msgctxt "#31579"
+msgid "Prev"
+msgstr "Zurück"
+
+#: /1080i/Includes_Views_List.xml
+msgctxt "#31580"
+msgid "Combined List"
+msgstr "Kombinierte Liste"
+
+#: /1080i/Includes_Views_List.xml
+msgctxt "#31581"
+msgid "List Expanded"
+msgstr "Liste - Erweitert"
+
+#: /1080i/Includes_Views_List.xml
+msgctxt "#31582"
+msgid "List Information"
+msgstr "Informationen auflisten"
+
+#: /1080i/Custom_1116_Dialog_Shortcuts.xml
+msgctxt "#31583"
+msgid "Prevent reload"
+msgstr "Neuladen verhindern"
+
+#: /1080i/Custom_1116_Dialog_Shortcuts.xml
+msgctxt "#31584"
+msgid "Edit background"
+msgstr "Hintergrund bearbeiten"
+
+#: /1080i/Includes_Items.xml
+msgctxt "#31585"
+msgid "Overlay"
+msgstr "Überlagerung"
+
+#: /1080i/Includes_SkinSettings.xml
+msgctxt "#31586"
+msgid "Customise shortcuts"
+msgstr "Verknüpfungen anpassen"
+
+#: /1080i/Includes_Labels.xml
+msgctxt "#31587"
+msgid "Flip"
+msgstr "Umdrehen"
+
+#: /1080i/Includes_Info.xml
+msgctxt "#31588"
+msgid "Updating ratings"
+msgstr "Aktualisiere Bewertungen"
+
+#: /1080i/Includes_DialogManage.xml
+msgctxt "#31589"
+msgid "Apply new settings"
+msgstr "Neue Einstellungen anwenden"
+
+#: /1080i/Includes_DialogManage.xml
+msgctxt "#31590"
+msgid "Changes made to settings have not been applied."
+msgstr "Die Änderungen an den Einstellungen wurden nicht übernommen."
+
+#: /1080i/Includes_DialogManage.xml
+msgctxt "#31591"
+msgid "Pressing back again closes the dialog without applying changes."
+msgstr "Durch erneutes Drücken von Zurück wird das Dialogfeld geschlossen, ohne dass die Änderungen übernommen werden."
+
+#: /1080i/Includes_Dialogs.xml
+msgctxt "#31592"
+msgid "Options menu"
+msgstr "Optionsmenü"
+
+#: /1080i/Includes_DialogManage.xml
+msgctxt "#31593"
+msgid "Apply your changes?"
+msgstr "Änderungen übernehmen?"
+
+#: /1080i/Includes_OSD.xml
+msgctxt "#31594"
+msgid "Press down"
+msgstr "Nach unten drücken"
+
+#: /1080i/Includes_OSD.xml
+msgctxt "#31595"
+msgid "Press right"
+msgstr "Nach rechts drücken"
+
+#: /1080i/Includes_SkinSettings.xml
+msgctxt "#31596"
+msgid "Additional icons"
+msgstr "Zusätzliche Symbole"
+
+msgctxt "#32000"
+msgid "Display mode"
+msgstr "Bildauflösung"
+
+msgctxt "#32001"
+msgid "Video mode"
+msgstr "Videoauflösung"
+
+msgctxt "#32002"
+msgid "Color space"
+msgstr "Farbbereich"
+
+msgctxt "#32003"
+msgid "Mb/s"
+msgstr "Mb/s"
+
+msgctxt "#32004"
+msgid "Bit depth"
+msgstr "Bittiefe"
+
+msgctxt "#32005"
+msgid "Decoder"
+msgstr "Decoder"
+
+msgctxt "#32006"
+msgid "VS10 engine"
+msgstr "VS10-Engine"
+
+msgctxt "#32007"
+msgid "More"
+msgstr "Mehr"
+
+msgctxt "#32008"
+msgid "Video queue"
+msgstr "Video Queue"
+
+msgctxt "#32009"
+msgid "Video queue data"
+msgstr "Video Queue-Daten"
+
+msgctxt "#32010"
+msgid "Audio queue"
+msgstr "Audio Queue"
+
+msgctxt "#32011"
+msgid "Audio queue data"
+msgstr "Audio Queue-Daten"
+
+msgctxt "#32012"
+msgid "Kb/s"
+msgstr "Kb/s"
+
+msgctxt "#32013"
+msgid "Playback time"
+msgstr "Wiedergabezeit"
+
+msgctxt "#32014"
+msgid "Processor"
+msgstr "Prozessor"
+
+msgctxt "#32015"
+msgid "Metadata"
+msgstr "Metadaten"
+
+msgctxt "#32016"
+msgid "Profile"
+msgstr "Profil"
+
+msgctxt "#32017"
+msgid "Level"
+msgstr "Level"
+
+msgctxt "#32018"
+msgid "RPU"
+msgstr "RPU"
+
+msgctxt "#32019"
+msgid "Base Layer"
+msgstr "Base Layer"
+
+msgctxt "#32020"
+msgid "Enhancement Layer"
+msgstr "Enhancement Layer"
+
+msgctxt "#32021"
+msgid "Enhancement Layer Type"
+msgstr "Enhancement Layer Typ"
+
+msgctxt "#32022"
+msgid "Metadata"
+msgstr "Metadaten"
+
+msgctxt "#32023"
+msgid "Pixel format"
+msgstr "Pixelformat"
+
+msgctxt "#32024"
+msgid "Aspect ratio"
+msgstr "Verhältnis"
+
+msgctxt "#32025"
+msgid "HDR10 MDL"
+msgstr "HDR10 MDL"
+
+msgctxt "#32026"
+msgid "HDR10 MaxCLL/FALL"
+msgstr "HDR10 MaxCLL/FALL"
+
+msgctxt "#32027"
+msgid "Media source"
+msgstr "Medienquelle"
+
+msgctxt "#32028"
+msgid "Unknown"
+msgstr "Unbekannt"
+
+msgctxt "#32029"
+msgid "On"
+msgstr "An"
+
+msgctxt "#32030"
+msgid "Off"
+msgstr "Aus"
+
+msgctxt "#32031"
+msgid "Deinterlacing"
+msgstr "Verfahren"
+
+msgctxt "#32032"
+msgid "Player cache"
+msgstr "Player Cache"
+
+msgctxt "#32033"
+msgid "N/A"
+msgstr "Nicht verfügbar"
+
+msgctxt "#32034"
+msgid "Memory usage"
+msgstr "Arbeitsspeicher"
+
+msgctxt "#32035"
+msgid "Passthrough"
+msgstr "Passthrough"
+
+msgctxt "#32036"
+msgid "AML FPS"
+msgstr "AML FPS"
+
+msgctxt "#32037"
+msgid "DV Configuration"
+msgstr "DV Konfiguration"
+
+msgctxt "#32038"
+msgid "DV Levels Metadata"
+msgstr "DV-Ebenen Metadaten"
+
+msgctxt "#32039"
+msgid "HDR Static Metadata"
+msgstr "Statische HDR-Metadaten"
+
+msgctxt "#32040"
+msgid "cd/m²"
+msgstr "cd/m²"
+
+msgctxt "#32041"
+msgid "RPU MDL"
+msgstr "RPU MDL"
+
+msgctxt "#32042"
+msgid "RPU MaxCLL/FALL"
+msgstr "RPU MaxCLL/FALL"
+
+msgctxt "#32043"
+msgid "FLL MIN / MAX / Ø"
+msgstr "FLL MIN / MAX / Ø"
+
+msgctxt "#32044"
+msgid "PQ  MIN / MAX / Ø"
+msgstr "PQ  MIN / MAX / Ø"
+
+msgctxt "#32045"
+msgid "12-bit"
+msgstr "12-bit"
+
+msgctxt "#32046"
+msgid "Codec"
+msgstr "Codec"
+
+msgctxt "#32047"
+msgid "Bitrate"
+msgstr "Bitrate"
+
+msgctxt "#32048"
+msgid "VS10 status"
+msgstr "VS10-Status"
+
+msgctxt "#32051"
+msgid "Input"
+msgstr "Eingang"
+
+msgctxt "#32052"
+msgid "Audio language"
+msgstr "Audiosprache"
+
+msgctxt "#32053"
+msgid "Subtitle language"
+msgstr "Untertitelsprache"
+
+msgctxt "#32054"
+msgid "Video"
+msgstr "Video"
+
+msgctxt "#32055"
+msgid "Output"
+msgstr "Ausgang"
+
+msgctxt "#32056"
+msgid "Audio"
+msgstr "Ton"
+
+msgctxt "#32057"
+msgid "Top left"
+msgstr "Oben links"
+
+msgctxt "#32058"
+msgid "Top center"
+msgstr "Oben mittig"
+
+msgctxt "#32059"
+msgid "Top right"
+msgstr "Oben rechts"
+
+msgctxt "#32060"
+msgid "Position of the codec logos in the OSD"
+msgstr "Position der Codec-Logos im OSD"
+
+msgctxt "#32061"
+msgid "Position of the codec logos in the PlayerProcessInfo"
+msgstr "Position der Codec-Logos im PlayerProcessInfo"
+
+msgctxt "#32062"
+msgid "Position of the codec logos when video starts"
+msgstr "Position der Codec-Logos beim Start des Videos"
+
+msgctxt "#32063"
+msgid "Position of codec logos"
+msgstr "Position der Codec-Logos"
+
+msgctxt "#32064"
+msgid "Original"
+msgstr "Original"
+
+msgctxt "#32065"
+msgid "VS10"
+msgstr "VS10"
+
+msgctxt "#32066"
+msgid "Audio codec"
+msgstr "Audiocodec"
+
+msgctxt "#32067"
+msgid "L5 Active Offsets"
+msgstr "L5 Aktive Offsets"
+
+msgctxt "#32068"
+msgid "Version"
+msgstr "Version"
+
+msgctxt "#32069"
+msgid "Bit depth"
+msgstr "Bittiefe"
+
+msgctxt "#32070"
+msgid "EOTF & Gamut"
+msgstr "EOTF & Gamut"
+
+msgctxt "#32071"
+msgid "Duration of the codec logos when video starts"
+msgstr "Dauer der Codec-Logos beim Start des Videos"
+
+msgctxt "#32072"
+msgid "Time for codec logos"
+msgstr "Zeit für Codec-Logos"
+
+msgctxt "#32073"
+msgid "PlayerProcessInfo"
+msgstr "PlayerProcessInfo"
+
+msgctxt "#32074"
+msgid "PlayerProcessInfo mode"
+msgstr "PlayerProcessInfo-Modus"
+
+msgctxt "#32075"
+msgid "second"
+msgstr "Sekunde"
+
+msgctxt "#32076"
+msgid "Show file name in PlayerProcessInfo"
+msgstr "Dateinamen in PlayerProcessInfo anzeigen"
+
+msgctxt "#32077"
+msgid "Modern"
+msgstr "Modern"
+
+msgctxt "#32078"
+msgid "Classic"
+msgstr "Klassisch"
+
+msgctxt "#32079"
+msgid "Original"
+msgstr "Original"
+
+msgctxt "#32080"
+msgid "Optional"
+msgstr "Optional"
+
+msgctxt "#32081"
+msgid "Show file name and path in the version selection"
+msgstr "Dateiname und Pfad in der Versionsauswahl anzeigen"
+
+msgctxt "#32082"
+msgid "Customise video osd"
+msgstr "Video-OSD anpassen"
+
+msgctxt "#32083"
+msgid "Customise video info"
+msgstr "Videoinformation anpassen"
+
+msgctxt "#32084"
+msgid "Show two-row information bar"
+msgstr "Zweizeilige Informationsleiste anzeigen"
+
+msgctxt "#32085"
+msgid "DiscArt"
+msgstr "Disk-Art"
+
+msgctxt "#32086"
+msgid "Rotating disc"
+msgstr "Drehende Disk"
+
+msgctxt "#32087"
+msgid "Decoding"
+msgstr "Dekodierung"
+
+msgctxt "#32088"
+msgid "System"
+msgstr "System"

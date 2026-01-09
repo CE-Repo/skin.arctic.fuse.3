@@ -26,35 +26,35 @@
                             <content>
                                 <item id="0" description="Shortcuts">
                                     <label>$LOCALIZE[111]</label>
-                                    <label2>$LOCALIZE[31448] [LOWERCASE]$LOCALIZE[31103], $LOCALIZE[31177], $LOCALIZE[31487] $LOCALIZE[31150][/LOWERCASE].</label2>
+                                    <label2>$LOCALIZE[31448] $LOCALIZE[31103], $LOCALIZE[31177], $LOCALIZE[31487] $LOCALIZE[31150].</label2>
                                 </item>
                                 <item id="1" description="Appearance">
                                     <label>$LOCALIZE[480]</label>
-                                    <label2>$LOCALIZE[31448] [LOWERCASE]$LOCALIZE[14078], $LOCALIZE[33068], $LOCALIZE[31487] $LOCALIZE[31486][/LOWERCASE].</label2>
+                                    <label2>$LOCALIZE[31448] $LOCALIZE[14078], $LOCALIZE[33068], $LOCALIZE[31487] $LOCALIZE[31486].</label2>
                                 </item>
                                 <item id="2" description="Interface">
                                     <label>$LOCALIZE[14206]</label>
-                                    <label2>$LOCALIZE[31448] [LOWERCASE]$LOCALIZE[19033] $LOCALIZE[736], $LOCALIZE[31208], $LOCALIZE[31487] $LOCALIZE[31239][/LOWERCASE].</label2>
+                                    <label2>$LOCALIZE[31448] $LOCALIZE[19033] $LOCALIZE[736], $LOCALIZE[31208], $LOCALIZE[31487] $LOCALIZE[31239].</label2>
                                 </item>
                                 <item id="3" description="Details">
                                     <label>$LOCALIZE[33029]</label>
-                                    <label2>$LOCALIZE[31448] [LOWERCASE]$LOCALIZE[19033] $LOCALIZE[20459], $LOCALIZE[126], $LOCALIZE[31202], $LOCALIZE[31487] $LOCALIZE[31235][/LOWERCASE].</label2>
+                                    <label2>$LOCALIZE[31448] $LOCALIZE[19033] $LOCALIZE[20459], $LOCALIZE[126], $LOCALIZE[31202], $LOCALIZE[31487] $LOCALIZE[31235].</label2>
                                 </item>
                                 <item id="4" description="Layout">
                                     <label>$LOCALIZE[31158]</label>
-                                    <label2>$LOCALIZE[31448] [LOWERCASE]$LOCALIZE[31044], $LOCALIZE[31487] $LOCALIZE[31103][/LOWERCASE].</label2>
+                                    <label2>$LOCALIZE[31448] $LOCALIZE[31044], $LOCALIZE[31487] $LOCALIZE[31103].</label2>
                                 </item>
                                 <item id="5" description="Behaviour">
                                     <label>$LOCALIZE[31186]</label>
-                                    <label2>$LOCALIZE[31448] [LOWERCASE]$LOCALIZE[31174], $LOCALIZE[31185], $LOCALIZE[478], $LOCALIZE[31297], $LOCALIZE[31487] $LOCALIZE[31482][/LOWERCASE].</label2>
+                                    <label2>$LOCALIZE[31448] $LOCALIZE[31174], $LOCALIZE[31185], $LOCALIZE[478], $LOCALIZE[31297], $LOCALIZE[31487] $LOCALIZE[31482].</label2>
                                 </item>
                                 <item id="6" description="Other">
                                     <label>$LOCALIZE[29921]</label>
-                                    <label2>$LOCALIZE[31448] [LOWERCASE]$LOCALIZE[14125], $LOCALIZE[12999], $LOCALIZE[31487] $LOCALIZE[13200][/LOWERCASE].</label2>
+                                    <label2>$LOCALIZE[31448] $LOCALIZE[14125], $LOCALIZE[12999], $LOCALIZE[31487] $LOCALIZE[13200].</label2>
                                 </item>
                                 <item id="7" description="Dependencies">
                                     <label>$LOCALIZE[39024]</label>
-                                    <label2>$LOCALIZE[31448] [LOWERCASE]$LOCALIZE[39024] $LOCALIZE[31487] $LOCALIZE[14260][/LOWERCASE].</label2>
+                                    <label2>$LOCALIZE[31448] $LOCALIZE[39024] $LOCALIZE[31487] $LOCALIZE[14260].</label2>
                                 </item>
                                 <item id="8" description="Thanks">
                                     <label>$VAR[Label_SkinSettings_Level]</label>
