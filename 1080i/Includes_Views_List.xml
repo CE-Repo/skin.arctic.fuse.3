@@ -2,11 +2,11 @@
 <includes>
 
     <!-- Basic List -->
-    <include name="View_550_Basic_List">
+    <include name="View_506_Basic_List">
         <include content="View_MediaList_Include">
-            <param name="id">550</param>
+            <param name="id">506</param>
             <param name="viewtype_label">$LOCALIZE[31120]</param>
-            <param name="visible">$EXP[Exp_View_550]</param>
+            <param name="visible">$EXP[Exp_View_506]</param>
             <param name="right">1168</param>
             <param name="top">130</param>
             <param name="item_height">85</param>
@@ -18,11 +18,11 @@
     </include>
 
     <!-- Media List -->
-    <include name="View_551_Media_List">
+    <include name="View_507_Media_List">
         <include content="View_MediaList_Include" condition="Window.IsVisible(videos)">
-            <param name="id">551</param>
+            <param name="id">507</param>
             <param name="viewtype_label">$LOCALIZE[31479]</param>
-            <param name="visible">$EXP[Exp_View_551]</param>
+            <param name="visible">$EXP[Exp_View_507]</param>
             <param name="left">0</param>
             <param name="right">510</param>
             <param name="top">130</param>
@@ -33,9 +33,9 @@
             <include>View_Media_Poster</include>
         </include>
         <include content="View_MediaList_Include" condition="!Window.IsVisible(videos)">
-            <param name="id">551</param>
+            <param name="id">507</param>
             <param name="viewtype_label">$LOCALIZE[31479]</param>
-            <param name="visible">$EXP[Exp_View_551]</param>
+            <param name="visible">$EXP[Exp_View_507]</param>
             <param name="left">0</param>
             <param name="right">692</param>
             <param name="top">130</param>
@@ -48,11 +48,11 @@
     </include>
 
     <!-- Expanded List -->
-    <include name="View_552_Expanded_List">
+    <include name="View_508_Expanded_List">
         <include content="View_MediaList_Include" condition="Window.IsVisible(videos)">
-            <param name="id">552</param>
+            <param name="id">508</param>
             <param name="viewtype_label">$LOCALIZE[31581]</param>
-            <param name="visible">$EXP[Exp_View_552]</param>
+            <param name="visible">$EXP[Exp_View_508]</param>
             <param name="left">-40</param>
             <param name="right">470</param>
             <param name="top">130</param>
@@ -67,9 +67,9 @@
             <include>View_Media_Poster</include>
         </include>
         <include content="View_MediaList_Include" condition="!Window.IsVisible(videos)">
-            <param name="id">552</param>
+            <param name="id">508</param>
             <param name="viewtype_label">$LOCALIZE[31581]</param>
-            <param name="visible">$EXP[Exp_View_552]</param>
+            <param name="visible">$EXP[Exp_View_508]</param>
             <param name="left">-40</param>
             <param name="right">652</param>
             <param name="top">150</param>
@@ -86,11 +86,11 @@
     </include>
 
     <!-- FlixArt List -->
-    <include name="View_553_Flixart_List">
+    <include name="View_509_Flixart_List">
         <include content="View_MediaList_Include">
-            <param name="id">553</param>
+            <param name="id">509</param>
             <param name="viewtype_label">$LOCALIZE[31480]</param>
-            <param name="visible">$EXP[Exp_View_553]</param>
+            <param name="visible">$EXP[Exp_View_509]</param>
             <param name="right">704</param>
             <param name="top">400</param>
             <param name="focusposition">1</param>

@@ -5,20 +5,16 @@ VIEWS: 	STANDARD
 3		Circle
 4		Board
 5 		Special
+6  		Basic
+7 		Media
+8		Expanded
+9		Flixart
 
 VIEWS: 	ADVANCED
-50X		Rows
-51X		Walls
+50X		Rows|Lists	(one dimensional views)
+51X		Walls 		(two dimensional views)
 52X		Combined Control List
 53X		Combined Content List
-54X		Lists
-
-VIEWS:	LISTS
-550		Basic
-551		Media
-552		Expanded
-553		FlixArt
-
 
 
 WIDGETS / HOME

@@ -164,8 +164,9 @@
         <definition>
             <onback condition="$PARAM[enable] + ![$PARAM[onback] | Container($PARAM[id]).ListItem.IsParentFolder] + $EXP[Exp_Navigation_OnPrevious]">$PARAM[backid]</onback>
             <onback condition="$PARAM[enable] + ![$PARAM[onback] | Container($PARAM[id]).ListItem.IsParentFolder] + $EXP[Exp_Navigation_OnPrevious]">SetFocus($PARAM[id],0,absolute)</onback>
+            <onback condition="$PARAM[enable] + ![![$PARAM[onback] | Container($PARAM[id]).ListItem.IsParentFolder] + $EXP[Exp_Navigation_OnPrevious]]">$PARAM[menuid]</onback>
             <onback condition="$PARAM[enable] + $PARAM[always]">SetFocus($PARAM[id],0,absolute)</onback>
-            <onback condition="$PARAM[enable] + $PARAM[always]">SetFocus(50)</onback>
+            <onback condition="$PARAM[enable] + $PARAM[always]">SetFocus(500)</onback>
         </definition>
     </include>
 

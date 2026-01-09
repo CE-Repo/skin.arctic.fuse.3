@@ -34,8 +34,12 @@
         <value condition="String.IsEmpty(Window.Property(SpecialFolderPath)) + !String.IsEmpty(Container(524).ListItem.FolderPath) + Container(524).ListItem.IsFolder">$INFO[Container(524).ListItem.FolderPath]</value>
         <value condition="!String.IsEmpty(Window.Property(SpecialFolderPath))">$INFO[Window.Property(SpecialFolderPath)]</value>
     </variable>
-    <variable name="View_535_Content">
-        <value condition="String.IsEmpty(Window.Property(SpecialFolderPath)) + !String.IsEmpty(Container(525).ListItem.FolderPath) + Container(525).ListItem.IsFolder">$INFO[Container(525).ListItem.FolderPath]</value>
+    <variable name="View_536_Content">
+        <value condition="String.IsEmpty(Window.Property(SpecialFolderPath)) + !String.IsEmpty(Container(526).ListItem.FolderPath) + Container(526).ListItem.IsFolder">$INFO[Container(526).ListItem.FolderPath]</value>
+        <value condition="!String.IsEmpty(Window.Property(SpecialFolderPath))">$INFO[Window.Property(SpecialFolderPath)]</value>
+    </variable>
+    <variable name="View_538_Content">
+        <value condition="String.IsEmpty(Window.Property(SpecialFolderPath)) + !String.IsEmpty(Container(528).ListItem.FolderPath) + Container(528).ListItem.IsFolder">$INFO[Container(528).ListItem.FolderPath]</value>
         <value condition="!String.IsEmpty(Window.Property(SpecialFolderPath))">$INFO[Window.Property(SpecialFolderPath)]</value>
     </variable>
 
@@ -74,6 +78,7 @@
                             <param name="onback">[Integer.IsEqual(Container(53$PARAM[id]).CurrentItem,1)]</param>
                             <param name="always">True</param>
                             <param name="backid">63</param>
+                            <param name="menuid">63</param>
                         </include>
 
                         <include content="Object_HitRect">
@@ -117,28 +122,47 @@
         </definition>
     </include>
 
-    <include name="View_Combined_List_Horz_Selector_Content">
-        <include content="Action_View_Movement_OnBack">
-            <param name="id">52$PARAM[id]</param>
-            <param name="onback">[Integer.IsEqual(Container(52$PARAM[id]).CurrentItem,1)]</param>
-            <param name="backid">63</param>
-            <param name="menuid">300</param>
-        </include>
+    <include name="View_Combined_List_Horz_Selector_Movement">
         <include content="Action_View_Movement_OnUp">
             <param name="id">52$PARAM[id]</param>
         </include>
+        <ondown>53$PARAM[id]</ondown>
         <onleft>52$PARAM[id]</onleft>
         <onright>52$PARAM[id]</onright>
-        <left>40</left>
-        <ondown>53$PARAM[id]</ondown>
-        <centertop>0</centertop>
-        <height>80</height>
-        <onfocus>ClearProperty(TMDbHelper.WidgetContainer)</onfocus>
-        <onfocus>ClearProperty(SpecialFolderPath)</onfocus>
-        <onfocus>ClearProperty(Background.ShowOverlay,Home)</onfocus>
-        <onfocus>ClearProperty(InfoPanel.FullSwitch,Home)</onfocus>
-        <visible>$PARAM[visible]</visible>
-        <viewtype label="$PARAM[viewtype_label]">wrap</viewtype>
+    </include>
+
+    <include name="View_Combined_List_Vert_Selector_Movement">
+        <onup>SetFocus(53$PARAM[id],99999,absolute)</onup>
+        <ondown>SetFocus(53$PARAM[id],0,absolute)</ondown>
+        <onleft>52$PARAM[id]</onleft>
+        <onright>52$PARAM[id]</onright>
+    </include>
+
+    <include name="View_Combined_List_Horz_Selector_Content">
+        <param name="overlay">false</param>
+        <param name="include_movement">View_Combined_List_Horz_Selector_Movement</param>
+        <definition>
+            <include content="Action_View_Movement_OnBack">
+                <param name="id">52$PARAM[id]</param>
+                <param name="onback">[Integer.IsEqual(Container(52$PARAM[id]).CurrentItem,1)]</param>
+                <param name="backid">63</param>
+                <param name="menuid">300</param>
+            </include>
+            <include content="$PARAM[include_movement]">
+                <param name="id">$PARAM[id]</param>
+            </include>
+            <left>40</left>
+            <centertop>0</centertop>
+            <height>80</height>
+            <onfocus>ClearProperty(TMDbHelper.WidgetContainer)</onfocus>
+            <onfocus>ClearProperty(SpecialFolderPath)</onfocus>
+            <onfocus condition="![$PARAM[overlay]]">ClearProperty(Background.ShowOverlay,Home)</onfocus>
+            <onfocus condition="$PARAM[overlay]">SetProperty(Background.ShowOverlay,True,Home)</onfocus>
+            <onfocus condition="![$PARAM[overlay]]">ClearProperty(InfoPanel.FullSwitch,Home)</onfocus>
+            <onfocus condition="$PARAM[overlay]">SetProperty(InfoPanel.FullSwitch,List,Home)</onfocus>
+            <visible>$PARAM[visible]</visible>
+            <viewtype label="$PARAM[viewtype_label]">wrap</viewtype>
+        </definition>
     </include>
 
     <include name="View_Combined_List_Horz">
@@ -156,6 +180,8 @@
                     <param name="id">$PARAM[id]</param>
                     <param name="visible">$PARAM[visible]</param>
                     <param name="viewtype_label">$PARAM[viewtype_label]</param>
+                    <param name="include_movement">$PARAM[include_movement]</param>
+                    <param name="overlay">$PARAM[overlay]</param>
                 </include>
             </include>
         </control>
@@ -263,6 +289,7 @@
                         <viewtype label="$PARAM[viewtype_label]">list</viewtype>
                         <onfocus>ClearProperty(TMDbHelper.WidgetContainer)</onfocus>
                         <onfocus>SetProperty(Background.ShowOverlay,True,Home)</onfocus>
+                        <onfocus>SetProperty(InfoPanel.FullSwitch,List,Home)</onfocus>
                     </include>
                 </control>
 
@@ -274,67 +301,82 @@
                         <bottom>-45</bottom>
                         <left>40</left>
                         <right>-100</right>
-
-                        <include content="List_DialogSelect">
-                            <param name="id">53$PARAM[id]</param>
-                            <param name="textcolor">main_fg</param>
-                            <param name="control">fixedlist</param>
-                            <param name="itemlayout_include">Layout_MediaList_Detailed</param>
+                        <include content="View_ComboList_Expanded">
+                            <param name="id">$PARAM[id]</param>
                             <param name="variation">-8</param>
-
                             <param name="item_height">225</param>
                             <param name="misc">284.44</param>
                             <param name="diffuse">diffuse/medialist_expanded_combined.png</param>
-
-                            <!-- <param name="item_height">205</param>
-                            <param name="misc">311</param> -->
-
-                            <include content="Action_View_Movement_OnBack">
-                                <param name="id">53$PARAM[id]</param>
-                                <param name="onback">[Integer.IsEqual(Container(53$PARAM[id]).CurrentItem,1)]</param>
-                                <param name="backid">63</param>
-                                <param name="always">true</param>
-                            </include>
-
-                            <animation type="Conditional" reversible="false" condition="Container(53$PARAM[id]).IsUpdating">
-                                <effect type="fade" start="100" end="0" time="200" delay="600" />
-                            </animation>
-
-                            <content target="$VAR[Path_CollectionNode_Target]" sortby="$VAR[View_Combined_SortBy]" sortorder="ascending">$VAR[View_53$PARAM[id]_Content]</content>
-
                             <onleft>52$PARAM[id]</onleft>
-                            <onright>64</onright>
-
-                            <focusposition>1</focusposition>
-                            <movement>1</movement>
-                            <pagecontrol>64</pagecontrol>
-
-                            <onfocus>ClearProperty(TMDbHelper.WidgetContainer)</onfocus>
-                            <onfocus>SetProperty(Background.ShowOverlay,True,Home)</onfocus>
+                            <onfocus>SetProperty(InfoPanel.FullSwitch,List,Home)</onfocus>
                         </include>
+                    </control>
 
+                    <control type="grouplist">
+                        <top>-10</top>
+                        <left>20</left>
+                        <orientation>vertical</orientation>
 
-                        <control type="grouplist">
-                            <top>-10</top>
-                            <left>20</left>
-                            <orientation>vertical</orientation>
+                        <animation type="Conditional" reversible="false" condition="Container(53$PARAM[id]).IsUpdating">
+                            <effect type="fade" start="0" end="100" time="200" delay="600" />
+                        </animation>
+                        <animation type="Conditional" reversible="false" condition="!Container(53$PARAM[id]).IsUpdating">
+                            <effect type="fade" start="100" end="0" time="0" delay="0" />
+                        </animation>
 
-                            <animation type="Conditional" reversible="false" condition="Container(53$PARAM[id]).IsUpdating">
-                                <effect type="fade" start="0" end="100" time="200" delay="600" />
-                            </animation>
-                            <animation type="Conditional" reversible="false" condition="!Container(53$PARAM[id]).IsUpdating">
-                                <effect type="fade" start="100" end="0" time="0" delay="0" />
-                            </animation>
+                        <itemgap>20</itemgap>
 
-                            <itemgap>20</itemgap>
-
-                            <include>View_ComboList_Loading_Item</include>
-                            <include>View_ComboList_Loading_Item</include>
-                            <include>View_ComboList_Loading_Item</include>
-                        </control>
+                        <include>View_ComboList_Loading_Item</include>
+                        <include>View_ComboList_Loading_Item</include>
+                        <include>View_ComboList_Loading_Item</include>
                     </control>
                 </control>
+
+
+
             </control>
+        </definition>
+    </include>
+
+    <include name="View_ComboList_Expanded">
+        <param name="control">fixedlist</param>
+        <param name="itemlayout_include">Layout_MediaList_Detailed</param>
+        <param name="movement">1</param>
+        <definition>
+            <include content="List_DialogSelect">
+                <param name="id">53$PARAM[id]</param>
+                <param name="textcolor">main_fg</param>
+                <param name="control">$PARAM[control]</param>
+                <param name="itemlayout_include">$PARAM[itemlayout_include]</param>
+                <param name="variation">$PARAM[variation]</param>
+                <param name="item_height">$PARAM[item_height]</param>
+                <param name="misc">$PARAM[misc]</param>
+                <param name="diffuse">$PARAM[diffuse]</param>
+
+                <include content="Action_View_Movement_OnBack">
+                    <param name="id">53$PARAM[id]</param>
+                    <param name="onback">[Integer.IsEqual(Container(53$PARAM[id]).CurrentItem,1)]</param>
+                    <param name="backid">63</param>
+                    <param name="menuid">63</param>
+                    <param name="always">true</param>
+                </include>
+
+                <animation type="Conditional" reversible="false" condition="Container(53$PARAM[id]).IsUpdating">
+                    <effect type="fade" start="100" end="0" time="200" delay="600" />
+                </animation>
+
+                <content target="$VAR[Path_CollectionNode_Target]" sortby="$VAR[View_Combined_SortBy]" sortorder="ascending">$VAR[View_53$PARAM[id]_Content]</content>
+
+                <nested />
+
+                <focusposition>1</focusposition>
+                <movement>$PARAM[movement]</movement>
+                <pagecontrol>64</pagecontrol>
+                <onright>64</onright>
+
+                <onfocus>ClearProperty(TMDbHelper.WidgetContainer)</onfocus>
+                <onfocus>SetProperty(Background.ShowOverlay,True,Home)</onfocus>
+            </include>
         </definition>
     </include>
 
@@ -379,13 +421,68 @@
     </include>
 
     <!-- Combined List -->
-    <include name="View_525_List_Combined">
+    <include name="View_526_List_Combined">
         <include content="View_ComboList_Include">
             <param name="id">5</param>
             <param name="viewtype_label">$LOCALIZE[31580]</param>
-            <param name="visible">$EXP[Exp_View_525]</param>
+            <param name="visible">$EXP[Exp_View_526]</param>
         </include>
     </include>
+
+    <!-- Combined List -->
+    <include name="View_528_List_Combined">
+        <control type="group">
+            <left>20</left>
+            <right>490</right>
+            <top>310</top>
+            <bottom>140</bottom>
+            <visible>Control.IsVisible(528)</visible>
+            <include content="View_ComboList_Expanded">
+                <param name="id">8</param>
+                <param name="item_height">205</param>
+                <param name="misc">248.88</param>
+                <param name="diffuse">diffuse/landscape_w237_h133.png</param>
+                <onup>528</onup>
+                <ondown>SetFocus(538,0,absolute)</ondown>
+                <ondown>528</ondown>
+                <onfocus>SetProperty(InfoPanel.FullSwitch,List,Home)</onfocus>
+            </include>
+        </control>
+        <control type="group">
+            <bottom>180</bottom>
+            <right>80</right>
+            <include>View_Media_Poster</include>
+            <visible>Control.IsVisible(528)</visible>
+        </control>
+    </include>
+    <!-- <include name="View_528_List_Combined">
+        <control type="group">
+            <left>20</left>
+            <right>1168</right>
+            <top>310</top>
+            <bottom>140</bottom>
+            <visible>Control.IsVisible(528)</visible>
+            <include content="View_ComboList_Expanded">
+                <param name="id">8</param>
+                <param name="item_height">85</param>
+                <param name="itemlayout_include">Layout_MediaList</param>
+                <param name="movement">5</param>
+                <onup>528</onup>
+                <ondown>SetFocus(538,0,absolute)</ondown>
+                <ondown>528</ondown>
+
+                <left>40</left>
+                <bottom>40</bottom>
+                <right>20</right>
+            </include>
+        </control>
+        <control type="group">
+            <bottom>180</bottom>
+            <right>80</right>
+            <include>View_Media_Landscape</include>
+            <visible>Control.IsVisible(528)</visible>
+        </control>
+    </include> -->
 
     <include name="View_Combined_Row_Horz_Selector">
         <control type="group">
@@ -420,6 +517,26 @@
                     <param name="id">4</param>
                     <param name="viewtype_label">$LOCALIZE[31006]</param>
                     <param name="visible">$EXP[Exp_View_524]</param>
+                </include>
+            </control>
+        </control>
+    </include>
+
+    <include name="View_Combined_List_Horz_Selector">
+        <control type="group">
+            <top>260</top>
+            <height>40</height>
+            <control type="group">
+                <left>view_pad</left>
+                <include>Info_Viewline_Divider</include>
+            </control>
+            <control type="group">
+                <include content="View_Combined_List_Horz" condition="$EXP[Exp_View_528_Include]">
+                    <param name="id">8</param>
+                    <param name="viewtype_label">$LOCALIZE[31021]</param>
+                    <param name="visible">$EXP[Exp_View_528]</param>
+                    <param name="include_movement">View_Combined_List_Vert_Selector_Movement</param>
+                    <param name="overlay">true</param>
                 </include>
             </control>
         </control>
