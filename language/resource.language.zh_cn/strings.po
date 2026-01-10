@@ -855,7 +855,7 @@ msgstr "页脚"
 #: /1080i/Custom_1115_Dialog_ColourPresets.xml
 msgctxt "#31240"
 msgid "Tropical"
-msgstr "热带色系"
+msgstr "热带色"
 
 #: /1080i/SkinSettings.xml
 msgctxt "#31241"
@@ -1473,7 +1473,7 @@ msgstr "行：圆形"
 #: /1080i/Includes_Labels.xml
 msgctxt "#31419"
 msgid "Overview"
-msgstr "概览"
+msgstr "概要"
 
 #: /1080i/SkinSettings.xml
 msgctxt "#31420"
@@ -2073,7 +2073,7 @@ msgstr "混合：列表"
 #: /1080i/Includes_Views_List.xml
 msgctxt "#31581"
 msgid "List Expanded"
-msgstr "列表（展开）"
+msgstr "列表：展开"
 
 #: /1080i/Custom_1116_Dialog_Shortcuts.xml
 msgctxt "#31583"
@@ -2093,12 +2093,12 @@ msgstr "自定义快捷方式"
 #: /1080i/Includes_OSD.xml
 msgctxt "#31594"
 msgid "Press down"
-msgstr "按下方向下键"
+msgstr "按 下键"
 
 #: /1080i/Includes_OSD.xml
 msgctxt "#31595"
 msgid "Press right"
-msgstr "按下方向右键"
+msgstr "按 右键"
 
 #: /1080i/Includes_SkinSettings.xml
 msgctxt "#31596"
