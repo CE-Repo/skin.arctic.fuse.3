@@ -2497,7 +2497,7 @@ msgstr "Das Ausblenden leerer Widgets kann nach der Videowiedergabe zu Positioni
 #: /1080i/Includes_SkinSettings.xml
 msgctxt "#31523"
 msgid "It is recommended to delete any unused widgets from your configuration instead of hiding them."
-msgstr "Es wird empfohlen, nicht verwendete Widgets aus Ihrer Konfiguration zu löschen, anstatt sie auszublenden."
+msgstr "Es wird empfohlen, nicht verwendete Widgets aus der Konfiguration zu löschen, anstatt sie auszublenden."
 
 #: /1080i/Includes_SkinSettings.xml
 msgctxt "#31524"
