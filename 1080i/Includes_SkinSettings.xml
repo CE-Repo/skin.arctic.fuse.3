@@ -405,6 +405,17 @@
             <onclick>SetProperty(CustomDialogSettingsTitle,$LOCALIZE[31185],Home)</onclick>
             <onclick>ActivateWindow(1118)</onclick>
         </include>
+        <include content="Settings_Button" description="More item">
+            <param name="dialog">false</param>
+            <param name="window">skinsettings</param>
+            <param name="baseid">$PARAM[baseid]</param>
+            <param name="id">031</param>
+            <param name="dialog">false</param>
+            <param name="control">radiobutton</param>
+            <label>$LOCALIZE[31036]</label>
+            <onclick>Skin.ToggleSetting(Widgets.EnableShowMore)</onclick>
+            <selected>Skin.HasSetting(Widgets.EnableShowMore)</selected>
+        </include>
 
         <include content="Settings_Label" description="Navigation">
             <param name="window">skinsettings</param>
