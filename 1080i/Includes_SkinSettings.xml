@@ -594,6 +594,36 @@
             <visible>$EXP[Exp_TMDbHelper_IsData]</visible>
         </include>
 
+        <include content="Settings_Label" description="Context">
+            <param name="window">skinsettings</param>
+            <param name="baseid">$PARAM[baseid]</param>
+            <param name="id">010</param>
+            <label>$LOCALIZE[10106]</label>
+        </include>
+
+        <include content="Settings_Button" description="Tray Buttons">
+            <param name="dialog">false</param>
+            <param name="window">skinsettings</param>
+            <param name="baseid">$PARAM[baseid]</param>
+            <param name="id">011</param>
+            <param name="control">radiobutton</param>
+            <label>$LOCALIZE[31372]</label>
+            <onclick>Skin.ToggleSetting(ContextMenu.DisableOptionsTray)</onclick>
+            <selected>!Skin.HasSetting(ContextMenu.DisableOptionsTray)</selected>
+        </include>
+
+        <include content="Settings_Button" description="Artwork">
+            <param name="dialog">false</param>
+            <param name="window">skinsettings</param>
+            <param name="baseid">$PARAM[baseid]</param>
+            <param name="id">012</param>
+            <param name="control">radiobutton</param>
+            <label>$LOCALIZE[39123]</label>
+            <onclick>Skin.ToggleSetting(ContextMenu.DisableArtwork)</onclick>
+            <selected>!Skin.HasSetting(ContextMenu.DisableArtwork)</selected>
+            <visible>$EXP[Exp_TMDbHelper_IsData]</visible>
+        </include>
+
     </include>
 
     <!-- Other -->
