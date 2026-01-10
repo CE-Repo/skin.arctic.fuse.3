@@ -653,11 +653,22 @@
             <selected>Skin.HasSetting(HolidayMode.Australia)</selected>
             <visible>Skin.HasSetting(EnableHolidayTheme)</visible>
         </include>
-        <include content="Settings_Button" description="Holiday Theme: Additional Icons">
+        <include content="Settings_Button" description="Holiday Theme: Halloween">
             <param name="dialog">false</param>
             <param name="window">skinsettings</param>
             <param name="baseid">$PARAM[baseid]</param>
             <param name="id">014</param>
+            <param name="control">radiobutton</param>
+            <label>Halloween</label>
+            <onclick>Skin.ToggleSetting(HolidayMode.Halloween)</onclick>
+            <selected>Skin.HasSetting(HolidayMode.Halloween)</selected>
+            <visible>Skin.HasSetting(EnableHolidayTheme)</visible>
+        </include>
+        <include content="Settings_Button" description="Holiday Theme: Additional Icons">
+            <param name="dialog">false</param>
+            <param name="window">skinsettings</param>
+            <param name="baseid">$PARAM[baseid]</param>
+            <param name="id">015</param>
             <param name="control">radiobutton</param>
             <label>$LOCALIZE[31596]</label>
             <onclick>Skin.ToggleSetting(Disable.HolidayTheme.AdditionalIcons)</onclick>

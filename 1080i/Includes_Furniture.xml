@@ -19,6 +19,7 @@
         </control>
     </include>
     <include name="Furniture_Header_Right">
+        <visible>!Skin.HasSetting(osd.userightCodecLogos)</visible>
         <control type="group">
             <right>0</right>
             <width>720</width>
