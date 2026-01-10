@@ -388,12 +388,12 @@ msgstr "Das Voreingestellt-Icon stellt verschiedene Widget- und Menü-Sets zur I
 #: /1080i/Includes_Labels.xml
 msgctxt "#31079"
 msgid "Using this option will override parts of your existing configuration."
-msgstr "Diese Option überschreibt Teile deiner aktuellen Konfiguration."
+msgstr "Diese Option überschreibt Teile der aktuellen Konfiguration."
 
 #: /1080i/Includes_Labels.xml
 msgctxt "#31080"
 msgid "Rebuilding forces Skin Variables to generate the skin XML files for your current configuration."
-msgstr "Eine Neuerstellung erzwingt die Erzeugung der XML-Dateien des Skins für deine aktuelle Konfiguration."
+msgstr "Eine Neuerstellung erzwingt die Erzeugung der XML-Dateien des Skins für die aktuelle Konfiguration."
 
 #: /1080i/Includes_Labels.xml
 msgctxt "#31081"
@@ -1718,7 +1718,7 @@ msgstr "Es wird kein Support angeboten. Die Verwendung erfolgt auf eigene Gefahr
 #: /1080i/SkinSettings.xml
 msgctxt "#31361"
 msgid "Do NOT report issues while this setting is enabled."
-msgstr "Melden Sie KEINE Probleme, wenn diese Einstellung aktiviert ist."
+msgstr "Keine Probleme melden, wenn diese Einstellung aktiviert ist."
 
 #: /1080i/Includes_Items.xml
 msgctxt "#31362"
