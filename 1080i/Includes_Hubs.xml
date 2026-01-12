@@ -428,7 +428,7 @@
                         <param name="image">$VAR[Image_FullscreenWidget_InfoButton]</param>
                         <param name="size">60</param>
                         <param name="bordersize">0</param>
-                        <param name="left">80</param>
+                        <param name="left">120</param>
                         <onclick>SetFocus(301)</onclick>
                         <onclick>$VAR[Action_FullscreenWidget_InfoButton]</onclick>
                         <onclick>SetFocus(312)</onclick>
