@@ -1393,12 +1393,12 @@
                     </control>
 
                     <!-- Star Rating -->
-                    <include content="Info_Line_StarRating">
+                    <include content="Info_Line_StarRating" condition="!Skin.HasSetting(InfoTags.DisableStarRating)">
                         <param name="colordiffuse">$PARAM[colordiffuse]</param>
                         <param name="rating">$PARAM[container]$PARAM[infolabel_rating]</param>
                         <param name="visible">!String.IsEmpty($PARAM[container]$PARAM[infolabel_rating]) + String.IsEmpty($PARAM[container]$PARAM[infolabel_userrating])</param>
                     </include>
-                    <include content="Info_Line_StarRating">
+                    <include content="Info_Line_StarRating" condition="!Skin.HasSetting(InfoTags.DisableStarRating)">
                         <param name="colordiffuse">$PARAM[colordiffuse]</param>
                         <param name="rating">$PARAM[container]$PARAM[infolabel_userrating]</param>
                         <param name="visible">!String.IsEmpty($PARAM[container]$PARAM[infolabel_userrating])</param>
