@@ -62,9 +62,8 @@
                     <top>290</top>
                     <bottom>-40</bottom>
                     <onup>601</onup>
-
+                    <include>Hub_Grouplist_OnLeftRight</include>
                     <onback condition="$EXP[Exp_Navigation_OnParent]">SetFocus($PARAM[id],0,absolute)</onback>
-
                     <include content="Action_Widget_OnBack">
                         <param name="id">$PARAM[id]</param>
                         <param name="grouplistid">500</param>
@@ -110,6 +109,7 @@
                     <param name="grouplistid">500</param>
                     <param name="refocus">SetFocus(601)</param>
                 </include>
+                <include>Hub_Grouplist_OnLeftRight</include>
                 <ondown>ActivateWindow(1180)</ondown>
                 <onfocus>SetProperty(TMDbHelper.WidgetContainer,$PARAM[id])</onfocus>
                 <onfocus>ClearProperty(Background.ShowOverlay,Home)</onfocus>
@@ -165,7 +165,10 @@
                     <centertop>0</centertop>
                     <height>80</height>
                     <left>40</left>
-                    <content><include>$PARAM[include_content]</include></content>
+                    <include>Hub_Grouplist_OnLeftRight</include>
+                    <content>
+                        <include>$PARAM[include_content]</include>
+                    </content>
                 </include>
             </control>
         </definition>
@@ -225,18 +228,19 @@
         </control>
     </include>
 
+    <include name="Hub_Grouplist_OnLeftRight">
+        <onleft condition="!Integer.IsEqual(Container(800).NumItems,0)">SetProperty(QuickJump,Disable)</onleft>
+        <onleft condition="!Integer.IsEqual(Container(800).NumItems,0)">SetFocus(800)</onleft>
+        <onright condition="!Integer.IsEqual(Container(800).NumItems,0)">SetProperty(Bumper.Direction,Right,Home)</onright>
+        <onright condition="!Integer.IsEqual(Container(800).NumItems,0)">ActivateWindow(1180)</onright>
+    </include>
+
     <include name="Hub_Widgets_Grouplist">
         <control type="grouplist" id="602">
             <animation effect="slide" start="0" end="0,-440" condition="true">Conditional</animation>
             <onup>302</onup>
             <ondown>ActivateWindow(1180)</ondown>
-            <onleft condition="!Integer.IsEqual(Container(800).NumItems,0)">SetProperty(QuickJump,Disable)</onleft>
-            <onleft condition="!Integer.IsEqual(Container(800).NumItems,0)">SetFocus(800)</onleft>
-            <!-- <onright condition="!Integer.IsEqual(Container(800).NumItems,0)">SetProperty(QuickJump,Disable)</onright>
-            <onright condition="!Integer.IsEqual(Container(800).NumItems,0)">SetFocus($INFO[Window.Property(TMDBHelper.WidgetContainer)],0,absolute)</onright>
-            <onright condition="!Integer.IsEqual(Container(800).NumItems,0)">SetFocus(800)</onright> -->
-            <onright condition="!Integer.IsEqual(Container(800).NumItems,0)">SetProperty(Bumper.Direction,Right,Home)</onright>
-            <onright condition="!Integer.IsEqual(Container(800).NumItems,0)">ActivateWindow(1180)</onright>
+            <include>Hub_Grouplist_OnLeftRight</include>
             <orientation>vertical</orientation>
             <control type="group" id="599">
                 <height>widget_tbump_h_detailed</height>
@@ -684,6 +688,17 @@
         </definition>
     </include>
 
+    <include name="Hub_SideMenu_QuickJump">
+        <control type="button">
+            <onfocus condition="!String.IsEqual(Window.Property(QuickJump),ListItem.Property(quickjump)) + !String.IsEqual(Window.Property(QuickJump),Disable)">$INFO[ListItem.Property(quickjump)]</onfocus>
+            <onfocus condition="!String.IsEqual(Window.Property(QuickJump),ListItem.Property(quickjump))">SetProperty(QuickJump,$INFO[ListItem.Property(quickjump)])</onfocus>
+            <onfocus condition="!String.IsEqual(Window.Property(QuickJump),ListItem.Property(quickjump)) + !String.IsEqual(Window.Property(QuickJump),Disable)">SetFocus(800)</onfocus>
+            <texturenofocus />
+            <texturefocus />
+            <animation effect="fade" time="50" start="0" end="0">Focus</animation>
+        </control>
+    </include>
+
     <include name="Hub_SideMenu">
         <control type="group">
 
@@ -723,14 +738,14 @@
                 <height>500</height>
                 <left>-60</left>
 
-                <!-- <onback>304</onback> -->
                 <onback>500</onback>
                 <onback>SetFocus($INFO[Window.Property(TMDBHelper.WidgetContainer)])</onback>
 
                 <onleft>SetProperty(Bumper.Direction,Left,Home)</onleft>
                 <onleft>ActivateWindow(1180)</onleft>
-                <!-- <onleft>SetFocus($INFO[Window.Property(TMDBHelper.WidgetContainer)],99999,absolute)</onleft> -->
-                <onright>SetFocus($INFO[Window.Property(TMDBHelper.WidgetContainer)],0,absolute)</onright>
+
+                <onright condition="![String.IsEqual(Skin.String(HomeSwitcher.$PARAM[window].Mode),Wall) | String.IsEqual(Skin.String(HomeSwitcher.$PARAM[window].Mode),Combined)]">SetFocus($INFO[Window.Property(TMDBHelper.WidgetContainer)],0,absolute)</onright>
+                <onright condition="[String.IsEqual(Skin.String(HomeSwitcher.$PARAM[window].Mode),Wall) | String.IsEqual(Skin.String(HomeSwitcher.$PARAM[window].Mode),Combined)]">400</onright>
 
                 <scrolltime tween="quadratic">400</scrolltime>
 
@@ -746,14 +761,7 @@
                 </itemlayout>
 
                 <focusedlayout width="120" height="100">
-                    <control type="button">
-                        <onfocus condition="!String.IsEqual(Window.Property(QuickJump),ListItem.Property(quickjump)) + !String.IsEqual(Window.Property(QuickJump),Disable)">$INFO[ListItem.Property(quickjump)]</onfocus>
-                        <onfocus condition="!String.IsEqual(Window.Property(QuickJump),ListItem.Property(quickjump))">SetProperty(QuickJump,$INFO[ListItem.Property(quickjump)])</onfocus>
-                        <onfocus condition="!String.IsEqual(Window.Property(QuickJump),ListItem.Property(quickjump)) + !String.IsEqual(Window.Property(QuickJump),Disable)">SetFocus(800)</onfocus>
-                        <texturenofocus />
-                        <texturefocus />
-                        <animation effect="fade" time="50" start="0" end="0">Focus</animation>
-                    </control>
+                    <include condition="!String.IsEqual(Skin.String(HomeSwitcher.$PARAM[window].Mode),Wall) + !String.IsEqual(Skin.String(HomeSwitcher.$PARAM[window].Mode),Combined)">Hub_SideMenu_QuickJump</include>
                     <control type="group">
                         <left>20</left>
                         <control type="group">
