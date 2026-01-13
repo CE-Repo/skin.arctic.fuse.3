@@ -126,7 +126,8 @@
                 <right>40</right>
 
                 <include content="Object_Control" condition="!Skin.HasSetting(View.UseDetailedListLabels)">
-                    <param name="control">textbox</param>
+                    <param name="control">label</param>
+                    <wrapmultiline>true</wrapmultiline>
                     <top>6</top>
                     <height>67</height>
                     <aligny>top</aligny>

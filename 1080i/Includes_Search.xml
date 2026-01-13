@@ -101,7 +101,8 @@
                     <include>skinvariables-searchwidgets-info</include>
                 </control>
 
-                <control type="textbox">
+                <control type="label">
+                    <wrapmultiline>true</wrapmultiline>
                     <font>font_main_plot</font>
                     <label>$VAR[Label_Search_NoResults]</label>
                     <align>left</align>
