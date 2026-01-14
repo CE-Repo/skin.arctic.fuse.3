@@ -2490,6 +2490,10 @@ msgctxt "#32071"
 msgid "- Duration"
 msgstr ""
 
+msgctxt "#32072"
+msgid "- Show path"
+msgstr ""
+
 msgctxt "#32073"
 msgid "PlayerProcessInfo"
 msgstr ""
@@ -2523,7 +2527,7 @@ msgid "Optional"
 msgstr ""
 
 msgctxt "#32081"
-msgid "Show file name and path in the version selection"
+msgid "Show file name in the version selection"
 msgstr ""
 
 msgctxt "#32082"

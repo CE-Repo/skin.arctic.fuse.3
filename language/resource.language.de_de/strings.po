@@ -2481,8 +2481,8 @@ msgid "- Duration"
 msgstr "- Dauer"
 
 msgctxt "#32072"
-msgid "Time for codec logos"
-msgstr "Zeit für Codec-Logos"
+msgid "- Show path"
+msgstr "- Pfad anzeigen"
 
 msgctxt "#32073"
 msgid "PlayerProcessInfo"
@@ -2517,8 +2517,8 @@ msgid "Optional"
 msgstr "Optional"
 
 msgctxt "#32081"
-msgid "Show file name and path in the version selection"
-msgstr "Dateiname und Pfad in der Versionsauswahl anzeigen"
+msgid "Show file name in the version selection"
+msgstr "Dateiname in der Versionsauswahl anzeigen"
 
 msgctxt "#32082"
 msgid "Customise video osd"
