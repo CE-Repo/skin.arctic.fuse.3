@@ -240,6 +240,29 @@
         </definition>
     </include>
 
+    <include name="Part_ChartButton">
+        <param name="id">90001</param>
+        <param name="groupid">90101</param>
+        <param name="onclick">Close</param>
+        <param name="icon">special://skin/extras/icons/chart-simple.png</param>
+        <definition>
+            <control type="group">
+                <centerright>60</centerright>
+                <centertop>50%</centertop>
+                <height>80</height>
+                <width>80</width>
+                <include content="OSD_Button_Icon_Overlay">
+                    <param name="icon">$PARAM[icon]</param>
+                    <param name="id">$PARAM[id]</param>
+                    <param name="groupid">$PARAM[groupid]</param>
+                    <param name="itemgap">80</param>
+                    <param name="itemgap_mod"> </param>
+                    <param name="icon_colordiffuse">dialog_fg_90</param>
+                </include>
+            </control>
+        </definition>
+    </include>
+
     <include name="Part_Scrollbar">
         <param name="id">61</param>
         <param name="showonepage">false</param>
