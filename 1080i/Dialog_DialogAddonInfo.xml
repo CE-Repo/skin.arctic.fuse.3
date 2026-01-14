@@ -3,6 +3,9 @@
     <include name="DialogAddonInfo">
         <definition>
             <include content="Object_Hidden_Button">
+                <param name="id">7</param>
+            </include>
+            <include content="Object_Hidden_Button">
                 <param name="id">7000</param>
                 <onfocus condition="Control.IsVisible(61)">SetFocus(61)</onfocus>
                 <onfocus condition="!Control.IsVisible(61)">SetFocus(9000)</onfocus>
