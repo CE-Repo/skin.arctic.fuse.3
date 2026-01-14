@@ -3,12 +3,19 @@
     <defaultcontrol always="61">61</defaultcontrol>
     <onload>CancelAlarm(osd_timeout,true)</onload>
     <controls>
-        <include content="DialogPictureInfo">
-            <param name="header">[CAPITALIZE]$LOCALIZE[10116][/CAPITALIZE]</param>
-            <param name="include_items">DialogPictureInfo_PlayerProcessInfo_Items</param>
-            <param name="include_picture">DialogPictureInfo_Video</param>
-            <param name="dialog_size">Dimension_DialogHugeMenu</param>
-        </include>
+        <include>PPI_Classic</include>
+
+        <include>PPI_Modern</include>
+		
+        <control type="group">
+            <visible>!Skin.HasSetting(ppi.classicMode) + !Skin.HasSetting(ppi.modernMode)</visible>
+            <include content="DialogPictureInfo">
+                <param name="header">[CAPITALIZE]$LOCALIZE[10116][/CAPITALIZE]</param>
+                <param name="include_items">DialogPictureInfo_PlayerProcessInfo_Items</param>
+                <param name="include_picture">DialogPictureInfo_Video</param>
+                <param name="dialog_size">Dimension_DialogHugeMenu</param>
+            </include>
+        </control>
 
 
     </controls>        
