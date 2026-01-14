@@ -2477,8 +2477,8 @@ msgid "EOTF & Gamut"
 msgstr "EOTF & Gamut"
 
 msgctxt "#32071"
-msgid "Codec logos (Duration)"
-msgstr "Codec-Logos (Dauer)"
+msgid "- Duration"
+msgstr "- Dauer"
 
 msgctxt "#32072"
 msgid "Time for codec logos"
@@ -2489,16 +2489,16 @@ msgid "PlayerProcessInfo"
 msgstr "PlayerProcessInfo"
 
 msgctxt "#32074"
-msgid "PlayerProcessInfo mode"
-msgstr "PlayerProcessInfo-Modus"
+msgid "PlayerProcessInfo type"
+msgstr "PlayerProcessInfo-Typ"
 
 msgctxt "#32075"
 msgid "second"
 msgstr "Sekunde"
 
 msgctxt "#32076"
-msgid "Show file name in PlayerProcessInfo"
-msgstr "Dateinamen in PlayerProcessInfo anzeigen"
+msgid "- Show file name"
+msgstr "- Dateiname anzeigen"
 
 msgctxt "#32077"
 msgid "Modern"
