@@ -682,14 +682,14 @@
                 <param name="is_hd">[Integer.IsEqual($PARAM[container]$PARAM[infolabel_videoresolution],720)]</param>
                 <param name="is_sd">[!String.IsEmpty($PARAM[container]$PARAM[infolabel_videoresolution])]</param>
             </include>
-            <include content="Info_Line_VideoQuality_HDRType" condition="!Skin.HasSetting(InfoTags.DisableHDR)">
+            <include content="Info_Line_VideoQuality_HDRType" condition="Skin.HasSetting(InfoTags.EnableHDR)">
                 <param name="visible">!String.IsEmpty($PARAM[container]$PARAM[infolabel_hdrtype])</param>
                 <param name="colordiffuse">$PARAM[colordiffuse]</param>
                 <param name="is_dolbyvision">[String.IsEqual($PARAM[container]$PARAM[infolabel_hdrtype],dolbyvision)]</param>
                 <param name="is_hdr">[String.IsEqual($PARAM[container]$PARAM[infolabel_hdrtype],hdr10)]</param>
                 <param name="is_hlg">[String.IsEqual($PARAM[container]$PARAM[infolabel_hdrtype],hlg)]</param>
             </include>
-            <include content="Info_Line_AudioChannels_Resolution" condition="!Skin.HasSetting(InfoTags.DisableAudioChannels)">
+            <include content="Info_Line_AudioChannels_Resolution" condition="Skin.HasSetting(InfoTags.EnableAudioChannels)">
                 <param name="colordiffuse">$PARAM[colordiffuse]</param>
                 <param name="container">$PARAM[container]</param>
                 <param name="visible">!String.IsEmpty($PARAM[container]$PARAM[infolabel_audiochannels])</param>
