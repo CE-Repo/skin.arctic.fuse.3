@@ -188,9 +188,10 @@
             <param name="visible">Window.IsActive(1181)</param>
         </include>
         <control type="group">
+            <animation effect="slide" start="0" end="0,-70" condition="Skin.HasSetting(HomeSwitcher.DisableHeader)">Conditional</animation>
             <visible>!String.IsEmpty(Window(Home).Property(HomeSwitcher.IsVisible))</visible>
             <include>Home_Animation</include>
-            <include content="Furniture_Header">
+            <include content="Furniture_Header" condition="!Skin.HasSetting(HomeSwitcher.DisableHeader)">
                 <param name="label">$VAR[Home_Header_Label]</param>
             </include>
             <control type="group">
