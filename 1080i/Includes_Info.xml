@@ -288,6 +288,7 @@
         <include content="Info_Line_Pillbox_Object" condition="Window.IsActive(VideoFullScreen.xml) | Window.IsActive(MusicVisualisation.xml)">
             <param name="colordiffuse">panel_fg_30</param>
             <param name="textcolor">panel_fg_90</param>
+            <param name="shadowcolor">panel_bg_12</param>
             <param name="label">$PARAM[label]</param>
             <param name="label_fallback">$PARAM[label_fallback]</param>
             <param name="haspath">$PARAM[haspath]</param>
