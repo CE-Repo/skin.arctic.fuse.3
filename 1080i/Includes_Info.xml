@@ -260,6 +260,8 @@
             <include content="Info_Line_Pillbox_Object_Bordered">
                 <param name="colordiffuse">$PARAM[colordiffuse]</param>
             </include>
+            <label fallback="$PARAM[label_fallback]">$PARAM[label]</label>
+            <haspath>$PARAM[haspath]</haspath>
             <width>auto</width>
             <textoffsetx>10</textoffsetx>
             <textoffsety>info_tag_offset_y</textoffsety>
@@ -278,11 +280,17 @@
             <param name="colordiffuse">main_fg_30</param>
             <param name="textcolor">main_fg_90</param>
             <param name="shadowcolor">main_bg_12</param>
+            <param name="label">$PARAM[label]</param>
+            <param name="label_fallback">$PARAM[label_fallback]</param>
+            <param name="haspath">$PARAM[haspath]</param>
             <nested />
         </include>
         <include content="Info_Line_Pillbox_Object" condition="Window.IsActive(VideoFullScreen.xml) | Window.IsActive(MusicVisualisation.xml)">
             <param name="colordiffuse">panel_fg_30</param>
             <param name="textcolor">panel_fg_90</param>
+            <param name="label">$PARAM[label]</param>
+            <param name="label_fallback">$PARAM[label_fallback]</param>
+            <param name="haspath">$PARAM[haspath]</param>
             <nested />
         </include>
     </include>
@@ -323,8 +331,9 @@
                 </include>
             </control>
             <include content="Info_Line_Pillbox" condition="Skin.HasSetting(Info.EnablePillboxStyle)">
-                <label fallback="$PARAM[label_fallback]">$PARAM[label]</label>
-                <haspath>$PARAM[haspath]</haspath>
+                <param name="label">$PARAM[label]</param>
+                <param name="label_fallback">$PARAM[label_fallback]</param>
+                <param name="haspath">$PARAM[haspath]</param>
                 <include content="Info_Line_Visible_0$PARAM[dbtype_count]">
                     <param name="condition">$PARAM[condition]</param>
                     <param name="overrides">$PARAM[overrides]</param>
