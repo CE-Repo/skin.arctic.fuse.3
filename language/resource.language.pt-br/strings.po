@@ -645,6 +645,10 @@ msgctxt "#31177"
 msgid "Menus"
 msgstr "Menus"
 
+msgctxt "#31178"
+msgid "Info line"
+msgstr ""
+
 #: /1080i/Includes_Search.xml
 msgctxt "#31179"
 msgid "Keyword"
