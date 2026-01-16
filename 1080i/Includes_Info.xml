@@ -569,17 +569,17 @@
                 <itemgap>-16</itemgap>
                 <visible>$PARAM[visible]</visible>
             </include>
-            <control type="button" condition="Skin.HasSetting(Info.EnablePillboxStyle)">
+            <control type="group" condition="Skin.HasSetting(Info.EnablePillboxStyle)">
                 <visible>$PARAM[visible]</visible>
-                <include content="Info_Line_Pillbox_Object_Bordered">
-                    <param name="colordiffuse">main_fg_30</param>
-                </include>
                 <width>164</width>
                 <include>Dimension_Info_Line_Pillbox</include>
+                <control type="image">
+                    <texture colordiffuse="main_fg_30" border="8">flags/blank-bordered.png</texture>
+                </control>
                 <include content="Info_StarRating">
                     <param name="colordiffuse">$PARAM[colordiffuse]</param>
                     <param name="rating">$PARAM[rating]</param>
-                    <left>0</left>
+                    <left>10</left>
                     <height>44</height>
                     <width>144</width>
                     <centertop>50%</centertop>
