@@ -273,6 +273,17 @@
             <param name="id">001</param>
             <label>$LOCALIZE[31239]</label>
         </include>
+        <include content="Settings_Button" description="Infoline">
+            <param name="dialog">false</param>
+            <param name="window">skinsettings</param>
+            <param name="baseid">$PARAM[baseid]</param>
+            <param name="id">002</param>
+            <param name="control">button</param>
+            <param name="slevel">2</param>
+            <label>$LOCALIZE[31178]</label>
+            <label2>$VAR[Label_Setting_InfoLineStyle]</label2>
+            <onclick>Skin.ToggleSetting(Info.EnablePillboxStyle)</onclick>
+        </include>
         <!-- <include content="Settings_Button" description="Codecs">
             <param name="dialog">false</param>
             <param name="window">skinsettings</param>

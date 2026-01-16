@@ -356,6 +356,11 @@
         <value condition="!Skin.HasSetting(OSD.OnDown.Disable1141)">$LOCALIZE[31293]</value>
     </variable>
 
+    <variable name="Label_Setting_InfoLineStyle">
+        <value condition="Skin.HasSetting(Info.EnablePillboxStyle)">$LOCALIZE[31209]</value>
+        <value>$LOCALIZE[31329]</value>
+    </variable>
+
     <variable name="Label_Studio">
         <value condition="!String.IsEmpty(ListItem.Studio)">$INFO[ListItem.Studio]</value>
         <value condition="!String.IsEmpty(Window(Home).Property(TMDbHelper.ListItem.Network.1.Name))">$INFO[Window(Home).Property(TMDbHelper.ListItem.Network.1.Name)]</value>
