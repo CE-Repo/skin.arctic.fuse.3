@@ -570,7 +570,7 @@
                 <visible>$PARAM[visible]</visible>
             </include>
             <include content="Info_Line_Pillbox" condition="Skin.HasSetting(Info.EnablePillboxStyle)">
-                <param name="label">$PARAM[rating]</param>
+                <param name="label">$INFO[$PARAM[rating]]</param>
                 <visible>$PARAM[visible]</visible>
             </include>
         </definition>
