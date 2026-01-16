@@ -300,7 +300,7 @@
         <param name="haspath">false</param>
         <param name="dbtype_count">1</param>
         <definition>
-            <include content="Info_Line_Divider" condition="!Skin.HasSetting(Info.EnablePillboxStyle)">
+            <include content="Info_Line_Divider">
                 <include content="Info_Line_Visible_0$PARAM[dbtype_count]">
                     <param name="condition">$PARAM[condition]</param>
                     <param name="overrides">$PARAM[overrides]</param>
