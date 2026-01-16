@@ -559,7 +559,7 @@
             <include content="Info_Line_Divider">
                 <visible>$PARAM[visible]</visible>
             </include>
-            <include content="Info_StarRating" condition="!Skin.HasSetting(Info.EnablePillboxStyle)">
+            <include content="Info_StarRating">
                 <param name="colordiffuse">$PARAM[colordiffuse]</param>
                 <param name="rating">$PARAM[rating]</param>
                 <left>-10</left>
@@ -567,10 +567,6 @@
                 <width>144</width>
                 <centertop>50%</centertop>
                 <itemgap>-16</itemgap>
-                <visible>$PARAM[visible]</visible>
-            </include>
-            <include content="Info_Line_Pillbox" condition="Skin.HasSetting(Info.EnablePillboxStyle)">
-                <param name="label">$INFO[$PARAM[rating]]</param>
                 <visible>$PARAM[visible]</visible>
             </include>
         </definition>
