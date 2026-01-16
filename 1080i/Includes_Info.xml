@@ -250,11 +250,48 @@
         </definition>
     </include>
 
+    <include name="Info_Line_Pillbox_Object_Bordered">
+        <texturefocus colordiffuse="$PARAM[colordiffuse]" border="8">flags/blank-bordered.png</texturefocus>
+        <texturenofocus colordiffuse="$PARAM[colordiffuse]" border="8">flags/blank-bordered.png</texturenofocus>
+    </include>
+
+    <include name="Info_Line_Pillbox_Object">
+        <control type="button">
+            <include content="Info_Line_Pillbox_Object_Bordered">
+                <param name="colordiffuse">$PARAM[colordiffuse]</param>
+            </include>
+            <width>auto</width>
+            <textoffsetx>10</textoffsetx>
+            <textoffsety>info_tag_offset_y</textoffsety>
+            <aligny>top</aligny>
+            <font>font_infotag_bold</font>
+            <textcolor>$PARAM[textcolor]</textcolor>
+            <focusedcolor>$PARAM[textcolor]</focusedcolor>
+            <include>Dimension_Info_Line_Pillbox</include>
+            <shadowcolor>$PARAM[shadowcolor]</shadowcolor>
+            <nested />
+        </control>
+    </include>
+
+    <include name="Info_Line_Pillbox">
+        <include content="Info_Line_Pillbox_Object" condition="![Window.IsActive(VideoFullScreen.xml) | Window.IsActive(MusicVisualisation.xml)]">
+            <param name="colordiffuse">main_fg_30</param>
+            <param name="textcolor">main_fg_90</param>
+            <param name="shadowcolor">main_bg_12</param>
+            <nested />
+        </include>
+        <include content="Info_Line_Pillbox_Object" condition="Window.IsActive(VideoFullScreen.xml) | Window.IsActive(MusicVisualisation.xml)">
+            <param name="colordiffuse">panel_fg_30</param>
+            <param name="textcolor">panel_fg_90</param>
+            <nested />
+        </include>
+    </include>
+
     <include name="Info_Line_Label">
         <param name="haspath">false</param>
         <param name="dbtype_count">1</param>
         <definition>
-            <include content="Info_Line_Divider">
+            <include content="Info_Line_Divider" condition="!Skin.HasSetting(Info.EnablePillboxStyle)">
                 <include content="Info_Line_Visible_0$PARAM[dbtype_count]">
                     <param name="condition">$PARAM[condition]</param>
                     <param name="overrides">$PARAM[overrides]</param>
@@ -267,7 +304,7 @@
                     <param name="dbtype_06">$PARAM[dbtype_06]</param>
                 </include>
             </include>
-            <control type="label">
+            <control type="label" condition="!Skin.HasSetting(Info.EnablePillboxStyle)">
                 <label fallback="$PARAM[label_fallback]">$PARAM[label]</label>
                 <haspath>$PARAM[haspath]</haspath>
                 <textcolor>$PARAM[colordiffuse]_70</textcolor>
@@ -285,6 +322,21 @@
                     <param name="dbtype_06">$PARAM[dbtype_06]</param>
                 </include>
             </control>
+            <include content="Info_Line_Pillbox" condition="Skin.HasSetting(Info.EnablePillboxStyle)">
+                <label fallback="$PARAM[label_fallback]">$PARAM[label]</label>
+                <haspath>$PARAM[haspath]</haspath>
+                <include content="Info_Line_Visible_0$PARAM[dbtype_count]">
+                    <param name="condition">$PARAM[condition]</param>
+                    <param name="overrides">$PARAM[overrides]</param>
+                    <param name="container">$PARAM[container]</param>
+                    <param name="dbtype_01">$PARAM[dbtype_01]</param>
+                    <param name="dbtype_02">$PARAM[dbtype_02]</param>
+                    <param name="dbtype_03">$PARAM[dbtype_03]</param>
+                    <param name="dbtype_04">$PARAM[dbtype_04]</param>
+                    <param name="dbtype_05">$PARAM[dbtype_05]</param>
+                    <param name="dbtype_06">$PARAM[dbtype_06]</param>
+                </include>
+            </include>
         </definition>
     </include>
 
