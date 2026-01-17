@@ -2557,3 +2557,7 @@ msgstr "Dekodierung"
 msgctxt "#32088"
 msgid "System"
 msgstr "System"
+
+msgctxt "#32089"
+msgid "Info line"
+msgstr "Infozeile"

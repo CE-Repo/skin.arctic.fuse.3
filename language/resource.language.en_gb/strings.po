@@ -2557,3 +2557,7 @@ msgstr ""
 msgctxt "#32088"
 msgid "System"
 msgstr ""
+
+msgctxt "#32089"
+msgid "Info line"
+msgstr ""

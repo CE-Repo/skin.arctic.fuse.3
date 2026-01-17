@@ -616,11 +616,21 @@
             <param name="id">006</param>
             <label>$LOCALIZE[19033]</label>
         </include>
-        <include content="Settings_Button" description="Audio Codec">
+        <include content="Settings_Button" description="Infoline">
             <param name="dialog">false</param>
             <param name="window">skinsettings</param>
             <param name="baseid">$PARAM[baseid]</param>
             <param name="id">007</param>
+            <param name="control">button</param>
+            <label>$LOCALIZE[32089]</label>
+            <label2>$VAR[Label_Setting_InfoLineStyle]</label2>
+            <onclick>Skin.ToggleSetting(Info.EnablePillboxStyle)</onclick>
+        </include>
+        <include content="Settings_Button" description="Audio Codec">
+            <param name="dialog">false</param>
+            <param name="window">skinsettings</param>
+            <param name="baseid">$PARAM[baseid]</param>
+            <param name="id">008</param>
             <param name="dialog">false</param>
             <param name="control">radiobutton</param>
             <label>$LOCALIZE[21446]</label>
