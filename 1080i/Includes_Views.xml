@@ -1,6 +1,36 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <includes>
 
+    <include name="View_Line_Label">
+        <control type="label">
+            <label fallback="$PARAM[label_fallback]">$PARAM[label]</label>
+            <align>$PARAM[align]</align>
+            <haspath>$PARAM[haspath]</haspath>
+            <textcolor>$PARAM[textcolor]</textcolor>
+            <aligny>center</aligny>
+            <textcolor>main_fg_100</textcolor>
+            <font>font_main_bold</font>
+            <width>auto</width>
+            <height>80</height>
+        </control>
+    </include>
+
+    <include name="View_Line_SubLabel">
+        <control type="label">
+            <label fallback="$PARAM[label_fallback]">$PARAM[label]</label>
+            <align>$PARAM[align]</align>
+            <haspath>$PARAM[haspath]</haspath>
+            <textcolor>$PARAM[textcolor]</textcolor>
+            <aligny>center</aligny>
+            <textcolor>main_fg_100</textcolor>
+            <font>font_hint_bold</font>
+            <width>auto</width>
+            <centertop>30</centertop>
+            <height>40</height>
+            <visible>$PARAM[visible]</visible>
+        </control>
+    </include>
+
     <include name="View_Line_Divider_left">
         <left>0</left>
         <texture colordiffuse="main_fg_12" flipx="true">common/gradient-box.png</texture>
