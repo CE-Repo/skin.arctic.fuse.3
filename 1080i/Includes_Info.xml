@@ -237,11 +237,11 @@
                     </include>
 
                     <!-- Awards -->
-                    <!-- <include content="Info_Meta_Object" condition="Skin.HasSetting(TMDBHelper.Service)">
+                    <include content="Info_Meta_Object" condition="Skin.HasSetting(TMDBHelper.Service) + String.IsEmpty(Skin.String(CustomRating.Movies.Item03))">
                         <param name="icon">flags/monochrome/ratings/oscars.png</param>
                         <param name="label">$INFO[Window(Home).Property(TMDbHelper.$PARAM[service].Oscar_Wins),x,]</param>
                         <param name="visible">[String.IsEqual($PARAM[container]$PARAM[listitem].DBType,movie) | $PARAM[override_movie]] + !String.IsEmpty(Window(Home).Property(TMDbHelper.$PARAM[service].Oscar_Wins))</param>
-                    </include> -->
+                    </include>
 
                 </control>
             </control>
