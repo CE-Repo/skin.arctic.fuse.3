@@ -1337,7 +1337,7 @@
                 <top>20</top>
                 <left>20</left>
                 <height>80</height>
-                <include content="Info_Viewline">
+                <include content="View_Line">
                     <param name="top">20</param>
                     <param name="use_spinner">false</param>
                     <param name="left">20</param>
