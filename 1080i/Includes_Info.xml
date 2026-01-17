@@ -291,7 +291,7 @@
                 <font>font_main</font>
                 <visible>$PARAM[visible] + !Skin.HasSetting(Info.EnablePillboxStyle)</visible>
             </control>
-            <control type="button" condition="Skin.HasSetting(Info.EnablePillboxStyle)">
+            <control type="button">
                 <label fallback="$PARAM[label_fallback]">$PARAM[label]</label>
                 <texturefocus colordiffuse="main_fg_30" border="8">flags/blank-bordered.png</texturefocus>
                 <texturenofocus colordiffuse="main_fg_30" border="8">flags/blank-bordered.png</texturenofocus>
@@ -305,7 +305,7 @@
                 <focusedcolor>main_fg_90</focusedcolor>
                 <include>Dimension_Info_Line_Pillbox</include>
                 <shadowcolor>main_bg_12</shadowcolor>
-                <visible>$PARAM[visible]</visible>
+                <visible>$PARAM[visible] + Skin.HasSetting(Info.EnablePillboxStyle)</visible>
             </control>
         </definition>
     </include>
