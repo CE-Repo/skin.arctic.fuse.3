@@ -1,10 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <includes>
-<!--
-    <include name="Info_Details_Visible">
-        <visible>$PARAM[mod][String.IsEqual($PARAM[container]ListItem.DBType,movie) | String.IsEqual($PARAM[container]ListItem.DBType,tvshow) | String.IsEqual($PARAM[container]ListItem.DBType,season) | String.IsEqual($PARAM[container]ListItem.DBType,episode) | String.IsEqual($PARAM[container]ListItem.DBType,video) | String.IsEqual($PARAM[container]ListItem.DBType,album) | String.IsEqual($PARAM[container]ListItem.DBType,song)]</visible>
-    </include>
- -->
 
     <include name="Info_Meta_Object">
         <param name="font">font_main</param>
@@ -74,6 +69,7 @@
                 <param name="label">$INFO[Window(Home).Property(TMDbHelper.$PARAM[service].IMDb_Rating),,]$INFO[Window(Home).Property(TMDbHelper.$PARAM[service].Top250),  #,]</param>
                 <param name="visible">[$PARAM[visible]] + !String.IsEmpty(Window(Home).Property(TMDbHelper.$PARAM[service].IMDb_Rating))</param>
                 <param name="colordiffuse">$PARAM[colordiffuse]</param>
+                <param name="icon_w">52</param>
             </include>
             <include content="Info_Meta_Object" condition="Skin.String(CustomRating.$PARAM[content].$PARAM[item],MDBList)">
                 <param name="icon">flags/monochrome/ratings/mdblist.png</param>
@@ -165,6 +161,12 @@
                         <param name="service">$PARAM[service]</param>
                     </include>
                     <include content="Info_Meta_Ratings" condition="Skin.HasSetting(TMDBHelper.Service)">
+                        <param name="content">Movies</param>
+                        <param name="item">Item03</param>
+                        <param name="visible">String.IsEqual($PARAM[container]$PARAM[listitem].DBType,movie) | $PARAM[override_movie]</param>
+                        <param name="service">$PARAM[service]</param>
+                    </include>
+                    <include content="Info_Meta_Ratings" condition="Skin.HasSetting(TMDBHelper.Service)">
                         <param name="content">TVShows</param>
                         <param name="item">Item01</param>
                         <param name="visible">String.IsEqual($PARAM[container]$PARAM[listitem].DBType,tvshow) | String.IsEqual($PARAM[container]$PARAM[listitem].DBType,season)</param>
@@ -173,6 +175,12 @@
                     <include content="Info_Meta_Ratings" condition="Skin.HasSetting(TMDBHelper.Service)">
                         <param name="content">TVShows</param>
                         <param name="item">Item02</param>
+                        <param name="visible">String.IsEqual($PARAM[container]$PARAM[listitem].DBType,tvshow) | String.IsEqual($PARAM[container]$PARAM[listitem].DBType,season)</param>
+                        <param name="service">$PARAM[service]</param>
+                    </include>
+                    <include content="Info_Meta_Ratings" condition="Skin.HasSetting(TMDBHelper.Service)">
+                        <param name="content">TVShows</param>
+                        <param name="item">Item03</param>
                         <param name="visible">String.IsEqual($PARAM[container]$PARAM[listitem].DBType,tvshow) | String.IsEqual($PARAM[container]$PARAM[listitem].DBType,season)</param>
                         <param name="service">$PARAM[service]</param>
                     </include>
@@ -229,11 +237,11 @@
                     </include>
 
                     <!-- Awards -->
-                    <include content="Info_Meta_Object" condition="Skin.HasSetting(TMDBHelper.Service)">
+                    <!-- <include content="Info_Meta_Object" condition="Skin.HasSetting(TMDBHelper.Service)">
                         <param name="icon">flags/monochrome/ratings/oscars.png</param>
                         <param name="label">$INFO[Window(Home).Property(TMDbHelper.$PARAM[service].Oscar_Wins),x,]</param>
                         <param name="visible">[String.IsEqual($PARAM[container]$PARAM[listitem].DBType,movie) | $PARAM[override_movie]] + !String.IsEmpty(Window(Home).Property(TMDbHelper.$PARAM[service].Oscar_Wins))</param>
-                    </include>
+                    </include> -->
 
                 </control>
             </control>
