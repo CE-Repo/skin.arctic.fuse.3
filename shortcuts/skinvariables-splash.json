@@ -24,6 +24,34 @@
     "actions": [
         {
             "rules": [
+                "String.IsEmpty(Window(1198).Property(HasPreloadedHubs))",
+                "Skin.HasSetting(Startup.EnableHubPreloading)",
+                "!Skin.HasSetting(Startup.DisableWaitForLoad)"
+            ],
+            "value": [
+                "SetProperty(InitStatus,Preloading Hubs,1198)",
+                "SetProperty(SplashIsVisible,True,1198)",
+                "SetProperty(HasPreloadedHubs,True,1198)",
+                "ActivateWindow(1108)",
+                "sleep=0.3",
+                "ActivateWindow(1107)",
+                "sleep=0.3",
+                "ActivateWindow(1106)",
+                "sleep=0.3",
+                "ActivateWindow(1104)",
+                "sleep=0.3",
+                "ActivateWindow(1103)",
+                "sleep=0.3",
+                "ActivateWindow(1102)",
+                "sleep=0.3",
+                "ActivateWindow(1101)",
+                "sleep=0.3",
+                "ActivateWindow(Home)"
+            ]
+        },
+        {
+            "rules": [
+                "!Skin.HasSetting(Startup.DisableWaitForLoad)",
                 "{301Updating}!=||{501Updating}!=",
                 "System.HasAlarm(SplashTimeOut)"
             ],
@@ -34,6 +62,7 @@
                 "route=run_executebuiltin=special://skin/shortcuts/skinvariables-splash.json&use_rules=True"
             ]
         },
+        "sleep=0.5",
         "ClearProperty(SplashIsVisible,1198)",
         "CancelAlarm(SplashTimeOut,silent)"
     ]
