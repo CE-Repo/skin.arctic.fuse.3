@@ -807,7 +807,7 @@
             <label>$LOCALIZE[31374]</label>
             <onclick>SetProperty(StartupReplaceWindow,skinsettings,Home)</onclick>
             <onclick>Skin.ResetSettings</onclick>
-            <onclick>ActivateWindow(1198)</onclick>
+            <onclick>ActivateWindow(Startup)</onclick>
         </include>
         <include content="Settings_Button" description="TMDbHelper for PVR">
             <param name="dialog">false</param>

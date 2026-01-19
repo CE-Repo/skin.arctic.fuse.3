@@ -1,0 +1,40 @@
+{
+    "values": {
+        "301Updating": [
+            {
+                "rules": [
+                    "Container(301).IsUpdating",
+                    "[Integer.IsEqual(Container(301).NumItems,0) | [Integer.IsEqual(Container(301).NumItems,1) + String.IsEqual(Container(301).ListItemAbsolute(0).Label,$LOCALIZE[31046])]]"
+                ],
+                "value": "True"
+            },
+            ""
+        ],
+        "501Updating": [
+            {
+                "rules": [
+                    "Container(501).IsUpdating",
+                    "[Integer.IsEqual(Container(501).NumItems,0) | [Integer.IsEqual(Container(501).NumItems,1) + String.IsEqual(Container(501).ListItemAbsolute(0).Label,$LOCALIZE[31046])]]"
+                ],
+                "value": "True"
+            },
+            ""
+        ]
+    },
+    "actions": [
+        {
+            "rules": [
+                "{301Updating}!=||{501Updating}!=",
+                "System.HasAlarm(SplashTimeOut)"
+            ],
+            "value": [
+                "SetProperty(SplashIsVisible,True,1198)",
+                "SetProperty(InitStatus,Loading Widgets,1198)",
+                "sleep=0.5",
+                "route=run_executebuiltin=special://skin/shortcuts/skinvariables-splash.json&use_rules=True"
+            ]
+        },
+        "ClearProperty(SplashIsVisible,1198)",
+        "CancelAlarm(SplashTimeOut,silent)"
+    ]
+}

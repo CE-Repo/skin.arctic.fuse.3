@@ -15,6 +15,11 @@
 
     <include name="Hub_Onload">
         <definition>
+
+            <!-- Reset Splash Timeout -->
+            <onload>AlarmClock(SplashTimeOut,noop,00:59,silent)</onload>
+            <onload>RunScript(script.skinvariables,run_executebuiltin=special://skin/shortcuts/skinvariables-splash.json,use_rules=True)</onload>
+
             <include>Action_Blur_Onload</include>
 
             <include content="Hub_Onload_Window">
@@ -40,9 +45,6 @@
 
             <menucontrol>300</menucontrol>
             <defaultcontrol>300</defaultcontrol>
-
-            <!-- Reset Splash Timeout -->
-            <onload>AlarmClock(SplashTimeOut,noop,00:59,silent)</onload>
 
             <!-- Build Shortcuts -->
             <include>Action_BuildShortcuts_OnLoad</include>
