@@ -1,6 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <includes>
 
+    <variable name="Label_GameOSD_Heading">
+        <value condition="Window.ISVisible(gamevideofilter)">$LOCALIZE[10823]</value>
+        <value condition="Window.ISVisible(gamestretchmode)">$LOCALIZE[10824]</value>
+        <value condition="Window.ISVisible(gamevideorotation)">$LOCALIZE[35227]</value>
+        <value condition="Window.ISVisible(gamesaves)">$LOCALIZE[31087]</value>
+        <value condition="Window.ISVisible(ingamesaves)">$LOCALIZE[31091]</value>
+    </variable>
+
     <variable name="Label_Setting_Ratings">
         <value condition="Skin.HasSetting(Ratings.EnableColor)">$LOCALIZE[737]</value>
         <value>$LOCALIZE[31458]</value>
