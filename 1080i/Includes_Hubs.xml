@@ -849,7 +849,14 @@
             <onclick>ActivateWindow(programs,addons://sources/executable/,return)</onclick>
             <visible>!Integer.IsEqual(Container(504).NumItems,0) | Container(504).IsUpdating</visible>
         </item>
-
+        <item>
+            <label>$LOCALIZE[10821]</label>
+            <property name="guid">game</property>
+            <property name="widget_id">$NUMBER[505]</property>
+            <property name="show_overlay">true</property>
+            <onclick>ActivateWindow(programs,addons://sources/game/,return)</onclick>
+            <visible>!Integer.IsEqual(Container(505).NumItems,0) | Container(505).IsUpdating</visible>
+        </item>
     </include>
 
     <include name="Hub_Addons_Widgets">
@@ -893,6 +900,16 @@
             <param name="visible">String.IsEqual(Container(601).ListItem.Property(guid),executable)</param>
             <param name="home_switcher">true</param>
         </include>
+        <include content="Hub_Wall_Widget">
+            <param name="id">505</param>
+            <param name="content">addons://sources/game/</param>
+            <param name="include">List_Square_Row</param>
+            <param name="target">programs</param>
+            <param name="sortby">lastused</param>
+            <param name="sortorder">descending</param>
+            <param name="visible">String.IsEqual(Container(601).ListItem.Property(guid),game)</param>
+            <param name="home_switcher">true</param>
+        </include>
     </include>
 
     <include name="Hub_Addons_Info">
@@ -907,6 +924,9 @@
         </include>
         <include content="Hub_Wall_AlwaysVisible_Info">
             <param name="id">504</param>
+        </include>
+        <include content="Hub_Wall_AlwaysVisible_Info">
+            <param name="id">505</param>
         </include>
     </include>
 
