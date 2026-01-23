@@ -159,7 +159,7 @@
                                             <control type="label">
                                                 <height>40</height>
                                                 <textcolor>main_fg_70</textcolor>
-                                                <label fallback="19055">$INFO[system.memory(used.percent),Used memory: ,]</label>
+                                                <label fallback="19055">$INFO[system.memory(used.percent),$LOCALIZE[32034]: ,]</label>
                                             </control>
                                             <control type="group">
                                                 <height>12</height>
@@ -180,7 +180,7 @@
                                             <control type="label">
                                                 <height>40</height>
                                                 <textcolor>main_fg_70</textcolor>
-                                                <label fallback="19055">$INFO[System.CPUUsage,$LOCALIZE[13271] ,]</label>
+                                                <label fallback="19055">$LOCALIZE[32014]: $INFO[System.CPUTemperature] | $INFO[System.CpuAltUsage]</label>
                                             </control>
                                             <control type="group">
                                                 <height>12</height>
@@ -269,6 +269,14 @@
                                         <visible>System.AddonIsEnabled(service.coreelec.settings)</visible>
                                     </item>
                                     <item>
+                                        <label>Hybrid</label>
+                                        <label2>skin.arctic.fuse.3</label2>
+                                        <icon>special://skin/extras/icons/configure.png</icon>
+                                        <onclick>SetProperty(CustomDialogSettingsItems,DialogCustom_Hybrid_Items,Home)</onclick>
+                                        <onclick>SetProperty(CustomDialogSettingsTitle,Hybrid,Home)</onclick>
+                                        <onclick>ActivateWindow(1118)</onclick>
+                                    </item>
+                                    <item>
                                         <label>TMDbHelper</label>
                                         <label2>plugin.video.themoviedb.helper</label2>
                                         <icon>special://skin/extras/icons/tmdb.png</icon>
@@ -297,13 +305,13 @@
                                         <visible>System.AddonIsEnabled(screensaver.arctic.mirage)</visible>
                                     </item>
                                     <item>
-                                        <label>[CAPITALIZE]$LOCALIZE[31496][/CAPITALIZE]</label>
+                                        <label>$LOCALIZE[31496]</label>
                                         <label2>skin.arctic.fuse.3</label2>
                                         <icon>special://skin/extras/icons/screwdriver-wrench.png</icon>
                                         <onclick>ActivateWindow(1115)</onclick>
                                     </item>
                                     <item>
-                                        <label>[CAPITALIZE]$LOCALIZE[31275][/CAPITALIZE]</label>
+                                        <label>$LOCALIZE[31275]</label>
                                         <label2>skin.arctic.fuse.3</label2>
                                         <icon>special://skin/extras/icons/search.png</icon>
                                         <onclick>SetProperty(Shortcuts.EditMenu,menu=searchwidgets,Home)</onclick>
@@ -312,7 +320,7 @@
                                         <onclick>ActivateWindow(1116)</onclick>
                                     </item>
                                     <item>
-                                        <label>$LOCALIZE[31203] $LOCALIZE[31434]</label>
+                                        <label>$LOCALIZE[32082]</label>
                                         <label2>skin.arctic.fuse.3</label2>
                                         <icon>special://skin/extras/icons/gauge.png</icon>
                                         <onclick>SetProperty(CustomDialogSettingsItems,DialogCustom_VideoOSD_Items,Home)</onclick>
@@ -320,7 +328,7 @@
                                         <onclick>ActivateWindow(1118)</onclick>
                                     </item>
                                     <item>
-                                        <label>[CAPITALIZE]$LOCALIZE[31203] $LOCALIZE[12003][/CAPITALIZE]</label>
+                                        <label>$LOCALIZE[32083]</label>
                                         <label2>skin.arctic.fuse.3</label2>
                                         <icon>special://skin/extras/icons/circle-info.png</icon>
                                         <onclick>SetProperty(CustomDialogSettingsItems,DialogCustom_VideoInfo_Items,Home)</onclick>
@@ -328,13 +336,13 @@
                                         <onclick>ActivateWindow(1118)</onclick>
                                     </item>
                                     <item>
-                                        <label>[CAPITALIZE]$LOCALIZE[31321][/CAPITALIZE]</label>
+                                        <label>$LOCALIZE[31538]</label>
                                         <label2>skin.arctic.fuse.3</label2>
                                         <icon>special://skin/extras/icons/table.png</icon>
                                         <onclick>runscript(script.skinvariables,action=buildviews,configure)</onclick>
                                     </item>
                                     <item>
-                                        <label>[CAPITALIZE]$LOCALIZE[31234][/CAPITALIZE]</label>
+                                        <label>$LOCALIZE[31234]</label>
                                         <label2>skin.arctic.fuse.3</label2>
                                         <icon>special://skin/extras/icons/cube.png</icon>
                                         <onclick>SetProperty(CustomDialogSettingsItems,DialogCustom_Settings_Items_Indicators,Home)</onclick>
