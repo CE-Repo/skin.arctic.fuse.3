@@ -147,7 +147,8 @@
 
             <control type="group">
                 <left>40</left>
-                <height>60</height>
+                <include condition="!Skin.HasSetting(InfoBar.TwoRow)">Info_Line_One_Row</include>
+                <include condition="Skin.HasSetting(InfoBar.TwoRow)">Info_Line_Two_Row</include>
                 <visible>$PARAM[visible]</visible>
 
                 <control type="grouplist">
@@ -286,7 +287,7 @@
         <param name="dbtype_count">1</param>
         <definition>
             <include content="Info_Line_Divider">
-                <param name="visible">$PARAM[visible]</param>
+                <param name="visible">$PARAM[visible] + !Skin.HasSetting(Info.EnablePillboxStyle)</param>
             </include>
             <control type="label">
                 <label fallback="$PARAM[label_fallback]">$PARAM[label]</label>
@@ -294,7 +295,23 @@
                 <textcolor>$PARAM[colordiffuse]_70</textcolor>
                 <width>auto</width>
                 <font>font_main</font>
-                <visible>$PARAM[visible]</visible>
+                <visible>$PARAM[visible] + !Skin.HasSetting(Info.EnablePillboxStyle)</visible>
+            </control>
+            <control type="button">
+                <label fallback="$PARAM[label_fallback]">$PARAM[label]</label>
+                <texturefocus colordiffuse="main_fg_30" border="8">flags/blank-bordered.png</texturefocus>
+                <texturenofocus colordiffuse="main_fg_30" border="8">flags/blank-bordered.png</texturenofocus>
+                <haspath>$PARAM[haspath]</haspath>
+                <width>auto</width>
+                <textoffsetx>10</textoffsetx>
+                <textoffsety>info_tag_offset_y</textoffsety>
+                <aligny>top</aligny>
+                <font>font_infotag_bold</font>
+                <textcolor>main_fg_90</textcolor>
+                <focusedcolor>main_fg_90</focusedcolor>
+                <include>Dimension_Info_Line_Pillbox</include>
+                <shadowcolor>main_bg_12</shadowcolor>
+                <visible>$PARAM[visible] + Skin.HasSetting(Info.EnablePillboxStyle)</visible>
             </control>
         </definition>
     </include>
@@ -463,7 +480,7 @@
         <param name="override">false</param>
         <definition>
             <control type="group">
-                <visible>$PARAM[visible]</visible>
+                <visible>$PARAM[visible] + !Skin.HasSetting(InfoBar.TwoRow)</visible>
                 <left>$PARAM[left]</left>
                 <height>80</height>
 
@@ -494,11 +511,156 @@
                         <param name="container">$PARAM[container]</param>
                         <param name="listitem">$PARAM[listitem]</param>
                     </include>
+                    <include content="Info_Line_AudioCodec" condition="Skin.HasSetting(InfoTags.EnableAudioCodec)">
+                        <param name="colordiffuse">$PARAM[colordiffuse]</param>
+                        <param name="container">$PARAM[container]</param>
+                        <param name="listitem">$PARAM[listitem]</param>
+                    </include>
                     <include content="Info_Line_AudioChannels_Resolution" condition="Skin.HasSetting(InfoTags.EnableAudioChannels)">
                         <param name="colordiffuse">$PARAM[colordiffuse]</param>
                         <param name="container">$PARAM[container]</param>
                         <param name="listitem">$PARAM[listitem]</param>
                     </include>
+
+                    <!-- Star Rating -->
+                    <include content="Info_Line_StarRating" condition="!Skin.HasSetting(InfoTags.DisableStarRating)">
+                        <param name="colordiffuse">$PARAM[colordiffuse]</param>
+                        <param name="rating">$PARAM[container]$PARAM[listitem].Rating</param>
+                        <param name="visible">!String.IsEmpty($PARAM[container]$PARAM[listitem].Rating) + String.IsEmpty($PARAM[container]$PARAM[listitem].UserRating)</param>
+                    </include>
+                    <include content="Info_Line_StarRating" condition="!Skin.HasSetting(InfoTags.DisableStarRating)">
+                        <param name="colordiffuse">$PARAM[colordiffuse]</param>
+                        <param name="rating">$PARAM[container]$PARAM[listitem].UserRating</param>
+                        <param name="visible">!String.IsEmpty($PARAM[container]$PARAM[listitem].UserRating)</param>
+                    </include>
+
+                    <!-- ====== -->
+                    <!-- Labels -->
+                    <!-- ====== -->
+
+                    <!-- Gender -->
+                    <include content="Info_Line_Label">
+                        <param name="colordiffuse">$PARAM[colordiffuse]</param>
+                        <param name="label">$INFO[$PARAM[container]ListItem.Property(gender)]</param>
+                        <param name="visible">!String.IsEmpty($PARAM[container]$PARAM[listitem].Property(gender)) + [String.IsEqual($PARAM[container]$PARAM[listitem].DBType,actor) | String.IsEqual($PARAM[container]$PARAM[listitem].DBType,video)]</param>
+                    </include>
+
+                    <!-- Department -->
+                    <include content="Info_Line_Label">
+                        <param name="colordiffuse">$PARAM[colordiffuse]</param>
+                        <param name="label">$INFO[$PARAM[container]ListItem.Property(department)]</param>
+                        <param name="visible">!String.IsEmpty($PARAM[container]$PARAM[listitem].Property(department)) + [String.IsEqual($PARAM[container]$PARAM[listitem].DBType,actor) | String.IsEqual($PARAM[container]$PARAM[listitem].DBType,video)]</param>
+                    </include>
+
+                    <!-- Age -->
+                    <include content="Info_Line_Label">
+                        <param name="colordiffuse">$PARAM[colordiffuse]</param>
+                        <param name="label">$INFO[$PARAM[container]ListItem.Property(Age),, $LOCALIZE[31057]]</param>
+                        <param name="visible">!String.IsEmpty($PARAM[container]$PARAM[listitem].Property(age)) + [String.IsEqual($PARAM[container]$PARAM[listitem].DBType,actor) | String.IsEqual($PARAM[container]$PARAM[listitem].DBType,video)]</param>
+                    </include>
+
+                    <!-- Premiered -->
+                    <include content="Info_Line_Label">
+                        <param name="colordiffuse">$PARAM[colordiffuse]</param>
+                        <param name="label">$INFO[$PARAM[container]$PARAM[listitem].Premiered]</param>
+                        <param name="visible">!String.IsEmpty($PARAM[container]$PARAM[listitem].Premiered) + [String.IsEqual($PARAM[container]$PARAM[listitem].DBType,movie) | String.IsEqual($PARAM[container]$PARAM[listitem].DBType,tvshow) | String.IsEqual($PARAM[container]$PARAM[listitem].DBType,episode) | String.IsEqual($PARAM[container]$PARAM[listitem].DBType,season) | $PARAM[override]]</param>
+                    </include>
+
+                    <!-- MPAA -->
+                    <include content="Info_Line_Label">
+                        <param name="colordiffuse">$PARAM[colordiffuse]</param>
+                        <param name="label">$INFO[$PARAM[container]$PARAM[listitem].MPAA]</param>
+                        <param name="visible">!String.IsEmpty($PARAM[container]$PARAM[listitem].MPAA) + [String.IsEqual($PARAM[container]$PARAM[listitem].DBType,movie) | String.IsEqual($PARAM[container]$PARAM[listitem].DBType,tvshow) | String.IsEqual($PARAM[container]$PARAM[listitem].DBType,episode) | String.IsEqual($PARAM[container]$PARAM[listitem].DBType,season) | $PARAM[override]]</param>
+                    </include>
+
+                    <!-- Year -->
+                    <include content="Info_Line_Label">
+                        <param name="colordiffuse">$PARAM[colordiffuse]</param>
+                        <param name="label">$INFO[$PARAM[container]$PARAM[listitem].Year]</param>
+                        <param name="visible">!String.IsEmpty($PARAM[container]$PARAM[listitem].Year) + [String.IsEqual($PARAM[container]$PARAM[listitem].DBType,album) | String.IsEqual($PARAM[container]$PARAM[listitem].DBType,song)]</param>
+                    </include>
+
+                    <!-- Album Label -->
+                    <include content="Info_Line_Label">
+                        <param name="colordiffuse">$PARAM[colordiffuse]</param>
+                        <param name="label">$INFO[$PARAM[container]$PARAM[listitem].Property(album_label)]</param>
+                        <param name="visible">!String.IsEmpty($PARAM[container]$PARAM[listitem].Property(album_label)) + [String.IsEqual($PARAM[container]$PARAM[listitem].DBType,album) | String.IsEqual($PARAM[container]$PARAM[listitem].DBType,song)]</param>
+                    </include>
+
+                    <!-- Duration -->
+                    <include content="Info_Line_Label">
+                        <param name="colordiffuse">$PARAM[colordiffuse]</param>
+                        <param name="label">$INFO[$PARAM[container]$PARAM[listitem].Duration]</param>
+                        <param name="visible">!String.IsEmpty($PARAM[container]$PARAM[listitem].Duration) + [String.IsEqual($PARAM[container]$PARAM[listitem].DBType,album) | String.IsEqual($PARAM[container]$PARAM[listitem].DBType,song)]</param>
+                    </include>
+                    <include content="Info_Line_Label">
+                        <param name="colordiffuse">$PARAM[colordiffuse]</param>
+                        <param name="label">$INFO[$PARAM[container]$PARAM[listitem].Duration(h),, $LOCALIZE[31074] ]$INFO[$PARAM[container]$PARAM[listitem].Duration(m),, $LOCALIZE[31073]]</param>
+                        <param name="visible">!String.IsEmpty($PARAM[container]$PARAM[listitem].Duration) + !Integer.IsEqual($PARAM[container]$PARAM[listitem].Duration(h),0) + [String.IsEqual($PARAM[container]$PARAM[listitem].DBType,movie) | String.IsEqual($PARAM[container]$PARAM[listitem].DBType,tvshow) | String.IsEqual($PARAM[container]$PARAM[listitem].DBType,episode) | String.IsEqual($PARAM[container]$PARAM[listitem].DBType,season) | $PARAM[override]]</param>
+                    </include>
+                    <include content="Info_Line_Label">
+                        <param name="colordiffuse">$PARAM[colordiffuse]</param>
+                        <param name="label">$INFO[$PARAM[container]$PARAM[listitem].Duration(m),, $LOCALIZE[31073]]</param>
+                        <param name="visible">!String.IsEmpty($PARAM[container]$PARAM[listitem].Duration) + Integer.IsEqual($PARAM[container]$PARAM[listitem].Duration(h),0) + [String.IsEqual($PARAM[container]$PARAM[listitem].DBType,movie) | String.IsEqual($PARAM[container]$PARAM[listitem].DBType,tvshow) | String.IsEqual($PARAM[container]$PARAM[listitem].DBType,episode) | String.IsEqual($PARAM[container]$PARAM[listitem].DBType,season) | $PARAM[override]]</param>
+                    </include>
+
+                </control>
+            </control>
+			
+            <control type="group">
+                <visible>$PARAM[visible] + Skin.HasSetting(InfoBar.TwoRow)</visible>
+                <left>$PARAM[left]</left>
+                <height>105</height>
+
+                <visible>[String.IsEqual($PARAM[container]$PARAM[listitem].DBType,movie) | String.IsEqual($PARAM[container]$PARAM[listitem].DBType,tvshow) | String.IsEqual($PARAM[container]$PARAM[listitem].DBType,season) | String.IsEqual($PARAM[container]$PARAM[listitem].DBType,episode) | String.IsEqual($PARAM[container]$PARAM[listitem].DBType,video) | String.IsEqual($PARAM[container]$PARAM[listitem].DBType,album) | String.IsEqual($PARAM[container]$PARAM[listitem].DBType,song) | $PARAM[override]]</visible>
+
+
+                <control type="grouplist">
+                    <hitrect x="0" y="0" w="0" h="0" />
+                    <orientation>horizontal</orientation>
+                    <itemgap>10</itemgap>
+                    <left>-20</left>
+                    <centertop>35</centertop>
+                    <control type="group" description="Avoid grouplist chop with spacer">
+                        <left>-10</left>
+                        <width>20</width>
+                    </control>
+
+                    <!-- Info Pill -->
+                    <include content="Info_Line_VideoQuality_Resolution">
+                        <param name="colordiffuse">$PARAM[colordiffuse]</param>
+                        <param name="is_8k">[Integer.IsGreater($PARAM[container]$PARAM[listitem].VideoResolution,2160) | String.IsEqual($PARAM[container]$PARAM[listitem].VideoResolution,8K)]</param>
+                        <param name="is_4k">[Integer.IsGreater($PARAM[container]$PARAM[listitem].VideoResolution,1080) | String.IsEqual($PARAM[container]$PARAM[listitem].VideoResolution,4K)]</param>
+                        <param name="is_fd">[Integer.IsGreater($PARAM[container]$PARAM[listitem].VideoResolution,720)]</param>
+                        <param name="is_hd">[Integer.IsEqual($PARAM[container]$PARAM[listitem].VideoResolution,720)]</param>
+                        <param name="is_sd">[!String.IsEmpty($PARAM[container]$PARAM[listitem].VideoResolution)]</param>
+                    </include>
+                    <include content="Info_Line_VideoQuality_HDRType" condition="Skin.HasSetting(InfoTags.EnableHDR)">
+                        <param name="colordiffuse">$PARAM[colordiffuse]</param>
+                        <param name="container">$PARAM[container]</param>
+                        <param name="listitem">$PARAM[listitem]</param>
+                    </include>
+                    <include content="Info_Line_AudioCodec" condition="Skin.HasSetting(InfoTags.EnableAudioCodec)">
+                        <param name="colordiffuse">$PARAM[colordiffuse]</param>
+                        <param name="container">$PARAM[container]</param>
+                        <param name="listitem">$PARAM[listitem]</param>
+                    </include>
+                    <include content="Info_Line_AudioChannels_Resolution" condition="Skin.HasSetting(InfoTags.EnableAudioChannels)">
+                        <param name="colordiffuse">$PARAM[colordiffuse]</param>
+                        <param name="container">$PARAM[container]</param>
+                        <param name="listitem">$PARAM[listitem]</param>
+                    </include>
+				</control>
+                <control type="grouplist">
+                    <hitrect x="0" y="0" w="0" h="0" />
+                    <orientation>horizontal</orientation>
+                    <itemgap>10</itemgap>
+                    <left>-20</left>
+					<centertop>75</centertop>
+                    <control type="group" description="Avoid grouplist chop with spacer">
+                        <left>-10</left>
+                        <width>20</width>
+                    </control>
 
                     <!-- Star Rating -->
                     <include content="Info_Line_StarRating" condition="!Skin.HasSetting(InfoTags.DisableStarRating)">
@@ -662,9 +824,9 @@
         <param name="visible">true</param>
         <definition>
             <include content="Info_Line_Divider">
-                <param name="visible">$PARAM[visible]</param>
+                <param name="visible">$PARAM[visible] + !Skin.HasSetting(Info.EnablePillboxStyle)</param>
             </include>
-            <include content="Info_StarRating">
+            <include content="Info_StarRating" condition="!Skin.HasSetting(Info.EnablePillboxStyle)">
                 <param name="colordiffuse">$PARAM[colordiffuse]</param>
                 <param name="rating">$PARAM[rating]</param>
                 <left>-10</left>
@@ -674,6 +836,20 @@
                 <itemgap>-16</itemgap>
                 <visible>$PARAM[visible]</visible>
             </include>
+            <control type="group">
+                <visible>$PARAM[visible]</visible>
+                <visible>Skin.HasSetting(Info.EnablePillboxStyle)</visible>
+                <width>155</width>
+                <include>Dimension_Info_Line_Pillbox</include>
+                <control type="image">
+                    <texture colordiffuse="main_fg_30" border="8">flags/blank-bordered.png</texture>
+                </control>
+                <include content="Info_StarRating">
+                    <param name="colordiffuse">$PARAM[colordiffuse]</param>
+                    <param name="rating">$PARAM[rating]</param>
+                    <itemgap>-16</itemgap>
+                </include>
+            </control>
         </definition>
     </include>
 
@@ -688,14 +864,26 @@
             </include>
             <include content="Info_Line_Pill_Text">
                 <param name="colordiffuse">$PARAM[colordiffuse]</param>
+                <param name="label">4K Ultra HD</param>
+                <param name="visible">$PARAM[visible] + Skin.HasSetting(InfoBar.TwoRow) + !$PARAM[is_8k] + $PARAM[is_4k]</param>
+                <param name="width">auto</param>
+            </include>
+            <include content="Info_Line_Pill_Text">
+                <param name="colordiffuse">$PARAM[colordiffuse]</param>
                 <param name="label">4K</param>
-                <param name="visible">$PARAM[visible] + !$PARAM[is_8k] + $PARAM[is_4k]</param>
+                <param name="visible">$PARAM[visible] + !Skin.HasSetting(InfoBar.TwoRow) + !$PARAM[is_8k] + $PARAM[is_4k]</param>
                 <param name="width">60</param>
             </include>
             <include content="Info_Line_Pill_Text">
                 <param name="colordiffuse">$PARAM[colordiffuse]</param>
+                <param name="label">Full HD</param>
+                <param name="visible">$PARAM[visible] + Skin.HasSetting(InfoBar.TwoRow) + !$PARAM[is_8k] + !$PARAM[is_4k] + $PARAM[is_fd]</param>
+                <param name="width">auto</param>
+            </include>
+            <include content="Info_Line_Pill_Text">
+                <param name="colordiffuse">$PARAM[colordiffuse]</param>
                 <param name="label">FHD</param>
-                <param name="visible">$PARAM[visible] + !$PARAM[is_8k] + !$PARAM[is_4k] + $PARAM[is_fd]</param>
+                <param name="visible">$PARAM[visible] + !Skin.HasSetting(InfoBar.TwoRow) + !$PARAM[is_8k] + !$PARAM[is_4k] + $PARAM[is_fd]</param>
                 <param name="width">60</param>
                 <param name="textoffsetx">0</param>
             </include>
@@ -726,7 +914,13 @@
             <include content="Info_Line_Pill_Text">
                 <param name="colordiffuse">$PARAM[colordiffuse]</param>
                 <param name="label">DV</param>
-                <param name="visible">$PARAM[visible] + String.IsEqual($PARAM[container]$PARAM[listitem].HdrType,dolbyvision)</param>
+                <param name="visible">$PARAM[visible] + !Skin.HasSetting(InfoBar.TwoRow) + String.IsEqual($PARAM[container]$PARAM[listitem].HdrType,dolbyvision)</param>
+                <param name="width">auto</param>
+            </include>
+            <include content="Info_Line_Pill_Text">
+                <param name="colordiffuse">$PARAM[colordiffuse]</param>
+                <param name="label">Dolby Vision</param>
+                <param name="visible">$PARAM[visible] + Skin.HasSetting(InfoBar.TwoRow) + String.IsEqual($PARAM[container]$PARAM[listitem].HdrType,dolbyvision) + !String.IsEqual($PARAM[container]$PARAM[listitem].AudioCodec,ac3) + !String.IsEqual($PARAM[container]$PARAM[listitem].AudioCodec,dolbydigital) + !String.IsEqual($PARAM[container]$PARAM[listitem].AudioCodec,eac3) + !String.IsEqual($PARAM[container]$PARAM[listitem].AudioCodec,eac3_ddp_atmos) + !String.IsEqual($PARAM[container]$PARAM[listitem].AudioCodec,truehd) + !String.IsEqual($PARAM[container]$PARAM[listitem].AudioCodec,truehd_atmos)</param>
                 <param name="width">auto</param>
             </include>
             <include content="Info_Line_Pill_Text">
@@ -739,6 +933,42 @@
                 <param name="colordiffuse">$PARAM[colordiffuse]</param>
                 <param name="label">HLG</param>
                 <param name="visible">$PARAM[visible] + String.IsEqual($PARAM[container]$PARAM[listitem].HdrType,hlg)</param>
+                <param name="width">auto</param>
+            </include>
+            <include content="Info_Line_Pill_Text">
+                <param name="colordiffuse">$PARAM[colordiffuse]</param>
+                <param name="label">SDR</param>
+                <param name="visible">$PARAM[visible] + [String.IsEmpty($PARAM[container]$PARAM[listitem].HdrType) + [[!String.IsEmpty($PARAM[container]$PARAM[listitem].VideoResolution)] | [Integer.IsEqual($PARAM[container]$PARAM[listitem].VideoResolution,720)] | [Integer.IsGreater($PARAM[container]$PARAM[listitem].VideoResolution,720)] | Integer.IsGreater($PARAM[container]$PARAM[listitem].VideoResolution,1080) | Integer.IsEqual($PARAM[container]$PARAM[listitem].VideoResolution,4K)]]</param>
+                <param name="width">auto</param>
+            </include>
+            <include content="Info_Line_Pill_Text">
+                <param name="colordiffuse">$PARAM[colordiffuse]</param>
+                <param name="label">Dolby Vision • TrueHD</param>
+                <param name="visible">$PARAM[visible] + Skin.HasSetting(InfoBar.TwoRow) + String.IsEqual($PARAM[container]$PARAM[listitem].HdrType,dolbyvision) + String.IsEqual($PARAM[container]$PARAM[listitem].AudioCodec,truehd)</param>
+                <param name="width">auto</param>
+            </include>
+            <include content="Info_Line_Pill_Text">
+                <param name="colordiffuse">$PARAM[colordiffuse]</param>
+                <param name="label">Dolby Vision • TrueHD (Atmos)</param>
+                <param name="visible">$PARAM[visible] + Skin.HasSetting(InfoBar.TwoRow) + String.IsEqual($PARAM[container]$PARAM[listitem].HdrType,dolbyvision) + String.IsEqual($PARAM[container]$PARAM[listitem].AudioCodec,truehd_atmos)</param>
+                <param name="width">auto</param>
+            </include>
+            <include content="Info_Line_Pill_Text">
+                <param name="colordiffuse">$PARAM[colordiffuse]</param>
+                <param name="label">Dolby Vision • Digital</param>
+                <param name="visible">$PARAM[visible] + Skin.HasSetting(InfoBar.TwoRow) + String.IsEqual($PARAM[container]$PARAM[listitem].HdrType,dolbyvision) + String.IsEqual($PARAM[container]$PARAM[listitem].AudioCodec,ac3) + String.IsEqual($PARAM[container]$PARAM[listitem].AudioCodec,dolbydigital)</param>
+                <param name="width">auto</param>
+            </include>
+            <include content="Info_Line_Pill_Text">
+                <param name="colordiffuse">$PARAM[colordiffuse]</param>
+                <param name="label">Dolby Vision • Digital Plus</param>
+                <param name="visible">$PARAM[visible] + Skin.HasSetting(InfoBar.TwoRow) + String.IsEqual($PARAM[container]$PARAM[listitem].HdrType,dolbyvision) + String.IsEqual($PARAM[container]$PARAM[listitem].AudioCodec,eac3)</param>
+                <param name="width">auto</param>
+            </include>
+            <include content="Info_Line_Pill_Text">
+                <param name="colordiffuse">$PARAM[colordiffuse]</param>
+                <param name="label">Dolby Vision • Digital Plus (Atmos)</param>
+                <param name="visible">$PARAM[visible] + Skin.HasSetting(InfoBar.TwoRow) + String.IsEqual($PARAM[container]$PARAM[listitem].HdrType,dolbyvision) + String.IsEqual($PARAM[container]$PARAM[listitem].AudioCodec,eac3_ddp_atmos)</param>
                 <param name="width">auto</param>
             </include>
         </definition>
@@ -806,6 +1036,162 @@
                 <param name="label">1.0</param>
                 <param name="visible">$PARAM[visible] + Integer.IsEqual($PARAM[container]$PARAM[listitem].AudioChannels,1)</param>
                 <param name="width">60</param>
+            </include>
+        </definition>
+    </include>
+	
+    <include name="Info_Line_AudioCodec">
+        <param name="visible">true</param>
+        <definition>
+            <include content="Info_Line_Pill_Text">
+                <param name="colordiffuse">$PARAM[colordiffuse]</param>
+                <param name="label">AAC</param>
+                <param name="visible">$PARAM[visible] + String.IsEqual($PARAM[container]$PARAM[listitem].AudioCodec,aac) | String.IsEqual($PARAM[container]$PARAM[listitem].AudioCodec,aac_latm) | String.IsEqual($PARAM[container]$PARAM[listitem].AudioCodec,aac_lc) | String.IsEqual($PARAM[container]$PARAM[listitem].AudioCodec,he_aac) | String.IsEqual($PARAM[container]$PARAM[listitem].AudioCodec,he_aac_v2) | String.IsEqual($PARAM[container]$PARAM[listitem].AudioCodec,aac_ssr) | String.IsEqual($PARAM[container]$PARAM[listitem].AudioCodec,aac_ltp)</param>
+                <param name="width">auto</param>
+            </include>
+            <include content="Info_Line_Pill_Text">
+                <param name="colordiffuse">$PARAM[colordiffuse]</param>
+                <param name="label">Dolby Digital</param>
+                <param name="visible">$PARAM[visible] + !Skin.HasSetting(InfoBar.TwoRow) + String.IsEqual($PARAM[container]$PARAM[listitem].AudioCodec,ac3) | String.IsEqual($PARAM[container]$PARAM[listitem].AudioCodec,dolbydigital)</param>
+                <param name="width">auto</param>
+            </include>
+            <include content="Info_Line_Pill_Text">
+                <param name="colordiffuse">$PARAM[colordiffuse]</param>
+                <param name="label">Dolby Digital</param>
+                <param name="visible">$PARAM[visible] + Skin.HasSetting(InfoBar.TwoRow) + String.IsEqual($PARAM[container]$PARAM[listitem].AudioCodec,ac3) | String.IsEqual($PARAM[container]$PARAM[listitem].AudioCodec,dolbydigital) + !String.IsEqual($PARAM[container]$PARAM[listitem].HdrType,dolbyvision)</param>
+                <param name="width">auto</param>
+            </include>
+            <include content="Info_Line_Pill_Text">
+                <param name="colordiffuse">$PARAM[colordiffuse]</param>
+                <param name="label">AVC</param>
+                <param name="visible">$PARAM[visible] + String.IsEqual($PARAM[container]$PARAM[listitem].AudioCodec,avc)</param>
+                <param name="width">auto</param>
+            </include>
+            <include content="Info_Line_Pill_Text">
+                <param name="colordiffuse">$PARAM[colordiffuse]</param>
+                <param name="label">DTS</param>
+                <param name="visible">$PARAM[visible] + String.IsEqual($PARAM[container]$PARAM[listitem].AudioCodec,dca) | String.IsEqual($PARAM[container]$PARAM[listitem].AudioCodec,dts)</param>
+                <param name="width">auto</param>
+            </include>
+            <include content="Info_Line_Pill_Text">
+                <param name="colordiffuse">$PARAM[colordiffuse]</param>
+                <param name="label">DTS-HD</param>
+                <param name="visible">$PARAM[visible] + String.IsEqual($PARAM[container]$PARAM[listitem].AudioCodec,dtshd)</param>
+                <param name="width">auto</param>
+            </include>
+            <include content="Info_Line_Pill_Text">
+                <param name="colordiffuse">$PARAM[colordiffuse]</param>
+                <param name="label">DTS-HD MA</param>
+                <param name="visible">$PARAM[visible] + !Skin.HasSetting(InfoBar.TwoRow) + String.IsEqual($PARAM[container]$PARAM[listitem].AudioCodec,dtshd_ma)</param>
+                <param name="width">auto</param>
+            </include>
+            <include content="Info_Line_Pill_Text">
+                <param name="colordiffuse">$PARAM[colordiffuse]</param>
+                <param name="label">DTS-HD Master Audio</param>
+                <param name="visible">$PARAM[visible] + Skin.HasSetting(InfoBar.TwoRow) + String.IsEqual($PARAM[container]$PARAM[listitem].AudioCodec,dtshd_ma)</param>
+                <param name="width">auto</param>
+            </include>
+            <include content="Info_Line_Pill_Text">
+                <param name="colordiffuse">$PARAM[colordiffuse]</param>
+                <param name="label">DTS-HD HRA</param>
+                <param name="visible">$PARAM[visible] + String.IsEqual($PARAM[container]$PARAM[listitem].AudioCodec,dtshd_hra)</param>
+                <param name="width">auto</param>
+            </include>
+            <include content="Info_Line_Pill_Text">
+                <param name="colordiffuse">$PARAM[colordiffuse]</param>
+                <param name="label">DTS:X</param>
+                <param name="visible">$PARAM[visible] + String.IsEqual($PARAM[container]$PARAM[listitem].AudioCodec,dtshd_ma_x)</param>
+                <param name="width">auto</param>
+            </include>
+            <include content="Info_Line_Pill_Text">
+                <param name="colordiffuse">$PARAM[colordiffuse]</param>
+                <param name="label">DTS:X (IMAX)</param>
+                <param name="visible">$PARAM[visible] + String.IsEqual($PARAM[container]$PARAM[listitem].AudioCodec,dtshd_ma_x_imax)</param>
+                <param name="width">auto</param>
+            </include>
+            <include content="Info_Line_Pill_Text">
+                <param name="colordiffuse">$PARAM[colordiffuse]</param>
+                <param name="label">Dolby Digital+</param>
+                <param name="visible">$PARAM[visible] + !Skin.HasSetting(InfoBar.TwoRow) + String.IsEqual($PARAM[container]$PARAM[listitem].AudioCodec,eac3)</param>
+                <param name="width">auto</param>
+            </include>
+            <include content="Info_Line_Pill_Text">
+                <param name="colordiffuse">$PARAM[colordiffuse]</param>
+                <param name="label">Dolby Digital Plus</param>
+                <param name="visible">$PARAM[visible] + Skin.HasSetting(InfoBar.TwoRow) + String.IsEqual($PARAM[container]$PARAM[listitem].AudioCodec,eac3) + !String.IsEqual($PARAM[container]$PARAM[listitem].HdrType,dolbyvision)</param>
+                <param name="width">auto</param>
+            </include>
+            <include content="Info_Line_Pill_Text">
+                <param name="colordiffuse">$PARAM[colordiffuse]</param>
+                <param name="label">Dolby Atmos</param>
+                <param name="visible">$PARAM[visible] + !Skin.HasSetting(InfoBar.TwoRow) + String.IsEqual($PARAM[container]$PARAM[listitem].AudioCodec,eac3_ddp_atmos)</param>
+                <param name="width">auto</param>
+            </include>
+            <include content="Info_Line_Pill_Text">
+                <param name="colordiffuse">$PARAM[colordiffuse]</param>
+                <param name="label">Dolby Digital Plus (Atmos)</param>
+                <param name="visible">$PARAM[visible] + Skin.HasSetting(InfoBar.TwoRow) + String.IsEqual($PARAM[container]$PARAM[listitem].AudioCodec,eac3_ddp_atmos) + !String.IsEqual($PARAM[container]$PARAM[listitem].HdrType,dolbyvision)</param>
+                <param name="width">auto</param>
+            </include>
+            <include content="Info_Line_Pill_Text">
+                <param name="colordiffuse">$PARAM[colordiffuse]</param>
+                <param name="label">FLAC</param>
+                <param name="visible">$PARAM[visible] + String.IsEqual($PARAM[container]$PARAM[listitem].AudioCodec,flac)</param>
+                <param name="width">auto</param>
+            </include>
+            <include content="Info_Line_Pill_Text">
+                <param name="colordiffuse">$PARAM[colordiffuse]</param>
+                <param name="label">MP3</param>
+                <param name="visible">$PARAM[visible] + String.IsEqual($PARAM[container]$PARAM[listitem].AudioCodec,mp3) | String.IsEqual($PARAM[container]$PARAM[listitem].AudioCodec,mp3float)</param>
+                <param name="width">auto</param>
+            </include>
+            <include content="Info_Line_Pill_Text">
+                <param name="colordiffuse">$PARAM[colordiffuse]</param>
+                <param name="label">OGG</param>
+                <param name="visible">$PARAM[visible] + String.IsEqual($PARAM[container]$PARAM[listitem].AudioCodec,ogg)</param>
+                <param name="width">auto</param>
+            </include>
+            <include content="Info_Line_Pill_Text">
+                <param name="colordiffuse">$PARAM[colordiffuse]</param>
+                <param name="label">OPUS</param>
+                <param name="visible">$PARAM[visible] + String.IsEqual($PARAM[container]$PARAM[listitem].AudioCodec,opus)</param>
+                <param name="width">auto</param>
+            </include>
+            <include content="Info_Line_Pill_Text">
+                <param name="colordiffuse">$PARAM[colordiffuse]</param>
+                <param name="label">PCM</param>
+                <param name="visible">$PARAM[visible] + String.IsEqual($PARAM[container]$PARAM[listitem].AudioCodec,pcm) | String.IsEqual($PARAM[container]$PARAM[listitem].AudioCodec,pcm_bluray) | String.IsEqual($PARAM[container]$PARAM[listitem].AudioCodec,pcm_s16le) | String.IsEqual($PARAM[container]$PARAM[listitem].AudioCodec,pcm_s24le)</param>
+                <param name="width">auto</param>
+            </include>
+            <include content="Info_Line_Pill_Text">
+                <param name="colordiffuse">$PARAM[colordiffuse]</param>
+                <param name="label">Dolby TrueHD</param>
+                <param name="visible">$PARAM[visible] + !Skin.HasSetting(InfoBar.TwoRow) + String.IsEqual($PARAM[container]$PARAM[listitem].AudioCodec,truehd)</param>
+                <param name="width">auto</param>
+            </include>
+            <include content="Info_Line_Pill_Text">
+                <param name="colordiffuse">$PARAM[colordiffuse]</param>
+                <param name="label">Dolby TrueHD</param>
+                <param name="visible">$PARAM[visible] + Skin.HasSetting(InfoBar.TwoRow) + String.IsEqual($PARAM[container]$PARAM[listitem].AudioCodec,truehd) + !String.IsEqual($PARAM[container]$PARAM[listitem].HdrType,dolbyvision)</param>
+                <param name="width">auto</param>
+            </include>
+            <include content="Info_Line_Pill_Text">
+                <param name="colordiffuse">$PARAM[colordiffuse]</param>
+                <param name="label">Dolby Atmos</param>
+                <param name="visible">$PARAM[visible] + !Skin.HasSetting(InfoBar.TwoRow) + String.IsEqual($PARAM[container]$PARAM[listitem].AudioCodec,truehd_atmos)</param>
+                <param name="width">auto</param>
+            </include>
+            <include content="Info_Line_Pill_Text">
+                <param name="colordiffuse">$PARAM[colordiffuse]</param>
+                <param name="label">Dolby TrueHD (Atmos)</param>
+                <param name="visible">$PARAM[visible] + Skin.HasSetting(InfoBar.TwoRow) + String.IsEqual($PARAM[container]$PARAM[listitem].AudioCodec,truehd_atmos) + !String.IsEqual($PARAM[container]$PARAM[listitem].HdrType,dolbyvision)</param>
+                <param name="width">auto</param>
+            </include>
+            <include content="Info_Line_Pill_Text">
+                <param name="colordiffuse">$PARAM[colordiffuse]</param>
+                <param name="label">WAV</param>
+                <param name="visible">$PARAM[visible] + String.IsEqual($PARAM[container]$PARAM[listitem].AudioCodec,wav)</param>
+                <param name="width">auto</param>
             </include>
         </definition>
     </include>
