@@ -1,6 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <includes>
 
+    <variable name="Label_Version_Title">
+        <value condition="!String.IsEmpty(ListItem.VideoVersionName)">$INFO[ListItem.VideoVersionName]</value>
+        <value>$INFO[ListItem.Label]</value>
+    </variable>
+
     <variable name="Label_GameOSD_Heading">
         <value condition="Window.ISVisible(gamevideofilter)">$LOCALIZE[10823]</value>
         <value condition="Window.ISVisible(gamestretchmode)">$LOCALIZE[10824]</value>
