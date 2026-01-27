@@ -411,6 +411,40 @@
                 </control>
             </control>
             <include condition="$PARAM[hasbuttons]">DialogSelect_Versions_Buttons</include>
+            <control type="group">
+                <visible>Skin.HasSetting(Filename.DialogSelect)</visible>
+                <include>Animation_BounceIn_Dialog</include>
+                <bottom>90</bottom>
+                <control type="grouplist">
+                    <height>80</height>
+                    <centerbottom>0</centerbottom>
+                    <orientation>horizontal</orientation>
+                    <align>center</align>
+                    <itemgap>10</itemgap>
+                    <control type="label">
+                        <aligny>center</aligny>
+                        <label>$INFO[Container($PARAM[listid]).ListItem.FileName]</label>
+                        <textcolor>main_fg_70</textcolor>
+                        <font>font_tiny</font>
+                        <width>auto</width>
+                    </control>
+                </control>
+                <control type="grouplist">
+                    <visible>Skin.HasSetting(Path.DialogSelect)</visible>
+                    <height>80</height>
+                    <centerbottom>30</centerbottom>
+                    <orientation>horizontal</orientation>
+                    <align>center</align>
+                    <itemgap>10</itemgap>
+                    <control type="label">
+                        <aligny>center</aligny>
+                        <label>$INFO[Container($PARAM[listid]).ListItem.Path]</label>
+                        <textcolor>main_fg_70</textcolor>
+                        <font>font_tiny</font>
+                        <width>auto</width>
+                    </control>
+                </control>
+            </control>
         </definition>
     </include>
 
