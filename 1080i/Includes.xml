@@ -72,6 +72,7 @@
     <include file="Includes_Widgets.xml" />
     <include file="Includes_NextAired.xml" />
     <include file="Includes_LiveTV.xml" />
+    <include file="Includes_Addons.xml" />
     <include file="Includes_Paths.xml" />
 
     <include file="Includes_Views.xml" />

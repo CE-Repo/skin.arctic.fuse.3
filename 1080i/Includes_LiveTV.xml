@@ -6,14 +6,6 @@
         <value>$LOCALIZE[503]</value>
     </variable>
 
-    <include name="LiveTV_Switcher_Items_ShowOverlay">
-        <property name="show_overlay">true</property>
-    </include>
-
-    <include name="LiveTV_Switcher_Items_HideOverlay">
-        <property name="hide_overlay">true</property>
-    </include>
-
     <include name="LiveTV_Switcher_Items">
         <item>
             <label>$LOCALIZE[137]</label>
@@ -21,8 +13,7 @@
             <visible>!Integer.IsEqual(Container(501).NumItems,0) | Container(501).IsUpdating</visible>
             <property name="widget_id">$NUMBER[501]</property>
             <property name="guid">pvr-501</property>
-            <include condition="String.IsEqual(Skin.String(HomeSwitcher.1107.Mode),Wall)">LiveTV_Switcher_Items_ShowOverlay</include>
-            <include condition="!String.IsEqual(Skin.String(HomeSwitcher.1107.Mode),Wall)">LiveTV_Switcher_Items_HideOverlay</include>
+            <include content="Hub_Widget_Overlay"><param name="window_id">1107</param></include>
             <visible>!Skin.HasSetting(Hub.1107.DisableSearch)</visible>
         </item>
         <item>
@@ -31,8 +22,7 @@
             <visible>!Integer.IsEqual(Container(509).NumItems,0) | !Integer.IsEqual(Container(502).NumItems,0) | Container(502).IsUpdating</visible>
             <property name="widget_id">$NUMBER[502]</property>
             <property name="guid">pvr-502</property>
-            <include condition="String.IsEqual(Skin.String(HomeSwitcher.1107.Mode),Wall)">LiveTV_Switcher_Items_ShowOverlay</include>
-            <include condition="!String.IsEqual(Skin.String(HomeSwitcher.1107.Mode),Wall)">LiveTV_Switcher_Items_HideOverlay</include>
+            <include content="Hub_Widget_Overlay"><param name="window_id">1107</param></include>
             <visible>!Skin.HasSetting(Hub.1107.DisableChannels)</visible>
         </item>
         <item>
@@ -41,8 +31,7 @@
             <visible>!Integer.IsEqual(Container(503).NumItems,0) | Container(503).IsUpdating</visible>
             <property name="widget_id">$NUMBER[503]</property>
             <property name="guid">pvr-503</property>
-            <include condition="String.IsEqual(Skin.String(HomeSwitcher.1107.Mode),Wall)">LiveTV_Switcher_Items_ShowOverlay</include>
-            <include condition="!String.IsEqual(Skin.String(HomeSwitcher.1107.Mode),Wall)">LiveTV_Switcher_Items_HideOverlay</include>
+            <include content="Hub_Widget_Overlay"><param name="window_id">1107</param></include>
             <visible>!Skin.HasSetting(Hub.1107.DisableGroups)</visible>
         </item>
         <item>
@@ -51,8 +40,7 @@
             <visible>!Integer.IsEqual(Container(504).NumItems,0) | Container(504).IsUpdating</visible>
             <property name="widget_id">$NUMBER[504]</property>
             <property name="guid">pvr-504</property>
-            <include condition="String.IsEqual(Skin.String(HomeSwitcher.1107.Mode),Wall)">LiveTV_Switcher_Items_ShowOverlay</include>
-            <include condition="!String.IsEqual(Skin.String(HomeSwitcher.1107.Mode),Wall)">LiveTV_Switcher_Items_HideOverlay</include>
+            <include content="Hub_Widget_Overlay"><param name="window_id">1107</param></include>
             <visible>!Skin.HasSetting(Hub.1107.DisableRecordings)</visible>
         </item>
     </include>

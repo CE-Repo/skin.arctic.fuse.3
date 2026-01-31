@@ -42,6 +42,7 @@
 
     <include name="Hub_Standard_Widget">
         <param name="include">List_Landscape_Row</param>
+        <param name="dynamic">false</param>
         <definition>
             <include content="Widget_Row">
                 <param name="id">5$PARAM[id]</param>
@@ -56,6 +57,12 @@
                 <param name="refocus">SetFocus(302)</param>
                 <onfocus>ClearProperty(HomeSwitcher.IsVisible,Home)</onfocus>
                 <onfocus>ClearProperty(InfoPanel.FullSwitch,Home)</onfocus>
+                <include content="Object_ContentDynamic" condition="$PARAM[dynamic]">
+                    <param name="content">$PARAM[content]</param>
+                    <param name="sortby">$PARAM[sortby]</param>
+                    <param name="sorthow">$PARAM[sorthow]</param>
+                    <param name="target">$PARAM[target]</param>
+                </include>
                 <nested />
             </include>
         </definition>
@@ -778,10 +785,10 @@
                         <!-- Switching Groups -->
                         <control type="group" id="600">
                             <include content="Hub_Widget_Switcher" condition="String.IsEqual(Skin.String(HomeSwitcher.$PARAM[window].Mode),Wall)">
-                                <param name="include_content">$PARAM[swticher_content]</param>
+                                <param name="include_content">$PARAM[switcher_content]</param>
                             </include>
                             <include content="Hub_Widget_Switcher" condition="String.IsEqual(Skin.String(HomeSwitcher.$PARAM[window].Mode),Combined)">
-                                <param name="include_content">$PARAM[swticher_content]</param>
+                                <param name="include_content">$PARAM[switcher_content]</param>
                                 <param name="top">520</param>
                                 <param name="wall">false</param>
                             </include>
@@ -1031,122 +1038,14 @@
         </include>
     </include>
 
-    <include name="Hub_Addons_Items">
-        <item>
-            <label>$LOCALIZE[157]</label>
-            <property name="guid">videos</property>
-            <property name="widget_id">$NUMBER[501]</property>
-            <property name="show_overlay">true</property>
-            <onclick>ActivateWindow(videos,addons://sources/video/,return)</onclick>
-            <visible>!Integer.IsEqual(Container(501).NumItems,0) | Container(501).IsUpdating</visible>
-            <visible>!Skin.HasSetting(Hub.1108.DisableVideo)</visible>
-        </item>
-        <item>
-            <label>$LOCALIZE[249]</label>
-            <property name="guid">music</property>
-            <property name="widget_id">$NUMBER[502]</property>
-            <property name="show_overlay">true</property>
-            <onclick>ActivateWindow(music,addons://sources/audio/,return)</onclick>
-            <visible>!Integer.IsEqual(Container(502).NumItems,0) | Container(502).IsUpdating</visible>
-            <visible>!Skin.HasSetting(Hub.1108.DisableMusic)</visible>
-        </item>
-        <item>
-            <label>$LOCALIZE[31011]</label>
-            <property name="guid">image</property>
-            <property name="widget_id">$NUMBER[503]</property>
-            <property name="show_overlay">true</property>
-            <onclick>ActivateWindow(programs,addons://sources/image/,return)</onclick>
-            <visible>!Integer.IsEqual(Container(503).NumItems,0) | Container(503).IsUpdating</visible>
-            <visible>!Skin.HasSetting(Hub.1108.DisablePicture)</visible>
-        </item>
-        <item>
-            <label>$LOCALIZE[31010]</label>
-            <property name="guid">executable</property>
-            <property name="widget_id">$NUMBER[504]</property>
-            <property name="show_overlay">true</property>
-            <onclick>ActivateWindow(programs,addons://sources/executable/,return)</onclick>
-            <visible>!Integer.IsEqual(Container(504).NumItems,0) | Container(504).IsUpdating</visible>
-            <visible>!Skin.HasSetting(Hub.1108.DisableProgram)</visible>
-        </item>
-        <item>
-            <label>$LOCALIZE[10821]</label>
-            <property name="guid">game</property>
-            <property name="widget_id">$NUMBER[505]</property>
-            <property name="show_overlay">true</property>
-            <onclick>ActivateWindow(programs,addons://sources/game/,return)</onclick>
-            <visible>!Integer.IsEqual(Container(505).NumItems,0) | Container(505).IsUpdating</visible>
-            <visible>!Skin.HasSetting(Hub.1108.DisableGame)</visible>
-        </item>
-    </include>
-
-    <include name="Hub_Addons_Widgets">
-        <include content="Hub_Wall_Widget" condition="!Skin.HasSetting(Hub.1108.DisableVideo)">
-            <param name="id">501</param>
-            <param name="content">addons://sources/video/</param>
-            <param name="include">List_Square_Row</param>
-            <param name="target">videos</param>
-            <param name="sortby">lastused</param>
-            <param name="sortorder">descending</param>
-            <param name="visible">String.IsEqual(Container(601).ListItem.Property(guid),videos)</param>
-            <param name="home_switcher">false</param>
+    <include name="Hub_Widget_Overlay">
+        <include content="Object_Property" condition="String.IsEqual(Skin.String(HomeSwitcher.$PARAM[window_id].Mode),Wall)">
+            <param name="name">show_overlay</param>
+            <param name="property">true</param>
         </include>
-        <include content="Hub_Wall_Widget" condition="!Skin.HasSetting(Hub.1108.DisableMusic)">
-            <param name="id">502</param>
-            <param name="content">addons://sources/audio/</param>
-            <param name="include">List_Square_Row</param>
-            <param name="target">music</param>
-            <param name="sortby">lastused</param>
-            <param name="sortorder">descending</param>
-            <param name="visible">String.IsEqual(Container(601).ListItem.Property(guid),music)</param>
-            <param name="home_switcher">false</param>
-        </include>
-        <include content="Hub_Wall_Widget" condition="!Skin.HasSetting(Hub.1108.DisablePicture)">
-            <param name="id">503</param>
-            <param name="content">addons://sources/image/</param>
-            <param name="include">List_Square_Row</param>
-            <param name="target">pictures</param>
-            <param name="sortby">lastused</param>
-            <param name="sortorder">descending</param>
-            <param name="visible">String.IsEqual(Container(601).ListItem.Property(guid),image)</param>
-            <param name="home_switcher">false</param>
-        </include>
-        <include content="Hub_Wall_Widget" condition="!Skin.HasSetting(Hub.1108.DisableProgram)">
-            <param name="id">504</param>
-            <param name="content">addons://sources/executable/</param>
-            <param name="include">List_Square_Row</param>
-            <param name="target">programs</param>
-            <param name="sortby">lastused</param>
-            <param name="sortorder">descending</param>
-            <param name="visible">String.IsEqual(Container(601).ListItem.Property(guid),executable)</param>
-            <param name="home_switcher">false</param>
-        </include>
-        <include content="Hub_Wall_Widget" condition="!Skin.HasSetting(Hub.1108.DisableGame)">
-            <param name="id">505</param>
-            <param name="content">addons://sources/game/</param>
-            <param name="include">List_Square_Row</param>
-            <param name="target">programs</param>
-            <param name="sortby">lastused</param>
-            <param name="sortorder">descending</param>
-            <param name="visible">String.IsEqual(Container(601).ListItem.Property(guid),game)</param>
-            <param name="home_switcher">false</param>
-        </include>
-    </include>
-
-    <include name="Hub_Addons_Info">
-        <include content="Hub_Wall_Info">
-            <param name="id">501</param>
-        </include>
-        <include content="Hub_Wall_Info">
-            <param name="id">502</param>
-        </include>
-        <include content="Hub_Wall_Info">
-            <param name="id">503</param>
-        </include>
-        <include content="Hub_Wall_Info">
-            <param name="id">504</param>
-        </include>
-        <include content="Hub_Wall_Info">
-            <param name="id">505</param>
+        <include content="Object_Property" condition="!String.IsEqual(Skin.String(HomeSwitcher.$PARAM[window_id].Mode),Wall)">
+            <param name="name">hide_overlay</param>
+            <param name="property">true</param>
         </include>
     </include>
 

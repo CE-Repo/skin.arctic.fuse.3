@@ -17,7 +17,7 @@
             <param name="widgets_standard">LiveTV_Content</param>
             <param name="info_combined">NextAired_Info</param>
             <param name="info_wall">NextAired_Wall_Info</param>
-            <param name="swticher_content">LiveTV_Switcher_Items</param>
+            <param name="switcher_content">LiveTV_Switcher_Items</param>
         </include>
 
 
