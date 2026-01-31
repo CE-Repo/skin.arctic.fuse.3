@@ -218,17 +218,6 @@
                 <onclick condition="Window.IsVisible(1107)">ActivateWindow(tvchannels)</onclick>
                 <nested />
             </control>
-            <control type="button">
-                <height>200</height>
-                <texturenofocus />
-                <texturefocus />
-                <onfocus>SetProperty(HomeSwitcher.IsVisible,True,Home)</onfocus>
-                <onfocus condition="$PARAM[overlay]">SetProperty(InfoPanel.FullSwitch,Wall,Home)</onfocus>
-                <onfocus condition="![$PARAM[overlay]]">ClearProperty(InfoPanel.FullSwitch,Home)</onfocus>
-                <onfocus condition="$PARAM[overlay]">SetProperty(Background.ShowOverlay,True,Home)</onfocus>
-                <onfocus condition="![$PARAM[overlay]]">ClearProperty(Background.ShowOverlay,Home)</onfocus>
-                <onfocus>ActivateWindow(1183)</onfocus>
-            </control>
             <control type="image">
                 <include>Home_Fade_Animation</include>
                 <visible>!String.IsEmpty(Window(Home).Property(HomeSwitcher.IsVisible))</visible>
@@ -636,7 +625,6 @@
                 <height>80</height>
                 <centertop>50%</centertop>
                 <control type="button" id="$PARAM[id]">
-                    <onclick>Dialog.Close(1183,true)</onclick>
                     <onclick>ReplaceWindow($PARAM[window])</onclick>
                     <texturenofocus />
                 </control>
