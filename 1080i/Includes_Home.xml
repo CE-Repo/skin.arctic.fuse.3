@@ -256,9 +256,16 @@
         <value>$INFO[System.Date]</value>
     </variable>
     <include name="Home_Switcher">
-        <include content="Part_Dim_Overlay">
-            <param name="visible">Window.IsActive(1181)</param>
-        </include>
+        <control type="image">
+            <visible>Window.IsActive(1181)</visible>
+            <include content="Animation_Fade_In">
+                <param name="type">Visible</param>
+            </include>
+            <include content="Animation_Fade_Out">
+                <param name="type">Hidden</param>
+            </include>
+            <texture colordiffuse="shadow_back">common/white.png</texture>
+        </control>
         <control type="group">
             <visible>!String.IsEmpty(Window(Home).Property(HomeSwitcher.IsVisible))</visible>
             <include>Home_Animation</include>
