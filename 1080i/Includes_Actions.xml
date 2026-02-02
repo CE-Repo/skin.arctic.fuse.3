@@ -175,6 +175,9 @@
     <include name="Action_BuildShortcuts_OnLoad">
         <onload>runscript(script.skinvariables,"run_executebuiltin=special://skin/shortcuts/skinvariables-build-templates.json",use_rules)</onload>
     </include>
+    <include name="Action_BuildShortcuts_OnUnLoad">
+        <onunload>runscript(script.skinvariables,"run_executebuiltin=special://skin/shortcuts/skinvariables-build-templates.json",use_rules)</onunload>
+    </include>
 
     <include name="Action_View_Movement_OnDown">
         <param name="condition">true</param>
