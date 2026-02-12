@@ -88,7 +88,7 @@
                                             <control type="label">
                                                 <height>40</height>
                                                 <textcolor>main_fg_70</textcolor>
-                                                <label fallback="19055">$INFO[system.memory(used.percent),$LOCALIZE[32034]: ,]</label>
+                                                <label fallback="19055">$INFO[system.memory(used.percent),$LOCALIZE[31934]: ,]</label>
                                             </control>
                                             <control type="group">
                                                 <height>12</height>
@@ -109,7 +109,7 @@
                                             <control type="label">
                                                 <height>40</height>
                                                 <textcolor>main_fg_70</textcolor>
-                                                <label fallback="19055">$LOCALIZE[32014]: $INFO[System.CPUTemperature] | $INFO[System.CpuAltUsage]</label>
+                                                <label fallback="19055">$LOCALIZE[31914]: $INFO[System.CPUTemperature] | $INFO[System.CpuAltUsage]</label>
                                             </control>
                                             <control type="group">
                                                 <height>12</height>
@@ -249,7 +249,7 @@
                                         <onclick>ActivateWindow(1116)</onclick>
                                     </item>
                                     <item>
-                                        <label>$LOCALIZE[32082]</label>
+                                        <label>$LOCALIZE[31982]</label>
                                         <label2>skin.arctic.fuse.3</label2>
                                         <icon>special://skin/extras/icons/gauge.png</icon>
                                         <onclick>SetProperty(CustomDialogSettingsItems,DialogCustom_VideoOSD_Items,Home)</onclick>
@@ -257,7 +257,7 @@
                                         <onclick>ActivateWindow(1118)</onclick>
                                     </item>
                                     <item>
-                                        <label>$LOCALIZE[32083]</label>
+                                        <label>$LOCALIZE[31983]</label>
                                         <label2>skin.arctic.fuse.3</label2>
                                         <icon>special://skin/extras/icons/circle-info.png</icon>
                                         <onclick>SetProperty(CustomDialogSettingsItems,DialogCustom_VideoInfo_Items,Home)</onclick>

@@ -784,7 +784,7 @@
             <centertop>50%</centertop>
             <height>80</height>
             <include content="Object_InfoCircle_VS10">
-                <param name="label">$LOCALIZE[32064]</param>
+                <param name="label">$LOCALIZE[31964]</param>
                 <param name="icon">special://skin/extras/icons/o.png</param>
                 <param name="font">font_mini_bold</param>
             </include>
