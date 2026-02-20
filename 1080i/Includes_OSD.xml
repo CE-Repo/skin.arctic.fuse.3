@@ -780,15 +780,21 @@
     </include>
 
     <include name="OSD_VS10_Original">
-        <control type="group">
-            <centertop>50%</centertop>
-            <height>80</height>
-            <include content="Object_InfoCircle_VS10">
-                <param name="label">$LOCALIZE[31964]</param>
-                <param name="icon">special://skin/extras/icons/o.png</param>
-                <param name="font">font_mini_bold</param>
-            </include>
-        </control>
+        <param name="anchor">true</param>
+        <param name="include_fps">true</param>
+        <param name="textcolor">panel_fg_90</param>
+        <definition>
+            <control type="group">
+                <centertop>50%</centertop>
+                <height>80</height>
+                <include content="Object_InfoCircle_VS10">
+                    <param name="name">Original</param>
+                    <param name="icon">special://skin/extras/icons/o.png</param>
+                    <param name="fallback_role">Original</param>
+                    <param name="textcolor">$PARAM[textcolor]</param>
+                </include>
+            </control>
+        </definition>
     </include>
 	
     <include name="OSD_VS10_SDR">

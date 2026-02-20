@@ -214,13 +214,15 @@
                             <control type="group">
                                 <visible>!Control.HasFocus(8492)</visible>
                                 <include content="OSD_VS10_SDR">
-                                    <param name="textcolor">dialog_fg_90</param>
+                                    <param name="textcolor_top">dialog_fg_90</param>
+                                    <param name="textcolor_sub">dialog_fg_70</param>
                                 </include>
                             </control>
                             <control type="group">
                                 <visible>Control.HasFocus(8492)</visible>
                                 <include content="OSD_VS10_SDR">
-                                    <param name="textcolor">$VAR[ColorSelected]</param>
+                                    <param name="textcolor_top">$VAR[ColorSelected]</param>
+                                    <param name="textcolor_sub">$VAR[ColorSelected]</param>
                                 </include>
                             </control>
                         </control>
