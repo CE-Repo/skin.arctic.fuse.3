@@ -2319,8 +2319,8 @@ msgid "VS10 engine"
 msgstr "VS10-Engine"
 
 msgctxt "#31907"
-msgid "More"
-msgstr "Mehr"
+msgid "Processing"
+msgstr "Verarbeitung"
 
 msgctxt "#31908"
 msgid "Video queue"
@@ -2439,12 +2439,12 @@ msgid "AML FPS"
 msgstr "AML FPS"
 
 msgctxt "#31937"
-msgid "DV Configuration"
-msgstr "DV Konfiguration"
+msgid "Dolby Vision"
+msgstr "Dolby Vision"
 
 msgctxt "#31938"
-msgid "DV Levels Metadata"
-msgstr "DV-Ebenen Metadaten"
+msgid "Metadata"
+msgstr "Metadaten"
 
 msgctxt "#31939"
 msgid "HDR Static Metadata"

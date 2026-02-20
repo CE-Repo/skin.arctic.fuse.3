@@ -225,12 +225,12 @@
 					</control>
 				</control>
 
-				<!-- Group: More -->
+				<!-- Group: Processing -->
 				<control type="group">
 					<top>300</top>
 					<left>80</left>
 					
-					<!-- More Icon -->
+					<!-- Processing Icon -->
 					<control type="label">
 						<label></label>
 						<top>-25</top>
@@ -238,7 +238,7 @@
 						<textcolor>dialog_fg_100</textcolor>
 					</control>
 					
-					<!-- More -->
+					<!-- Processing -->
 					<control type="label">
 						<label>[B][UPPERCASE]$LOCALIZE[31907][/UPPERCASE][/B]</label>
 						<top>-25</top>
@@ -860,26 +860,17 @@
 					</control>
 				</control>
 
-				<!-- Group: DV Configuration -->
+				<!-- Group: Dolby Vision -->
 				<control type="group">
 					<visible>String.IsEqual(Player.Process(video.dovi.has.config),1)</visible>
 					<left>1380</left>
 					
-					<!-- DV Configuration Icon -->
-					<control type="label">
-						<label></label>
-						<top>-25</top>
-						<font>font_tiny_iconic_regular</font>
-						<textcolor>dialog_fg_100</textcolor>
-					</control>
-					
-					<!-- DV Configuration -->
-					<control type="label">
-						<label>[B][UPPERCASE]$LOCALIZE[31937][/UPPERCASE][/B]</label>
-						<top>-25</top>
-						<left>37</left>
-						<font>font_tiny</font>
-						<textcolor>dialog_fg_100</textcolor>
+					<!-- Dolby Vision Icon -->
+					<control type="image">
+						<texture colordiffuse="dialog_fg_100">codecs/dv.png</texture>
+						<aspectratio align="left">keep</aspectratio>
+						<height>23</height>
+						<top>-22</top>
 					</control>
 					
 					<!-- Metadata -->
@@ -1048,7 +1039,7 @@
 					</control>
 				</control>
 
-				<!-- Group: DV Levels Metadata + Without L5 Active Offsets -->
+				<!-- Group: Metadata + Without L5 Active Offsets -->
 				<control type="group">
 					<visible>String.IsEqual(Player.Process(video.dovi.has.config),1)</visible>
 					<visible>String.IsEqual(Player.Process(video.dovi.has.header),1)</visible>
@@ -1056,7 +1047,7 @@
 					<top>300</top>
 					<left>1380</left>
 					
-					<!-- DV Levels Metadata Icon -->
+					<!-- Metadata Icon -->
 					<control type="label">
 						<label></label>
 						<top>-25</top>
@@ -1064,7 +1055,7 @@
 						<textcolor>dialog_fg_100</textcolor>
 					</control>
 					
-					<!-- DV Levels Metadata -->
+					<!-- Metadata -->
 					<control type="label">
 						<label>[B][UPPERCASE]$LOCALIZE[31938][/UPPERCASE][/B]</label>
 						<top>-25</top>
@@ -1224,7 +1215,7 @@
 					</control>
 				</control>
 
-				<!-- Group: DV Levels Metadata + With L5 Active Offsets -->
+				<!-- Group: Metadata + With L5 Active Offsets -->
 				<control type="group">
 					<visible>String.IsEqual(Player.Process(video.dovi.has.config),1)</visible>
 					<visible>String.IsEqual(Player.Process(video.dovi.has.header),1)</visible>
@@ -1232,7 +1223,7 @@
 					<top>300</top>
 					<left>1380</left>
 					
-					<!-- DV Levels Metadata Icon -->
+					<!-- Metadata Icon -->
 					<control type="label">
 						<label></label>
 						<top>-25</top>
@@ -1240,7 +1231,7 @@
 						<textcolor>dialog_fg_100</textcolor>
 					</control>
 					
-					<!-- DV Levels Metadata -->
+					<!-- Metadata -->
 					<control type="label">
 						<label>[B][UPPERCASE]$LOCALIZE[31938][/UPPERCASE][/B]</label>
 						<top>-25</top>
