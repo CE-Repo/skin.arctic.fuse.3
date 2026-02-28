@@ -807,7 +807,7 @@
                 <centertop>50%</centertop>
                 <height>80</height>
                 <include content="Object_InfoCircle">
-                    <param name="name">$VAR[VideoHDRCodec] -> SDR</param>
+                    <param name="name">$INFO[Player.Process(video.source.hdr.type)] -> SDR</param>
                     <param name="role">SDR</param>
                     <param name="icon">special://skin/extras/icons/convert.png</param>
                     <param name="fallback_role">SDR</param>
@@ -828,7 +828,7 @@
                 <centertop>50%</centertop>
                 <height>80</height>
                 <include content="Object_InfoCircle">
-                    <param name="name">$VAR[VideoHDRCodec] -> HDR10</param>
+                    <param name="name">$INFO[Player.Process(video.source.hdr.type)] -> HDR10</param>
                     <param name="role">HDR10</param>
                     <param name="icon">special://skin/extras/icons/convert.png</param>
                     <param name="fallback_role">HDR10</param>
@@ -849,7 +849,7 @@
                 <centertop>50%</centertop>
                 <height>80</height>
                 <include content="Object_InfoCircle">
-                    <param name="name">$VAR[VideoHDRCodec] -> Dolby Vision</param>
+                    <param name="name">$INFO[Player.Process(video.source.hdr.type)] -> Dolby Vision</param>
                     <param name="role">Dolby Vision</param>
                     <param name="icon">special://skin/extras/icons/convert.png</param>
                     <param name="fallback_role">Dolby Vision</param>
