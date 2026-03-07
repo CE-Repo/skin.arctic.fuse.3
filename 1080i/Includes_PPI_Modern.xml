@@ -316,18 +316,9 @@
 					<control type="label">
 						<left>210</left>
 						<top>140</top>
-						<label>$INFO[Player.Process(video.hdr.colour.primaries)]</label>
+						<label>$VAR[ColorSpaceVar]</label>
 						<font>font_tiny</font>
 						<textcolor>dialog_fg_90</textcolor>
-					</control>
-					<!-- N/A -->
-					<control type="label">
-						<left>210</left>
-						<top>140</top>
-						<label>$LOCALIZE[31933]</label>
-						<font>font_tiny</font>
-						<textcolor>dialog_fg_90</textcolor>
-						<visible>String.IsEmpty(Player.Process(video.hdr.colour.primaries))</visible>
 					</control>
 					
 					<!-- Media source -->
