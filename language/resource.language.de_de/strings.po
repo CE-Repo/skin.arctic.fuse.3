@@ -2641,3 +2641,7 @@ msgstr "System"
 msgctxt "#31989"
 msgid "Info line"
 msgstr "Infozeile"
+
+msgctxt "#31990"
+msgid "VS10 & VP"
+msgstr "VS10 & VP"

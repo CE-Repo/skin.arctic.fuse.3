@@ -196,8 +196,17 @@
 					
 					<!-- VS10 engine -->
 					<control type="label">
+						<visible>String.IsEmpty(Player.Process(video.vpmode)</visible>
 						<top>20</top>
 						<label>$LOCALIZE[31906]:</label>
+						<font>font_tiny</font>
+						<textcolor>dialog_fg_90</textcolor>
+					</control>
+					<!-- VP -->
+					<control type="label">
+						<visible>!String.IsEmpty(Player.Process(video.vpmode)</visible>
+						<top>20</top>
+						<label>$LOCALIZE[31990]:</label>
 						<font>font_tiny</font>
 						<textcolor>dialog_fg_90</textcolor>
 					</control>
@@ -205,6 +214,21 @@
 						<left>211</left>
 						<top>21</top>
 						<label>$VAR[VS10ModeVar]</label>
+						<font>font_tiny_iconic_regular</font>
+					</control>
+					<control type="label">
+						<visible>!String.IsEmpty(Player.Process(video.vpmode)</visible>
+						<top>20</top>
+						<left>251</left>
+						<label>|</label>
+						<font>font_tiny</font>
+						<textcolor>dialog_fg_90</textcolor>
+					</control>
+					<control type="label">
+						<visible>!String.IsEmpty(Player.Process(video.vpmode)</visible>
+						<left>275</left>
+						<top>21</top>
+						<label>$VAR[VideoVPModeVar]</label>
 						<font>font_tiny_iconic_regular</font>
 					</control>
 					
