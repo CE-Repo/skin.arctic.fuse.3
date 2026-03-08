@@ -74,7 +74,7 @@
         <param name="target">videos</param>
         <param name="include">List_Poster_Row</param>
         <param name="visible">true</param>
-        <param name="allowhiddenfocus">true</param>
+        <param name="allowhiddenfocus">false</param>
         <param name="home_switcher">false</param>
         <param name="include_action">Object_Null</param>
         <definition>
@@ -551,6 +551,7 @@
         <param name="window">Home</param>
         <definition>
             <control type="wraplist" id="301">
+                <visible allowhiddenfocus="false">!Integer.IsEqual(Container(301).NumItems,0) | Container(301).IsUpdating</visible>
                 <preloaditems>2</preloaditems>
                 <onfocus>SetProperty(TMDbHelper.WidgetContainer,301,$PARAM[window])</onfocus>
                 <onfocus>ClearProperty(Background.ShowOverlay,Home)</onfocus>
