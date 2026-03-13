@@ -2290,3 +2290,358 @@ msgctxt "#31605"
 msgid "Next aired"
 msgstr "Nächste Ausstrahlung"
 
+msgctxt "#31900"
+msgid "Display mode"
+msgstr "Bildauflösung"
+
+msgctxt "#31901"
+msgid "Video mode"
+msgstr "Videoauflösung"
+
+msgctxt "#31902"
+msgid "Color space"
+msgstr "Farbbereich"
+
+msgctxt "#31903"
+msgid "Mb/s"
+msgstr "Mb/s"
+
+msgctxt "#31904"
+msgid "Bit depth"
+msgstr "Bittiefe"
+
+msgctxt "#31905"
+msgid "Decoder"
+msgstr "Decoder"
+
+msgctxt "#31906"
+msgid "VS10 engine"
+msgstr "VS10-Engine"
+
+msgctxt "#31907"
+msgid "Processing"
+msgstr "Verarbeitung"
+
+msgctxt "#31908"
+msgid "Video queue"
+msgstr "Video Queue"
+
+msgctxt "#31909"
+msgid "Video queue data"
+msgstr "Video Queue-Daten"
+
+msgctxt "#31910"
+msgid "Audio queue"
+msgstr "Audio Queue"
+
+msgctxt "#31911"
+msgid "Audio queue data"
+msgstr "Audio Queue-Daten"
+
+msgctxt "#31912"
+msgid "Kb/s"
+msgstr "Kb/s"
+
+msgctxt "#31913"
+msgid "Playback time"
+msgstr "Wiedergabezeit"
+
+msgctxt "#31914"
+msgid "Processor"
+msgstr "Prozessor"
+
+msgctxt "#31915"
+msgid "Metadata"
+msgstr "Metadaten"
+
+msgctxt "#31916"
+msgid "Profile"
+msgstr "Profil"
+
+msgctxt "#31917"
+msgid "Level"
+msgstr "Level"
+
+msgctxt "#31918"
+msgid "RPU"
+msgstr "RPU"
+
+msgctxt "#31919"
+msgid "Base Layer"
+msgstr "Base Layer"
+
+msgctxt "#31920"
+msgid "Enhancement Layer"
+msgstr "Enhancement Layer"
+
+msgctxt "#31921"
+msgid "Enhancement Layer Type"
+msgstr "Enhancement Layer Typ"
+
+msgctxt "#31922"
+msgid "Metadata"
+msgstr "Metadaten"
+
+msgctxt "#31923"
+msgid "Pixel format"
+msgstr "Pixelformat"
+
+msgctxt "#31924"
+msgid "Aspect ratio"
+msgstr "Verhältnis"
+
+msgctxt "#31925"
+msgid "HDR10 MDL"
+msgstr "HDR10 MDL"
+
+msgctxt "#31926"
+msgid "HDR10 MaxCLL/FALL"
+msgstr "HDR10 MaxCLL/FALL"
+
+msgctxt "#31927"
+msgid "Media source"
+msgstr "Medienquelle"
+
+msgctxt "#31928"
+msgid "Unknown"
+msgstr "Unbekannt"
+
+msgctxt "#31929"
+msgid "On"
+msgstr "An"
+
+msgctxt "#31930"
+msgid "Off"
+msgstr "Aus"
+
+msgctxt "#31931"
+msgid "Deinterlacing"
+msgstr "Verfahren"
+
+msgctxt "#31932"
+msgid "Player cache"
+msgstr "Player Cache"
+
+msgctxt "#31933"
+msgid "N/A"
+msgstr "Nicht verfügbar"
+
+msgctxt "#31934"
+msgid "Memory usage"
+msgstr "Arbeitsspeicher"
+
+msgctxt "#31935"
+msgid "Passthrough"
+msgstr "Passthrough"
+
+msgctxt "#31936"
+msgid "AML FPS"
+msgstr "AML FPS"
+
+msgctxt "#31937"
+msgid "Dolby Vision"
+msgstr "Dolby Vision"
+
+msgctxt "#31938"
+msgid "Metadata"
+msgstr "Metadaten"
+
+msgctxt "#31939"
+msgid "HDR Static Metadata"
+msgstr "Statische HDR-Metadaten"
+
+msgctxt "#31940"
+msgid "cd/m²"
+msgstr "cd/m²"
+
+msgctxt "#31941"
+msgid "RPU MDL"
+msgstr "RPU MDL"
+
+msgctxt "#31942"
+msgid "RPU MaxCLL/FALL"
+msgstr "RPU MaxCLL/FALL"
+
+msgctxt "#31943"
+msgid "FLL MIN / MAX / Ø"
+msgstr "FLL MIN / MAX / Ø"
+
+msgctxt "#31944"
+msgid "PQ  MIN / MAX / Ø"
+msgstr "PQ  MIN / MAX / Ø"
+
+msgctxt "#31945"
+msgid "12-bit"
+msgstr "12-bit"
+
+msgctxt "#31946"
+msgid "Codec"
+msgstr "Codec"
+
+msgctxt "#31947"
+msgid "Bitrate"
+msgstr "Bitrate"
+
+msgctxt "#31948"
+msgid "VS10 status"
+msgstr "VS10-Status"
+
+msgctxt "#31951"
+msgid "Input"
+msgstr "Eingang"
+
+msgctxt "#31952"
+msgid "Audio language"
+msgstr "Audiosprache"
+
+msgctxt "#31953"
+msgid "Subtitle language"
+msgstr "Untertitelsprache"
+
+msgctxt "#31954"
+msgid "Video"
+msgstr "Video"
+
+msgctxt "#31955"
+msgid "Output"
+msgstr "Ausgang"
+
+msgctxt "#31956"
+msgid "Audio"
+msgstr "Ton"
+
+msgctxt "#31957"
+msgid "Top left"
+msgstr "Oben links"
+
+msgctxt "#31958"
+msgid "Top center"
+msgstr "Oben mittig"
+
+msgctxt "#31959"
+msgid "Top right"
+msgstr "Oben rechts"
+
+msgctxt "#31960"
+msgid "Codec logos (OSD)"
+msgstr "Codec-Logos (OSD)"
+
+msgctxt "#31961"
+msgid "Codec logos (PlayerProcessInfo)"
+msgstr "Codec-Logos (PlayerProcessInfo)"
+
+msgctxt "#31962"
+msgid "Codec logos (Start)"
+msgstr "Codec-Logos (Start)"
+
+msgctxt "#31963"
+msgid "Position of codec logos"
+msgstr "Position der Codec-Logos"
+
+msgctxt "#31964"
+msgid "Original"
+msgstr "Original"
+
+msgctxt "#31965"
+msgid "VS10"
+msgstr "VS10"
+
+msgctxt "#31966"
+msgid "Audio codec"
+msgstr "Audiocodec"
+
+msgctxt "#31967"
+msgid "L5 Active Offsets"
+msgstr "L5 Aktive Offsets"
+
+msgctxt "#31968"
+msgid "Version"
+msgstr "Version"
+
+msgctxt "#31969"
+msgid "Bit depth"
+msgstr "Bittiefe"
+
+msgctxt "#31970"
+msgid "EOTF & Gamut"
+msgstr "EOTF & Gamut"
+
+msgctxt "#31971"
+msgid "- Duration"
+msgstr "- Dauer"
+
+msgctxt "#31972"
+msgid "- Show path"
+msgstr "- Pfad anzeigen"
+
+msgctxt "#31973"
+msgid "Artwork Style"
+msgstr "Artwork-Stil"
+
+msgctxt "#31974"
+msgid "PlayerProcessInfo type"
+msgstr "PlayerProcessInfo-Typ"
+
+msgctxt "#31975"
+msgid "second"
+msgstr "Sekunde"
+
+msgctxt "#31976"
+msgid "- Show file name"
+msgstr "- Dateiname anzeigen"
+
+msgctxt "#31977"
+msgid "Modern"
+msgstr "Modern"
+
+msgctxt "#31978"
+msgid "Classic"
+msgstr "Klassisch"
+
+msgctxt "#31979"
+msgid "Original"
+msgstr "Original"
+
+msgctxt "#31980"
+msgid "VHS Art"
+msgstr "VHS-Art"
+
+msgctxt "#31981"
+msgid "Show file name in the version selection"
+msgstr "Dateiname in der Versionsauswahl anzeigen"
+
+msgctxt "#31982"
+msgid "Customise video osd"
+msgstr "Video-OSD anpassen"
+
+msgctxt "#31983"
+msgid "Customise video info"
+msgstr "Videoinformation anpassen"
+
+msgctxt "#31984"
+msgid "Show two-row information bar"
+msgstr "Zweizeilige Informationsleiste anzeigen"
+
+msgctxt "#31985"
+msgid "Disc Art"
+msgstr "Disk-Art"
+
+msgctxt "#31986"
+msgid "Rotating disc"
+msgstr "Drehende Disk"
+
+msgctxt "#31987"
+msgid "Decoding"
+msgstr "Dekodierung"
+
+msgctxt "#31988"
+msgid "System"
+msgstr "System"
+
+msgctxt "#31989"
+msgid "Info line"
+msgstr "Infozeile"
+
+msgctxt "#31990"
+msgid "VS10 & VP"
+msgstr "VS10 & VP"
