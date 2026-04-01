@@ -2320,7 +2320,7 @@ msgid "Decoder"
 msgstr ""
 
 msgctxt "#31906"
-msgid "VS10 engine"
+msgid "VS10 | CMv4 | VP"
 msgstr ""
 
 msgctxt "#31907"
@@ -2645,8 +2645,4 @@ msgstr ""
 
 msgctxt "#31989"
 msgid "Info line"
-msgstr ""
-
-msgctxt "#31990"
-msgid "VS10 & VP"
 msgstr ""

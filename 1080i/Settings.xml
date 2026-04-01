@@ -198,11 +198,11 @@
                                         <visible>System.AddonIsEnabled(service.coreelec.settings)</visible>
                                     </item>
                                     <item>
-                                        <label>Hybrid</label>
+                                        <label>p3i</label>
                                         <label2>skin.arctic.fuse.3</label2>
                                         <icon>special://skin/extras/icons/configure.png</icon>
-                                        <onclick>SetProperty(CustomDialogSettingsItems,DialogCustom_Hybrid_Items,Home)</onclick>
-                                        <onclick>SetProperty(CustomDialogSettingsTitle,Hybrid,Home)</onclick>
+                                        <onclick>SetProperty(CustomDialogSettingsItems,DialogCustom_p3i_Items,Home)</onclick>
+                                        <onclick>SetProperty(CustomDialogSettingsTitle,p3i,Home)</onclick>
                                         <onclick>ActivateWindow(1118)</onclick>
                                     </item>
                                     <item>

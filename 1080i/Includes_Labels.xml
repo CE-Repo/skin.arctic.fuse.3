@@ -109,12 +109,12 @@
     </variable>
 
     <variable name="Label_Settings_InfoText">
-        <value condition="System.HasVisibleModalDialog | Control.HasFocus(60) | Control.HasFocus(20)">$INFO[System.BuildVersionCode,CoreELEC ]$INFO[System.AddonVersion(skin.arctic.fuse.3),• Arctic Fuse 3 • , (Hybrid)]</value>
+        <value condition="System.HasVisibleModalDialog | Control.HasFocus(60) | Control.HasFocus(20)">$INFO[System.BuildVersionCode,CoreELEC ]$INFO[System.AddonVersion(skin.arctic.fuse.3),• Arctic Fuse 3 • , (p3i)]</value>
         <value condition="Window.IsVisible(SettingsCategory.xml) + [ControlGroup(3).HasFocus() | ControlGroup(5).HasFocus()]">$INFO[Control.GetLabel(6)]</value>
         <value condition="Window.IsVisible(SkinSettings.xml) + [Control.HasFocus(10000) | String.IsEmpty(Window.Property(InfoText.Header))]">$INFO[Container(10000).ListItem.Label2]</value>
         <value condition="Window.IsVisible(SkinSettings.xml) + !String.IsEmpty(Window.Property(InfoText.Header))">$INFO[Window.Property(InfoText.Message)]</value>
         <value condition="Window.IsVisible(addonbrowser) + Control.HasFocus(50)">$INFO[Container(50).ListItem.AddonName,, • ]$INFO[Container(50).ListItem.AddonVersion,v,]$INFO[Container(50).ListItem.AddonOrigin, • ,]</value>
-        <value>$INFO[System.BuildVersionCode,CoreELEC ]$INFO[System.AddonVersion(skin.arctic.fuse.3),• Arctic Fuse 3 • , (Hybrid)]</value>
+        <value>$INFO[System.BuildVersionCode,CoreELEC ]$INFO[System.AddonVersion(skin.arctic.fuse.3),• Arctic Fuse 3 • , (p3i)]</value>
     </variable>
 
     <variable name="Label_Settings_NavigationOnBack">
@@ -1594,6 +1594,17 @@
     <variable name="VideoVPModeVar">
         <value condition="Integer.IsEqual(Player.Process(video.vpmode),0)">[COLOR tomato][/COLOR]</value>
         <value condition="Integer.IsEqual(Player.Process(video.vpmode),1)">[COLOR palegreen][/COLOR]</value>
+    </variable>
+	
+    <variable name="CMModeVar">
+        <value condition="!String.StartsWith(Player.Process(video.dovi.meta.version),V)">[COLOR tomato][/COLOR]</value>
+        <value condition="String.StartsWith(Player.Process(video.dovi.meta.version),V)">[COLOR palegreen][/COLOR]</value>
+    </variable>
+	
+    <variable name="CMMode1Var">
+        <value condition="String.IsEqual(Player.Process(video.dovi.meta.version),VCMv4.0 2-0)">CMv4.0 2-0</value>
+        <value condition="String.IsEqual(Player.Process(video.dovi.meta.version),VCMv4.0 2-0 1-L8)">CMv4.0 2-0 1-L8</value>
+        <value>$INFO[Player.Process(video.dovi.meta.version)]</value>
     </variable>
 	
     <variable name="AudioCodecVar">

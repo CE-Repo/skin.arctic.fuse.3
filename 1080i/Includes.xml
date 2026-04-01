@@ -75,7 +75,7 @@
     <include file="Includes_LiveTV.xml" />
     <include file="Includes_Addons.xml" />
     <include file="Includes_Paths.xml" />
-    <include file="Includes_Hybrid.xml"/>
+    <include file="Includes_p3i.xml"/>
     <include file="Includes_PPI_Classic.xml"/>
     <include file="Includes_PPI_Modern.xml"/>
 

@@ -247,19 +247,10 @@
 						<textcolor>dialog_fg_100</textcolor>
 					</control>
 					
-					<!-- VS10 engine -->
+					<!-- VS10 | CMv4 | VP -->
 					<control type="label">
-						<visible>String.IsEmpty(Player.Process(video.vpmode)</visible>
 						<top>20</top>
 						<label>$LOCALIZE[31906]:</label>
-						<font>font_tiny</font>
-						<textcolor>dialog_fg_90</textcolor>
-					</control>
-					<!-- VP -->
-					<control type="label">
-						<visible>!String.IsEmpty(Player.Process(video.vpmode)</visible>
-						<top>20</top>
-						<label>$LOCALIZE[31990]:</label>
 						<font>font_tiny</font>
 						<textcolor>dialog_fg_90</textcolor>
 					</control>
@@ -270,7 +261,6 @@
 						<font>font_tiny_iconic_regular</font>
 					</control>
 					<control type="label">
-						<visible>!String.IsEmpty(Player.Process(video.vpmode)</visible>
 						<top>20</top>
 						<left>251</left>
 						<label>|</label>
@@ -278,8 +268,20 @@
 						<textcolor>dialog_fg_90</textcolor>
 					</control>
 					<control type="label">
-						<visible>!String.IsEmpty(Player.Process(video.vpmode)</visible>
 						<left>275</left>
+						<top>21</top>
+						<label>$VAR[CMModeVar]</label>
+						<font>font_tiny_iconic_regular</font>
+					</control>
+					<control type="label">
+						<top>20</top>
+						<left>315</left>
+						<label>|</label>
+						<font>font_tiny</font>
+						<textcolor>dialog_fg_90</textcolor>
+					</control>
+					<control type="label">
+						<left>339</left>
 						<top>21</top>
 						<label>$VAR[VideoVPModeVar]</label>
 						<font>font_tiny_iconic_regular</font>
@@ -898,7 +900,7 @@
 					<control type="label">
 						<left>290</left>
 						<top>20</top>
-						<label>$INFO[Player.Process(video.dovi.meta.version)]</label>
+						<label>$VAR[CMMode1Var]</label>
 						<font>font_tiny</font>
 						<textcolor>dialog_fg_90</textcolor>
 					</control>

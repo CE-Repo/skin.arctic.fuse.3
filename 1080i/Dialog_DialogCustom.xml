@@ -162,7 +162,7 @@
 
         <include condition="String.IsEqual(Window(Home).Property(CustomDialogSettingsItems),DialogCustom_Settings_Items_Indicators)">DialogCustom_Settings_Items_Indicators</include>
 
-        <include condition="String.IsEqual(Window(Home).Property(CustomDialogSettingsItems),DialogCustom_Hybrid_Items)">DialogCustom_Hybrid_Items</include>
+        <include condition="String.IsEqual(Window(Home).Property(CustomDialogSettingsItems),DialogCustom_p3i_Items)">DialogCustom_p3i_Items</include>
         <include condition="String.IsEqual(Window(Home).Property(CustomDialogSettingsItems),DialogCustom_Autoscroll_Items)">DialogCustom_Autoscroll_Items</include>
         <include condition="String.IsEqual(Window(Home).Property(CustomDialogSettingsItems),DialogCustom_VideoOSD_Items)">DialogCustom_VideoOSD_Items</include>
         <include condition="String.IsEqual(Window(Home).Property(CustomDialogSettingsItems),DialogCustom_VideoInfo_Items)">DialogCustom_VideoInfo_Items</include>
@@ -1490,7 +1490,7 @@
         </include>
     </include>
 
-    <include name="DialogCustom_Hybrid_Items">
+    <include name="DialogCustom_p3i_Items">
         <include content="Settings_Label">
             <param name="id">8001</param>
             <param name="dialog">true</param>
