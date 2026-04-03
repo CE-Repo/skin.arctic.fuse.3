@@ -2320,7 +2320,7 @@ msgid "Decoder"
 msgstr ""
 
 msgctxt "#31906"
-msgid "VS10 | CMv4 | VP"
+msgid "VS10 | VP mode"
 msgstr ""
 
 msgctxt "#31907"
@@ -2380,7 +2380,7 @@ msgid "Enhancement Layer"
 msgstr ""
 
 msgctxt "#31921"
-msgid "Enhancement Layer Type"
+msgid "CMv2.9 to CMv4.0"
 msgstr ""
 
 msgctxt "#31922"

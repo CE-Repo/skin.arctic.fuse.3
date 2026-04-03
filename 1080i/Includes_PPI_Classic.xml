@@ -194,7 +194,7 @@
 						<textcolor>dialog_fg_100</textcolor>
 					</control>
 					
-					<!-- VS10 | CMv4 | VP -->
+					<!-- VS10 | VP mode -->
 					<control type="label">
 						<top>20</top>
 						<label>$LOCALIZE[31906]:</label>
@@ -216,19 +216,6 @@
 					</control>
 					<control type="label">
 						<left>275</left>
-						<top>21</top>
-						<label>$VAR[CMModeVar]</label>
-						<font>font_tiny_iconic_regular</font>
-					</control>
-					<control type="label">
-						<top>20</top>
-						<left>315</left>
-						<label>|</label>
-						<font>font_tiny</font>
-						<textcolor>dialog_fg_90</textcolor>
-					</control>
-					<control type="label">
-						<left>339</left>
 						<top>21</top>
 						<label>$VAR[VideoVPModeVar]</label>
 						<font>font_tiny_iconic_regular</font>
@@ -970,7 +957,7 @@
 						<visible>!String.IsEqual(Player.Process(video.source.dovi.profile),0)</visible>
 					</control>
 					
-					<!-- Enhancement Layer Type -->
+					<!-- CMv2.9 to CMv4.0 -->
 					<control type="label">
 						<top>230</top>
 						<label>$LOCALIZE[31921]:</label>
@@ -978,28 +965,11 @@
 						<textcolor>dialog_fg_90</textcolor>
 					</control>
 					<control type="label">
-						<left>335</left>
-						<top>230</top>
-						<label>$VAR[DVELVar]</label>
-						<font>font_tiny</font>
-						<textcolor>dialog_fg_90</textcolor>
-					</control>
-					<control type="label">
 						<left>341</left>
 						<top>231</top>
-						<label>$VAR[DVELVar1]</label>
+						<label>$VAR[CMModeVar]</label>
 						<font>font_tiny_iconic_regular</font>
 						<textcolor>dialog_fg_90</textcolor>
-						<visible>!String.Contains(Player.Process(video.dovi.el.type),minimum)</visible>
-						<visible>!String.Contains(Player.Process(video.dovi.el.type),full)</visible>
-					</control>
-					<control type="label">
-						<left>410</left>
-						<top>231</top>
-						<label>$VAR[ELSourcePresentVar]</label>
-						<font>font_tiny_iconic_regular</font>
-						<visible>!String.IsEqual(Player.Process(video.source.dovi.el.type),Player.Process(video.dovi.el.type))</visible>
-						<visible>!String.IsEqual(Player.Process(video.source.dovi.profile),0)</visible>
 					</control>
 				</control>
 
@@ -1021,7 +991,7 @@
 					
 					<!-- Metadata -->
 					<control type="label">
-						<label>[B][UPPERCASE]$LOCALIZE[31938][/UPPERCASE][/B]</label>
+						<label>[B][UPPERCASE]$LOCALIZE[31922][/UPPERCASE][/B]</label>
 						<top>-25</top>
 						<left>40</left>
 						<font>font_tiny</font>
@@ -1197,7 +1167,7 @@
 					
 					<!-- Metadata -->
 					<control type="label">
-						<label>[B][UPPERCASE]$LOCALIZE[31938][/UPPERCASE][/B]</label>
+						<label>[B][UPPERCASE]$LOCALIZE[31922][/UPPERCASE][/B]</label>
 						<top>-25</top>
 						<left>40</left>
 						<font>font_tiny</font>
