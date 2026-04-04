@@ -59,6 +59,11 @@
                 <filename>fa-solid-900.ttf</filename>
                 <size>12</size>
             </font>
+            <font>
+                <name>font_tiny_iconic_regular</name>
+                <filename>fa-regular-400.ttf</filename>
+                <size>24</size>
+            </font>
 
             <!-- Kodi Logo Font -->
             <font>
