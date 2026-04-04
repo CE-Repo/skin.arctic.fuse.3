@@ -509,9 +509,25 @@
         </definition>
     </include>
 
+    <include name="Home_Submenu_Panel_VertReposition">
+        <animation effect="slide" start="0" end="0,40" condition="Integer.IsEqual(Container(80$PARAM[id]).NumItems,8)">Conditional</animation>
+        <animation effect="slide" start="0" end="0,80" condition="Integer.IsEqual(Container(80$PARAM[id]).NumItems,7)">Conditional</animation>
+        <animation effect="slide" start="0" end="0,120" condition="Integer.IsEqual(Container(80$PARAM[id]).NumItems,6)">Conditional</animation>
+        <animation effect="slide" start="0" end="0,160" condition="Integer.IsEqual(Container(80$PARAM[id]).NumItems,5)">Conditional</animation>
+        <animation effect="slide" start="0" end="0,200" condition="Integer.IsEqual(Container(80$PARAM[id]).NumItems,4)">Conditional</animation>
+        <animation effect="slide" start="0" end="0,240" condition="Integer.IsEqual(Container(80$PARAM[id]).NumItems,3)">Conditional</animation>
+        <animation effect="slide" start="0" end="0,280" condition="Integer.IsEqual(Container(80$PARAM[id]).NumItems,2)">Conditional</animation>
+        <animation effect="slide" start="0" end="0,320" condition="Integer.IsEqual(Container(80$PARAM[id]).NumItems,1)">Conditional</animation>
+    </include>
+
     <include name="Home_Submenu_Panel">
         <definition>
             <control type="group">
+
+                <include content="Home_Submenu_Panel_VertReposition" condition="Skin.HasSetting(HomeSwitcher.Vertical)">
+                    <param name="id">$PARAM[id]</param>
+                </include>
+
                 <top>100</top>
                 <width>560</width>
                 <height>880</height>
@@ -519,48 +535,61 @@
                     <visible>Window.IsVisible($PARAM[window])</visible>
                     <include>Animation_SlideIn_Dialog</include>
                     <control type="group">
-                        <include>Part_Background_Panel</include>
-                        <visible>Integer.IsGreater(Container(80$PARAM[id]).NumItems,8)</visible>
-                    </control>
-                    <control type="group">
-                        <include>Part_Background_Panel</include>
-                        <visible>Integer.IsEqual(Container(80$PARAM[id]).NumItems,8)</visible>
-                        <bottom>80</bottom>
-                    </control>
-                    <control type="group">
-                        <include>Part_Background_Panel</include>
-                        <visible>Integer.IsEqual(Container(80$PARAM[id]).NumItems,7)</visible>
-                        <bottom>160</bottom>
-                    </control>
-                    <control type="group">
-                        <include>Part_Background_Panel</include>
-                        <visible>Integer.IsEqual(Container(80$PARAM[id]).NumItems,6)</visible>
-                        <bottom>240</bottom>
-                    </control>
-                    <control type="group">
-                        <include>Part_Background_Panel</include>
-                        <visible>Integer.IsEqual(Container(80$PARAM[id]).NumItems,5)</visible>
-                        <bottom>320</bottom>
-                    </control>
-                    <control type="group">
-                        <include>Part_Background_Panel</include>
-                        <visible>Integer.IsEqual(Container(80$PARAM[id]).NumItems,4)</visible>
-                        <bottom>400</bottom>
-                    </control>
-                    <control type="group">
-                        <include>Part_Background_Panel</include>
-                        <visible>Integer.IsEqual(Container(80$PARAM[id]).NumItems,3)</visible>
-                        <bottom>480</bottom>
-                    </control>
-                    <control type="group">
-                        <include>Part_Background_Panel</include>
-                        <visible>Integer.IsEqual(Container(80$PARAM[id]).NumItems,2)</visible>
-                        <bottom>560</bottom>
-                    </control>
-                    <control type="group">
-                        <include>Part_Background_Panel</include>
-                        <visible>Integer.IsEqual(Container(80$PARAM[id]).NumItems,1)</visible>
-                        <bottom>640</bottom>
+                        <include content="Object_Top" condition="Skin.HasSetting(HomeSwitcher.Vertical)">
+                            <param name="top">40</param>
+                        </include>
+                        <control type="group">
+                            <include>Part_Background_Panel</include>
+                            <visible>Integer.IsGreater(Container(80$PARAM[id]).NumItems,8)</visible>
+                        </control>
+                        <control type="group">
+                            <include>Part_Background_Panel</include>
+                            <visible>Integer.IsEqual(Container(80$PARAM[id]).NumItems,8)</visible>
+                            <bottom>80</bottom>
+                        </control>
+                        <control type="group">
+                            <include>Part_Background_Panel</include>
+                            <visible>Integer.IsEqual(Container(80$PARAM[id]).NumItems,7)</visible>
+                            <bottom>160</bottom>
+                        </control>
+                        <control type="group">
+                            <include>Part_Background_Panel</include>
+                            <visible>Integer.IsEqual(Container(80$PARAM[id]).NumItems,6)</visible>
+                            <bottom>240</bottom>
+                        </control>
+                        <control type="group">
+                            <include>Part_Background_Panel</include>
+                            <visible>Integer.IsEqual(Container(80$PARAM[id]).NumItems,5)</visible>
+                            <bottom>320</bottom>
+                        </control>
+                        <control type="group">
+                            <include>Part_Background_Panel</include>
+                            <visible>Integer.IsEqual(Container(80$PARAM[id]).NumItems,4)</visible>
+                            <bottom>400</bottom>
+                        </control>
+                        <control type="group">
+                            <include>Part_Background_Panel</include>
+                            <visible>Integer.IsEqual(Container(80$PARAM[id]).NumItems,3)</visible>
+                            <bottom>480</bottom>
+                        </control>
+                        <control type="group">
+                            <include>Part_Background_Panel</include>
+                            <visible>Integer.IsEqual(Container(80$PARAM[id]).NumItems,2)</visible>
+                            <bottom>560</bottom>
+                        </control>
+                        <control type="group">
+                            <include>Part_Background_Panel</include>
+                            <visible>Integer.IsEqual(Container(80$PARAM[id]).NumItems,1)</visible>
+                            <bottom>640</bottom>
+                        </control>
+                        <include content="Part_Scrollbar">
+                            <param name="id">61$PARAM[id]</param>
+                            <centerright>40</centerright>
+                            <top>60</top>
+                            <bottom>60</bottom>
+                            <onleft>80$PARAM[id]</onleft>
+                            <onright>PreviousMenu</onright>
+                        </include>
                     </control>
                     <include content="List_DialogSelect">
                         <param name="id">80$PARAM[id]</param>
@@ -580,17 +609,10 @@
                             <include>skinvariables-$PARAM[window]submenu-staticitems</include>
                         </content>
                     </include>
-                    <include content="Part_Scrollbar">
-                        <param name="id">61$PARAM[id]</param>
-                        <centerright>40</centerright>
-                        <top>60</top>
-                        <bottom>60</bottom>
-                        <onleft>80$PARAM[id]</onleft>
-                        <onright>PreviousMenu</onright>
-                    </include>
+
                 </control>
             </control>
-            <include content="Home_Focus_Object">
+            <include content="Home_Focus_Object" condition="Skin.HasSetting(HomeSwitcher.Vertical)">
                 <param name="window">$PARAM[window]</param>
             </include>
         </definition>
@@ -732,6 +754,40 @@
                         <param name="id">04</param>
                     </include>
                 </control>
+            </control>
+        </definition>
+    </include>
+
+    <include name="Home_Vert_Submenu">
+        <definition>
+            <include content="Home_Submenu_Start"><param name="id">00</param></include>
+            <include content="Home_Submenu_Start"><param name="id">01</param></include>
+            <include content="Home_Submenu_Start"><param name="id">02</param></include>
+            <include content="Home_Submenu_Start"><param name="id">03</param></include>
+            <include content="Home_Submenu_Start"><param name="id">04</param></include>
+            <control type="group">
+                <top>-20</top>
+                <left>120</left>
+                <include content="Home_Submenu_Panel">
+                    <param name="window">home</param>
+                    <param name="id">00</param>
+                </include>
+                <include content="Home_Submenu_Panel" condition="!String.IsEmpty(Skin.String(HomeSwitcher.1101.Toggle))">
+                    <param name="window">1101</param>
+                    <param name="id">01</param>
+                </include>
+                <include content="Home_Submenu_Panel" condition="!String.IsEmpty(Skin.String(HomeSwitcher.1102.Toggle))">
+                    <param name="window">1102</param>
+                    <param name="id">02</param>
+                </include>
+                <include content="Home_Submenu_Panel" condition="!String.IsEmpty(Skin.String(HomeSwitcher.1103.Toggle))">
+                    <param name="window">1103</param>
+                    <param name="id">03</param>
+                </include>
+                <include content="Home_Submenu_Panel" condition="!String.IsEmpty(Skin.String(HomeSwitcher.1104.Toggle))">
+                    <param name="window">1104</param>
+                    <param name="id">04</param>
+                </include>
             </control>
         </definition>
     </include>
