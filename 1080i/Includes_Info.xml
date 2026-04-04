@@ -877,7 +877,8 @@
 
     <include name="Info_Plot_Episode">
         <control type="group">
-            <visible>String.IsEqual($PARAM[container]$PARAM[listitem].DBType,episode)</visible>
+            <visible>$PARAM[visible]</visible>
+            <visible>String.IsEqual($PARAM[container]$PARAM[listitem].DBType,episode) | $PARAM[override]</visible>
             <height>120</height>
             <control type="group">
                 <visible>[!String.IsEmpty($PARAM[container]$PARAM[listitem].Season) | !String.IsEmpty($PARAM[container]$PARAM[listitem].Episode) | !String.IsEmpty($PARAM[container]$PARAM[listitem].Title)]</visible>
@@ -923,7 +924,8 @@
 
         <!-- Movie / TV -->
         <control type="group">
-            <visible>String.IsEqual($PARAM[container]$PARAM[listitem].DBType,movie) | String.IsEqual($PARAM[container]$PARAM[listitem].DBType,tvshow)</visible>
+            <visible>$PARAM[visible]</visible>
+            <visible>String.IsEqual($PARAM[container]$PARAM[listitem].DBType,movie) | String.IsEqual($PARAM[container]$PARAM[listitem].DBType,tvshow) | $PARAM[override]</visible>
             <height>120</height>
             <control type="group">
                 <visible>[!String.IsEmpty($PARAM[container]$PARAM[listitem].Tagline) + !Skin.HasSetting(Plotline.EnableGenre)] | [!String.IsEmpty($PARAM[container]$PARAM[listitem].Genre) + Skin.HasSetting(Plotline.EnableGenre)]</visible>
@@ -967,6 +969,8 @@
         <!-- Season / Video / Album / Channel -->
         <control type="group">
             <height>120</height>
+            <visible>$PARAM[visible]</visible>
+            <visible>![$PARAM[override]]</visible>
             <visible>String.IsEqual($PARAM[container]$PARAM[listitem].DBType,season) | String.IsEqual($PARAM[container]$PARAM[listitem].DBType,video) | String.IsEqual($PARAM[container]$PARAM[listitem].DBType,album) | !String.IsEmpty($PARAM[container]$PARAM[listitem].ChannelNumberLabel)</visible>
             <include content="Info_Plot_TextBox">
                 <param name="label">$INFO[$PARAM[container]$PARAM[listitem].Plot,, ]$INFO[$PARAM[container]$PARAM[listitem].Property(Album_Description),, ]$INFO[$PARAM[container]$PARAM[listitem].Property(Artist_Description),, ]$INFO[$PARAM[container]$PARAM[listitem].AddonDescription,, ]</param>
@@ -981,6 +985,7 @@
     <include name="Info_Plot_Other">
         <control type="group">
             <height>240</height>
+            <visible>$PARAM[visible]</visible>
             <visible>![String.IsEqual($PARAM[container]$PARAM[listitem].DBType,movie) | String.IsEqual($PARAM[container]$PARAM[listitem].DBType,tvshow) | String.IsEqual($PARAM[container]$PARAM[listitem].DBType,season) | String.IsEqual($PARAM[container]$PARAM[listitem].DBType,episode) | String.IsEqual($PARAM[container]$PARAM[listitem].DBType,video) | String.IsEqual($PARAM[container]$PARAM[listitem].DBType,album) | String.IsEqual($PARAM[container]$PARAM[listitem].DBType,song) | !String.IsEmpty($PARAM[container]$PARAM[listitem].ChannelNumberLabel)]</visible>
             <include content="Info_Plot_TextBox">
                 <param name="label">$INFO[$PARAM[container]$PARAM[listitem].Plot,, ]$INFO[$PARAM[container]$PARAM[listitem].Property(Album_Description),, ]$INFO[$PARAM[container]$PARAM[listitem].Property(Artist_Description),, ]$INFO[$PARAM[container]$PARAM[listitem].AddonDescription,, ]</param>
@@ -1011,6 +1016,8 @@
                 <param name="use_textbox">$PARAM[use_textbox]</param>
                 <param name="colordiffuse">$PARAM[colordiffuse]</param>
                 <param name="width">$PARAM[width]</param>
+                <param name="override">$PARAM[override]</param>
+                <param name="visible">$PARAM[visible]</param>
             </include>
 
             <!-- MAIN -->
@@ -1020,6 +1027,8 @@
                 <param name="use_textbox">$PARAM[use_textbox]</param>
                 <param name="colordiffuse">$PARAM[colordiffuse]</param>
                 <param name="width">$PARAM[width]</param>
+                <param name="override">$PARAM[override]</param>
+                <param name="visible">$PARAM[visible]</param>
             </include>
 
             <!-- OTHER -->
@@ -1029,6 +1038,7 @@
                 <param name="use_textbox">$PARAM[use_textbox]</param>
                 <param name="colordiffuse">$PARAM[colordiffuse]</param>
                 <param name="width">$PARAM[width]</param>
+                <param name="visible">$PARAM[visible]</param>
             </include>
 
         </definition>
