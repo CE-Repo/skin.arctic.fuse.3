@@ -616,7 +616,7 @@
 
                 </control>
             </control>
-            <include content="Home_Focus_Object" condition="Skin.HasSetting(HomeSwitcher.Vertical)">
+            <include content="Home_Focus_Object" condition="!Skin.HasSetting(HomeSwitcher.Vertical)">
                 <param name="window">$PARAM[window]</param>
             </include>
         </definition>
