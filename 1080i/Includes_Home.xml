@@ -719,7 +719,7 @@
         </control>
     </include>
 
-    <include name="Home_Submenu">
+    <include name="Home_Horz_Submenu">
         <definition>
             <include content="Home_Submenu_Start"><param name="id">00</param></include>
             <include content="Home_Submenu_Start"><param name="id">01</param></include>
