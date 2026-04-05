@@ -229,7 +229,7 @@
         <control type="group">
             <animation effect="fade" start="0" end="100" delay="399" time="1" condition="!$EXP[Hub_Spotlight_Visible_Expression]">Conditional</animation>
             <animation effect="fade" start="100" end="0" condition="$EXP[Hub_Spotlight_Visible_Expression]">Conditional</animation>
-            <visible>String.IsEmpty(Window(Home).Property(HomeSwitcher.IsVisible)) | Skin.HasSetting(HomeSwitcher.Vertical)</visible>
+            <visible>!$EXP[Exp_Hubs_SlideInfo]</visible>
             <include>Home_Info_Animation</include>
             <include>Info_Panel_Dimensions</include>
             <include content="Info_Panel">
@@ -262,7 +262,7 @@
                 </control>
             </control>
             <control type="group">
-                <visible>String.IsEmpty(Window(Home).Property(HomeSwitcher.IsVisible)) | Skin.HasSetting(HomeSwitcher.Vertical)</visible>
+                <visible>!$EXP[Exp_Hubs_SlideInfo]</visible>
                 <include>Info_Panel_Dimensions</include>
                 <include>Home_Info_Animation</include>
                 <include content="Info_Panel">
@@ -413,6 +413,10 @@
         <param name="window">Home</param>
         <param name="visible">True</param>
         <definition>
+
+            <animation effect="slide" start="0" end="0,440" time="400" tween="quadratic" reversible="false" condition="$EXP[Exp_Hubs_Spotlight_SlideDown]">Conditional</animation>
+            <animation effect="slide" end="0" start="0,440" time="400" tween="quadratic" reversible="false" condition="![$EXP[Exp_Hubs_Spotlight_SlideDown]]">Conditional</animation>
+
             <control type="group">
                 <top>260</top>
                 <height>hub_spotlight_h</height>
@@ -693,14 +697,15 @@
         <include>Background</include>
         <include condition="Skin.HasSetting(HomeSwitcher.Vertical)">Hub_Submenu_Fade</include>
     </include>
-
     <include name="Hub_Window">
         <param name="overlay">true</param>
+        <param name="spotlight">true</param>
         <definition>
 
             <include>Hub_Window_Background</include>
 
-            <include content="Hub_Spotlight_List" condition="!String.IsEmpty(Skin.String(HomeSwitcher.$PARAM[window].Spotlight.Target))">
+            <!-- Spotlight List -->
+            <include content="Hub_Spotlight_List" condition="!String.IsEmpty(Skin.String(HomeSwitcher.$PARAM[window].Spotlight.Target)) + $PARAM[spotlight]">
                 <param name="window">$PARAM[window]</param>
                 <param name="content">$INFO[Skin.String(HomeSwitcher.$PARAM[window].Spotlight.Path)]</param>
                 <param name="sortby">$INFO[Skin.String(HomeSwitcher.$PARAM[window].Spotlight.SortMethod)]</param>
@@ -723,19 +728,15 @@
 
                     <control type="group">
 
-                        <include condition="Skin.HasSetting(Spotlight.EnableSlide)">Hub_Window_Slide_OnSpotlight</include>
+                        <include condition="Skin.HasSetting(Spotlight.EnableSlide) + $PARAM[spotlight]">Hub_Window_Slide_OnSpotlight</include>
 
 
                         <!-- Content -->
                         <control type="group" id="400">
-
-                            <animation effect="slide" start="0" end="0,440" time="400" tween="quadratic" reversible="false" condition="$EXP[Exp_Hubs_Spotlight_SlideDown]">Conditional</animation>
-                            <animation effect="slide" end="0" start="0,440" time="400" tween="quadratic" reversible="false" condition="![$EXP[Exp_Hubs_Spotlight_SlideDown]]">Conditional</animation>
-
                             <include>Animation_View_WindowChange</include>
 
                             <!-- Spotlight -->
-                            <include content="Hub_Spotlight">
+                            <include content="Hub_Spotlight" condition="$PARAM[spotlight]">
                                 <param name="window">$PARAM[window]</param>
                             </include>
 

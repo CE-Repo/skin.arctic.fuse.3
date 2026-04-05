@@ -35,7 +35,7 @@
     </variable>
 
     <variable name="Path_SearchTerm">
-        <value condition="!String.IsEmpty(Control.GetLabel(300).index(1))">$INFO[Control.GetLabel(300).index(1)]</value>
+        <value condition="!String.IsEmpty(Control.GetLabel(3000).index(1))">$INFO[Control.GetLabel(3000).index(1)]</value>
     </variable>
 
     <variable name="Path_VideoOSD_TMDbType">
