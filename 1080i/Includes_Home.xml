@@ -603,10 +603,10 @@
                         <left>60</left>
                         <right>60</right>
                         <oninfo>PreviousMenu</oninfo>
-                        <ondown>noop</ondown>
+                        <onup condition="!Skin.HasSetting(HomeSwitcher.Vertical)">PreviousMenu</onup>
+                        <ondown condition="!Skin.HasSetting(HomeSwitcher.Vertical)">noop</ondown>
                         <onleft>PreviousMenu</onleft>
                         <onright>61$PARAM[id]</onright>
-                        <onup>PreviousMenu</onup>
                         <orientation>vertical</orientation>
                         <pagecontrol>61$PARAM[id]</pagecontrol>
                         <content>
