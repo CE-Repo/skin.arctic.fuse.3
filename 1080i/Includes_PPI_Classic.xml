@@ -1330,6 +1330,14 @@
 						<label>$LOCALIZE[31967]:</label>
 						<font>font_tiny</font>
 						<textcolor>dialog_fg_90</textcolor>
+						<visible>String.IsEqual(Player.Process(video.dovi.l5.detected),0)</visible>
+					</control>
+					<control type="label">
+						<top>201</top>
+						<label>$LOCALIZE[31990]:</label>
+						<font>font_tiny</font>
+						<textcolor>dialog_fg_90</textcolor>
+						<visible>String.IsEqual(Player.Process(video.dovi.l5.detected),1)</visible>
 					</control>
 					<control type="label">
 						<left>170</left>
