@@ -6,9 +6,11 @@
     <onload condition="Window.IsVisible(1102)">SetFocus(7002)</onload>
     <onload condition="Window.IsVisible(1103)">SetFocus(7003)</onload>
     <onload condition="Window.IsVisible(1104)">SetFocus(7004)</onload>
+    <onload condition="![Window.IsVisible(home) | Window.IsVisible(1101) | Window.IsVisible(1102) | Window.IsVisible(1103) | Window.IsVisible(1104)]">PreviousMenu</onload>
+    <onload condition="![Window.IsVisible(home) | Window.IsVisible(1101) | Window.IsVisible(1102) | Window.IsVisible(1103) | Window.IsVisible(1104)]">ActivateWindow(1180)</onload>
     <onunload>ClearProperty(SubGroup.IsVisible,Home)</onunload>
     <controls>
-        <!-- <include>Home_Submenu</include> -->
-        <include>Home_Vert_Submenu</include>
+        <include condition="!Skin.HasSetting(HomeSwitcher.Vertical)">Home_Horz_Submenu</include>
+        <include condition="Skin.HasSetting(HomeSwitcher.Vertical)">Home_Vert_Submenu</include>
     </controls>
 </window>

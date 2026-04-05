@@ -40,7 +40,7 @@
             <param name="label">Search</param>
             <param name="icon">special://skin/extras/icons/search.png</param>
             <param name="action">ReplaceWindow(1105)</param>
-            <param name="enabled">[!Skin.HasSetting(HomeSwitcher.DisableSearch) + !Skin.HasSetting(HomeSwitcher.Vertical)]</param>
+            <param name="enabled">[!Skin.HasSetting(HomeSwitcher.DisableSearch)]</param>
             <param name="visible">Window.IsVisible(1105)</param>
             <param name="mod">$PARAM[mod]</param>
         </include>
@@ -195,6 +195,7 @@
     </include>
 
     <include name="Home_Horz_Movement">
+        <onup>SetProperty(Bumper.Direction,Up,Home)</onup>
         <onup>ActivateWindow(1181)</onup>
         <oninfo>ActivateWindow(1181)</oninfo>
         <ondown>$VAR[Hub_Action_Down]</ondown>
@@ -202,10 +203,15 @@
 
     <include name="Home_Vert_Movement">
         <onleft>SetProperty(Bumper.Direction,Left,Home)</onleft>
-        <onleft>ActivateWindow(1180)</onleft>
+        <!-- <onleft>ActivateWindow(1180)</onleft> -->
+        <onleft>ActivateWindow(1181)</onleft>
+        <oninfo>ActivateWindow(1181)</oninfo>
 
-        <onright condition="![String.IsEqual(Skin.String(HomeSwitcher.$PARAM[window].Mode),Wall) | String.IsEqual(Skin.String(HomeSwitcher.$PARAM[window].Mode),Combined)]">SetFocus($INFO[Window.Property(TMDBHelper.WidgetContainer)],0,absolute)</onright>
-        <onright condition="[String.IsEqual(Skin.String(HomeSwitcher.$PARAM[window].Mode),Wall) | String.IsEqual(Skin.String(HomeSwitcher.$PARAM[window].Mode),Combined)]">400</onright>
+        <!-- <onright condition="![String.IsEqual(Skin.String(HomeSwitcher.$PARAM[window].Mode),Wall) | String.IsEqual(Skin.String(HomeSwitcher.$PARAM[window].Mode),Combined)]">SetFocus($INFO[Window.Property(TMDBHelper.WidgetContainer)],0,absolute)</onright>
+        <onright condition="[String.IsEqual(Skin.String(HomeSwitcher.$PARAM[window].Mode),Wall) | String.IsEqual(Skin.String(HomeSwitcher.$PARAM[window].Mode),Combined)]">400</onright> -->
+
+        <onright>400</onright>
+
     </include>
 
     <include name="Home_Movement">
@@ -245,6 +251,8 @@
                 <onclick condition="$PARAM[onclick_condition] + String.IsEmpty(Skin.String(HomeSwitcher.$PARAM[window].Shortcut.Target))">$INFO[Skin.String(HomeSwitcher.$PARAM[window].Shortcut.Path)]</onclick>
                 <onclick condition="Window.IsVisible(1108)">ActivateWindow(addonbrowser)</onclick>
                 <onclick condition="Window.IsVisible(1107)">ActivateWindow(tvchannels)</onclick>
+                <onclick condition="Window.IsVisible(1105)">SetFocus(3001)</onclick>
+                <onclick condition="Window.IsVisible(1105)">AlarmClock(reclick,Action(Select),00:00,silent)</onclick>
 
                 <include content="Home_Movement">
                     <param name="window">$PARAM[window]</param>
@@ -273,8 +281,8 @@
         <animation effect="fade" end="0" start="100" time="200" tween="cubic" easing="out">Hidden</animation>
     </include>
     <include name="Home_Slide_Animation">
-        <animation effect="slide" start="0,-200" end="0" time="400" tween="cubic" easing="out" reversible="false" condition="![String.IsEmpty(Window(Home).Property(HomeSwitcher.IsVisible)) | Skin.HasSetting(HomeSwitcher.Vertical)]">Conditional</animation>
-        <animation effect="slide" end="0,-200" start="0" delay="100" time="400" tween="cubic" easing="out" reversible="false" condition="String.IsEmpty(Window(Home).Property(HomeSwitcher.IsVisible)) | Skin.HasSetting(HomeSwitcher.Vertical)">Conditional</animation>
+        <animation effect="slide" start="0,-200" end="0" time="400" tween="cubic" easing="out" reversible="false" condition="$EXP[Exp_Hubs_SlideInfo]">Conditional</animation>
+        <animation effect="slide" end="0,-200" start="0" delay="100" time="400" tween="cubic" easing="out" reversible="false" condition="!$EXP[Exp_Hubs_SlideInfo]">Conditional</animation>
     </include>
     <include name="Home_Info_Animation">
         <animation effect="fade" start="0" end="100" time="400" delay="200" tween="cubic" easing="in">Visible</animation>
@@ -310,8 +318,8 @@
             </include>
             <control type="group">
                 <include>Home_Group_Definition</include>
+                <include>Home_Reposition</include>
                 <control type="group">
-                    <include>Home_Reposition</include>
                     <visible>!Skin.HasSetting(HomeSwitcher.DisableSearch)</visible>
                     <left>-20</left>
                     <width>80</width>
@@ -322,7 +330,6 @@
                     </control>
                 </control>
                 <control type="grouplist">
-                    <include>Home_Reposition</include>
                     <top>-100</top>
                     <include content="Object_Left" condition="Skin.HasSetting(HomeSwitcher.EnableIcons)">
                         <param name="left">-10</param>
@@ -384,6 +391,10 @@
                     <width>80</width>
                     <itemgap>20</itemgap>
                     <align>center</align>
+                    <include content="Home_Object_VertIcon" condition="!Skin.HasSetting(HomeSwitcher.DisableSearch)">
+                        <param name="icon">special://skin/extras/icons/search.png</param>
+                        <param name="window">1105</param>
+                    </include>
                     <include content="Home_Object_VertIcon">
                         <param name="icon">$VAR[Home_Icon_home]</param>
                         <param name="window">home</param>
@@ -599,10 +610,10 @@
                         <left>60</left>
                         <right>60</right>
                         <oninfo>PreviousMenu</oninfo>
-                        <ondown>noop</ondown>
+                        <onup condition="!Skin.HasSetting(HomeSwitcher.Vertical)">PreviousMenu</onup>
+                        <ondown condition="!Skin.HasSetting(HomeSwitcher.Vertical)">noop</ondown>
                         <onleft>PreviousMenu</onleft>
                         <onright>61$PARAM[id]</onright>
-                        <onup>PreviousMenu</onup>
                         <orientation>vertical</orientation>
                         <pagecontrol>61$PARAM[id]</pagecontrol>
                         <content>
@@ -612,7 +623,7 @@
 
                 </control>
             </control>
-            <include content="Home_Focus_Object" condition="Skin.HasSetting(HomeSwitcher.Vertical)">
+            <include content="Home_Focus_Object" condition="!Skin.HasSetting(HomeSwitcher.Vertical)">
                 <param name="window">$PARAM[window]</param>
             </include>
         </definition>
@@ -715,7 +726,7 @@
         </control>
     </include>
 
-    <include name="Home_Submenu">
+    <include name="Home_Horz_Submenu">
         <definition>
             <include content="Home_Submenu_Start"><param name="id">00</param></include>
             <include content="Home_Submenu_Start"><param name="id">01</param></include>
