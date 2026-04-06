@@ -40,7 +40,7 @@
                             </control>
 
                             <include content="Furniture_Header" condition="!Skin.HasSetting(HomeSwitcher.DisableHeader) + !Skin.HasSetting(HomeSwitcher.Vertical)">
-                                <param name="label">$LOCALIZE[137]</param>
+                                <param name="label">$VAR[Home_Header_Label]</param>
                             </include>
                         </control>
 
