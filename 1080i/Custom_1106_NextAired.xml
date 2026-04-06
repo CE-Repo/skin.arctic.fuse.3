@@ -5,44 +5,16 @@
     </include>
     <onload condition="String.IsEmpty(Skin.String(HomeSwitcher.1106.UpNextMode))">Skin.SetString(HomeSwitcher.1106.UpNextMode,library_nextaired)</onload>
     <controls>
-        <include>Hub_Window_Background</include>
 
-        <include content="Home_Control">
+        <include content="Hub_Prefab_Window">
             <param name="window">1106</param>
-            <param name="overlay">false</param>
-            <onclick condition="Skin.String(HomeSwitcher.1106.UpNextMode,library_nextaired)">Skin.SetString(HomeSwitcher.1106.UpNextMode,trakt_calendar)</onclick>
-            <onclick condition="Skin.String(HomeSwitcher.1106.UpNextMode,trakt_calendar)">Skin.SetString(HomeSwitcher.1106.UpNextMode,library_nextaired)</onclick>
+            <param name="widgets_wall">Object_Null</param>
+            <param name="widgets_combined">Object_Null</param>
+            <param name="widgets_standard">NextAired_Content</param>
+            <param name="info_combined">NextAired_Info</param>
+            <param name="info_wall">Object_Null</param>
+            <param name="switcher_content">Object_Null</param>
         </include>
-
-        <control type="group">
-            <include>Animation_Group_Bumper</include>
-
-            <control type="group">
-                <include>NextAired_Info</include>
-
-                <include condition="Skin.HasSetting(HomeSwitcher.Vertical)">Hub_Window_Side_Slide</include>
-
-                <!-- Widgets Groups -->
-                <control type="group" id="500">
-                    <include>Animation_View_WindowChange</include>
-                    <include content="NextAired_Content">
-                        <param name="info">$INFO[Skin.String(HomeSwitcher.1106.UpNextMode)]</param>
-                    </include>
-                </control>
-
-                <include content="Hub_VertMenu" condition="Skin.HasSetting(HomeSwitcher.Vertical)">
-                    <param name="window">1106</param>
-                </include>
-            </control>
-
-            <control type="group">
-                <include>Furniture_Reposition</include>
-                <visible>!$EXP[Exp_InfoDialogs]</visible>
-                <include>Furniture_Footer_Right</include>
-            </control>
-
-        </control>
-
 
     </controls>
 </window>

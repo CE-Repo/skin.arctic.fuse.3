@@ -38,7 +38,16 @@
             <onload condition="String.IsEmpty(Window(1108).Property(TMDbHelper.WidgetContainer))">SetProperty(TMDbHelper.WidgetContainer,501,1108)</onload>
 
             <menucontrol>300</menucontrol>
-            <defaultcontrol>300</defaultcontrol>
+
+            <include content="Object_DefaultControl" condition="!String.IsEmpty(Skin.String(HomeSwitcher.$PARAM[window_id].Toggle))">
+                <param name="defaultcontrol">300</param>
+                <param name="always">false</param>
+            </include>
+            <include content="Object_DefaultControl" condition="String.IsEmpty(Skin.String(HomeSwitcher.$PARAM[window_id].Toggle))">
+                <param name="defaultcontrol">400</param>
+                <param name="always">false</param>
+            </include>
+
         </definition>
     </include>
 
@@ -789,9 +798,15 @@
         <definition>
             <include>Hub_Window_Background</include>
 
-            <include content="Home_Control">
+            <include content="Home_Control" condition="!String.IsEmpty(Skin.String(HomeSwitcher.$PARAM[window].Toggle))">
                 <param name="window">$PARAM[window]</param>
                 <param name="overlay">[String.IsEqual(Skin.String(HomeSwitcher.$PARAM[window].Mode),Wall)]</param>
+
+                <onclick condition="Window.IsVisible(1106) + Skin.String(HomeSwitcher.1106.UpNextMode,library_nextaired)">Skin.SetString(HomeSwitcher.1106.UpNextMode,trakt_calendar)</onclick>
+                <onclick condition="Window.IsVisible(1106) + Skin.String(HomeSwitcher.1106.UpNextMode,trakt_calendar)">Skin.SetString(HomeSwitcher.1106.UpNextMode,library_nextaired)</onclick>
+                <onclick condition="Window.IsVisible(1106)">SetProperty(ReloadWidgets,1)</onclick>
+                <onclick condition="Window.IsVisible(1106)">AlarmClock(resetproperty,ClearProperty(ReloadWidgets),00:00,silent)</onclick>
+
             </include>
 
             <control type="group">
