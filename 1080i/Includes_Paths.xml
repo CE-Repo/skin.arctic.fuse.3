@@ -8,6 +8,7 @@
 
     <variable name="Path_HolidayMode">
         <value condition="Skin.HasSetting(HolidayMode.Australia)">summer</value>
+        <value condition="Skin.HasSetting(HolidayMode.Halloween)">halloween</value>
         <value>winter</value>
     </variable>
 
