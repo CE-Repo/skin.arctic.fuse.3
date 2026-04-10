@@ -2648,5 +2648,17 @@ msgid "Info line"
 msgstr "Infozeile"
 
 msgctxt "#31990"
-msgid "L5 Offsets (detected)"
-msgstr "L5 Offset (ermittelt)"
+msgid "failed"
+msgstr "gescheitert"
+
+msgctxt "#31991"
+msgid "detected"
+msgstr "ermittelt"
+
+msgctxt "#31992"
+msgid "skipped"
+msgstr "übersprungen"
+
+msgctxt "#31993"
+msgid "running"
+msgstr "ermitteln"
