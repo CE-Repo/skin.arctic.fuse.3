@@ -145,7 +145,7 @@
 					<control type="label">
 						<left>210</left>
 						<top>80</top>
-						<label>[COLOR dialog_fg_90]$INFO[Player.Process(amlogic.pixformat)][/COLOR]$VAR[DVTunnelVar, [COLOR dialog_fg_70](,)[/COLOR]]</label>
+						<label>[COLOR dialog_fg_90]$INFO[Player.Process(amlogic.pixformat)][/COLOR] $VAR[DVTunnelVar,- [COLOR dialog_fg_70](,)[/COLOR]]</label>
 						<font>font_tiny</font>
 					</control>
 					
@@ -189,7 +189,7 @@
 					<control type="label">
 						<left>210</left>
 						<top>170</top>
-						<label>[UPPERCASE]$INFO[Player.Process(videodecoder)][/UPPERCASE] $VAR[VideoDecoder,(,)]</label>
+						<label>[UPPERCASE]$INFO[Player.Process(videodecoder)][/UPPERCASE] $VAR[VideoDecoder,- [COLOR dialog_fg_70](,)[/COLOR]]</label>
 						<font>font_tiny</font>
 						<textcolor>dialog_fg_90</textcolor>
 					</control>
@@ -344,7 +344,7 @@
 					<control type="label">
 						<left>210</left>
 						<top>170</top>
-						<label>$INFO[Player.Process(video.source.hdr.type)]</label>
+						<label>$INFO[Player.Process(video.source.hdr.type)] $INFO[Player.Process(video.dovi.dual.track),- [COLOR dialog_fg_70](,)[/COLOR]]</label>
 						<font>font_tiny</font>
 						<textcolor>dialog_fg_90</textcolor>
 					</control>
@@ -359,7 +359,7 @@
 					<control type="label">
 						<left>210</left>
 						<top>200</top>
-						<label>$INFO[Player.Time] $INFO[Player.Duration,/ ,] [COLOR dialog_fg_70]$INFO[Player.Progress, (,%)][/COLOR]</label>
+						<label>$INFO[Player.Time] $INFO[Player.Duration,/ ,] [COLOR dialog_fg_70]$INFO[Player.Progress,(,%)][/COLOR]</label>
 						<font>font_tiny</font>
 						<textcolor>dialog_fg_90</textcolor>
 						<visible>!String.IsEmpty(Player.Duration)</visible>
