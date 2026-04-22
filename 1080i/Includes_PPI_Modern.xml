@@ -145,8 +145,9 @@
 					<control type="label">
 						<left>210</left>
 						<top>80</top>
-						<label>[COLOR dialog_fg_90]$INFO[Player.Process(amlogic.pixformat)][/COLOR] $VAR[DVTunnelVar,- [COLOR dialog_fg_70](,)[/COLOR]]</label>
+						<label>$VAR[VideoPixelFormat] $VAR[DVTunnelVar,-> [COLOR dialog_fg_70](,)[/COLOR]]</label>
 						<font>font_tiny</font>
+						<textcolor>dialog_fg_90</textcolor>
 					</control>
 					
 					<!-- Bit depth -->
@@ -159,7 +160,7 @@
 					<control type="label">
 						<left>210</left>
 						<top>110</top>
-						<label>$INFO[Player.Process(video.bit.depth)]-bit</label>
+						<label>$VAR[VideoBitDepth]-bit</label>
 						<font>font_tiny</font>
 						<textcolor>dialog_fg_90</textcolor>
 					</control>
@@ -189,7 +190,7 @@
 					<control type="label">
 						<left>210</left>
 						<top>170</top>
-						<label>[UPPERCASE]$INFO[Player.Process(videodecoder)][/UPPERCASE] $VAR[VideoDecoder,- [COLOR dialog_fg_70](,)[/COLOR]]</label>
+						<label>[UPPERCASE]$INFO[Player.Process(videodecoder)][/UPPERCASE] $VAR[VideoDecoder,[COLOR dialog_fg_70](,)[/COLOR]]</label>
 						<font>font_tiny</font>
 						<textcolor>dialog_fg_90</textcolor>
 					</control>
@@ -717,7 +718,7 @@
 					<control type="label">
 						<left>240</left>
 						<top>50</top>
-						<label>$INFO[Player.Process(audiobitspersample),,-bit] | $INFO[Player.Process(audio.sample.rate),, kHz]</label>
+						<label>$INFO[Player.Process(audiobitspersample),,-bit] / $INFO[Player.Process(audio.sample.rate),, kHz]</label>
 						<font>font_tiny</font>
 						<textcolor>dialog_fg_90</textcolor>
 					</control>
