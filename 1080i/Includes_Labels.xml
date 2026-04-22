@@ -1516,7 +1516,7 @@
     </variable>
 	
     <variable name="VideoBitDepth">
-        <value condition="String.Contains(Player.Process(video.bit.depth),0)">8</value>
+        <value condition="Integer.IsEqual(Player.Process(video.bit.depth),0)">8</value>
         <value>$INFO[Player.Process(video.bit.depth)]</value>
     </variable>
 	
