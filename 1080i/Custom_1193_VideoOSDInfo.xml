@@ -5,6 +5,7 @@
     <onload>SetProperty(TMDbHelper.WidgetContainer,50)</onload>
     <defaultcontrol always="true">9001</defaultcontrol>
     <onload>SetFocus(9001)</onload>
+    <onunload>ClearProperty(VideoOSD.InfoDialog.Path,Home)</onunload>
     <zorder>3</zorder>
     <controls>
 
@@ -27,9 +28,15 @@
 
 
 
-        <include content="Object_Hidden_List">
+        <include content="Object_Hidden_List" condition="String.IsEmpty(Window(Home).Property(VideoOSD.InfoDialog.Path))">
             <param name="id">50</param>
             <content limit="1">$VAR[Path_VideoOSD_TMDbType,plugin://plugin.video.themoviedb.helper/?info=details&amp;tmdb_type=,]$VAR[Path_VideoOSD_TMDbQuery]</content>
+            <onfocus>Action(Info)</onfocus>
+            <onfocus>Dialog.Close(1193,force)</onfocus>
+        </include>
+        <include content="Object_Hidden_List" condition="!String.IsEmpty(Window(Home).Property(VideoOSD.InfoDialog.Path))">
+            <param name="id">50</param>
+            <content limit="1">$INFO[Window(Home).Property(VideoOSD.InfoDialog.Path)]</content>
             <onfocus>Action(Info)</onfocus>
             <onfocus>Dialog.Close(1193,force)</onfocus>
         </include>

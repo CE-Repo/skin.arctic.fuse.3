@@ -44,7 +44,8 @@
                     <param name="id">6501</param>
                 </include>
 
-                <onclick>Action(Info)</onclick>
+                <onclick>SetProperty(VideoOSD.InfoDialog.Path,plugin://plugin.video.themoviedb.helper/?info=details&amp;tmdb_type=person&amp;tmdb_id=$INFO[Container(9501).ListItem.Property(TMDb_ID)],Home)</onclick>
+                <onclick>ActivateWindow(1193)</onclick>
             </include>
         </control>
 
