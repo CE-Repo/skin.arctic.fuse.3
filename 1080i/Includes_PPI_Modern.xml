@@ -135,7 +135,7 @@
 						<textcolor>dialog_fg_90</textcolor>
 					</control>
 					
-					<!-- Pixel format -->
+					<!-- Output format -->
 					<control type="label">
 						<top>80</top>
 						<label>$LOCALIZE[31923]:</label>
@@ -150,7 +150,7 @@
 						<textcolor>dialog_fg_90</textcolor>
 					</control>
 					
-					<!-- Bit depth -->
+					<!-- Video bit depth -->
 					<control type="label">
 						<top>110</top>
 						<label>$LOCALIZE[31904]:</label>
