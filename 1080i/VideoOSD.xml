@@ -27,7 +27,7 @@
                         <left>-20</left>
                         <orientation>horizontal</orientation>
                         <itemgap>osd_itemgap</itemgap>
-                        <onleft>6008</onleft>
+                        <onleft>6009</onleft>
                         <onright>6005</onright>
                         <ondown>ActivateWindow($VAR[Action_OSD_Main_OnDown])</ondown>
 
@@ -181,6 +181,20 @@
                             <param name="groupid">6108</param>
                             <param name="itemgap">osd_itemgap</param>
                         </include>
+
+                        <!-- Button 9 -->
+                        <control type="button" id="6009">
+                            <include>Defs_OSD_Button</include>
+                            <onclick>CancelAlarm(osd_timeout,true)</onclick>
+                            <onup>ActivateWindow(1159)</onup>
+                            <onfocus>ActivateWindow(1159)</onfocus>
+                        </control>
+                        <include content="OSD_Button_Icon_Overlay">
+                            <param name="icon">special://skin/extras/icons/ppi.png</param>
+                            <param name="id">6009</param>
+                            <param name="groupid">6109</param>
+                            <param name="itemgap">osd_itemgap</param>
+                        </include>
                     </control>
                 </control>
 
@@ -221,6 +235,89 @@
                         <ondown>6091</ondown>
                     </control>
                 </control>
+            </control>
+
+            <control type="group">
+                <visible>[!Pvr.IsPlayingTv + !String.IsEmpty(Player.Art(discart)) + String.IsEqual(Skin.String(OSD.ArtworkStyle),DiscArt)]</visible>
+                <left>1455</left>
+                <top>400</top>
+
+                <!-- Disc Background -->
+                <control type="image">
+                    <width>500</width>
+                    <height>425</height>
+                    <texture colordiffuse="shadow_hard">common/discart.png</texture>
+                </control>
+
+                <!-- Disc Art -->
+                <control type="image">
+                    <left>15</left>
+                    <top>10</top>
+                    <width>400</width>
+                    <height>400</height>
+                    <texture background="true">$INFO[Player.Art(discart)]</texture>
+                    <aspectratio aligny="bottom">keep</aspectratio>
+                    <visible>Skin.HasSetting(OSD.DiscArtNoRotate)</visible>
+                </control>
+                <control type="image">
+                    <left>15</left>
+                    <top>10</top>
+                    <width>400</width>
+                    <height>400</height>
+                    <texture background="true">$INFO[Player.Art(discart)]</texture>
+                    <aspectratio aligny="bottom">keep</aspectratio>
+                    <animation effect="rotate" start="0" end="-360" loop="true" time="20000" center="auto" condition="Player.Playing | Player.Paused">Conditional</animation>
+                    <visible>!Skin.HasSetting(OSD.DiscArtNoRotate)</visible>
+                </control>
+
+                <animation effect="slide" start="500" end="0" time="750">WindowOpen</animation>
+                <animation effect="slide" start="0" end="500" time="750">WindowClose</animation>
+                <animation effect="slide" start="0" end="500" time="750" condition="Control.HasFocus(6006) | Control.HasFocus(6007) | Control.HasFocus(6008) | Control.HasFocus(6009)">
+                    WindowClose
+                </animation>
+            </control>
+			
+            <control type="group">
+                <visible>[!Pvr.IsPlayingTv + !String.IsEmpty(Player.Art(discart)) + String.IsEqual(Skin.String(OSD.ArtworkStyle),VHSArt)]</visible>
+                <left>1315</left>
+                <top>510</top>
+				
+                <!-- VHS Background -->
+                <control type="image">
+                    <right>90</right>
+                    <width>500</width>
+                    <height>280</height>
+                    <texture colordiffuse="shadow_hard">common/white.png</texture>
+                </control>
+                <control type="image">
+                    <width>538</width>
+                    <height>300</height>
+                    <texture>common/vhs.png</texture>
+                </control>
+
+                <control type="image">
+                    <left>150</left>
+                    <top>93</top>
+                    <width>239</width>
+                    <height>134</height>
+                    <texture background="true" diffuse="diffuse/landscape_w410_h231.png">$INFO[Player.Art(landscape)]</texture>
+                    <aspectratio>scale</aspectratio>
+                </control>
+
+                <animation type="WindowOpen">
+                    <effect type="rotate" start="-90" end="0" time="1000" center="auto" tween="linear" easing="in" />
+                    <effect type="slide" start="500" end="0" time="2000" tween="back" easing="out" />
+                </animation>
+				
+                <animation type="WindowClose">
+                    <effect type="slide" start="0" end="500" time="500" />
+                </animation>
+				
+                <animation condition="Control.HasFocus(6006) | Control.HasFocus(6007) | Control.HasFocus(6008) | Control.HasFocus(6009)">
+                    <effect type="rotate" start="0" end="-90" time="1000" center="auto" tween="linear" easing="in" />
+                    <effect type="slide" start="0" end="700" time="2000" tween="back" easing="inout" />
+                        WindowClose
+                </animation>
             </control>
         </control>
     </controls>

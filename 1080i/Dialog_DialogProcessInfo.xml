@@ -121,6 +121,7 @@
     </include>
 
     <include name="DialogProcessInfo_Items">
+    <visible>!Skin.HasSetting(ppi.classicMode) + !Skin.HasSetting(ppi.modernMode)</visible>
         <content>
 
             <!-- Process -->
