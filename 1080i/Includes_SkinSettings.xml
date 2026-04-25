@@ -799,35 +799,36 @@
             <visible>!Skin.HasSetting(SkinUserLogin.Disabled)</visible>
         </include>
 
-        <include content="Settings_Label" description="Holiday Theme">
+        <include content="Settings_Label" description="Expert">
             <param name="window">skinsettings</param>
             <param name="baseid">$PARAM[baseid]</param>
-            <param name="id">010</param>
-            <label>$LOCALIZE[31510]</label>
+            <param name="id">020</param>
+            <param name="slevel">1</param>
+            <label>PVR / $LOCALIZE[31085]</label>
         </include>
-        <include content="Settings_Button" description="Holiday Theme">
+        <include content="Settings_Button" description="EPG Grid Genre Colours">
             <param name="dialog">false</param>
             <param name="window">skinsettings</param>
             <param name="baseid">$PARAM[baseid]</param>
-            <param name="id">011</param>
+            <param name="id">021</param>
             <param name="control">radiobutton</param>
-            <label>$LOCALIZE[31510]</label>
-            <onclick>Skin.ToggleSetting(EnableHolidayTheme)</onclick>
-            <selected>Skin.HasSetting(EnableHolidayTheme)</selected>
+            <param name="slevel">1</param>
+            <label>$LOCALIZE[31127]</label>
+            <onclick>Skin.ToggleSetting(PVR.DisableGenreColours)</onclick>
+            <selected>!Skin.HasSetting(PVR.DisableGenreColours)</selected>
         </include>
-        <include content="Settings_Button" description="Holiday Theme: Winter Frost">
+        <include content="Settings_Button" description="TMDbHelper for PVR">
             <param name="dialog">false</param>
             <param name="window">skinsettings</param>
             <param name="baseid">$PARAM[baseid]</param>
-            <param name="id">012</param>
+            <param name="id">022</param>
             <param name="control">radiobutton</param>
-            <param name="reload">true</param>
-            <label>$LOCALIZE[31116]</label>
-            <onclick>Skin.ToggleSetting(HolidayMode.Frost)</onclick>
-            <selected>Skin.HasSetting(HolidayMode.Frost)</selected>
-            <visible>Skin.HasSetting(EnableHolidayTheme)</visible>
-            <enable>!Skin.HasSetting(HolidayMode.Australia)</enable>
+            <param name="slevel">2</param>
+            <label>PVR $LOCALIZE[31435]</label>
+            <onclick>Skin.ToggleSetting(TMDbHelper.DisablePVR)</onclick>
+            <selected>!Skin.HasSetting(TMDbHelper.DisablePVR)</selected>
         </include>
+
         <include content="Settings_Button" description="Holiday Theme: Australian Summer">
             <param name="dialog">false</param>
             <param name="window">skinsettings</param>
@@ -862,36 +863,25 @@
             <visible>Skin.HasSetting(EnableHolidayTheme)</visible>
         </include>
 
-
         <include content="Settings_Label" description="Expert">
             <param name="window">skinsettings</param>
             <param name="baseid">$PARAM[baseid]</param>
-            <param name="id">020</param>
-            <param name="slevel">2</param>
+            <param name="id">030</param>
+            <param name="slevel">3</param>
             <label>$LOCALIZE[10039]</label>
         </include>
         <include content="Settings_Button" description="Nuke Everything">
             <param name="dialog">false</param>
             <param name="window">skinsettings</param>
             <param name="baseid">$PARAM[baseid]</param>
-            <param name="id">021</param>
+            <param name="id">031</param>
             <param name="slevel">3</param>
             <label>$LOCALIZE[31374]</label>
             <onclick>SetProperty(StartupReplaceWindow,skinsettings,Home)</onclick>
             <onclick>Skin.ResetSettings</onclick>
             <onclick>ActivateWindow(Startup)</onclick>
         </include>
-        <include content="Settings_Button" description="TMDbHelper for PVR">
-            <param name="dialog">false</param>
-            <param name="window">skinsettings</param>
-            <param name="baseid">$PARAM[baseid]</param>
-            <param name="id">024</param>
-            <param name="control">radiobutton</param>
-            <param name="slevel">2</param>
-            <label>PVR $LOCALIZE[31435]</label>
-            <onclick>Skin.ToggleSetting(TMDbHelper.DisablePVR)</onclick>
-            <selected>!Skin.HasSetting(TMDbHelper.DisablePVR)</selected>
-        </include>
+
 
 
     </include>
