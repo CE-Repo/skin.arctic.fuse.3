@@ -511,6 +511,7 @@
     </include>
 
     <variable name="PVR_GenreType">
+        <value condition="Skin.HasSetting(PVR.DisableGenreColours)">256</value>
         <value condition="String.IsEmpty(ListItem.Genre) | [!String.IsEmpty(ListItem.Property(GenreType)) + !Integer.IsEqual(ListItem.Property(GenreType),256)]">$INFO[ListItem.Property(GenreType)]</value>
         <value condition="String.Contains(ListItem.Genre,Drama) | String.Contains(ListItem.Genre,Comedy) | String.Contains(ListItem.Genre,Adventure) | String.Contains(ListItem.Genre,Crime) | String.Contains(ListItem.Genre,Horror) | String.Contains(ListItem.Genre,Action) | String.Contains(ListItem.Genre,Thriller) | String.Contains(ListItem.Genre,Movie) | String.Contains(ListItem.Genre,Fantasy) | String.Contains(ListItem.Genre,Science Fiction) | String.Contains(ListItem.Genre,Romance) | String.Contains(ListItem.Genre,Western)">16</value>
         <value condition="String.Contains(ListItem.Genre,Documentary) | String.Contains(ListItem.Genre,News) | String.Contains(ListItem.Genre,Current Affairs)">32</value>
