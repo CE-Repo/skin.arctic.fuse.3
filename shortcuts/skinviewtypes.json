@@ -29,32 +29,50 @@
         "528":  "31021"
     },
     "icons": {
-        "500":   "special://skin/extras/viewtypes/row-square.jpg",
-        "501":   "special://skin/extras/viewtypes/row-landscape.jpg",
-        "502":   "special://skin/extras/viewtypes/row-poster.jpg",
-        "503":   "special://skin/extras/viewtypes/row-circle.jpg",
-        "504":   "special://skin/extras/viewtypes/row-board.jpg",
-        "505":   "special://skin/extras/viewtypes/row-card.jpg",
+        "500":  "special://skin/extras/viewtypes/row-square.jpg",
+        "501":  "special://skin/extras/viewtypes/row-landscape.jpg",
+        "502":  "special://skin/extras/viewtypes/row-poster.jpg",
+        "503":  "special://skin/extras/viewtypes/row-circle.jpg",
+        "504":  "special://skin/extras/viewtypes/row-board.jpg",
+        "505":  "special://skin/extras/viewtypes/row-card.jpg",
 
-        "506":   "special://skin/extras/viewtypes/list-basic.jpg",
-        "507":   "special://skin/extras/viewtypes/list-media.jpg",
-        "508":   "special://skin/extras/viewtypes/list-expanded.jpg",
-        "509":   "special://skin/extras/viewtypes/list-flixart.jpg",
-        "549":   "special://skin/extras/viewtypes/list-flixart2.jpg",
+        "506":  "special://skin/extras/viewtypes/list-basic.jpg",
+        "507":  "special://skin/extras/viewtypes/list-media.jpg",
+        "508":  "special://skin/extras/viewtypes/list-expanded.jpg",
+        "509":  "special://skin/extras/viewtypes/list-flixart.jpg",
+        "549":  "special://skin/extras/viewtypes/list-flixart2.jpg",
 
-        "510":   "special://skin/extras/viewtypes/wall-square.jpg",
-        "511":   "special://skin/extras/viewtypes/wall-landscape.jpg",
-        "512":   "special://skin/extras/viewtypes/wall-poster.jpg",
-        "513":   "special://skin/extras/viewtypes/wall-circle.jpg",
-        "514":   "special://skin/extras/viewtypes/wall-board.jpg",
+        "510":  "special://skin/extras/viewtypes/wall-square.jpg",
+        "511":  "special://skin/extras/viewtypes/wall-landscape.jpg",
+        "512":  "special://skin/extras/viewtypes/wall-poster.jpg",
+        "513":  "special://skin/extras/viewtypes/wall-circle.jpg",
+        "514":  "special://skin/extras/viewtypes/wall-board.jpg",
 
-        "520":   "special://skin/extras/viewtypes/combined-square.jpg",
-        "521":   "special://skin/extras/viewtypes/combined-landscape.jpg",
-        "522":   "special://skin/extras/viewtypes/combined-poster.jpg",
-        "523":   "special://skin/extras/viewtypes/combined-circle.jpg",
-        "524":   "special://skin/extras/viewtypes/combined-board.jpg",
-        "526":   "special://skin/extras/viewtypes/combined-list.jpg",
-        "528":   "special://skin/extras/viewtypes/combined-expanded.jpg"
+        "520":  "special://skin/extras/viewtypes/combined-square.jpg",
+        "521":  "special://skin/extras/viewtypes/combined-landscape.jpg",
+        "522":  "special://skin/extras/viewtypes/combined-poster.jpg",
+        "523":  "special://skin/extras/viewtypes/combined-circle.jpg",
+        "524":  "special://skin/extras/viewtypes/combined-board.jpg",
+        "526":  "special://skin/extras/viewtypes/combined-list.jpg",
+        "528":  "special://skin/extras/viewtypes/combined-expanded.jpg"
+    },
+    "groups": {
+        "31007": {
+            "viewtypes": ["500","501","502","503","504","505"],
+            "icon": "special://skin/extras/icons/table-columns.png"
+        },
+        "535": {
+            "viewtypes": ["506","507","508","509","549"],
+            "icon": "special://skin/extras/icons/table-list.png"
+        },
+        "31008": {
+            "viewtypes": ["510","511","512","513","514"],
+            "icon": "special://skin/extras/icons/table-cells.png"
+        },
+        "31083": {
+            "viewtypes": ["520","521","522","523","524","526","528"],
+            "icon": "special://skin/extras/icons/view-combined.png"
+        }
     },
     "rules": {
         "images": {
