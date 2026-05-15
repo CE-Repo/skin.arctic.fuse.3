@@ -159,13 +159,42 @@
 		<include content="Settings_Label">
 			<param name="id">8001</param>
 			<param name="dialog">true</param>
+			<label>$LOCALIZE[19033]</label>
+		</include>
+		<include content="Settings_Button">
+			<param name="dialog">true</param>
+			<param name="id">8002</param>
+			<param name="control">button</param>
+			<label>$LOCALIZE[31994]</label>
+			<label2>$VAR[Label_Setting_InfoLineStyle]</label2>
+			<onclick>Skin.ToggleSetting(Info.EnablePillboxStyle)</onclick>
+		</include>
+		<include content="Settings_Button">
+			<param name="dialog">true</param>
+			<param name="id">8003</param>
+			<param name="control">radiobutton</param>
+			<label>$LOCALIZE[31995]</label>
+			<onclick>Skin.ToggleSetting(InfoBar.TwoRow)</onclick>
+			<selected>Skin.HasSetting(InfoBar.TwoRow)</selected>
+		</include>
+		<include content="Settings_Button">
+			<param name="dialog">true</param>
+			<param name="id">8004</param>
+			<param name="control">radiobutton</param>
+			<label>$LOCALIZE[21446]</label>
+			<onclick>Skin.ToggleSetting(InfoTags.EnableAudioCodec)</onclick>
+			<selected>Skin.HasSetting(InfoTags.EnableAudioCodec)</selected>
+		</include>
+		<include content="Settings_Label">
+			<param name="id">8005</param>
+			<param name="dialog">true</param>
 			<label>$LOCALIZE[31434]</label>
 		</include>
 		<include content="Settings_Button" description="Artwork Style">
 			<param name="dialog">true</param>
-			<param name="id">8002</param>
+			<param name="id">8006</param>
 			<param name="control">button</param>
-			<label>$LOCALIZE[31973]</label>
+			<label>$LOCALIZE[31996]</label>
 			<label2>$VAR[ArtworkStyle]</label2>
 			<onclick condition="String.IsEmpty(Skin.String(OSD.ArtworkStyle)) | String.IsEqual(Skin.String(OSD.ArtworkStyle),Off)">Skin.SetString(OSD.ArtworkStyle,DiscArt)</onclick>
 			<onclick condition="String.IsEqual(Skin.String(OSD.ArtworkStyle),DiscArt)">Skin.SetString(OSD.ArtworkStyle,VHSArt)</onclick>
@@ -173,41 +202,12 @@
 		</include>
 		<include content="Settings_Button">
 			<param name="dialog">true</param>
-			<param name="id">8003</param>
+			<param name="id">8007</param>
 			<param name="control">radiobutton</param>
-			<label>$LOCALIZE[31986]</label>
+			<label>$LOCALIZE[31997]</label>
 			<selected>!Skin.HasSetting(OSD.DiscArtNoRotate)</selected>
 			<onclick>Skin.ToggleSetting(OSD.DiscArtNoRotate)</onclick>
 			<visible>String.IsEqual(Skin.String(OSD.ArtworkStyle),DiscArt)</visible>
-		</include>
-		<include content="Settings_Label">
-			<param name="id">8004</param>
-			<param name="dialog">true</param>
-			<label>$LOCALIZE[19033]</label>
-		</include>
-		<include content="Settings_Button">
-			<param name="dialog">true</param>
-			<param name="id">8005</param>
-			<param name="control">button</param>
-			<label>$LOCALIZE[31989]</label>
-			<label2>$VAR[Label_Setting_InfoLineStyle]</label2>
-			<onclick>Skin.ToggleSetting(Info.EnablePillboxStyle)</onclick>
-		</include>
-		<include content="Settings_Button">
-			<param name="dialog">true</param>
-			<param name="id">8006</param>
-			<param name="control">radiobutton</param>
-			<label>$LOCALIZE[31984]</label>
-			<onclick>Skin.ToggleSetting(InfoBar.TwoRow)</onclick>
-			<selected>Skin.HasSetting(InfoBar.TwoRow)</selected>
-		</include>
-		<include content="Settings_Button">
-			<param name="dialog">true</param>
-			<param name="id">8007</param>
-			<param name="control">radiobutton</param>
-			<label>$LOCALIZE[21446]</label>
-			<onclick>Skin.ToggleSetting(InfoTags.EnableAudioCodec)</onclick>
-			<selected>Skin.HasSetting(InfoTags.EnableAudioCodec)</selected>
 		</include>
 	</include>
 
@@ -217,8 +217,8 @@
 	</variable>
 
 	<variable name="ArtworkStyle">
-		<value condition="String.IsEqual(Skin.String(OSD.ArtworkStyle),DiscArt)">$LOCALIZE[31985]</value>
-		<value condition="String.IsEqual(Skin.String(OSD.ArtworkStyle),VHSArt)">$LOCALIZE[31980]</value>
+		<value condition="String.IsEqual(Skin.String(OSD.ArtworkStyle),DiscArt)">$LOCALIZE[31998]</value>
+		<value condition="String.IsEqual(Skin.String(OSD.ArtworkStyle),VHSArt)">$LOCALIZE[31999]</value>
 		<value>$LOCALIZE[31930]</value>
 	</variable>
 </includes>

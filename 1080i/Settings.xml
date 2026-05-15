@@ -198,7 +198,7 @@
                                         <visible>System.AddonIsEnabled(service.coreelec.settings)</visible>
                                     </item>
                                     <item>
-                                        <label>u3k</label>
+                                        <label>U3k</label>
                                         <label2>skin.arctic.fuse.3</label2>
                                         <icon>special://skin/extras/icons/configure.png</icon>
                                         <onclick>SetProperty(CustomDialogSettingsItems,DialogCustom_u3k_Items,Home)</onclick>
