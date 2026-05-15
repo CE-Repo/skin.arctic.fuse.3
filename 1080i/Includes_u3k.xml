@@ -1,0 +1,224 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<includes>
+	<include name="Info_Line_One_Row">
+		<height>60</height>
+	</include>
+
+	<include name="Info_Line_Two_Row">
+		<height>50</height>
+	</include>
+
+	<include name="PPI_Button">
+		<!-- Button 9 -->
+		<control type="button" id="6009">
+			<include>Defs_OSD_Button</include>
+			<onclick>CancelAlarm(osd_timeout,true)</onclick>
+			<onclick>RunScript(script.tinyppi)</onclick>
+		</control>
+		<include content="OSD_Button_Icon_Overlay">
+			<param name="icon">special://skin/extras/icons/ppi.png</param>
+			<param name="id">6009</param>
+			<param name="groupid">6109</param>
+			<param name="itemgap">osd_itemgap</param>
+		</include>
+	</include>
+
+	<include name="PPI_Button_OSD">
+		<include content="OSD_CustomDialog_FakeButton" condition="![$PARAM[button_9]]">
+			<param name="id">9</param>
+		</include>
+		<include content="OSD_CustomDialog_RealButton" condition="$PARAM[button_9]">
+			<param name="id">9</param>
+			<param name="onclick">$PARAM[onclick]</param>
+			<param name="onclick_condition">$PARAM[onclick_condition]</param>
+			<param name="onup">$PARAM[onup]</param>
+			<param name="onup_02">$PARAM[onup_02]</param>
+			<param name="icon">$PARAM[icon]</param>
+			<param name="label">$PARAM[label]</param>
+			<param name="iconoffset_condition">$PARAM[iconoffset_condition]</param>
+		</include>
+	</include>
+
+	<include name="CD_Art">
+		<control type="group">
+			<visible>[!Pvr.IsPlayingTv + !String.IsEmpty(Player.Art(discart)) + String.IsEqual(Skin.String(OSD.ArtworkStyle),DiscArt)]</visible>
+			<left>1455</left>
+			<top>400</top>
+			<!-- Disc Background -->
+			<control type="image">
+				<width>500</width>
+				<height>425</height>
+				<texture colordiffuse="shadow_hard">common/discart.png</texture>
+			</control>
+			<!-- Disc Art -->
+			<control type="image">
+				<left>15</left>
+				<top>10</top>
+				<width>400</width>
+				<height>400</height>
+				<texture background="true">$INFO[Player.Art(discart)]</texture>
+				<aspectratio aligny="bottom">keep</aspectratio>
+				<visible>Skin.HasSetting(OSD.DiscArtNoRotate)</visible>
+			</control>
+			<control type="image">
+				<left>15</left>
+				<top>10</top>
+				<width>400</width>
+				<height>400</height>
+				<texture background="true">$INFO[Player.Art(discart)]</texture>
+				<aspectratio aligny="bottom">keep</aspectratio>
+				<animation effect="rotate" start="0" end="-360" loop="true" time="20000" center="auto" condition="Player.Playing | Player.Paused">Conditional</animation>
+				<visible>!Skin.HasSetting(OSD.DiscArtNoRotate)</visible>
+			</control>
+			<animation effect="slide" start="500" end="0" time="750">WindowOpen</animation>
+			<animation effect="slide" start="0" end="500" time="750">WindowClose</animation>
+			<animation effect="slide" start="0" end="500" time="750" condition="Control.HasFocus(6006) | Control.HasFocus(6007) | Control.HasFocus(6008)">
+                    WindowClose
+                </animation>
+		</control>
+	</include>
+
+	<include name="VHS_Art">
+		<control type="group">
+			<visible>[!Pvr.IsPlayingTv + !String.IsEmpty(Player.Art(discart)) + String.IsEqual(Skin.String(OSD.ArtworkStyle),DiscArt)]</visible>
+			<left>1455</left>
+			<top>400</top>
+			<!-- Disc Background -->
+			<control type="image">
+				<width>500</width>
+				<height>425</height>
+				<texture colordiffuse="shadow_hard">common/discart.png</texture>
+			</control>
+			<!-- Disc Art -->
+			<control type="image">
+				<left>15</left>
+				<top>10</top>
+				<width>400</width>
+				<height>400</height>
+				<texture background="true">$INFO[Player.Art(discart)]</texture>
+				<aspectratio aligny="bottom">keep</aspectratio>
+				<visible>Skin.HasSetting(OSD.DiscArtNoRotate)</visible>
+			</control>
+			<control type="image">
+				<left>15</left>
+				<top>10</top>
+				<width>400</width>
+				<height>400</height>
+				<texture background="true">$INFO[Player.Art(discart)]</texture>
+				<aspectratio aligny="bottom">keep</aspectratio>
+				<animation effect="rotate" start="0" end="-360" loop="true" time="20000" center="auto" condition="Player.Playing | Player.Paused">Conditional</animation>
+				<visible>!Skin.HasSetting(OSD.DiscArtNoRotate)</visible>
+			</control>
+			<animation effect="slide" start="500" end="0" time="750">WindowOpen</animation>
+			<animation effect="slide" start="0" end="500" time="750">WindowClose</animation>
+			<animation effect="slide" start="0" end="500" time="750" condition="Control.HasFocus(6006) | Control.HasFocus(6007) | Control.HasFocus(6008)">
+                    WindowClose
+                </animation>
+		</control>
+
+		<control type="group">
+			<visible>[!Pvr.IsPlayingTv + !String.IsEmpty(Player.Art(discart)) + String.IsEqual(Skin.String(OSD.ArtworkStyle),VHSArt)]</visible>
+			<left>1315</left>
+			<top>510</top>
+			<!-- VHS Background -->
+			<control type="image">
+				<right>90</right>
+				<width>500</width>
+				<height>280</height>
+				<texture colordiffuse="shadow_hard">common/white.png</texture>
+			</control>
+			<control type="image">
+				<width>538</width>
+				<height>300</height>
+				<texture>common/vhs.png</texture>
+			</control>
+			<control type="image">
+				<left>150</left>
+				<top>93</top>
+				<width>239</width>
+				<height>134</height>
+				<texture background="true" diffuse="diffuse/landscape_w410_h231.png">$INFO[Player.Art(landscape)]</texture>
+				<aspectratio>scale</aspectratio>
+			</control>
+			<animation type="WindowOpen">
+				<effect type="rotate" start="-90" end="0" time="1000" center="auto" tween="linear" easing="in" />
+				<effect type="slide" start="500" end="0" time="2000" tween="back" easing="out" />
+			</animation>
+			<animation type="WindowClose">
+				<effect type="slide" start="0" end="500" time="500" />
+			</animation>
+			<animation condition="Control.HasFocus(6006) | Control.HasFocus(6007) | Control.HasFocus(6008) | Control.HasFocus(6009)">
+				<effect type="rotate" start="0" end="-90" time="1000" center="auto" tween="linear" easing="in" />
+				<effect type="slide" start="0" end="700" time="2000" tween="back" easing="inout" />
+                        WindowClose
+			</animation>
+		</control>
+	</include>
+
+	<include name="DialogCustom_u3k_Items">
+		<include content="Settings_Label">
+			<param name="id">8001</param>
+			<param name="dialog">true</param>
+			<label>$LOCALIZE[31434]</label>
+		</include>
+		<include content="Settings_Button" description="Artwork Style">
+			<param name="dialog">true</param>
+			<param name="id">8002</param>
+			<param name="control">button</param>
+			<label>$LOCALIZE[31973]</label>
+			<label2>$VAR[ArtworkStyle]</label2>
+			<onclick condition="String.IsEmpty(Skin.String(OSD.ArtworkStyle)) | String.IsEqual(Skin.String(OSD.ArtworkStyle),Off)">Skin.SetString(OSD.ArtworkStyle,DiscArt)</onclick>
+			<onclick condition="String.IsEqual(Skin.String(OSD.ArtworkStyle),DiscArt)">Skin.SetString(OSD.ArtworkStyle,VHSArt)</onclick>
+			<onclick condition="String.IsEqual(Skin.String(OSD.ArtworkStyle),VHSArt)">Skin.SetString(OSD.ArtworkStyle,Off)</onclick>
+		</include>
+		<include content="Settings_Button">
+			<param name="dialog">true</param>
+			<param name="id">8003</param>
+			<param name="control">radiobutton</param>
+			<label>$LOCALIZE[31986]</label>
+			<selected>!Skin.HasSetting(OSD.DiscArtNoRotate)</selected>
+			<onclick>Skin.ToggleSetting(OSD.DiscArtNoRotate)</onclick>
+			<visible>String.IsEqual(Skin.String(OSD.ArtworkStyle),DiscArt)</visible>
+		</include>
+		<include content="Settings_Label">
+			<param name="id">8004</param>
+			<param name="dialog">true</param>
+			<label>$LOCALIZE[19033]</label>
+		</include>
+		<include content="Settings_Button">
+			<param name="dialog">true</param>
+			<param name="id">8005</param>
+			<param name="control">button</param>
+			<label>$LOCALIZE[31989]</label>
+			<label2>$VAR[Label_Setting_InfoLineStyle]</label2>
+			<onclick>Skin.ToggleSetting(Info.EnablePillboxStyle)</onclick>
+		</include>
+		<include content="Settings_Button">
+			<param name="dialog">true</param>
+			<param name="id">8006</param>
+			<param name="control">radiobutton</param>
+			<label>$LOCALIZE[31984]</label>
+			<onclick>Skin.ToggleSetting(InfoBar.TwoRow)</onclick>
+			<selected>Skin.HasSetting(InfoBar.TwoRow)</selected>
+		</include>
+		<include content="Settings_Button">
+			<param name="dialog">true</param>
+			<param name="id">8007</param>
+			<param name="control">radiobutton</param>
+			<label>$LOCALIZE[21446]</label>
+			<onclick>Skin.ToggleSetting(InfoTags.EnableAudioCodec)</onclick>
+			<selected>Skin.HasSetting(InfoTags.EnableAudioCodec)</selected>
+		</include>
+	</include>
+
+	<variable name="Label_Setting_InfoLineStyle">
+		<value condition="Skin.HasSetting(Info.EnablePillboxStyle)">$LOCALIZE[31209]</value>
+		<value>$LOCALIZE[31329]</value>
+	</variable>
+
+	<variable name="ArtworkStyle">
+		<value condition="String.IsEqual(Skin.String(OSD.ArtworkStyle),DiscArt)">$LOCALIZE[31985]</value>
+		<value condition="String.IsEqual(Skin.String(OSD.ArtworkStyle),VHSArt)">$LOCALIZE[31980]</value>
+		<value>$LOCALIZE[31930]</value>
+	</variable>
+</includes>
