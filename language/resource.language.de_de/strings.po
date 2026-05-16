@@ -2305,3 +2305,26 @@ msgctxt "#31605"
 msgid "Next aired"
 msgstr "Nächste Ausstrahlung"
 
+msgctxt "#31994"
+msgid "Info line"
+msgstr "Infozeile"
+
+msgctxt "#31995"
+msgid "Show two-row information bar"
+msgstr "Zweizeilige Informationsleiste anzeigen"
+
+msgctxt "#31996"
+msgid "Artwork Style"
+msgstr "Artwork-Stil"
+
+msgctxt "#31997"
+msgid "Rotating disc"
+msgstr "Drehende Disk"
+
+msgctxt "#31998"
+msgid "Disc Art"
+msgstr "Disk-Art"
+
+msgctxt "#31999"
+msgid "VHS Art"
+msgstr "VHS-Art"
