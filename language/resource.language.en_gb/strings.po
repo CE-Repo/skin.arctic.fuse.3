@@ -2330,7 +2330,7 @@ msgid "Codec logos (OSD)"
 msgstr ""
 
 msgctxt "#31991"
-msgid "Codec logos (PlayerProcessInfo)"
+msgid "Codec logos (TinyPPI)"
 msgstr ""
 
 msgctxt "#31992"
