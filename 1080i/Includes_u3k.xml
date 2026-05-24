@@ -362,7 +362,17 @@
                 </control>
             </control>
             <control type="group">
-                <visible>String.IsEmpty(VideoPlayer.HdrType)</visible>
+                <visible>[!String.IsEmpty(VideoPlayer.HdrType) + String.Contains(Player.Process(amlogic.eoft_gamut),SDR)] | [[String.IsEmpty(VideoPlayer.HdrType) | String.Contains(VideoPlayer.HdrType,dolbyvision) | String.Contains(VideoPlayer.HdrType,hlg)] + String.Contains(Player.Process(amlogic.eoft_gamut),HDR10)] | [[String.IsEmpty(VideoPlayer.HdrType) | String.IsEqual(VideoPlayer.HdrType,hdr10) | String.Contains(VideoPlayer.HdrType,hdr10plus) | String.Contains(VideoPlayer.HdrType,hlg)] + String.Contains(Player.Process(amlogic.eoft_gamut),DV)]</visible>
+                <top>43</top>
+                <left>192</left>
+                <control type="image">
+                    <width>8</width>
+                    <height>8</height>
+                    <texture colordiffuse="AB16A34A">u3k/VS10.png</texture>
+                </control>
+            </control>
+            <control type="group">
+                <visible>!String.IsEmpty(VideoPlayer.HdrType) + String.Contains(Player.Process(amlogic.eoft_gamut),SDR)</visible>
                 <top>52</top>
                 <left>30</left>
                 <control type="image">
@@ -372,7 +382,7 @@
                 </control>
             </control>
             <control type="group">
-                <visible>String.IsEqual(VideoPlayer.HdrType,hdr10)</visible>
+                <visible>[String.IsEmpty(VideoPlayer.HdrType) | String.Contains(VideoPlayer.HdrType,dolbyvision) | String.Contains(VideoPlayer.HdrType,hlg)] + String.Contains(Player.Process(amlogic.eoft_gamut),HDR10)</visible>
                 <top>52</top>
                 <left>30</left>
                 <control type="image">
@@ -382,7 +392,37 @@
                 </control>
             </control>
             <control type="group">
-                <visible>String.IsEqual(VideoPlayer.HdrType,hdr10plus)</visible>
+                <visible>[String.IsEmpty(VideoPlayer.HdrType) | String.IsEqual(VideoPlayer.HdrType,hdr10) | String.Contains(VideoPlayer.HdrType,hdr10plus) | String.Contains(VideoPlayer.HdrType,hlg)] + String.Contains(Player.Process(amlogic.eoft_gamut),DV)</visible>
+                <top>50</top>
+                <left>30</left>
+                <control type="image">
+                    <width>150</width>
+                    <height>56</height>
+                    <texture colordiffuse="dialog_fg_90">u3k/Dolby_Vision.png</texture>
+                </control>
+            </control>
+            <control type="group">
+                <visible>String.IsEmpty(VideoPlayer.HdrType) + String.Contains(Player.Process(amlogic.eoft_gamut),SDR)</visible>
+                <top>52</top>
+                <left>30</left>
+                <control type="image">
+                    <width>150</width>
+                    <height>52</height>
+                    <texture colordiffuse="dialog_fg_90">u3k/SDR.png</texture>
+                </control>
+            </control>
+            <control type="group">
+                <visible>String.IsEqual(VideoPlayer.HdrType,hdr10) + String.Contains(Player.Process(amlogic.eoft_gamut),HDR10)</visible>
+                <top>52</top>
+                <left>30</left>
+                <control type="image">
+                    <width>150</width>
+                    <height>52</height>
+                    <texture colordiffuse="dialog_fg_90">u3k/HDR10.png</texture>
+                </control>
+            </control>
+            <control type="group">
+                <visible>String.IsEqual(VideoPlayer.HdrType,hdr10plus) + String.Contains(Player.Process(amlogic.eoft_gamut),HDR10)</visible>
                 <top>52</top>
                 <left>30</left>
                 <control type="image">
@@ -392,7 +432,7 @@
                 </control>
             </control>
             <control type="group">
-                <visible>String.Contains(VideoPlayer.HdrType,dolbyvision)</visible>
+                <visible>String.Contains(VideoPlayer.HdrType,dolbyvision) + String.Contains(Player.Process(amlogic.eoft_gamut),DV)</visible>
                 <top>50</top>
                 <left>30</left>
                 <control type="image">
@@ -608,7 +648,17 @@
                 </control>
             </control>
             <control type="group">
-                <visible>String.IsEmpty(VideoPlayer.HdrType)</visible>
+                <visible>[!String.IsEmpty(VideoPlayer.HdrType) + String.Contains(Player.Process(amlogic.eoft_gamut),SDR)] | [[String.IsEmpty(VideoPlayer.HdrType) | String.Contains(VideoPlayer.HdrType,dolbyvision) | String.Contains(VideoPlayer.HdrType,hlg)] + String.Contains(Player.Process(amlogic.eoft_gamut),HDR10)] | [[String.IsEmpty(VideoPlayer.HdrType) | String.IsEqual(VideoPlayer.HdrType,hdr10) | String.Contains(VideoPlayer.HdrType,hdr10plus) | String.Contains(VideoPlayer.HdrType,hlg)] + String.Contains(Player.Process(amlogic.eoft_gamut),DV)]</visible>
+                <top>43</top>
+                <left>192</left>
+                <control type="image">
+                    <width>8</width>
+                    <height>8</height>
+                    <texture colordiffuse="AB16A34A">u3k/VS10.png</texture>
+                </control>
+            </control>
+            <control type="group">
+                <visible>!String.IsEmpty(VideoPlayer.HdrType) + String.Contains(Player.Process(amlogic.eoft_gamut),SDR)</visible>
                 <top>52</top>
                 <left>30</left>
                 <control type="image">
@@ -618,7 +668,7 @@
                 </control>
             </control>
             <control type="group">
-                <visible>String.IsEqual(VideoPlayer.HdrType,hdr10)</visible>
+                <visible>[String.IsEmpty(VideoPlayer.HdrType) | String.Contains(VideoPlayer.HdrType,dolbyvision) | String.Contains(VideoPlayer.HdrType,hlg)] + String.Contains(Player.Process(amlogic.eoft_gamut),HDR10)</visible>
                 <top>52</top>
                 <left>30</left>
                 <control type="image">
@@ -628,7 +678,37 @@
                 </control>
             </control>
             <control type="group">
-                <visible>String.IsEqual(VideoPlayer.HdrType,hdr10plus)</visible>
+                <visible>[String.IsEmpty(VideoPlayer.HdrType) | String.IsEqual(VideoPlayer.HdrType,hdr10) | String.Contains(VideoPlayer.HdrType,hdr10plus) | String.Contains(VideoPlayer.HdrType,hlg)] + String.Contains(Player.Process(amlogic.eoft_gamut),DV)</visible>
+                <top>50</top>
+                <left>30</left>
+                <control type="image">
+                    <width>150</width>
+                    <height>56</height>
+                    <texture colordiffuse="dialog_fg_90">u3k/Dolby_Vision.png</texture>
+                </control>
+            </control>
+            <control type="group">
+                <visible>String.IsEmpty(VideoPlayer.HdrType) + String.Contains(Player.Process(amlogic.eoft_gamut),SDR)</visible>
+                <top>52</top>
+                <left>30</left>
+                <control type="image">
+                    <width>150</width>
+                    <height>52</height>
+                    <texture colordiffuse="dialog_fg_90">u3k/SDR.png</texture>
+                </control>
+            </control>
+            <control type="group">
+                <visible>String.IsEqual(VideoPlayer.HdrType,hdr10) + String.Contains(Player.Process(amlogic.eoft_gamut),HDR10)</visible>
+                <top>52</top>
+                <left>30</left>
+                <control type="image">
+                    <width>150</width>
+                    <height>52</height>
+                    <texture colordiffuse="dialog_fg_90">u3k/HDR10.png</texture>
+                </control>
+            </control>
+            <control type="group">
+                <visible>String.IsEqual(VideoPlayer.HdrType,hdr10plus) + String.Contains(Player.Process(amlogic.eoft_gamut),HDR10)</visible>
                 <top>52</top>
                 <left>30</left>
                 <control type="image">
@@ -638,7 +718,7 @@
                 </control>
             </control>
             <control type="group">
-                <visible>String.Contains(VideoPlayer.HdrType,dolbyvision)</visible>
+                <visible>String.Contains(VideoPlayer.HdrType,dolbyvision) + String.Contains(Player.Process(amlogic.eoft_gamut),DV)</visible>
                 <top>50</top>
                 <left>30</left>
                 <control type="image">
@@ -854,7 +934,17 @@
                 </control>
             </control>
             <control type="group">
-                <visible>String.IsEmpty(VideoPlayer.HdrType)</visible>
+                <visible>[!String.IsEmpty(VideoPlayer.HdrType) + String.Contains(Player.Process(amlogic.eoft_gamut),SDR)] | [[String.IsEmpty(VideoPlayer.HdrType) | String.Contains(VideoPlayer.HdrType,dolbyvision) | String.Contains(VideoPlayer.HdrType,hlg)] + String.Contains(Player.Process(amlogic.eoft_gamut),HDR10)] | [[String.IsEmpty(VideoPlayer.HdrType) | String.IsEqual(VideoPlayer.HdrType,hdr10) | String.Contains(VideoPlayer.HdrType,hdr10plus) | String.Contains(VideoPlayer.HdrType,hlg)] + String.Contains(Player.Process(amlogic.eoft_gamut),DV)]</visible>
+                <top>43</top>
+                <left>192</left>
+                <control type="image">
+                    <width>8</width>
+                    <height>8</height>
+                    <texture colordiffuse="AB16A34A">u3k/VS10.png</texture>
+                </control>
+            </control>
+            <control type="group">
+                <visible>!String.IsEmpty(VideoPlayer.HdrType) + String.Contains(Player.Process(amlogic.eoft_gamut),SDR)</visible>
                 <top>52</top>
                 <left>30</left>
                 <control type="image">
@@ -864,7 +954,38 @@
                 </control>
             </control>
             <control type="group">
-                <visible>String.IsEqual(VideoPlayer.HdrType,hdr10)</visible>
+                <visible>[String.IsEmpty(VideoPlayer.HdrType) | String.Contains(VideoPlayer.HdrType,dolbyvision) | String.Contains(VideoPlayer.HdrType,hlg)] + String.Contains(Player.Process(amlogic.eoft_gamut),HDR10)</visible>
+                <top>52</top>
+                <left>30</left>
+                <control type="image">
+                    <width>150</width>
+                    <height>52</height>
+                    <texture colordiffuse="dialog_fg_90">u3k/HDR10.png</texture>
+                </control>
+            </control>
+
+            <control type="group">
+                <visible>[String.IsEmpty(VideoPlayer.HdrType) | String.IsEqual(VideoPlayer.HdrType,hdr10) | String.Contains(VideoPlayer.HdrType,hdr10plus) | String.Contains(VideoPlayer.HdrType,hlg)] + String.Contains(Player.Process(amlogic.eoft_gamut),DV)</visible>
+                <top>50</top>
+                <left>30</left>
+                <control type="image">
+                    <width>150</width>
+                    <height>56</height>
+                    <texture colordiffuse="dialog_fg_90">u3k/Dolby_Vision.png</texture>
+                </control>
+            </control>
+            <control type="group">
+                <visible>String.IsEmpty(VideoPlayer.HdrType) + String.Contains(Player.Process(amlogic.eoft_gamut),SDR)</visible>
+                <top>52</top>
+                <left>30</left>
+                <control type="image">
+                    <width>150</width>
+                    <height>52</height>
+                    <texture colordiffuse="dialog_fg_90">u3k/SDR.png</texture>
+                </control>
+            </control>
+            <control type="group">
+                <visible>String.IsEqual(VideoPlayer.HdrType,hdr10) + String.Contains(Player.Process(amlogic.eoft_gamut),HDR10)</visible>
                 <top>52</top>
                 <left>30</left>
                 <control type="image">
@@ -874,7 +995,7 @@
                 </control>
             </control>
             <control type="group">
-                <visible>String.IsEqual(VideoPlayer.HdrType,hdr10plus)</visible>
+                <visible>String.IsEqual(VideoPlayer.HdrType,hdr10plus) + String.Contains(Player.Process(amlogic.eoft_gamut),HDR10)</visible>
                 <top>52</top>
                 <left>30</left>
                 <control type="image">
@@ -884,7 +1005,7 @@
                 </control>
             </control>
             <control type="group">
-                <visible>String.Contains(VideoPlayer.HdrType,dolbyvision)</visible>
+                <visible>String.Contains(VideoPlayer.HdrType,dolbyvision) + String.Contains(Player.Process(amlogic.eoft_gamut),DV)</visible>
                 <top>50</top>
                 <left>30</left>
                 <control type="image">
@@ -1126,7 +1247,7 @@
         </definition>
     </include>
 	
-    <include name="Indicator_Flag">
+    <include name="VS10_Indicator_Flag">
         <param name="groupId" />
         <param name="imageId" />
         <param name="visible" />
@@ -1147,7 +1268,7 @@
         </definition>
     </include>
 	
-    <include name="SDR_Flag">
+    <include name="Convert_SDR_Flag">
         <param name="groupId" />
         <param name="imageId" />
         <param name="visible" />
@@ -1168,7 +1289,7 @@
         </definition>
     </include>
 	
-    <include name="HDR10_Flag">
+    <include name="Convert_HDR10_Flag">
         <param name="groupId" />
         <param name="imageId" />
         <param name="visible" />
@@ -1189,28 +1310,7 @@
         </definition>
     </include>
 	
-    <include name="HDR10Plus_Flag">
-        <param name="groupId" />
-        <param name="imageId" />
-        <param name="visible" />
-        <param name="texture" />
-        <param name="colordiffuse" />
-        <definition>
-            <control type="group" id="$PARAM[groupId]">
-                <control type="image" id="$PARAM[imageId]">
-                    <top>52</top>
-                    <left>30</left>
-                    <width>150</width>
-                    <height>52</height>
-                    <visible>$PARAM[visible]</visible>
-                    <texture>$PARAM[texture]</texture>
-                    <colordiffuse>$PARAM[colordiffuse]</colordiffuse>
-                </control>
-            </control>
-        </definition>
-    </include>
-	
-    <include name="DV_Flag">
+    <include name="Convert_DV_Flag">
         <param name="groupId" />
         <param name="imageId" />
         <param name="visible" />
@@ -1231,7 +1331,91 @@
         </definition>
     </include>
 	
-    <include name="HLG_Flag">
+    <include name="Bypass_SDR_Flag">
+        <param name="groupId" />
+        <param name="imageId" />
+        <param name="visible" />
+        <param name="texture" />
+        <param name="colordiffuse" />
+        <definition>
+            <control type="group" id="$PARAM[groupId]">
+                <control type="image" id="$PARAM[imageId]">
+                    <top>52</top>
+                    <left>30</left>
+                    <width>150</width>
+                    <height>52</height>
+                    <visible>$PARAM[visible]</visible>
+                    <texture>$PARAM[texture]</texture>
+                    <colordiffuse>$PARAM[colordiffuse]</colordiffuse>
+                </control>
+            </control>
+        </definition>
+    </include>
+	
+    <include name="Bypass_HDR10_Flag">
+        <param name="groupId" />
+        <param name="imageId" />
+        <param name="visible" />
+        <param name="texture" />
+        <param name="colordiffuse" />
+        <definition>
+            <control type="group" id="$PARAM[groupId]">
+                <control type="image" id="$PARAM[imageId]">
+                    <top>52</top>
+                    <left>30</left>
+                    <width>150</width>
+                    <height>52</height>
+                    <visible>$PARAM[visible]</visible>
+                    <texture>$PARAM[texture]</texture>
+                    <colordiffuse>$PARAM[colordiffuse]</colordiffuse>
+                </control>
+            </control>
+        </definition>
+    </include>
+	
+    <include name="Bypass_HDR10Plus_Flag">
+        <param name="groupId" />
+        <param name="imageId" />
+        <param name="visible" />
+        <param name="texture" />
+        <param name="colordiffuse" />
+        <definition>
+            <control type="group" id="$PARAM[groupId]">
+                <control type="image" id="$PARAM[imageId]">
+                    <top>52</top>
+                    <left>30</left>
+                    <width>150</width>
+                    <height>52</height>
+                    <visible>$PARAM[visible]</visible>
+                    <texture>$PARAM[texture]</texture>
+                    <colordiffuse>$PARAM[colordiffuse]</colordiffuse>
+                </control>
+            </control>
+        </definition>
+    </include>
+	
+    <include name="Bypass_DV_Flag">
+        <param name="groupId" />
+        <param name="imageId" />
+        <param name="visible" />
+        <param name="texture" />
+        <param name="colordiffuse" />
+        <definition>
+            <control type="group" id="$PARAM[groupId]">
+                <control type="image" id="$PARAM[imageId]">
+                    <top>50</top>
+                    <left>30</left>
+                    <width>150</width>
+                    <height>56</height>
+                    <visible>$PARAM[visible]</visible>
+                    <texture>$PARAM[texture]</texture>
+                    <colordiffuse>$PARAM[colordiffuse]</colordiffuse>
+                </control>
+            </control>
+        </definition>
+    </include>
+	
+    <include name="Bypass_HLG_Flag">
         <param name="groupId" />
         <param name="imageId" />
         <param name="visible" />

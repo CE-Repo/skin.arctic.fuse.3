@@ -98,62 +98,94 @@
             </animation>
 			
             <include content="Video_Audio_Background_Flag">
-                <param name="groupId">46</param>
-                <param name="imageId">47</param>
+                <param name="groupId">48</param>
+                <param name="imageId">49</param>
                 <param name="visible">!String.IsEmpty(VideoPlayer.VideoCodec) + !String.IsEmpty(VideoPlayer.AudioCodec)</param>
                 <param name="texture">u3k/corner.png</param>
                 <param name="colordiffuse">80FFFFFF</param>
             </include>
 			
             <include content="Video_Background_Flag">
-                <param name="groupId">48</param>
-                <param name="imageId">49</param>
+                <param name="groupId">50</param>
+                <param name="imageId">51</param>
                 <param name="visible">!String.IsEmpty(VideoPlayer.VideoCodec) + String.IsEmpty(VideoPlayer.AudioCodec)</param>
                 <param name="texture">u3k/corner_small.png</param>
                 <param name="colordiffuse">80FFFFFF</param>
             </include>
 			
             <include content="Audio_Background_Flag">
-                <param name="groupId">50</param>
-                <param name="imageId">51</param>
+                <param name="groupId">52</param>
+                <param name="imageId">53</param>
                 <param name="visible">String.IsEmpty(VideoPlayer.VideoCodec) + !String.IsEmpty(VideoPlayer.AudioCodec)</param>
                 <param name="texture">u3k/corner_small.png</param>
                 <param name="colordiffuse">80FFFFFF</param>
             </include>
 			
-            <include content="SDR_Flag">
-                <param name="groupId">62</param>
-                <param name="imageId">63</param>
-                <param name="visible">String.IsEmpty(VideoPlayer.HdrType)</param>
+            <include content="VS10_Indicator_Flag">
+                <param name="groupId">54</param>
+                <param name="imageId">55</param>
+                <param name="visible">[!String.IsEmpty(VideoPlayer.HdrType) + String.Contains(Player.Process(amlogic.eoft_gamut),SDR)] | [[String.IsEmpty(VideoPlayer.HdrType) | String.Contains(VideoPlayer.HdrType,dolbyvision) | String.Contains(VideoPlayer.HdrType,hlg)] + String.Contains(Player.Process(amlogic.eoft_gamut),HDR10)] | [[String.IsEmpty(VideoPlayer.HdrType) | String.IsEqual(VideoPlayer.HdrType,hdr10) | String.Contains(VideoPlayer.HdrType,hdr10plus) | String.Contains(VideoPlayer.HdrType,hlg)] + String.Contains(Player.Process(amlogic.eoft_gamut),DV)]</param>
+                <param name="texture">u3k/VS10.png</param>
+                <param name="colordiffuse">AB16A34A</param>
+            </include>
+			
+            <include content="Convert_SDR_Flag">
+                <param name="groupId">56</param>
+                <param name="imageId">57</param>
+                <param name="visible">!String.IsEmpty(VideoPlayer.HdrType) + String.Contains(Player.Process(amlogic.eoft_gamut),SDR)</param>
                 <param name="texture">u3k/SDR.png</param>
                 <param name="colordiffuse">dialog_fg_90</param>
             </include>
 			
-            <include content="HDR10_Flag">
-                <param name="groupId">64</param>
-                <param name="imageId">65</param>
-                <param name="visible">String.IsEqual(VideoPlayer.HdrType,hdr10)</param>
+            <include content="Convert_HDR10_Flag">
+                <param name="groupId">58</param>
+                <param name="imageId">59</param>
+                <param name="visible">[String.IsEmpty(VideoPlayer.HdrType) | String.Contains(VideoPlayer.HdrType,dolbyvision) | String.Contains(VideoPlayer.HdrType,hlg)] + String.Contains(Player.Process(amlogic.eoft_gamut),HDR10)</param>
                 <param name="texture">u3k/HDR10.png</param>
                 <param name="colordiffuse">dialog_fg_90</param>
             </include>
 			
-            <include content="HDR10Plus_Flag">
-                <param name="groupId">66</param>
-                <param name="imageId">67</param>
-                <param name="visible">String.IsEqual(VideoPlayer.HdrType,hdr10plus)</param>
-                <param name="texture">u3k/HDR10Plus.png</param>
-                <param name="colordiffuse">dialog_fg_90</param>
-            </include>
-			
-            <include content="DV_Flag">
-                <param name="groupId">68</param>
-                <param name="imageId">69</param>
-                <param name="visible">String.Contains(VideoPlayer.HdrType,dolbyvision)</param>
+            <include content="Convert_DV_Flag">
+                <param name="groupId">60</param>
+                <param name="imageId">61</param>
+                <param name="visible">[String.IsEmpty(VideoPlayer.HdrType) | String.IsEqual(VideoPlayer.HdrType,hdr10) | String.Contains(VideoPlayer.HdrType,hdr10plus) | String.Contains(VideoPlayer.HdrType,hlg)] + String.Contains(Player.Process(amlogic.eoft_gamut),DV)</param>
                 <param name="texture">u3k/Dolby_Vision.png</param>
                 <param name="colordiffuse">dialog_fg_90</param>
             </include>
 			
-            <include content="HLG_Flag">
+            <include content="Bypass_SDR_Flag">
+                <param name="groupId">62</param>
+                <param name="imageId">63</param>
+                <param name="visible">String.IsEmpty(VideoPlayer.HdrType) + String.Contains(Player.Process(amlogic.eoft_gamut),SDR)</param>
+                <param name="texture">u3k/SDR.png</param>
+                <param name="colordiffuse">dialog_fg_90</param>
+            </include>
+			
+            <include content="Bypass_HDR10_Flag">
+                <param name="groupId">64</param>
+                <param name="imageId">65</param>
+                <param name="visible">String.IsEqual(VideoPlayer.HdrType,hdr10) + String.Contains(Player.Process(amlogic.eoft_gamut),HDR10)</param>
+                <param name="texture">u3k/HDR10.png</param>
+                <param name="colordiffuse">dialog_fg_90</param>
+            </include>
+			
+            <include content="Bypass_HDR10Plus_Flag">
+                <param name="groupId">66</param>
+                <param name="imageId">67</param>
+                <param name="visible">String.IsEqual(VideoPlayer.HdrType,hdr10plus) + String.Contains(Player.Process(amlogic.eoft_gamut),HDR10)</param>
+                <param name="texture">u3k/HDR10Plus.png</param>
+                <param name="colordiffuse">dialog_fg_90</param>
+            </include>
+			
+            <include content="Bypass_DV_Flag">
+                <param name="groupId">68</param>
+                <param name="imageId">69</param>
+                <param name="visible">String.Contains(VideoPlayer.HdrType,dolbyvision) + String.Contains(Player.Process(amlogic.eoft_gamut),DV)</param>
+                <param name="texture">u3k/Dolby_Vision.png</param>
+                <param name="colordiffuse">dialog_fg_90</param>
+            </include>
+			
+            <include content="Bypass_HLG_Flag">
                 <param name="groupId">70</param>
                 <param name="imageId">71</param>
                 <param name="visible">String.Contains(VideoPlayer.HdrType,hlg)</param>
@@ -361,62 +393,94 @@
             </animation>
 			
             <include content="Video_Audio_Background_Flag">
-                <param name="groupId">46</param>
-                <param name="imageId">47</param>
+                <param name="groupId">48</param>
+                <param name="imageId">49</param>
                 <param name="visible">!String.IsEmpty(VideoPlayer.VideoCodec) + !String.IsEmpty(VideoPlayer.AudioCodec)</param>
                 <param name="texture">u3k/corner.png</param>
                 <param name="colordiffuse">80FFFFFF</param>
             </include>
 			
             <include content="Video_Background_Flag">
-                <param name="groupId">48</param>
-                <param name="imageId">49</param>
+                <param name="groupId">50</param>
+                <param name="imageId">51</param>
                 <param name="visible">!String.IsEmpty(VideoPlayer.VideoCodec) + String.IsEmpty(VideoPlayer.AudioCodec)</param>
                 <param name="texture">u3k/corner_small.png</param>
                 <param name="colordiffuse">80FFFFFF</param>
             </include>
 			
             <include content="Audio_Background_Flag">
-                <param name="groupId">50</param>
-                <param name="imageId">51</param>
+                <param name="groupId">52</param>
+                <param name="imageId">53</param>
                 <param name="visible">String.IsEmpty(VideoPlayer.VideoCodec) + !String.IsEmpty(VideoPlayer.AudioCodec)</param>
                 <param name="texture">u3k/corner_small.png</param>
                 <param name="colordiffuse">80FFFFFF</param>
             </include>
 			
-            <include content="SDR_Flag">
-                <param name="groupId">62</param>
-                <param name="imageId">63</param>
-                <param name="visible">String.IsEmpty(VideoPlayer.HdrType)</param>
+            <include content="VS10_Indicator_Flag">
+                <param name="groupId">54</param>
+                <param name="imageId">55</param>
+                <param name="visible">[!String.IsEmpty(VideoPlayer.HdrType) + String.Contains(Player.Process(amlogic.eoft_gamut),SDR)] | [[String.IsEmpty(VideoPlayer.HdrType) | String.Contains(VideoPlayer.HdrType,dolbyvision) | String.Contains(VideoPlayer.HdrType,hlg)] + String.Contains(Player.Process(amlogic.eoft_gamut),HDR10)] | [[String.IsEmpty(VideoPlayer.HdrType) | String.IsEqual(VideoPlayer.HdrType,hdr10) | String.Contains(VideoPlayer.HdrType,hdr10plus) | String.Contains(VideoPlayer.HdrType,hlg)] + String.Contains(Player.Process(amlogic.eoft_gamut),DV)]</param>
+                <param name="texture">u3k/VS10.png</param>
+                <param name="colordiffuse">AB16A34A</param>
+            </include>
+			
+            <include content="Convert_SDR_Flag">
+                <param name="groupId">56</param>
+                <param name="imageId">57</param>
+                <param name="visible">!String.IsEmpty(VideoPlayer.HdrType) + String.Contains(Player.Process(amlogic.eoft_gamut),SDR)</param>
                 <param name="texture">u3k/SDR.png</param>
                 <param name="colordiffuse">dialog_fg_90</param>
             </include>
 			
-            <include content="HDR10_Flag">
-                <param name="groupId">64</param>
-                <param name="imageId">65</param>
-                <param name="visible">String.IsEqual(VideoPlayer.HdrType,hdr10)</param>
+            <include content="Convert_HDR10_Flag">
+                <param name="groupId">58</param>
+                <param name="imageId">59</param>
+                <param name="visible">[String.IsEmpty(VideoPlayer.HdrType) | String.Contains(VideoPlayer.HdrType,dolbyvision) | String.Contains(VideoPlayer.HdrType,hlg)] + String.Contains(Player.Process(amlogic.eoft_gamut),HDR10)</param>
                 <param name="texture">u3k/HDR10.png</param>
                 <param name="colordiffuse">dialog_fg_90</param>
             </include>
 			
-            <include content="HDR10Plus_Flag">
-                <param name="groupId">66</param>
-                <param name="imageId">67</param>
-                <param name="visible">String.IsEqual(VideoPlayer.HdrType,hdr10plus)</param>
-                <param name="texture">u3k/HDR10Plus.png</param>
-                <param name="colordiffuse">dialog_fg_90</param>
-            </include>
-			
-            <include content="DV_Flag">
-                <param name="groupId">68</param>
-                <param name="imageId">69</param>
-                <param name="visible">String.Contains(VideoPlayer.HdrType,dolbyvision)</param>
+            <include content="Convert_DV_Flag">
+                <param name="groupId">60</param>
+                <param name="imageId">61</param>
+                <param name="visible">[String.IsEmpty(VideoPlayer.HdrType) | String.IsEqual(VideoPlayer.HdrType,hdr10) | String.Contains(VideoPlayer.HdrType,hdr10plus) | String.Contains(VideoPlayer.HdrType,hlg)] + String.Contains(Player.Process(amlogic.eoft_gamut),DV)</param>
                 <param name="texture">u3k/Dolby_Vision.png</param>
                 <param name="colordiffuse">dialog_fg_90</param>
             </include>
 			
-            <include content="HLG_Flag">
+            <include content="Bypass_SDR_Flag">
+                <param name="groupId">62</param>
+                <param name="imageId">63</param>
+                <param name="visible">String.IsEmpty(VideoPlayer.HdrType) + String.Contains(Player.Process(amlogic.eoft_gamut),SDR)</param>
+                <param name="texture">u3k/SDR.png</param>
+                <param name="colordiffuse">dialog_fg_90</param>
+            </include>
+			
+            <include content="Bypass_HDR10_Flag">
+                <param name="groupId">64</param>
+                <param name="imageId">65</param>
+                <param name="visible">String.IsEqual(VideoPlayer.HdrType,hdr10) + String.Contains(Player.Process(amlogic.eoft_gamut),HDR10)</param>
+                <param name="texture">u3k/HDR10.png</param>
+                <param name="colordiffuse">dialog_fg_90</param>
+            </include>
+			
+            <include content="Bypass_HDR10Plus_Flag">
+                <param name="groupId">66</param>
+                <param name="imageId">67</param>
+                <param name="visible">String.IsEqual(VideoPlayer.HdrType,hdr10plus) + String.Contains(Player.Process(amlogic.eoft_gamut),HDR10)</param>
+                <param name="texture">u3k/HDR10Plus.png</param>
+                <param name="colordiffuse">dialog_fg_90</param>
+            </include>
+			
+            <include content="Bypass_DV_Flag">
+                <param name="groupId">68</param>
+                <param name="imageId">69</param>
+                <param name="visible">String.Contains(VideoPlayer.HdrType,dolbyvision) + String.Contains(Player.Process(amlogic.eoft_gamut),DV)</param>
+                <param name="texture">u3k/Dolby_Vision.png</param>
+                <param name="colordiffuse">dialog_fg_90</param>
+            </include>
+			
+            <include content="Bypass_HLG_Flag">
                 <param name="groupId">70</param>
                 <param name="imageId">71</param>
                 <param name="visible">String.Contains(VideoPlayer.HdrType,hlg)</param>
@@ -624,62 +688,94 @@
             </animation>
 			
             <include content="Video_Audio_Background_Flag">
-                <param name="groupId">46</param>
-                <param name="imageId">47</param>
+                <param name="groupId">48</param>
+                <param name="imageId">49</param>
                 <param name="visible">!String.IsEmpty(VideoPlayer.VideoCodec) + !String.IsEmpty(VideoPlayer.AudioCodec)</param>
                 <param name="texture">u3k/corner.png</param>
                 <param name="colordiffuse">80FFFFFF</param>
             </include>
 			
             <include content="Video_Background_Flag">
-                <param name="groupId">48</param>
-                <param name="imageId">49</param>
+                <param name="groupId">50</param>
+                <param name="imageId">51</param>
                 <param name="visible">!String.IsEmpty(VideoPlayer.VideoCodec) + String.IsEmpty(VideoPlayer.AudioCodec)</param>
                 <param name="texture">u3k/corner_small.png</param>
                 <param name="colordiffuse">80FFFFFF</param>
             </include>
 			
             <include content="Audio_Background_Flag">
-                <param name="groupId">50</param>
-                <param name="imageId">51</param>
+                <param name="groupId">52</param>
+                <param name="imageId">53</param>
                 <param name="visible">String.IsEmpty(VideoPlayer.VideoCodec) + !String.IsEmpty(VideoPlayer.AudioCodec)</param>
                 <param name="texture">u3k/corner_small.png</param>
                 <param name="colordiffuse">80FFFFFF</param>
             </include>
 			
-            <include content="SDR_Flag">
-                <param name="groupId">62</param>
-                <param name="imageId">63</param>
-                <param name="visible">String.IsEmpty(VideoPlayer.HdrType)</param>
+            <include content="VS10_Indicator_Flag">
+                <param name="groupId">54</param>
+                <param name="imageId">55</param>
+                <param name="visible">[!String.IsEmpty(VideoPlayer.HdrType) + String.Contains(Player.Process(amlogic.eoft_gamut),SDR)] | [[String.IsEmpty(VideoPlayer.HdrType) | String.Contains(VideoPlayer.HdrType,dolbyvision) | String.Contains(VideoPlayer.HdrType,hlg)] + String.Contains(Player.Process(amlogic.eoft_gamut),HDR10)] | [[String.IsEmpty(VideoPlayer.HdrType) | String.IsEqual(VideoPlayer.HdrType,hdr10) | String.Contains(VideoPlayer.HdrType,hdr10plus) | String.Contains(VideoPlayer.HdrType,hlg)] + String.Contains(Player.Process(amlogic.eoft_gamut),DV)]</param>
+                <param name="texture">u3k/VS10.png</param>
+                <param name="colordiffuse">AB16A34A</param>
+            </include>
+			
+            <include content="Convert_SDR_Flag">
+                <param name="groupId">56</param>
+                <param name="imageId">57</param>
+                <param name="visible">!String.IsEmpty(VideoPlayer.HdrType) + String.Contains(Player.Process(amlogic.eoft_gamut),SDR)</param>
                 <param name="texture">u3k/SDR.png</param>
                 <param name="colordiffuse">dialog_fg_90</param>
             </include>
 			
-            <include content="HDR10_Flag">
-                <param name="groupId">64</param>
-                <param name="imageId">65</param>
-                <param name="visible">String.IsEqual(VideoPlayer.HdrType,hdr10)</param>
+            <include content="Convert_HDR10_Flag">
+                <param name="groupId">58</param>
+                <param name="imageId">59</param>
+                <param name="visible">[String.IsEmpty(VideoPlayer.HdrType) | String.Contains(VideoPlayer.HdrType,dolbyvision) | String.Contains(VideoPlayer.HdrType,hlg)] + String.Contains(Player.Process(amlogic.eoft_gamut),HDR10)</param>
                 <param name="texture">u3k/HDR10.png</param>
                 <param name="colordiffuse">dialog_fg_90</param>
             </include>
 			
-            <include content="HDR10Plus_Flag">
-                <param name="groupId">66</param>
-                <param name="imageId">67</param>
-                <param name="visible">String.IsEqual(VideoPlayer.HdrType,hdr10plus)</param>
-                <param name="texture">u3k/HDR10Plus.png</param>
-                <param name="colordiffuse">dialog_fg_90</param>
-            </include>
-			
-            <include content="DV_Flag">
-                <param name="groupId">68</param>
-                <param name="imageId">69</param>
-                <param name="visible">String.Contains(VideoPlayer.HdrType,dolbyvision)</param>
+            <include content="Convert_DV_Flag">
+                <param name="groupId">60</param>
+                <param name="imageId">61</param>
+                <param name="visible">[String.IsEmpty(VideoPlayer.HdrType) | String.IsEqual(VideoPlayer.HdrType,hdr10) | String.Contains(VideoPlayer.HdrType,hdr10plus) | String.Contains(VideoPlayer.HdrType,hlg)] + String.Contains(Player.Process(amlogic.eoft_gamut),DV)</param>
                 <param name="texture">u3k/Dolby_Vision.png</param>
                 <param name="colordiffuse">dialog_fg_90</param>
             </include>
 			
-            <include content="HLG_Flag">
+            <include content="Bypass_SDR_Flag">
+                <param name="groupId">62</param>
+                <param name="imageId">63</param>
+                <param name="visible">String.IsEmpty(VideoPlayer.HdrType) + String.Contains(Player.Process(amlogic.eoft_gamut),SDR)</param>
+                <param name="texture">u3k/SDR.png</param>
+                <param name="colordiffuse">dialog_fg_90</param>
+            </include>
+			
+            <include content="Bypass_HDR10_Flag">
+                <param name="groupId">64</param>
+                <param name="imageId">65</param>
+                <param name="visible">String.IsEqual(VideoPlayer.HdrType,hdr10) + String.Contains(Player.Process(amlogic.eoft_gamut),HDR10)</param>
+                <param name="texture">u3k/HDR10.png</param>
+                <param name="colordiffuse">dialog_fg_90</param>
+            </include>
+			
+            <include content="Bypass_HDR10Plus_Flag">
+                <param name="groupId">66</param>
+                <param name="imageId">67</param>
+                <param name="visible">String.IsEqual(VideoPlayer.HdrType,hdr10plus) + String.Contains(Player.Process(amlogic.eoft_gamut),HDR10)</param>
+                <param name="texture">u3k/HDR10Plus.png</param>
+                <param name="colordiffuse">dialog_fg_90</param>
+            </include>
+			
+            <include content="Bypass_DV_Flag">
+                <param name="groupId">68</param>
+                <param name="imageId">69</param>
+                <param name="visible">String.Contains(VideoPlayer.HdrType,dolbyvision) + String.Contains(Player.Process(amlogic.eoft_gamut),DV)</param>
+                <param name="texture">u3k/Dolby_Vision.png</param>
+                <param name="colordiffuse">dialog_fg_90</param>
+            </include>
+			
+            <include content="Bypass_HLG_Flag">
                 <param name="groupId">70</param>
                 <param name="imageId">71</param>
                 <param name="visible">String.Contains(VideoPlayer.HdrType,hlg)</param>
