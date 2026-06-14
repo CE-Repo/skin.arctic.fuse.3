@@ -1,17 +1,24 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version='1.0' encoding='utf-8'?>
 <fonts>
-
     <fontset id="Default" unicode="false">
         <include>Font_Default</include>
+        <font>
+            <name>font23_narrow</name>
+            <filename>Inter-Regular.ttf</filename>
+            <size>21</size>
+        </font>
+        <font>
+            <name>font32</name>
+            <filename>Inter-Bold.ttf</filename>
+            <size>32</size>
+        </font>
     </fontset>
-
     <fontset id="Default (Unicode)" unicode="true">
         <include content="Font_Default">
             <param name="font_bold">resource://resource.font.robotocjksc/Inter-Unicode-Bold.ttf</param>
             <param name="font_regular">resource://resource.font.robotocjksc/Inter-Unicode-Regular.ttf</param>
             <param name="font_light">resource://resource.font.robotocjksc/Inter-Unicode-Regular.ttf</param>
             <param name="style_light">light</param>
-
             <param name="plot_linespacing_head">1.03</param>
             <param name="plot_linespacing_midi">1.45</param>
             <param name="plot_linespacing_main">1.13</param>
@@ -20,4 +27,3 @@
         </include>
     </fontset>
 </fonts>
-
