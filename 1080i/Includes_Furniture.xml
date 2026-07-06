@@ -24,6 +24,7 @@
         <value condition="!Skin.HasSetting(Header.DisableWeather)">$INFO[Weather.Temperature]</value>
     </variable>
     <include name="Furniture_Header_Right">
+        <visible>![Skin.HasSetting(osd.userightCodecLogos) + [Window.IsActive(VideoOSD.xml) | Window.IsActive(VideoFullScreen.xml)]]</visible>
         <control type="group">
             <right>0</right>
             <width>720</width>
