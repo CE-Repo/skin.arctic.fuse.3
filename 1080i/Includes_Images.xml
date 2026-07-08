@@ -229,6 +229,7 @@
         <value condition="Skin.String(Background.DialogImage,Blush)">special://skin/extras/backgrounds/dialogs/blush_blur.png</value>
         <value condition="Skin.String(Background.DialogImage,Coal)">special://skin/extras/backgrounds/dialogs/coal_blur.png</value>
         <value condition="Skin.String(Background.DialogImage,Chalk)">special://skin/extras/backgrounds/dialogs/chalk_blur.png</value>
+        <value condition="Skin.String(Background.DialogImage,Onyx)">special://skin/extras/backgrounds/dialogs/onyx_blur.png</value>
         <value>special://skin/extras/backgrounds/dialogs/classic_blur.png</value>
     </variable>
 

@@ -529,6 +529,7 @@
                     <include condition="$PARAM[shadow]">Texture_Shadow_80</include>
                 </control>
                 <control type="image">
+                    <visible>!Skin.String(Background.DialogImage,Onyx)</visible>
                     <texture colordiffuse="dialog_overlay" border="20">common/dialog.png</texture>
                 </control>
             </control>
@@ -568,6 +569,7 @@
 
     <include name="Part_Background_Glass">
         <control type="image">
+            <visible>!Skin.String(Background.DialogImage,Onyx)</visible>
             <texture colordiffuse="dialog_fg_06" border="20">common/dialog.png</texture>
         </control>
     </include>

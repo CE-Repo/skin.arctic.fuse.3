@@ -660,8 +660,7 @@ msgctxt "#31135"
 msgid "Page"
 msgstr ""
 
-#: /1080i/Includes_Labels.xml
-#: For Spotlight to allow shorter labels which fit
+#: /1080i/Includes_Labels.xml For Spotlight to allow shorter labels which fit
 msgctxt "#31136"
 msgid "Browse"
 msgstr ""
@@ -696,8 +695,7 @@ msgctxt "#31143"
 msgid "Classic"
 msgstr ""
 
-#: /1080i/Includes_Labels.xml
-#: For Spotlight to allow shorter labels which fit
+#: /1080i/Includes_Labels.xml For Spotlight to allow shorter labels which fit
 msgctxt "#31144"
 msgid "Play"
 msgstr ""
@@ -706,9 +704,19 @@ msgctxt "#31145"
 msgid "Initialising Skin"
 msgstr ""
 
+#: /1080i/Includes_Labels.xml
+msgctxt "#31146"
+msgid "Onyx"
+msgstr ""
+
 #: /1080i/Includes_Shortcuts_Window.xml
 msgctxt "#31147"
 msgid "More"
+msgstr ""
+
+#: /1080i/Dialog_DialogCustom.xml
+msgctxt "#31148"
+msgid "Black Onyx"
 msgstr ""
 
 #: /1080i/Includes_Labels.xml
@@ -2329,6 +2337,86 @@ msgstr ""
 #: /1080i/Includes_SkinSettings.xml
 msgctxt "#31605"
 msgid "Next aired"
+msgstr ""
+
+#: /1080i/Includes_SkinSettings.xml
+msgctxt "#31610"
+msgid "Seasonal Themes"
+msgstr ""
+
+#: /1080i/Includes_SkinSettings.xml
+msgctxt "#31611"
+msgid "Christmas Theme"
+msgstr ""
+
+#: /1080i/Includes_SkinSettings.xml
+msgctxt "#31612"
+msgid "Dec 7 - Jan 7"
+msgstr ""
+
+#: /1080i/Includes_SkinSettings.xml
+msgctxt "#31613"
+msgid "Winter Frost"
+msgstr ""
+
+#: /1080i/Includes_SkinSettings.xml
+msgctxt "#31614"
+msgid "Aussie Christmas"
+msgstr ""
+
+#: /1080i/Includes_SkinSettings.xml
+msgctxt "#31615"
+msgid "Summer Breeze"
+msgstr ""
+
+#: /1080i/Includes_SkinSettings.xml
+msgctxt "#31616"
+msgid "Jun 21 - Aug 15"
+msgstr ""
+
+#: /1080i/Includes_SkinSettings.xml
+msgctxt "#31617"
+msgid "Halloween Spook"
+msgstr ""
+
+#: /1080i/Includes_SkinSettings.xml
+msgctxt "#31618"
+msgid "Oct 1 - Nov 1"
+msgstr ""
+
+#: /1080i/Includes_SkinSettings.xml
+msgctxt "#31619"
+msgid "Background Overlay"
+msgstr ""
+
+#: /1080i/Includes_SkinSettings.xml
+msgctxt "#31620"
+msgid "Background Atmosphere"
+msgstr ""
+
+#: /1080i/Includes_SkinSettings.xml
+msgctxt "#31621"
+msgid "Fly-by Animations"
+msgstr ""
+
+#: /1080i/Includes_SkinSettings.xml
+msgctxt "#31622"
+msgid "Falling Props Density"
+msgstr ""
+
+#: /1080i/Includes_SkinSettings.xml
+msgctxt "#31623"
+msgid "Off"
+msgstr ""
+
+#: /1080i/Includes_SkinSettings.xml
+msgctxt "#31624"
+msgid "Normal"
+msgstr ""
+
+#: /1080i/Includes_SkinSettings.xml
+msgctxt "#31625"
+msgid "High"
 msgstr ""
 
 msgctxt "#31985"

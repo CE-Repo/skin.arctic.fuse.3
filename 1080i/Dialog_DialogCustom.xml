@@ -581,6 +581,19 @@
             <param name="groupid">8109</param>
             <param name="control">radiobutton</param>
             <param name="istext">true</param>
+            <param name="label">$LOCALIZE[31146]</param>
+            <selected>Skin.String(Background.DialogImage,Onyx)</selected>
+            <onclick>Skin.SetString(Background.DialogImage,Onyx)</onclick>
+            <include content="DialogCustom_Reload_1118">
+                <param name="condition">Skin.String(Background.DialogImage,Adapative)</param>
+            </include>
+        </include>
+        <include content="Button_Dialog_Setting">
+            <param name="dialog">true</param>
+            <param name="id">8010</param>
+            <param name="groupid">8110</param>
+            <param name="control">radiobutton</param>
+            <param name="istext">true</param>
             <param name="label">$LOCALIZE[31226]</param>
             <selected>Skin.String(Background.DialogImage,Blush)</selected>
             <onclick>Skin.SetString(Background.DialogImage,Blush)</onclick>
@@ -661,6 +674,17 @@
             <param name="dialog">true</param>
             <param name="id">8009</param>
             <param name="groupid">8109</param>
+            <param name="control">radiobutton</param>
+            <param name="istext">true</param>
+            <param name="label">$LOCALIZE[31146]</param>
+            <selected>Skin.String(Background.Image,special://skin/extras/backgrounds/blur/onyx_blur.jpg)</selected>
+            <onclick>Skin.SetString(Background.Image,special://skin/extras/backgrounds/blur/onyx_blur.jpg)</onclick>
+            <onclick>RunScript(plugin.video.themoviedb.helper,blur_image=$VAR[Image_SimpleBackground],prefix=SimpleBackground)</onclick>
+        </include>
+        <include content="Button_Dialog_Setting">
+            <param name="dialog">true</param>
+            <param name="id">8010</param>
+            <param name="groupid">8110</param>
             <param name="control">radiobutton</param>
             <param name="istext">true</param>
             <param name="label">$LOCALIZE[636]</param>

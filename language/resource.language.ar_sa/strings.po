@@ -635,6 +635,16 @@ msgctxt "#31131"
 msgid "Continue watching in"
 msgstr "اكمل المشاهدة في"
 
+#: /shortcuts/skinvariables-splash.json
+msgctxt "#31132"
+msgid "Preloading Hubs"
+msgstr "تجهيز الاختصارات"
+
+#: /shortcuts/skinvariables-splash.json
+msgctxt "#31133"
+msgid "Loading Widgets"
+msgstr "تحميل الودجز"
+
 #: /1080i/Includes_Labels.xml
 msgctxt "#31134"
 msgid "Playing"
@@ -645,13 +655,24 @@ msgctxt "#31135"
 msgid "Page"
 msgstr "صفحة"
 
+#: /1080i/Includes_Labels.xml
+msgctxt "#31136"
+msgid "Browse"
+msgstr "تصفح"
+
 #: /1080i/SkinSettings.xml /1080i/Includes_Labels.xml
 msgctxt "#31137"
 msgid "Detailed"
 msgstr "مفصل"
 
+msgctxt "#31138"
 msgid "Aqua Classic"
 msgstr "لون ازرق بحري"
+
+#: /1080i/Includes_Labels.xml
+msgctxt "#31144"
+msgid "Play"
+msgstr "تشغيل"
 
 msgctxt "#31139"
 msgid "Tropical Sunset"

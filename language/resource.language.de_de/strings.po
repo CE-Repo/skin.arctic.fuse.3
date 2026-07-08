@@ -640,6 +640,16 @@ msgctxt "#31131"
 msgid "Continue watching in"
 msgstr "Weiter ansehen in"
 
+#: /shortcuts/skinvariables-splash.json
+msgctxt "#31132"
+msgid "Preloading Hubs"
+msgstr "Hubs werden vorgeladen"
+
+#: /shortcuts/skinvariables-splash.json
+msgctxt "#31133"
+msgid "Loading Widgets"
+msgstr "Widgets werden geladen"
+
 #: /1080i/Includes_Labels.xml
 msgctxt "#31134"
 msgid "Playing"
@@ -649,6 +659,12 @@ msgstr "Wird abgespielt"
 msgctxt "#31135"
 msgid "Page"
 msgstr "Seite"
+
+#: /1080i/Includes_Labels.xml
+#: For Spotlight to allow shorter labels which fit
+msgctxt "#31136"
+msgid "Browse"
+msgstr "Öffnen"
 
 #: /1080i/SkinSettings.xml /1080i/Includes_Labels.xml
 msgctxt "#31137"
@@ -679,6 +695,12 @@ msgstr "Gesamtdauer"
 msgctxt "#31143"
 msgid "Classic"
 msgstr "Klassisch"
+
+#: /1080i/Includes_Labels.xml
+#: For Spotlight to allow shorter labels which fit
+msgctxt "#31144"
+msgid "Play"
+msgstr "Abspielen"
 
 msgctxt "#31145"
 msgid "Initialising Skin"
@@ -867,7 +889,7 @@ msgctxt "#31207"
 msgid "Codecs"
 msgstr "Codecs"
 
-#: /1080i/SkinSettings.xml /1080i/SkinSettings.xml
+#: /1080i/SkinSettings.xml
 msgctxt "#31208"
 msgid "Header"
 msgstr "Kopfzeile"
@@ -1034,7 +1056,7 @@ msgstr "Midnight Purple"
 
 msgctxt "#31244"
 msgid "Now playing"
-msgstr "Aktuelle Wiedergabe"
+msgstr "Gerade läuft"
 
 msgctxt "#31245"
 msgid "Autoscroll labels"
@@ -1118,6 +1140,10 @@ msgstr "Bildordner"
 msgctxt "#31272"
 msgid "Searching"
 msgstr "Suche läuft"
+
+msgctxt "#31273"
+msgid "Label"
+msgstr "Bezeichnung"
 
 #: /1080i/Includes_Items.xml
 msgctxt "#31274"

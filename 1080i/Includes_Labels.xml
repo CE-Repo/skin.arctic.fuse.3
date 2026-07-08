@@ -223,6 +223,7 @@
         <value condition="Skin.String(Background.Image,special://skin/extras/backgrounds/blur/orange_blur.jpg)">$LOCALIZE[13342]</value>
         <value condition="Skin.String(Background.Image,special://skin/extras/backgrounds/blur/slate_blur.jpg)">$LOCALIZE[31221]</value>
         <value condition="Skin.String(Background.Image,special://skin/extras/backgrounds/blur/coal_blur.jpg)">$LOCALIZE[31222]</value>
+        <value condition="Skin.String(Background.Image,special://skin/extras/backgrounds/blur/onyx_blur.jpg)">$LOCALIZE[31146]</value>
         <value>$LOCALIZE[636]</value>
     </variable>
 
@@ -236,6 +237,7 @@
         <value condition="Skin.String(Background.DialogImage,Coal)">$LOCALIZE[31222]</value>
         <value condition="Skin.String(Background.DialogImage,Chalk)">$LOCALIZE[31225]</value>
         <value condition="Skin.String(Background.DialogImage,Blush)">$LOCALIZE[31226]</value>
+        <value condition="Skin.String(Background.DialogImage,Onyx)">$LOCALIZE[31146]</value>
         <value condition="$EXP[Exp_DialogTheme_IsAdaptive]">$LOCALIZE[31432]</value>
         <value>$LOCALIZE[571]</value>
     </variable>
@@ -273,6 +275,18 @@
     <variable name="Label_Setting_SeekbarPauseDelay">
         <value condition="!String.IsEmpty(Skin.String(OSD.AutoOnPause.Delay))">$INFO[Skin.String(OSD.AutoOnPause.Delay)]</value>
         <value>3s</value>
+    </variable>
+
+    <variable name="Label_Setting_SeasonalThemesChristmas">
+        <value condition="Skin.String(SeasonalTheme.ChristmasTheme,Aussie)">$LOCALIZE[31614]</value>
+        <value condition="Skin.String(SeasonalTheme.ChristmasTheme,Off)">$LOCALIZE[31623]</value>
+        <value>$LOCALIZE[31613]</value>
+    </variable>
+
+    <variable name="Label_Setting_SeasonalThemesPropsDensity">
+        <value condition="Skin.String(SeasonalTheme.PropsDensity,High)">$LOCALIZE[31625]</value>
+        <value condition="Skin.String(SeasonalTheme.PropsDensity,Off)">$LOCALIZE[31623]</value>
+        <value>$LOCALIZE[31624]</value>
     </variable>
 
     <variable name="Label_PVR_Episode">
