@@ -39,7 +39,8 @@
     </variable>
 
     <variable name="Label_Setting_Search_Mode">
-        <value condition="!Skin.HasSetting(Search.DisableCombined)">$LOCALIZE[31083] $LOCALIZE[31103]</value>
+        <value condition="String.IsEqual(Skin.String(HomeSwitcher.Search.Mode),Combined)">$LOCALIZE[31083] $LOCALIZE[31103]</value>
+        <value condition="String.IsEqual(Skin.String(HomeSwitcher.Search.Mode),Wall)">$LOCALIZE[31008] $LOCALIZE[31103]</value>
         <value>$LOCALIZE[602] $LOCALIZE[31103]</value>
     </variable>
 
@@ -68,12 +69,12 @@
     </variable>
 
     <variable name="Label_Search_NoResults">
-        <value condition="!String.IsEmpty(Control.GetLabel(3000).index(1)) + Integer.IsEqual(Container(601).NumItems,0)">$LOCALIZE[31500] "[CAPITALIZE]$INFO[Control.GetLabel(3000).index(1), , ][/CAPITALIZE]".[CR]$LOCALIZE[31501].</value>
+        <!-- <value condition="!String.IsEmpty(Control.GetLabel(3000).index(1)) + Integer.IsEqual(Container(601).NumItems,0)">$LOCALIZE[31500] "[CAPITALIZE]$INFO[Control.GetLabel(3000).index(1), , ][/CAPITALIZE]".[CR]$LOCALIZE[31501].</value> -->
         <value>$LOCALIZE[31291][CR]$LOCALIZE[31288]</value>
     </variable>
 
     <variable name="Label_Search_Title_NoResults">
-        <value condition="!String.IsEmpty(Control.GetLabel(3000).index(1)) + Integer.IsEqual(Container(601).NumItems,0)">$LOCALIZE[31046]</value>
+        <!-- <value condition="!String.IsEmpty(Control.GetLabel(3000).index(1)) + Integer.IsEqual(Container(601).NumItems,0)">$LOCALIZE[31046]</value> -->
         <value>$LOCALIZE[31281]</value>
     </variable>
 
@@ -1061,6 +1062,7 @@
         <value condition="Window.IsVisible(systemsettings)">$LOCALIZE[13000] $LOCALIZE[5]</value>
         <value condition="Window.IsVisible(servicesettings)">$LOCALIZE[14036] $LOCALIZE[5]</value>
         <value condition="Window.IsVisible(pvrsettings)">$LOCALIZE[14204] $LOCALIZE[5]</value>
+        <value condition="Window.IsVisible(gamesettings)">$LOCALIZE[10821] $LOCALIZE[5]</value>
         <value condition="Window.IsVisible(systeminfo)">[CAPITALIZE]$LOCALIZE[138][/CAPITALIZE]</value>
         <value condition="Window.IsVisible(SettingsProfile.xml)">$LOCALIZE[31053] $LOCALIZE[5]</value>
         <value condition="Window.IsVisible(filemanager)">$LOCALIZE[10003]</value>

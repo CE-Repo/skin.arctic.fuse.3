@@ -727,8 +727,7 @@ msgctxt "#31148"
 msgid "Black Onyx"
 msgstr ""
 
-#: /1080i/Settings.xml
-#: /1080i/SettingsSystemInfo.xml
+#: /1080i/Settings.xml /1080i/SettingsSystemInfo.xml
 msgctxt "#31149"
 msgid "Used memory"
 msgstr ""
@@ -748,8 +747,18 @@ msgctxt "#31152"
 msgid "Running add-ons"
 msgstr ""
 
+#: /1080i/Includes_Search.xml
+msgctxt "#31153"
+msgid "Results for"
+msgstr ""
+
 msgctxt "#31154"
 msgid "Misc options"
+msgstr ""
+
+#: /1080i/Includes_Search.xml
+msgctxt "#31155"
+msgid "Decades"
 msgstr ""
 
 #: /1080i/Includes_Keyboard_Mini.xml
@@ -1332,8 +1341,7 @@ msgctxt "#31320"
 msgid "Square"
 msgstr ""
 
-#: /1080i/Includes_SkinSettings.xml
-#: /1080i/Settings.xml
+#: /1080i/Includes_SkinSettings.xml /1080i/Settings.xml
 msgctxt "#31321"
 msgid "Customise viewtypes"
 msgstr ""
@@ -1734,8 +1742,7 @@ msgctxt "#31430"
 msgid "Customise style"
 msgstr ""
 
-#: /1080i/SkinSettings.xml
-#: /1080i/Includes_Views_Row.xml
+#: /1080i/SkinSettings.xml /1080i/Includes_Views_Row.xml
 msgctxt "#31431"
 msgid "Circle"
 msgstr ""
@@ -1745,8 +1752,7 @@ msgctxt "#31432"
 msgid "Adaptive"
 msgstr ""
 
-#: /1080i/Includes_SkinSettings.xml
-#: /1080i/Settings.xml
+#: /1080i/Includes_SkinSettings.xml /1080i/Settings.xml
 msgctxt "#31434"
 msgid "Customise video OSD"
 msgstr ""

@@ -5,6 +5,7 @@
     <menucontrol>30000</menucontrol>
     <include>Action_Blur_Onload</include>
     <include>Action_BlurImage_SimpleBackground_Onload</include>
+    <onload>AlarmClock(refocus,SetFocus(6000,0,absolute),00:00,silent)</onload>
 
     <controls>
         <include>Background</include>
@@ -22,8 +23,6 @@
                         <param name="textcolor">main_fg</param>
                         <focusposition>4</focusposition>
                         <movement>4</movement>
-                        <onback>Action(PreviousMenu)</onback>
-
                         <onright condition="String.IsEmpty(Container(6000).ListItem.Property(folderpath))">Container.Update($INFO[Container(6000).ListItem.FolderPath],replace)</onright>
                         <onright condition="!String.IsEmpty(Container(6000).ListItem.Property(folderpath))">Container.Update($INFO[Container(6000).ListItem.Property(folderpath)],replace)</onright>
                         <onright>50</onright>
@@ -32,6 +31,7 @@
                         <right>-100</right>
                         <top>180</top>
                         <bottom>180</bottom>
+                        <onback>SetFocus(6000,0,absolute)</onback>
                         <content>
                             <item>
                                 <label>$LOCALIZE[24998]</label>

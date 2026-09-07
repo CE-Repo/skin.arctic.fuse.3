@@ -75,6 +75,12 @@
             <onclick>ActivateWindow(pvrsettings)</onclick>
         </item>
         <item>
+            <label>$LOCALIZE[10821]</label>
+            <label2>$LOCALIZE[16000] / $LOCALIZE[15312]</label2>
+            <icon>special://skin/extras/icons/gamepad.png</icon>
+            <onclick>ActivateWindow(gamesettings)</onclick>
+        </item>
+        <item>
             <label>$LOCALIZE[13200]</label>
             <label2>$LOCALIZE[10029] / $LOCALIZE[13200]</label2>
             <icon>special://skin/extras/icons/actor.png</icon>
@@ -92,12 +98,12 @@
             <icon>special://skin/extras/icons/addon.png</icon>
             <onclick>ActivateWindow(addonbrowser)</onclick>
         </item>
-        <item>
+        <!-- <item>
             <label>$LOCALIZE[19033]</label>
             <label2>$LOCALIZE[13000]</label2>
             <icon>special://skin/extras/icons/sysinfo.png</icon>
             <onclick>ActivateWindow(systeminfo)</onclick>
-        </item>
+        </item> -->
         <item>
             <label>$LOCALIZE[10050]</label>
             <label2>$LOCALIZE[13000]</label2>
