@@ -1274,6 +1274,20 @@
             "link": "true"
         },
         {
+            "name": "Game Settings",
+            "path": "ActivateWindow(gamesettings)",
+            "icon": "special://skin/extras/icons/gamepad.png",
+            "link": "true",
+            "rule": "System.GetBool(gamesgeneral.enable)"
+        },
+        {
+            "name": "Controller Configuration",
+            "path": "ActivateWindow(gamecontrollers)",
+            "icon": "special://skin/extras/icons/gamepad.png",
+            "link": "true",
+            "rule": "System.GetBool(gamesgeneral.enable)"
+        },
+        {
             "name": "Event Log",
             "path": "ActivateWindow(eventlog)",
             "icon": "special://skin/extras/icons/list-check.png",
