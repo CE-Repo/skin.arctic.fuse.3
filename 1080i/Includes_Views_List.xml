@@ -250,7 +250,7 @@
                         <right>-60</right>
                         <onleft>600</onleft>
                         <onright>611</onright>
-                        <onleft>ActivateWindow(1171)</onleft>
+                        <include>Action_View_Movement_OnLeft</include>
                         <include content="Action_View_Movement_OnBack">
                             <param name="id">$PARAM[id]</param>
                             <param name="onback">True</param>

@@ -157,7 +157,17 @@
 
     <include name="Action_View_Movement_OnUp">
         <definition>
-            <onup>ActivateWindow(1171)</onup>
+            <onup>SetProperty(Bumper.Direction,Up,Home)</onup>
+            <onup>ActivateWindow(1180)</onup>
+            <!-- <onup>ActivateWindow(1171)</onup> -->
+        </definition>
+    </include>
+
+    <include name="Action_View_Movement_OnLeft">
+        <definition>
+            <onleft>SetProperty(Bumper.Direction,Left,Home)</onleft>
+            <onleft>ActivateWindow(1180)</onleft>
+            <!-- <onleft>ActivateWindow(1171)</onleft> -->
         </definition>
     </include>
 
