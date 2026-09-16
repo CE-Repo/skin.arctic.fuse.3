@@ -25,6 +25,7 @@
                     <param name="method">set_player_subtitle</param>
                     <param name="enabled">VideoPlayer.SubtitlesEnabled</param>
                     <param name="toggle">true</param>
+                    <param name="label_right">240</param>
                     <param name="icon">special://skin/extras/icons/quote.png</param>
                 </include>
             </control>

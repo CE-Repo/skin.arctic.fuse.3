@@ -56,14 +56,6 @@
                                 <include condition="String.IsEqual(Skin.String(HomeSwitcher.Search.Mode),Combined)">Search_Widgets_Combined</include>
 
                                 <!-- Wall -->
-                                <include content="Hub_Wall_Widget" condition="!Skin.HasSetting(Search.DisableDiscover) + String.IsEqual(Skin.String(HomeSwitcher.Search.Mode),Wall)">
-                                    <param name="id">501</param>
-                                    <param name="content">$INFO[window(home).property(tmdbhelper.userdiscover.folderpath)]$INFO[Control.GetLabel(3000).index(1),&amp;with_text_query=,]</param>
-                                    <param name="include">List_Poster_Row</param>
-                                    <param name="target">videos</param>
-                                    <param name="visible">String.IsEqual(Container(601).ListItem.Property(guid),discover)</param>
-                                    <param name="allowhiddenfocus">true</param>
-                                </include>
                                 <include condition="String.IsEqual(Skin.String(HomeSwitcher.Search.Mode),Wall)">skinvariables-searchwidgets-wall</include>
 
                                 <!-- Standard -->
@@ -161,7 +153,7 @@
             <visible>!$EXP[Exp_Hubs_Searchbar_IsVisible]</visible>
             <include>Info_Panel_Dimensions</include>
             <include>Home_Info_Animation</include>
-            <include content="Search_Info" condition="!Skin.HasSetting(Search.DisableDiscover) + [String.IsEqual(Skin.String(HomeSwitcher.Search.Mode),Wall) | String.IsEqual(Skin.String(HomeSwitcher.Search.Mode),Combined)]">
+            <include content="Search_Info" condition="!Skin.HasSetting(Search.DisableDiscover) + String.IsEqual(Skin.String(HomeSwitcher.Search.Mode),Combined)">
                 <param name="id">501</param>
             </include>
             <include>skinvariables-searchwidgets-info</include>
@@ -320,7 +312,7 @@
 
     <include name="Search_Switcher_Items_Extended">
         <item>
-            <label>$VAR[Search_Label_Extended_Discover_55$PARAM[id]]</label>
+            <label>$VAR[Search_Label_Extended_Discover_55$PARAM[id]]$INFO[Container(55$PARAM[id]).NumItems, (,)]</label>
             <property name="guid">extended-55$PARAM[id]</property>
             <property name="widget_id">$NUMBER[55$PARAM[id]]</property>
             <property name="show_artwork">true</property>

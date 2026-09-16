@@ -235,6 +235,7 @@
                     <control type="label">
                         <textcolor>$PARAM[color_fg]</textcolor>
                         <label>$VAR[Label_StreamLanguage,[UPPERCASE],[/UPPERCASE]]$INFO[ListItem.Label2, | ,]</label>
+                        <right>$PARAM[label_right]</right>
                     </control>
                     <control type="label">
                         <right>240</right>
@@ -459,6 +460,7 @@
                         <itemlayout height="80">
                             <include content="OSD_Stream_Selector_Layout">
                                 <param name="enabled">$PARAM[enabled]</param>
+                                <param name="label_right">$PARAM[label_right]</param>
                             </include>
                         </itemlayout>
                         <focusedlayout height="80">
@@ -466,6 +468,7 @@
                                 <param name="selected">true</param>
                                 <param name="color_fg">$VAR[ColorSelected]</param>
                                 <param name="enabled">$PARAM[enabled]</param>
+                                <param name="label_right">$PARAM[label_right]</param>
                             </include>
                         </focusedlayout>
                         <content>plugin://script.skinvariables?info=get_player_streams&amp;stream_type=$PARAM[stream_type]&amp;reload=$INFO[Window.Property(UID)]</content>
