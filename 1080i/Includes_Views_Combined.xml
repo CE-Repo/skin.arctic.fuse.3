@@ -179,6 +179,7 @@
             <visible>$PARAM[visible]</visible>
             <include content="Categories_Selector">
                 <param name="id">52$PARAM[id]</param>
+                <param name="altfocusid">56$PARAM[id]</param>
                 <param name="font">font_mini</param>
                 <param name="hitrect_x">0</param>
                 <param name="hitrect_y">0</param>

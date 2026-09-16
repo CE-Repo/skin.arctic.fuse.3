@@ -720,7 +720,7 @@
                 <label>$LOCALIZE[31066]</label>
                 <selected>!Skin.HasSetting(Search.DisableDiscover)</selected>
                 <onclick>Skin.ToggleSetting(Search.DisableDiscover)</onclick>
-                <visible>String.IsEqual(Skin.String(HomeSwitcher.Search.Mode),Combined) | String.IsEqual(Skin.String(HomeSwitcher.Search.Mode),Wall)</visible>
+                <visible>String.IsEqual(Skin.String(HomeSwitcher.Search.Mode),Combined)</visible>
                 <visible>$PARAM[enabled]</visible>
                 <visible>$PARAM[visible]</visible>
             </include>
