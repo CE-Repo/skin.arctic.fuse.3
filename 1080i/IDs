@@ -4,19 +4,25 @@ VIEWS: 	STANDARD
 2		Poster
 3		Circle
 4		Board
-5 		Special
-6  		Basic
-7 		Media
-8		Expanded
-9		Flixart
+5 		Card
+6 		Flyer
+7 		Special (for combined list - basic)
+8 		Special (for combined list - expanded)
 
 VIEWS: 	ADVANCED
-50X		Rows|Lists	(one dimensional views)
+50X		Rows		(one dimensional views)
 51X		Walls 		(two dimensional views)
 52X		Combined Control List
 53X		Combined Content List
-54X		Alternative layout
-56X		Combined Control Button
+54X		Combined Control Button
+
+58X		LISTS
+580		Basic
+581		Media
+582		Expanded
+583		Flixart
+584		Flixart 2
+
 
 
 WIDGETS / HOME
