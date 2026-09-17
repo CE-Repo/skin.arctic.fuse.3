@@ -37,7 +37,7 @@
             <param name="id">513</param>
             <param name="include">List_Circle_Row</param>
             <param name="viewtype_label">$LOCALIZE[31557]</param>
-            <param name="visible">[$EXP[Exp_View_513]]</param>
+            <param name="visible">$EXP[Exp_View_513]</param>
         </include>
     </include>
 
@@ -50,6 +50,17 @@
             <param name="visible">$EXP[Exp_View_514]</param>
         </include>
     </include>
+
+    <!-- Flyer Wall -->
+    <include name="View_516_Flyer_Wall">
+        <include content="View_Wall_Include">
+            <param name="id">516</param>
+            <param name="include">List_Flyer_Row</param>
+            <param name="viewtype_label">$LOCALIZE[31157]</param>
+            <param name="visible">$EXP[Exp_View_516]</param>
+        </include>
+    </include>
+
 
     <!-- Wall Template View -->
     <include name="View_Wall_Include">

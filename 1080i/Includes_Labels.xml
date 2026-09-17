@@ -142,6 +142,11 @@
         <value>$LOCALIZE[31459]</value>
     </variable>
 
+    <variable name="Label_Settings_NavigationOnCategories">
+        <value condition="Skin.HasSetting(Navigation.DisableCategoriesSelectDialog)">$LOCALIZE[31173]</value>
+        <value>$LOCALIZE[424]</value>
+    </variable>
+
     <variable name="Label_Settings_TextViewMode">
         <value condition="!Skin.HasSetting(View.UseDetailedListLabels)">$LOCALIZE[31438]</value>
         <value>$LOCALIZE[31137]</value>

@@ -3,6 +3,7 @@
 
     <include name="Categories_Selector_Fake_Button">
         <param name="hidden_button_enabled">false</param>
+        <param name="scroller">true</param>
         <definition>
             <control type="button">
                 <width max="600">auto</width>
@@ -15,6 +16,9 @@
                 <textcolor>00ffffff</textcolor>
                 <focusedcolor>00ffffff</focusedcolor>
                 <selectedcolor>00ffffff</selectedcolor>
+                <include content="Object_Label" condition="$PARAM[scroller]">
+                    <param name="label">$INFO[Container($PARAM[id]).ListItem.Label]</param>
+                </include>
                 <label>$INFO[Container($PARAM[id]).ListItem.Label,, ⌄ ]</label>
                 <textoffsetx>0</textoffsetx>
                 <hitrect x="0" y="0" w="0" h="0" />
@@ -32,14 +36,15 @@
                 <textcolor>00ffffff</textcolor>
                 <focusedcolor>00ffffff</focusedcolor>
                 <selectedcolor>00ffffff</selectedcolor>
+                <include content="Object_Label" condition="$PARAM[scroller]">
+                    <param name="label">$INFO[Container($PARAM[id]).ListItem.Label]</param>
+                </include>
                 <label>$INFO[Container($PARAM[id]).ListItem.Label,, ⌄ ]</label>
                 <textoffsetx>0</textoffsetx>
 
-                <!-- <onclick condition="!Integer.ISEqual(Container($PARAM[id]).NumItems,1)">RunScript(script.skinvariables,run_selectfocusdialog=$PARAM[id],"header=$INFO[Container.FolderName,,: ]$INFO[Container.Content,[CAPITALIZE],[/CAPITALIZE]]","preselect_executebuiltin=SetProperty(CategoryListControl$PARAM[id],Action(Select),Home)||SetFocus($PARAM[id])")</onclick>
-                <onclick condition="Integer.ISEqual(Container($PARAM[id]).NumItems,1)">SetProperty(CategoryListControl$PARAM[id],Action(Select),Home)</onclick>
-                <onclick condition="Integer.ISEqual(Container($PARAM[id]).NumItems,1)">SetFocus($PARAM[id])</onclick> -->
-
-                <onclick>RunScript(script.skinvariables,run_selectfocusdialog=$PARAM[id],"header=$VAR[Label_CategorySelectList]")</onclick>
+                <onclick condition="![$PARAM[scroller]]">RunScript(script.skinvariables,run_selectfocusdialog=$PARAM[id],"header=$VAR[Label_CategorySelectList]")</onclick>
+                <onclick condition="$PARAM[scroller]">SetProperty(CategoryListControl$PARAM[id],Action(Select),Home)</onclick>
+                <onclick condition="$PARAM[scroller]">SetFocus($PARAM[id])</onclick>
 
                 <onup>SetProperty(CategoryListControl$PARAM[id],Action(Up),Home)</onup>
                 <onup>SetFocus($PARAM[id])</onup>
@@ -51,9 +56,9 @@
                 <onback>$PARAM[id]</onback>
 
                 <onleft>Control.Move($PARAM[id],-1)</onleft>
-                <onleft>SetFocus($PARAM[altfocusid])</onleft>  <!-- Retrigger button focus -->
+                <onleft>AlarmClock(refocus,SetFocus($PARAM[altfocusid]),00:00,silent)</onleft>  <!-- Retrigger button focus -->
                 <onright>Control.Move($PARAM[id],1)</onright>
-                <onright>SetFocus($PARAM[altfocusid])</onright>  <!-- Retrigger button focus -->
+                <onright>AlarmClock(refocus,SetFocus($PARAM[altfocusid]),00:00,silent)</onright>  <!-- Retrigger button focus -->
 
                 <include content="$PARAM[hidden_button]_OnFocus" condition="$PARAM[hidden_button_enabled]">
                     <param name="id">$PARAM[id]</param>
@@ -69,29 +74,78 @@
     </include>
 
     <include name="Categories_Selector_Fake_Label">
-        <control type="label">
-            <width max="600">auto</width>
-            <height>80</height>
-            <centertop>50%</centertop>
-            <aligny>center</aligny>
-            <font>font_main_bold</font>
-            <textcolor>main_fg_90</textcolor>
-            <textcolor>$PARAM[color_nf]</textcolor>
-            <label>$INFO[Container($PARAM[id]).ListItem.Label,, ⌄ ]</label>
-            <visible>![Control.HasFocus($PARAM[id]) | Control.HasFocus($PARAM[altfocusid])]</visible>
-            <visible>$PARAM[visible]</visible>
-        </control>
-        <control type="label">
-            <width max="600">auto</width>
-            <height>80</height>
-            <centertop>50%</centertop>
-            <aligny>center</aligny>
-            <font>font_main_bold</font>
-            <textcolor>main_fg_100</textcolor>
-            <label>$INFO[Container($PARAM[id]).ListItem.Label,, ⌄ ]</label>
-            <visible>[Control.HasFocus($PARAM[id]) | Control.HasFocus($PARAM[altfocusid])]</visible>
-            <visible>$PARAM[visible]</visible>
-        </control>
+        <param name="scroller">true</param>
+        <definition>
+            <control type="label">
+                <width max="600">auto</width>
+                <height>80</height>
+                <centertop>50%</centertop>
+                <aligny>center</aligny>
+                <font>font_main_bold</font>
+                <textcolor>main_fg_90</textcolor>
+                <textcolor>$PARAM[color_nf]</textcolor>
+                <include content="Object_Label" condition="$PARAM[scroller]">
+                    <param name="label">$INFO[Container($PARAM[id]).ListItem.Label]</param>
+                </include>
+                <label>$INFO[Container($PARAM[id]).ListItem.Label,, ⌄ ]</label>
+                <visible>![Control.HasFocus($PARAM[id]) | Control.HasFocus($PARAM[altfocusid])]</visible>
+                <visible>$PARAM[visible]</visible>
+            </control>
+            <control type="label">
+                <width max="600">auto</width>
+                <height>80</height>
+                <centertop>50%</centertop>
+                <aligny>center</aligny>
+                <font>font_main_bold</font>
+                <textcolor>main_fg_100</textcolor>
+                <include content="Object_Label" condition="$PARAM[scroller]">
+                    <param name="label">$INFO[Container($PARAM[id]).ListItem.Label]</param>
+                </include>
+                <label>$INFO[Container($PARAM[id]).ListItem.Label,, ⌄ ]</label>
+                <visible>[Control.HasFocus($PARAM[id]) | Control.HasFocus($PARAM[altfocusid])]</visible>
+                <visible>$PARAM[visible]</visible>
+            </control>
+        </definition>
+    </include>
+    <include name="Categories_Selector_Fake_Unfocused_Labels">
+        <param name="scroller">true</param>
+        <definition>
+            <control type="label">
+                <width max="200">auto</width>
+                <height>80</height>
+                <centertop>50%</centertop>
+                <aligny>center</aligny>
+                <font>font_main_bold</font>
+                <textcolor>$PARAM[color_nf]</textcolor>
+                <label>$INFO[Container($PARAM[id]).ListItem(1).Label]</label>
+                <visible>$PARAM[visible]</visible>
+                <visible>Integer.IsGreater(Container($PARAM[id]).NumItems,1)</visible>
+            </control>
+            <control type="label">
+                <width max="200">auto</width>
+                <height>80</height>
+                <centertop>50%</centertop>
+                <aligny>center</aligny>
+                <font>font_main_bold</font>
+                <textcolor>$PARAM[color_nf]</textcolor>
+                <label>$INFO[Container($PARAM[id]).ListItem(2).Label]</label>
+                <visible>$PARAM[visible]</visible>
+                <visible>Integer.IsGreater(Container($PARAM[id]).NumItems,2)</visible>
+                <animation effect="fade" start="100" end="66" condition="true">Conditional</animation>
+            </control>
+            <control type="label">
+                <width max="200">auto</width>
+                <height>80</height>
+                <centertop>50%</centertop>
+                <aligny>center</aligny>
+                <font>font_main_bold</font>
+                <textcolor>$PARAM[color_nf]</textcolor>
+                <label>$INFO[Container($PARAM[id]).ListItem(3).Label]</label>
+                <visible>$PARAM[visible]</visible>
+                <visible>Integer.IsGreater(Container($PARAM[id]).NumItems,3)</visible>
+                <animation effect="fade" start="100" end="33" condition="true">Conditional</animation>
+            </control>
+        </definition>
     </include>
 
     <include name="Categories_Selector_FakeList_Items">
@@ -104,6 +158,7 @@
                 <param name="hidden_button">$PARAM[hidden_button]</param>
                 <param name="hidden_button_prefix">$PARAM[hidden_button_prefix]</param>
                 <param name="hidden_button_enabled">$PARAM[hidden_button_enabled]</param>
+                <param name="scroller">$PARAM[scroller]</param>
             </include>
         </definition>
     </include>
@@ -112,6 +167,7 @@
         <param name="id">302</param>
         <param name="color_fo">main_fg_30</param>
         <param name="color_nf">main_fg_30</param>
+        <param name="scroller">Skin.HasSetting(Navigation.DisableCategoriesSelectDialog)</param>
         <definition>
             <control type="group">
 
@@ -137,11 +193,14 @@
                                 <param name="hidden_button">$PARAM[hidden_button]</param>
                                 <param name="hidden_button_prefix">$PARAM[hidden_button_prefix]</param>
                                 <param name="hidden_button_enabled">$PARAM[hidden_button_enabled]</param>
+                                <param name="scroller">$PARAM[scroller]</param>
                             </include>
                         </control>
 
-                        <control type="group">
+                        <control type="grouplist">
                             <height>80</height>
+                            <orientation>horizontal</orientation>
+                            <itemgap>30</itemgap>
                             <include content="Categories_Selector_FakeList_Items">
                                 <param name="include">Categories_Selector_Fake_Label</param>
                                 <param name="color_fo">$PARAM[color_fo]</param>
@@ -151,6 +210,18 @@
                                 <param name="hidden_button">$PARAM[hidden_button]</param>
                                 <param name="hidden_button_prefix">$PARAM[hidden_button_prefix]</param>
                                 <param name="hidden_button_enabled">$PARAM[hidden_button_enabled]</param>
+                                <param name="scroller">$PARAM[scroller]</param>
+                            </include>
+                            <include content="Categories_Selector_FakeList_Items" condition="$PARAM[scroller]">
+                                <param name="include">Categories_Selector_Fake_Unfocused_Labels</param>
+                                <param name="color_fo">$PARAM[color_fo]</param>
+                                <param name="color_nf">$PARAM[color_nf]</param>
+                                <param name="id">$PARAM[id]</param>
+                                <param name="altfocusid">$PARAM[altfocusid]</param>
+                                <param name="hidden_button">$PARAM[hidden_button]</param>
+                                <param name="hidden_button_prefix">$PARAM[hidden_button_prefix]</param>
+                                <param name="hidden_button_enabled">$PARAM[hidden_button_enabled]</param>
+                                <param name="scroller">$PARAM[scroller]</param>
                             </include>
                         </control>
                     </control>
