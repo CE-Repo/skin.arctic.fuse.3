@@ -56,9 +56,9 @@
                 <onback>$PARAM[id]</onback>
 
                 <onleft>Control.Move($PARAM[id],-1)</onleft>
-                <onleft>SetFocus($PARAM[altfocusid])</onleft>  <!-- Retrigger button focus -->
+                <onleft>AlarmClock(refocus,SetFocus($PARAM[altfocusid]),00:00,silent)</onleft>  <!-- Retrigger button focus -->
                 <onright>Control.Move($PARAM[id],1)</onright>
-                <onright>SetFocus($PARAM[altfocusid])</onright>  <!-- Retrigger button focus -->
+                <onright>AlarmClock(refocus,SetFocus($PARAM[altfocusid]),00:00,silent)</onright>  <!-- Retrigger button focus -->
 
                 <include content="$PARAM[hidden_button]_OnFocus" condition="$PARAM[hidden_button_enabled]">
                     <param name="id">$PARAM[id]</param>
