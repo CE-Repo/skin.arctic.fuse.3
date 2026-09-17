@@ -719,8 +719,7 @@ msgctxt "#31148"
 msgid "Black Onyx"
 msgstr "Czarny Onyks"
 
-#: /1080i/Settings.xml
-#: /1080i/SettingsSystemInfo.xml
+#: /1080i/Settings.xml /1080i/SettingsSystemInfo.xml
 msgctxt "#31149"
 msgid "Used memory"
 msgstr "Użycie pamięci"
@@ -740,9 +739,29 @@ msgctxt "#31152"
 msgid "Running add-ons"
 msgstr "Uruchomione"
 
+#: /1080i/Includes_Search.xml
+msgctxt "#31153"
+msgid "Results for"
+msgstr "Wyniki dla"
+
 msgctxt "#31154"
 msgid "Misc options"
 msgstr "Pozostałe"
+
+#: /1080i/Includes_Search.xml
+msgctxt "#31155"
+msgid "Decades"
+msgstr "Dekady"
+
+#: /1080i/Includes_Views_Row.xml
+msgctxt "#31156"
+msgid "Row Flyer"
+msgstr "Karuzela: Karty"
+
+#: /1080i/Includes_Views_Wall.xml
+msgctxt "#31157"
+msgid "Wall Flyer"
+msgstr "Siatka: Karty"
 
 #: /1080i/Includes_Keyboard_Mini.xml
 msgctxt "#31158"
@@ -1324,8 +1343,7 @@ msgctxt "#31320"
 msgid "Square"
 msgstr "Kwadrat"
 
-#: /1080i/Includes_SkinSettings.xml
-#: /1080i/Settings.xml
+#: /1080i/Includes_SkinSettings.xml /1080i/Settings.xml
 msgctxt "#31321"
 msgid "Customise viewtypes"
 msgstr "Typy widoków"
@@ -1726,8 +1744,7 @@ msgctxt "#31430"
 msgid "Customise style"
 msgstr "Styl"
 
-#: /1080i/SkinSettings.xml
-#: /1080i/Includes_Views_Row.xml
+#: /1080i/SkinSettings.xml /1080i/Includes_Views_Row.xml
 msgctxt "#31431"
 msgid "Circle"
 msgstr "Disc Art"
@@ -1737,8 +1754,7 @@ msgctxt "#31432"
 msgid "Adaptive"
 msgstr "Adaptacyjny"
 
-#: /1080i/Includes_SkinSettings.xml
-#: /1080i/Settings.xml
+#: /1080i/Includes_SkinSettings.xml /1080i/Settings.xml
 msgctxt "#31434"
 msgid "Customise video OSD"
 msgstr "Wideo OSD"
