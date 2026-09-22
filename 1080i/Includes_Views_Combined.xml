@@ -35,6 +35,10 @@
         <value condition="String.IsEmpty(Window.Property(SpecialFolderPath)) + !String.IsEmpty(Container(524).ListItem.FolderPath) + Container(524).ListItem.IsFolder">$INFO[Container(524).ListItem.FolderPath]</value>
         <value condition="!String.IsEmpty(Window.Property(SpecialFolderPath))">$INFO[Window.Property(SpecialFolderPath)]</value>
     </variable>
+    <variable name="View_536_Content">
+        <value condition="String.IsEmpty(Window.Property(SpecialFolderPath)) + !String.IsEmpty(Container(526).ListItem.FolderPath) + Container(526).ListItem.IsFolder">$INFO[Container(526).ListItem.FolderPath]</value>
+        <value condition="!String.IsEmpty(Window.Property(SpecialFolderPath))">$INFO[Window.Property(SpecialFolderPath)]</value>
+    </variable>
     <variable name="View_537_Content">
         <value condition="String.IsEmpty(Window.Property(SpecialFolderPath)) + !String.IsEmpty(Container(527).ListItem.FolderPath) + Container(527).ListItem.IsFolder">$INFO[Container(527).ListItem.FolderPath]</value>
         <value condition="!String.IsEmpty(Window.Property(SpecialFolderPath))">$INFO[Window.Property(SpecialFolderPath)]</value>
@@ -59,6 +63,9 @@
         </include>
         <include content="View_Combined_Info">
             <param name="id">4</param>
+        </include>
+        <include content="View_Combined_Info">
+            <param name="id">6</param>
         </include>
         <include content="View_Combined_Info">
             <param name="id">7</param>
@@ -435,6 +442,14 @@
         </include>
     </include>
 
+    <!-- Combined Board -->
+    <include name="View_526_Flyer_Combined_Row">
+        <include content="View_Combined_Row">
+            <param name="id">6</param>
+            <param name="include">List_Flyer_Row</param>
+        </include>
+    </include>
+
     <!-- Combined List -->
     <include name="View_527_List_Combined">
         <include content="View_ComboList_Include">
@@ -560,6 +575,11 @@
                     <param name="id">4</param>
                     <param name="viewtype_label">$LOCALIZE[31006]</param>
                     <param name="visible">$EXP[Exp_View_524]</param>
+                </include>
+                <include content="View_Combined_List_Horz" condition="$EXP[Exp_View_526_Include]">
+                    <param name="id">6</param>
+                    <param name="viewtype_label">$LOCALIZE[31163]</param>
+                    <param name="visible">$EXP[Exp_View_526]</param>
                 </include>
             </control>
         </control>

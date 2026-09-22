@@ -256,6 +256,16 @@
         </definition>
     </include>
 
+    <include name="Widget_Busy_BlankItem_Flyer">
+        <include content="Widget_Busy_BlankItem">
+            <param name="item_w">view_icon_item_w</param>
+            <param name="item_h">view_landscape_item_h</param>
+            <param name="itemlayout_w">view_icon_itemlayout_w</param>
+            <param name="itemlayout_h">view_poster_itemlayout_h</param>
+            <param name="colordiffuse">$PARAM[colordiffuse]</param>
+        </include>
+    </include>
+
     <include name="Widget_Busy_BlankItem_Landscape">
         <include content="Widget_Busy_BlankItem">
             <param name="item_w">view_landscape_item_w</param>
@@ -394,6 +404,17 @@
     <include name="Widget_Busy_BlankItems__List_Banner_Row">
         <include>Widget_Busy_BlankItem_Banner</include>
     </include>
+    <include name="Widget_Busy_BlankItems__List_Flyer_Row">
+        <include>Widget_Busy_BlankItem_Flyer</include>
+        <include>Widget_Busy_BlankItem_Flyer</include>
+        <include>Widget_Busy_BlankItem_Flyer</include>
+        <include>Widget_Busy_BlankItem_Flyer</include>
+        <include>Widget_Busy_BlankItem_Flyer</include>
+        <include>Widget_Busy_BlankItem_Flyer</include>
+        <include>Widget_Busy_BlankItem_Flyer</include>
+        <include>Widget_Busy_BlankItem_Flyer</include>
+        <include>Widget_Busy_BlankItem_Flyer</include>
+    </include>
     <include name="Widget_Busy_BlankItems__List_Landscape_Row">
         <include>Widget_Busy_BlankItem_Landscape</include>
         <include>Widget_Busy_BlankItem_Landscape</include>
@@ -434,16 +455,10 @@
         <include>Widget_Busy_BlankItem_Poster</include>
         <include>Widget_Busy_BlankItem_Poster</include>
     </include>
-    <include name="Widget_Busy_BlankItems__List_Corflute_Row">
-        <include>Widget_Busy_BlankItems__List_Card_Row</include>
-    </include>
     <include name="Widget_Busy_BlankItems__List_Board_Row">
         <include>Widget_Busy_BlankItem_Board</include>
         <include>Widget_Busy_BlankItem_Board</include>
         <include>Widget_Busy_BlankItem_Board</include>
-    </include>
-    <include name="Widget_Busy_BlankItems__List_Placard_Row">
-        <include>Widget_Busy_BlankItems__List_Board_Row</include>
     </include>
     <include name="Widget_Busy_BlankItems__List_Reviews_Row">
         <include>Widget_Busy_BlankItem_Reviews</include>
@@ -460,19 +475,16 @@
     <include name="Widget_Busy_Spinner_Height__List_Board_Row">
         <height>view_poster_item_h</height>
     </include>
-    <include name="Widget_Busy_Spinner_Height__List_Placard_Row">
-        <height>view_poster_item_h</height>
-    </include>
     <include name="Widget_Busy_Spinner_Height__List_Card_Row">
         <height>view_poster_item_h</height>
     </include>
     <include name="Widget_Busy_Spinner_Height__List_Circle_Row">
         <height>view_poster_item_h</height>
     </include>
-    <include name="Widget_Busy_Spinner_Height__List_Corflute_Row">
-        <height>view_poster_item_h</height>
-    </include>
     <include name="Widget_Busy_Spinner_Height__List_Landscape_Row">
+        <height>view_landscape_item_h</height>
+    </include>
+    <include name="Widget_Busy_Spinner_Height__List_Flyer_Row">
         <height>view_landscape_item_h</height>
     </include>
     <include name="Widget_Busy_Spinner_Height__List_Square_Row">

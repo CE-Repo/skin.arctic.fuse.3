@@ -1231,6 +1231,7 @@
         <value condition="String.IsEqual(ListItem.Property(widget_style),Landscape)">$LOCALIZE[31045]</value>
         <value condition="String.IsEqual(ListItem.Property(widget_style),Square)">$LOCALIZE[31320]</value>
         <value condition="String.IsEqual(ListItem.Property(widget_style),Board)">$LOCALIZE[31424]</value>
+        <value condition="String.IsEqual(ListItem.Property(widget_style),Flyer)">$LOCALIZE[31161]</value>
         <value condition="String.IsEqual(ListItem.Property(widget_style),Circle)">$LOCALIZE[31431]</value>
         <value condition="String.IsEqual(ListItem.Property(widget_style),Poster)">$LOCALIZE[20021]</value>
         <value condition="String.IsEqual(ListItem.Property(widget_style),Banner)">$LOCALIZE[20020]</value>
@@ -1242,6 +1243,7 @@
         <value condition="String.IsEqual(Container(22001).ListItem.Property(widget_style),Landscape)">$LOCALIZE[31045]</value>
         <value condition="String.IsEqual(Container(22001).ListItem.Property(widget_style),Square)">$LOCALIZE[31320]</value>
         <value condition="String.IsEqual(Container(22001).ListItem.Property(widget_style),Board)">$LOCALIZE[31424]</value>
+        <value condition="String.IsEqual(Container(22001).ListItem.Property(widget_style),Flyer)">$LOCALIZE[31161]</value>
         <value condition="String.IsEqual(Container(22001).ListItem.Property(widget_style),Circle)">$LOCALIZE[31431]</value>
         <value condition="String.IsEqual(Container(22001).ListItem.Property(widget_style),Poster)">$LOCALIZE[20021]</value>
         <value condition="String.IsEqual(Container(22001).ListItem.Property(widget_style),Banner)">$LOCALIZE[20020]</value>
