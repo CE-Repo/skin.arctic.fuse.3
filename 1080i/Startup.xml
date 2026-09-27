@@ -1,10 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <window>
     <previouswindow>Home</previouswindow>
+    <onload condition="!String.IsEmpty(Skin.String(Startup.VideoPath))">AlarmClock(playstartup,PlayMedia($ESCINFO[Skin.String(Startup.VideoPath)],1),00:00,silent)</onload>
     <onload condition="Skin.HasSetting(SkinUserLogin.StartupLoginScreen) + !Skin.HasSetting(SkinUserLogin.Disabled) + String.IsEmpty(Window(Home).Property(StartupReplaceWindow))">SetProperty(StartupReplaceWindow,1195,Home)</onload>
-    <onload>SetProperty(SplashIsVisible,True,1198)</onload>
-    <onload>AlarmClock(SplashTimeOut,noop,00:59,silent)</onload>
-    <onload>SetProperty(InitStatus,$LOCALIZE[31145],1198)</onload>
 
     <include>Action_ButtonMenu_Onload</include>
 

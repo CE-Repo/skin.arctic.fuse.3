@@ -1709,6 +1709,15 @@
             <param name="id">8007</param>
             <param name="groupid">8107</param>
             <param name="dialog">true</param>
+            <param name="icon">special://skin/extras/icons/people-group.png</param>
+            <description>Player assignment</description>
+            <label>$LOCALIZE[35172]</label>
+            <onclick>ActivateWindow(GameAgents)</onclick>
+        </include>
+        <include content="Settings_ButtonImage">
+            <param name="id">8099</param>
+            <param name="groupid">8199</param>
+            <param name="dialog">true</param>
             <param name="icon">special://skin/extras/icons/screwdriver-wrench.png</param>
             <description>Advanced settings</description>
             <label>$LOCALIZE[35226]</label>
@@ -1734,6 +1743,35 @@
             <param name="icon">special://skin/extras/icons/floppy-disk.png</param>
             <onclick>ActivateWindow(InGameSaves)</onclick>
         </include>
+        <include content="Settings_ButtonImage">
+            <param name="id">8008</param>
+            <param name="groupid">8108</param>
+            <param name="dialog">true</param>
+            <param name="icon">special://skin/extras/icons/award.png</param>
+            <label>$LOCALIZE[35287]</label>
+            <param name="label2">$INFO[RetroPlayer.AchievementsProgress]</param>
+            <param name="has_label2">true</param>
+            <onclick>ActivateWindow(GameAchievements)</onclick>
+        </include>
+        <include content="Settings_ButtonImage">
+            <param name="id">8009</param>
+            <param name="groupid">8109</param>
+            <param name="dialog">true</param>
+            <param name="icon">special://skin/extras/icons/trophy.png</param>
+            <label>$LOCALIZE[35331]</label>
+            <onclick>ActivateWindow(gameleaderboards)</onclick>
+            <visible>RetroPlayer.AchievementsLoggedIn</visible>
+        </include>
+        <include content="Settings_ButtonImage">
+            <param name="id">8011</param>
+            <param name="groupid">8111</param>
+            <param name="dialog">true</param>
+            <param name="icon">special://skin/extras/icons/wand-magic-sparkles.png</param>
+            <label>$LOCALIZE[35320]</label>
+            <onclick>ActivateWindow(GameCheats)</onclick>
+            <visible>RetroPlayer.SupportsCheats</visible>
+        </include>
+
         <include content="Settings_ButtonImage">
             <param name="id">8003</param>
             <param name="groupid">8103</param>

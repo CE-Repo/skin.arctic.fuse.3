@@ -6,6 +6,10 @@
         <selectedcolor>$VAR[ColorSelected]</selectedcolor>
     </include>
 
+    <include name="Color_SelectedImage">
+        <colordiffuse>$VAR[ColorSelected]</colordiffuse>
+    </include>
+
     <variable name="Color_DialogBorder">
         <value>dialog_fg_06</value>
     </variable>
@@ -13,6 +17,13 @@
     <variable name="Color_Directory">
         <value condition="Skin.HasSetting(Ratings.EnableColor)">color</value>
         <value>monochrome</value>
+    </variable>
+
+    <variable name="Color_Medals">
+        <value condition="String.IsEqual(ListItem.Property(medal),gold)">gold</value>
+        <value condition="String.IsEqual(ListItem.Property(medal),silver)">silver</value>
+        <value condition="String.IsEqual(ListItem.Property(medal),bronze)">ffCD7F32</value>
+        <value>00ffffff</value>
     </variable>
 
     <!-- ColorPicker -->

@@ -30,19 +30,23 @@
         </definition>
     </include>
 
+    <include name="Part_List_Icon_Padding">
+        <left>0</left>
+        <top>20</top>
+        <bottom>20</bottom>
+        <right>40</right>
+    </include>
+
     <include name="Part_List_Icon">
         <param name="icon">$INFO[ListItem.Icon]</param>
         <param name="is_defaulticon">[String.StartsWith(ListItem.Icon,Default) | String.StartsWith(ListItem.Icon,special://skin/extras/icons/)]</param>
         <param name="colordiffuse">dialog_fg_90</param>
+        <param name="selected">false</param>
         <definition>
             <control type="group">
-                <left>0</left>
                 <width>$PARAM[item_h]</width>
                 <control type="group">
-                    <left>0</left>
-                    <top>20</top>
-                    <bottom>20</bottom>
-                    <right>40</right>
+                    <include>Part_List_Icon_Padding</include>
                     <control type="image">
                         <aspectratio>keep</aspectratio>
                         <texture background="true" fallback="$PARAM[fallback]" diffuse="diffuse/square_w120_h120.png">$PARAM[icon]</texture>
@@ -50,10 +54,66 @@
                     </control>
                     <control type="image">
                         <aspectratio>keep</aspectratio>
-                        <texture background="true" fallback="$PARAM[fallback]" colordiffuse="$PARAM[colordiffuse]" diffuse="diffuse/square_w120_h120.png">$PARAM[icon]</texture>
+                        <texture background="true" fallback="$PARAM[fallback]" diffuse="diffuse/square_w120_h120.png">$PARAM[icon]</texture>
+                        <include condition="$PARAM[selected]">Color_SelectedImage</include>
+                        <colordiffuse>$PARAM[colordiffuse]</colordiffuse>
                         <visible>$PARAM[is_defaulticon]</visible>
                     </control>
                 </control>
+            </control>
+        </definition>
+    </include>
+
+    <include name="Part_List_GameController">
+        <param name="icon">$INFO[ListItem.Icon]</param>
+        <param name="colordiffuse">dialog_fg_90</param>
+        <definition>
+            <control type="group">
+                <width>$PARAM[item_h]</width>
+                <control type="group">
+                    <include>Part_List_Icon_Padding</include>
+                    <control type="gamecontroller">
+                        <aspectratio>keep</aspectratio>
+                        <texture background="true" fallback="$PARAM[fallback]" colordiffuse="$PARAM[colordiffuse]" diffuse="diffuse/square_w120_h120.png">$PARAM[icon]</texture>
+                        <portaddress>$INFO[ListItem.FilenameAndPath]</portaddress>
+                        <controllerdiffuse>$VAR[ColorHighlight]</controllerdiffuse>
+                    </control>
+                </control>
+            </control>
+        </definition>
+    </include>
+
+    <include name="Part_List_GameAgents">
+        <param name="icon">$INFO[ListItem.Icon]</param>
+        <param name="colordiffuse">dialog_fg_90</param>
+        <param name="item_h">88</param>
+        <param name="focusedlayout_w">320</param>
+        <definition>
+            <control type="gamecontrollerlist" id="$PARAM[id]">
+                <height>$PARAM[item_h]</height>
+                <centertop>50%</centertop>
+                <orientation>horizontal</orientation>
+                <hitrect x="0" y="0" w="0" h="0" />
+                <itemlayout width="$PARAM[item_h]" height="$PARAM[item_h]">
+                    <control type="gamecontroller">
+                        <width>$PARAM[item_h]</width>
+                        <height>$PARAM[item_h]</height>
+                        <texture>$INFO[ListItem.Icon]</texture>
+                        <controllerid>$INFO[ListItem.Property(game.controllerid)]</controllerid>
+                        <peripherallocation>$INFO[ListItem.FilenameAndPath]</peripherallocation>
+                        <controllerdiffuse>$VAR[ColorHighlight]</controllerdiffuse>
+                    </control>
+                </itemlayout>
+                <focusedlayout width="$PARAM[focusedlayout_w]" height="$PARAM[item_h]">
+                    <control type="gamecontroller">
+                        <width>$PARAM[item_h]</width>
+                        <height>$PARAM[item_h]</height>
+                        <texture>$INFO[ListItem.Icon]</texture>
+                        <controllerid>$INFO[ListItem.Property(game.controllerid)]</controllerid>
+                        <peripherallocation>$INFO[ListItem.FilenameAndPath]</peripherallocation>
+                        <controllerdiffuse>$VAR[ColorHighlight]</controllerdiffuse>
+                    </control>
+                </focusedlayout>
             </control>
         </definition>
     </include>
@@ -93,11 +153,13 @@
         <param name="onleft">61</param>
         <param name="ondown">9000</param>
         <param name="id">9000</param>
+        <param name="has_panel">true</param>
+        <param name="include_extras">Object_Null</param>
         <definition>
             <control type="group">
                 <visible>$PARAM[visible]</visible>
                 <include>Size_Group_Panel_Right</include>
-                <include>Part_Panel</include>
+                <include condition="$PARAM[has_panel]">Part_Panel</include>
                 <control type="grouplist" id="$PARAM[id]">
                     <onleft>$PARAM[onleft]</onleft>
                     <ondown>$PARAM[ondown]</ondown>
@@ -106,6 +168,7 @@
                     <include>Size_Grouplist_Pad</include>
                     <include>$PARAM[items]</include>
                 </control>
+                <include>$PARAM[include_extras]</include>
             </control>
         </definition>
     </include>
@@ -174,6 +237,20 @@
                 </control>
             </control>
         </definition>
+    </include>
+
+    <include name="Part_HeaderBasic">
+        <control type="group">
+            <include>Size_Group_Head</include>
+            <include content="Part_HeadText">
+                <param name="id">$PARAM[header_id]</param>
+                <param name="label">$PARAM[header]</param>
+            </include>
+            <include>Part_CloseButton</include>
+            <include content="Part_ItemPage">
+                <param name="id">$PARAM[id]</param>
+            </include>
+        </control>
     </include>
 
     <include name="Part_Line">
@@ -630,6 +707,34 @@
                 </control>
             </control>
         </definition>
+    </include>
+
+    <include name="Part_GameWindow">
+        <control type="image">
+            <texture border="20" colordiffuse="black">common/dialog.png</texture>
+        </control>
+        <control type="image">
+            <aspectratio>scale</aspectratio>
+            <texture border="4">$INFO[$PARAM[container]ListItem.Icon]</texture>
+            <bordertexture colordiffuse="black" border="20">common/dialog.png</bordertexture>
+            <bordersize>20</bordersize>
+        </control>
+        <control type="group">
+            <left>20</left>
+            <right>20</right>
+            <control type="gamewindow">
+                <videofilter>$INFO[$PARAM[container]ListItem.Property(game.videofilter)]</videofilter>
+                <stretchmode>$INFO[$PARAM[container]ListItem.Property(game.stretchmode)]</stretchmode>
+                <rotation>$INFO[$PARAM[container]ListItem.Property(game.videorotation)]</rotation>
+                <visible>String.IsEmpty($PARAM[container]ListItem.Art(screenshot))</visible>
+            </control>
+        </control>
+        <control type="image">
+            <aspectratio>scale</aspectratio>
+            <texture border="4">$INFO[$PARAM[container]ListItem.Art(screenshot)]</texture>
+            <bordertexture colordiffuse="black" border="20">common/dialog.png</bordertexture>
+            <bordersize>20</bordersize>
+        </control>
     </include>
 
 
