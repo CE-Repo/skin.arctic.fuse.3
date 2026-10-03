@@ -398,7 +398,6 @@
                     <control type="image">
                         <colordiffuse>rating_9</colordiffuse>
                         <texture border="20">common/box.png</texture>
-                        <visible>Integer.IsLess($PARAM[property],10)</visible>
                         <visible>!Integer.IsLess($PARAM[property],9)</visible>
                     </control>
                     <control type="image">
