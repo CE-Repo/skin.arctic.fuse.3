@@ -660,7 +660,7 @@
 
                 <control type="group">
                     <width>40</width>
-                    <visible>Integer.IsEqual(ListItem.Property(Episode),1)</visible>
+                    <visible>!String.IsEmpty(ListItem.Property(group_start))</visible>
                     <control type="label">
                         <font>font_tiny_bold</font>
                         <align>center</align>
