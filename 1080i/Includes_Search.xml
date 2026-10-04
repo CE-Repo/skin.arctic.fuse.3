@@ -534,8 +534,8 @@
     </include>
 
     <variable name="Search_Bar_Disc_KeywordPath">
-        <value condition="String.IsEqual(Container(3003).ListItem.Property(mode),moviekeywords)">$INFO[Control.GetLabel(3000).index(1),plugin://plugin.video.themoviedb.helper?info=search&amp;tmdb_type=keyword&amp;nextpage=false&amp;cacheonly=true&amp;query=,]</value>
-        <value condition="String.IsEqual(Container(3003).ListItem.Property(mode),mdblists)">$INFO[Control.GetLabel(3000).index(1),plugin://plugin.video.themoviedb.helper?info=mdblist_searchlists&amp;tmdb_type=both&amp;nextpage=false&amp;query=,]</value>
+        <value condition="String.IsEqual(Container(3003).ListItem.Property(mode),moviekeywords)">$INFO[Container(310).ListItem.Label,plugin://plugin.video.themoviedb.helper?info=search&amp;tmdb_type=keyword&amp;nextpage=false&amp;cacheonly=true&amp;query=,]</value>
+        <value condition="String.IsEqual(Container(3003).ListItem.Property(mode),mdblists)">$INFO[Container(310).ListItem.Label,plugin://plugin.video.themoviedb.helper?info=mdblist_searchlists&amp;tmdb_type=both&amp;nextpage=false&amp;query=,]</value>
         <value>-</value>
     </variable>
 
