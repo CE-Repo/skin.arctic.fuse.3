@@ -372,6 +372,34 @@
         <showonepage>false</showonepage>
     </include>
 
+    <include name="DialogPlot_Ratings_Label">
+        <control type="group">
+            <visible>$PARAM[visible]</visible>
+            <control type="label">
+                <font>font_hint_bold</font>
+                <textcolor>$PARAM[colordiffuse]</textcolor>
+                <label>$INFO[ListItem.Property(Season),S,]$INFO[ListItem.Property(Episode),E,]</label>
+                <align>left</align>
+                <top>10</top>
+                <left>10</left>
+                <height>10</height>
+            </control>
+
+            <control type="group">
+                <left>10</left>
+                <height>20</height>
+                <bottom>10</bottom>
+                <right>10</right>
+                <control type="label">
+                    <font>font_midi_bold</font>
+                    <textcolor>$PARAM[colordiffuse]</textcolor>
+                    <label fallback="‒.‒">$INFO[$PARAM[property]]</label>
+                    <align>right</align>
+                </control>
+            </control>
+        </control>
+    </include>
+
     <include name="DialogPlot_Ratings_Layout">
         <param name="selected">false</param>
         <param name="property">ListItem.Property(Rating)</param>
@@ -434,32 +462,26 @@
                         <colordiffuse>rating_3</colordiffuse>
                         <texture border="20">common/box.png</texture>
                         <visible>Integer.IsLess($PARAM[property],4)</visible>
+                        <visible>!String.IsEmpty($PARAM[property])</visible>
+                    </control>
+                    <control type="image">
+                        <colordiffuse>dialog_fg_12</colordiffuse>
+                        <texture border="20">common/box.png</texture>
+                        <visible>String.IsEmpty($PARAM[property])</visible>
                     </control>
 
-                    <control type="group">
-                        <control type="label">
-                            <font>font_hint_bold</font>
-                            <textcolor>panel_bg_90</textcolor>
-                            <label>$INFO[ListItem.Property(Season),S,]$INFO[ListItem.Property(Episode),E,]</label>
-                            <align>left</align>
-                            <top>10</top>
-                            <left>10</left>
-                            <height>10</height>
-                        </control>
+                    <include content="DialogPlot_Ratings_Label">
+                        <param name="visible">!String.IsEmpty($PARAM[property])</param>
+                        <param name="colordiffuse">panel_bg_90</param>
+                        <param name="property">$PARAM[property]</param>
+                    </include>
 
-                        <control type="group">
-                            <left>10</left>
-                            <height>20</height>
-                            <bottom>10</bottom>
-                            <right>10</right>
-                            <control type="label">
-                                <font>font_midi_bold</font>
-                                <textcolor>panel_bg_90</textcolor>
-                                <label>$INFO[$PARAM[property]]</label>
-                                <align>right</align>
-                            </control>
-                        </control>
-                    </control>
+                    <include content="DialogPlot_Ratings_Label">
+                        <param name="visible">String.IsEmpty($PARAM[property])</param>
+                        <param name="colordiffuse">dialog_fg_90</param>
+                        <param name="property">$PARAM[property]</param>
+                    </include>
+
                 </control>
             </control>
         </definition>
