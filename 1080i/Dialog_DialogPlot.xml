@@ -489,6 +489,11 @@
         </control>
     </include>
 
+    <variable name="DialogPlot_Ratings_8001">
+        <value condition="!String.IsEmpty(Window(Home).Property(TMDBHelper.ListItem.Monitor.TMDb_ID)) + !String.IsEmpty(Window(Home).Property(TMDBHelper.ListItem.Monitor.Season))">plugin://plugin.video.themoviedb.helper/?info=episodes&amp;tmdb_id=$INFO[Window(Home).Property(TMDBHelper.ListItem.Monitor.TMDb_ID)]&amp;tmdb_type=tv&amp;season=$INFO[Window(Home).Property(TMDBHelper.ListItem.Monitor.Season)]</value>
+        <value condition="!String.IsEmpty(Window(Home).Property(TMDBHelper.ListItem.Monitor.TMDb_ID))">plugin://plugin.video.themoviedb.helper/?info=flatseasons&amp;tmdb_id=$INFO[Window(Home).Property(TMDBHelper.ListItem.Monitor.TMDb_ID)]&amp;tmdb_type=tv&amp;exclude_key=Season&amp;exclude_value=0</value>
+    </variable>
+
 
     <include name="DialogPlot_Ratings">
         <param name="textbox_visible">true</param>
@@ -517,7 +522,7 @@
                         <!-- Hidden list with data -->
                         <control type="list" id="8001">
                             <include>Object_Hidden_List_Definition</include>
-                            <content>plugin://plugin.video.themoviedb.helper/?info=flatseasons&amp;tmdb_id=$INFO[Window(Home).Property(TMDBHelper.ListItem.Monitor.TMDb_ID)]&amp;tmdb_type=tv</content>
+                            <content>$VAR[DialogPlot_Ratings_8001]</content>
                         </control>
 
                         <!-- While loading show panel placeholders -->
