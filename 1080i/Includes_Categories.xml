@@ -90,7 +90,7 @@
 
                             <orientation>horizontal</orientation>
                             <itemgap>30</itemgap>
-                            <!-- <width>780</width> -->
+                            <width>800</width>
                             <control type="label">
                                 <height>80</height>
                                 <width max="640">auto</width>
@@ -100,7 +100,7 @@
                                 <textcolor>main_fg_100</textcolor>
                                 <label>$INFO[Container($PARAM[id]).ListItem.Label]</label>
                                 <!-- <animation effect="fade" start="100" end="0" delay="200" time="300" condition="!Container($PARAM[id]).OnScrollNext + !Container($PARAM[id]).OnScrollPrevious" reversible="false">Conditional</animation> -->
-                                <animation effect="fade" start="100" end="0" delay="100" time="300" condition="!Container($PARAM[id]).OnScrollNext" reversible="false">Conditional</animation>
+                                <animation effect="fade" start="100" end="0" delay="100" time="200" condition="!Container($PARAM[id]).OnScrollNext" reversible="false">Conditional</animation>
                             </control>
                             <control type="label">
                                 <height>80</height>
