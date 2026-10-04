@@ -412,6 +412,102 @@
         </include>
     </include>
 
+    <include name="DialogPlot_Plotbox_TMDbHelper">
+        <include content="DialogPlot_Plotbox_Quick_Object">
+            <param name="head">$LOCALIZE[202]</param>
+            <param name="text">Window(Home).Property(TMDbHelper.ListItem.Tagline)</param>
+        </include>
+        <include content="DialogPlot_Plotbox_Object">
+            <param name="head">$LOCALIZE[31028]</param>
+            <param name="text">$VAR[Label_Plot_TMDbHelper]</param>
+            <param name="visible">!String.IsEmpty(Window(Home).Property(TMDBHelper.ListItem.base_plot)) | !String.IsEmpty(Window(Home).Property(TMDbHelper.ListItem.Plot)) | !String.IsEmpty(Window(Home).Property(TMDbHelper.ListItem.biography))</param>
+        </include>
+        <include content="DialogPlot_Plotbox_Object">
+            <param name="head">$LOCALIZE[31024]</param>
+            <param name="text">$INFO[Window(Home).Property(TMDbHelper.ListItem.rottentomatoes_consensus),, ]$INFO[Window(Home).Property(TMDbHelper.ListItem.rottentomatoes_reviewsfresh),$LOCALIZE[31054] , ]$INFO[Window(Home).Property(TMDbHelper.ListItem.rottentomatoes_reviewstotal),$LOCALIZE[31055] , $LOCALIZE[31056] ]</param>
+            <param name="visible">!String.IsEmpty(Window(Home).Property(TMDbHelper.ListItem.rottentomatoes_consensus))</param>
+        </include>
+        <include content="DialogPlot_Plotbox_Person_Object">
+            <param name="head">$LOCALIZE[31038]</param>
+            <param name="role">Director</param>
+        </include>
+        <include content="DialogPlot_Plotbox_Person_Object">
+            <param name="head">$LOCALIZE[31039]</param>
+            <param name="role">Writer</param>
+        </include>
+        <include content="DialogPlot_Plotbox_Person_Object">
+            <param name="head">$LOCALIZE[31076]</param>
+            <param name="role">Cast</param>
+        </include>
+        <include content="DialogPlot_Plotbox_Person_Object">
+            <param name="head">$LOCALIZE[31383]</param>
+            <param name="role">Producer</param>
+        </include>
+        <include content="DialogPlot_Plotbox_Person_Object">
+            <param name="head">$LOCALIZE[31052]</param>
+            <param name="role">Sound_Department</param>
+        </include>
+        <include content="DialogPlot_Plotbox_Person_Object">
+            <param name="head">$LOCALIZE[31072]</param>
+            <param name="role">Art_Department</param>
+        </include>
+        <include content="DialogPlot_Plotbox_Person_Object">
+            <param name="head">$LOCALIZE[31067]</param>
+            <param name="role">Photography</param>
+        </include>
+        <include content="DialogPlot_Plotbox_Person_Object">
+            <param name="head">$LOCALIZE[31075]</param>
+            <param name="role">Editor</param>
+        </include>
+        <include content="DialogPlot_Plotbox_Quick_Object">
+            <param name="head">$LOCALIZE[31064]</param>
+            <param name="text">Window(Home).Property(TMDbHelper.ListItem.Awards)</param>
+        </include>
+        <include content="DialogPlot_Plotbox_Object">
+            <param name="head">$LOCALIZE[31286]$INFO[Window(Home).Property(TMDbHelper.ListItem.Total_Awards_Won), ,] $LOCALIZE[31064]</param>
+            <param name="text">$INFO[Window(Home).Property(TMDbHelper.ListItem.Awards_Won_CR)]</param>
+            <param name="visible">!String.IsEmpty(Window(Home).Property(TMDbHelper.ListItem.Total_Awards_Won))</param>
+        </include>
+        <include content="DialogPlot_Plotbox_Object">
+            <param name="head">$LOCALIZE[31287]$INFO[Window(Home).Property(TMDbHelper.ListItem.Total_Awards_Nominated), ,] $LOCALIZE[31064]</param>
+            <param name="text">$INFO[Window(Home).Property(TMDbHelper.ListItem.Awards_Nominated_CR)]</param>
+            <param name="visible">!String.IsEmpty(Window(Home).Property(TMDbHelper.ListItem.Total_Awards_Nominated))</param>
+        </include>
+        <include content="DialogPlot_Plotbox_Object">
+            <param name="head">JustWatch</param>
+            <param name="text">$INFO[Window(Home).Property(TMDbHelper.ListItem.Provider.1.Name)]$INFO[Window(Home).Property(TMDbHelper.ListItem.Provider.2.Name),[CR],]$INFO[Window(Home).Property(TMDbHelper.ListItem.Provider.3.Name),[CR],]$INFO[Window(Home).Property(TMDbHelper.ListItem.Provider.4.Name),[CR],]$INFO[Window(Home).Property(TMDbHelper.ListItem.Provider.5.Name),[CR],]$INFO[Window(Home).Property(TMDbHelper.ListItem.Provider.6.Name),[CR],]$INFO[Window(Home).Property(TMDbHelper.ListItem.Provider.7.Name),[CR],]$INFO[Window(Home).Property(TMDbHelper.ListItem.Provider.8.Name),[CR],]$INFO[Window(Home).Property(TMDbHelper.ListItem.Provider.9.Name),[CR],]$INFO[Window(Home).Property(TMDbHelper.ListItem.Provider.10.Name),[CR],]</param>
+            <param name="visible">!String.IsEmpty(Window(Home).Property(TMDbHelper.ListItem.Provider.1.Name))</param>
+        </include>
+        <include content="DialogPlot_Plotbox_Object">
+            <param name="head">$INFO[Window(Home).Property(TMDbHelper.ListItem.PlayCount),$LOCALIZE[16102] , $LOCALIZE[31183]]</param>
+            <param name="text">$INFO[Window(Home).Property(TMDbHelper.ListItem.LastPlayed),$LOCALIZE[568] ,]</param>
+            <param name="visible">!String.IsEmpty(Window(Home).Property(TMDbHelper.ListItem.PlayCount))</param>
+        </include>
+    </include>
+
+    <include name="DialogPlot_Plotbox_Local">
+        <include content="DialogPlot_Plotbox_Quick_Object">
+            <param name="head">$LOCALIZE[202]</param>
+            <param name="text">ListItem.Tagline</param>
+        </include>
+        <include content="DialogPlot_Plotbox_Quick_Object">
+            <param name="head">$LOCALIZE[31028]</param>
+            <param name="text">ListItem.Plot</param>
+        </include>
+        <include content="DialogPlot_Plotbox_Quick_Object">
+            <param name="head">$LOCALIZE[20339]</param>
+            <param name="text">ListItem.Director</param>
+        </include>
+        <include content="DialogPlot_Plotbox_Quick_Object">
+            <param name="head">$LOCALIZE[20417]</param>
+            <param name="text">ListItem.Writer</param>
+        </include>
+        <include content="DialogPlot_Plotbox_Quick_Object">
+            <param name="head">$LOCALIZE[206]</param>
+            <param name="text">ListItem.Cast</param>
+        </include>
+    </include>
+
     <include name="DialogPlot_Plotbox">
         <param name="textbox_visible">true</param>
         <param name="include_divider">true</param>
@@ -439,83 +535,9 @@
                         <pagecontrol>61</pagecontrol>
                         <orientation>vertical</orientation>
                         <include>Size_Group_PlotText</include>
-                        <include content="DialogPlot_Plotbox_Quick_Object">
-                            <param name="head">$LOCALIZE[202]</param>
-                            <param name="text">Window(Home).Property(TMDbHelper.ListItem.Tagline)</param>
-                        </include>
-                        <include content="DialogPlot_Plotbox_Object">
-                            <param name="head">$LOCALIZE[31028]</param>
-                            <param name="text">$VAR[Label_Plot_TMDbHelper]</param>
-                            <param name="visible">!String.IsEmpty(Window(Home).Property(TMDBHelper.ListItem.base_plot)) | !String.IsEmpty(Window(Home).Property(TMDbHelper.ListItem.Plot)) | !String.IsEmpty(Window(Home).Property(TMDbHelper.ListItem.biography))</param>
-                        </include>
-                        <include content="DialogPlot_Plotbox_Object">
-                            <param name="head">$LOCALIZE[31024]</param>
-                            <param name="text">$INFO[Window(Home).Property(TMDbHelper.ListItem.rottentomatoes_consensus),, ]$INFO[Window(Home).Property(TMDbHelper.ListItem.rottentomatoes_reviewsfresh),$LOCALIZE[31054] , ]$INFO[Window(Home).Property(TMDbHelper.ListItem.rottentomatoes_reviewstotal),$LOCALIZE[31055] , $LOCALIZE[31056] ]</param>
-                            <param name="visible">!String.IsEmpty(Window(Home).Property(TMDbHelper.ListItem.rottentomatoes_consensus))</param>
-                        </include>
-                        <include content="DialogPlot_Plotbox_Person_Object">
-                            <param name="head">$LOCALIZE[31038]</param>
-                            <param name="role">Director</param>
-                        </include>
-                        <include content="DialogPlot_Plotbox_Person_Object">
-                            <param name="head">$LOCALIZE[31039]</param>
-                            <param name="role">Writer</param>
-                        </include>
-                        <include content="DialogPlot_Plotbox_Person_Object">
-                            <param name="head">$LOCALIZE[31076]</param>
-                            <param name="role">Cast</param>
-                        </include>
-                        <include content="DialogPlot_Plotbox_Person_Object">
-                            <param name="head">$LOCALIZE[31383]</param>
-                            <param name="role">Producer</param>
-                        </include>
-                        <include content="DialogPlot_Plotbox_Person_Object">
-                            <param name="head">$LOCALIZE[31052]</param>
-                            <param name="role">Sound_Department</param>
-                        </include>
-                        <include content="DialogPlot_Plotbox_Person_Object">
-                            <param name="head">$LOCALIZE[31072]</param>
-                            <param name="role">Art_Department</param>
-                        </include>
-                        <include content="DialogPlot_Plotbox_Person_Object">
-                            <param name="head">$LOCALIZE[31067]</param>
-                            <param name="role">Photography</param>
-                        </include>
-                        <include content="DialogPlot_Plotbox_Person_Object">
-                            <param name="head">$LOCALIZE[31075]</param>
-                            <param name="role">Editor</param>
-                        </include>
-                        <include content="DialogPlot_Plotbox_Quick_Object">
-                            <param name="head">$LOCALIZE[31064]</param>
-                            <param name="text">Window(Home).Property(TMDbHelper.ListItem.Awards)</param>
-                        </include>
-                        <include content="DialogPlot_Plotbox_Object">
-                            <param name="head">$LOCALIZE[31286]$INFO[Window(Home).Property(TMDbHelper.ListItem.Total_Awards_Won), ,] $LOCALIZE[31064]</param>
-                            <param name="text">$INFO[Window(Home).Property(TMDbHelper.ListItem.Awards_Won_CR)]</param>
-                            <param name="visible">!String.IsEmpty(Window(Home).Property(TMDbHelper.ListItem.Total_Awards_Won))</param>
-                        </include>
-                        <include content="DialogPlot_Plotbox_Object">
-                            <param name="head">$LOCALIZE[31287]$INFO[Window(Home).Property(TMDbHelper.ListItem.Total_Awards_Nominated), ,] $LOCALIZE[31064]</param>
-                            <param name="text">$INFO[Window(Home).Property(TMDbHelper.ListItem.Awards_Nominated_CR)]</param>
-                            <param name="visible">!String.IsEmpty(Window(Home).Property(TMDbHelper.ListItem.Total_Awards_Nominated))</param>
-                        </include>
-                        <include content="DialogPlot_Plotbox_Object">
-                            <param name="head">JustWatch</param>
-                            <param name="text">$INFO[Window(Home).Property(TMDbHelper.ListItem.Provider.1.Name)]$INFO[Window(Home).Property(TMDbHelper.ListItem.Provider.2.Name),[CR],]$INFO[Window(Home).Property(TMDbHelper.ListItem.Provider.3.Name),[CR],]$INFO[Window(Home).Property(TMDbHelper.ListItem.Provider.4.Name),[CR],]$INFO[Window(Home).Property(TMDbHelper.ListItem.Provider.5.Name),[CR],]$INFO[Window(Home).Property(TMDbHelper.ListItem.Provider.6.Name),[CR],]$INFO[Window(Home).Property(TMDbHelper.ListItem.Provider.7.Name),[CR],]$INFO[Window(Home).Property(TMDbHelper.ListItem.Provider.8.Name),[CR],]$INFO[Window(Home).Property(TMDbHelper.ListItem.Provider.9.Name),[CR],]$INFO[Window(Home).Property(TMDbHelper.ListItem.Provider.10.Name),[CR],]</param>
-                            <param name="visible">!String.IsEmpty(Window(Home).Property(TMDbHelper.ListItem.Provider.1.Name))</param>
-                        </include>
-                        <include content="DialogPlot_Plotbox_Object">
-                            <param name="head">$INFO[Window(Home).Property(TMDbHelper.ListItem.PlayCount),$LOCALIZE[16102] , $LOCALIZE[31183]]</param>
-                            <param name="text">$INFO[Window(Home).Property(TMDbHelper.ListItem.LastPlayed),$LOCALIZE[568] ,]</param>
-                            <param name="visible">!String.IsEmpty(Window(Home).Property(TMDbHelper.ListItem.PlayCount))</param>
-                        </include>
-
+                        <include condition="$EXP[Exp_TMDbHelper_IsData]">DialogPlot_Plotbox_TMDbHelper</include>
+                        <include condition="!$EXP[Exp_TMDbHelper_IsData]">DialogPlot_Plotbox_Local</include>
                     </control>
-                    <!-- <include content="Part_PlotText">
-                        <param name="id">$PARAM[text_id]</param>
-                        <param name="textbox">$PARAM[textbox]</param>
-                        <visible>$PARAM[textbox_visible]</visible>
-                    </include> -->
                     <include content="Part_Scrollbar_Max">
                         <param name="id">61</param>
                         <param name="inset">false</param>
