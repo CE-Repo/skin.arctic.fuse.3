@@ -737,7 +737,7 @@
     </include>
 
     <variable name="DialogPlot_Ratings_Path">
-        <value condition="!Integer.IsEqual(Container(8001).NumItems,0) + !Container(8001).IsUpdating">$INFO[Container(8001).NumItems,plugin://script.skinvariables/?info=get_panel_labels&amp;container=8001&amp;infolabel=Season&amp;length=8&amp;infoproperties=Season/Season//Episode/Episode//Rating/Rating&amp;numitems=,]</value>
+        <value condition="!Integer.IsEqual(Container(8001).NumItems,0) + !Container(8001).IsUpdating">plugin://script.skinvariables/?info=get_panel_labels&amp;containers=8001&amp;infolabel=Season&amp;length=8&amp;infoproperties=Season;Season;;Episode;Episode;;Rating;Rating&amp;reload=$INFO[Container(8001).NumItems]$INFO[Container(8001).ListItem.UniqueID(tmdb)]</value>
     </variable>
 
     <include name="DialogPlot_Ratings_Legend">
