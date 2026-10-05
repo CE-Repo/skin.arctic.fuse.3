@@ -24,6 +24,19 @@
 		<value>$LOCALIZE[351]</value>
 	</variable>
 
+	<variable name="Image_OSD_DiscArt">
+		<value condition="!String.IsEmpty(Player.Art(discart))">$INFO[Player.Art(discart)]</value>
+		<value condition="!String.IsEmpty(Player.Art(season.discart))">$INFO[Player.Art(season.discart)]</value>
+		<value condition="!String.IsEmpty(Player.Art(tvshow.discart))">$INFO[Player.Art(tvshow.discart)]</value>
+	</variable>
+
+	<variable name="Image_OSD_VHSArt">
+		<value condition="!String.IsEmpty(Player.Art(landscape))">$INFO[Player.Art(landscape)]</value>
+		<value condition="!String.IsEmpty(Player.Art(season.landscape))">$INFO[Player.Art(season.landscape)]</value>
+		<value condition="!String.IsEmpty(Player.Art(tvshow.landscape))">$INFO[Player.Art(tvshow.landscape)]</value>
+		<value condition="VideoPlayer.Content(episodes) + !String.IsEmpty(Player.Art(thumb))">$INFO[Player.Art(thumb)]</value>
+	</variable>
+
 	<include name="PPI_Button">
 		<!-- Button 9 -->
 		<control type="button" id="6009">
@@ -44,9 +57,11 @@
 	<include name="CD_VHS_Art">
 		<!-- Disc -->
 		<control type="group">
-			<visible>[!Pvr.IsPlayingTv + !String.IsEmpty(Player.Art(discart)) + String.IsEqual(Skin.String(OSD.ArtworkStyle),DiscArt)]</visible>
-			<left>1455</left>
+			<visible>[!Pvr.IsPlayingTv + [!String.IsEmpty(Player.Art(discart)) | !String.IsEmpty(Player.Art(season.discart)) | !String.IsEmpty(Player.Art(tvshow.discart))] + String.IsEqual(Skin.String(OSD.ArtworkStyle),DiscArt)]</visible>
+			<right>-35</right>
 			<top>400</top>
+			<width>500</width>
+			<height>425</height>
 			<!-- Disc Background -->
 			<control type="image">
 				<width>500</width>
@@ -59,7 +74,7 @@
 				<top>10</top>
 				<width>400</width>
 				<height>400</height>
-				<texture background="true">$INFO[Player.Art(discart)]</texture>
+				<texture background="true">$VAR[Image_OSD_DiscArt]</texture>
 				<aspectratio aligny="bottom">keep</aspectratio>
 				<visible>Skin.HasSetting(OSD.DiscArtNoRotate)</visible>
 			</control>
@@ -68,7 +83,7 @@
 				<top>10</top>
 				<width>400</width>
 				<height>400</height>
-				<texture background="true">$INFO[Player.Art(discart)]</texture>
+				<texture background="true">$VAR[Image_OSD_DiscArt]</texture>
 				<aspectratio aligny="bottom">keep</aspectratio>
 				<animation effect="rotate" start="0" end="-360" loop="true" time="20000" center="auto" condition="Player.Playing | Player.Paused">Conditional</animation>
 				<visible>!Skin.HasSetting(OSD.DiscArtNoRotate)</visible>
@@ -82,12 +97,14 @@
 
 		<!-- VHS -->
 		<control type="group">
-			<visible>[!Pvr.IsPlayingTv + !String.IsEmpty(Player.Art(landscape)) + String.IsEqual(Skin.String(OSD.ArtworkStyle),VHSArt)]</visible>
-			<left>1315</left>
+			<visible>[!Pvr.IsPlayingTv + [!String.IsEmpty(Player.Art(landscape)) | !String.IsEmpty(Player.Art(season.landscape)) | !String.IsEmpty(Player.Art(tvshow.landscape)) | [VideoPlayer.Content(episodes) + !String.IsEmpty(Player.Art(thumb))]] + String.IsEqual(Skin.String(OSD.ArtworkStyle),VHSArt)]</visible>
+			<right>67</right>
 			<top>510</top>
+			<width>538</width>
+			<height>300</height>
 			<!-- VHS Background -->
 			<control type="image">
-				<right>90</right>
+				<right>23</right>
 				<width>500</width>
 				<height>280</height>
 				<texture colordiffuse="shadow_hard">common/white.png</texture>
@@ -102,7 +119,7 @@
 				<top>93</top>
 				<width>239</width>
 				<height>134</height>
-				<texture background="true" diffuse="diffuse/landscape_w410_h231.png">$INFO[Player.Art(landscape)]</texture>
+				<texture background="true" diffuse="diffuse/landscape_w410_h231.png">$VAR[Image_OSD_VHSArt]</texture>
 				<aspectratio>scale</aspectratio>
 			</control>
 			<animation type="WindowOpen">
