@@ -89,9 +89,7 @@
 				<visible>!Skin.HasSetting(OSD.DiscArtNoRotate)</visible>
 			</control>
 			<animation effect="slide" start="500" end="0" time="750">WindowOpen</animation>
-			<animation type="WindowClose">
-				<effect type="slide" start="0" end="500" time="750" tween="sine" easing="in" />
-			</animation>
+			<animation effect="slide" start="0" end="500" time="750">WindowClose</animation>
 			<animation effect="slide" start="0" end="500" time="750" condition="Control.HasFocus(6006) | Control.HasFocus(6007) | Control.HasFocus(6008)">
                     WindowClose
                 </animation>
@@ -129,8 +127,7 @@
 				<effect type="slide" start="500" end="0" time="2000" tween="back" easing="out" />
 			</animation>
 			<animation type="WindowClose">
-				<effect type="rotate" start="0" end="-90" time="1000" center="auto" tween="sine" easing="in" />
-				<effect type="slide" start="0" end="500" time="1000" tween="back" easing="in" />
+				<effect type="slide" start="0" end="500" time="500" />
 			</animation>
 			<animation condition="Control.HasFocus(6006) | Control.HasFocus(6007) | Control.HasFocus(6008)">
 				<effect type="rotate" start="0" end="-90" time="1000" center="auto" tween="linear" easing="in" />
