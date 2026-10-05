@@ -2,7 +2,9 @@
 <window type="dialog" id="1153">
     <zorder>0</zorder>
 
-    <visible>Window.IsVisible(1145) | [Window.IsVisible(videoosd) + Skin.HasSetting(OSD.DisplayInfoOnControls)]</visible>
+    <visible>Window.IsVisible(1145) | [Window.IsActive(videoosd) + Skin.HasSetting(OSD.DisplayInfoOnControls)]</visible>
+
+    <animation effect="fade" start="100" end="0" time="300">WindowClose</animation>
 
     <controls>
 
