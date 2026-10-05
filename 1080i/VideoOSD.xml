@@ -3,7 +3,6 @@
     <defaultcontrol always="true">6001</defaultcontrol>
     <animation effect="fade" start="0" end="100" time="300" delay="200" condition="Window.IsActive(DialogSeekBar.xml) | Window.IsVisible(1152)">WindowOpen</animation>
     <animation effect="fade" start="0" end="100" time="300" condition="![Window.IsActive(DialogSeekBar.xml) | Window.IsVisible(1152)]">WindowOpen</animation>
-    <animation effect="fade" end="0" start="100" time="300">WindowClose</animation>
     <onload>SetProperty(UID,$ESCINFO[Player.Title]$INFO[Player.Time(ss)],1146)</onload>
     <onload>SetProperty(UID,$ESCINFO[Player.Title]$INFO[Player.Time(ss)],1147)</onload>
     <onunload>CancelAlarm(osd_timeout,true)</onunload>
@@ -14,6 +13,7 @@
             <include>OSD_HideControls</include>
 
             <control type="group">
+                <animation effect="fade" end="0" start="100" time="300">WindowClose</animation>
                 <visible>!Window.IsActive(DialogPlayerProcessInfo.xml)</visible>
                 <visible>!Window.IsVisible(DialogSlider.xml)</visible>
 
@@ -189,6 +189,7 @@
             </control>
 
             <control type="group">
+                <animation effect="fade" end="0" start="100" time="300">WindowClose</animation>
                 <left>view_osd_l</left>
                 <right>view_osd_r</right>
                 <height>112</height>
