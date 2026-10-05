@@ -27,7 +27,8 @@
                         <left>-20</left>
                         <orientation>horizontal</orientation>
                         <itemgap>osd_itemgap</itemgap>
-                        <onleft>6009</onleft>
+                        <onleft condition="System.AddonIsEnabled(script.tinyppi)">6009</onleft>
+                        <onleft condition="!System.AddonIsEnabled(script.tinyppi)">6008</onleft>
                         <onright>6005</onright>
                         <ondown>ActivateWindow($VAR[Action_OSD_Main_OnDown])</ondown>
 

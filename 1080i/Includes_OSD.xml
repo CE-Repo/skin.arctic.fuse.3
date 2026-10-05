@@ -1251,7 +1251,7 @@
                     <param name="iconoffset_condition">$PARAM[iconoffset_condition]</param>
                 </include>
 
-                <include content="OSD_CustomDialog_FakeButton" condition="![$PARAM[button_9]]">
+                <include content="OSD_CustomDialog_FakeButton" condition="![$PARAM[button_9]] + System.AddonIsEnabled(script.tinyppi)">
                     <param name="id">9</param>
                 </include>
                 <include content="OSD_CustomDialog_RealButton" condition="$PARAM[button_9]">

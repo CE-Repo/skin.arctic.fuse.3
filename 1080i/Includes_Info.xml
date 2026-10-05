@@ -805,7 +805,7 @@
             <include content="Info_Line_Pill_Text">
                 <param name="colordiffuse">$PARAM[colordiffuse]</param>
                 <param name="label">SDR</param>
-                <param name="visible">$PARAM[visible] + [String.IsEmpty($PARAM[container]$PARAM[listitem].HdrType) + [[!String.IsEmpty($PARAM[container]$PARAM[listitem].VideoResolution)] | [Integer.IsEqual($PARAM[container]$PARAM[listitem].VideoResolution,720)] | [Integer.IsGreater($PARAM[container]$PARAM[listitem].VideoResolution,720)] | Integer.IsGreater($PARAM[container]$PARAM[listitem].VideoResolution,1080) | Integer.IsEqual($PARAM[container]$PARAM[listitem].VideoResolution,4K)]]</param>
+                <param name="visible">$PARAM[visible] + String.IsEmpty($PARAM[container]$PARAM[listitem].HdrType) + !String.IsEmpty($PARAM[container]$PARAM[listitem].VideoResolution)</param>
                 <param name="width">auto</param>
             </include>
         </definition>
