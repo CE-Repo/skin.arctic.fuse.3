@@ -188,6 +188,7 @@
 
     <include name="DialogInfo_CrewItem">
         <param name="include_filter">false</param>
+        <param name="categoryid">0</param>
         <definition>
             <item>
                 <label>$INFO[Window(Home).Property(TMDbHelper.ListItem.$PARAM[type].$PARAM[item].Name)]</label>
@@ -199,6 +200,7 @@
                 <property name="tmdb_id">$INFO[Window(Home).Property(TMDbHelper.ListItem.$PARAM[type].$PARAM[item].TMDb_ID)]</property>
                 <property name="folderpath">$INFO[Window(Home).Property(TMDbHelper.ListItem.$PARAM[type].$PARAM[item].TMDb_ID),plugin://plugin.video.themoviedb.helper/?info=details&amp;tmdb_type=person&amp;tmdb_id=,]</property>
                 <visible>!String.IsEmpty(Window(Home).Property(TMDbHelper.ListItem.$PARAM[type].$PARAM[item].TMDb_ID))</visible>
+                <visible>Integer.IsEqual($PARAM[categoryid],0) | String.IsEqual(Container($PARAM[categoryid]).ListItem.Property(crew_type),$PARAM[type])</visible>
                 <include content="Object_Visible" condition="$PARAM[include_filter]">
                     <param name="visible">String.Contains(Window(Home).Property(TMDbHelper.ListItem.$PARAM[type].$PARAM[item].$PARAM[filter_key]),$PARAM[filter_value])</param>
                 </include>
@@ -210,6 +212,7 @@
         <include content="DialogInfo_CrewItem">
             <param name="type">$PARAM[type]</param>
             <param name="item">1</param>
+            <param name="categoryid">$PARAM[categoryid]</param>
             <param name="include_filter">$PARAM[include_filter]</param>
             <param name="filter_value">$PARAM[filter_value]</param>
             <param name="filter_key">$PARAM[filter_key]</param>
@@ -217,6 +220,7 @@
         <include content="DialogInfo_CrewItem">
             <param name="type">$PARAM[type]</param>
             <param name="item">2</param>
+            <param name="categoryid">$PARAM[categoryid]</param>
             <param name="include_filter">$PARAM[include_filter]</param>
             <param name="filter_value">$PARAM[filter_value]</param>
             <param name="filter_key">$PARAM[filter_key]</param>
@@ -224,6 +228,7 @@
         <include content="DialogInfo_CrewItem">
             <param name="type">$PARAM[type]</param>
             <param name="item">3</param>
+            <param name="categoryid">$PARAM[categoryid]</param>
             <param name="include_filter">$PARAM[include_filter]</param>
             <param name="filter_value">$PARAM[filter_value]</param>
             <param name="filter_key">$PARAM[filter_key]</param>
@@ -231,6 +236,7 @@
         <include content="DialogInfo_CrewItem">
             <param name="type">$PARAM[type]</param>
             <param name="item">4</param>
+            <param name="categoryid">$PARAM[categoryid]</param>
             <param name="include_filter">$PARAM[include_filter]</param>
             <param name="filter_value">$PARAM[filter_value]</param>
             <param name="filter_key">$PARAM[filter_key]</param>
@@ -238,6 +244,7 @@
         <include content="DialogInfo_CrewItem">
             <param name="type">$PARAM[type]</param>
             <param name="item">5</param>
+            <param name="categoryid">$PARAM[categoryid]</param>
             <param name="include_filter">$PARAM[include_filter]</param>
             <param name="filter_value">$PARAM[filter_value]</param>
             <param name="filter_key">$PARAM[filter_key]</param>
@@ -245,6 +252,7 @@
         <include content="DialogInfo_CrewItem">
             <param name="type">$PARAM[type]</param>
             <param name="item">6</param>
+            <param name="categoryid">$PARAM[categoryid]</param>
             <param name="include_filter">$PARAM[include_filter]</param>
             <param name="filter_value">$PARAM[filter_value]</param>
             <param name="filter_key">$PARAM[filter_key]</param>
@@ -252,6 +260,7 @@
         <include content="DialogInfo_CrewItem">
             <param name="type">$PARAM[type]</param>
             <param name="item">7</param>
+            <param name="categoryid">$PARAM[categoryid]</param>
             <param name="include_filter">$PARAM[include_filter]</param>
             <param name="filter_value">$PARAM[filter_value]</param>
             <param name="filter_key">$PARAM[filter_key]</param>
@@ -259,6 +268,7 @@
         <include content="DialogInfo_CrewItem">
             <param name="type">$PARAM[type]</param>
             <param name="item">8</param>
+            <param name="categoryid">$PARAM[categoryid]</param>
             <param name="include_filter">$PARAM[include_filter]</param>
             <param name="filter_value">$PARAM[filter_value]</param>
             <param name="filter_key">$PARAM[filter_key]</param>
@@ -266,6 +276,7 @@
         <include content="DialogInfo_CrewItem">
             <param name="type">$PARAM[type]</param>
             <param name="item">9</param>
+            <param name="categoryid">$PARAM[categoryid]</param>
             <param name="include_filter">$PARAM[include_filter]</param>
             <param name="filter_value">$PARAM[filter_value]</param>
             <param name="filter_key">$PARAM[filter_key]</param>
@@ -273,35 +284,298 @@
         <include content="DialogInfo_CrewItem">
             <param name="type">$PARAM[type]</param>
             <param name="item">10</param>
+            <param name="categoryid">$PARAM[categoryid]</param>
             <param name="include_filter">$PARAM[include_filter]</param>
             <param name="filter_value">$PARAM[filter_value]</param>
             <param name="filter_key">$PARAM[filter_key]</param>
         </include>
     </include>
 
+    <include name="DialogInfo_RelatedCategories">
+        <content>
+            <item>
+                <label>$LOCALIZE[345]</label>
+                <property name="widget_path">$VAR[Path_VideoInfo_OnlineYear]</property>
+                <visible>$EXP[Exp_InfoDialogs_Related_Year]</visible>
+                <onclick>RunScript(script.skinvariables,run_dialog=ok,"heading=$LOCALIZE[345]","message=$INFO[Window(Home).Property(TMDbHelper.ListItem.Year)]")</onclick>
+            </item>
+            <item>
+                <label>$LOCALIZE[572]</label>
+                <property name="widget_path">$VAR[Path_VideoInfo_OnlineStudio]</property>
+                <visible>$EXP[Exp_InfoDialogs_Related_Studio]</visible>
+                <onclick>RunScript(script.skinvariables,run_dialog=ok,"heading=$LOCALIZE[572]","message=$VAR[Label_FromStudio]")</onclick>
+            </item>
+            <item>
+                <label>$LOCALIZE[20339]</label>
+                <property name="widget_path">$VAR[Path_FromDirector,plugin://plugin.video.themoviedb.helper/?info=crew_in_both&amp;tmdb_type=person&amp;filter_key=job&amp;filter_value=Director&amp;sort_by=premiered&amp;tmdb_id=,&amp;nextpage=false&amp;cacheonly=true&amp;length=1]</property>
+                <visible>$EXP[Exp_InfoDialogs_Related_Director]</visible>
+                <label2>$LOCALIZE[20339]</label2>
+                <icon>$VAR[Image_FromDirector]</icon>
+                <property name="tmdb_type">person</property>
+                <property name="tmdb_id">$VAR[Path_FromDirector]</property>
+                <property name="folderpath">$VAR[Path_FromDirector,plugin://plugin.video.themoviedb.helper/?info=details&amp;tmdb_type=person&amp;tmdb_id=,]</property>
+                <property name="is_static">true</property>
+                <include>DialogInfo_Widgets_Action</include>
+            </item>
+            <item>
+                <label>$LOCALIZE[20417]</label>
+                <property name="widget_path">$VAR[Path_FromWriter,plugin://plugin.video.themoviedb.helper/?info=crew_in_both&amp;tmdb_type=person&amp;filter_key=department&amp;filter_value=Writing&amp;sort_by=premiered&amp;tmdb_id=,&amp;nextpage=false&amp;cacheonly=true&amp;length=1]</property>
+                <visible>$EXP[Exp_InfoDialogs_Related_Writer]</visible>
+                <label2>$LOCALIZE[20417]</label2>
+                <icon>$VAR[Image_FromWriter]</icon>
+                <property name="tmdb_type">person</property>
+                <property name="tmdb_id">$VAR[Path_FromWriter]</property>
+                <property name="folderpath">$VAR[Path_FromWriter,plugin://plugin.video.themoviedb.helper/?info=details&amp;tmdb_type=person&amp;tmdb_id=,]</property>
+                <property name="is_static">true</property>
+                <include>DialogInfo_Widgets_Action</include>
+            </item>
+            <item>
+                <label>$LOCALIZE[31065]</label>
+                <property name="widget_path">$INFO[Window(Home).Property(TMDbHelper.ListItem.Creator.1.TMDb_ID),plugin://plugin.video.themoviedb.helper/?info=crew_in_both&amp;tmdb_type=person&amp;filter_key=department&amp;filter_value=Creator&amp;sort_by=premiered&amp;tmdb_id=,&amp;nextpage=false&amp;cacheonly=true&amp;length=1]</property>
+                <visible>$EXP[Exp_InfoDialogs_Related_Creator]</visible>
+                <label2>$LOCALIZE[31065]</label2>
+                <icon>$INFO[Window(Home).Property(TMDbHelper.ListItem.Creator.1.Thumb)]</icon>
+                <property name="tmdb_type">person</property>
+                <property name="tmdb_id">$INFO[Window(Home).Property(TMDbHelper.ListItem.Creator.1.TMDb_ID)]</property>
+                <property name="folderpath">$INFO[Window(Home).Property(TMDbHelper.ListItem.Creator.1.TMDb_ID),plugin://plugin.video.themoviedb.helper/?info=details&amp;tmdb_type=person&amp;tmdb_id=,]</property>
+                <property name="is_static">true</property>
+                <include>DialogInfo_Widgets_Action</include>
+            </item>
+        </content>
+    </include>
+
+    <include name="DialogInfo_StarringCategory">
+        <item>
+            <label>$INFO[Window(Home).Property(TMDbHelper.ListItem.Cast.$PARAM[item].Name)]</label>
+            <label2>$INFO[Window(Home).Property(TMDbHelper.ListItem.Cast.$PARAM[item].Role)]</label2>
+            <icon>$INFO[Window(Home).Property(TMDbHelper.ListItem.Cast.$PARAM[item].Thumb)]</icon>
+            <property name="is_static">true</property>
+            <property name="fallback.icon">fallback/no-image-actor.png</property>
+            <property name="tmdb_type">person</property>
+            <property name="tmdb_id">$INFO[Window(Home).Property(TMDbHelper.ListItem.Cast.$PARAM[item].TMDb_ID)]</property>
+            <property name="folderpath">$INFO[Window(Home).Property(TMDbHelper.ListItem.Cast.$PARAM[item].TMDb_ID),plugin://plugin.video.themoviedb.helper/?info=details&amp;tmdb_type=person&amp;tmdb_id=,]</property>
+            <property name="widget_path">$INFO[Window(Home).Property(TMDbHelper.ListItem.Cast.$PARAM[item].TMDb_ID),plugin://plugin.video.themoviedb.helper/?info=stars_in_both&amp;tmdb_type=person&amp;sort_by=premiered&amp;tmdb_id=,&amp;nextpage=false&amp;cacheonly=true&amp;length=1]</property>
+            <visible>!String.IsEmpty(Window(Home).Property(TMDbHelper.ListItem.Cast.$PARAM[item].TMDb_ID))</visible>
+        </item>
+    </include>
+
+    <include name="DialogInfo_StarringCategories">
+        <content>
+            <include content="DialogInfo_StarringCategory">
+                <param name="item">1</param>
+            </include>
+            <include content="DialogInfo_StarringCategory">
+                <param name="item">2</param>
+            </include>
+            <include content="DialogInfo_StarringCategory">
+                <param name="item">3</param>
+            </include>
+            <include content="DialogInfo_StarringCategory">
+                <param name="item">4</param>
+            </include>
+            <include content="DialogInfo_StarringCategory">
+                <param name="item">5</param>
+            </include>
+            <include content="DialogInfo_StarringCategory">
+                <param name="item">6</param>
+            </include>
+            <include content="DialogInfo_StarringCategory">
+                <param name="item">7</param>
+            </include>
+            <include content="DialogInfo_StarringCategory">
+                <param name="item">8</param>
+            </include>
+            <include content="DialogInfo_StarringCategory">
+                <param name="item">9</param>
+            </include>
+            <include content="DialogInfo_StarringCategory">
+                <param name="item">10</param>
+            </include>
+        </content>
+    </include>
+
+    <include name="DialogInfo_CrewCategory">
+        <item>
+            <label>$PARAM[label]</label>
+            <property name="crew_type">$PARAM[type]</property>
+            <visible>!Skin.HasSetting(VideoInfo.Widgets.DisableCrew) + $EXP[Exp_TMDbHelper_IsData]</visible>
+            <visible>!String.IsEmpty(Window(Home).Property(TMDbHelper.ListItem.$PARAM[type].1.Name))</visible>
+        </item>
+    </include>
+
+    <include name="DialogInfo_CrewCategories">
+        <content>
+            <item>
+                <label>$LOCALIZE[206]</label>
+                <property name="crew_type">Cast</property>
+            </item>
+            <include content="DialogInfo_CrewCategory">
+                <param name="type">Director</param>
+                <param name="label">$LOCALIZE[31038]</param>
+            </include>
+            <include content="DialogInfo_CrewCategory">
+                <param name="type">Writer</param>
+                <param name="label">$LOCALIZE[31039]</param>
+            </include>
+            <include content="DialogInfo_CrewCategory">
+                <param name="type">Creator</param>
+                <param name="label">$LOCALIZE[31065]</param>
+            </include>
+            <include content="DialogInfo_CrewCategory">
+                <param name="type">Producer</param>
+                <param name="label">$LOCALIZE[38039]</param>
+            </include>
+            <include content="DialogInfo_CrewCategory">
+                <param name="type">Sound_Department</param>
+                <param name="label">$LOCALIZE[31052]</param>
+            </include>
+            <include content="DialogInfo_CrewCategory">
+                <param name="type">Art_Department</param>
+                <param name="label">$LOCALIZE[31072]</param>
+            </include>
+            <include content="DialogInfo_CrewCategory">
+                <param name="type">Photography</param>
+                <param name="label">$LOCALIZE[31347]</param>
+            </include>
+            <include content="DialogInfo_CrewCategory">
+                <param name="type">Editor</param>
+                <param name="label">$LOCALIZE[31075]</param>
+            </include>
+        </content>
+    </include>
+
+    <include name="DialogInfo_CrewCategories_Action">
+        <onclick condition="$EXP[Exp_InfoDialogs_CastCrew_IsCast] + $EXP[Exp_InfoDialogs_UseOnlineCast]">SetFocus(5050)</onclick>
+        <onclick condition="$EXP[Exp_InfoDialogs_CastCrew_IsCast] + !$EXP[Exp_InfoDialogs_UseOnlineCast]">SetFocus(50)</onclick>
+        <onclick condition="!$EXP[Exp_InfoDialogs_CastCrew_IsCast]">SetProperty(crew_type,$INFO[Container(5029).ListItem.Property(crew_type)],1120)</onclick>
+        <onclick condition="!$EXP[Exp_InfoDialogs_CastCrew_IsCast]">SetProperty(crew_label,$INFO[Container(5029).ListItem.Label],1120)</onclick>
+        <onclick condition="!$EXP[Exp_InfoDialogs_CastCrew_IsCast]">ActivateWindow(1120)</onclick>
+    </include>
+
+    <include name="DialogInfo_CastCrew_Navigation">
+        <onup>SetFocus(8000)</onup>
+        <ondown condition="$EXP[Exp_InfoDialogs_CastCrew_IsCast] + $EXP[Exp_InfoDialogs_UseOnlineCast]">SetFocus(5050)</ondown>
+        <ondown condition="$EXP[Exp_InfoDialogs_CastCrew_IsCast] + !$EXP[Exp_InfoDialogs_UseOnlineCast]">SetFocus(50)</ondown>
+        <ondown condition="!$EXP[Exp_InfoDialogs_CastCrew_IsCast]">SetFocus(5021)</ondown>
+    </include>
+
     <include name="DialogInfo_CrewWidget">
+        <!-- Keep the selector visible independently of the selected content row. -->
+        <include content="Widget_Categories">
+            <param name="id">5021</param>
+            <param name="groupid">5121</param>
+            <param name="label">$INFO[Container(5029).ListItem.Label]</param>
+            <param name="visible">true</param>
+            <param name="busy_visible">$EXP[Exp_InfoDialogs_CastCrew_IsCast] + $EXP[Exp_InfoDialogs_UseOnlineCast] + Container(5050).IsUpdating</param>
+            <param name="include">List_Poster_Row</param>
+            <param name="categoryid">5029</param>
+            <param name="categorycontentinclude">DialogInfo_CrewCategories</param>
+            <param name="categoryonfocus">SetProperty(CurrentID,$INFO[Window.Property(BaseID)])</param>
+            <param name="categoryonclickinclude">DialogInfo_CrewCategories_Action</param>
+            <param name="categorynavigationinclude">DialogInfo_CastCrew_Navigation</param>
+            <param name="categoryonback">8000</param>
+            <param name="widget_hideartwork">true</param>
+            <param name="widget_showoverlay">true</param>
+            <include content="Animation_Widget_FadeOut">
+                <param name="condition">!Control.HasFocus(5021) + !Control.HasFocus(5029) + !Control.HasFocus(5050) + !Control.HasFocus(50)</param>
+            </include>
+        </include>
         <include content="Widget_Info_Row">
-            <param name="id">$PARAM[id]</param>
+            <param name="id">21</param>
             <param name="baseid">50</param>
             <param name="basegroupid">51</param>
-            <param name="label">$PARAM[label]</param>
+            <param name="label">$INFO[Container(5029).ListItem.Label]</param>
+            <param name="labelinclude">Object_Null</param>
+            <param name="categoryid">5029</param>
             <param name="include">List_Poster_Row</param>
-            <param name="visible">$EXP[Exp_InfoDialogs_WidgetsGroup_HasFocus]</param>
+            <param name="visible">!$EXP[Exp_InfoDialogs_CastCrew_IsCast] + !Skin.HasSetting(VideoInfo.Widgets.DisableCrew) + $EXP[Exp_TMDbHelper_IsData]</param>
             <param name="widgetfade_include">true</param>
             <param name="set_widgetcontainer">false</param>
             <param name="menuid">8000</param>
             <param name="widget_hideartwork">true</param>
             <param name="widget_showoverlay">true</param>
             <param name="detailed">true</param>
-            <param name="altvisible">!String.IsEmpty(Window(Home).Property(TMDbHelper.ListItem.$PARAM[type].1.Name))</param>
+            <param name="altvisible">true</param>
+            <onup>SetFocus(5029)</onup>
             <onfocus>SetProperty(CurrentID,$INFO[Window.Property(BaseID)])</onfocus>
             <content>
                 <include content="DialogInfo_CrewItems">
-                    <param name="type">$PARAM[type]</param>
+                    <param name="type">Director</param>
+                    <param name="categoryid">5029</param>
+                </include>
+                <include content="DialogInfo_CrewItems">
+                    <param name="type">Writer</param>
+                    <param name="categoryid">5029</param>
+                </include>
+                <include content="DialogInfo_CrewItems">
+                    <param name="type">Creator</param>
+                    <param name="categoryid">5029</param>
+                </include>
+                <include content="DialogInfo_CrewItems">
+                    <param name="type">Producer</param>
+                    <param name="categoryid">5029</param>
+                </include>
+                <include content="DialogInfo_CrewItems">
+                    <param name="type">Sound_Department</param>
+                    <param name="categoryid">5029</param>
+                </include>
+                <include content="DialogInfo_CrewItems">
+                    <param name="type">Art_Department</param>
+                    <param name="categoryid">5029</param>
+                </include>
+                <include content="DialogInfo_CrewItems">
+                    <param name="type">Photography</param>
+                    <param name="categoryid">5029</param>
+                </include>
+                <include content="DialogInfo_CrewItems">
+                    <param name="type">Editor</param>
+                    <param name="categoryid">5029</param>
                 </include>
             </content>
             <include>DialogInfo_Widgets_Action</include>
         </include>
+
+        <include content="Widget_Info_Row" condition="!$EXP[Exp_InfoDialogs_UseOnlineCast]">
+            <param name="id">50</param>
+            <param name="baseid" />
+            <param name="basegroupid">51</param>
+            <param name="label">$LOCALIZE[206]</param>
+            <param name="labelinclude">Object_Null</param>
+            <param name="categoryid">5029</param>
+            <param name="visible">$EXP[Exp_InfoDialogs_CastCrew_IsCast]</param>
+            <param name="include">List_Poster_Row</param>
+            <param name="widgetfade_include">true</param>
+            <param name="set_widgetcontainer">false</param>
+            <param name="menuid">8000</param>
+            <param name="detailed">true</param>
+            <param name="widget_hideartwork">true</param>
+            <param name="widget_showoverlay">true</param>
+            <param name="altvisible">true</param>
+            <onup>SetFocus(5029)</onup>
+            <onfocus>SetProperty(CurrentID,$INFO[Window.Property(BaseID)])</onfocus>
+        </include>
+        <include content="Widget_Info_Row" condition="$EXP[Exp_InfoDialogs_UseOnlineCast]">
+            <param name="id">50</param>
+            <param name="baseid">50</param>
+            <param name="basegroupid">51</param>
+            <param name="label">$LOCALIZE[206]</param>
+            <param name="labelinclude">Object_Null</param>
+            <param name="categoryid">5029</param>
+            <param name="visible">$EXP[Exp_InfoDialogs_CastCrew_IsCast]</param>
+            <param name="include">List_Poster_Row</param>
+            <param name="widgetfade_include">true</param>
+            <param name="set_widgetcontainer">false</param>
+            <param name="menuid">8000</param>
+            <param name="detailed">true</param>
+            <param name="widget_hideartwork">true</param>
+            <param name="widget_showoverlay">true</param>
+            <param name="altvisible">true</param>
+            <onup>SetFocus(5029)</onup>
+            <onfocus>SetProperty(CurrentID,$INFO[Window.Property(BaseID)])</onfocus>
+            <content target="videos">$VAR[Path_VideoInfo_OnlineCast]</content>
+            <include>DialogInfo_Widgets_Action</include>
+        </include>
+
     </include>
 
     <include name="DialogInfo_PersonWidgets">
@@ -365,39 +639,8 @@
 
     <include name="DialogInfo_VideoWidgets">
 
-        <!-- Cast-->
-        <include content="Widget_Info_Row" condition="![!Skin.HasSetting(Info.UseLocalCast) + $EXP[Exp_TMDbHelper_IsData]]">
-            <param name="id">50</param>
-            <param name="baseid" />
-            <param name="basegroupid">51</param>
-            <param name="label">$LOCALIZE[206]</param>
-            <param name="include">List_Poster_Row</param>
-            <param name="widgetfade_include">true</param>
-            <param name="set_widgetcontainer">false</param>
-            <param name="menuid">8000</param>
-            <param name="detailed">true</param>
-            <param name="widget_hideartwork">true</param>
-            <param name="widget_showoverlay">true</param>
-            <param name="altvisible">true</param>
-            <onfocus>SetProperty(CurrentID,$INFO[Window.Property(BaseID)])</onfocus>
-        </include>
-        <include content="Widget_Info_Row" condition="!Skin.HasSetting(Info.UseLocalCast) + $EXP[Exp_TMDbHelper_IsData]">
-            <param name="id">50</param>
-            <param name="baseid">50</param>
-            <param name="basegroupid">51</param>
-            <param name="label">$LOCALIZE[206]</param>
-            <param name="include">List_Poster_Row</param>
-            <param name="widgetfade_include">true</param>
-            <param name="set_widgetcontainer">false</param>
-            <param name="menuid">8000</param>
-            <param name="detailed">true</param>
-            <param name="widget_hideartwork">true</param>
-            <param name="widget_showoverlay">true</param>
-            <param name="altvisible">true</param>
-            <onfocus>SetProperty(CurrentID,$INFO[Window.Property(BaseID)])</onfocus>
-            <content target="videos">$VAR[Path_VideoInfo_OnlineCast]</content>
-            <include>DialogInfo_Widgets_Action</include>
-        </include>
+        <!-- Cast / Crew -->
+        <include>DialogInfo_CrewWidget</include>
 
         <!-- Collection -->
         <include content="Widget_Info_Row" condition="!Skin.HasSetting(VideoInfo.Widgets.DisableCollection) + !Skin.HasSetting(VideoInfo.Widgets.EnableLocalCollection) + $EXP[Exp_TMDbHelper_IsData] + String.IsEqual(ListItem.DBType,movie)">
@@ -435,12 +678,16 @@
             <include>DialogInfo_Widgets_Action</include>
         </include>
 
-        <!-- Studio -->
-        <include content="Widget_Info_Row" condition="!Skin.HasSetting(VideoInfo.Widgets.DisableStudio) + $EXP[Exp_TMDbHelper_IsData]">
+        <!-- Year / Studio / Director / Writer / Creator -->
+        <include content="Widget_Info_Row" condition="$EXP[Exp_TMDbHelper_IsData]">
             <param name="id">12</param>
             <param name="baseid">50</param>
             <param name="basegroupid">51</param>
-            <param name="label">$LOCALIZE[572]$VAR[Label_FromStudio, (,)]</param>
+            <param name="label">$INFO[Container(5013).ListItem.Label]</param>
+            <param name="labelinclude">Widget_Categories</param>
+            <param name="categoryid">5013</param>
+            <param name="categorycontentinclude">DialogInfo_RelatedCategories</param>
+            <param name="categoryonfocus">SetProperty(CurrentID,$INFO[Window.Property(BaseID)])</param>
             <param name="include">List_Poster_Row</param>
             <param name="visible">$EXP[Exp_InfoDialogs_WidgetsGroup_HasFocus]</param>
             <param name="widgetfade_include">true</param>
@@ -448,33 +695,16 @@
             <param name="menuid">8000</param>
             <param name="widget_hideartwork">true</param>
             <param name="widget_showoverlay">true</param>
-            <param name="altvisible">!String.IsEqual(Window.Property(CurrentID),Window.Property(BaseID))</param>
+            <param name="detailed">true</param>
+            <param name="altvisible">$EXP[Exp_InfoDialogs_Related_HasCategories]</param>
+            <onup>5013</onup>
             <onfocus>SetProperty(CurrentID,$INFO[Window.Property(BaseID)])</onfocus>
-            <content>$VAR[Path_VideoInfo_OnlineStudio]</content>
+            <content>$INFO[Container(5013).ListItem.Property(widget_path)]</content>
             <include>DialogInfo_Widgets_Action</include>
         </include>
 
-        <!-- Year -->
-        <include content="Widget_Info_Row" condition="!Skin.HasSetting(VideoInfo.Widgets.DisableYear) + $EXP[Exp_TMDbHelper_IsData]">
-            <param name="id">13</param>
-            <param name="baseid">50</param>
-            <param name="basegroupid">51</param>
-            <param name="label">$LOCALIZE[345]$INFO[ListItem.Year, (,)]</param>
-            <param name="include">List_Poster_Row</param>
-            <param name="visible">$EXP[Exp_InfoDialogs_WidgetsGroup_HasFocus]</param>
-            <param name="widgetfade_include">true</param>
-            <param name="set_widgetcontainer">false</param>
-            <param name="menuid">8000</param>
-            <param name="widget_hideartwork">true</param>
-            <param name="widget_showoverlay">true</param>
-            <param name="altvisible">!String.IsEqual(Window.Property(CurrentID),Window.Property(BaseID))</param>
-            <onfocus>SetProperty(CurrentID,$INFO[Window.Property(BaseID)])</onfocus>
-            <content>$VAR[Path_VideoInfo_OnlineYear]</content>
-            <include>DialogInfo_Widgets_Action</include>
-        </include>
-
-        <!-- Seasons and Episodes -->
-        <include content="Widget_Info_Row" condition="!Skin.HasSetting(VideoInfo.Widgets.DisableSeasons) + [String.IsEqual(ListItem.DBType,tvshow) | String.IsEqual(ListItem.DBType,season) | String.IsEqual(ListItem.DBType,episode)] + $EXP[Exp_TMDbHelper_IsData]">
+        <!-- Standalone seasons when the episodes widget is disabled -->
+        <include content="Widget_Info_Row" condition="!Skin.HasSetting(VideoInfo.Widgets.DisableSeasons) + Skin.HasSetting(VideoInfo.Widgets.DisableEpisodes) + [String.IsEqual(ListItem.DBType,tvshow) | String.IsEqual(ListItem.DBType,season) | String.IsEqual(ListItem.DBType,episode)] + $EXP[Exp_TMDbHelper_IsData]">
             <param name="id">18</param>
             <param name="baseid">50</param>
             <param name="basegroupid">51</param>
@@ -492,11 +722,17 @@
             <!-- <onclick>RunScript(plugin.video.themoviedb.helper,close_dialog=1190,call_path=$INFO[Container(5018).ListItem.FolderPath])</onclick> -->
             <include>DialogInfo_Widgets_Action</include>
         </include>
+        <!-- Season categories with episodes from the selected season underneath -->
         <include content="Widget_Info_Row" condition="!Skin.HasSetting(VideoInfo.Widgets.DisableEpisodes) + !Skin.HasSetting(VideoInfo.Widgets.DisableSeasons) + [String.IsEqual(ListItem.DBType,tvshow) | String.IsEqual(ListItem.DBType,season) | String.IsEqual(ListItem.DBType,episode)] + $EXP[Exp_TMDbHelper_IsData]">
             <param name="id">19</param>
             <param name="baseid">50</param>
             <param name="basegroupid">51</param>
             <param name="label">$INFO[Container(5018).ListItem.Label,$LOCALIZE[20360] (,)]</param>
+            <param name="labelinclude">Widget_Categories</param>
+            <param name="categoryid">5018</param>
+            <param name="categorycontent">$VAR[Path_VideoInfo_OnlineSeasons]</param>
+            <param name="categoryonfocus">SetProperty(CurrentID,$INFO[Window.Property(BaseID)])</param>
+            <param name="categoryonclickinclude">DialogInfo_Widgets_Action</param>
             <param name="include">List_Landscape_Row</param>
             <param name="visible">$EXP[Exp_InfoDialogs_WidgetsGroup_HasFocus]</param>
             <param name="widgetfade_include">true</param>
@@ -505,10 +741,11 @@
             <param name="widget_hideartwork">true</param>
             <param name="widget_showoverlay">true</param>
             <param name="detailed">true</param>
-            <param name="altvisible">!String.IsEqual(Window.Property(CurrentID),Window.Property(BaseID)) | Container(5018).IsUpdating</param>
+            <param name="altvisible">!String.IsEqual(Window.Property(CurrentID),Window.Property(BaseID)) | Container(5018).IsUpdating | !Integer.IsEqual(Container(5018).NumItems,0)</param>
+            <param name="busy_isupdating">Container(5018).IsUpdating</param>
+            <onup>5018</onup>
             <onfocus>SetProperty(CurrentID,$INFO[Window.Property(BaseID)])</onfocus>
             <content>$INFO[Container(5018).ListItem.FolderPath]</content>
-            <!-- <onclick>RunScript(plugin.video.themoviedb.helper,close_dialog=1190,playmedia=$INFO[Container(5019).ListItem.FolderPath])</onclick> -->
             <include>DialogInfo_Widgets_Action</include>
         </include>
         <include content="Widget_Info_Row" condition="!Skin.HasSetting(VideoInfo.Widgets.DisableEpisodes) + Skin.HasSetting(VideoInfo.Widgets.DisableSeasons) + [String.IsEqual(ListItem.DBType,tvshow) | String.IsEqual(ListItem.DBType,season) | String.IsEqual(ListItem.DBType,episode)] + $EXP[Exp_TMDbHelper_IsData]">
@@ -530,108 +767,17 @@
             <include>DialogInfo_Widgets_Action</include>
         </include>
 
-        <!-- Director -->
-        <include content="Widget_Info_Row" condition="!Skin.HasSetting(VideoInfo.Widgets.DisableDirector) + $EXP[Exp_TMDbHelper_IsData]">
-            <param name="id">01</param>
-            <param name="baseid">50</param>
-            <param name="basegroupid">51</param>
-            <param name="label">$LOCALIZE[20339]$VAR[Label_FromDirector, (,)]</param>
-            <param name="include">List_Poster_Row</param>
-            <param name="visible">$EXP[Exp_InfoDialogs_WidgetsGroup_HasFocus]</param>
-            <param name="widgetfade_include">true</param>
-            <param name="set_widgetcontainer">false</param>
-            <param name="menuid">8000</param>
-            <param name="widget_hideartwork">true</param>
-            <param name="widget_showoverlay">true</param>
-            <param name="detailed">true</param>
-            <param name="altvisible">!String.IsEqual(Window.Property(CurrentID),Window.Property(BaseID))</param>
-            <onfocus>SetProperty(CurrentID,$INFO[Window.Property(BaseID)])</onfocus>
-            <content>
-                <item>
-                    <label>$VAR[Label_FromDirector]</label>
-                    <label2>$LOCALIZE[20339]</label2>
-                    <icon>$VAR[Image_FromDirector]</icon>
-                    <property name="tmdb_type">person</property>
-                    <property name="tmdb_id">$VAR[Path_FromDirector]</property>
-                    <property name="folderpath">$VAR[Path_FromDirector,plugin://plugin.video.themoviedb.helper/?info=details&amp;tmdb_type=person&amp;tmdb_id=,]</property>
-                    <property name="is_static">true</property>
-                    <visible>Integer.IsGreater(Container(5001).NumItems,1) | [Integer.IsEqual(Container(5001).NumItems,1) + String.IsEmpty(Container(5001).ListItemAbsolute(0).Property(is_static))]</visible>
-                </item>
-            </content>
-            <content>$VAR[Path_FromDirector,plugin://plugin.video.themoviedb.helper/?info=crew_in_both&amp;tmdb_type=person&amp;filter_key=job&amp;filter_value=Director&amp;sort_by=premiered&amp;tmdb_id=,&amp;nextpage=false&amp;cacheonly=true&amp;length=1]</content>
-            <include>DialogInfo_Widgets_Action</include>
-        </include>
-
-        <!-- Writer -->
-        <include content="Widget_Info_Row" condition="!Skin.HasSetting(VideoInfo.Widgets.DisableWriter) + $EXP[Exp_TMDbHelper_IsData]">
-            <param name="id">02</param>
-            <param name="baseid">50</param>
-            <param name="basegroupid">51</param>
-            <param name="label">$LOCALIZE[20417]$VAR[Label_FromWriter, (,)]</param>
-            <param name="include">List_Poster_Row</param>
-            <param name="visible">$EXP[Exp_InfoDialogs_WidgetsGroup_HasFocus]</param>
-            <param name="widgetfade_include">true</param>
-            <param name="set_widgetcontainer">false</param>
-            <param name="menuid">8000</param>
-            <param name="widget_hideartwork">true</param>
-            <param name="widget_showoverlay">true</param>
-            <param name="detailed">true</param>
-            <param name="altvisible">!String.IsEqual(Window.Property(CurrentID),Window.Property(BaseID))</param>
-            <onfocus>SetProperty(CurrentID,$INFO[Window.Property(BaseID)])</onfocus>
-            <content>
-                <item>
-                    <label>$VAR[Label_FromWriter]</label>
-                    <label2>$LOCALIZE[20417]</label2>
-                    <icon>$VAR[Image_FromWriter]</icon>
-                    <property name="tmdb_type">person</property>
-                    <property name="tmdb_id">$VAR[Path_FromWriter]</property>
-                    <property name="folderpath">$VAR[Path_FromWriter,plugin://plugin.video.themoviedb.helper/?info=details&amp;tmdb_type=person&amp;tmdb_id=,]</property>
-                    <property name="is_static">true</property>
-                    <visible>Integer.IsGreater(Container(5002).NumItems,1) | [Integer.IsEqual(Container(5002).NumItems,1) + String.IsEmpty(Container(5002).ListItemAbsolute(0).Property(is_static))]</visible>
-                </item>
-            </content>
-            <content>$VAR[Path_FromWriter,plugin://plugin.video.themoviedb.helper/?info=crew_in_both&amp;tmdb_type=person&amp;filter_key=department&amp;filter_value=Writing&amp;sort_by=premiered&amp;tmdb_id=,&amp;nextpage=false&amp;cacheonly=true&amp;length=1]</content>
-            <include>DialogInfo_Widgets_Action</include>
-        </include>
-
-        <!-- Creator -->
-        <include content="Widget_Info_Row" condition="!Skin.HasSetting(VideoInfo.Widgets.DisableCreator) + [String.IsEqual(ListItem.DBType,tvshow) | String.IsEqual(ListItem.DBType,season) | String.IsEqual(ListItem.DBType,episode)] + $EXP[Exp_TMDbHelper_IsData]">
-            <param name="id">03</param>
-            <param name="baseid">50</param>
-            <param name="basegroupid">51</param>
-            <param name="label">$LOCALIZE[31065]$INFO[Window(Home).Property(TMDbHelper.ListItem.Creator.1.Name), (,)]</param>
-            <param name="include">List_Poster_Row</param>
-            <param name="visible">$EXP[Exp_InfoDialogs_WidgetsGroup_HasFocus]</param>
-            <param name="widgetfade_include">true</param>
-            <param name="set_widgetcontainer">false</param>
-            <param name="menuid">8000</param>
-            <param name="widget_hideartwork">true</param>
-            <param name="widget_showoverlay">true</param>
-            <param name="detailed">true</param>
-            <param name="altvisible">!String.IsEqual(Window.Property(CurrentID),Window.Property(BaseID))</param>
-            <onfocus>SetProperty(CurrentID,$INFO[Window.Property(BaseID)])</onfocus>
-            <content>
-                <item>
-                    <label>$INFO[Window(Home).Property(TMDbHelper.ListItem.Creator.1.Name)]</label>
-                    <label2>$LOCALIZE[31065]</label2>
-                    <icon>$INFO[Window(Home).Property(TMDbHelper.ListItem.Creator.1.Thumb)]</icon>
-                    <property name="tmdb_type">person</property>
-                    <property name="tmdb_id">$INFO[Window(Home).Property(TMDbHelper.ListItem.Creator.1.TMDb_ID)]</property>
-                    <property name="folderpath">$INFO[Window(Home).Property(TMDbHelper.ListItem.Creator.1.TMDb_ID),plugin://plugin.video.themoviedb.helper/?info=details&amp;tmdb_type=person&amp;tmdb_id=,]</property>
-                    <property name="is_static">true</property>
-                    <visible>Integer.IsGreater(Container(5003).NumItems,1) | [Integer.IsEqual(Container(5003).NumItems,1) + String.IsEmpty(Container(5003).ListItemAbsolute(0).Property(is_static))]</visible>
-                </item>
-            </content>
-            <content>$INFO[Window(Home).Property(TMDbHelper.ListItem.Creator.1.TMDb_ID),plugin://plugin.video.themoviedb.helper/?info=crew_in_both&amp;tmdb_type=person&amp;filter_key=department&amp;filter_value=Creator&amp;sort_by=premiered&amp;tmdb_id=,&amp;nextpage=false&amp;cacheonly=true&amp;length=1]</content>
-            <include>DialogInfo_Widgets_Action</include>
-        </include>
-
-        <!-- Starring First Actor -->
+        <!-- Starring -->
         <include content="Widget_Info_Row" condition="!Skin.HasSetting(Info.UseLocalCast) + !Skin.HasSetting(VideoInfo.Widgets.DisableStarring) + $EXP[Exp_TMDbHelper_IsData]">
             <param name="id">51</param>
             <param name="baseid">50</param>
             <param name="basegroupid">51</param>
-            <param name="label">$INFO[Window(Home).Property(TMDbHelper.ListItem.Cast.1.Name),$LOCALIZE[31076] (,)]</param>
+            <param name="label">$INFO[Container(5052).ListItem.Label,$LOCALIZE[31076] (,)]</param>
+            <param name="labelinclude">Widget_Categories</param>
+            <param name="categoryid">5052</param>
+            <param name="categorycontentinclude">DialogInfo_StarringCategories</param>
+            <param name="categoryonfocus">SetProperty(CurrentID,$INFO[Window.Property(BaseID)])</param>
+            <param name="categoryonclickinclude">DialogInfo_Widgets_Action</param>
             <param name="include">List_Poster_Row</param>
             <param name="visible">$EXP[Exp_InfoDialogs_WidgetsGroup_HasFocus]</param>
             <param name="widgetfade_include">true</param>
@@ -640,98 +786,11 @@
             <param name="widget_hideartwork">true</param>
             <param name="widget_showoverlay">true</param>
             <param name="detailed">true</param>
-            <param name="altvisible">!String.IsEqual(Window.Property(CurrentID),Window.Property(BaseID))</param>
+            <param name="altvisible">!String.IsEmpty(Window(Home).Property(TMDbHelper.ListItem.Cast.1.TMDb_ID)) | !String.IsEmpty(Window(Home).Property(TMDbHelper.ListItem.Cast.2.TMDb_ID)) | !String.IsEmpty(Window(Home).Property(TMDbHelper.ListItem.Cast.3.TMDb_ID)) | !String.IsEmpty(Window(Home).Property(TMDbHelper.ListItem.Cast.4.TMDb_ID)) | !String.IsEmpty(Window(Home).Property(TMDbHelper.ListItem.Cast.5.TMDb_ID)) | !String.IsEmpty(Window(Home).Property(TMDbHelper.ListItem.Cast.6.TMDb_ID)) | !String.IsEmpty(Window(Home).Property(TMDbHelper.ListItem.Cast.7.TMDb_ID)) | !String.IsEmpty(Window(Home).Property(TMDbHelper.ListItem.Cast.8.TMDb_ID)) | !String.IsEmpty(Window(Home).Property(TMDbHelper.ListItem.Cast.9.TMDb_ID)) | !String.IsEmpty(Window(Home).Property(TMDbHelper.ListItem.Cast.10.TMDb_ID))</param>
+            <onup>5052</onup>
             <onfocus>SetProperty(CurrentID,$INFO[Window.Property(BaseID)])</onfocus>
-            <content>
-                <item>
-                    <label>$INFO[Window(Home).Property(TMDbHelper.ListItem.Cast.1.Name)]</label>
-                    <label2>$INFO[Window(Home).Property(TMDbHelper.ListItem.Cast.1.Role)]</label2>
-                    <icon>$INFO[Window(Home).Property(TMDbHelper.ListItem.Cast.1.Thumb)]</icon>
-                    <property name="tmdb_type">person</property>
-                    <property name="tmdb_id">$INFO[Window(Home).Property(TMDbHelper.ListItem.Cast.1.TMDb_ID)]</property>
-                    <property name="folderpath">$INFO[Window(Home).Property(TMDbHelper.ListItem.Cast.1.TMDb_ID),plugin://plugin.video.themoviedb.helper/?info=details&amp;tmdb_type=person&amp;tmdb_id=,]</property>
-                    <property name="is_static">true</property>
-                    <visible>Integer.IsGreater(Container(5051).NumItems,1) | [Integer.IsEqual(Container(5051).NumItems,1) + String.IsEmpty(Container(5051).ListItemAbsolute(0).Property(is_static))]</visible>
-                    <visible>!String.IsEmpty(Window(Home).Property(TMDbHelper.ListItem.Cast.1.TMDb_ID))</visible>
-                </item>
-            </content>
-            <content>$INFO[Window(Home).Property(TMDbHelper.ListItem.Cast.1.TMDb_ID),plugin://plugin.video.themoviedb.helper/?info=stars_in_both&amp;tmdb_type=person&amp;sort_by=premiered&amp;tmdb_id=,&amp;nextpage=false&amp;cacheonly=true&amp;length=1]</content>
+            <content>$INFO[Container(5052).ListItem.Property(widget_path)]</content>
             <include>DialogInfo_Widgets_Action</include>
-        </include>
-
-        <!-- Starring Second Actor -->
-        <include content="Widget_Info_Row" condition="!Skin.HasSetting(Info.UseLocalCast) + !Skin.HasSetting(VideoInfo.Widgets.DisableStarring) + $EXP[Exp_TMDbHelper_IsData]">
-            <param name="id">52</param>
-            <param name="baseid">50</param>
-            <param name="basegroupid">51</param>
-            <param name="label">$INFO[Window(Home).Property(TMDbHelper.ListItem.Cast.2.Name),$LOCALIZE[31076] (,)]</param>
-            <param name="include">List_Poster_Row</param>
-            <param name="visible">$EXP[Exp_InfoDialogs_WidgetsGroup_HasFocus]</param>
-            <param name="widgetfade_include">true</param>
-            <param name="set_widgetcontainer">false</param>
-            <param name="menuid">8000</param>
-            <param name="widget_hideartwork">true</param>
-            <param name="widget_showoverlay">true</param>
-            <param name="detailed">true</param>
-            <param name="altvisible">!String.IsEqual(Window.Property(CurrentID),Window.Property(BaseID))</param>
-            <onfocus>SetProperty(CurrentID,$INFO[Window.Property(BaseID)])</onfocus>
-            <content>
-                <item>
-                    <label>$INFO[Window(Home).Property(TMDbHelper.ListItem.Cast.2.Name)]</label>
-                    <label2>$INFO[Window(Home).Property(TMDbHelper.ListItem.Cast.2.Role)]</label2>
-                    <icon>$INFO[Container(5050).ListItemAbsolute(1).Icon]</icon>
-                    <property name="tmdb_type">person</property>
-                    <property name="tmdb_id">$INFO[Window(Home).Property(TMDbHelper.ListItem.Cast.2.TMDb_ID)]</property>
-                    <property name="folderpath">$INFO[Window(Home).Property(TMDbHelper.ListItem.Cast.2.TMDb_ID),plugin://plugin.video.themoviedb.helper/?info=details&amp;tmdb_type=person&amp;tmdb_id=,]</property>
-                    <property name="is_static">true</property>
-                    <visible>!String.IsEmpty(Window(Home).Property(TMDbHelper.ListItem.Cast.2.TMDb_ID))</visible>
-                    <visible>Integer.IsGreater(Container(5052).NumItems,1) | [Integer.IsEqual(Container(5052).NumItems,1) + String.IsEmpty(Container(5052).ListItemAbsolute(1).Property(is_static))]</visible>
-                </item>
-            </content>
-            <content>$INFO[Window(Home).Property(TMDbHelper.ListItem.Cast.2.TMDB_ID),plugin://plugin.video.themoviedb.helper/?info=stars_in_both&amp;tmdb_type=person&amp;sort_by=premiered&amp;tmdb_id=,&amp;nextpage=false&amp;cacheonly=true&amp;length=1]</content>
-            <include>DialogInfo_Widgets_Action</include>
-        </include>
-
-        <!-- Crew Lists -->
-        <include content="DialogInfo_CrewWidget" condition="!Skin.HasSetting(VideoInfo.Widgets.DisableCrew) + $EXP[Exp_TMDbHelper_IsData]">
-            <param name="id">21</param>
-            <param name="type">Director</param>
-            <param name="label">$LOCALIZE[31050] ($LOCALIZE[31038])</param>
-        </include>
-        <include content="DialogInfo_CrewWidget" condition="!Skin.HasSetting(VideoInfo.Widgets.DisableCrew) + $EXP[Exp_TMDbHelper_IsData]">
-            <param name="id">22</param>
-            <param name="type">Writer</param>
-            <param name="label">$LOCALIZE[31050] ($LOCALIZE[31039])</param>
-        </include>
-        <include content="DialogInfo_CrewWidget" condition="!Skin.HasSetting(VideoInfo.Widgets.DisableCrew) + $EXP[Exp_TMDbHelper_IsData]">
-            <param name="id">23</param>
-            <param name="type">Creator</param>
-            <param name="label">$LOCALIZE[31050] ($LOCALIZE[31065])</param>
-        </include>
-        <include content="DialogInfo_CrewWidget" condition="!Skin.HasSetting(VideoInfo.Widgets.DisableCrew) + $EXP[Exp_TMDbHelper_IsData]">
-            <param name="id">24</param>
-            <param name="type">Producer</param>
-            <param name="label">$LOCALIZE[31050] ($LOCALIZE[38039])</param>
-        </include>
-        <include content="DialogInfo_CrewWidget" condition="!Skin.HasSetting(VideoInfo.Widgets.DisableCrew) + $EXP[Exp_TMDbHelper_IsData]">
-            <param name="id">25</param>
-            <param name="type">Sound_Department</param>
-            <param name="label">$LOCALIZE[31050] ($LOCALIZE[31052])</param>
-        </include>
-        <include content="DialogInfo_CrewWidget" condition="!Skin.HasSetting(VideoInfo.Widgets.DisableCrew) + $EXP[Exp_TMDbHelper_IsData]">
-            <param name="id">26</param>
-            <param name="type">Art_Department</param>
-            <param name="label">$LOCALIZE[31050] ($LOCALIZE[31072])</param>
-        </include>
-        <include content="DialogInfo_CrewWidget" condition="!Skin.HasSetting(VideoInfo.Widgets.DisableCrew) + $EXP[Exp_TMDbHelper_IsData]">
-            <param name="id">27</param>
-            <param name="type">Photography</param>
-            <param name="label">$LOCALIZE[31050] ($LOCALIZE[31347])</param>
-        </include>
-        <include content="DialogInfo_CrewWidget" condition="!Skin.HasSetting(VideoInfo.Widgets.DisableCrew) + $EXP[Exp_TMDbHelper_IsData]">
-            <param name="id">28</param>
-            <param name="type">Editor</param>
-            <param name="label">$LOCALIZE[31050] ($LOCALIZE[31075])</param>
         </include>
 
         <!-- Videos -->
@@ -1596,7 +1655,7 @@
 
                     <onup>9000</onup>
                     <ondown>SetFocus(90001)</ondown>
-                    <ondown>SetFocus(5000)</ondown>
+                    <ondown>SetFocus(5029)</ondown>
                     <!-- <onleft>61</onleft> -->
                     <onright>61</onright>
                     <!-- <onright>9200</onright> -->
@@ -1691,7 +1750,7 @@
                     <left>$PARAM[left_group_width]</left>
 
                     <onup>9000</onup>
-                    <ondown>5000</ondown>
+                    <ondown>SetFocus(5029)</ondown>
                     <onleft>9100</onleft>
                     <onright>9100</onright>
 
