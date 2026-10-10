@@ -440,7 +440,9 @@
     </include>
 
     <include name="DialogInfo_CrewCategories_Action">
-        <onclick>SetFocus(5021)</onclick>
+        <onclick>SetProperty(crew_type,$INFO[Container(5029).ListItem.Property(crew_type)],1120)</onclick>
+        <onclick>SetProperty(crew_label,$INFO[Container(5029).ListItem.Label],1120)</onclick>
+        <onclick>ActivateWindow(1120)</onclick>
     </include>
 
     <include name="DialogInfo_CrewWidget">
