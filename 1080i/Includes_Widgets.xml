@@ -45,8 +45,8 @@
         </definition>
     </include>
 
-    <!-- Use as labelinclude with categoryid/categorycontent; the widget's content
-         can read Container(categoryid).ListItem.FolderPath. -->
+    <!-- Use as labelinclude with categoryid and categorycontent or
+         categorycontentinclude; the widget can read the selected category. -->
     <include name="Widget_Categories">
         <param name="labeltop">widget_label_t</param>
         <param name="labelheight">widget_label_h</param>
@@ -54,6 +54,8 @@
         <param name="widgetheight">widget_items_h</param>
         <param name="categoryonback">5000</param>
         <param name="categoryonfocus">noop</param>
+        <param name="categorycontentinclude">Widget_Categories_Content</param>
+        <param name="categoryonclickinclude">Object_Null</param>
         <definition>
             <include content="Widget_Label">
                 <param name="groupid">$PARAM[groupid]</param>
@@ -103,10 +105,12 @@
                     <param name="widget_hideartwork">$PARAM[widget_hideartwork]</param>
                     <param name="widget_showoverlay">$PARAM[widget_showoverlay]</param>
                 </include>
-                <content>$PARAM[categorycontent]</content>
+                <include content="$PARAM[categorycontentinclude]">
+                    <param name="categorycontent">$PARAM[categorycontent]</param>
+                </include>
             </include>
 
-            <!-- Reclaim the selector's focus area so the episode widget has
+            <!-- Reclaim the selector's focus area so the content widget has
                  the same scroll offset and the following rows keep their spacing. -->
             <control type="group" id="59$PARAM[categoryid]">
                 <top>-$PARAM[widgettop]</top>
@@ -114,6 +118,10 @@
                 <visible>$PARAM[visible]</visible>
             </control>
         </definition>
+    </include>
+
+    <include name="Widget_Categories_Content">
+        <content>$PARAM[categorycontent]</content>
     </include>
 
     <include name="Widget_OnFocus">
@@ -159,6 +167,7 @@
                 <param name="include">$PARAM[include]</param>
                 <param name="categoryid">$PARAM[categoryid]</param>
                 <param name="categorycontent">$PARAM[categorycontent]</param>
+                <param name="categorycontentinclude">$PARAM[categorycontentinclude]</param>
                 <param name="categoryonback">$PARAM[categoryonback]</param>
                 <param name="categoryonfocus">$PARAM[categoryonfocus]</param>
                 <param name="categoryonclickinclude">$PARAM[categoryonclickinclude]</param>
@@ -639,6 +648,7 @@
                 <param name="labelinclude">$PARAM[labelinclude]</param>
                 <param name="categoryid">$PARAM[categoryid]</param>
                 <param name="categorycontent">$PARAM[categorycontent]</param>
+                <param name="categorycontentinclude">$PARAM[categorycontentinclude]</param>
                 <param name="categoryonback">$PARAM[categoryonback]</param>
                 <param name="categoryonfocus">$PARAM[categoryonfocus]</param>
                 <param name="categoryonclickinclude">$PARAM[categoryonclickinclude]</param>
@@ -676,6 +686,7 @@
                 <param name="labelinclude">$PARAM[labelinclude]</param>
                 <param name="categoryid">$PARAM[categoryid]</param>
                 <param name="categorycontent">$PARAM[categorycontent]</param>
+                <param name="categorycontentinclude">$PARAM[categorycontentinclude]</param>
                 <param name="categoryonback">$PARAM[grouplistid]</param>
                 <param name="categoryonfocus">$PARAM[categoryonfocus]</param>
                 <param name="categoryonclickinclude">$PARAM[categoryonclickinclude]</param>
@@ -721,6 +732,7 @@
                 <param name="labelinclude">$PARAM[labelinclude]</param>
                 <param name="categoryid">$PARAM[categoryid]</param>
                 <param name="categorycontent">$PARAM[categorycontent]</param>
+                <param name="categorycontentinclude">$PARAM[categorycontentinclude]</param>
                 <param name="categoryonback">$PARAM[menuid]</param>
                 <param name="categoryonfocus">$PARAM[categoryonfocus]</param>
                 <param name="categoryonclickinclude">$PARAM[categoryonclickinclude]</param>
