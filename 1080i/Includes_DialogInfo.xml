@@ -473,8 +473,8 @@
             <include>DialogInfo_Widgets_Action</include>
         </include>
 
-        <!-- Seasons and Episodes -->
-        <include content="Widget_Info_Row" condition="!Skin.HasSetting(VideoInfo.Widgets.DisableSeasons) + [String.IsEqual(ListItem.DBType,tvshow) | String.IsEqual(ListItem.DBType,season) | String.IsEqual(ListItem.DBType,episode)] + $EXP[Exp_TMDbHelper_IsData]">
+        <!-- Standalone seasons when the episodes widget is disabled -->
+        <include content="Widget_Info_Row" condition="!Skin.HasSetting(VideoInfo.Widgets.DisableSeasons) + Skin.HasSetting(VideoInfo.Widgets.DisableEpisodes) + [String.IsEqual(ListItem.DBType,tvshow) | String.IsEqual(ListItem.DBType,season) | String.IsEqual(ListItem.DBType,episode)] + $EXP[Exp_TMDbHelper_IsData]">
             <param name="id">18</param>
             <param name="baseid">50</param>
             <param name="basegroupid">51</param>
@@ -492,11 +492,17 @@
             <!-- <onclick>RunScript(plugin.video.themoviedb.helper,close_dialog=1190,call_path=$INFO[Container(5018).ListItem.FolderPath])</onclick> -->
             <include>DialogInfo_Widgets_Action</include>
         </include>
+        <!-- Season categories with episodes from the selected season underneath -->
         <include content="Widget_Info_Row" condition="!Skin.HasSetting(VideoInfo.Widgets.DisableEpisodes) + !Skin.HasSetting(VideoInfo.Widgets.DisableSeasons) + [String.IsEqual(ListItem.DBType,tvshow) | String.IsEqual(ListItem.DBType,season) | String.IsEqual(ListItem.DBType,episode)] + $EXP[Exp_TMDbHelper_IsData]">
             <param name="id">19</param>
             <param name="baseid">50</param>
             <param name="basegroupid">51</param>
             <param name="label">$INFO[Container(5018).ListItem.Label,$LOCALIZE[20360] (,)]</param>
+            <param name="labelinclude">Widget_Categories</param>
+            <param name="categoryid">5018</param>
+            <param name="categorycontent">$VAR[Path_VideoInfo_OnlineSeasons]</param>
+            <param name="categoryonfocus">SetProperty(CurrentID,$INFO[Window.Property(BaseID)])</param>
+            <param name="categoryonclickinclude">DialogInfo_Widgets_Action</param>
             <param name="include">List_Landscape_Row</param>
             <param name="visible">$EXP[Exp_InfoDialogs_WidgetsGroup_HasFocus]</param>
             <param name="widgetfade_include">true</param>
@@ -505,10 +511,11 @@
             <param name="widget_hideartwork">true</param>
             <param name="widget_showoverlay">true</param>
             <param name="detailed">true</param>
-            <param name="altvisible">!String.IsEqual(Window.Property(CurrentID),Window.Property(BaseID)) | Container(5018).IsUpdating</param>
+            <param name="altvisible">!String.IsEqual(Window.Property(CurrentID),Window.Property(BaseID)) | Container(5018).IsUpdating | !Integer.IsEqual(Container(5018).NumItems,0)</param>
+            <param name="busy_isupdating">Container(5018).IsUpdating</param>
+            <onup>5018</onup>
             <onfocus>SetProperty(CurrentID,$INFO[Window.Property(BaseID)])</onfocus>
             <content>$INFO[Container(5018).ListItem.FolderPath]</content>
-            <!-- <onclick>RunScript(plugin.video.themoviedb.helper,close_dialog=1190,playmedia=$INFO[Container(5019).ListItem.FolderPath])</onclick> -->
             <include>DialogInfo_Widgets_Action</include>
         </include>
         <include content="Widget_Info_Row" condition="!Skin.HasSetting(VideoInfo.Widgets.DisableEpisodes) + Skin.HasSetting(VideoInfo.Widgets.DisableSeasons) + [String.IsEqual(ListItem.DBType,tvshow) | String.IsEqual(ListItem.DBType,season) | String.IsEqual(ListItem.DBType,episode)] + $EXP[Exp_TMDbHelper_IsData]">
