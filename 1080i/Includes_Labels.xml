@@ -1,6 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <includes>
 
+    <variable name="Label_Setting_LiveTV_Style">
+        <value condition="Skin.HasSetting(Hub.1107.SquareChannels)">$LOCALIZE[31320]</value>
+        <value>$LOCALIZE[31045]</value>
+    </variable>
+
     <variable name="Label_Scrollbar_NumItems">
         <value condition="Control.IsVisible(520)">$INFO[Container(530).NumItems,, $LOCALIZE[31022]]</value>
         <value condition="Control.IsVisible(521)">$INFO[Container(531).NumItems,, $LOCALIZE[31022]]</value>

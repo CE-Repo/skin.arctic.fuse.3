@@ -894,6 +894,15 @@
                 <visible>$PARAM[visible]</visible>
                 <visible>!String.IsEmpty(Skin.String(HomeSwitcher.1107.Toggle))</visible>
             </include>
+            <include content="Settings_Button" description="Style">
+                <param name="id">9617</param>
+                <label>$LOCALIZE[736]</label>
+                <label2>$VAR[Label_Setting_LiveTV_Style]</label2>
+                <onclick>Skin.ToggleSetting(Hub.1107.SquareChannels)</onclick>
+                <visible>$PARAM[visible]</visible>
+                <visible>System.HasPVRAddon + PVR.HasTVChannels</visible>
+                <visible>!String.IsEmpty(Skin.String(HomeSwitcher.1107.Toggle))</visible>
+            </include>
             <include content="Settings_Button" description="Search">
                 <param name="id">9612</param>
                 <param name="control">radiobutton</param>
