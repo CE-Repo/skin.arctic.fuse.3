@@ -1138,33 +1138,6 @@
         </include>
 
         <include content="Settings_Button">
-            <param name="id">8031</param>
-            <param name="control">radiobutton</param>
-            <param name="dialog">true</param>
-            <onclick>Skin.ToggleSetting(VideoInfo.Widgets.DisableDirector)</onclick>
-            <selected>!Skin.HasSetting(VideoInfo.Widgets.DisableDirector)</selected>
-            <label>$LOCALIZE[20339]</label>
-            <visible>$EXP[Exp_TMDbHelper_IsData]</visible>
-        </include>
-        <include content="Settings_Button">
-            <param name="id">8032</param>
-            <param name="control">radiobutton</param>
-            <param name="dialog">true</param>
-            <onclick>Skin.ToggleSetting(VideoInfo.Widgets.DisableWriter)</onclick>
-            <selected>!Skin.HasSetting(VideoInfo.Widgets.DisableWriter)</selected>
-            <label>$LOCALIZE[20417]</label>
-            <visible>$EXP[Exp_TMDbHelper_IsData]</visible>
-        </include>
-        <include content="Settings_Button">
-            <param name="id">8033</param>
-            <param name="control">radiobutton</param>
-            <param name="dialog">true</param>
-            <onclick>Skin.ToggleSetting(VideoInfo.Widgets.DisableCreator)</onclick>
-            <selected>!Skin.HasSetting(VideoInfo.Widgets.DisableCreator)</selected>
-            <label>$LOCALIZE[31065]</label>
-            <visible>$EXP[Exp_TMDbHelper_IsData]</visible>
-        </include>
-        <include content="Settings_Button">
             <param name="id">8034</param>
             <param name="control">radiobutton</param>
             <param name="dialog">true</param>
