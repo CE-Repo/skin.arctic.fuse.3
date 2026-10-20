@@ -414,9 +414,45 @@
     </variable>
 
     <variable name="Image_StartUp">
-        <value condition="Weather.IsFetched + !String.IsEmpty(Weather.FanartCode) + System.HasAddon(resource.images.weatherfanart.multi) + [String.IsEmpty(Skin.String(Startup.ImageFolder)) | Skin.String(Startup.ImageFolder,special://skin/extras/backgrounds/launch/)]">resource://resource.images.weatherfanart.multi/$INFO[Weather.FanartCode]/</value>
-        <value condition="!String.IsEmpty(Skin.String(Startup.ImageFolder))">$INFO[Skin.String(Startup.ImageFolder)]</value>
-        <value>special://skin/extras/backgrounds/launch/</value>
+        <value condition="$EXP[Exp_StartUp_CustomImage]">$INFO[Skin.String(Startup.ImageFolder)]</value>
+        <!-- The built-in splash is composited by Background_StartUp_Layered. -->
+        <value>$VAR[Image_StartUp_Layer_Sky]</value>
+    </variable>
+
+    <!-- Calendar-month seasons; the selected Kodi region determines the hemisphere. -->
+    <variable name="Image_StartUp_Season">
+        <value condition="[$EXP[Exp_StartUp_SouthernHemisphere] + System.Date(09-01,12-01)] | [!$EXP[Exp_StartUp_SouthernHemisphere] + System.Date(03-01,06-01)]">spring</value>
+        <value condition="[$EXP[Exp_StartUp_SouthernHemisphere] + System.Date(12-01,03-01)] | [!$EXP[Exp_StartUp_SouthernHemisphere] + System.Date(06-01,09-01)]">summer</value>
+        <value condition="[$EXP[Exp_StartUp_SouthernHemisphere] + System.Date(03-01,06-01)] | [!$EXP[Exp_StartUp_SouthernHemisphere] + System.Date(09-01,12-01)]">autumn</value>
+        <value>winter</value>
+    </variable>
+
+    <!-- System.Time conditions use local 24-hour time regardless of the clock display format. -->
+    <variable name="Image_StartUp_Hour">
+        <value condition="System.Time(00:00,01:00)">0000</value>
+        <value condition="System.Time(01:00,02:00)">0100</value>
+        <value condition="System.Time(02:00,03:00)">0200</value>
+        <value condition="System.Time(03:00,04:00)">0300</value>
+        <value condition="System.Time(04:00,05:00)">0400</value>
+        <value condition="System.Time(05:00,06:00)">0500</value>
+        <value condition="System.Time(06:00,07:00)">0600</value>
+        <value condition="System.Time(07:00,08:00)">0700</value>
+        <value condition="System.Time(08:00,09:00)">0800</value>
+        <value condition="System.Time(09:00,10:00)">0900</value>
+        <value condition="System.Time(10:00,11:00)">1000</value>
+        <value condition="System.Time(11:00,12:00)">1100</value>
+        <value condition="System.Time(12:00,13:00)">1200</value>
+        <value condition="System.Time(13:00,14:00)">1300</value>
+        <value condition="System.Time(14:00,15:00)">1400</value>
+        <value condition="System.Time(15:00,16:00)">1500</value>
+        <value condition="System.Time(16:00,17:00)">1600</value>
+        <value condition="System.Time(17:00,18:00)">1700</value>
+        <value condition="System.Time(18:00,19:00)">1800</value>
+        <value condition="System.Time(19:00,20:00)">1900</value>
+        <value condition="System.Time(20:00,21:00)">2000</value>
+        <value condition="System.Time(21:00,22:00)">2100</value>
+        <value condition="System.Time(22:00,23:00)">2200</value>
+        <value>2300</value>
     </variable>
 
     <variable name="Image_PVRPoster">

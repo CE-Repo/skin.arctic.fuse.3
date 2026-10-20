@@ -1,0 +1,125 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<includes>
+    <!-- Registered 1920x1080 image layers. All scene lighting is authored in the WebP/PNG/JPG files. -->
+    <!-- Kodi weather codes: https://kodi.wiki/view/Weather_addons#Weather_Codes -->
+    <expression name="Exp_StartUp_CustomImage">!String.IsEmpty(Skin.String(Startup.ImageFolder)) + !Skin.String(Startup.ImageFolder,special://skin/extras/backgrounds/launch/)</expression>
+    <expression name="Exp_StartUp_Weather_Thunderstorm">String.IsEqual(Weather.FanartCode,0) | String.IsEqual(Weather.FanartCode,00) | String.IsEqual(Weather.FanartCode,1) | String.IsEqual(Weather.FanartCode,01) | String.IsEqual(Weather.FanartCode,2) | String.IsEqual(Weather.FanartCode,02) | String.IsEqual(Weather.FanartCode,3) | String.IsEqual(Weather.FanartCode,03) | String.IsEqual(Weather.FanartCode,4) | String.IsEqual(Weather.FanartCode,04) | String.IsEqual(Weather.FanartCode,37) | String.IsEqual(Weather.FanartCode,38) | String.IsEqual(Weather.FanartCode,39) | String.IsEqual(Weather.FanartCode,45) | String.IsEqual(Weather.FanartCode,47)</expression>
+    <expression name="Exp_StartUp_Weather_Hazy">String.IsEqual(Weather.FanartCode,19) | String.IsEqual(Weather.FanartCode,20) | String.IsEqual(Weather.FanartCode,21) | String.IsEqual(Weather.FanartCode,22)</expression>
+    <expression name="Exp_StartUp_Weather_Rain">String.IsEqual(Weather.FanartCode,5) | String.IsEqual(Weather.FanartCode,05) | String.IsEqual(Weather.FanartCode,6) | String.IsEqual(Weather.FanartCode,06) | String.IsEqual(Weather.FanartCode,7) | String.IsEqual(Weather.FanartCode,07) | String.IsEqual(Weather.FanartCode,8) | String.IsEqual(Weather.FanartCode,08) | String.IsEqual(Weather.FanartCode,9) | String.IsEqual(Weather.FanartCode,09) | String.IsEqual(Weather.FanartCode,10) | String.IsEqual(Weather.FanartCode,11) | String.IsEqual(Weather.FanartCode,12) | String.IsEqual(Weather.FanartCode,17) | String.IsEqual(Weather.FanartCode,18) | String.IsEqual(Weather.FanartCode,35) | String.IsEqual(Weather.FanartCode,40)</expression>
+    <expression name="Exp_StartUp_Weather_Cloud">String.IsEqual(Weather.FanartCode,13) | String.IsEqual(Weather.FanartCode,14) | String.IsEqual(Weather.FanartCode,15) | String.IsEqual(Weather.FanartCode,16) | String.IsEqual(Weather.FanartCode,23) | String.IsEqual(Weather.FanartCode,26) | String.IsEqual(Weather.FanartCode,27) | String.IsEqual(Weather.FanartCode,28) | String.IsEqual(Weather.FanartCode,29) | String.IsEqual(Weather.FanartCode,30) | String.IsEqual(Weather.FanartCode,41) | String.IsEqual(Weather.FanartCode,42) | String.IsEqual(Weather.FanartCode,43) | String.IsEqual(Weather.FanartCode,44) | String.IsEqual(Weather.FanartCode,46)</expression>
+    <!-- Exact string matches keep missing, na and malformed codes out of numeric code 0 (tornado). -->
+    <expression name="Exp_StartUp_Weather_Clear">![$EXP[Exp_StartUp_Weather_Thunderstorm] | $EXP[Exp_StartUp_Weather_Hazy] | $EXP[Exp_StartUp_Weather_Rain] | $EXP[Exp_StartUp_Weather_Cloud]]</expression>
+    <variable name="Image_StartUp_Weather">
+        <value condition="$EXP[Exp_StartUp_Weather_Thunderstorm]">thunderstorm</value>
+        <value condition="$EXP[Exp_StartUp_Weather_Hazy]">hazy</value>
+        <value condition="$EXP[Exp_StartUp_Weather_Rain]">rain</value>
+        <value condition="$EXP[Exp_StartUp_Weather_Cloud]">cloud</value>
+        <value>clear</value>
+    </variable>
+    <!-- Hour aliases reuse identical plates. Conditions are copied from the existing local-hour selector. -->
+    <variable name="Image_StartUp_Layer_Sky">
+        <value condition="[System.Time(05:00,06:00)] | [System.Time(19:00,20:00)]">special://home/addons/resource.images.arctic.splash/resources/layers/01-sky/0500.jpg</value>
+        <value condition="[System.Time(06:00,07:00)] | [System.Time(18:00,19:00)]">special://home/addons/resource.images.arctic.splash/resources/layers/01-sky/0600.jpg</value>
+        <value condition="[System.Time(07:00,08:00)] | [System.Time(17:00,18:00)]">special://home/addons/resource.images.arctic.splash/resources/layers/01-sky/0700.jpg</value>
+        <value condition="[System.Time(08:00,09:00)] | [System.Time(09:00,10:00)] | [System.Time(10:00,11:00)] | [System.Time(11:00,12:00)] | [System.Time(12:00,13:00)] | [System.Time(13:00,14:00)] | [System.Time(14:00,15:00)] | [System.Time(15:00,16:00)] | [System.Time(16:00,17:00)]">special://home/addons/resource.images.arctic.splash/resources/layers/01-sky/0800.jpg</value>
+        <value>special://home/addons/resource.images.arctic.splash/resources/layers/01-sky/0000.jpg</value>
+    </variable>
+    <variable name="Image_StartUp_Layer_CloudHour">
+        <value condition="[System.Time(05:00,06:00)]">0500</value>
+        <value condition="[System.Time(06:00,07:00)]">0600</value>
+        <value condition="[System.Time(07:00,08:00)]">0700</value>
+        <value condition="[System.Time(08:00,09:00)] | [System.Time(09:00,10:00)] | [System.Time(10:00,11:00)] | [System.Time(11:00,12:00)] | [System.Time(12:00,13:00)] | [System.Time(13:00,14:00)] | [System.Time(14:00,15:00)] | [System.Time(15:00,16:00)] | [System.Time(16:00,17:00)]">0800</value>
+        <value condition="[System.Time(17:00,18:00)]">1700</value>
+        <value condition="[System.Time(18:00,19:00)]">1800</value>
+        <value condition="[System.Time(19:00,20:00)]">1900</value>
+        <value>0000</value>
+    </variable>
+    <variable name="Image_StartUp_Layer_GlowHour">
+        <value condition="[System.Time(05:00,06:00)] | [System.Time(07:00,08:00)]">0500</value>
+        <value condition="[System.Time(06:00,07:00)]">0600</value>
+        <value condition="[System.Time(17:00,18:00)] | [System.Time(19:00,20:00)]">1700</value>
+        <value condition="[System.Time(18:00,19:00)]">1800</value>
+        <value>0000</value>
+    </variable>
+    <variable name="Image_StartUp_Layer_ConditionsHour">
+        <value condition="$EXP[Exp_StartUp_Weather_Clear]">0000</value>
+        <value condition="[System.Time(05:00,06:00)] | [System.Time(19:00,20:00)]">0500</value>
+        <value condition="[System.Time(06:00,07:00)] | [System.Time(18:00,19:00)]">0600</value>
+        <value condition="[System.Time(07:00,08:00)] | [System.Time(17:00,18:00)]">0700</value>
+        <value condition="[System.Time(08:00,09:00)] | [System.Time(09:00,10:00)] | [System.Time(10:00,11:00)] | [System.Time(11:00,12:00)] | [System.Time(12:00,13:00)] | [System.Time(13:00,14:00)] | [System.Time(14:00,15:00)] | [System.Time(15:00,16:00)] | [System.Time(16:00,17:00)]">0800</value>
+        <value>0000</value>
+    </variable>
+    <variable name="Image_StartUp_Layer_TimeHour">
+        <value condition="[System.Time(00:00,01:00)] | [System.Time(01:00,02:00)] | [System.Time(02:00,03:00)] | [System.Time(03:00,04:00)] | [System.Time(04:00,05:00)]">0000</value>
+        <value condition="[System.Time(05:00,06:00)]">0500</value>
+        <value condition="[System.Time(06:00,07:00)]">0600</value>
+        <value condition="[System.Time(07:00,08:00)]">0700</value>
+        <value condition="[System.Time(08:00,09:00)] | [System.Time(09:00,10:00)] | [System.Time(10:00,11:00)] | [System.Time(11:00,12:00)] | [System.Time(12:00,13:00)] | [System.Time(13:00,14:00)] | [System.Time(14:00,15:00)] | [System.Time(15:00,16:00)] | [System.Time(16:00,17:00)]">0800</value>
+        <value condition="[System.Time(17:00,18:00)]">1700</value>
+        <value condition="[System.Time(18:00,19:00)]">1800</value>
+        <value condition="[System.Time(19:00,20:00)]">1900</value>
+        <value>2000</value>
+    </variable>
+    <variable name="Image_StartUp_Layer_Time">
+        <value condition="[System.Time(08:00,09:00)] | [System.Time(09:00,10:00)] | [System.Time(10:00,11:00)] | [System.Time(11:00,12:00)] | [System.Time(12:00,13:00)] | [System.Time(13:00,14:00)] | [System.Time(14:00,15:00)] | [System.Time(15:00,16:00)] | [System.Time(16:00,17:00)]">special://home/addons/resource.images.arctic.splash/resources/layers/09-time/autumn/0800.webp</value>
+        <value>special://home/addons/resource.images.arctic.splash/resources/layers/09-time/$VAR[Image_StartUp_Season]/$VAR[Image_StartUp_Layer_TimeHour].webp</value>
+    </variable>
+    <include name="Background_StartUp_Layered">
+        <control type="group">
+            <description>Seasonal hourly weather splash; image-only alpha-over compositing</description>
+            <visible>!$EXP[Exp_StartUp_CustomImage]</visible>
+            <left>0</left>
+            <top>0</top>
+            <width>100%</width>
+            <height>100%</height>
+            <control type="image">
+                <description>Sky</description>
+                <aspectratio align="center" aligny="center">scale</aspectratio>
+                <texture colordiffuse="ffffffff">$VAR[Image_StartUp_Layer_Sky]</texture>
+            </control>
+            <control type="image">
+                <description>Sun/Moon</description>
+                <aspectratio align="center" aligny="center">scale</aspectratio>
+                <texture colordiffuse="ffffffff">special://home/addons/resource.images.arctic.splash/resources/layers/02-sun-moon/$VAR[Image_StartUp_Hour].png</texture>
+            </control>
+            <control type="image">
+                <description>Clouds</description>
+                <aspectratio align="center" aligny="center">scale</aspectratio>
+                <texture colordiffuse="ffffffff">special://home/addons/resource.images.arctic.splash/resources/layers/03-clouds/$VAR[Image_StartUp_Weather]/$VAR[Image_StartUp_Layer_CloudHour].webp</texture>
+            </control>
+            <control type="image">
+                <description>Sunset/Sunrise</description>
+                <aspectratio align="center" aligny="center">scale</aspectratio>
+                <texture colordiffuse="ffffffff">special://home/addons/resource.images.arctic.splash/resources/layers/04-sunset-sunrise/$VAR[Image_StartUp_Layer_GlowHour].png</texture>
+            </control>
+            <control type="image">
+                <description>Mountains</description>
+                <aspectratio align="center" aligny="center">scale</aspectratio>
+                <texture colordiffuse="ffffffff">special://home/addons/resource.images.arctic.splash/resources/layers/05-mountains/$VAR[Image_StartUp_Season].webp</texture>
+            </control>
+            <control type="image">
+                <description>Lake</description>
+                <aspectratio align="center" aligny="center">scale</aspectratio>
+                <texture colordiffuse="ffffffff">special://home/addons/resource.images.arctic.splash/resources/layers/06-lake/$VAR[Image_StartUp_Season]/$VAR[Image_StartUp_Weather]/$VAR[Image_StartUp_Hour].webp</texture>
+            </control>
+            <control type="image">
+                <description>Trees</description>
+                <aspectratio align="center" aligny="center">scale</aspectratio>
+                <texture colordiffuse="ffffffff">special://home/addons/resource.images.arctic.splash/resources/layers/07-trees/$VAR[Image_StartUp_Season].webp</texture>
+            </control>
+            <control type="image">
+                <description>Conditions</description>
+                <aspectratio align="center" aligny="center">scale</aspectratio>
+                <texture colordiffuse="ffffffff">special://home/addons/resource.images.arctic.splash/resources/layers/08-conditions/$VAR[Image_StartUp_Weather]/$VAR[Image_StartUp_Layer_ConditionsHour].png</texture>
+            </control>
+            <control type="image">
+                <description>Time</description>
+                <aspectratio align="center" aligny="center">scale</aspectratio>
+                <texture colordiffuse="ffffffff">$VAR[Image_StartUp_Layer_Time]</texture>
+            </control>
+            <control type="image">
+                <texture colordiffuse="b3000000">common/white.png</texture>
+            </control>
+        </control>
+    </include>
+</includes>
