@@ -414,9 +414,9 @@
     </variable>
 
     <variable name="Image_StartUp">
-        <!-- <value condition="Weather.IsFetched + !String.IsEmpty(Weather.FanartCode) + System.HasAddon(resource.images.weatherfanart.multi) + [String.IsEmpty(Skin.String(Startup.ImageFolder)) | Skin.String(Startup.ImageFolder,special://skin/extras/backgrounds/launch/)]">resource://resource.images.weatherfanart.multi/$INFO[Weather.FanartCode]/</value> -->
-        <value condition="!String.IsEmpty(Skin.String(Startup.ImageFolder)) + !Skin.String(Startup.ImageFolder,special://skin/extras/backgrounds/launch/)">$INFO[Skin.String(Startup.ImageFolder)]</value>
-        <value>special://skin/extras/backgrounds/launch/japanese-$VAR[Image_StartUp_Season]-$VAR[Image_StartUp_Hour].jpg</value>
+        <value condition="$EXP[Exp_StartUp_CustomImage]">$INFO[Skin.String(Startup.ImageFolder)]</value>
+        <!-- The built-in splash is composited by Background_StartUp_Layered. -->
+        <value>$VAR[Image_StartUp_Layer_Sky]</value>
     </variable>
 
     <!-- Calendar-month seasons; the selected Kodi region determines the hemisphere. -->
