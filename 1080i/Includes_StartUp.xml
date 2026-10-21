@@ -140,12 +140,10 @@
                     <aspectratio align="center" aligny="center">scale</aspectratio>
                     <texture colordiffuse="ffffffff">special://home/addons/resource.images.arctic.splash/resources/layers/05-mountains/$PARAM[season].webp</texture>
                 </control>
-                <control type="image">
-                    <description>Lake</description>
-                    <aspectratio align="center" aligny="center">scale</aspectratio>
-                    <texture colordiffuse="ffffffff">special://home/addons/resource.images.arctic.splash/resources/layers/06-lake/$PARAM[season]/$PARAM[base_weather]/$PARAM[hour].webp</texture>
-                </control>
-                <!-- Only the cloud reflection moves; the authored shoreline and mountain stay registered. -->
+                <include content="Background_StartUp_Lake">
+                    <param name="texture">special://home/addons/resource.images.arctic.splash/resources/layers/06-lake/$PARAM[season]/$PARAM[base_weather]/$PARAM[hour].webp</param>
+                </include>
+                <!-- Cloud reflections drift independently over the rippling lake. -->
                 <include content="Background_StartUp_TextureDrift">
                     <param name="visible">$PARAM[cloud_visible]</param>
                     <param name="texture">special://home/addons/resource.images.arctic.splash/resources/layers/03-clouds/$PARAM[base_weather]/$PARAM[cloud_hour].webp</param>

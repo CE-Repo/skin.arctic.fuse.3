@@ -5,7 +5,7 @@
         <import addon="script.texturemaker" version="0.2.9" />
         <import addon="plugin.video.themoviedb.helper" version="6.17.9" />
         <import addon="resource.images.weathericons.white" version="0.0.1" />
-        <import addon="resource.images.arctic.splash" version="1.0.2" />
+        <import addon="resource.images.arctic.splash" version="1.0.3" />
         <import addon="resource.images.studios.coloured" version="0.0.1" />
         <import addon="resource.font.robotocjksc" version="0.0.3" />
     </requires>
