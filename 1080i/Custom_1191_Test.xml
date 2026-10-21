@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <window type="window" id="1191">
-    <defaultcontrol always="true">9000</defaultcontrol>
+    <defaultcontrol always="true">52</defaultcontrol>
     <onload condition="String.IsEmpty(Window(1191).Property(SplashTest.Season))">SetProperty(SplashTest.Season,$VAR[Image_StartUp_Season],1191)</onload>
     <onload condition="String.IsEmpty(Window(1191).Property(SplashTest.Weather))">SetProperty(SplashTest.Weather,$VAR[Image_StartUp_Weather],1191)</onload>
     <onload condition="String.IsEmpty(Window(1191).Property(SplashTest.Hour))">SetProperty(SplashTest.Hour,$VAR[Image_StartUp_Hour],1191)</onload>
@@ -13,11 +13,14 @@
             <param name="base_weather">$VAR[Image_StartUp_Test_Layer_BaseWeather]</param>
             <param name="cloud_colordiffuse">$VAR[Color_StartUp_Test_Clouds]</param>
             <param name="cloud_reflection_colordiffuse">$VAR[Color_StartUp_Test_CloudReflection]</param>
-            <param name="rain_visible">String.IsEqual(Window(1191).Property(SplashTest.Weather),rain) | String.IsEqual(Window(1191).Property(SplashTest.Weather),thunderstorm)</param>
+            <param name="rain_visible">String.IsEqual(Window(1191).Property(SplashTest.Weather),rain) | $EXP[Exp_StartUp_Test_Weather_Thunderstorm] | $EXP[Exp_StartUp_Test_Weather_HeavyRain]</param>
+            <param name="wind_visible">$EXP[Exp_StartUp_Test_Weather_Windy]</param>
+            <param name="heavy_rain_visible">$EXP[Exp_StartUp_Test_Weather_HeavyRain]</param>
             <param name="snow_visible">String.IsEqual(Window(1191).Property(SplashTest.Weather),snow)</param>
-            <param name="lightning_visible">String.IsEqual(Window(1191).Property(SplashTest.Weather),thunderstorm)</param>
+            <param name="lightning_visible">$EXP[Exp_StartUp_Test_Weather_Thunderstorm]</param>
+            <param name="severe_lightning_visible">$EXP[Exp_StartUp_Test_Weather_SevereThunderstorm]</param>
             <param name="haze_visible">String.IsEqual(Window(1191).Property(SplashTest.Weather),hazy)</param>
-            <param name="dimming_visible">Integer.IsGreater(Window(1191).Property(SplashTest.Hour),599) + Integer.IsLess(Window(1191).Property(SplashTest.Hour),1800)</param>
+            <param name="dimming_visible">$EXP[Exp_StartUp_Test_Daytime]</param>
             <param name="hour">$INFO[Window(1191).Property(SplashTest.Hour)]</param>
             <param name="sky">$VAR[Image_StartUp_Test_Layer_Sky]</param>
             <param name="cloud_hour">$VAR[Image_StartUp_Test_Layer_CloudHour]</param>
@@ -26,45 +29,21 @@
             <param name="time">$VAR[Image_StartUp_Test_Layer_Time]</param>
         </include>
 
-        <include>Object_StartUp_Logo</include>
-        <control type="grouplist" id="9010">
-            <bottom>320</bottom>
-            <width>100%</width>
-            <height>80</height>
-            <orientation>horizontal</orientation>
-            <align>center</align>
-            <itemgap>20</itemgap>
-            <control type="button" id="9000">
-                <width>auto</width>
-                <height>80</height>
-                <label>$INFO[Window(1191).Property(SplashTest.Season)]</label>
-                <onup>9000</onup>
-                <ondown>9000</ondown>
-                <onleft>9002</onleft>
-                <onright>9001</onright>
-                <onclick>RunScript(script.skinvariables,run_executebuiltin=special://skin/shortcuts/skinvariables-splash-test.json,use_rules=True,edit=season)</onclick>
-            </control>
-            <control type="button" id="9001">
-                <width>auto</width>
-                <height>80</height>
-                <label>$INFO[Window(1191).Property(SplashTest.Weather)]</label>
-                <onup>9001</onup>
-                <ondown>9001</ondown>
-                <onleft>9000</onleft>
-                <onright>9002</onright>
-                <onclick>RunScript(script.skinvariables,run_executebuiltin=special://skin/shortcuts/skinvariables-splash-test.json,use_rules=True,edit=weather)</onclick>
-            </control>
-            <control type="button" id="9002">
-                <width>auto</width>
-                <height>80</height>
-                <label>$VAR[Label_StartUp_Test_Time]</label>
-                <onup>9002</onup>
-                <ondown>9002</ondown>
-                <onleft>9001</onleft>
-                <onright>9000</onright>
-                <onclick>RunScript(script.skinvariables,run_executebuiltin=special://skin/shortcuts/skinvariables-splash-test.json,use_rules=True,edit=hour)</onclick>
-            </control>
-        </control>
-
+        <include content="Object_StartUp_Logo">
+            <param name="weather_visible">true</param>
+            <param name="weather_icon_visible">true</param>
+            <param name="weather_label_visible">true</param>
+            <param name="weather_description_visible">true</param>
+            <param name="weather_icon">resource://resource.images.weathericons.white/$VAR[Image_StartUp_Test_WeatherCode].png</param>
+            <param name="weather_label">[B]$VAR[Label_StartUp_Test_Clock][/B]</param>
+            <param name="weather_description">$VAR[Label_StartUp_Test_Weather]</param>
+        </include>
+        <include content="Object_StartUp_Selector">
+            <param name="icon">$INFO[ListItem.CurrentItem,special://skin/extras/profiles/Mountains (,).jpg]</param>
+            <param name="onup">52</param>
+            <param name="ondown">52</param>
+            <param name="static_content">true</param>
+            <param name="content_include">Object_StartUp_Test_Selector_Items</param>
+        </include>
     </controls>
 </window>

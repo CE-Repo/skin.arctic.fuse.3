@@ -22,7 +22,7 @@
             "rules": [
                 "{edit}==weather"
             ],
-            "value": "route=run_dialog=select&heading=Conditions&separator=|&list=clear|partlycloudy|cloud|rain|snow|thunderstorm|hazy&preselect={Weather}&executebuiltin=SetProperty(SplashTest.Weather,{{v}},1191)"
+            "value": "route=run_dialog=select&heading=Conditions&separator=|&list=clear|partlycloudy|cloud|windy|rain|heavyrain|snow|thunderstorm|severethunderstorm|hazy&preselect={Weather}&executebuiltin=SetProperty(SplashTest.Weather,{{v}},1191)"
         },
         {
             "rules": [
