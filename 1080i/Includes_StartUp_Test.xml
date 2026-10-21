@@ -2,7 +2,7 @@
 <includes>
     <!-- Window-local preview selectors; they never override the live startup variables. -->
     <variable name="Image_StartUp_Test_Layer_BaseWeather">
-        <value condition="String.IsEqual(Window(1191).Property(SplashTest.Weather),thunderstorm)">rain</value>
+        <value condition="String.IsEqual(Window(1191).Property(SplashTest.Weather),thunderstorm) | String.IsEqual(Window(1191).Property(SplashTest.Weather),snow)">rain</value>
         <value>$INFO[Window(1191).Property(SplashTest.Weather)]</value>
     </variable>
     <variable name="Image_StartUp_Test_Layer_Sky">

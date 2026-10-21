@@ -90,21 +90,29 @@
         </definition>
     </include>
 
-    <include name="Background_StartUp">
+    <include name="Background_StartUp_Custom">
         <param name="colordiffuse">main_back</param>
         <definition>
-            <control type="image">
-                <texture colordiffuse="$VAR[ColorBackground]">common/white.png</texture>
-            </control>
             <control type="multiimage">
-                <visible>$EXP[Exp_StartUp_CustomImage]</visible>
                 <imagepath colordiffuse="$PARAM[colordiffuse]">$VAR[Image_StartUp]</imagepath>
                 <randomize>true</randomize>
                 <timeperimage>5000</timeperimage>
                 <fadetime>2000</fadetime>
                 <aspectratio>scale</aspectratio>
             </control>
-            <include>Background_StartUp_Layered</include>
+        </definition>
+    </include>
+
+    <include name="Background_StartUp">
+        <param name="colordiffuse">main_back</param>
+        <definition>
+            <control type="image">
+                <texture colordiffuse="$VAR[ColorBackground]">common/white.png</texture>
+            </control>
+            <include content="Background_StartUp_Custom" condition="$EXP[Exp_StartUp_CustomImage]">
+                <param name="colordiffuse">$PARAM[colordiffuse]</param>
+            </include>
+            <include condition="!$EXP[Exp_StartUp_CustomImage]">Background_StartUp_Layered</include>
         </definition>
     </include>
 

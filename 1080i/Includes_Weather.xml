@@ -16,22 +16,26 @@
         <definition>
 
 
-            <include content="Object_ItemBack">
-                <param name="selected">false</param>
-                <param name="shadow_colordiffuse">shadow_hard</param>
-            </include>
+            <control type="group">
+                <animation effect="fade" start="100" end="70" condition="true">Conditional</animation>
+                <include content="Object_ItemBack">
+                    <param name="selected">false</param>
+                    <param name="shadow_colordiffuse">shadow_hard</param>
+                </include>
 
-            <control type="multiimage">
-                <timeperimage>20000</timeperimage>
-                <randomize>true</randomize>
-                <fadetime>400</fadetime>
-                <aspectratio scalediffuse="false">scale</aspectratio>
-                <imagepath diffuse="$PARAM[diffuse]">$PARAM[imagepath]</imagepath>
+                <control type="multiimage">
+                    <timeperimage>12000</timeperimage>
+                    <randomize>true</randomize>
+                    <fadetime>1200</fadetime>
+                    <aspectratio scalediffuse="false">scale</aspectratio>
+                    <imagepath diffuse="$PARAM[diffuse]">$PARAM[imagepath]</imagepath>
+                </control>
             </control>
 
             <control type="group">
                 <control type="image">
-                    <texture colordiffuse="7f000000">$PARAM[diffuse]</texture>
+                    <colordiffuse>7f000000</colordiffuse>
+                    <texture>$PARAM[diffuse]</texture>
                 </control>
                 <control type="$PARAM[title_control]">
                     <top>$PARAM[title_top]</top>
@@ -48,7 +52,7 @@
                     <control type="label">
                         <label>$PARAM[hightemp]$INFO[System.TemperatureUnits]</label>
                         <textcolor>panel_fg_100</textcolor>
-                        <font>font_title_huge</font>
+                        <font>font_title_midi</font>
                         <aligny>center</aligny>
                         <align>center</align>
                         <height>80%</height>
@@ -56,7 +60,7 @@
                     <control type="label">
                         <label>$PARAM[lowtemp]$INFO[System.TemperatureUnits]</label>
                         <textcolor>panel_fg_100</textcolor>
-                        <font>font_main_bold</font>
+                        <font>font_midi_bold</font>
                         <aligny>center</aligny>
                         <align>center</align>
                         <height>20%</height>

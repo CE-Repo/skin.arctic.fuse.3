@@ -718,7 +718,7 @@
     <include name="Object_StartUp_Logo">
         <control type="grouplist">
             <height>128</height>
-            <centertop>400</centertop>
+            <centertop>420</centertop>
             <orientation>vertical</orientation>
             <align>center</align>
             <control type="image">
@@ -730,7 +730,8 @@
             </control>
             <control type="label">
                 <height>32</height>
-                <textcolor>main_fg_100</textcolor>
+                <textcolor>main_fg_90</textcolor>
+                <shadowcolor>main_bg_30</shadowcolor>
                 <label>KODI</label>
                 <font>font_logo_large</font>
                 <align>center</align>
@@ -738,7 +739,7 @@
         </control>
         <control type="grouplist">
             <height>80</height>
-            <centertop>50%</centertop>
+            <centertop>540</centertop>
             <orientation>horizontal</orientation>
             <itemgap>10</itemgap>
             <align>center</align>
@@ -747,8 +748,18 @@
                 <align>center</align>
                 <width>auto</width>
                 <font>font_title_huge</font>
+                <textcolor>main_fg_90</textcolor>
+                <shadowcolor>main_bg_30</shadowcolor>
+                <label>Arctic</label>
+            </control>
+            <control type="label">
+                <aligny>center</aligny>
+                <align>center</align>
+                <width>auto</width>
+                <font>font_title_huge</font>
                 <textcolor>$VAR[ColorHighlight]</textcolor>
-                <label>[COLOR=main_logo]Arctic[/COLOR] Fuse</label>
+                <shadowcolor>main_bg_30</shadowcolor>
+                <label>Fuse</label>
             </control>
             <control type="label">
                 <aligny>center</aligny>
@@ -757,11 +768,12 @@
                 <width>auto</width>
                 <font>font_head_bold</font>
                 <textcolor>$VAR[ColorHighlight]</textcolor>
+                <shadowcolor>main_bg_30</shadowcolor>
                 <label>$NUMBER[3]</label>
             </control>
         </control>
         <control type="group">
-            <bottom>80</bottom>
+            <bottom>100</bottom>
             <height>140</height>
             <centerleft>50%</centerleft>
             <width>600</width>
@@ -789,6 +801,7 @@
                     <aligny>center</aligny>
                     <font>font_title_huge</font>
                     <textcolor>main_fg_90</textcolor>
+                    <shadowcolor>main_bg_30</shadowcolor>
                     <visible>!String.IsEmpty(Window(Weather).Property(Current.Temperature))</visible>
                 </control>
             </control>
@@ -800,6 +813,7 @@
                 <aligny>center</aligny>
                 <font>font_main</font>
                 <textcolor>main_fg_90</textcolor>
+                <shadowcolor>main_bg_30</shadowcolor>
                 <visible>!String.IsEmpty(Window(Weather).Property(Current.Condition))</visible>
             </control>
         </control>

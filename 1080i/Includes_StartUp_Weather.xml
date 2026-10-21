@@ -83,16 +83,21 @@
         </definition>
     </include>
 
-    <include name="Background_StartUp_RainStrip">
+    <include name="Background_StartUp_PrecipitationStrip">
+        <param name="texture">special://home/addons/resource.images.arctic.splash/resources/effects/rain.png</param>
+        <param name="width">480</param>
+        <param name="height">1080</param>
+        <param name="colordiffuse">b3dce8ff</param>
         <param name="flipx">false</param>
         <definition>
             <include content="Background_FallingTexture">
-                <param name="texture">special://home/addons/resource.images.arctic.splash/resources/effects/rain.png</param>
+                <param name="texture">$PARAM[texture]</param>
                 <param name="left">$PARAM[left]</param>
-                <param name="width">480</param>
+                <param name="width">$PARAM[width]</param>
+                <param name="height">$PARAM[height]</param>
                 <param name="time">$PARAM[time]</param>
                 <param name="aspectratio">stretch</param>
-                <param name="colordiffuse">b3dce8ff</param>
+                <param name="colordiffuse">$PARAM[colordiffuse]</param>
                 <param name="flipx">$PARAM[flipx]</param>
                 <param name="condition">$PARAM[visible]</param>
             </include>
@@ -103,26 +108,84 @@
         <control type="group">
             <!-- Weather can arrive after window load and can change in the splash preview. -->
             <visible>$PARAM[visible]</visible>
-            <include content="Background_StartUp_RainStrip">
+            <include content="Background_StartUp_PrecipitationStrip">
                 <param name="visible">$PARAM[visible]</param>
                 <param name="left">0</param>
                 <param name="time">1050</param>
             </include>
-            <include content="Background_StartUp_RainStrip">
+            <include content="Background_StartUp_PrecipitationStrip">
                 <param name="visible">$PARAM[visible]</param>
                 <param name="left">480</param>
                 <param name="time">1250</param>
                 <param name="flipx">true</param>
             </include>
-            <include content="Background_StartUp_RainStrip">
+            <include content="Background_StartUp_PrecipitationStrip">
                 <param name="visible">$PARAM[visible]</param>
                 <param name="left">960</param>
                 <param name="time">1150</param>
             </include>
-            <include content="Background_StartUp_RainStrip">
+            <include content="Background_StartUp_PrecipitationStrip">
                 <param name="visible">$PARAM[visible]</param>
                 <param name="left">1440</param>
                 <param name="time">950</param>
+                <param name="flipx">true</param>
+            </include>
+        </control>
+    </include>
+
+    <include name="Background_StartUp_SnowStrip">
+        <param name="flipx">false</param>
+        <definition>
+            <control type="group">
+                <top>-20</top>
+                <!-- Sway independently of the seamless fall, so neither motion snaps at wrap. -->
+                <animation effect="slide" start="-36,-10" end="36,10" time="$PARAM[lilt_time]" tween="sine" easing="inout" pulse="true" condition="$PARAM[visible]" reversible="false">Conditional</animation>
+                <include content="Background_StartUp_PrecipitationStrip">
+                    <param name="visible">$PARAM[visible]</param>
+                    <param name="texture">special://home/addons/resource.images.arctic.splash/resources/effects/snow.png</param>
+                    <param name="left">$PARAM[left]</param>
+                    <param name="width">600</param>
+                    <param name="height">1120</param>
+                    <param name="time">$PARAM[time]</param>
+                    <param name="colordiffuse">$PARAM[colordiffuse]</param>
+                    <param name="flipx">$PARAM[flipx]</param>
+                </include>
+            </control>
+        </definition>
+    </include>
+
+    <include name="Background_StartUp_Snow">
+        <control type="group">
+            <visible>$PARAM[visible]</visible>
+            <!-- Overscan covers the sideways sway; different fall and lilt periods add depth. -->
+            <include content="Background_StartUp_SnowStrip">
+                <param name="visible">$PARAM[visible]</param>
+                <param name="left">-240</param>
+                <param name="time">18000</param>
+                <param name="lilt_time">4700</param>
+                <param name="colordiffuse">80e4edff</param>
+            </include>
+            <include content="Background_StartUp_SnowStrip">
+                <param name="visible">$PARAM[visible]</param>
+                <param name="left">360</param>
+                <param name="time">22000</param>
+                <param name="lilt_time">6100</param>
+                <param name="colordiffuse">66e4edff</param>
+                <param name="flipx">true</param>
+            </include>
+            <include content="Background_StartUp_SnowStrip">
+                <param name="visible">$PARAM[visible]</param>
+                <param name="left">960</param>
+                <param name="time">16000</param>
+                <param name="lilt_time">5300</param>
+                <param name="colordiffuse">99edf3ff</param>
+            </include>
+            <include content="Background_StartUp_SnowStrip">
+                <param name="visible">$PARAM[visible]</param>
+                <param name="left">1560</param>
+                <param name="time">20000</param>
+                <param name="lilt_time">6900</param>
+                <param name="colordiffuse">80e4edff</param>
                 <param name="flipx">true</param>
             </include>
         </control>
