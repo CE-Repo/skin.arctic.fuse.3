@@ -1,41 +1,65 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <window type="window" id="1191">
-    <defaultcontrol>9001</defaultcontrol>
+    <defaultcontrol always="true">9000</defaultcontrol>
+    <onload condition="String.IsEmpty(Window(1191).Property(SplashTest.Season))">SetProperty(SplashTest.Season,$VAR[Image_StartUp_Season],1191)</onload>
+    <onload condition="String.IsEmpty(Window(1191).Property(SplashTest.Weather))">SetProperty(SplashTest.Weather,$VAR[Image_StartUp_Weather],1191)</onload>
+    <onload condition="String.IsEmpty(Window(1191).Property(SplashTest.Hour))">SetProperty(SplashTest.Hour,$VAR[Image_StartUp_Hour],1191)</onload>
     <controls>
-
-        <!-- <include content="Overlay_Test_Window_Fonts">
-            <param name="font">font_title_main</param>
-        </include> -->
-
-        <control type="grouplist">
-            <orientation>vertical</orientation>
-            <!-- <include content="Overlay_InfoLabel">
-                <label> -Container(9988).ListItem.Label: $INFO[Container(9988).ListItem.Label] </label>
-                <textcolor>magenta</textcolor>
-            </include>
-            <include content="Overlay_InfoLabel">
-                <label> -Container(9988).ListItem.Property(TotalEpisodes): $INFO[Container(9988).ListItem.Property(TotalEpisodes)] </label>
-                <textcolor>magenta</textcolor>
-            </include>
-            <include content="Overlay_InfoLabel">
-                <label> -Container(9988).ListItem.Property(WatchedEpisodes): $INFO[Container(9988).ListItem.Property(WatchedEpisodes)] </label>
-                <textcolor>magenta</textcolor>
-            </include>
-            <include content="Overlay_InfoLabel">
-                <label> -Container(9988).ListItem.Property(UnWatchedEpisodes): $INFO[Container(9988).ListItem.Property(UnWatchedEpisodes)] </label>
-                <textcolor>magenta</textcolor>
-            </include> -->
-            <include content="Overlay_InfoLabel">
-                <label> -Window(Home).Property(ReloadCounter): $INFO[Window(Home).Property(ReloadCounter)] </label>
-                <textcolor>magenta</textcolor>
-            </include>
-            <include content="List_Landscape_Row">
-                <param name="id">9988</param>
-                <height>560</height>
-                <!-- <content>plugin://script.skinvariables/?info=get_dbitem_tvshow_details&amp;dbid=200</content> -->
-                <content sortby="userpreference">plugin://script.skinvariables/?info=get_refresh_counter&amp;uid=9988&amp;window_id=Home&amp;window_prop=ReloadCounter</content>
-            </include>
+        <include content="Background_StartUp_Layered">
+            <param name="visible">true</param>
+            <param name="season">$INFO[Window(1191).Property(SplashTest.Season)]</param>
+            <param name="weather">$INFO[Window(1191).Property(SplashTest.Weather)]</param>
+            <param name="base_weather">$VAR[Image_StartUp_Test_Layer_BaseWeather]</param>
+            <param name="rain_visible">String.IsEqual(Window(1191).Property(SplashTest.Weather),rain) | String.IsEqual(Window(1191).Property(SplashTest.Weather),thunderstorm)</param>
+            <param name="lightning_visible">String.IsEqual(Window(1191).Property(SplashTest.Weather),thunderstorm)</param>
+            <param name="cloud_visible">String.IsEqual(Window(1191).Property(SplashTest.Weather),cloud) | String.IsEqual(Window(1191).Property(SplashTest.Weather),rain) | String.IsEqual(Window(1191).Property(SplashTest.Weather),thunderstorm)</param>
+            <param name="haze_visible">String.IsEqual(Window(1191).Property(SplashTest.Weather),hazy)</param>
+            <param name="dimming_visible">Integer.IsGreater(Window(1191).Property(SplashTest.Hour),599) + Integer.IsLess(Window(1191).Property(SplashTest.Hour),1800)</param>
+            <param name="hour">$INFO[Window(1191).Property(SplashTest.Hour)]</param>
+            <param name="sky">$VAR[Image_StartUp_Test_Layer_Sky]</param>
+            <param name="cloud_hour">$VAR[Image_StartUp_Test_Layer_CloudHour]</param>
+            <param name="glow_hour">$VAR[Image_StartUp_Test_Layer_GlowHour]</param>
+            <param name="conditions_hour">$VAR[Image_StartUp_Test_Layer_ConditionsHour]</param>
+            <param name="time">$VAR[Image_StartUp_Test_Layer_Time]</param>
+        </include>
+        <include>Object_StartUp_Logo</include>
+        <control type="grouplist" id="9010">
+            <bottom>300</bottom>
+            <width>100%</width>
+            <height>80</height>
+            <orientation>horizontal</orientation>
+            <align>center</align>
+            <itemgap>20</itemgap>
+            <control type="button" id="9000">
+                <width>auto</width>
+                <height>80</height>
+                <label>$INFO[Window(1191).Property(SplashTest.Season)]</label>
+                <onup>9000</onup>
+                <ondown>9000</ondown>
+                <onleft>9002</onleft>
+                <onright>9001</onright>
+                <onclick>RunScript(script.skinvariables,run_executebuiltin=special://skin/shortcuts/skinvariables-splash-test.json,use_rules=True,edit=season)</onclick>
+            </control>
+            <control type="button" id="9001">
+                <width>auto</width>
+                <height>80</height>
+                <label>$INFO[Window(1191).Property(SplashTest.Weather)]</label>
+                <onup>9001</onup>
+                <ondown>9001</ondown>
+                <onleft>9000</onleft>
+                <onright>9002</onright>
+                <onclick>RunScript(script.skinvariables,run_executebuiltin=special://skin/shortcuts/skinvariables-splash-test.json,use_rules=True,edit=weather)</onclick>
+            </control>
+            <control type="button" id="9002">
+                <width>auto</width>
+                <height>80</height>
+                <label>$INFO[Window(1191).Property(SplashTest.Hour)]</label>
+                <onup>9002</onup>
+                <ondown>9002</ondown>
+                <onleft>9001</onleft>
+                <onright>9000</onright>
+                <onclick>RunScript(script.skinvariables,run_executebuiltin=special://skin/shortcuts/skinvariables-splash-test.json,use_rules=True,edit=hour)</onclick>
+            </control>
         </control>
-
     </controls>
 </window>

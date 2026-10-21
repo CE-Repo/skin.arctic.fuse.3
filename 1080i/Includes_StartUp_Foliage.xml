@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<includes>
+    <include name="Background_StartUp_FoliageParticle">
+        <param name="size">36</param>
+        <param name="travel">1640,440</param>
+        <param name="time">48000</param>
+        <param name="fadeout">45500</param>
+        <param name="lilt_time">4200</param>
+        <param name="flutter_time">2900</param>
+        <param name="flipx">false</param>
+        <definition>
+            <control type="group">
+                <left>$PARAM[left]</left>
+                <top>$PARAM[top]</top>
+                <!-- Independent of flutter: a slow diagonal breeze with a little settling.
+                     Fade before wrapping so an on-screen starting point never jumps. -->
+                <animation type="Conditional" condition="true" reversible="false" loop="true">
+                    <effect type="slide" start="0,0" end="$PARAM[travel]" time="$PARAM[time]" />
+                    <effect type="fade" start="0" end="100" time="1800" />
+                    <effect type="fade" start="100" end="0" time="2500" delay="$PARAM[fadeout]" />
+                </animation>
+                <control type="group">
+                    <!-- Lilt can lift the particle against its slow descent; unequal periods
+                         keep the broad sway and small flutter from moving in lockstep. -->
+                    <animation effect="slide" start="-22,-32" end="22,32" time="$PARAM[lilt_time]" tween="sine" easing="inout" pulse="true" condition="true" reversible="false">Conditional</animation>
+                    <control type="image">
+                        <width>$PARAM[size]</width>
+                        <height>$PARAM[size]</height>
+                        <aspectratio>keep</aspectratio>
+                        <texture flipx="$PARAM[flipx]">special://home/addons/resource.images.arctic.splash/resources/effects/foliage/$PARAM[season]/$PARAM[hour].png</texture>
+                        <animation effect="rotate" start="-38" end="42" center="auto" time="$PARAM[lilt_time]" tween="sine" easing="inout" pulse="true" condition="true" reversible="false">Conditional</animation>
+                        <animation effect="rotatey" start="-58" end="58" center="auto" time="$PARAM[flutter_time]" tween="sine" easing="inout" pulse="true" condition="true" reversible="false">Conditional</animation>
+                    </control>
+                </control>
+            </control>
+        </definition>
+    </include>
+
+    <include name="Background_StartUp_Foliage">
+        <control type="group">
+            <!-- Season can change while the splash preview remains open. -->
+            <visible>$PARAM[visible]</visible>
+            <include content="Background_StartUp_FoliageParticle">
+                <param name="season">$PARAM[season]</param>
+                <param name="hour">$PARAM[hour]</param>
+                <param name="left">380</param>
+                <param name="top">120</param>
+            </include>
+            <include content="Background_StartUp_FoliageParticle">
+                <param name="season">$PARAM[season]</param>
+                <param name="hour">$PARAM[hour]</param>
+                <param name="left">720</param>
+                <param name="top">310</param>
+                <param name="size">24</param>
+                <param name="time">57000</param>
+                <param name="fadeout">54500</param>
+                <param name="lilt_time">5700</param>
+                <param name="flutter_time">3400</param>
+                <param name="flipx">true</param>
+            </include>
+            <include content="Background_StartUp_FoliageParticle">
+                <param name="season">$PARAM[season]</param>
+                <param name="hour">$PARAM[hour]</param>
+                <param name="left">1250</param>
+                <param name="top">70</param>
+                <param name="size">42</param>
+                <param name="travel">920,570</param>
+                <param name="time">43000</param>
+                <param name="fadeout">40500</param>
+                <param name="lilt_time">3600</param>
+                <param name="flutter_time">2300</param>
+            </include>
+            <include content="Background_StartUp_FoliageParticle">
+                <param name="season">$PARAM[season]</param>
+                <param name="hour">$PARAM[hour]</param>
+                <param name="left">260</param>
+                <param name="top">540</param>
+                <param name="size">30</param>
+                <param name="travel">1800,370</param>
+                <param name="time">63000</param>
+                <param name="fadeout">60500</param>
+                <param name="lilt_time">4900</param>
+                <param name="flutter_time">3100</param>
+                <param name="flipx">true</param>
+            </include>
+            <include content="Background_StartUp_FoliageParticle">
+                <param name="season">$PARAM[season]</param>
+                <param name="hour">$PARAM[hour]</param>
+                <param name="left">830</param>
+                <param name="top">770</param>
+                <param name="size">48</param>
+                <param name="travel">1300,410</param>
+                <param name="time">51000</param>
+                <param name="fadeout">48500</param>
+                <param name="lilt_time">6100</param>
+                <param name="flutter_time">3800</param>
+            </include>
+            <include content="Background_StartUp_FoliageParticle">
+                <param name="season">$PARAM[season]</param>
+                <param name="hour">$PARAM[hour]</param>
+                <param name="left">1480</param>
+                <param name="top">530</param>
+                <param name="size">20</param>
+                <param name="travel">650,320</param>
+                <param name="time">38000</param>
+                <param name="fadeout">35500</param>
+                <param name="lilt_time">3900</param>
+                <param name="flutter_time">2600</param>
+                <param name="flipx">true</param>
+            </include>
+        </control>
+    </include>
+</includes>
