@@ -6,6 +6,7 @@
         <import addon="plugin.video.themoviedb.helper" version="6.17.9" />
         <import addon="resource.images.weathericons.white" version="0.0.1" />
         <import addon="resource.images.arctic.splash" version="1.0.6" />
+        <import addon="resource.images.arctic.weather" version="1.0.0" />
         <import addon="resource.images.studios.coloured" version="0.0.1" />
         <import addon="resource.font.robotocjksc" version="0.0.3" />
     </requires>

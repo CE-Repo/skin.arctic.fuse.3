@@ -28,7 +28,7 @@
                 <control type="image">
                     <bordersize>0</bordersize>
                     <aspectratio scalediffuse="false">scale</aspectratio>
-                    <texture background="true" diffuse="$PARAM[diffuse]" fallback="special://home/addons/resource.images.arctic.splash/resources/weather-watercolour/na.jpg">$PARAM[imagepath]</texture>
+                    <texture background="true" diffuse="$PARAM[diffuse]" fallback="special://home/addons/resource.images.arctic.weather/resources/weather-watercolour/na.jpg">$PARAM[imagepath]</texture>
                 </control>
 
                 <control type="image">
@@ -109,7 +109,7 @@
                 <param name="hightemp">$INFO[Window(weather).Property($PARAM[day].HighTemp)]</param>
                 <param name="lowtemp">$INFO[Window(weather).Property($PARAM[day].LowTemp)]</param>
                 <param name="outlook">$INFO[Window(weather).Property($PARAM[day].Outlook)]</param>
-                <param name="imagepath">special://home/addons/resource.images.arctic.splash/resources/weather-watercolour/$INFO[Window(weather).Property($PARAM[day].FanartCode)].jpg</param>
+                <param name="imagepath">special://home/addons/resource.images.arctic.weather/resources/weather-watercolour/$INFO[Window(weather).Property($PARAM[day].FanartCode)].jpg</param>
             </include>
         </definition>
     </include>
