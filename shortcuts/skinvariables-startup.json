@@ -162,7 +162,7 @@
 
         "SetProperty(ReloadDone,1,Home)",
 
-        "sleep=0.5",
+        "sleep=1.0",
         {
             "rules": [
                 "!Skin.HasSetting(Startup.DisableWaitForLoad)",

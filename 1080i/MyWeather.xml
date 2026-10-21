@@ -9,6 +9,7 @@
     <controls>
         <!-- <include>Background</include> -->
         <include content="Background_StartUp_Layered">
+            <param name="overlays">false</param>
         </include>
 
         <control type="group">
@@ -103,6 +104,8 @@
 
 
         </control>
+
+        <include>Background_StartUp_Overlays</include>
 
         <!-- <control type="group">
             <include>Dimension_Bottombar</include>

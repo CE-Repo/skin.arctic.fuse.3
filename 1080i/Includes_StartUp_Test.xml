@@ -1,9 +1,57 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <includes>
     <!-- Window-local preview selectors; they never override the live startup variables. -->
+    <expression name="Exp_StartUp_Test_AutoTime">Window.IsVisible(1191) + String.IsEqual(Window(1191).Property(SplashTest.AutoTime),true)</expression>
+    <variable name="Label_StartUp_Test_TimeSelection">
+        <value condition="$EXP[Exp_StartUp_Test_AutoTime]">Auto</value>
+        <value>$INFO[Window(1191).Property(SplashTest.Hour)]</value>
+    </variable>
+    <variable name="Label_StartUp_Test_Time">
+        <value condition="$EXP[Exp_StartUp_Test_AutoTime]">Auto ($INFO[Window(1191).Property(SplashTest.Hour)])</value>
+        <value>$INFO[Window(1191).Property(SplashTest.Hour)]</value>
+    </variable>
+    <variable name="Value_StartUp_Test_NextHour">
+        <value condition="String.IsEqual(Window(1191).Property(SplashTest.Hour),0000)">0100</value>
+        <value condition="String.IsEqual(Window(1191).Property(SplashTest.Hour),0100)">0200</value>
+        <value condition="String.IsEqual(Window(1191).Property(SplashTest.Hour),0200)">0300</value>
+        <value condition="String.IsEqual(Window(1191).Property(SplashTest.Hour),0300)">0400</value>
+        <value condition="String.IsEqual(Window(1191).Property(SplashTest.Hour),0400)">0500</value>
+        <value condition="String.IsEqual(Window(1191).Property(SplashTest.Hour),0500)">0600</value>
+        <value condition="String.IsEqual(Window(1191).Property(SplashTest.Hour),0600)">0700</value>
+        <value condition="String.IsEqual(Window(1191).Property(SplashTest.Hour),0700)">0800</value>
+        <value condition="String.IsEqual(Window(1191).Property(SplashTest.Hour),0800)">0900</value>
+        <value condition="String.IsEqual(Window(1191).Property(SplashTest.Hour),0900)">1000</value>
+        <value condition="String.IsEqual(Window(1191).Property(SplashTest.Hour),1000)">1100</value>
+        <value condition="String.IsEqual(Window(1191).Property(SplashTest.Hour),1100)">1200</value>
+        <value condition="String.IsEqual(Window(1191).Property(SplashTest.Hour),1200)">1300</value>
+        <value condition="String.IsEqual(Window(1191).Property(SplashTest.Hour),1300)">1400</value>
+        <value condition="String.IsEqual(Window(1191).Property(SplashTest.Hour),1400)">1500</value>
+        <value condition="String.IsEqual(Window(1191).Property(SplashTest.Hour),1500)">1600</value>
+        <value condition="String.IsEqual(Window(1191).Property(SplashTest.Hour),1600)">1700</value>
+        <value condition="String.IsEqual(Window(1191).Property(SplashTest.Hour),1700)">1800</value>
+        <value condition="String.IsEqual(Window(1191).Property(SplashTest.Hour),1800)">1900</value>
+        <value condition="String.IsEqual(Window(1191).Property(SplashTest.Hour),1900)">2000</value>
+        <value condition="String.IsEqual(Window(1191).Property(SplashTest.Hour),2000)">2100</value>
+        <value condition="String.IsEqual(Window(1191).Property(SplashTest.Hour),2100)">2200</value>
+        <value condition="String.IsEqual(Window(1191).Property(SplashTest.Hour),2200)">2300</value>
+        <value>0000</value>
+    </variable>
     <variable name="Image_StartUp_Test_Layer_BaseWeather">
         <value condition="String.IsEqual(Window(1191).Property(SplashTest.Weather),thunderstorm) | String.IsEqual(Window(1191).Property(SplashTest.Weather),snow)">rain</value>
+        <value condition="String.IsEqual(Window(1191).Property(SplashTest.Weather),partlycloudy)">clear</value>
         <value>$INFO[Window(1191).Property(SplashTest.Weather)]</value>
+    </variable>
+    <variable name="Color_StartUp_Test_Clouds">
+        <value condition="String.IsEqual(Window(1191).Property(SplashTest.Weather),clear)">1affffff</value>
+        <value condition="String.IsEqual(Window(1191).Property(SplashTest.Weather),partlycloudy)">99ffffff</value>
+        <value condition="String.IsEqual(Window(1191).Property(SplashTest.Weather),cloud)">e6ffffff</value>
+        <value>ffffffff</value>
+    </variable>
+    <variable name="Color_StartUp_Test_CloudReflection">
+        <value condition="String.IsEqual(Window(1191).Property(SplashTest.Weather),clear)">04ffffff</value>
+        <value condition="String.IsEqual(Window(1191).Property(SplashTest.Weather),partlycloudy)">17ffffff</value>
+        <value condition="String.IsEqual(Window(1191).Property(SplashTest.Weather),cloud)">22ffffff</value>
+        <value>26ffffff</value>
     </variable>
     <variable name="Image_StartUp_Test_Layer_Sky">
         <value condition="[String.IsEqual(Window(1191).Property(SplashTest.Hour),0500)] | [String.IsEqual(Window(1191).Property(SplashTest.Hour),1900)]">special://home/addons/resource.images.arctic.splash/resources/layers/01-sky/0500.jpg</value>
@@ -30,7 +78,7 @@
         <value>0000</value>
     </variable>
     <variable name="Image_StartUp_Test_Layer_ConditionsHour">
-        <value condition="String.IsEqual(Window(1191).Property(SplashTest.Weather),clear)">0000</value>
+        <value condition="String.IsEqual(Window(1191).Property(SplashTest.Weather),clear) | String.IsEqual(Window(1191).Property(SplashTest.Weather),partlycloudy)">0000</value>
         <value condition="[String.IsEqual(Window(1191).Property(SplashTest.Hour),0500)] | [String.IsEqual(Window(1191).Property(SplashTest.Hour),1900)]">0500</value>
         <value condition="[String.IsEqual(Window(1191).Property(SplashTest.Hour),0600)] | [String.IsEqual(Window(1191).Property(SplashTest.Hour),1800)]">0600</value>
         <value condition="[String.IsEqual(Window(1191).Property(SplashTest.Hour),0700)] | [String.IsEqual(Window(1191).Property(SplashTest.Hour),1700)]">0700</value>
