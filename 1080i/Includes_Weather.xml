@@ -17,7 +17,7 @@
 
 
             <control type="group">
-                <animation effect="fade" start="100" end="70" condition="true">Conditional</animation>
+                <!-- <animation effect="fade" start="100" end="70" condition="true">Conditional</animation> -->
                 <include content="Object_ItemBack">
                     <param name="selected">false</param>
                     <param name="shadow_colordiffuse">shadow_hard</param>

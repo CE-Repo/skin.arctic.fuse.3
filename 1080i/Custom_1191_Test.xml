@@ -21,9 +21,10 @@
             <param name="conditions_hour">$VAR[Image_StartUp_Test_Layer_ConditionsHour]</param>
             <param name="time">$VAR[Image_StartUp_Test_Layer_Time]</param>
         </include>
+
         <include>Object_StartUp_Logo</include>
         <control type="grouplist" id="9010">
-            <bottom>300</bottom>
+            <bottom>320</bottom>
             <width>100%</width>
             <height>80</height>
             <orientation>horizontal</orientation>
@@ -60,5 +61,6 @@
                 <onclick>RunScript(script.skinvariables,run_executebuiltin=special://skin/shortcuts/skinvariables-splash-test.json,use_rules=True,edit=hour)</onclick>
             </control>
         </control>
+
     </controls>
 </window>

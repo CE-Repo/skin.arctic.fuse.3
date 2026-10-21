@@ -185,13 +185,6 @@
                     <texture colordiffuse="ffffffff">$PARAM[time]</texture>
                 </control>
 
-                <control type="image">
-                    <texture colordiffuse="55000000">common/white.png</texture>
-                    <visible>$PARAM[dimming_visible]</visible>
-                </control>
-
-                <nested />
-
                 <!-- Foliage carries the same hourly grade as the trees; the static time
                      plate only grades the registered scenery beneath these moving pieces. -->
                 <include content="Background_StartUp_Foliage">
@@ -211,6 +204,11 @@
                 <include content="Background_StartUp_Snow">
                     <param name="visible">$PARAM[snow_visible]</param>
                 </include>
+
+                <control type="image">
+                    <texture colordiffuse="7f000000">common/white.png</texture>
+                    <visible>$PARAM[dimming_visible]</visible>
+                </control>
 
             </control>
         </definition>
