@@ -271,7 +271,7 @@
 
                 <control type="image">
 
-                    <texture colordiffuse="66000000">common/white.png</texture>
+                    <texture colordiffuse="7f000000">common/white.png</texture>
                     <visible>$PARAM[dimming_visible]</visible>
                 </control>
 

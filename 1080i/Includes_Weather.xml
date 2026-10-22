@@ -114,9 +114,9 @@
                 </include>
 
                 <control type="group">
-                    <include content="Dimension_Padding">
+                    <!-- <include content="Dimension_Padding">
                         <param name="pad">20</param>
-                    </include>
+                    </include> -->
                     <include content="Weather_Card_Artwork">
                         <param name="fanartcode">$PARAM[fanartcode]</param>
                         <param name="fanartcode_info">Window(weather).Property($PARAM[day].FanartCode)</param>
