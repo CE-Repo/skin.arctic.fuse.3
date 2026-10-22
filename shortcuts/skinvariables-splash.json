@@ -38,50 +38,57 @@
                 "SetProperty(HasPreloadedHubs,True,Home)",
                 [
                     {
-                        "rules": ["!String.IsEmpty(Skin.String(HomeSwitcher.1101.Toggle))"],
+                        "rules": ["!String.IsEmpty(Skin.String(HomeSwitcher.1101.Toggle)) + $EXP[Exp_Hub_1101_Available]"],
                         "value": ["ActivateWindow(1101)", "sleep=0.3"]
 
                     }
                 ],
                 [
                     {
-                        "rules": ["!String.IsEmpty(Skin.String(HomeSwitcher.1102.Toggle))"],
+                        "rules": ["!String.IsEmpty(Skin.String(HomeSwitcher.1102.Toggle)) + $EXP[Exp_Hub_1102_Available]"],
                         "value": ["ActivateWindow(1102)", "sleep=0.3"]
 
                     }
                 ],
                 [
                     {
-                        "rules": ["!String.IsEmpty(Skin.String(HomeSwitcher.1103.Toggle))"],
+                        "rules": ["!String.IsEmpty(Skin.String(HomeSwitcher.1103.Toggle)) + $EXP[Exp_Hub_1103_Available]"],
                         "value": ["ActivateWindow(1103)", "sleep=0.3"]
 
                     }
                 ],
                 [
                     {
-                        "rules": ["!String.IsEmpty(Skin.String(HomeSwitcher.1104.Toggle))"],
+                        "rules": ["!String.IsEmpty(Skin.String(HomeSwitcher.1104.Toggle)) + $EXP[Exp_Hub_1104_Available]"],
                         "value": ["ActivateWindow(1104)", "sleep=0.3"]
 
                     }
                 ],
                 [
                     {
-                        "rules": ["!String.IsEmpty(Skin.String(HomeSwitcher.1106.Toggle))"],
+                        "rules": ["!String.IsEmpty(Skin.String(HomeSwitcher.1106.Toggle)) + $EXP[Exp_Hub_1106_Available]"],
                         "value": ["ActivateWindow(1106)", "sleep=0.3"]
 
                     }
                 ],
                 [
                     {
-                        "rules": ["!String.IsEmpty(Skin.String(HomeSwitcher.1107.Toggle)) + System.HasPVRAddon + PVR.HasTVChannels"],
+                        "rules": ["!String.IsEmpty(Skin.String(HomeSwitcher.1107.Toggle)) + $EXP[Exp_Hub_1107_Available]"],
                         "value": ["ActivateWindow(1107)", "sleep=0.3"]
 
                     }
                 ],
                 [
                     {
-                        "rules": ["!String.IsEmpty(Skin.String(HomeSwitcher.1108.Toggle))"],
+                        "rules": ["!String.IsEmpty(Skin.String(HomeSwitcher.1108.Toggle)) + $EXP[Exp_Hub_1108_Available]"],
                         "value": ["ActivateWindow(1108)", "sleep=0.3"]
+
+                    }
+                ],
+                [
+                    {
+                        "rules": ["!String.IsEmpty(Skin.String(HomeSwitcher.1109.Toggle)) + $EXP[Exp_Hub_1109_Available]"],
+                        "value": ["ActivateWindow(1109)", "sleep=0.3"]
 
                     }
                 ],

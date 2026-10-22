@@ -2,7 +2,7 @@
 <includes>
 
     <variable name="Label_Setting_LiveTV_Style">
-        <value condition="Skin.HasSetting(Hub.1107.SquareChannels)">$LOCALIZE[31320]</value>
+        <value condition="$EXP[DialogShortcuts_Hub_SquareChannels]">$LOCALIZE[31320]</value>
         <value>$LOCALIZE[31045]</value>
     </variable>
 
@@ -77,7 +77,7 @@
     </variable>
 
     <variable name="Label_Setting_Hub_LiveTV_Search">
-        <value condition="!Skin.String(HomeSwitcher.1107.Mode,Standard)">$LOCALIZE[137]</value>
+        <value condition="!String.IsEqual(Container(30000).ListItem.Property(mode),Standard)">$LOCALIZE[137]</value>
         <value>$LOCALIZE[568]</value>
     </variable>
 
@@ -1253,6 +1253,17 @@
         <value condition="!String.IsEmpty(Window(Home).Property(TMDBHelper.ListItem.base_plot))">$INFO[Window(Home).Property(TMDBHelper.ListItem.base_plot)]</value>
         <value condition="!String.IsEmpty(Window(Home).Property(TMDbHelper.ListItem.Plot))">$INFO[Window(Home).Property(TMDbHelper.ListItem.Plot)]</value>
         <value condition="!String.IsEmpty(Window(Home).Property(TMDBHelper.ListItem.biography))">$INFO[Window(Home).Property(TMDBHelper.ListItem.biography)]</value>
+    </variable>
+
+    <variable name="Label_Setting_Hub_Type">
+        <value condition="String.IsEqual(Container(30000).ListItem.Property(hubtype),NextAired)">$LOCALIZE[31605]</value>
+        <value condition="String.IsEqual(Container(30000).ListItem.Property(hubtype),LiveTV)">$LOCALIZE[31085] / PVR</value>
+        <value condition="String.IsEqual(Container(30000).ListItem.Property(hubtype),Addons)">$LOCALIZE[24001]</value>
+        <value>$LOCALIZE[31639]</value>
+    </variable>
+    <variable name="Label_Setting_NextAired_Source">
+        <value condition="$EXP[DialogShortcuts_Hub_trakt_calendar]">Trakt</value>
+        <value>$LOCALIZE[14022]</value>
     </variable>
 
 </includes>
