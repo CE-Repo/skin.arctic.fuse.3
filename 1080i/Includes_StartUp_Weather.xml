@@ -300,10 +300,11 @@
     <include name="Background_StartUp_LightningFlash">
         <param name="cycle_time">10000</param>
         <param name="colordiffuse">ffffffff</param>
+        <param name="diffuse"></param>
         <definition>
             <control type="image">
                 <aspectratio align="center" aligny="center">scale</aspectratio>
-                <texture colordiffuse="$PARAM[colordiffuse]">$PARAM[texture]</texture>
+                <texture colordiffuse="$PARAM[colordiffuse]" diffuse="$PARAM[diffuse]">$PARAM[texture]</texture>
                 <animation type="Conditional" condition="$PARAM[visible]" reversible="false" loop="true">
                     <!-- Fade effects multiply: the first gates the attack, the second the decay. -->
                     <effect type="fade" start="0" end="100" time="30" delay="$PARAM[attack]" />
@@ -319,6 +320,7 @@
         <param name="cycle_time">10000</param>
         <param name="colordiffuse">ffffffff</param>
         <param name="echo_colordiffuse">b3ffffff</param>
+        <param name="diffuse"></param>
         <definition>
             <control type="group">
                 <visible>$PARAM[visible]</visible>
@@ -328,6 +330,7 @@
                     <param name="cycle_time">$PARAM[cycle_time]</param>
                     <param name="texture">$PARAM[texture]</param>
                     <param name="colordiffuse">$PARAM[colordiffuse]</param>
+                    <param name="diffuse">$PARAM[diffuse]</param>
                     <param name="attack">1200</param>
                     <param name="decay">1250</param>
                 </include>
@@ -336,6 +339,7 @@
                     <param name="cycle_time">$PARAM[cycle_time]</param>
                     <param name="texture">$PARAM[texture]</param>
                     <param name="colordiffuse">$PARAM[echo_colordiffuse]</param>
+                    <param name="diffuse">$PARAM[diffuse]</param>
                     <param name="attack">1480</param>
                     <param name="decay">1530</param>
                 </include>

@@ -153,13 +153,12 @@
                 <height>280</height>
                 <width>480</width>
                 <include content="Part_Box">
-                    <control type="multiimage">
-                        <timeperimage>20000</timeperimage>
-                        <randomize>true</randomize>
-                        <fadetime>400</fadetime>
-                        <aspectratio scalediffuse="false">scale</aspectratio>
-                        <imagepath diffuse="$PARAM[diffuse]">resource://resource.images.weatherfanart.multi/$PARAM[fanartcode]/</imagepath>
-                    </control>
+                    <include content="Weather_Card_Artwork">
+                        <param name="fanartcode">$INFO[Window(weather).Property($PARAM[day].FanartCode)]</param>
+                        <param name="fanartcode_info">Window(weather).Property($PARAM[day].FanartCode)</param>
+                        <param name="diffuse">$PARAM[diffuse]</param>
+                        <param name="landscape">true</param>
+                    </include>
                     <control type="group">
                         <height>120</height>
                         <width>140</width>
