@@ -564,7 +564,7 @@
                                 <width>320</width>
                                 <height>320</height>
                                 <aspectratio>keep</aspectratio>
-                                <texture diffuse="diffuse/square_w460_h460.png">special://xbmc/media/qr/games/retroachievements.png</texture>
+                                <texture diffuse="diffuse/square_w320_h320.png">special://xbmc/media/qr/games/retroachievements.png</texture>
                             </control>
                             <control type="textbox">
                                 <left>360</left>
