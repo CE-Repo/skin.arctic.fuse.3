@@ -1273,11 +1273,6 @@ msgid "Monthly"
 msgstr "شهري"
 
 #: /1080i/Includes_SkinSettings.xml
-msgctxt "#31267"
-msgid "Title fallback"
-msgstr "العنوان الاحتياطي"
-
-#: /1080i/Includes_SkinSettings.xml
 msgctxt "#31268"
 msgid "Background fallback"
 msgstr "الخلفية الاحتياطية"
