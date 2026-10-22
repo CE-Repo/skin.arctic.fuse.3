@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <window>
-    <onload>RunScript(script.skinvariables,run_executebuiltin=special://skin/shortcuts/skinvariables-splash.json,use_rules=True)</onload>
+    <onload>RunScript(script.skinvariables,run_executebuiltin=special://skin/shortcuts/skinvariables-splash.json,use_rules=True,"hub_1101_available=$EXP[Exp_Hub_1101_Available]","hub_1102_available=$EXP[Exp_Hub_1102_Available]","hub_1103_available=$EXP[Exp_Hub_1103_Available]","hub_1104_available=$EXP[Exp_Hub_1104_Available]","hub_1106_available=$EXP[Exp_Hub_1106_Available]","hub_1107_available=$EXP[Exp_Hub_1107_Available]","hub_1108_available=$EXP[Exp_Hub_1108_Available]","hub_1109_available=$EXP[Exp_Hub_1109_Available]")</onload>
     <include>Action_BuildViews</include>
     <onload>Skin.SetString(TMDbHelper.Corner.Radius,20)</onload>
     <onload>Skin.SetString(TMDbHelper.UseLocalWindowIDs,10000|11101|11102|11103|11104|11105|11106|11107|11108|11109)</onload>
