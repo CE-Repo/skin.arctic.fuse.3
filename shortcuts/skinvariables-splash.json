@@ -91,7 +91,7 @@
         {
             "rules": [
                 "!Skin.HasSetting(Startup.DisableWaitForLoad)",
-                "{301Updating}!=||{501Updating}!=",
+                "System.HasVisibleModalDialog||{301Updating}!=||{501Updating}!=",
                 "System.HasAlarm(SplashTimeOut)"
             ],
             "value": [
