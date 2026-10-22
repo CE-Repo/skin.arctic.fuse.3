@@ -34,6 +34,7 @@
                         <height>$PARAM[size]</height>
                         <aspectratio>keep</aspectratio>
                         <texture flipx="$PARAM[flipx]">special://home/addons/resource.images.arctic.splash/resources/effects/foliage/$PARAM[season]/$PARAM[hour].png</texture>
+                        <fadetime>background_fadetime</fadetime>
                         <animation effect="rotate" start="$PARAM[rotation_start]" end="$PARAM[rotation_end]" center="auto" time="$PARAM[lilt_time]" tween="sine" easing="inout" pulse="true" condition="true" reversible="false">Conditional</animation>
                         <animation effect="rotatey" start="-58" end="58" center="auto" time="$PARAM[flutter_time]" tween="sine" easing="inout" pulse="true" condition="true" reversible="false">Conditional</animation>
                     </control>

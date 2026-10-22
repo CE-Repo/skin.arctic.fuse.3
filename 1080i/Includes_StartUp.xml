@@ -183,17 +183,20 @@
                     <description>Sky</description>
                     <aspectratio align="center" aligny="center">scale</aspectratio>
                     <texture colordiffuse="ffffffff">$PARAM[sky]</texture>
+                    <fadetime>background_fadetime</fadetime>
                 </control>
                 <control type="image">
                     <description>Sun/Moon</description>
                     <aspectratio align="center" aligny="center">scale</aspectratio>
                     <texture colordiffuse="ffffffff">special://home/addons/resource.images.arctic.splash/resources/layers/02-sun-moon/$PARAM[hour].png</texture>
+                    <fadetime>background_fadetime</fadetime>
                 </control>
                 <control type="image">
                     <description>Clouds</description>
                     <visible>![$PARAM[cloud_visible]]</visible>
                     <aspectratio align="center" aligny="center">scale</aspectratio>
                     <texture colordiffuse="$PARAM[cloud_colordiffuse]">special://home/addons/resource.images.arctic.splash/resources/layers/03-clouds/$PARAM[base_weather]/$PARAM[cloud_hour].webp</texture>
+                    <fadetime>background_fadetime</fadetime>
                 </control>
                 <include content="Background_StartUp_TextureDrift">
                     <param name="visible">$PARAM[cloud_visible]</param>
@@ -209,11 +212,13 @@
                     <description>Sunset/Sunrise</description>
                     <aspectratio align="center" aligny="center">scale</aspectratio>
                     <texture colordiffuse="ffffffff">special://home/addons/resource.images.arctic.splash/resources/layers/04-sunset-sunrise/$PARAM[glow_hour].png</texture>
+                    <fadetime>background_fadetime</fadetime>
                 </control>
                 <control type="image">
                     <description>Mountains</description>
                     <aspectratio align="center" aligny="center">scale</aspectratio>
                     <texture colordiffuse="ffffffff">special://home/addons/resource.images.arctic.splash/resources/layers/05-mountains/$PARAM[season].webp</texture>
+                    <fadetime>background_fadetime</fadetime>
                 </control>
                 <include content="Background_StartUp_Lake">
                     <param name="texture">special://home/addons/resource.images.arctic.splash/resources/layers/06-lake/$PARAM[season]/$PARAM[base_weather]/$PARAM[hour].webp</param>
@@ -238,12 +243,14 @@
                     <description>Trees</description>
                     <aspectratio align="center" aligny="center">scale</aspectratio>
                     <texture colordiffuse="ffffffff">special://home/addons/resource.images.arctic.splash/resources/layers/07-trees/$PARAM[season].webp</texture>
+                    <fadetime>background_fadetime</fadetime>
                 </control>
                 <control type="image">
                     <description>Conditions</description>
                     <visible>![$PARAM[rain_visible]] + ![$PARAM[snow_visible]] + ![$PARAM[haze_visible]]</visible>
                     <aspectratio align="center" aligny="center">scale</aspectratio>
                     <texture colordiffuse="ffffffff">special://home/addons/resource.images.arctic.splash/resources/layers/08-conditions/$PARAM[base_weather]/$PARAM[conditions_hour].png</texture>
+                    <fadetime>background_fadetime</fadetime>
                 </control>
 
                 <include content="Background_StartUp_TextureDrift">
@@ -255,6 +262,7 @@
                     <description>Time</description>
                     <aspectratio align="center" aligny="center">scale</aspectratio>
                     <texture colordiffuse="ffffffff">$PARAM[time]</texture>
+                    <fadetime>background_fadetime</fadetime>
                 </control>
 
                 <include content="Background_StartUp_Overlays" condition="$PARAM[overlays]">

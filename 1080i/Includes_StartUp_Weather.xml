@@ -5,6 +5,7 @@
             <description>Alternating horizontal lake ripples</description>
             <aspectratio align="center" aligny="center">scale</aspectratio>
             <texture diffuse="special://home/addons/resource.images.arctic.splash/resources/effects/lake-$PARAM[band].png">$PARAM[texture]</texture>
+            <fadetime>background_fadetime</fadetime>
             <animation effect="slide" start="$PARAM[start],0" end="$PARAM[end],0" time="2300" tween="sine" easing="inout" pulse="true" condition="true" reversible="false">Conditional</animation>
         </control>
     </include>
@@ -14,6 +15,7 @@
             <description>Lake</description>
             <aspectratio align="center" aligny="center">scale</aspectratio>
             <texture>$PARAM[texture]</texture>
+            <fadetime>background_fadetime</fadetime>
         </control>
         <!-- Two narrow diffuse masks select alternating bands from the same lake.
              Opposing horizontal slides ripple the reflection without moving the bank. -->
@@ -40,6 +42,7 @@
                 <height>$PARAM[height]</height>
                 <aspectratio>stretch</aspectratio>
                 <texture flipy="$PARAM[flipy]" colordiffuse="$PARAM[colordiffuse]">$PARAM[texture]</texture>
+                <fadetime>background_fadetime</fadetime>
             </control>
             <control type="image">
                 <left>1920</left>
@@ -47,6 +50,7 @@
                 <height>$PARAM[height]</height>
                 <aspectratio>stretch</aspectratio>
                 <texture flipx="true" flipy="$PARAM[flipy]" colordiffuse="$PARAM[colordiffuse]">$PARAM[texture]</texture>
+                <fadetime>background_fadetime</fadetime>
             </control>
         </control>
     </include>
@@ -305,6 +309,7 @@
             <control type="image">
                 <aspectratio align="center" aligny="center">scale</aspectratio>
                 <texture colordiffuse="$PARAM[colordiffuse]" diffuse="$PARAM[diffuse]">$PARAM[texture]</texture>
+                <fadetime>background_fadetime</fadetime>
                 <animation type="Conditional" condition="$PARAM[visible]" reversible="false" loop="true">
                     <!-- Fade effects multiply: the first gates the attack, the second the decay. -->
                     <effect type="fade" start="0" end="100" time="30" delay="$PARAM[attack]" />
