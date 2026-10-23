@@ -2574,7 +2574,7 @@
         <param name="textbox_offset_y">7</param>
         <definition>
             <control type="image">
-                <texture border="20" colordiffuse="e7ffffff">common/poster_fade.png</texture>
+                <texture border="20" colordiffuse="e7000000">common/poster_fade.png</texture>
                 <visible>$PARAM[fade]</visible>
                 <height>$PARAM[item_h]</height>
             </control>
