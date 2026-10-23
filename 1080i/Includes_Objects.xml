@@ -865,7 +865,7 @@
                     <height>32</height>
                     <textcolor>main_fg_90</textcolor>
                     <shadowcolor>main_bg_30</shadowcolor>
-                    <label>KODI</label>
+                    <label>CoreELEC</label>
                     <font>font_logo_large</font>
                     <align>center</align>
                 </control>
