@@ -616,8 +616,8 @@
         <definition>
             <control type="button">
                 <label fallback="$PARAM[label_fallback]">$PARAM[label]</label>
-                <texturefocus colordiffuse="main_fg_30" border="8">flags/blank-bordered.png</texturefocus>
-                <texturenofocus colordiffuse="main_fg_30" border="8">flags/blank-bordered.png</texturenofocus>
+                <texturefocus colordiffuse="main_fg_30" border="8">u3k/blank-bordered.png</texturefocus>
+                <texturenofocus colordiffuse="main_fg_30" border="8">u3k/blank-bordered.png</texturenofocus>
                 <haspath>$PARAM[haspath]</haspath>
                 <width>auto</width>
                 <textoffsetx>10</textoffsetx>
@@ -642,7 +642,7 @@
                 <width>155</width>
                 <include>Dimension_Info_Line_Pillbox</include>
                 <control type="image">
-                    <texture colordiffuse="main_fg_30" border="8">flags/blank-bordered.png</texture>
+                    <texture colordiffuse="main_fg_30" border="8">u3k/blank-bordered.png</texture>
                 </control>
                 <include content="Info_StarRating">
                     <param name="colordiffuse">$PARAM[colordiffuse]</param>
