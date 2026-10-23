@@ -1,6 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <includes>
 
+    <variable name="Image_FlixArt_MaskPath">
+        <value condition="Skin.String(Skin.FlixArt.Size,Large)">special://skin/extras/diffuse/flixart/1440x810/</value>
+        <value condition="Skin.String(Skin.FlixArt.Size,ExtraLarge)">special://skin/extras/diffuse/flixart/1600x900/</value>
+        <value>special://skin/extras/diffuse/flixart/1280x720/</value>
+    </variable>
+
+    <variable name="Image_FlixArt_Inverse">
+        <value condition="$EXP[Exp_TMDbHelper_IsBlur]">$VAR[Image_FlixArt_MaskPath,,flixart_invert.png]</value>
+        <value>$VAR[Image_FlixArt_MaskPath,,flixart_new_invert.png]</value>
+    </variable>
+
+    <variable name="Image_FlixArt_FullscreenInverse">
+        <value condition="$EXP[Exp_TMDbHelper_IsBlur]">special://skin/extras/diffuse/flixart/1920x1080/flixart_invert.png</value>
+        <value>special://skin/extras/diffuse/flixart/1920x1080/flixart_new_invert.png</value>
+    </variable>
+
     <variable name="Image_GameAchievementEarned">
         <value condition="!String.IsEmpty(ListItem.Property(achievement.earned))">special://skin/extras/icons/award.png</value>
         <value>special://skin/extras/icons/lock.png</value>
@@ -63,8 +79,7 @@
         <value condition="Skin.HasSetting(Info.EnableStylisedBackgrounds) + Window.IsVisible(MyPrograms.xml)">special://skin/extras/backgrounds/content/fanart-arctic-plugins.jpg</value>
         <value condition="Skin.HasSetting(Info.EnableStylisedBackgrounds) + Window.IsVisible(MyGames.xml)">special://skin/extras/backgrounds/content/fanart-arctic-games.jpg</value>
         <value condition="Skin.HasSetting(Info.EnableStylisedBackgrounds) + Window.IsVisible(MyPlaylist.xml)">special://skin/extras/backgrounds/content/fanart-arctic-playlists.jpg</value>
-        <value condition="!String.IsEmpty(Skin.String(Background.Image))">$INFO[Skin.String(Background.Image)]</value>
-        <value>special://skin/extras/backgrounds/blur/purple_blur.jpg</value>
+        <value>$VAR[Image_SimpleBackground]</value>
     </variable>
 
     <variable name="Image_BasicList_Landscape">
@@ -286,8 +301,19 @@
     </variable>
 
     <variable name="Image_SimpleBackground">
+        <!-- Resolve saved built-in JPEG selections without changing custom image paths. -->
+        <value condition="Skin.String(Background.Image,special://skin/extras/backgrounds/blur/blue_blur.jpg)">special://skin/extras/backgrounds/blur/blue_blur.png</value>
+        <value condition="Skin.String(Background.Image,special://skin/extras/backgrounds/blur/classic_blur.jpg)">special://skin/extras/backgrounds/blur/classic_blur.png</value>
+        <value condition="Skin.String(Background.Image,special://skin/extras/backgrounds/blur/coal_blur.jpg)">special://skin/extras/backgrounds/blur/coal_blur.png</value>
+        <value condition="Skin.String(Background.Image,special://skin/extras/backgrounds/blur/green_blur.jpg)">special://skin/extras/backgrounds/blur/green_blur.png</value>
+        <value condition="Skin.String(Background.Image,special://skin/extras/backgrounds/blur/onyx_blur.jpg)">special://skin/extras/backgrounds/blur/onyx_blur.png</value>
+        <value condition="Skin.String(Background.Image,special://skin/extras/backgrounds/blur/orange_blur.jpg)">special://skin/extras/backgrounds/blur/orange_blur.png</value>
+        <value condition="Skin.String(Background.Image,special://skin/extras/backgrounds/blur/pink_blur.jpg)">special://skin/extras/backgrounds/blur/pink_blur.png</value>
+        <value condition="Skin.String(Background.Image,special://skin/extras/backgrounds/blur/purple_blur.jpg)">special://skin/extras/backgrounds/blur/purple_blur.png</value>
+        <value condition="Skin.String(Background.Image,special://skin/extras/backgrounds/blur/slate_blur.jpg)">special://skin/extras/backgrounds/blur/slate_blur.png</value>
+        <value condition="Skin.String(Background.Image,special://skin/extras/backgrounds/pink_blur.jpg)">special://skin/extras/backgrounds/blur/pink_blur.png</value>
         <value condition="!String.IsEmpty(Skin.String(Background.Image))">$INFO[Skin.String(Background.Image)]</value>
-        <value>special://skin/extras/backgrounds/blur/purle_blur.jpg</value>
+        <value>special://skin/extras/backgrounds/blur/purple_blur.png</value>
     </variable>
 
     <variable name="Image_OSD_Poster">

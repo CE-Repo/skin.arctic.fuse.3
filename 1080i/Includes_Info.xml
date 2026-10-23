@@ -351,7 +351,7 @@
     <include name="Info_Line_Pill_Icon">
         <param name="width">48</param>
         <param name="visible">true</param>
-        <param name="icon">flags/sets-inverted.png</param>
+        <param name="icon">flags/collection-inverted.png</param>
         <definition>
             <control type="group">
                 <visible>$PARAM[visible]</visible>

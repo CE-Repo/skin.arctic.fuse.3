@@ -1574,7 +1574,7 @@
                         <centerleft>50%</centerleft>
                         <top>10</top>
                         <height>60</height>
-                        <texture>$INFO[ListItem.Thumb,flags/color/language/,.png]</texture>
+                        <texture fallback="flags/color/language/unk.png">$INFO[ListItem.Thumb,flags/color/language/,.png]</texture>
                         <aspectratio>keep</aspectratio>
                     </control>
                     <control type="label">

@@ -284,13 +284,13 @@
 
     <variable name="Label_Setting_ColourBackground">
         <value condition="String.IsEmpty(Skin.String(Background.Image))">$LOCALIZE[571]</value>
-        <value condition="Skin.String(Background.Image,special://skin/extras/backgrounds/blur/purple_blur.jpg)">$LOCALIZE[31220]</value>
-        <value condition="Skin.String(Background.Image,special://skin/extras/backgrounds/blur/blur_blur.jpg)">$LOCALIZE[762]</value>
-        <value condition="Skin.String(Background.Image,special://skin/extras/backgrounds/blur/pink_blur.jpg)">$LOCALIZE[31224]</value>
-        <value condition="Skin.String(Background.Image,special://skin/extras/backgrounds/blur/orange_blur.jpg)">$LOCALIZE[13342]</value>
-        <value condition="Skin.String(Background.Image,special://skin/extras/backgrounds/blur/slate_blur.jpg)">$LOCALIZE[31221]</value>
-        <value condition="Skin.String(Background.Image,special://skin/extras/backgrounds/blur/coal_blur.jpg)">$LOCALIZE[31222]</value>
-        <value condition="Skin.String(Background.Image,special://skin/extras/backgrounds/blur/onyx_blur.jpg)">$LOCALIZE[31146]</value>
+        <value condition="[Skin.String(Background.Image,special://skin/extras/backgrounds/blur/purple_blur.jpg) | Skin.String(Background.Image,special://skin/extras/backgrounds/blur/purple_blur.png)]">$LOCALIZE[31220]</value>
+        <value condition="[Skin.String(Background.Image,special://skin/extras/backgrounds/blur/blue_blur.jpg) | Skin.String(Background.Image,special://skin/extras/backgrounds/blur/blue_blur.png)]">$LOCALIZE[762]</value>
+        <value condition="[[Skin.String(Background.Image,special://skin/extras/backgrounds/blur/pink_blur.jpg) | Skin.String(Background.Image,special://skin/extras/backgrounds/blur/pink_blur.png)] | Skin.String(Background.Image,special://skin/extras/backgrounds/pink_blur.jpg)]">$LOCALIZE[31224]</value>
+        <value condition="[Skin.String(Background.Image,special://skin/extras/backgrounds/blur/orange_blur.jpg) | Skin.String(Background.Image,special://skin/extras/backgrounds/blur/orange_blur.png)]">$LOCALIZE[13342]</value>
+        <value condition="[Skin.String(Background.Image,special://skin/extras/backgrounds/blur/slate_blur.jpg) | Skin.String(Background.Image,special://skin/extras/backgrounds/blur/slate_blur.png)]">$LOCALIZE[31221]</value>
+        <value condition="[Skin.String(Background.Image,special://skin/extras/backgrounds/blur/coal_blur.jpg) | Skin.String(Background.Image,special://skin/extras/backgrounds/blur/coal_blur.png)]">$LOCALIZE[31222]</value>
+        <value condition="[Skin.String(Background.Image,special://skin/extras/backgrounds/blur/onyx_blur.jpg) | Skin.String(Background.Image,special://skin/extras/backgrounds/blur/onyx_blur.png)]">$LOCALIZE[31146]</value>
         <value>$LOCALIZE[636]</value>
     </variable>
 

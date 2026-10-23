@@ -279,7 +279,7 @@
                         <width>80</width>
                         <bordersize>18</bordersize>
                         <aspectratio align="right">keep</aspectratio>
-                        <texture>$INFO[ListItem.Property(language),flags/color/language/,.png]</texture>
+                        <texture fallback="flags/color/language/unk.png">$INFO[ListItem.Property(language),flags/color/language/,.png]</texture>
                     </control>
                 </control>
             </control>
