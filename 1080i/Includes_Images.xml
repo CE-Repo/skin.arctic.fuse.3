@@ -301,19 +301,9 @@
     </variable>
 
     <variable name="Image_SimpleBackground">
-        <!-- Resolve saved built-in JPEG selections without changing custom image paths. -->
-        <value condition="Skin.String(Background.Image,special://skin/extras/backgrounds/blur/blue_blur.jpg)">special://skin/extras/backgrounds/blur/blue_blur.png</value>
-        <value condition="Skin.String(Background.Image,special://skin/extras/backgrounds/blur/classic_blur.jpg)">special://skin/extras/backgrounds/blur/classic_blur.png</value>
-        <value condition="Skin.String(Background.Image,special://skin/extras/backgrounds/blur/coal_blur.jpg)">special://skin/extras/backgrounds/blur/coal_blur.png</value>
-        <value condition="Skin.String(Background.Image,special://skin/extras/backgrounds/blur/green_blur.jpg)">special://skin/extras/backgrounds/blur/green_blur.png</value>
-        <value condition="Skin.String(Background.Image,special://skin/extras/backgrounds/blur/onyx_blur.jpg)">special://skin/extras/backgrounds/blur/onyx_blur.png</value>
-        <value condition="Skin.String(Background.Image,special://skin/extras/backgrounds/blur/orange_blur.jpg)">special://skin/extras/backgrounds/blur/orange_blur.png</value>
-        <value condition="Skin.String(Background.Image,special://skin/extras/backgrounds/blur/pink_blur.jpg)">special://skin/extras/backgrounds/blur/pink_blur.png</value>
-        <value condition="Skin.String(Background.Image,special://skin/extras/backgrounds/blur/purple_blur.jpg)">special://skin/extras/backgrounds/blur/purple_blur.png</value>
-        <value condition="Skin.String(Background.Image,special://skin/extras/backgrounds/blur/slate_blur.jpg)">special://skin/extras/backgrounds/blur/slate_blur.png</value>
-        <value condition="Skin.String(Background.Image,special://skin/extras/backgrounds/pink_blur.jpg)">special://skin/extras/backgrounds/blur/pink_blur.png</value>
+        <value condition="Skin.String(Background.Image,special://skin/extras/backgrounds/pink_blur.jpg)">special://skin/extras/backgrounds/blur/pink_blur.jpg</value>
         <value condition="!String.IsEmpty(Skin.String(Background.Image))">$INFO[Skin.String(Background.Image)]</value>
-        <value>special://skin/extras/backgrounds/blur/purple_blur.png</value>
+        <value>special://skin/extras/backgrounds/blur/purple_blur.jpg</value>
     </variable>
 
     <variable name="Image_OSD_Poster">
