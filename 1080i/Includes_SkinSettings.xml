@@ -206,16 +206,6 @@
             <label2>$VAR[Label_Setting_Ratings]</label2>
             <onclick>Skin.ToggleSetting(Ratings.EnableColor)</onclick>
         </include>
-
-        <include content="Settings_Button" description="Title style">
-            <param name="window">skinsettings</param>
-            <param name="baseid">$PARAM[baseid]</param>
-            <param name="id">011</param>
-            <param name="control">button</param>
-            <label>$LOCALIZE[31267]</label>
-            <label2>$VAR[Label_Setting_TitleStyle]</label2>
-            <onclick>Skin.ToggleSetting(Info.EnableStylisedTitles)</onclick>
-        </include>
     </include>
 
     <!-- Viewtypes -->

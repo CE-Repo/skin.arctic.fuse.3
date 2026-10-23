@@ -662,8 +662,8 @@
             <param name="control">radiobutton</param>
             <param name="istext">true</param>
             <param name="label">$LOCALIZE[31224]</param>
-            <selected>Skin.String(Background.Image,special://skin/extras/backgrounds/pink_blur.jpg)</selected>
-            <onclick>Skin.SetString(Background.Image,special://skin/extras/backgrounds/pink_blur.jpg)</onclick>
+            <selected>[Skin.String(Background.Image,special://skin/extras/backgrounds/blur/pink_blur.jpg) | Skin.String(Background.Image,special://skin/extras/backgrounds/pink_blur.jpg)]</selected>
+            <onclick>Skin.SetString(Background.Image,special://skin/extras/backgrounds/blur/pink_blur.jpg)</onclick>
             <onclick>RunScript(plugin.video.themoviedb.helper,blur_image=$VAR[Image_SimpleBackground],prefix=SimpleBackground)</onclick>
         </include>
         <include content="Button_Dialog_Setting">
@@ -717,7 +717,7 @@
             <param name="control">radiobutton</param>
             <param name="istext">true</param>
             <param name="label">$LOCALIZE[636]</param>
-            <selected>!String.StartsWith(Skin.String(Background.Image),special://skin/extras/backgrounds/blur/) + !String.IsEmpty(Skin.String(Background.Image))</selected>
+            <selected>!String.StartsWith(Skin.String(Background.Image),special://skin/extras/backgrounds/blur/) + !Skin.String(Background.Image,special://skin/extras/backgrounds/pink_blur.jpg) + !String.IsEmpty(Skin.String(Background.Image))</selected>
             <onclick>Skin.SetImage(Background.Image)</onclick>
             <onclick>RunScript(plugin.video.themoviedb.helper,blur_image=$VAR[Image_SimpleBackground],prefix=SimpleBackground)</onclick>
         </include>

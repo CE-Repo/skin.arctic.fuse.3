@@ -123,7 +123,7 @@
 
     <include name="DialogInfo_Flag_Language">
         <control type="image">
-            <texture background="true">$INFO[ListItem.Property($PARAM[property]),flags/color/language/,.png]</texture>
+            <texture background="true" fallback="flags/color/language/unk.png">$INFO[ListItem.Property($PARAM[property]),flags/color/language/,.png]</texture>
             <height>32</height>
             <width>32</width>
             <centertop>50%</centertop>

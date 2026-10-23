@@ -152,6 +152,10 @@
                     "value": "Skin.SetString(HomeSwitcher.1108.Mode,Wall)"
                 }],
                 [{
+                    "rules": ["String.IsEmpty(Skin.String(HomeSwitcher.1109.Mode))"],
+                    "value": "Skin.SetString(HomeSwitcher.1109.Mode,Standard)"
+                }],
+                [{
                     "rules": ["Skin.HasSetting(TMDbHelper.Service)"],
                     "value": "Skin.SetBool(TMDbHelper.EnableData)"
                 }],
@@ -162,7 +166,7 @@
 
         "SetProperty(ReloadDone,1,Home)",
 
-        "sleep=0.5",
+        "sleep=1.0",
         {
             "rules": [
                 "!Skin.HasSetting(Startup.DisableWaitForLoad)",
