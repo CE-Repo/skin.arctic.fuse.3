@@ -114,7 +114,7 @@
             <include content="Background_StartUp_Custom" condition="$EXP[Exp_StartUp_CustomImage]">
                 <param name="colordiffuse">$PARAM[colordiffuse]</param>
             </include>
-            <include condition="!$EXP[Exp_StartUp_CustomImage]">Background_StartUp_Layered</include>
+            <include condition="!$EXP[Exp_StartUp_CustomImage]">Background_StartUp_SelectedScene</include>
         </definition>
     </include>
 

@@ -1,6 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <includes>
     <!-- Window-local preview selectors; they never override the live startup variables. -->
+    <expression name="Exp_StartUp_Test_Scene_Tokyo">String.IsEqual(Window(1191).Property(SplashTest.Scene),tokyo)</expression>
+    <expression name="Exp_StartUp_Test_Scene_Countryside">String.IsEqual(Window(1191).Property(SplashTest.Scene),countryside)</expression>
+    <variable name="Label_StartUp_Test_Scene">
+        <value condition="$EXP[Exp_StartUp_Test_Scene_Tokyo]">Tokyo café</value>
+        <value condition="$EXP[Exp_StartUp_Test_Scene_Countryside]">Japanese countryside</value>
+        <value>Mount Fuji</value>
+    </variable>
+    <variable name="Value_StartUp_Test_NextScene">
+        <value condition="$EXP[Exp_StartUp_Test_Scene_Tokyo]">countryside</value>
+        <value condition="$EXP[Exp_StartUp_Test_Scene_Countryside]">fuji</value>
+        <value>tokyo</value>
+    </variable>
     <expression name="Exp_StartUp_Test_AutoTime">Window.IsVisible(1191) + String.IsEqual(Window(1191).Property(SplashTest.AutoTime),true)</expression>
     <expression name="Exp_StartUp_Test_Weather_Windy">String.IsEqual(Window(1191).Property(SplashTest.Weather),windy)</expression>
     <expression name="Exp_StartUp_Test_Weather_SevereThunderstorm">String.IsEqual(Window(1191).Property(SplashTest.Weather),severethunderstorm)</expression>
@@ -95,9 +107,9 @@
         <value>0000</value>
     </variable>
     <variable name="Image_StartUp_Test_Layer_BaseWeather">
-        <value condition="$EXP[Exp_StartUp_Test_Weather_Windy]">cloud</value>
-        <value condition="$EXP[Exp_StartUp_Test_Weather_Thunderstorm] | String.IsEqual(Window(1191).Property(SplashTest.Weather),snow) | $EXP[Exp_StartUp_Test_Weather_HeavyRain]">rain</value>
-        <value condition="String.IsEqual(Window(1191).Property(SplashTest.Weather),partlycloudy)">clear</value>
+        <value condition="$EXP[Exp_StartUp_Test_Weather_Overcast]">cloud</value>
+        <value condition="$EXP[Exp_StartUp_Test_Weather_Precipitation]">rain</value>
+        <value condition="$EXP[Exp_StartUp_Test_BaseWeather_Clear]">clear</value>
         <value>$INFO[Window(1191).Property(SplashTest.Weather)]</value>
     </variable>
     <variable name="Color_StartUp_Test_Clouds">
@@ -112,12 +124,15 @@
         <value condition="String.IsEqual(Window(1191).Property(SplashTest.Weather),cloud) | $EXP[Exp_StartUp_Test_Weather_Windy]">22ffffff</value>
         <value>26ffffff</value>
     </variable>
+    <variable name="Image_StartUp_Test_Layer_SkyHour">
+        <value condition="[String.IsEqual(Window(1191).Property(SplashTest.Hour),0500)] | [String.IsEqual(Window(1191).Property(SplashTest.Hour),1900)]">0500</value>
+        <value condition="[String.IsEqual(Window(1191).Property(SplashTest.Hour),0600)] | [String.IsEqual(Window(1191).Property(SplashTest.Hour),1800)]">0600</value>
+        <value condition="[String.IsEqual(Window(1191).Property(SplashTest.Hour),0700)] | [String.IsEqual(Window(1191).Property(SplashTest.Hour),1700)]">0700</value>
+        <value condition="[String.IsEqual(Window(1191).Property(SplashTest.Hour),0800)] | [String.IsEqual(Window(1191).Property(SplashTest.Hour),0900)] | [String.IsEqual(Window(1191).Property(SplashTest.Hour),1000)] | [String.IsEqual(Window(1191).Property(SplashTest.Hour),1100)] | [String.IsEqual(Window(1191).Property(SplashTest.Hour),1200)] | [String.IsEqual(Window(1191).Property(SplashTest.Hour),1300)] | [String.IsEqual(Window(1191).Property(SplashTest.Hour),1400)] | [String.IsEqual(Window(1191).Property(SplashTest.Hour),1500)] | [String.IsEqual(Window(1191).Property(SplashTest.Hour),1600)]">0800</value>
+        <value>0000</value>
+    </variable>
     <variable name="Image_StartUp_Test_Layer_Sky">
-        <value condition="[String.IsEqual(Window(1191).Property(SplashTest.Hour),0500)] | [String.IsEqual(Window(1191).Property(SplashTest.Hour),1900)]">special://home/addons/resource.images.arctic.splash/resources/layers/01-sky/0500.jpg</value>
-        <value condition="[String.IsEqual(Window(1191).Property(SplashTest.Hour),0600)] | [String.IsEqual(Window(1191).Property(SplashTest.Hour),1800)]">special://home/addons/resource.images.arctic.splash/resources/layers/01-sky/0600.jpg</value>
-        <value condition="[String.IsEqual(Window(1191).Property(SplashTest.Hour),0700)] | [String.IsEqual(Window(1191).Property(SplashTest.Hour),1700)]">special://home/addons/resource.images.arctic.splash/resources/layers/01-sky/0700.jpg</value>
-        <value condition="[String.IsEqual(Window(1191).Property(SplashTest.Hour),0800)] | [String.IsEqual(Window(1191).Property(SplashTest.Hour),0900)] | [String.IsEqual(Window(1191).Property(SplashTest.Hour),1000)] | [String.IsEqual(Window(1191).Property(SplashTest.Hour),1100)] | [String.IsEqual(Window(1191).Property(SplashTest.Hour),1200)] | [String.IsEqual(Window(1191).Property(SplashTest.Hour),1300)] | [String.IsEqual(Window(1191).Property(SplashTest.Hour),1400)] | [String.IsEqual(Window(1191).Property(SplashTest.Hour),1500)] | [String.IsEqual(Window(1191).Property(SplashTest.Hour),1600)]">special://home/addons/resource.images.arctic.splash/resources/layers/01-sky/0800.jpg</value>
-        <value>special://home/addons/resource.images.arctic.splash/resources/layers/01-sky/0000.jpg</value>
+        <value>special://home/addons/resource.images.arctic.splash/resources/layers/01-sky/$VAR[Image_StartUp_Test_Layer_SkyHour].jpg</value>
     </variable>
     <variable name="Image_StartUp_Test_Layer_CloudHour">
         <value condition="[String.IsEqual(Window(1191).Property(SplashTest.Hour),0500)]">0500</value>
@@ -160,6 +175,11 @@
         <value>special://home/addons/resource.images.arctic.splash/resources/layers/09-time/$INFO[Window(1191).Property(SplashTest.Season)]/$VAR[Image_StartUp_Test_Layer_TimeHour].webp</value>
     </variable>
     <include name="Object_StartUp_Test_Selector_Items">
+        <item id="4">
+            <label>Scene</label>
+            <label2>$VAR[Label_StartUp_Test_Scene]</label2>
+            <onclick>SetProperty(SplashTest.Scene,$VAR[Value_StartUp_Test_NextScene],1191)</onclick>
+        </item>
         <item id="1">
             <label>Conditions</label>
             <label2>$VAR[Label_StartUp_Test_Weather]</label2>

@@ -28,6 +28,7 @@
     "actions": [
         {
             "rules": [
+                "Window.IsActive(Home)",
                 "String.IsEmpty(Window(Home).Property(HasPreloadedHubs))",
                 "Skin.HasSetting(Startup.EnableHubPreloading)",
                 "!Skin.HasSetting(Startup.DisableWaitForLoad)"
