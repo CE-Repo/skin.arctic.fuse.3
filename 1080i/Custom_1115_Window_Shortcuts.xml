@@ -12,7 +12,6 @@
     <include>Action_Blur_Onload</include>
     <include content="Hub_Onload_Window">
         <param name="window">1109</param>
-        <param name="spotlight">$EXP[Exp_Hub_1109_Custom]</param>
         <param name="defaultname">$LOCALIZE[31639]</param>
     </include>
     <onload>SetFocus(30000,0,absolute)</onload>

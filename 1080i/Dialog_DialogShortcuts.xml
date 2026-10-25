@@ -629,7 +629,7 @@
             <onclick>SetProperty(setting,HomeSwitcher.$PARAM[window].Icon,1117)</onclick>
             <onclick>ActivateWindow(1117)</onclick>
         </include>
-        <include content="Settings_Button" description="Path" condition="$EXP[Exp_Hub_$PARAM[window]_Custom]">
+        <include content="Settings_Button" description="Path" condition="Skin.String(HomeSwitcher.$PARAM[window].Type,Custom)">
             <param name="dialog">false</param>
             <param name="id">8003</param>
             <label>$LOCALIZE[573]</label>
@@ -1026,7 +1026,7 @@
                 <property name="window">$PARAM[window]</property>
                 <property name="enabled">$PARAM[enabled]</property>
                 <property name="mode">$INFO[Skin.String(HomeSwitcher.$PARAM[window].Mode)]</property>
-                <property name="hubtype">$VAR[Hub_Type_$PARAM[window]]</property>
+                <property name="hubtype">$INFO[Skin.String(HomeSwitcher.$PARAM[window].Type)]</property>
                 <include content="DialogShortcuts_Hub_Category_Toggle" condition="$PARAM[toggle]">
                     <param name="window">$PARAM[window]</param>
                 </include>

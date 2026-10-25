@@ -1,14 +1,4 @@
 {
-    "infolabels": {
-        "hub_1101_type": "$VAR[Hub_Type_1101]",
-        "hub_1102_type": "$VAR[Hub_Type_1102]",
-        "hub_1103_type": "$VAR[Hub_Type_1103]",
-        "hub_1104_type": "$VAR[Hub_Type_1104]",
-        "hub_1106_type": "$VAR[Hub_Type_1106]",
-        "hub_1107_type": "$VAR[Hub_Type_1107]",
-        "hub_1108_type": "$VAR[Hub_Type_1108]",
-        "hub_1109_type": "$VAR[Hub_Type_1109]"
-    },
     "localize": {
         "LocalizePreloadingHubs": "31132",
         "LocalizeLoadingWidgets": "31133"
@@ -49,56 +39,56 @@
                 "SetProperty(HasPreloadedHubs,True,Home)",
                 [
                     {
-                        "rules": ["!String.IsEmpty(Skin.String(HomeSwitcher.1101.Toggle))", "{hub_1101_type}!=LiveTV||[System.HasPVRAddon + PVR.HasTVChannels]"],
+                        "rules": ["!String.IsEmpty(Skin.String(HomeSwitcher.1101.Toggle))"],
                         "value": ["ActivateWindow(1101)", "sleep=0.3"]
 
                     }
                 ],
                 [
                     {
-                        "rules": ["!String.IsEmpty(Skin.String(HomeSwitcher.1102.Toggle))", "{hub_1102_type}!=LiveTV||[System.HasPVRAddon + PVR.HasTVChannels]"],
+                        "rules": ["!String.IsEmpty(Skin.String(HomeSwitcher.1102.Toggle))"],
                         "value": ["ActivateWindow(1102)", "sleep=0.3"]
 
                     }
                 ],
                 [
                     {
-                        "rules": ["!String.IsEmpty(Skin.String(HomeSwitcher.1103.Toggle))", "{hub_1103_type}!=LiveTV||[System.HasPVRAddon + PVR.HasTVChannels]"],
+                        "rules": ["!String.IsEmpty(Skin.String(HomeSwitcher.1103.Toggle))"],
                         "value": ["ActivateWindow(1103)", "sleep=0.3"]
 
                     }
                 ],
                 [
                     {
-                        "rules": ["!String.IsEmpty(Skin.String(HomeSwitcher.1104.Toggle))", "{hub_1104_type}!=LiveTV||[System.HasPVRAddon + PVR.HasTVChannels]"],
+                        "rules": ["!String.IsEmpty(Skin.String(HomeSwitcher.1104.Toggle))"],
                         "value": ["ActivateWindow(1104)", "sleep=0.3"]
 
                     }
                 ],
                 [
                     {
-                        "rules": ["!String.IsEmpty(Skin.String(HomeSwitcher.1106.Toggle))", "{hub_1106_type}!=LiveTV||[System.HasPVRAddon + PVR.HasTVChannels]"],
+                        "rules": ["!String.IsEmpty(Skin.String(HomeSwitcher.1106.Toggle))"],
                         "value": ["ActivateWindow(1106)", "sleep=0.3"]
 
                     }
                 ],
                 [
                     {
-                        "rules": ["!String.IsEmpty(Skin.String(HomeSwitcher.1107.Toggle))", "{hub_1107_type}!=LiveTV||[System.HasPVRAddon + PVR.HasTVChannels]"],
+                        "rules": ["!String.IsEmpty(Skin.String(HomeSwitcher.1107.Toggle))"],
                         "value": ["ActivateWindow(1107)", "sleep=0.3"]
 
                     }
                 ],
                 [
                     {
-                        "rules": ["!String.IsEmpty(Skin.String(HomeSwitcher.1108.Toggle))", "{hub_1108_type}!=LiveTV||[System.HasPVRAddon + PVR.HasTVChannels]"],
+                        "rules": ["!String.IsEmpty(Skin.String(HomeSwitcher.1108.Toggle))"],
                         "value": ["ActivateWindow(1108)", "sleep=0.3"]
 
                     }
                 ],
                 [
                     {
-                        "rules": ["!String.IsEmpty(Skin.String(HomeSwitcher.1109.Toggle))", "{hub_1109_type}!=LiveTV||[System.HasPVRAddon + PVR.HasTVChannels]"],
+                        "rules": ["!String.IsEmpty(Skin.String(HomeSwitcher.1109.Toggle))"],
                         "value": ["ActivateWindow(1109)", "sleep=0.3"]
 
                     }
