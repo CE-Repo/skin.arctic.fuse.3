@@ -141,6 +141,21 @@
         </definition>
     </include>
 
+    <include name="Settings_Category_Button">
+        <include content="Settings_Button">
+            <param name="id">$PARAM[id]</param>
+            <param name="control">togglebutton</param>
+            <include>Texture_MainMenu_Highlight_ToggleButton_FakeFocus</include>
+            <label>$PARAM[label]</label>
+            <altlabel>[COLOR=$VAR[ColorSelected]]$PARAM[label][/COLOR]</altlabel>
+            <usealttexture>String.IsEqual(Window(Home).Property($PARAM[property]),$PARAM[category])</usealttexture>
+            <onfocus>SetProperty($PARAM[property],$PARAM[category],Home)</onfocus>
+            <onclick>$PARAM[onclick]</onclick>
+            <altclick>$PARAM[onclick]</altclick>
+            <nested />
+        </include>
+    </include>
+
     <include name="Settings_Left_Grouplist">
         <control type="grouplist" id="$PARAM[id]">
             <nested />
