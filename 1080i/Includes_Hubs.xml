@@ -18,7 +18,7 @@
         <onload condition="$EXP[Exp_Hub_SplashPending] + !Skin.HasSetting(Startup.DisableWaitForLoad)">SetProperty(InitStatus,$LOCALIZE[31133],1198)</onload>
         <onload condition="$EXP[Exp_Hub_SplashPending] + !Skin.HasSetting(Startup.DisableWaitForLoad)">SetProperty(SplashIsVisible,True,1198)</onload>
         <onload condition="$EXP[Exp_Hub_SplashPending] + !Skin.HasSetting(Startup.DisableWaitForLoad) + !System.HasAlarm(SplashTimeOut)">AlarmClock(SplashTimeOut,noop,00:59,silent)</onload>
-        <onload condition="Window.IsActive(Home) | $EXP[Exp_Hub_SplashPending]">RunScript(script.skinvariables,run_executebuiltin=special://skin/shortcuts/skinvariables-splash.json,use_rules=True,"hub_1101_available=$EXP[Exp_Hub_1101_Available]","hub_1102_available=$EXP[Exp_Hub_1102_Available]","hub_1103_available=$EXP[Exp_Hub_1103_Available]","hub_1104_available=$EXP[Exp_Hub_1104_Available]","hub_1106_available=$EXP[Exp_Hub_1106_Available]","hub_1107_available=$EXP[Exp_Hub_1107_Available]","hub_1108_available=$EXP[Exp_Hub_1108_Available]","hub_1109_available=$EXP[Exp_Hub_1109_Available]")</onload>
+        <onload condition="Window.IsActive(Home) | $EXP[Exp_Hub_SplashPending]">RunScript(script.skinvariables,run_executebuiltin=special://skin/shortcuts/skinvariables-splash.json,use_rules=True)</onload>
         <onload>SetProperty(WidgetsInitialized,True,1198)</onload>
     </include>
 
