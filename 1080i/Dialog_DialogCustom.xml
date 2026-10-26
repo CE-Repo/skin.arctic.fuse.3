@@ -167,7 +167,7 @@
         <param name="condition">true</param>
         <definition>
             <onclick condition="$PARAM[condition]">ReloadSkin()</onclick>
-            <onclick condition="$PARAM[condition]">AlarmClock(refocusblura,SetFocus(10000,1,absolute),00:00,silent)</onclick>
+            <onclick condition="$PARAM[condition]">AlarmClock(refocusblura,SetFocus(10011),00:00,silent)</onclick>
             <onclick condition="$PARAM[condition]">AlarmClock(refocusblurb,SetFocus(10001),00:00,silent)</onclick>
             <onclick condition="$PARAM[condition]">AlarmClock(refocusblurc,ActivateWindow(1118),00:00,silent)</onclick>
             <onclick condition="$PARAM[condition] + $PARAM[condition_service]">AlarmClock(refocusblurd,RunScript(plugin.video.themoviedb.helper,restart_service),00:01,silent)</onclick>
