@@ -17,6 +17,11 @@
         <value>special://skin/extras/diffuse/flixart/1920x1080/flixart_new_invert.png</value>
     </variable>
 
+    <variable name="Image_GameAchievementType">
+        <value condition="!String.IsEmpty(ListItem.Property(achievement.win))">special://skin/extras/icons/trophy.png</value>
+        <value condition="!String.IsEmpty(ListItem.Property(achievement.progression))">special://skin/extras/icons/flag.png</value>
+    </variable>
+
     <variable name="Image_GameAchievementEarned">
         <value condition="!String.IsEmpty(ListItem.Property(achievement.earned))">special://skin/extras/icons/award.png</value>
         <value>special://skin/extras/icons/lock.png</value>
@@ -437,9 +442,9 @@
 
     <!-- Calendar-month seasons; the selected Kodi region determines the hemisphere. -->
     <variable name="Image_StartUp_Season">
-        <value condition="[$EXP[Exp_StartUp_SouthernHemisphere] + System.Date(09-01,12-01)] | [!$EXP[Exp_StartUp_SouthernHemisphere] + System.Date(03-01,06-01)]">spring</value>
-        <value condition="[$EXP[Exp_StartUp_SouthernHemisphere] + System.Date(12-01,03-01)] | [!$EXP[Exp_StartUp_SouthernHemisphere] + System.Date(06-01,09-01)]">summer</value>
-        <value condition="[$EXP[Exp_StartUp_SouthernHemisphere] + System.Date(03-01,06-01)] | [!$EXP[Exp_StartUp_SouthernHemisphere] + System.Date(09-01,12-01)]">autumn</value>
+        <value condition="$EXP[Exp_StartUp_Season_spring]">spring</value>
+        <value condition="$EXP[Exp_StartUp_Season_summer]">summer</value>
+        <value condition="$EXP[Exp_StartUp_Season_autumn]">autumn</value>
         <value>winter</value>
     </variable>
 
@@ -854,4 +859,11 @@
         <value condition="String.IsEqual(Control.GetLabel(12),$LOCALIZE[31032])">special://skin/extras/icons/circle-plus.png</value>
         <value>special://skin/extras/icons/circle-dot.png</value>
     </variable>
+
+    <variable name="Image_GameManuals_Finder_State">
+        <value condition="String.IsEqual(Window.Property(state),noproviders)">special://skin/extras/icons/puzzle-piece.png</value>
+        <value condition="String.IsEqual(Window.Property(state),failed)">special://skin/extras/icons/triangle-exclamation.png</value>
+        <value>special://skin/extras/icons/magnifying-glass.png</value>
+    </variable>
+
 </includes>

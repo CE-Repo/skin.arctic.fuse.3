@@ -1,10 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <includes>
+    <include name="Animation_StartUp_Selection">
+        <include content="Animation_Fade_In">
+            <param name="type">Visible</param>
+            <param name="time">background_fadetime</param>
+        </include>
+        <include content="Animation_Fade_Out">
+            <param name="type">Hidden</param>
+            <param name="time">background_fadetime</param>
+        </include>
+    </include>
+
     <include name="Background_StartUp_LakeRipple">
         <control type="image">
             <description>Alternating horizontal lake ripples</description>
             <aspectratio align="center" aligny="center">scale</aspectratio>
-            <texture diffuse="special://home/addons/resource.images.arctic.splash/resources/effects/lake-$PARAM[band].png">$PARAM[texture]</texture>
+            <texture diffuse="special://home/addons/resource.images.arctic.splash/resources/masks/fuji/lake-$PARAM[band].webp">$PARAM[texture]</texture>
             <fadetime>background_fadetime</fadetime>
             <animation effect="slide" start="$PARAM[start],0" end="$PARAM[end],0" time="2300" tween="sine" easing="inout" pulse="true" condition="true" reversible="false">Conditional</animation>
         </control>
@@ -14,10 +25,10 @@
         <control type="image">
             <description>Lake</description>
             <aspectratio align="center" aligny="center">scale</aspectratio>
-            <texture>$PARAM[texture]</texture>
+            <texture diffuse="special://home/addons/resource.images.arctic.splash/resources/masks/fuji/lake.webp">$PARAM[texture]</texture>
             <fadetime>background_fadetime</fadetime>
         </control>
-        <!-- Two narrow diffuse masks select alternating bands from the same lake.
+        <!-- Shared diffuse masks combine the shoreline matte with ripple bands.
              Opposing horizontal slides ripple the reflection without moving the bank. -->
         <include content="Background_StartUp_LakeRipple">
             <param name="texture">$PARAM[texture]</param>
@@ -41,7 +52,7 @@
                 <width>1920</width>
                 <height>$PARAM[height]</height>
                 <aspectratio>stretch</aspectratio>
-                <texture flipy="$PARAM[flipy]" colordiffuse="$PARAM[colordiffuse]">$PARAM[texture]</texture>
+                <texture flipy="$PARAM[flipy]" colordiffuse="$PARAM[colordiffuse]" diffuse="$PARAM[diffuse]">$PARAM[texture]</texture>
                 <fadetime>background_fadetime</fadetime>
             </control>
             <control type="image">
@@ -49,13 +60,14 @@
                 <width>1920</width>
                 <height>$PARAM[height]</height>
                 <aspectratio>stretch</aspectratio>
-                <texture flipx="true" flipy="$PARAM[flipy]" colordiffuse="$PARAM[colordiffuse]">$PARAM[texture]</texture>
+                <texture flipx="true" flipy="$PARAM[flipy]" colordiffuse="$PARAM[colordiffuse]" diffuse="$PARAM[diffuse]">$PARAM[texture]</texture>
                 <fadetime>background_fadetime</fadetime>
             </control>
         </control>
     </include>
 
     <include name="Background_StartUp_TextureDrift">
+        <param name="diffuse"></param>
         <param name="top">0</param>
         <param name="height">1080</param>
         <param name="flipy">false</param>
@@ -71,6 +83,7 @@
                 <animation effect="slide" start="0,0" end="3840,0" time="$PARAM[time]" condition="$PARAM[visible]" reversible="false" loop="true">Conditional</animation>
                 <include content="Background_StartUp_DriftPair">
                     <param name="left">-3840</param>
+                    <param name="diffuse">$PARAM[diffuse]</param>
                     <param name="height">$PARAM[height]</param>
                     <param name="flipy">$PARAM[flipy]</param>
                     <param name="colordiffuse">$PARAM[colordiffuse]</param>
@@ -78,6 +91,7 @@
                 </include>
                 <include content="Background_StartUp_DriftPair">
                     <param name="left">0</param>
+                    <param name="diffuse">$PARAM[diffuse]</param>
                     <param name="height">$PARAM[height]</param>
                     <param name="flipy">$PARAM[flipy]</param>
                     <param name="colordiffuse">$PARAM[colordiffuse]</param>
@@ -352,6 +366,7 @@
         </definition>
     </include>
     <include name="Background_StartUp_Lightning">
+        <param name="diffuse"></param>
         <param name="severe_visible">false</param>
         <param name="colordiffuse">ffffffff</param>
         <param name="echo_colordiffuse">b3ffffff</param>
@@ -360,6 +375,7 @@
                  animation duration attributes are set when controls are loaded. -->
             <include content="Background_StartUp_LightningBurst">
                 <param name="visible">[$PARAM[visible]] + ![$PARAM[severe_visible]]</param>
+                <param name="diffuse">$PARAM[diffuse]</param>
                 <param name="cycle_time">10000</param>
                 <param name="texture">$PARAM[texture]</param>
                 <param name="colordiffuse">$PARAM[colordiffuse]</param>
@@ -367,6 +383,7 @@
             </include>
             <include content="Background_StartUp_LightningBurst">
                 <param name="visible">[$PARAM[visible]] + [$PARAM[severe_visible]]</param>
+                <param name="diffuse">$PARAM[diffuse]</param>
                 <param name="cycle_time">5000</param>
                 <param name="texture">$PARAM[texture]</param>
                 <param name="colordiffuse">$PARAM[colordiffuse]</param>

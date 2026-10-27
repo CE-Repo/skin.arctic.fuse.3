@@ -3,16 +3,27 @@
 
     <include name="Hub_Onload_Window">
         <param name="defaultname">$LOCALIZE[636]</param>
-        <param name="spotlight">true</param>
         <definition>
-            <onload condition="String.IsEmpty(Window($PARAM[window]).Property(TMDbHelper.WidgetContainer)) + $PARAM[spotlight] + !String.IsEmpty(Skin.String(HomeSwitcher.$PARAM[window].Spotlight.Target))">SetProperty(TMDbHelper.WidgetContainer,301,$PARAM[window])</onload>
-            <onload condition="String.IsEmpty(Window($PARAM[window]).Property(TMDbHelper.WidgetContainer)) + [!$PARAM[spotlight] | String.IsEmpty(Skin.String(HomeSwitcher.$PARAM[window].Spotlight.Target))]">SetProperty(TMDbHelper.WidgetContainer,501,$PARAM[window])</onload>
+            <onload condition="String.IsEmpty(Window($PARAM[window]).Property(TMDbHelper.WidgetContainer)) + Skin.String(HomeSwitcher.$PARAM[window].Type,Custom) + !String.IsEmpty(Skin.String(HomeSwitcher.$PARAM[window].Spotlight.Target))">SetProperty(TMDbHelper.WidgetContainer,301,$PARAM[window])</onload>
+            <onload condition="String.IsEmpty(Window($PARAM[window]).Property(TMDbHelper.WidgetContainer)) + [!Skin.String(HomeSwitcher.$PARAM[window].Type,Custom) | String.IsEmpty(Skin.String(HomeSwitcher.$PARAM[window].Spotlight.Target))]">SetProperty(TMDbHelper.WidgetContainer,501,$PARAM[window])</onload>
             <onload condition="String.IsEmpty(Skin.String(HomeSwitcher.$PARAM[window].Name))">Skin.SetString(HomeSwitcher.$PARAM[window].Name,$PARAM[defaultname])</onload>
         </definition>
     </include>
 
+    <!-- Custom-window properties reset on skin reload; Home properties survive it. -->
+    <expression name="Exp_Hub_SplashPending">String.IsEmpty(Window(1198).Property(WidgetsInitialized))</expression>
+    <include name="Hub_Splash_Onload">
+        <onload condition="$EXP[Exp_Hub_SplashPending]">ClearProperty(HasPreloadedHubs,Home)</onload>
+        <onload condition="$EXP[Exp_Hub_SplashPending] + !Skin.HasSetting(Startup.DisableWaitForLoad)">SetProperty(InitStatus,$LOCALIZE[31133],1198)</onload>
+        <onload condition="$EXP[Exp_Hub_SplashPending] + !Skin.HasSetting(Startup.DisableWaitForLoad)">SetProperty(SplashIsVisible,True,1198)</onload>
+        <onload condition="$EXP[Exp_Hub_SplashPending] + !Skin.HasSetting(Startup.DisableWaitForLoad) + !System.HasAlarm(SplashTimeOut)">AlarmClock(SplashTimeOut,noop,00:59,silent)</onload>
+        <onload condition="Window.IsActive(Home) | $EXP[Exp_Hub_SplashPending]">RunScript(script.skinvariables,run_executebuiltin=special://skin/shortcuts/skinvariables-splash.json,use_rules=True)</onload>
+        <onload>SetProperty(WidgetsInitialized,True,1198)</onload>
+    </include>
+
     <include name="Hub_Onload">
         <definition>
+            <include>Hub_Splash_Onload</include>
 
             <include>Action_Blur_Onload</include>
 
@@ -22,40 +33,32 @@
             </include>
             <include content="Hub_Onload_Window">
                 <param name="window">1101</param>
-                <param name="spotlight">$EXP[Exp_Hub_1101_Custom]</param>
             </include>
             <include content="Hub_Onload_Window">
                 <param name="window">1102</param>
-                <param name="spotlight">$EXP[Exp_Hub_1102_Custom]</param>
             </include>
             <include content="Hub_Onload_Window">
                 <param name="window">1103</param>
-                <param name="spotlight">$EXP[Exp_Hub_1103_Custom]</param>
             </include>
             <include content="Hub_Onload_Window">
                 <param name="window">1104</param>
-                <param name="spotlight">$EXP[Exp_Hub_1104_Custom]</param>
             </include>
 
             <onload condition="String.IsEmpty(Window(1105).Property(TMDbHelper.WidgetContainer))">SetProperty(TMDbHelper.WidgetContainer,501,1105)</onload>
             <include content="Hub_Onload_Window">
                 <param name="window">1106</param>
-                <param name="spotlight">$EXP[Exp_Hub_1106_Custom]</param>
                 <param name="defaultname">$LOCALIZE[31605]</param>
             </include>
             <include content="Hub_Onload_Window">
                 <param name="window">1107</param>
-                <param name="spotlight">$EXP[Exp_Hub_1107_Custom]</param>
                 <param name="defaultname">$LOCALIZE[31085] / PVR</param>
             </include>
             <include content="Hub_Onload_Window">
                 <param name="window">1108</param>
-                <param name="spotlight">$EXP[Exp_Hub_1108_Custom]</param>
                 <param name="defaultname">$LOCALIZE[24001]</param>
             </include>
             <include content="Hub_Onload_Window">
                 <param name="window">1109</param>
-                <param name="spotlight">$EXP[Exp_Hub_1109_Custom]</param>
                 <param name="defaultname">$LOCALIZE[31639]</param>
             </include>
             <onload condition="String.IsEmpty(Skin.String(HomeSwitcher.$PARAM[window_id].UpNextMode))">Skin.SetString(HomeSwitcher.$PARAM[window_id].UpNextMode,library_nextaired)</onload>
@@ -1089,16 +1092,16 @@
 
     <include name="Hub_Configurable_Window">
         <definition>
-            <include content="Hub_Window" condition="$EXP[Exp_Hub_$PARAM[window]_Custom]">
+            <include content="Hub_Window" condition="Skin.String(HomeSwitcher.$PARAM[window].Type,Custom)">
                 <param name="window">$PARAM[window]</param>
             </include>
-            <include content="Hub_NextAired_Window" condition="$EXP[Exp_Hub_$PARAM[window]_NextAired]">
+            <include content="Hub_NextAired_Window" condition="Skin.String(HomeSwitcher.$PARAM[window].Type,NextAired)">
                 <param name="window">$PARAM[window]</param>
             </include>
-            <include content="Hub_LiveTV_Window" condition="$EXP[Exp_Hub_$PARAM[window]_LiveTV]">
+            <include content="Hub_LiveTV_Window" condition="Skin.String(HomeSwitcher.$PARAM[window].Type,LiveTV)">
                 <param name="window">$PARAM[window]</param>
             </include>
-            <include content="Hub_Addons_Window" condition="$EXP[Exp_Hub_$PARAM[window]_Addons]">
+            <include content="Hub_Addons_Window" condition="Skin.String(HomeSwitcher.$PARAM[window].Type,Addons)">
                 <param name="window">$PARAM[window]</param>
             </include>
         </definition>
@@ -1154,14 +1157,14 @@
     <include name="Hub_ClickActions">
         <param name="condition">true</param>
         <definition>
-            <onclick condition="$PARAM[condition] + $EXP[Exp_Hub_$PARAM[window]_Custom] + !String.IsEmpty(Skin.String(HomeSwitcher.$PARAM[window].Shortcut.Target))">ActivateWindow($INFO[Skin.String(HomeSwitcher.$PARAM[window].Shortcut.Target)],$INFO[Skin.String(HomeSwitcher.$PARAM[window].Shortcut.Path)],return)</onclick>
-            <onclick condition="$PARAM[condition] + $EXP[Exp_Hub_$PARAM[window]_Custom] + String.IsEmpty(Skin.String(HomeSwitcher.$PARAM[window].Shortcut.Target))">$INFO[Skin.String(HomeSwitcher.$PARAM[window].Shortcut.Path)]</onclick>
-            <onclick condition="$PARAM[condition] + $EXP[Exp_Hub_$PARAM[window]_LiveTV]">ActivateWindow(tvchannels)</onclick>
-            <onclick condition="$PARAM[condition] + $EXP[Exp_Hub_$PARAM[window]_Addons]">ActivateWindow(addonbrowser)</onclick>
-            <onclick condition="$PARAM[condition] + $EXP[Exp_Hub_$PARAM[window]_NextAired] + Skin.String(HomeSwitcher.$PARAM[window].UpNextMode,library_nextaired)">Skin.SetString(HomeSwitcher.$PARAM[window].UpNextMode,trakt_calendar)</onclick>
-            <onclick condition="$PARAM[condition] + $EXP[Exp_Hub_$PARAM[window]_NextAired] + Skin.String(HomeSwitcher.$PARAM[window].UpNextMode,trakt_calendar)">Skin.SetString(HomeSwitcher.$PARAM[window].UpNextMode,library_nextaired)</onclick>
-            <onclick condition="$PARAM[condition] + $EXP[Exp_Hub_$PARAM[window]_NextAired]">SetProperty(ReloadWidgets,1)</onclick>
-            <onclick condition="$PARAM[condition] + $EXP[Exp_Hub_$PARAM[window]_NextAired]">AlarmClock(resetproperty,ClearProperty(ReloadWidgets),00:00,silent)</onclick>
+            <onclick condition="$PARAM[condition] + Skin.String(HomeSwitcher.$PARAM[window].Type,Custom) + !String.IsEmpty(Skin.String(HomeSwitcher.$PARAM[window].Shortcut.Target))">ActivateWindow($INFO[Skin.String(HomeSwitcher.$PARAM[window].Shortcut.Target)],$INFO[Skin.String(HomeSwitcher.$PARAM[window].Shortcut.Path)],return)</onclick>
+            <onclick condition="$PARAM[condition] + Skin.String(HomeSwitcher.$PARAM[window].Type,Custom) + String.IsEmpty(Skin.String(HomeSwitcher.$PARAM[window].Shortcut.Target))">$INFO[Skin.String(HomeSwitcher.$PARAM[window].Shortcut.Path)]</onclick>
+            <onclick condition="$PARAM[condition] + Skin.String(HomeSwitcher.$PARAM[window].Type,LiveTV)">ActivateWindow(tvchannels)</onclick>
+            <onclick condition="$PARAM[condition] + Skin.String(HomeSwitcher.$PARAM[window].Type,Addons)">ActivateWindow(addonbrowser)</onclick>
+            <onclick condition="$PARAM[condition] + Skin.String(HomeSwitcher.$PARAM[window].Type,NextAired) + Skin.String(HomeSwitcher.$PARAM[window].UpNextMode,library_nextaired)">Skin.SetString(HomeSwitcher.$PARAM[window].UpNextMode,trakt_calendar)</onclick>
+            <onclick condition="$PARAM[condition] + Skin.String(HomeSwitcher.$PARAM[window].Type,NextAired) + Skin.String(HomeSwitcher.$PARAM[window].UpNextMode,trakt_calendar)">Skin.SetString(HomeSwitcher.$PARAM[window].UpNextMode,library_nextaired)</onclick>
+            <onclick condition="$PARAM[condition] + Skin.String(HomeSwitcher.$PARAM[window].Type,NextAired)">SetProperty(ReloadWidgets,1)</onclick>
+            <onclick condition="$PARAM[condition] + Skin.String(HomeSwitcher.$PARAM[window].Type,NextAired)">AlarmClock(resetproperty,ClearProperty(ReloadWidgets),00:00,silent)</onclick>
         </definition>
     </include>
 

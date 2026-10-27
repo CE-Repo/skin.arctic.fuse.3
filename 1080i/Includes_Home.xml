@@ -12,66 +12,66 @@
     </variable>
     <variable name="Home_Icon_1101">
         <value condition="!String.IsEmpty(Skin.String(HomeSwitcher.1101.Icon))">$INFO[Skin.String(HomeSwitcher.1101.Icon)]</value>
-        <value condition="$EXP[Exp_Hub_1101_NextAired] + Skin.String(HomeSwitcher.1101.UpNextMode,trakt_calendar)">special://skin/extras/icons/trakt.png</value>
-        <value condition="$EXP[Exp_Hub_1101_NextAired]">special://skin/extras/icons/calendar.png</value>
-        <value condition="$EXP[Exp_Hub_1101_LiveTV]">special://skin/extras/icons/livetv.png</value>
-        <value condition="$EXP[Exp_Hub_1101_Addons]">special://skin/extras/icons/addon.png</value>
+        <value condition="Skin.String(HomeSwitcher.1101.Type,NextAired) + Skin.String(HomeSwitcher.1101.UpNextMode,trakt_calendar)">special://skin/extras/icons/trakt.png</value>
+        <value condition="Skin.String(HomeSwitcher.1101.Type,NextAired)">special://skin/extras/icons/calendar.png</value>
+        <value condition="Skin.String(HomeSwitcher.1101.Type,LiveTV)">special://skin/extras/icons/livetv.png</value>
+        <value condition="Skin.String(HomeSwitcher.1101.Type,Addons)">special://skin/extras/icons/addon.png</value>
         <value>special://skin/extras/icons/shapes.png</value>
     </variable>
     <variable name="Home_Icon_1102">
         <value condition="!String.IsEmpty(Skin.String(HomeSwitcher.1102.Icon))">$INFO[Skin.String(HomeSwitcher.1102.Icon)]</value>
-        <value condition="$EXP[Exp_Hub_1102_NextAired] + Skin.String(HomeSwitcher.1102.UpNextMode,trakt_calendar)">special://skin/extras/icons/trakt.png</value>
-        <value condition="$EXP[Exp_Hub_1102_NextAired]">special://skin/extras/icons/calendar.png</value>
-        <value condition="$EXP[Exp_Hub_1102_LiveTV]">special://skin/extras/icons/livetv.png</value>
-        <value condition="$EXP[Exp_Hub_1102_Addons]">special://skin/extras/icons/addon.png</value>
+        <value condition="Skin.String(HomeSwitcher.1102.Type,NextAired) + Skin.String(HomeSwitcher.1102.UpNextMode,trakt_calendar)">special://skin/extras/icons/trakt.png</value>
+        <value condition="Skin.String(HomeSwitcher.1102.Type,NextAired)">special://skin/extras/icons/calendar.png</value>
+        <value condition="Skin.String(HomeSwitcher.1102.Type,LiveTV)">special://skin/extras/icons/livetv.png</value>
+        <value condition="Skin.String(HomeSwitcher.1102.Type,Addons)">special://skin/extras/icons/addon.png</value>
         <value>special://skin/extras/icons/shapes.png</value>
     </variable>
     <variable name="Home_Icon_1103">
         <value condition="!String.IsEmpty(Skin.String(HomeSwitcher.1103.Icon))">$INFO[Skin.String(HomeSwitcher.1103.Icon)]</value>
-        <value condition="$EXP[Exp_Hub_1103_NextAired] + Skin.String(HomeSwitcher.1103.UpNextMode,trakt_calendar)">special://skin/extras/icons/trakt.png</value>
-        <value condition="$EXP[Exp_Hub_1103_NextAired]">special://skin/extras/icons/calendar.png</value>
-        <value condition="$EXP[Exp_Hub_1103_LiveTV]">special://skin/extras/icons/livetv.png</value>
-        <value condition="$EXP[Exp_Hub_1103_Addons]">special://skin/extras/icons/addon.png</value>
+        <value condition="Skin.String(HomeSwitcher.1103.Type,NextAired) + Skin.String(HomeSwitcher.1103.UpNextMode,trakt_calendar)">special://skin/extras/icons/trakt.png</value>
+        <value condition="Skin.String(HomeSwitcher.1103.Type,NextAired)">special://skin/extras/icons/calendar.png</value>
+        <value condition="Skin.String(HomeSwitcher.1103.Type,LiveTV)">special://skin/extras/icons/livetv.png</value>
+        <value condition="Skin.String(HomeSwitcher.1103.Type,Addons)">special://skin/extras/icons/addon.png</value>
         <value>special://skin/extras/icons/shapes.png</value>
     </variable>
     <variable name="Home_Icon_1104">
         <value condition="!String.IsEmpty(Skin.String(HomeSwitcher.1104.Icon))">$INFO[Skin.String(HomeSwitcher.1104.Icon)]</value>
-        <value condition="$EXP[Exp_Hub_1104_NextAired] + Skin.String(HomeSwitcher.1104.UpNextMode,trakt_calendar)">special://skin/extras/icons/trakt.png</value>
-        <value condition="$EXP[Exp_Hub_1104_NextAired]">special://skin/extras/icons/calendar.png</value>
-        <value condition="$EXP[Exp_Hub_1104_LiveTV]">special://skin/extras/icons/livetv.png</value>
-        <value condition="$EXP[Exp_Hub_1104_Addons]">special://skin/extras/icons/addon.png</value>
+        <value condition="Skin.String(HomeSwitcher.1104.Type,NextAired) + Skin.String(HomeSwitcher.1104.UpNextMode,trakt_calendar)">special://skin/extras/icons/trakt.png</value>
+        <value condition="Skin.String(HomeSwitcher.1104.Type,NextAired)">special://skin/extras/icons/calendar.png</value>
+        <value condition="Skin.String(HomeSwitcher.1104.Type,LiveTV)">special://skin/extras/icons/livetv.png</value>
+        <value condition="Skin.String(HomeSwitcher.1104.Type,Addons)">special://skin/extras/icons/addon.png</value>
         <value>special://skin/extras/icons/shapes.png</value>
     </variable>
     <variable name="Home_Icon_1106">
         <value condition="!String.IsEmpty(Skin.String(HomeSwitcher.1106.Icon))">$INFO[Skin.String(HomeSwitcher.1106.Icon)]</value>
-        <value condition="$EXP[Exp_Hub_1106_NextAired] + Skin.String(HomeSwitcher.1106.UpNextMode,trakt_calendar)">special://skin/extras/icons/trakt.png</value>
-        <value condition="$EXP[Exp_Hub_1106_NextAired]">special://skin/extras/icons/calendar.png</value>
-        <value condition="$EXP[Exp_Hub_1106_LiveTV]">special://skin/extras/icons/livetv.png</value>
-        <value condition="$EXP[Exp_Hub_1106_Addons]">special://skin/extras/icons/addon.png</value>
+        <value condition="Skin.String(HomeSwitcher.1106.Type,NextAired) + Skin.String(HomeSwitcher.1106.UpNextMode,trakt_calendar)">special://skin/extras/icons/trakt.png</value>
+        <value condition="Skin.String(HomeSwitcher.1106.Type,NextAired)">special://skin/extras/icons/calendar.png</value>
+        <value condition="Skin.String(HomeSwitcher.1106.Type,LiveTV)">special://skin/extras/icons/livetv.png</value>
+        <value condition="Skin.String(HomeSwitcher.1106.Type,Addons)">special://skin/extras/icons/addon.png</value>
         <value>special://skin/extras/icons/shapes.png</value>
     </variable>
     <variable name="Home_Icon_1107">
         <value condition="!String.IsEmpty(Skin.String(HomeSwitcher.1107.Icon))">$INFO[Skin.String(HomeSwitcher.1107.Icon)]</value>
-        <value condition="$EXP[Exp_Hub_1107_NextAired] + Skin.String(HomeSwitcher.1107.UpNextMode,trakt_calendar)">special://skin/extras/icons/trakt.png</value>
-        <value condition="$EXP[Exp_Hub_1107_NextAired]">special://skin/extras/icons/calendar.png</value>
-        <value condition="$EXP[Exp_Hub_1107_LiveTV]">special://skin/extras/icons/livetv.png</value>
-        <value condition="$EXP[Exp_Hub_1107_Addons]">special://skin/extras/icons/addon.png</value>
+        <value condition="Skin.String(HomeSwitcher.1107.Type,NextAired) + Skin.String(HomeSwitcher.1107.UpNextMode,trakt_calendar)">special://skin/extras/icons/trakt.png</value>
+        <value condition="Skin.String(HomeSwitcher.1107.Type,NextAired)">special://skin/extras/icons/calendar.png</value>
+        <value condition="Skin.String(HomeSwitcher.1107.Type,LiveTV)">special://skin/extras/icons/livetv.png</value>
+        <value condition="Skin.String(HomeSwitcher.1107.Type,Addons)">special://skin/extras/icons/addon.png</value>
         <value>special://skin/extras/icons/shapes.png</value>
     </variable>
     <variable name="Home_Icon_1108">
         <value condition="!String.IsEmpty(Skin.String(HomeSwitcher.1108.Icon))">$INFO[Skin.String(HomeSwitcher.1108.Icon)]</value>
-        <value condition="$EXP[Exp_Hub_1108_NextAired] + Skin.String(HomeSwitcher.1108.UpNextMode,trakt_calendar)">special://skin/extras/icons/trakt.png</value>
-        <value condition="$EXP[Exp_Hub_1108_NextAired]">special://skin/extras/icons/calendar.png</value>
-        <value condition="$EXP[Exp_Hub_1108_LiveTV]">special://skin/extras/icons/livetv.png</value>
-        <value condition="$EXP[Exp_Hub_1108_Addons]">special://skin/extras/icons/addon.png</value>
+        <value condition="Skin.String(HomeSwitcher.1108.Type,NextAired) + Skin.String(HomeSwitcher.1108.UpNextMode,trakt_calendar)">special://skin/extras/icons/trakt.png</value>
+        <value condition="Skin.String(HomeSwitcher.1108.Type,NextAired)">special://skin/extras/icons/calendar.png</value>
+        <value condition="Skin.String(HomeSwitcher.1108.Type,LiveTV)">special://skin/extras/icons/livetv.png</value>
+        <value condition="Skin.String(HomeSwitcher.1108.Type,Addons)">special://skin/extras/icons/addon.png</value>
         <value>special://skin/extras/icons/shapes.png</value>
     </variable>
     <variable name="Home_Icon_1109">
         <value condition="!String.IsEmpty(Skin.String(HomeSwitcher.1109.Icon))">$INFO[Skin.String(HomeSwitcher.1109.Icon)]</value>
-        <value condition="$EXP[Exp_Hub_1109_NextAired] + Skin.String(HomeSwitcher.1109.UpNextMode,trakt_calendar)">special://skin/extras/icons/trakt.png</value>
-        <value condition="$EXP[Exp_Hub_1109_NextAired]">special://skin/extras/icons/calendar.png</value>
-        <value condition="$EXP[Exp_Hub_1109_LiveTV]">special://skin/extras/icons/livetv.png</value>
-        <value condition="$EXP[Exp_Hub_1109_Addons]">special://skin/extras/icons/addon.png</value>
+        <value condition="Skin.String(HomeSwitcher.1109.Type,NextAired) + Skin.String(HomeSwitcher.1109.UpNextMode,trakt_calendar)">special://skin/extras/icons/trakt.png</value>
+        <value condition="Skin.String(HomeSwitcher.1109.Type,NextAired)">special://skin/extras/icons/calendar.png</value>
+        <value condition="Skin.String(HomeSwitcher.1109.Type,LiveTV)">special://skin/extras/icons/livetv.png</value>
+        <value condition="Skin.String(HomeSwitcher.1109.Type,Addons)">special://skin/extras/icons/addon.png</value>
         <value>special://skin/extras/icons/shapes.png</value>
     </variable>
 
@@ -115,7 +115,7 @@
             <param name="label">$INFO[Skin.String(HomeSwitcher.1101.Name)]</param>
             <param name="icon">$VAR[Home_Icon_1101]</param>
             <param name="action">ReplaceWindow(1101)</param>
-            <param name="enabled">!String.IsEmpty(Skin.String(HomeSwitcher.1101.Toggle)) + $EXP[Exp_Hub_1101_Available]</param>
+            <param name="enabled">!String.IsEmpty(Skin.String(HomeSwitcher.1101.Toggle))</param>
             <param name="visible">Window.IsVisible(1105) | Window.IsVisible(Home) | Window.IsVisible(1101)</param>
             <param name="mod">$PARAM[mod]</param>
         </include>
@@ -126,7 +126,7 @@
             <param name="label">$INFO[Skin.String(HomeSwitcher.1102.Name)]</param>
             <param name="icon">$VAR[Home_Icon_1102]</param>
             <param name="action">ReplaceWindow(1102)</param>
-            <param name="enabled">!String.IsEmpty(Skin.String(HomeSwitcher.1102.Toggle)) + $EXP[Exp_Hub_1102_Available]</param>
+            <param name="enabled">!String.IsEmpty(Skin.String(HomeSwitcher.1102.Toggle))</param>
             <param name="visible">Window.IsVisible(1105) | Window.IsVisible(Home) | Window.IsVisible(1101) | Window.IsVisible(1102)</param>
             <param name="mod">$PARAM[mod]</param>
         </include>
@@ -137,7 +137,7 @@
             <param name="label">$INFO[Skin.String(HomeSwitcher.1103.Name)]</param>
             <param name="icon">$VAR[Home_Icon_1103]</param>
             <param name="action">ReplaceWindow(1103)</param>
-            <param name="enabled">!String.IsEmpty(Skin.String(HomeSwitcher.1103.Toggle)) + $EXP[Exp_Hub_1103_Available]</param>
+            <param name="enabled">!String.IsEmpty(Skin.String(HomeSwitcher.1103.Toggle))</param>
             <param name="visible">Window.IsVisible(1105) | Window.IsVisible(Home) | Window.IsVisible(1101) | Window.IsVisible(1102) | Window.IsVisible(1103)</param>
             <param name="mod">$PARAM[mod]</param>
         </include>
@@ -148,7 +148,7 @@
             <param name="label">$INFO[Skin.String(HomeSwitcher.1104.Name)]</param>
             <param name="icon">$VAR[Home_Icon_1104]</param>
             <param name="action">ReplaceWindow(1104)</param>
-            <param name="enabled">!String.IsEmpty(Skin.String(HomeSwitcher.1104.Toggle)) + $EXP[Exp_Hub_1104_Available]</param>
+            <param name="enabled">!String.IsEmpty(Skin.String(HomeSwitcher.1104.Toggle))</param>
             <param name="visible">Window.IsVisible(1105) | Window.IsVisible(Home) | Window.IsVisible(1101) | Window.IsVisible(1102) | Window.IsVisible(1103) | Window.IsVisible(1104)</param>
             <param name="mod">$PARAM[mod]</param>
         </include>
@@ -159,7 +159,7 @@
             <param name="label">$INFO[Skin.String(HomeSwitcher.1106.Name)]</param>
             <param name="icon">$VAR[Home_Icon_1106]</param>
             <param name="action">ReplaceWindow(1106)</param>
-            <param name="enabled">!String.IsEmpty(Skin.String(HomeSwitcher.1106.Toggle)) + $EXP[Exp_Hub_1106_Available]</param>
+            <param name="enabled">!String.IsEmpty(Skin.String(HomeSwitcher.1106.Toggle))</param>
             <param name="visible">Window.IsVisible(1105) | Window.IsVisible(Home) | Window.IsVisible(1101) | Window.IsVisible(1102) | Window.IsVisible(1103) | Window.IsVisible(1104) | Window.IsVisible(1106)</param>
             <param name="mod">$PARAM[mod]</param>
         </include>
@@ -170,7 +170,7 @@
             <param name="label">$INFO[Skin.String(HomeSwitcher.1107.Name)]</param>
             <param name="icon">$VAR[Home_Icon_1107]</param>
             <param name="action">ReplaceWindow(1107)</param>
-            <param name="enabled">!String.IsEmpty(Skin.String(HomeSwitcher.1107.Toggle)) + $EXP[Exp_Hub_1107_Available]</param>
+            <param name="enabled">!String.IsEmpty(Skin.String(HomeSwitcher.1107.Toggle))</param>
             <param name="visible">Window.IsVisible(1105) | Window.IsVisible(Home) | Window.IsVisible(1101) | Window.IsVisible(1102) | Window.IsVisible(1103) | Window.IsVisible(1104) | Window.IsVisible(1106) | Window.IsVisible(1107)</param>
             <param name="mod">$PARAM[mod]</param>
         </include>
@@ -181,7 +181,7 @@
             <param name="label">$INFO[Skin.String(HomeSwitcher.1108.Name)]</param>
             <param name="icon">$VAR[Home_Icon_1108]</param>
             <param name="action">ReplaceWindow(1108)</param>
-            <param name="enabled">!String.IsEmpty(Skin.String(HomeSwitcher.1108.Toggle)) + $EXP[Exp_Hub_1108_Available]</param>
+            <param name="enabled">!String.IsEmpty(Skin.String(HomeSwitcher.1108.Toggle))</param>
             <param name="visible">Window.IsVisible(1105) | Window.IsVisible(Home) | Window.IsVisible(1101) | Window.IsVisible(1102) | Window.IsVisible(1103) | Window.IsVisible(1104) | Window.IsVisible(1106) | Window.IsVisible(1107) | Window.IsVisible(1108)</param>
             <param name="mod">$PARAM[mod]</param>
         </include>
@@ -192,7 +192,7 @@
             <param name="label">$INFO[Skin.String(HomeSwitcher.1109.Name)]</param>
             <param name="icon">$VAR[Home_Icon_1109]</param>
             <param name="action">ReplaceWindow(1109)</param>
-            <param name="enabled">!String.IsEmpty(Skin.String(HomeSwitcher.1109.Toggle)) + $EXP[Exp_Hub_1109_Available]</param>
+            <param name="enabled">!String.IsEmpty(Skin.String(HomeSwitcher.1109.Toggle))</param>
             <param name="visible">Window.IsVisible(1105) | Window.IsVisible(Home) | Window.IsVisible(1101) | Window.IsVisible(1102) | Window.IsVisible(1103) | Window.IsVisible(1104) | Window.IsVisible(1106) | Window.IsVisible(1107) | Window.IsVisible(1108) | Window.IsVisible(1109)</param>
             <param name="mod">$PARAM[mod]</param>
         </include>
@@ -413,19 +413,19 @@
                         <param name="window">home</param>
                         <param name="id">00</param>
                     </include>
-                    <include content="Home_Object" condition="!String.IsEmpty(Skin.String(HomeSwitcher.1101.Toggle)) + $EXP[Exp_Hub_1101_Available]">
+                    <include content="Home_Object" condition="!String.IsEmpty(Skin.String(HomeSwitcher.1101.Toggle))">
                         <param name="window">1101</param>
                         <param name="id">01</param>
                     </include>
-                    <include content="Home_Object" condition="!String.IsEmpty(Skin.String(HomeSwitcher.1102.Toggle)) + $EXP[Exp_Hub_1102_Available]">
+                    <include content="Home_Object" condition="!String.IsEmpty(Skin.String(HomeSwitcher.1102.Toggle))">
                         <param name="window">1102</param>
                         <param name="id">02</param>
                     </include>
-                    <include content="Home_Object" condition="!String.IsEmpty(Skin.String(HomeSwitcher.1103.Toggle)) + $EXP[Exp_Hub_1103_Available]">
+                    <include content="Home_Object" condition="!String.IsEmpty(Skin.String(HomeSwitcher.1103.Toggle))">
                         <param name="window">1103</param>
                         <param name="id">03</param>
                     </include>
-                    <include content="Home_Object" condition="!String.IsEmpty(Skin.String(HomeSwitcher.1104.Toggle)) + $EXP[Exp_Hub_1104_Available]">
+                    <include content="Home_Object" condition="!String.IsEmpty(Skin.String(HomeSwitcher.1104.Toggle))">
                         <param name="window">1104</param>
                         <param name="id">04</param>
                     </include>
@@ -471,35 +471,35 @@
                         <param name="icon">$VAR[Home_Icon_home]</param>
                         <param name="window">home</param>
                     </include>
-                    <include content="Home_Object_VertIcon" condition="!String.IsEmpty(Skin.String(HomeSwitcher.1101.Toggle)) + $EXP[Exp_Hub_1101_Available]">
+                    <include content="Home_Object_VertIcon" condition="!String.IsEmpty(Skin.String(HomeSwitcher.1101.Toggle))">
                         <param name="icon">$VAR[Home_Icon_1101]</param>
                         <param name="window">1101</param>
                     </include>
-                    <include content="Home_Object_VertIcon" condition="!String.IsEmpty(Skin.String(HomeSwitcher.1102.Toggle)) + $EXP[Exp_Hub_1102_Available]">
+                    <include content="Home_Object_VertIcon" condition="!String.IsEmpty(Skin.String(HomeSwitcher.1102.Toggle))">
                         <param name="icon">$VAR[Home_Icon_1102]</param>
                         <param name="window">1102</param>
                     </include>
-                    <include content="Home_Object_VertIcon" condition="!String.IsEmpty(Skin.String(HomeSwitcher.1103.Toggle)) + $EXP[Exp_Hub_1103_Available]">
+                    <include content="Home_Object_VertIcon" condition="!String.IsEmpty(Skin.String(HomeSwitcher.1103.Toggle))">
                         <param name="icon">$VAR[Home_Icon_1103]</param>
                         <param name="window">1103</param>
                     </include>
-                    <include content="Home_Object_VertIcon" condition="!String.IsEmpty(Skin.String(HomeSwitcher.1104.Toggle)) + $EXP[Exp_Hub_1104_Available]">
+                    <include content="Home_Object_VertIcon" condition="!String.IsEmpty(Skin.String(HomeSwitcher.1104.Toggle))">
                         <param name="icon">$VAR[Home_Icon_1104]</param>
                         <param name="window">1104</param>
                     </include>
-                    <include content="Home_Object_VertIcon" condition="!String.IsEmpty(Skin.String(HomeSwitcher.1106.Toggle)) + $EXP[Exp_Hub_1106_Available]">
+                    <include content="Home_Object_VertIcon" condition="!String.IsEmpty(Skin.String(HomeSwitcher.1106.Toggle))">
                         <param name="icon">$VAR[Home_Icon_1106]</param>
                         <param name="window">1106</param>
                     </include>
-                    <include content="Home_Object_VertIcon" condition="!String.IsEmpty(Skin.String(HomeSwitcher.1107.Toggle)) + $EXP[Exp_Hub_1107_Available]">
+                    <include content="Home_Object_VertIcon" condition="!String.IsEmpty(Skin.String(HomeSwitcher.1107.Toggle))">
                         <param name="icon">$VAR[Home_Icon_1107]</param>
                         <param name="window">1107</param>
                     </include>
-                    <include content="Home_Object_VertIcon" condition="!String.IsEmpty(Skin.String(HomeSwitcher.1108.Toggle)) + $EXP[Exp_Hub_1108_Available]">
+                    <include content="Home_Object_VertIcon" condition="!String.IsEmpty(Skin.String(HomeSwitcher.1108.Toggle))">
                         <param name="icon">$VAR[Home_Icon_1108]</param>
                         <param name="window">1108</param>
                     </include>
-                    <include content="Home_Object_VertIcon" condition="!String.IsEmpty(Skin.String(HomeSwitcher.1109.Toggle)) + $EXP[Exp_Hub_1109_Available]">
+                    <include content="Home_Object_VertIcon" condition="!String.IsEmpty(Skin.String(HomeSwitcher.1109.Toggle))">
                         <param name="icon">$VAR[Home_Icon_1109]</param>
                         <param name="window">1109</param>
                     </include>
@@ -541,22 +541,22 @@
             <include>Home_Right_Group_Definition</include>
             <height>80</height>
             <centertop>50%</centertop>
-            <include content="Home_Settings_Button" condition="!String.IsEmpty(Skin.String(HomeSwitcher.1106.Toggle)) + $EXP[Exp_Hub_1106_Available]">
+            <include content="Home_Settings_Button" condition="!String.IsEmpty(Skin.String(HomeSwitcher.1106.Toggle))">
                 <param name="icon">$VAR[Home_Icon_1106]</param>
                 <param name="window">1106</param>
                 <param name="id">3106</param>
             </include>
-            <include content="Home_Settings_Button" condition="!String.IsEmpty(Skin.String(HomeSwitcher.1107.Toggle)) + $EXP[Exp_Hub_1107_Available]">
+            <include content="Home_Settings_Button" condition="!String.IsEmpty(Skin.String(HomeSwitcher.1107.Toggle))">
                 <param name="icon">$VAR[Home_Icon_1107]</param>
                 <param name="window">1107</param>
                 <param name="id">3107</param>
             </include>
-            <include content="Home_Settings_Button" condition="!String.IsEmpty(Skin.String(HomeSwitcher.1108.Toggle)) + $EXP[Exp_Hub_1108_Available]">
+            <include content="Home_Settings_Button" condition="!String.IsEmpty(Skin.String(HomeSwitcher.1108.Toggle))">
                 <param name="icon">$VAR[Home_Icon_1108]</param>
                 <param name="window">1108</param>
                 <param name="id">3108</param>
             </include>
-            <include content="Home_Settings_Button" condition="!String.IsEmpty(Skin.String(HomeSwitcher.1109.Toggle)) + $EXP[Exp_Hub_1109_Available]">
+            <include content="Home_Settings_Button" condition="!String.IsEmpty(Skin.String(HomeSwitcher.1109.Toggle))">
                 <param name="icon">$VAR[Home_Icon_1109]</param>
                 <param name="window">1109</param>
                 <param name="id">3109</param>
@@ -827,19 +827,19 @@
                         <param name="window">home</param>
                         <param name="id">00</param>
                     </include>
-                    <include content="Home_Submenu_Panel" condition="!String.IsEmpty(Skin.String(HomeSwitcher.1101.Toggle)) + $EXP[Exp_Hub_1101_Available]">
+                    <include content="Home_Submenu_Panel" condition="!String.IsEmpty(Skin.String(HomeSwitcher.1101.Toggle))">
                         <param name="window">1101</param>
                         <param name="id">01</param>
                     </include>
-                    <include content="Home_Submenu_Panel" condition="!String.IsEmpty(Skin.String(HomeSwitcher.1102.Toggle)) + $EXP[Exp_Hub_1102_Available]">
+                    <include content="Home_Submenu_Panel" condition="!String.IsEmpty(Skin.String(HomeSwitcher.1102.Toggle))">
                         <param name="window">1102</param>
                         <param name="id">02</param>
                     </include>
-                    <include content="Home_Submenu_Panel" condition="!String.IsEmpty(Skin.String(HomeSwitcher.1103.Toggle)) + $EXP[Exp_Hub_1103_Available]">
+                    <include content="Home_Submenu_Panel" condition="!String.IsEmpty(Skin.String(HomeSwitcher.1103.Toggle))">
                         <param name="window">1103</param>
                         <param name="id">03</param>
                     </include>
-                    <include content="Home_Submenu_Panel" condition="!String.IsEmpty(Skin.String(HomeSwitcher.1104.Toggle)) + $EXP[Exp_Hub_1104_Available]">
+                    <include content="Home_Submenu_Panel" condition="!String.IsEmpty(Skin.String(HomeSwitcher.1104.Toggle))">
                         <param name="window">1104</param>
                         <param name="id">04</param>
                     </include>
@@ -866,35 +866,35 @@
                     <param name="window">home</param>
                     <param name="id">00</param>
                 </include>
-                <include content="Home_Submenu_Panel" condition="!String.IsEmpty(Skin.String(HomeSwitcher.1101.Toggle)) + $EXP[Exp_Hub_1101_Available]">
+                <include content="Home_Submenu_Panel" condition="!String.IsEmpty(Skin.String(HomeSwitcher.1101.Toggle))">
                     <param name="window">1101</param>
                     <param name="id">01</param>
                 </include>
-                <include content="Home_Submenu_Panel" condition="!String.IsEmpty(Skin.String(HomeSwitcher.1102.Toggle)) + $EXP[Exp_Hub_1102_Available]">
+                <include content="Home_Submenu_Panel" condition="!String.IsEmpty(Skin.String(HomeSwitcher.1102.Toggle))">
                     <param name="window">1102</param>
                     <param name="id">02</param>
                 </include>
-                <include content="Home_Submenu_Panel" condition="!String.IsEmpty(Skin.String(HomeSwitcher.1103.Toggle)) + $EXP[Exp_Hub_1103_Available]">
+                <include content="Home_Submenu_Panel" condition="!String.IsEmpty(Skin.String(HomeSwitcher.1103.Toggle))">
                     <param name="window">1103</param>
                     <param name="id">03</param>
                 </include>
-                <include content="Home_Submenu_Panel" condition="!String.IsEmpty(Skin.String(HomeSwitcher.1104.Toggle)) + $EXP[Exp_Hub_1104_Available]">
+                <include content="Home_Submenu_Panel" condition="!String.IsEmpty(Skin.String(HomeSwitcher.1104.Toggle))">
                     <param name="window">1104</param>
                     <param name="id">04</param>
                 </include>
-                <include content="Home_Submenu_Panel" condition="!String.IsEmpty(Skin.String(HomeSwitcher.1106.Toggle)) + $EXP[Exp_Hub_1106_Available]">
+                <include content="Home_Submenu_Panel" condition="!String.IsEmpty(Skin.String(HomeSwitcher.1106.Toggle))">
                     <param name="window">1106</param>
                     <param name="id">06</param>
                 </include>
-                <include content="Home_Submenu_Panel" condition="!String.IsEmpty(Skin.String(HomeSwitcher.1107.Toggle)) + $EXP[Exp_Hub_1107_Available]">
+                <include content="Home_Submenu_Panel" condition="!String.IsEmpty(Skin.String(HomeSwitcher.1107.Toggle))">
                     <param name="window">1107</param>
                     <param name="id">07</param>
                 </include>
-                <include content="Home_Submenu_Panel" condition="!String.IsEmpty(Skin.String(HomeSwitcher.1108.Toggle)) + $EXP[Exp_Hub_1108_Available]">
+                <include content="Home_Submenu_Panel" condition="!String.IsEmpty(Skin.String(HomeSwitcher.1108.Toggle))">
                     <param name="window">1108</param>
                     <param name="id">08</param>
                 </include>
-                <include content="Home_Submenu_Panel" condition="!String.IsEmpty(Skin.String(HomeSwitcher.1109.Toggle)) + $EXP[Exp_Hub_1109_Available]">
+                <include content="Home_Submenu_Panel" condition="!String.IsEmpty(Skin.String(HomeSwitcher.1109.Toggle))">
                     <param name="window">1109</param>
                     <param name="id">09</param>
                 </include>
@@ -1046,19 +1046,19 @@
                     </include>
                     <top>-100</top>
                     <height>1080</height>
-                    <include content="Home_Right_Submenu_Item" condition="!String.IsEmpty(Skin.String(HomeSwitcher.1106.Toggle)) + $EXP[Exp_Hub_1106_Available]">
+                    <include content="Home_Right_Submenu_Item" condition="!String.IsEmpty(Skin.String(HomeSwitcher.1106.Toggle))">
                         <param name="window">1106</param>
                         <param name="id">06</param>
                     </include>
-                    <include content="Home_Right_Submenu_Item" condition="!String.IsEmpty(Skin.String(HomeSwitcher.1107.Toggle)) + $EXP[Exp_Hub_1107_Available]">
+                    <include content="Home_Right_Submenu_Item" condition="!String.IsEmpty(Skin.String(HomeSwitcher.1107.Toggle))">
                         <param name="window">1107</param>
                         <param name="id">07</param>
                     </include>
-                    <include content="Home_Right_Submenu_Item" condition="!String.IsEmpty(Skin.String(HomeSwitcher.1108.Toggle)) + $EXP[Exp_Hub_1108_Available]">
+                    <include content="Home_Right_Submenu_Item" condition="!String.IsEmpty(Skin.String(HomeSwitcher.1108.Toggle))">
                         <param name="window">1108</param>
                         <param name="id">08</param>
                     </include>
-                    <include content="Home_Right_Submenu_Item" condition="!String.IsEmpty(Skin.String(HomeSwitcher.1109.Toggle)) + $EXP[Exp_Hub_1109_Available]">
+                    <include content="Home_Right_Submenu_Item" condition="!String.IsEmpty(Skin.String(HomeSwitcher.1109.Toggle))">
                         <param name="window">1109</param>
                         <param name="id">09</param>
                     </include>

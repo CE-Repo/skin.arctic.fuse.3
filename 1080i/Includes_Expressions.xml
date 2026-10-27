@@ -230,109 +230,7 @@
 
     <expression name="Exp_SeasonalTheme_Active">[Skin.HasSetting(SeasonalTheme.Enable) + [$EXP[Exp_SeasonalTheme_Christmas] | $EXP[Exp_SeasonalTheme_Summer] | $EXP[Exp_SeasonalTheme_Halloween]]]</expression>
 
-    <expression name="Exp_SeasonalTheme_Visible">[!System.ScreenSaverActive + !Window.IsVisible(slideshow) + [[!Window.IsVisible(visualisation) + !VideoPlayer.IsFullscreen] | Window.IsActive(fullscreeninfo)]]</expression>
-
-    <!-- Hub types retain each slot's legacy default until a type is saved. -->
-    <expression name="Exp_Hub_home_Custom">true</expression>
-    <expression name="Exp_Hub_1101_Custom">[Skin.String(HomeSwitcher.1101.Type,Custom) | String.IsEmpty(Skin.String(HomeSwitcher.1101.Type))]</expression>
-    <expression name="Exp_Hub_1101_NextAired">Skin.String(HomeSwitcher.1101.Type,NextAired)</expression>
-    <expression name="Exp_Hub_1101_LiveTV">Skin.String(HomeSwitcher.1101.Type,LiveTV)</expression>
-    <expression name="Exp_Hub_1101_Addons">Skin.String(HomeSwitcher.1101.Type,Addons)</expression>
-    <expression name="Exp_Hub_1101_Available">[!$EXP[Exp_Hub_1101_LiveTV] | [System.HasPVRAddon + PVR.HasTVChannels]]</expression>
-    <variable name="Hub_Type_1101">
-        <value condition="$EXP[Exp_Hub_1101_Custom]">Custom</value>
-        <value condition="$EXP[Exp_Hub_1101_NextAired]">NextAired</value>
-        <value condition="$EXP[Exp_Hub_1101_LiveTV]">LiveTV</value>
-        <value>Addons</value>
-    </variable>
-
-    <expression name="Exp_Hub_1102_Custom">[Skin.String(HomeSwitcher.1102.Type,Custom) | String.IsEmpty(Skin.String(HomeSwitcher.1102.Type))]</expression>
-    <expression name="Exp_Hub_1102_NextAired">Skin.String(HomeSwitcher.1102.Type,NextAired)</expression>
-    <expression name="Exp_Hub_1102_LiveTV">Skin.String(HomeSwitcher.1102.Type,LiveTV)</expression>
-    <expression name="Exp_Hub_1102_Addons">Skin.String(HomeSwitcher.1102.Type,Addons)</expression>
-    <expression name="Exp_Hub_1102_Available">[!$EXP[Exp_Hub_1102_LiveTV] | [System.HasPVRAddon + PVR.HasTVChannels]]</expression>
-    <variable name="Hub_Type_1102">
-        <value condition="$EXP[Exp_Hub_1102_Custom]">Custom</value>
-        <value condition="$EXP[Exp_Hub_1102_NextAired]">NextAired</value>
-        <value condition="$EXP[Exp_Hub_1102_LiveTV]">LiveTV</value>
-        <value>Addons</value>
-    </variable>
-
-    <expression name="Exp_Hub_1103_Custom">[Skin.String(HomeSwitcher.1103.Type,Custom) | String.IsEmpty(Skin.String(HomeSwitcher.1103.Type))]</expression>
-    <expression name="Exp_Hub_1103_NextAired">Skin.String(HomeSwitcher.1103.Type,NextAired)</expression>
-    <expression name="Exp_Hub_1103_LiveTV">Skin.String(HomeSwitcher.1103.Type,LiveTV)</expression>
-    <expression name="Exp_Hub_1103_Addons">Skin.String(HomeSwitcher.1103.Type,Addons)</expression>
-    <expression name="Exp_Hub_1103_Available">[!$EXP[Exp_Hub_1103_LiveTV] | [System.HasPVRAddon + PVR.HasTVChannels]]</expression>
-    <variable name="Hub_Type_1103">
-        <value condition="$EXP[Exp_Hub_1103_Custom]">Custom</value>
-        <value condition="$EXP[Exp_Hub_1103_NextAired]">NextAired</value>
-        <value condition="$EXP[Exp_Hub_1103_LiveTV]">LiveTV</value>
-        <value>Addons</value>
-    </variable>
-
-    <expression name="Exp_Hub_1104_Custom">[Skin.String(HomeSwitcher.1104.Type,Custom) | String.IsEmpty(Skin.String(HomeSwitcher.1104.Type))]</expression>
-    <expression name="Exp_Hub_1104_NextAired">Skin.String(HomeSwitcher.1104.Type,NextAired)</expression>
-    <expression name="Exp_Hub_1104_LiveTV">Skin.String(HomeSwitcher.1104.Type,LiveTV)</expression>
-    <expression name="Exp_Hub_1104_Addons">Skin.String(HomeSwitcher.1104.Type,Addons)</expression>
-    <expression name="Exp_Hub_1104_Available">[!$EXP[Exp_Hub_1104_LiveTV] | [System.HasPVRAddon + PVR.HasTVChannels]]</expression>
-    <variable name="Hub_Type_1104">
-        <value condition="$EXP[Exp_Hub_1104_Custom]">Custom</value>
-        <value condition="$EXP[Exp_Hub_1104_NextAired]">NextAired</value>
-        <value condition="$EXP[Exp_Hub_1104_LiveTV]">LiveTV</value>
-        <value>Addons</value>
-    </variable>
-
-    <expression name="Exp_Hub_1106_Custom">Skin.String(HomeSwitcher.1106.Type,Custom)</expression>
-    <expression name="Exp_Hub_1106_NextAired">[Skin.String(HomeSwitcher.1106.Type,NextAired) | String.IsEmpty(Skin.String(HomeSwitcher.1106.Type))]</expression>
-    <expression name="Exp_Hub_1106_LiveTV">Skin.String(HomeSwitcher.1106.Type,LiveTV)</expression>
-    <expression name="Exp_Hub_1106_Addons">Skin.String(HomeSwitcher.1106.Type,Addons)</expression>
-    <expression name="Exp_Hub_1106_Available">[!$EXP[Exp_Hub_1106_LiveTV] | [System.HasPVRAddon + PVR.HasTVChannels]]</expression>
-    <variable name="Hub_Type_1106">
-        <value condition="$EXP[Exp_Hub_1106_Custom]">Custom</value>
-        <value condition="$EXP[Exp_Hub_1106_NextAired]">NextAired</value>
-        <value condition="$EXP[Exp_Hub_1106_LiveTV]">LiveTV</value>
-        <value>Addons</value>
-    </variable>
-
-    <expression name="Exp_Hub_1107_Custom">Skin.String(HomeSwitcher.1107.Type,Custom)</expression>
-    <expression name="Exp_Hub_1107_NextAired">Skin.String(HomeSwitcher.1107.Type,NextAired)</expression>
-    <expression name="Exp_Hub_1107_LiveTV">[Skin.String(HomeSwitcher.1107.Type,LiveTV) | String.IsEmpty(Skin.String(HomeSwitcher.1107.Type))]</expression>
-    <expression name="Exp_Hub_1107_Addons">Skin.String(HomeSwitcher.1107.Type,Addons)</expression>
-    <expression name="Exp_Hub_1107_Available">[!$EXP[Exp_Hub_1107_LiveTV] | [System.HasPVRAddon + PVR.HasTVChannels]]</expression>
-    <variable name="Hub_Type_1107">
-        <value condition="$EXP[Exp_Hub_1107_Custom]">Custom</value>
-        <value condition="$EXP[Exp_Hub_1107_NextAired]">NextAired</value>
-        <value condition="$EXP[Exp_Hub_1107_LiveTV]">LiveTV</value>
-        <value>Addons</value>
-    </variable>
-
-    <expression name="Exp_Hub_1108_Custom">Skin.String(HomeSwitcher.1108.Type,Custom)</expression>
-    <expression name="Exp_Hub_1108_NextAired">Skin.String(HomeSwitcher.1108.Type,NextAired)</expression>
-    <expression name="Exp_Hub_1108_LiveTV">Skin.String(HomeSwitcher.1108.Type,LiveTV)</expression>
-    <expression name="Exp_Hub_1108_Addons">[Skin.String(HomeSwitcher.1108.Type,Addons) | String.IsEmpty(Skin.String(HomeSwitcher.1108.Type))]</expression>
-    <expression name="Exp_Hub_1108_Available">[!$EXP[Exp_Hub_1108_LiveTV] | [System.HasPVRAddon + PVR.HasTVChannels]]</expression>
-    <variable name="Hub_Type_1108">
-        <value condition="$EXP[Exp_Hub_1108_Custom]">Custom</value>
-        <value condition="$EXP[Exp_Hub_1108_NextAired]">NextAired</value>
-        <value condition="$EXP[Exp_Hub_1108_LiveTV]">LiveTV</value>
-        <value>Addons</value>
-    </variable>
-
-    <expression name="Exp_Hub_1109_Custom">[Skin.String(HomeSwitcher.1109.Type,Custom) | String.IsEmpty(Skin.String(HomeSwitcher.1109.Type))]</expression>
-    <expression name="Exp_Hub_1109_NextAired">Skin.String(HomeSwitcher.1109.Type,NextAired)</expression>
-    <expression name="Exp_Hub_1109_LiveTV">Skin.String(HomeSwitcher.1109.Type,LiveTV)</expression>
-    <expression name="Exp_Hub_1109_Addons">Skin.String(HomeSwitcher.1109.Type,Addons)</expression>
-    <expression name="Exp_Hub_1109_Available">[!$EXP[Exp_Hub_1109_LiveTV] | [System.HasPVRAddon + PVR.HasTVChannels]]</expression>
-    <variable name="Hub_Type_1109">
-        <value condition="$EXP[Exp_Hub_1109_Custom]">Custom</value>
-        <value condition="$EXP[Exp_Hub_1109_NextAired]">NextAired</value>
-        <value condition="$EXP[Exp_Hub_1109_LiveTV]">LiveTV</value>
-        <value>Addons</value>
-    </variable>
-
-    <variable name="Hub_Type_home">
-        <value>Custom</value>
-    </variable>
+    <expression name="Exp_SeasonalTheme_Visible">[!System.ScreenSaverActive + !Window.IsVisible(slideshow) + !Window.IsVisible(script-game-manuals-viewer.xml) + [[!Window.IsVisible(visualisation) + !VideoPlayer.IsFullscreen] | Window.IsActive(fullscreeninfo)]]</expression>
 
     <expression name="DialogShortcuts_Hub_SquareChannels">[[String.IsEqual(Container(30000).ListItem.Property(window),1101) + Skin.HasSetting(Hub.1101.SquareChannels)] | [String.IsEqual(Container(30000).ListItem.Property(window),1102) + Skin.HasSetting(Hub.1102.SquareChannels)] | [String.IsEqual(Container(30000).ListItem.Property(window),1103) + Skin.HasSetting(Hub.1103.SquareChannels)] | [String.IsEqual(Container(30000).ListItem.Property(window),1104) + Skin.HasSetting(Hub.1104.SquareChannels)] | [String.IsEqual(Container(30000).ListItem.Property(window),1106) + Skin.HasSetting(Hub.1106.SquareChannels)] | [String.IsEqual(Container(30000).ListItem.Property(window),1107) + Skin.HasSetting(Hub.1107.SquareChannels)] | [String.IsEqual(Container(30000).ListItem.Property(window),1108) + Skin.HasSetting(Hub.1108.SquareChannels)] | [String.IsEqual(Container(30000).ListItem.Property(window),1109) + Skin.HasSetting(Hub.1109.SquareChannels)]]</expression>
     <expression name="DialogShortcuts_Hub_DisableSearch">[[String.IsEqual(Container(30000).ListItem.Property(window),1101) + Skin.HasSetting(Hub.1101.DisableSearch)] | [String.IsEqual(Container(30000).ListItem.Property(window),1102) + Skin.HasSetting(Hub.1102.DisableSearch)] | [String.IsEqual(Container(30000).ListItem.Property(window),1103) + Skin.HasSetting(Hub.1103.DisableSearch)] | [String.IsEqual(Container(30000).ListItem.Property(window),1104) + Skin.HasSetting(Hub.1104.DisableSearch)] | [String.IsEqual(Container(30000).ListItem.Property(window),1106) + Skin.HasSetting(Hub.1106.DisableSearch)] | [String.IsEqual(Container(30000).ListItem.Property(window),1107) + Skin.HasSetting(Hub.1107.DisableSearch)] | [String.IsEqual(Container(30000).ListItem.Property(window),1108) + Skin.HasSetting(Hub.1108.DisableSearch)] | [String.IsEqual(Container(30000).ListItem.Property(window),1109) + Skin.HasSetting(Hub.1109.DisableSearch)]]</expression>
@@ -345,7 +243,4 @@
     <expression name="DialogShortcuts_Hub_DisableProgram">[[String.IsEqual(Container(30000).ListItem.Property(window),1101) + Skin.HasSetting(Hub.1101.DisableProgram)] | [String.IsEqual(Container(30000).ListItem.Property(window),1102) + Skin.HasSetting(Hub.1102.DisableProgram)] | [String.IsEqual(Container(30000).ListItem.Property(window),1103) + Skin.HasSetting(Hub.1103.DisableProgram)] | [String.IsEqual(Container(30000).ListItem.Property(window),1104) + Skin.HasSetting(Hub.1104.DisableProgram)] | [String.IsEqual(Container(30000).ListItem.Property(window),1106) + Skin.HasSetting(Hub.1106.DisableProgram)] | [String.IsEqual(Container(30000).ListItem.Property(window),1107) + Skin.HasSetting(Hub.1107.DisableProgram)] | [String.IsEqual(Container(30000).ListItem.Property(window),1108) + Skin.HasSetting(Hub.1108.DisableProgram)] | [String.IsEqual(Container(30000).ListItem.Property(window),1109) + Skin.HasSetting(Hub.1109.DisableProgram)]]</expression>
     <expression name="DialogShortcuts_Hub_DisableGame">[[String.IsEqual(Container(30000).ListItem.Property(window),1101) + Skin.HasSetting(Hub.1101.DisableGame)] | [String.IsEqual(Container(30000).ListItem.Property(window),1102) + Skin.HasSetting(Hub.1102.DisableGame)] | [String.IsEqual(Container(30000).ListItem.Property(window),1103) + Skin.HasSetting(Hub.1103.DisableGame)] | [String.IsEqual(Container(30000).ListItem.Property(window),1104) + Skin.HasSetting(Hub.1104.DisableGame)] | [String.IsEqual(Container(30000).ListItem.Property(window),1106) + Skin.HasSetting(Hub.1106.DisableGame)] | [String.IsEqual(Container(30000).ListItem.Property(window),1107) + Skin.HasSetting(Hub.1107.DisableGame)] | [String.IsEqual(Container(30000).ListItem.Property(window),1108) + Skin.HasSetting(Hub.1108.DisableGame)] | [String.IsEqual(Container(30000).ListItem.Property(window),1109) + Skin.HasSetting(Hub.1109.DisableGame)]]</expression>
     <expression name="DialogShortcuts_Hub_trakt_calendar">[[String.IsEqual(Container(30000).ListItem.Property(window),1101) + Skin.String(HomeSwitcher.1101.UpNextMode,trakt_calendar)] | [String.IsEqual(Container(30000).ListItem.Property(window),1102) + Skin.String(HomeSwitcher.1102.UpNextMode,trakt_calendar)] | [String.IsEqual(Container(30000).ListItem.Property(window),1103) + Skin.String(HomeSwitcher.1103.UpNextMode,trakt_calendar)] | [String.IsEqual(Container(30000).ListItem.Property(window),1104) + Skin.String(HomeSwitcher.1104.UpNextMode,trakt_calendar)] | [String.IsEqual(Container(30000).ListItem.Property(window),1106) + Skin.String(HomeSwitcher.1106.UpNextMode,trakt_calendar)] | [String.IsEqual(Container(30000).ListItem.Property(window),1107) + Skin.String(HomeSwitcher.1107.UpNextMode,trakt_calendar)] | [String.IsEqual(Container(30000).ListItem.Property(window),1108) + Skin.String(HomeSwitcher.1108.UpNextMode,trakt_calendar)] | [String.IsEqual(Container(30000).ListItem.Property(window),1109) + Skin.String(HomeSwitcher.1109.UpNextMode,trakt_calendar)]]</expression>
-    <expression name="Exp_Hub_home_NextAired">false</expression>
-    <expression name="Exp_Hub_home_LiveTV">false</expression>
-    <expression name="Exp_Hub_home_Addons">false</expression>
 </includes>
