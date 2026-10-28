@@ -18,6 +18,10 @@
     },
     "actions": [
         [{
+            "rules": ["String.IsEmpty(Skin.String(FocusStyle))"],
+            "value": "Skin.SetString(FocusStyle,Solid)"
+        }],
+        [{
             "rules": ["String.IsEmpty(Skin.String(HomeSwitcher.Home.Type))"],
             "value": "Skin.SetString(HomeSwitcher.Home.Type,Custom)"
         }],

@@ -120,7 +120,7 @@
                                                 <control type="progress" id="9201">
                                                     <info>system.memory(used)</info>
                                                     <texturebg colordiffuse="dialog_bg_12" border="12,0,12,0">progress/progress-nib.png</texturebg>
-                                                    <midtexture colordiffuse="$VAR[ColorHighlight]" border="12,0,12,0">progress/progress-nib.png</midtexture>
+                                                    <include>Texture_Progress_Mid</include>
                                                 </control>
                                             </control>
                                         </control>
@@ -141,7 +141,7 @@
                                                 <control type="progress" id="9202">
                                                     <info>System.CPUUsage</info>
                                                     <texturebg colordiffuse="dialog_bg_12" border="12,0,12,0">progress/progress-nib.png</texturebg>
-                                                    <midtexture colordiffuse="$VAR[ColorHighlight]" border="12,0,12,0">progress/progress-nib.png</midtexture>
+                                                    <include>Texture_Progress_Mid</include>
                                                 </control>
                                             </control>
                                         </control>

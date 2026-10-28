@@ -664,7 +664,9 @@
                         <height>100</height>
                         <control type="image">
                             <bordersize>-4</bordersize>
-                            <texture colordiffuse="$VAR[ColorHighlight]">$INFO[$PARAM[progress],progress/circle/p,.png]</texture>
+                            <include content="Texture_Progress_Circle">
+                                <param name="progress">$PARAM[progress]</param>
+                            </include>
                             <aspectratio align="center" aligny="center">keep</aspectratio>
                         </control>
                     </control>
