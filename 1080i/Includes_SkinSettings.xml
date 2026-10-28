@@ -205,8 +205,7 @@
             <param name="reload">true</param>
             <label>$LOCALIZE[31641]</label>
             <label2>$VAR[Label_Setting_FocusStyle]</label2>
-            <onclick condition="$EXP[Exp_FocusStyle_Outlined]">Skin.SetString(FocusStyle,Solid)</onclick>
-            <onclick condition="!$EXP[Exp_FocusStyle_Outlined]">Skin.SetString(FocusStyle,Outlined)</onclick>
+            <onclick>Skin.ToggleSetting(OutlinedFocusedStyle)</onclick>
         </include>
         <include content="Settings_Button" description="Ratings">
             <param name="dialog">false</param>

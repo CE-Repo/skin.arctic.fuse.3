@@ -39,6 +39,13 @@
                                 <param name="onclick">ActivateWindow(videos)</param>
                             </include>
                             <include content="Settings_Category_Button">
+                                <param name="id">36</param>
+                                <param name="property">Settings.Main.Category</param>
+                                <param name="category">Watched</param>
+                                <param name="label">$LOCALIZE[16102]</param>
+                                <param name="onclick">ActivateWindow(videos)</param>
+                            </include>
+                            <include content="Settings_Category_Button">
                                 <param name="id">34</param>
                                 <param name="property">Settings.Main.Category</param>
                                 <param name="category">System</param>
@@ -61,20 +68,31 @@
                     <control type="group" id="5">
                         <control type="group">
                             <visible>String.IsEqual(Window(Home).Property(Settings.Main.Category),Categories)</visible>
+                            <control type="group">
+                                <top>20</top>
+                                <bottom>20</bottom>
+                                <left>20</left>
+                                <right>20</right>
+                                <include content="Settings_Label">
+                                    <param name="dialog">false</param>
+                                    <param name="control">label</param>
+                                    <label>$LOCALIZE[31150]</label>
+                                </include>
+                            </control>
                             <include content="List_DialogSelect">
                                 <param name="id">8100</param>
                                 <param name="detailed">True</param>
                                 <param name="variation">True</param>
-                                <param name="item_height">120</param>
+                                <param name="item_height">106.5</param>
                                 <param name="control">panel</param>
                                 <param name="item_w">view_addonbrowser_item_w</param>
                                 <param name="itemlayout_w">view_addonbrowser_itemlayout_w</param>
                                 <param name="textcolor">main_fg</param>
                                 <param name="icon">common/_none.png</param>
-                                <top>20</top>
+                                <top>100</top>
                                 <left>20</left>
                                 <right>20</right>
-                                <bottom>20</bottom>
+                                <bottom>0</bottom>
                                 <pagecontrol>60</pagecontrol>
                                 <onleft>31</onleft>
                                 <onright>60</onright>
@@ -189,20 +207,31 @@
 
                         <control type="group">
                             <visible>String.IsEqual(Window(Home).Property(Settings.Main.Category),Customisation)</visible>
+                            <control type="group">
+                                <top>20</top>
+                                <bottom>20</bottom>
+                                <left>20</left>
+                                <right>20</right>
+                                <include content="Settings_Label">
+                                    <param name="dialog">false</param>
+                                    <param name="control">label</param>
+                                    <label>$LOCALIZE[31444]</label>
+                                </include>
+                            </control>
                             <include content="List_DialogSelect">
                                 <param name="id">8300</param>
                                 <param name="detailed">True</param>
                                 <param name="variation">True</param>
-                                <param name="item_height">120</param>
+                                <param name="item_height">106.5</param>
                                 <param name="control">panel</param>
                                 <param name="item_w">view_addonbrowser_item_w</param>
                                 <param name="itemlayout_w">view_addonbrowser_itemlayout_w</param>
                                 <param name="textcolor">main_fg</param>
                                 <param name="icon">common/_none.png</param>
-                                <top>20</top>
+                                <top>100</top>
                                 <left>20</left>
                                 <right>20</right>
-                                <bottom>20</bottom>
+                                <bottom>0</bottom>
                                 <pagecontrol>60</pagecontrol>
                                 <onleft>32</onleft>
                                 <onright>60</onright>
@@ -301,9 +330,20 @@
 
                         <control type="group">
                             <visible>String.IsEqual(Window(Home).Property(Settings.Main.Category),Addons)</visible>
+                            <control type="group">
+                                <top>20</top>
+                                <bottom>20</bottom>
+                                <left>20</left>
+                                <right>20</right>
+                                <include content="Settings_Label">
+                                    <param name="dialog">false</param>
+                                    <param name="control">label</param>
+                                    <label>$LOCALIZE[24001]</label>
+                                </include>
+                            </control>
                             <include content="List_DialogSelect">
                                 <param name="detailed">True</param>
-                                <param name="item_height">120</param>
+                                <param name="item_height">106.5</param>
                                 <param name="control">panel</param>
                                 <param name="id">8400</param>
                                 <param name="item_w">view_addonbrowser_item_w</param>
@@ -314,13 +354,40 @@
                                 <onleft>35</onleft>
                                 <onright>60</onright>
                                 <pagecontrol>60</pagecontrol>
-                                <top>20</top>
+                                <top>100</top>
                                 <left>20</left>
                                 <right>0</right>
                                 <bottom>20</bottom>
                                 <onclick>Action(Info)</onclick>
                                 <content sortby="label">addons://user/all</content>
                             </include>
+                        </control>
+
+                        <control type="group">
+                            <height>760</height>
+                            <visible>String.IsEqual(Window(Home).Property(Settings.Main.Category),Watched)</visible>
+                            <control type="grouplist">
+                                <left>40</left>
+                                <right>40</right>
+                                <top>40</top>
+                                <itemgap>-60</itemgap>
+                                <orientation>vertical</orientation>
+                                <include content="Settings_Statistics_WatchedOn">
+                                    <param name="label">October</param>
+                                    <param name="year">$INFO[System.Date(yyyy)]</param>
+                                    <param name="month">0</param>
+                                </include>
+                                <include content="Settings_Statistics_WatchedOn">
+                                    <param name="label">September</param>
+                                    <param name="year">$INFO[System.Date(yyyy)]</param>
+                                    <param name="month">-1</param>
+                                </include>
+                                <include content="Settings_Statistics_WatchedOn">
+                                    <param name="label">August</param>
+                                    <param name="year">$INFO[System.Date(yyyy)]</param>
+                                    <param name="month">-2</param>
+                                </include>
+                            </control>
                         </control>
 
                         <control type="group">
@@ -341,28 +408,21 @@
                                     <height>760</height>
                                     <visible>!Integer.IsEqual(Container(8505).NumItems,0)</visible>
                                     <control type="group">
-                                        <top>40</top>
-                                        <bottom>40</bottom>
-                                        <left>40</left>
-                                        <right>40</right>
+                                        <include content="Dimension_Padding">
+                                            <param name="pad">40</param>
+                                        </include>
                                         <control type="group">
                                             <!-- <control type="image">
                                                 <texture colordiffuse="main_fg_06" border="20">common/box.png</texture>
                                             </control> -->
-                                            <control type="label">
-                                                <left>20</left>
-                                                <top>20</top>
-                                                <height>40</height>
-                                                <font>font_hint_bold</font>
-                                                <textcolor>main_fg_30</textcolor>
-                                                <label>$LOCALIZE[31253]</label>
-                                                <align>left</align>
-                                            </control>
                                             <control type="group">
+                                                <top>-79</top>
                                                 <left>-20</left>
-                                                <right>-20</right>
-                                                <height>60</height>
-                                                <include>Part_Line</include>
+                                                <height>20</height>
+                                                <include content="Part_ItemLine">
+                                                    <param name="visible">true</param>
+                                                    <param name="label">$LOCALIZE[31253]</param>
+                                                </include>
                                             </control>
                                             <control type="group">
                                                 <height>380</height>
