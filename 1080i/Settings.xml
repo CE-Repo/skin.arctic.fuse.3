@@ -373,17 +373,20 @@
                                 <itemgap>-60</itemgap>
                                 <orientation>vertical</orientation>
                                 <include content="Settings_Statistics_WatchedOn">
-                                    <param name="label">October</param>
+                                    <param name="id">8501</param>
+                                    <param name="label">$INFO[Container(8501).ListItemAbsolute(0).Property(month)]</param>
                                     <param name="year">$INFO[System.Date(yyyy)]</param>
                                     <param name="month">0</param>
                                 </include>
                                 <include content="Settings_Statistics_WatchedOn">
-                                    <param name="label">September</param>
+                                    <param name="id">8502</param>
+                                    <param name="label">$INFO[Container(8502).ListItemAbsolute(0).Property(month)]</param>
                                     <param name="year">$INFO[System.Date(yyyy)]</param>
                                     <param name="month">-1</param>
                                 </include>
                                 <include content="Settings_Statistics_WatchedOn">
-                                    <param name="label">August</param>
+                                    <param name="id">8503</param>
+                                    <param name="label">$INFO[Container(8503).ListItemAbsolute(0).Property(month)]</param>
                                     <param name="year">$INFO[System.Date(yyyy)]</param>
                                     <param name="month">-2</param>
                                 </include>

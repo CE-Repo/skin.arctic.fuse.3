@@ -604,6 +604,7 @@
                 </include>
             </control>
             <include content="List_Core">
+                <param name="id">$PARAM[id]</param>
                 <param name="itemlayout_include">Layout_Poster</param>
                 <param name="diffuse">diffuse/poster_w108_h160.png</param>
                 <param name="detailed">false</param>
