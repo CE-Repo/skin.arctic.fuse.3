@@ -39,6 +39,7 @@
                                 <param name="category">Statistics</param>
                                 <param name="label">$LOCALIZE[31251]</param>
                                 <param name="onclick">ActivateWindow(videos)</param>
+                                <onright>8506</onright>
                             </include>
                             <include content="Settings_Category_Button">
                                 <param name="id">36</param>

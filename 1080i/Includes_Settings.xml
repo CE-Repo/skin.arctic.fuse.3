@@ -862,6 +862,18 @@
             <top>40</top>
             <height>210</height>
             <orientation>horizontal</orientation>
+            <onleft>33</onleft>
+            <onback>33</onback>
+            <include>Action_View_Movement_OnUp</include>
+            <ondown>SetProperty(Bumper.Direction,Down,Home)</ondown>
+            <ondown>ActivateWindow(1180)</ondown>
+            <onright>SetProperty(Bumper.Direction,Right,Home)</onright>
+            <onright>ActivateWindow(1180)</onright>
+
+            <onclick>SetProperty(header,$INFO[Container($PARAM[id]).ListItem.Property(long)],1129)</onclick>
+            <onclick>SetProperty(path,plugin://plugin.video.themoviedb.helper/?info=sync_watchedon&amp;type=both&amp;day=$INFO[Container($PARAM[id]).ListItem.Property(day_number)]&amp;month=$INFO[Container($PARAM[id]).ListItem.Property(month_number)]&amp;year=$INFO[Container($PARAM[id]).ListItem.Property(year)]&amp;nextpage=true,1129)</onclick>
+            <onclick>ActivateWindow(1129)</onclick>
+            <oninfo>Action(Select)</oninfo>
 
             <content>plugin://plugin.video.themoviedb.helper/?info=trakt_history_stats&amp;tmdb_type=both&amp;days=287&amp;sort_how=asc</content>
 
@@ -874,6 +886,7 @@
             <focusedlayout width="30" height="30">
                 <include content="Layout_StatisticDots">
                     <param name="selected">true</param>
+                    <param name="containerid">$PARAM[id]</param>
                 </include>
             </focusedlayout>
         </control>

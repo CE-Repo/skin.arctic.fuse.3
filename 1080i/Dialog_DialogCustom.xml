@@ -115,6 +115,12 @@
         <content>favourites://</content>
     </include>
 
+    <include name="DialogCustom_WatchedOn_Content">
+        <onclick condition="!String.IsEqual(Container(450).ListItem.Property(specialsort),bottom)">Action(Info)</onclick>
+        <onclick condition="String.IsEqual(Container(450).ListItem.Property(specialsort),bottom)">SetProperty(path,$INFO[Container(450).ListItem.FolderPath])</onclick>
+        <content>$INFO[Window.Property(path)]</content>
+    </include>
+
     <include name="DialogCustom_Trailers">
         <include content="DialogCustom_Favourites">
             <param name="header">$LOCALIZE[31637]</param>
