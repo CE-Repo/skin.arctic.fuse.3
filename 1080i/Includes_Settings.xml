@@ -202,11 +202,12 @@
     <include name="Settings_Dialog">
         <definition>
             <control type="group">
+                <include>Animation_Group_Bumper</include>
                 <include>Animation_View_WindowChange</include>
                 <nested />
                 <include>Furniture_Footer_Left</include>
-                <include>Furniture_Footer_Right</include>
             </control>
+            <include>Furniture_Footer_Right</include>
         </definition>
     </include>
 
@@ -613,7 +614,17 @@
                 <param name="item_h">160</param>
                 <param name="itemlayout_w">128</param>
                 <param name="itemlayout_h">200</param>
-                <content limit="10">plugin://plugin.video.themoviedb.helper?info=sync_watchedon&amp;type=both&amp;month=$PARAM[month]&amp;year=$PARAM[year]</content>
+                <onleft>36</onleft>
+                <onback>36</onback>
+                <include content="Action_View_Movement_OnUp" condition="Integer.IsEqual($PARAM[id],$PARAM[onup])" />
+                <onup condition="!Integer.IsEqual($PARAM[id],$PARAM[onup])">SetFocus($PARAM[onup],$INFO[Container($PARAM[id]).Position])</onup>
+                <ondown condition="!Integer.IsEqual($PARAM[id],$PARAM[ondown])">SetFocus($PARAM[ondown],$INFO[Container($PARAM[id]).Position])</ondown>
+                <ondown condition="Integer.IsEqual($PARAM[id],$PARAM[ondown])">SetProperty(Bumper.Direction,Down,Home)</ondown>
+                <ondown condition="Integer.IsEqual($PARAM[id],$PARAM[ondown])">ActivateWindow(1180)</ondown>
+                <onright>SetProperty(Bumper.Direction,Right,Home)</onright>
+                <onright>ActivateWindow(1180)</onright>
+                <content limit="10" browse="never">plugin://plugin.video.themoviedb.helper?info=sync_watchedon&amp;type=both&amp;month=$PARAM[month]&amp;year=$PARAM[year]&amp;nextpage=false</content>
+                <onclick>Action(Info)</onclick>
                 <top>-10</top>
                 <left>-60</left>
                 <right>-60</right>
