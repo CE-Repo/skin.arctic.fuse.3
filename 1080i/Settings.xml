@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <window>
     <include>Action_BlurImage_SimpleBackground_Onload</include>
+    <onload>SetProperty(InfoPanel.FullSwitch,Full,Home)</onload>
     <onload condition="String.IsEmpty(Window(Home).Property(Settings.Main.Category))">SetProperty(Settings.Main.Category,Categories,Home)</onload>
     <defaultcontrol>5</defaultcontrol>
     <controls>
