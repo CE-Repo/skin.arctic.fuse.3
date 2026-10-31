@@ -1271,9 +1271,19 @@ msgctxt "#31266"
 msgid "Monthly"
 msgstr ""
 
+#: /1080i/Includes_Labels.xml
+msgctxt "#31267"
+msgid "Last"
+msgstr ""
+
 #: /1080i/Includes_SkinSettings.xml
 msgctxt "#31268"
 msgid "Background fallback"
+msgstr ""
+
+#: /1080i/Includes_Labels.xml
+msgctxt "#31269"
+msgid "days"
 msgstr ""
 
 msgctxt "#31270"

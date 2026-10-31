@@ -53,7 +53,7 @@
                         <include>Part_CloseButton</include>
                         <control type="image">
                             <height>1</height>
-                            <texture colordiffuse="$VAR[Color_DialogBorder]">common/white.png</texture>
+                            <texture colordiffuse="dialog_fg_06">common/white.png</texture>
                             <centerbottom>0</centerbottom>
                             <left>40</left>
                             <right>40</right>
@@ -70,7 +70,7 @@
                             <top>480</top>
                             <control type="image">
                                 <height>1</height>
-                                <texture colordiffuse="$VAR[Color_DialogBorder]">common/white.png</texture>
+                                <texture colordiffuse="dialog_fg_06">common/white.png</texture>
                                 <centertop>0</centertop>
                                 <left>40</left>
                                 <right>40</right>

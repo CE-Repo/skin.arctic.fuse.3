@@ -105,8 +105,8 @@
 
                     <control type="scrollbar" id="60">
                         <centerright>0</centerright>
+                        <top>140</top>
                         <bottom>20</bottom>
-                        <top>20</top>
                         <width>scrollbar_w</width>
                         <orientation>vertical</orientation>
                         <texturesliderbackground />

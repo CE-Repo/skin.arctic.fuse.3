@@ -147,7 +147,10 @@
             <include content="Settings_Button">
                 <param name="id">$PARAM[id]</param>
                 <param name="control">togglebutton</param>
-                <include>Texture_MainMenu_Highlight_ToggleButton_FakeFocus</include>
+                <!-- Mimic Kodi's hardcoded 50% alpha on the selected SettingsCategory button -->
+                <include content="Texture_Highlight_ToggleButton_FakeFocus_H">
+                    <param name="diffuse_nofocus">diffuse/alpha_50.png</param>
+                </include>
                 <label>$PARAM[label]</label>
                 <altlabel>[COLOR=$VAR[ColorSelected]]$PARAM[label][/COLOR]</altlabel>
                 <usealttexture>String.IsEqual(Window(Home).Property($PARAM[property]),$PARAM[category])</usealttexture>
@@ -175,9 +178,33 @@
     </include>
 
     <include name="Settings_Right_Group">
+        <param name="header">$VAR[Label_Settings_Category]</param>
+        <param name="subheader">$VAR[Label_Settings_SubCategory]</param>
+        <param name="visible_line">true</param>
+        <param name="visible_header">true</param>
         <definition>
             <control type="group">
                 <include>Settings_Box</include>
+                <control type="group">
+                    <visible>$PARAM[visible_header]</visible>
+                    <control type="label">
+                        <label>$PARAM[header]</label>
+                        <font>font_midi_bold</font>
+                        <textcolor>main_fg_90</textcolor>
+                        <height>40</height>
+                        <centertop>60</centertop>
+                        <left>40</left>
+                        <right>40</right>
+                    </control>
+                    <control type="group">
+                        <visible>$PARAM[visible_line]</visible>
+                        <include content="Part_ItemLine">
+                            <param name="label">$PARAM[subheader]</param>
+                            <param name="colordiffuse">main_fg</param>
+                        </include>
+                    </control>
+                </control>
+
                 <nested />
                 <left>460</left>
                 <right>80</right>
@@ -192,10 +219,10 @@
             <nested />
             <onright>60</onright>
             <pagecontrol>60</pagecontrol>
-            <top>20</top>
+            <top>140</top>
             <left>20</left>
             <right>20</right>
-            <bottom>20</bottom>
+            <bottom>140</bottom>
         </control>
     </include>
 
@@ -318,8 +345,8 @@
                 <nested />
                 <align>left</align>
                 <font>font_hint_bold</font>
-                <top>40</top>
-                <height>40</height>
+                <top>20</top>
+                <height>60</height>
                 <textoffsetx>40</textoffsetx>
                 <textcolor>main_fg_30</textcolor>
                 <include content="Settings_Button_$PARAM[window]">
@@ -467,20 +494,20 @@
     </include>
 
     <include name="Settings_Landing_Label">
-        <control type="label">
+        <!-- <control type="label">
             <top>20</top>
-            <textcolor>main_fg_70</textcolor>
+            <textcolor>main_fg_90</textcolor>
             <textoffsetx>40</textoffsetx>
             <height>40</height>
             <label>$PARAM[label]</label>
             <visible>$PARAM[visible]</visible>
             <font>font_main_bold</font>
-        </control>
+        </control> -->
         <control type="label">
             <textcolor>main_fg_70</textcolor>
             <textoffsetx>40</textoffsetx>
             <height>40</height>
-            <label>$PARAM[label2]</label>
+            <label>$PARAM[label]: $PARAM[label2]</label>
             <visible>$PARAM[visible]</visible>
         </control>
     </include>
@@ -594,10 +621,10 @@
 
     <include name="Settings_Statistics_WatchedOn">
         <control type="group">
-            <height>280</height>
+            <height>270</height>
             <control type="group">
-                <top>-79</top>
-                <left>-20</left>
+                <top>-80</top>
+                <left>-40</left>
                 <height>20</height>
                 <include content="Part_ItemLine">
                     <param name="visible">true</param>
@@ -625,7 +652,7 @@
                 <onright>ActivateWindow(1180)</onright>
                 <content limit="10" browse="never">plugin://plugin.video.themoviedb.helper?info=sync_watchedon&amp;type=both&amp;month=$PARAM[month]&amp;year=$PARAM[year]&amp;nextpage=false</content>
                 <onclick>Action(Info)</onclick>
-                <top>-10</top>
+                <top>-20</top>
                 <left>-60</left>
                 <right>-60</right>
             </include>

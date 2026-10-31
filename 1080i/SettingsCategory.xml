@@ -14,7 +14,6 @@
                     <include content="Settings_Left_Content">
                         <control type="grouplist" id="3">
                             <onright>5</onright>
-
                             <onup>20</onup>
                             <ondown>20</ondown>
                             <bottom>160</bottom>
@@ -70,8 +69,8 @@
 
                     <control type="scrollbar" id="60">
                         <centerright>0</centerright>
-                        <bottom>20</bottom>
-                        <top>20</top>
+                        <bottom>120</bottom>
+                        <top>120</top>
                         <width>scrollbar_w</width>
                         <orientation>vertical</orientation>
                         <texturesliderbackground />
@@ -84,7 +83,6 @@
                     <include content="Settings_Right_Grouplist">
                         <param name="id">5</param>
                         <onleft>3</onleft>
-                        <bottom>100</bottom>
                     </include>
 
                     <include content="Part_InfoText">
@@ -101,12 +99,13 @@
 
         <include content="Settings_Button">
             <param name="id">10</param>
-            <param name="control">togglebutton</param>
+            <param name="control">button</param>
             <param name="dialog">false</param>
             <include>Texture_Highlight_ToggleButton_Settings</include>
             <focusedcolor>$VAR[ColorSettingsToggleButtonText]</focusedcolor>
             <altfocusedcolor>$VAR[ColorSettingsToggleButtonText]</altfocusedcolor>
             <width>settings_category_w</width>
+            <onfocus>SetProperty(Settings.Category.$INFO[System.CurrentControlId],$INFO[System.CurrentControl])</onfocus>
             <description>Default Category Button</description>
         </include>
 
