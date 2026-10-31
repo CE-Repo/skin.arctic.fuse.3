@@ -214,6 +214,34 @@
         </definition>
     </include>
 
+    <include name="Settings_Right_InfoText">
+        <param name="id" />
+        <definition>
+            <include content="Part_InfoText">
+                <param name="id">$PARAM[id]</param>
+                <param name="label">$VAR[Label_Settings_InfoText]</param>
+                <param name="fallback">$INFO[System.BuildVersion,Kodi ,]$INFO[System.AddonVersion(skin.arctic.fuse.3), • AF3 v,]</param>
+                <param name="colordiffuse">main_fg_70</param>
+                <param name="include_hintlabel">false</param>
+            </include>
+        </definition>
+    </include>
+
+    <include name="Settings_Right_Scrollbar">
+        <control type="scrollbar" id="60">
+            <nested />
+            <centerright>0</centerright>
+            <top>140</top>
+            <bottom>140</bottom>
+            <width>scrollbar_w</width>
+            <orientation>vertical</orientation>
+            <texturesliderbackground />
+            <texturesliderbar colordiffuse="main_logo" border="4">scrollbar/scrollv_line.png</texturesliderbar>
+            <include>Texture_Scrollbar_V</include>
+            <showonepage>false</showonepage>
+        </control>
+    </include>
+
     <include name="Settings_Right_Grouplist">
         <control type="grouplist" id="$PARAM[id]">
             <nested />
@@ -241,13 +269,34 @@
     <include name="Settings_Button_skinsettings">
         <param name="reload">false</param>
         <param name="slevel">0</param>
+        <param name="help" />
         <definition>
             <visible>String.IsEqual(Window(Home).Property(Settings.Skin.Category),$PARAM[baseid])</visible>
             <onleft>1001$PARAM[baseid]</onleft>
+            <include content="Settings_Button_Help">
+                <param name="help">$PARAM[help]</param>
+            </include>
             <include content="Settings_Visible_Level"><param name="slevel">$PARAM[slevel]</param></include>
             <onclick condition="$PARAM[reload]">ReloadSkin()</onclick>
             <onclick condition="$PARAM[reload]">AlarmClock(refocus1,SetFocus(1001$PARAM[baseid]),00:00,silent)</onclick>
             <onclick condition="$PARAM[reload]">AlarmClock(refocus2,SetFocus($PARAM[baseid]$PARAM[id]),00:00,silent)</onclick>
+        </definition>
+    </include>
+
+    <include name="Settings_Button_shortcuts">
+        <param name="help" />
+        <definition>
+            <include content="Settings_Button_Help">
+                <param name="help">$PARAM[help]</param>
+            </include>
+        </definition>
+    </include>
+
+    <!-- Stores the focused setting's help text for Settings_Right_InfoText -->
+    <include name="Settings_Button_Help">
+        <param name="help" />
+        <definition>
+            <onfocus>SetProperty(InfoText.Message,"$PARAM[help]")</onfocus>
         </definition>
     </include>
 
@@ -269,6 +318,7 @@
         <param name="window" />
         <param name="reload">false</param>
         <param name="slevel">0</param>
+        <param name="help" />
         <definition>
             <control type="$PARAM[control]" id="$PARAM[baseid]$PARAM[id]">
                 <nested />
@@ -284,6 +334,7 @@
                     <param name="baseid">$PARAM[baseid]</param>
                     <param name="reload">$PARAM[reload]</param>
                     <param name="slevel">$PARAM[slevel]</param>
+                    <param name="help">$PARAM[help]</param>
                 </include>
             </control>
         </definition>
