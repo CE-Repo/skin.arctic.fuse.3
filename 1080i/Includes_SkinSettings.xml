@@ -11,6 +11,7 @@
         </include>
 
         <include content="Settings_Button" description="Customise Widgets">
+            <param name="help">$LOCALIZE[31653]</param>
             <param name="dialog">false</param>
             <param name="window">skinsettings</param>
             <param name="baseid">$PARAM[baseid]</param>
@@ -21,6 +22,7 @@
         </include>
 
         <include content="Settings_Button" description="Startup">
+            <param name="help">$LOCALIZE[31654]</param>
             <param name="dialog">false</param>
             <param name="window">skinsettings</param>
             <param name="baseid">$PARAM[baseid]</param>
@@ -39,6 +41,7 @@
             <label>$LOCALIZE[33061]</label>
         </include>
         <include content="Settings_Button" description="Position">
+            <param name="help">$LOCALIZE[31655]</param>
             <param name="dialog">false</param>
             <param name="window">skinsettings</param>
             <param name="baseid">$PARAM[baseid]</param>
@@ -50,6 +53,7 @@
             <onclick>Skin.ToggleSetting(HomeSwitcher.Vertical)</onclick>
         </include>
         <include content="Settings_Button" description="Icon Mode">
+            <param name="help">$LOCALIZE[31656]</param>
             <param name="dialog">false</param>
             <param name="window">skinsettings</param>
             <param name="baseid">$PARAM[baseid]</param>
@@ -62,6 +66,7 @@
             <visible>!Skin.HasSetting(HomeSwitcher.Vertical)</visible>
         </include>
         <include content="Settings_Button" description="Header">
+            <param name="help">$LOCALIZE[31657]</param>
             <param name="dialog">false</param>
             <param name="window">skinsettings</param>
             <param name="baseid">$PARAM[baseid]</param>
@@ -88,6 +93,7 @@
             <label>$LOCALIZE[31105]</label>
         </include>
         <include content="Settings_Button" description="Slide">
+            <param name="help">$LOCALIZE[31659]</param>
             <param name="dialog">false</param>
             <param name="window">skinsettings</param>
             <param name="baseid">$PARAM[baseid]</param>
@@ -98,6 +104,7 @@
             <onclick>Skin.ToggleSetting(Spotlight.EnableSlide)</onclick>
         </include>
         <include content="Settings_Button" description="Spotlight">
+            <param name="help">$LOCALIZE[31660]</param>
             <param name="dialog">false</param>
             <param name="window">skinsettings</param>
             <param name="baseid">$PARAM[baseid]</param>
@@ -118,6 +125,7 @@
             <label>$LOCALIZE[24997]</label>
         </include>
         <include content="Settings_Button" description="Presets">
+            <param name="help">$LOCALIZE[31661]</param>
             <param name="dialog">false</param>
             <param name="window">skinsettings</param>
             <param name="baseid">$PARAM[baseid]</param>
@@ -129,6 +137,7 @@
             <onclick>ActivateWindow(1118)</onclick>
         </include>
         <include content="Settings_Button" description="Color Selector">
+            <param name="help">$LOCALIZE[31662]</param>
             <param name="dialog">false</param>
             <param name="window">skinsettings</param>
             <param name="baseid">$PARAM[baseid]</param>
@@ -140,6 +149,7 @@
             <onclick>ActivateWindow(1118)</onclick>
         </include>
         <include content="Settings_Button" description="Customise Window Background">
+            <param name="help">$LOCALIZE[31663]</param>
             <param name="dialog">false</param>
             <param name="window">skinsettings</param>
             <param name="baseid">$PARAM[baseid]</param>
@@ -151,6 +161,7 @@
             <onclick>ActivateWindow(1118)</onclick>
         </include>
         <include content="Settings_Button" description="Customise Dialog Background">
+            <param name="help">$LOCALIZE[31664]</param>
             <param name="dialog">false</param>
             <param name="window">skinsettings</param>
             <param name="baseid">$PARAM[baseid]</param>
@@ -162,6 +173,7 @@
             <onclick>ActivateWindow(1118)</onclick>
         </include>
         <include content="Settings_Button" description="Customise Startup">
+            <param name="help">$LOCALIZE[31665]</param>
             <param name="dialog">false</param>
             <param name="window">skinsettings</param>
             <param name="baseid">$PARAM[baseid]</param>
@@ -174,6 +186,7 @@
             <onclick>ActivateWindow(1118)</onclick>
         </include>
         <include content="Settings_Button" description="Background blur">
+            <param name="help">$LOCALIZE[31666]</param>
             <param name="dialog">false</param>
             <param name="window">skinsettings</param>
             <param name="baseid">$PARAM[baseid]</param>
@@ -187,6 +200,7 @@
             <onclick>ActivateWindow(1118)</onclick>
         </include>
         <include content="Settings_Button" description="Background style">
+            <param name="help">$LOCALIZE[31667]</param>
             <param name="window">skinsettings</param>
             <param name="baseid">$PARAM[baseid]</param>
             <param name="id">010</param>
@@ -197,6 +211,7 @@
             <include>Action_Blur_ClearContentFallbacks_Onclick</include>
         </include>
         <include content="Settings_Button" description="Focus style">
+            <param name="help">$LOCALIZE[31668]</param>
             <param name="dialog">false</param>
             <param name="window">skinsettings</param>
             <param name="baseid">$PARAM[baseid]</param>
@@ -208,6 +223,7 @@
             <onclick>Skin.ToggleSetting(OutlinedFocusedStyle)</onclick>
         </include>
         <include content="Settings_Button" description="Ratings">
+            <param name="help">$LOCALIZE[31669]</param>
             <param name="dialog">false</param>
             <param name="window">skinsettings</param>
             <param name="baseid">$PARAM[baseid]</param>
@@ -229,6 +245,7 @@
             <label>$LOCALIZE[31044]</label>
         </include>
         <include content="Settings_Button" description="Configure Views">
+            <param name="help">$LOCALIZE[31670]</param>
             <param name="dialog">false</param>
             <param name="window">skinsettings</param>
             <param name="baseid">$PARAM[baseid]</param>
@@ -240,6 +257,7 @@
         </include>
 
         <include content="Settings_Button" description="Use Simple Text">
+            <param name="help">$LOCALIZE[31671]</param>
             <param name="dialog">false</param>
             <param name="window">skinsettings</param>
             <param name="baseid">$PARAM[baseid]</param>
@@ -251,6 +269,7 @@
         </include>
 
         <include content="Settings_Button" description="CustomDialog Indicators">
+            <param name="help">$LOCALIZE[31672]</param>
             <param name="dialog">false</param>
             <param name="window">skinsettings</param>
             <param name="baseid">$PARAM[baseid]</param>
@@ -270,6 +289,7 @@
         </include>
 
         <include content="Settings_Button" description="VideoOSD">
+            <param name="help">$LOCALIZE[31673]</param>
             <param name="dialog">false</param>
             <param name="window">skinsettings</param>
             <param name="baseid">$PARAM[baseid]</param>
@@ -291,6 +311,7 @@
         </include>
 
         <include content="Settings_Button" description="Information">
+            <param name="help">$LOCALIZE[31674]</param>
             <param name="dialog">false</param>
             <param name="window">skinsettings</param>
             <param name="baseid">$PARAM[baseid]</param>
@@ -303,6 +324,7 @@
         </include>
 
         <include content="Settings_Button" description="Information">
+            <param name="help">$LOCALIZE[31675]</param>
             <param name="dialog">false</param>
             <param name="window">skinsettings</param>
             <param name="baseid">$PARAM[baseid]</param>
@@ -336,6 +358,7 @@
             <selected>Skin.HasSetting(Footer.EnableCodecs)</selected>
         </include> -->
         <include content="Settings_Button" description="Now Playing">
+            <param name="help">$LOCALIZE[31676]</param>
             <param name="dialog">false</param>
             <param name="window">skinsettings</param>
             <param name="baseid">$PARAM[baseid]</param>
@@ -347,6 +370,7 @@
             <selected>!Skin.HasSetting(Footer.DisableNowPlaying)</selected>
         </include>
         <include content="Settings_Button" description="Studio">
+            <param name="help">$LOCALIZE[31677]</param>
             <param name="dialog">false</param>
             <param name="window">skinsettings</param>
             <param name="baseid">$PARAM[baseid]</param>
@@ -364,6 +388,7 @@
             <label>$LOCALIZE[31208]</label>
         </include>
         <include content="Settings_Button" description="Weather">
+            <param name="help">$LOCALIZE[31678]</param>
             <param name="dialog">false</param>
             <param name="window">skinsettings</param>
             <param name="baseid">$PARAM[baseid]</param>
@@ -384,6 +409,7 @@
         </include>
 
         <include content="Settings_Button" description="Tray Buttons">
+            <param name="help">$LOCALIZE[31679]</param>
             <param name="dialog">false</param>
             <param name="window">skinsettings</param>
             <param name="baseid">$PARAM[baseid]</param>
@@ -395,6 +421,7 @@
         </include>
 
         <include content="Settings_Button" description="Artwork">
+            <param name="help">$LOCALIZE[31680]</param>
             <param name="dialog">false</param>
             <param name="window">skinsettings</param>
             <param name="baseid">$PARAM[baseid]</param>
@@ -417,6 +444,7 @@
             <label>$LOCALIZE[31103]</label>
         </include>
         <include content="Settings_Button" description="Autoscroll">
+            <param name="help">$LOCALIZE[31681]</param>
             <param name="dialog">false</param>
             <param name="window">skinsettings</param>
             <param name="baseid">$PARAM[baseid]</param>
@@ -429,6 +457,7 @@
             <onclick>ActivateWindow(1118)</onclick>
         </include>
         <include content="Settings_Button" description="More item">
+            <param name="help">$LOCALIZE[31682]</param>
             <param name="dialog">false</param>
             <param name="window">skinsettings</param>
             <param name="baseid">$PARAM[baseid]</param>
@@ -440,6 +469,7 @@
             <selected>Skin.HasSetting(Widgets.EnableShowMore)</selected>
         </include>
         <include content="Settings_Button" description="No Items Placeholder">
+            <param name="help">$LOCALIZE[31683]</param>
             <param name="dialog">false</param>
             <param name="window">skinsettings</param>
             <param name="baseid">$PARAM[baseid]</param>
@@ -451,6 +481,7 @@
             <onclick condition="!Skin.HasSetting(Widgets.DisableNoResultsItem)">RunScript(script.skinvariables,run_dialog=yesno,"heading=$LOCALIZE[31519]","message=[B][COLOR=red][UPPERCASE]$LOCALIZE[14117][/UPPERCASE][/B][/COLOR] - $LOCALIZE[31522] $LOCALIZE[31524] $LOCALIZE[31523]",yeslabel=$LOCALIZE[31162],nolabel=$LOCALIZE[222],defaultbutton=10,"executebuiltin=Skin.SetBool(Widgets.DisableNoResultsItem)")</onclick>
         </include>
         <include content="Settings_Button" description="Extra fanart">
+            <param name="help">$LOCALIZE[31684]</param>
             <param name="dialog">false</param>
             <param name="window">skinsettings</param>
             <param name="baseid">$PARAM[baseid]</param>
@@ -472,6 +503,7 @@
         </include>
 
         <include content="Settings_Button" description="OnBack">
+            <param name="help">$LOCALIZE[31685]</param>
             <param name="dialog">false</param>
             <param name="window">skinsettings</param>
             <param name="baseid">$PARAM[baseid]</param>
@@ -485,6 +517,7 @@
         </include>
 
         <include content="Settings_Button" description="OnScroll">
+            <param name="help">$LOCALIZE[31686]</param>
             <param name="dialog">false</param>
             <param name="window">skinsettings</param>
             <param name="baseid">$PARAM[baseid]</param>
@@ -503,6 +536,7 @@
             <label>$LOCALIZE[31425]</label>
         </include>
         <include content="Settings_Button" description="Use fake textbox">
+            <param name="help">$LOCALIZE[31687]</param>
             <param name="dialog">false</param>
             <param name="window">skinsettings</param>
             <param name="baseid">$PARAM[baseid]</param>
@@ -513,6 +547,7 @@
             <selected>!Skin.HasSetting(Textboxes.DisableFakeBox)</selected>
         </include>
         <include content="Settings_Button" description="Textbox scrolling">
+            <param name="help">$LOCALIZE[31688]</param>
             <param name="dialog">false</param>
             <param name="window">skinsettings</param>
             <param name="baseid">$PARAM[baseid]</param>
@@ -524,6 +559,7 @@
             <visible>Skin.HasSetting(Textboxes.DisableFakeBox)</visible>
         </include>
         <include content="Settings_Button" description="Label scrolling">
+            <param name="help">$LOCALIZE[31689]</param>
             <param name="dialog">false</param>
             <param name="window">skinsettings</param>
             <param name="baseid">$PARAM[baseid]</param>
@@ -543,6 +579,7 @@
         </include>
 
         <include content="Settings_Button" description="Autoclose OSD timeout">
+            <param name="help">$LOCALIZE[31690]</param>
             <param name="dialog">false</param>
             <param name="window">skinsettings</param>
             <param name="baseid">$PARAM[baseid]</param>
@@ -555,6 +592,7 @@
         </include>
 
         <include content="Settings_Button" description="Autohide seekbar after pausing">
+            <param name="help">$LOCALIZE[31691]</param>
             <param name="dialog">false</param>
             <param name="window">skinsettings</param>
             <param name="baseid">$PARAM[baseid]</param>
@@ -568,6 +606,7 @@
             <onclick condition="![Skin.String(OSD.AutoOnPause,Info) | Skin.String(OSD.AutoOnPause,Hide)]">Skin.SetString(OSD.AutoOnPause,Info)</onclick>
         </include>
         <include content="Settings_Button" description="Autohide seekbar timing">
+            <param name="help">$LOCALIZE[31692]</param>
             <param name="dialog">false</param>
             <param name="window">skinsettings</param>
             <param name="baseid">$PARAM[baseid]</param>
@@ -584,6 +623,7 @@
             <visible>[Skin.String(OSD.AutoOnPause,Info) | Skin.String(OSD.AutoOnPause,Hide)]</visible>
         </include>
         <include content="Settings_Button" description="Seekbar times">
+            <param name="help">$LOCALIZE[31693]</param>
             <param name="dialog">false</param>
             <param name="window">skinsettings</param>
             <param name="baseid">$PARAM[baseid]</param>
@@ -597,6 +637,7 @@
             <onclick condition="Skin.String(Seekbar.TimeDisplay,Combined)">Skin.Reset(Seekbar.TimeDisplay)</onclick>
         </include>
         <include content="Settings_Button" description="Background video">
+            <param name="help">$LOCALIZE[31694]</param>
             <param name="dialog">false</param>
             <param name="window">skinsettings</param>
             <param name="baseid">$PARAM[baseid]</param>
@@ -621,6 +662,7 @@
         </include>
 
         <include content="Settings_Button" description="TMDbHelper Service">
+            <param name="help">$LOCALIZE[31695]</param>
             <param name="control">radiobutton</param>
             <param name="dialog">false</param>
             <param name="window">skinsettings</param>
@@ -640,6 +682,7 @@
         </include>
 
         <include content="Settings_Button" description="CustomDialog Movie  Ratings">
+            <param name="help">$LOCALIZE[31696]</param>
             <param name="dialog">false</param>
             <param name="window">skinsettings</param>
             <param name="baseid">$PARAM[baseid]</param>
@@ -653,6 +696,7 @@
         </include>
 
         <include content="Settings_Button" description="CustomDialog TV Ratings">
+            <param name="help">$LOCALIZE[31697]</param>
             <param name="dialog">false</param>
             <param name="window">skinsettings</param>
             <param name="baseid">$PARAM[baseid]</param>
@@ -672,6 +716,7 @@
             <label>$LOCALIZE[31126]</label>
         </include>
         <include content="Settings_Button" description="Movie plotline">
+            <param name="help">$LOCALIZE[31698]</param>
             <param name="dialog">false</param>
             <param name="window">skinsettings</param>
             <param name="baseid">$PARAM[baseid]</param>
@@ -686,6 +731,7 @@
             <onclick condition="Skin.String(Plotline.Movie,None)">Skin.Reset(Plotline.Movie)</onclick>
         </include>
         <include content="Settings_Button" description="TV plotline">
+            <param name="help">$LOCALIZE[31699]</param>
             <param name="dialog">false</param>
             <param name="window">skinsettings</param>
             <param name="baseid">$PARAM[baseid]</param>
@@ -707,6 +753,7 @@
             <label>$LOCALIZE[19033]</label>
         </include>
         <include content="Settings_Button" description="Star Rating">
+            <param name="help">$LOCALIZE[31700]</param>
             <param name="dialog">false</param>
             <param name="window">skinsettings</param>
             <param name="baseid">$PARAM[baseid]</param>
@@ -718,6 +765,7 @@
             <selected>!Skin.HasSetting(InfoTags.DisableStarRating)</selected>
         </include>
         <include content="Settings_Button" description="Audio Channels">
+            <param name="help">$LOCALIZE[31701]</param>
             <param name="dialog">false</param>
             <param name="window">skinsettings</param>
             <param name="baseid">$PARAM[baseid]</param>
@@ -729,6 +777,7 @@
             <selected>Skin.HasSetting(InfoTags.EnableAudioChannels)</selected>
         </include>
         <include content="Settings_Button" description="HDR">
+            <param name="help">$LOCALIZE[31702]</param>
             <param name="dialog">false</param>
             <param name="window">skinsettings</param>
             <param name="baseid">$PARAM[baseid]</param>
@@ -752,6 +801,7 @@
             <label>$LOCALIZE[14125]</label>
         </include>
         <include content="Settings_Button" description="">
+            <param name="help">$LOCALIZE[31703]</param>
             <param name="dialog">false</param>
             <param name="window">skinsettings</param>
             <param name="baseid">$PARAM[baseid]</param>
@@ -773,6 +823,7 @@
             <label>$LOCALIZE[12999]</label>
         </include>
         <include content="Settings_Button" description="Startup Init Screen">
+            <param name="help">$LOCALIZE[31704]</param>
             <param name="dialog">false</param>
             <param name="window">skinsettings</param>
             <param name="baseid">$PARAM[baseid]</param>
@@ -784,6 +835,7 @@
             <selected>!Skin.HasSetting(Startup.DisableWaitForLoad)</selected>
         </include>
         <include content="Settings_Button" description="Hub preloading">
+            <param name="help">$LOCALIZE[31705]</param>
             <param name="dialog">false</param>
             <param name="window">skinsettings</param>
             <param name="baseid">$PARAM[baseid]</param>
@@ -796,6 +848,7 @@
             <visible>!Skin.HasSetting(Startup.DisableWaitForLoad)</visible>
         </include>
         <include content="Settings_Button" description="Widget profiles">
+            <param name="help">$LOCALIZE[31706]</param>
             <param name="dialog">false</param>
             <param name="window">skinsettings</param>
             <param name="baseid">$PARAM[baseid]</param>
@@ -810,6 +863,7 @@
             <selected>!Skin.HasSetting(SkinUserLogin.Disabled)</selected>
         </include>
         <include content="Settings_Button" description="Widget profiles">
+            <param name="help">$LOCALIZE[31707]</param>
             <param name="dialog">false</param>
             <param name="window">skinsettings</param>
             <param name="baseid">$PARAM[baseid]</param>
@@ -830,6 +884,7 @@
             <label>PVR / $LOCALIZE[31085]</label>
         </include>
         <include content="Settings_Button" description="EPG Grid Genre Colours">
+            <param name="help">$LOCALIZE[31708]</param>
             <param name="dialog">false</param>
             <param name="window">skinsettings</param>
             <param name="baseid">$PARAM[baseid]</param>
@@ -841,6 +896,7 @@
             <selected>!Skin.HasSetting(PVR.DisableGenreColours)</selected>
         </include>
         <include content="Settings_Button" description="TMDbHelper for PVR">
+            <param name="help">$LOCALIZE[31709]</param>
             <param name="dialog">false</param>
             <param name="window">skinsettings</param>
             <param name="baseid">$PARAM[baseid]</param>
@@ -859,6 +915,7 @@
             <label>$LOCALIZE[31610]</label>
         </include>
         <include content="Settings_Button" description="Seasonal Themes: Enabled">
+            <param name="help">$LOCALIZE[31710]</param>
             <param name="dialog">false</param>
             <param name="window">skinsettings</param>
             <param name="baseid">$PARAM[baseid]</param>
@@ -869,6 +926,7 @@
             <selected>Skin.HasSetting(SeasonalTheme.Enable)</selected>
         </include>
         <include content="Settings_Button" description="Seasonal Themes: Christmas">
+            <param name="help">$LOCALIZE[31711]</param>
             <param name="dialog">false</param>
             <param name="window">skinsettings</param>
             <param name="baseid">$PARAM[baseid]</param>
@@ -882,6 +940,7 @@
             <visible>Skin.HasSetting(SeasonalTheme.Enable)</visible>
         </include>
         <include content="Settings_Button" description="Seasonal Theme: Summer Breeze">
+            <param name="help">$LOCALIZE[31712]</param>
             <param name="dialog">false</param>
             <param name="window">skinsettings</param>
             <param name="baseid">$PARAM[baseid]</param>
@@ -893,6 +952,7 @@
             <visible>Skin.HasSetting(SeasonalTheme.Enable)</visible>
         </include>
         <include content="Settings_Button" description="Seasonal Theme: Halloween Spook">
+            <param name="help">$LOCALIZE[31713]</param>
             <param name="dialog">false</param>
             <param name="window">skinsettings</param>
             <param name="baseid">$PARAM[baseid]</param>
@@ -904,6 +964,7 @@
             <visible>Skin.HasSetting(SeasonalTheme.Enable)</visible>
         </include>
         <include content="Settings_Button" description="Seasonal Themes: Background Overlay">
+            <param name="help">$LOCALIZE[31714]</param>
             <param name="dialog">false</param>
             <param name="window">skinsettings</param>
             <param name="baseid">$PARAM[baseid]</param>
@@ -916,6 +977,7 @@
             <visible>Skin.HasSetting(SeasonalTheme.Enable)</visible>
         </include>
         <include content="Settings_Button" description="Seasonal Themes: Background Atmosphere">
+            <param name="help">$LOCALIZE[31715]</param>
             <param name="dialog">false</param>
             <param name="window">skinsettings</param>
             <param name="baseid">$PARAM[baseid]</param>
@@ -928,6 +990,7 @@
             <visible>Skin.HasSetting(SeasonalTheme.Enable)</visible>
         </include>
         <include content="Settings_Button" description="Seasonal Themes: Fly-by Animations">
+            <param name="help">$LOCALIZE[31716]</param>
             <param name="dialog">false</param>
             <param name="window">skinsettings</param>
             <param name="baseid">$PARAM[baseid]</param>
@@ -940,6 +1003,7 @@
             <visible>Skin.HasSetting(SeasonalTheme.Enable)</visible>
         </include>
         <include content="Settings_Button" description="Seasonal Themes: Falling Props Density">
+            <param name="help">$LOCALIZE[31717]</param>
             <param name="dialog">false</param>
             <param name="window">skinsettings</param>
             <param name="baseid">$PARAM[baseid]</param>
@@ -962,6 +1026,7 @@
             <label>$LOCALIZE[10039]</label>
         </include>
         <include content="Settings_Button" description="Nuke Everything">
+            <param name="help">$LOCALIZE[31718]</param>
             <param name="dialog">false</param>
             <param name="window">skinsettings</param>
             <param name="baseid">$PARAM[baseid]</param>
