@@ -223,6 +223,8 @@
                 <param name="fallback">$INFO[System.BuildVersion,Kodi ,]$INFO[System.AddonVersion(skin.arctic.fuse.3), • AF3 v,]</param>
                 <param name="colordiffuse">main_fg_70</param>
                 <param name="include_hintlabel">false</param>
+                <param name="centerbottom">60</param>
+                <param name="height">80</param>
             </include>
         </definition>
     </include>
@@ -268,7 +270,6 @@
 
     <include name="Settings_Button_skinsettings">
         <param name="reload">false</param>
-        <param name="slevel">0</param>
         <param name="help" />
         <definition>
             <visible>String.IsEqual(Window(Home).Property(Settings.Skin.Category),$PARAM[baseid])</visible>
@@ -276,7 +277,6 @@
             <include content="Settings_Button_Help">
                 <param name="help">$PARAM[help]</param>
             </include>
-            <include content="Settings_Visible_Level"><param name="slevel">$PARAM[slevel]</param></include>
             <onclick condition="$PARAM[reload]">ReloadSkin()</onclick>
             <onclick condition="$PARAM[reload]">AlarmClock(refocus1,SetFocus(1001$PARAM[baseid]),00:00,silent)</onclick>
             <onclick condition="$PARAM[reload]">AlarmClock(refocus2,SetFocus($PARAM[baseid]$PARAM[id]),00:00,silent)</onclick>
@@ -304,20 +304,11 @@
         <description>None</description>
     </include>
 
-    <include name="Settings_Visible_Level">
-        <param name="slevel">0</param>
-        <param name="altvisible">false</param>
-        <definition>
-            <visible>!Integer.IsLess(Skin.String(Skin.SettingsLevel),$PARAM[slevel]) | $PARAM[altvisible]</visible>
-        </definition>
-    </include>
-
     <include name="Settings_Button">
         <param name="control">button</param>
         <param name="dialog">false</param>
         <param name="window" />
         <param name="reload">false</param>
-        <param name="slevel">0</param>
         <param name="help" />
         <definition>
             <control type="$PARAM[control]" id="$PARAM[baseid]$PARAM[id]">
@@ -333,7 +324,6 @@
                     <param name="id">$PARAM[id]</param>
                     <param name="baseid">$PARAM[baseid]</param>
                     <param name="reload">$PARAM[reload]</param>
-                    <param name="slevel">$PARAM[slevel]</param>
                     <param name="help">$PARAM[help]</param>
                 </include>
             </control>
@@ -387,7 +377,6 @@
         <param name="control">label</param>
         <param name="dialog">false</param>
         <param name="window" />
-        <param name="slevel">0</param>
         <definition>
             <control type="$PARAM[control]" id="$PARAM[baseid]$PARAM[id]">
                 <include content="Object_TextColor" condition="$PARAM[dialog]">
@@ -403,7 +392,6 @@
                 <include content="Settings_Button_$PARAM[window]">
                     <param name="id">$PARAM[id]</param>
                     <param name="baseid">$PARAM[baseid]</param>
-                    <param name="slevel">$PARAM[slevel]</param>
                 </include>
             </control>
         </definition>
@@ -948,8 +936,8 @@
             <onright>SetProperty(Bumper.Direction,Right,Home)</onright>
             <onright>ActivateWindow(1180)</onright>
 
-            <onclick>SetProperty(header,$INFO[Container($PARAM[id]).ListItem.Property(long)],1129)</onclick>
-            <onclick>SetProperty(path,plugin://plugin.video.themoviedb.helper/?info=sync_watchedon&amp;type=both&amp;day=$INFO[Container($PARAM[id]).ListItem.Property(day_number)]&amp;month=$INFO[Container($PARAM[id]).ListItem.Property(month_number)]&amp;year=$INFO[Container($PARAM[id]).ListItem.Property(year)]&amp;nextpage=true,1129)</onclick>
+            <onclick>SetProperty(header,$ESCINFO[Container($PARAM[id]).ListItem.Property(long)],1129)</onclick>
+            <onclick>SetProperty(path,plugin://plugin.video.themoviedb.helper/?info=sync_watchedon&amp;type=both&amp;day=$INFO[Container($PARAM[id]).ListItem.Property(day_number)]&amp;month=$INFO[Container($PARAM[id]).ListItem.Property(month_number)]&amp;year=$INFO[Container($PARAM[id]).ListItem.Property(year)]&amp;episodes=true&amp;nextpage=true,1129)</onclick>
             <onclick>ActivateWindow(1129)</onclick>
             <oninfo>Action(Select)</oninfo>
 
