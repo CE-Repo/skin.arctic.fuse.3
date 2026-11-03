@@ -88,7 +88,7 @@
     </variable>
 
     <variable name="Label_Setting_Hub_LiveTV_Search">
-        <value condition="!String.IsEqual(Container(30000).ListItem.Property(mode),Standard)">$LOCALIZE[137]</value>
+        <value condition="!$EXP[Exp_HubsWindow_Mode_Standard]">$LOCALIZE[137]</value>
         <value>$LOCALIZE[568]</value>
     </variable>
 
@@ -121,9 +121,9 @@
     </variable>
 
     <variable name="Label_Setting_Search_Mode">
-        <value condition="String.IsEqual(Skin.String(HomeSwitcher.Search.Mode),Combined)">$LOCALIZE[31083] $LOCALIZE[31103]</value>
-        <value condition="String.IsEqual(Skin.String(HomeSwitcher.Search.Mode),Wall)">$LOCALIZE[31008] $LOCALIZE[31103]</value>
-        <value>$LOCALIZE[602] $LOCALIZE[31103]</value>
+        <value condition="String.IsEqual(Skin.String(HomeSwitcher.Search.Mode),Combined)">$LOCALIZE[31845]</value>
+        <value condition="String.IsEqual(Skin.String(HomeSwitcher.Search.Mode),Wall)">$LOCALIZE[31008]</value>
+        <value>$LOCALIZE[602]</value>
     </variable>
 
     <variable name="Label_Setting_Home_Mode">
@@ -174,9 +174,9 @@
     </variable>
 
     <variable name="Label_Setting_Hub_Mode">
-        <value condition="String.IsEqual(Container(30000).ListItem.Property(Mode),Combined)">$LOCALIZE[31083] $LOCALIZE[31103]</value>
-        <value condition="String.IsEqual(Container(30000).ListItem.Property(Mode),Wall)">$LOCALIZE[31008] $LOCALIZE[31103]</value>
-        <value>$LOCALIZE[602] $LOCALIZE[31103]</value>
+        <value condition="$EXP[Exp_HubsWindow_Mode_Combined]">$LOCALIZE[31845]</value>
+        <value condition="$EXP[Exp_HubsWindow_Mode_Wall]">$LOCALIZE[31008]</value>
+        <value>$LOCALIZE[602]</value>
     </variable>
 
     <variable name="Label_SkinSettings_Header">
@@ -271,7 +271,7 @@
         <value condition="Window.IsVisible(Settings.xml) + String.IsEqual(Window(Home).Property(Settings.Main.Category),Addons)">$LOCALIZE[24001]</value>
         <value condition="Window.IsVisible(FileManager.xml)">$INFO[Container(3).ListItem.Label]</value>
         <value condition="Window.IsVisible(AddonBrowser.xml)">$INFO[Container.FolderName]</value>
-        <value condition="Window.IsVisible(Custom_1115_Window_Shortcuts.xml)">$INFO[Container(30000).ListItem.Label]</value>
+        <value condition="Window.IsVisible(Custom_1115_Window_Shortcuts.xml)">$VAR[Label_HubsWindow_Header]</value>
         <value condition="Window.IsVisible(SettingsSystemInfo.xml)">$INFO[Control.GetLabel(40)]</value>
         <value condition="Window.IsVisible(SkinSettings.xml) + String.IsEqual(Window(Home).Property(Settings.Skin.Category),0)">$LOCALIZE[31807]</value>
         <value condition="Window.IsVisible(SkinSettings.xml) + String.IsEqual(Window(Home).Property(Settings.Skin.Category),1)">$LOCALIZE[480]</value>
@@ -348,6 +348,53 @@
         <value condition="String.IsEqual(Window(Home).Property(TMDbHelper.ListItem.Episode_type),series_finale)">$LOCALIZE[31214]</value>
         <value condition="String.IsEqual(Window(Home).Property(TMDbHelper.ListItem.Episode_type),season_finale)">$LOCALIZE[31215]</value>
         <value condition="String.IsEqual(Window(Home).Property(TMDbHelper.ListItem.Episode_type),mid_season_finale)">$LOCALIZE[31218]</value>
+    </variable>
+
+    <!-- Menu name of the focused item in the hubs window (1115): its window for Home and the hubs, search for Search -->
+    <variable name="Label_HubsWindow_MenuName">
+        <value condition="!String.IsEmpty(Container(30000).ListItem.Property(window))">$INFO[Container(30000).ListItem.Property(window)]</value>
+        <value condition="String.IsEqual(Container(30000).ListItem.Property(static),search)">search</value>
+    </variable>
+
+    <!-- Spotlight label of the focused hub in the hubs window (1115) -->
+    <variable name="Label_HubsWindow_Spotlight">
+        <value condition="String.IsEqual(Container(30000).ListItem.Property(window),home) + !String.IsEmpty(Skin.String(HomeSwitcher.home.Spotlight.Label))">$INFO[Skin.String(HomeSwitcher.home.Spotlight.Label)]</value>
+        <value condition="String.IsEqual(Container(30000).ListItem.Property(window),1101) + !String.IsEmpty(Skin.String(HomeSwitcher.1101.Spotlight.Label))">$INFO[Skin.String(HomeSwitcher.1101.Spotlight.Label)]</value>
+        <value condition="String.IsEqual(Container(30000).ListItem.Property(window),1102) + !String.IsEmpty(Skin.String(HomeSwitcher.1102.Spotlight.Label))">$INFO[Skin.String(HomeSwitcher.1102.Spotlight.Label)]</value>
+        <value condition="String.IsEqual(Container(30000).ListItem.Property(window),1103) + !String.IsEmpty(Skin.String(HomeSwitcher.1103.Spotlight.Label))">$INFO[Skin.String(HomeSwitcher.1103.Spotlight.Label)]</value>
+        <value condition="String.IsEqual(Container(30000).ListItem.Property(window),1104) + !String.IsEmpty(Skin.String(HomeSwitcher.1104.Spotlight.Label))">$INFO[Skin.String(HomeSwitcher.1104.Spotlight.Label)]</value>
+        <value condition="String.IsEqual(Container(30000).ListItem.Property(window),1106) + !String.IsEmpty(Skin.String(HomeSwitcher.1106.Spotlight.Label))">$INFO[Skin.String(HomeSwitcher.1106.Spotlight.Label)]</value>
+        <value condition="String.IsEqual(Container(30000).ListItem.Property(window),1107) + !String.IsEmpty(Skin.String(HomeSwitcher.1107.Spotlight.Label))">$INFO[Skin.String(HomeSwitcher.1107.Spotlight.Label)]</value>
+        <value condition="String.IsEqual(Container(30000).ListItem.Property(window),1108) + !String.IsEmpty(Skin.String(HomeSwitcher.1108.Spotlight.Label))">$INFO[Skin.String(HomeSwitcher.1108.Spotlight.Label)]</value>
+        <value condition="String.IsEqual(Container(30000).ListItem.Property(window),1109) + !String.IsEmpty(Skin.String(HomeSwitcher.1109.Spotlight.Label))">$INFO[Skin.String(HomeSwitcher.1109.Spotlight.Label)]</value>
+        <value>$LOCALIZE[16018]</value>
+    </variable>
+
+    <!-- Hubs window (1115) settings header: Add hub shows the Power entry listed just above it -->
+    <variable name="Label_HubsWindow_Header">
+        <value condition="$EXP[Exp_HubsWindow_Item_Add]">$INFO[Container(30000).ListItem(-1).Label]</value>
+        <value>$INFO[Container(30000).ListItem.Label]</value>
+    </variable>
+    <variable name="Image_HubsWindow_Header">
+        <value condition="$EXP[Exp_HubsWindow_Item_Add]">$INFO[Container(30000).ListItem(-1).Icon]</value>
+        <value>$INFO[Container(30000).ListItem.Icon]</value>
+    </variable>
+
+    <!-- Disabled state of the fixed Search and Power entries of the hubs window (1115) -->
+    <variable name="Label_Hubs_Search_Disabled">
+        <value condition="Skin.HasSetting(HomeSwitcher.DisableSearch)">True</value>
+    </variable>
+    <variable name="Label_Hubs_Power_Disabled">
+        <value condition="Skin.HasSetting(HomeSwitcher.LoopBack)">True</value>
+    </variable>
+
+    <variable name="Label_HubsWindow_EnableDisable">
+        <value condition="!String.IsEqual(Container(30000).ListItem.Property(disabled),True)">$LOCALIZE[305]</value>
+        <value>$LOCALIZE[1223]</value>
+    </variable>
+    <variable name="Image_HubsWindow_EnableDisable">
+        <value condition="!String.IsEqual(Container(30000).ListItem.Property(disabled),True)">special://skin/extras/icons/circle-check.png</value>
+        <value>special://skin/extras/icons/circle-cancel.png</value>
     </variable>
 
     <variable name="Label_Shortcut_EnableDisable">
@@ -1366,6 +1413,9 @@
         <value condition="String.IsEqual(ListItem.Property(widget_style),Ranked)">$LOCALIZE[31827]</value>
         <value condition="String.IsEqual(ListItem.Property(widget_style),Stack)">$LOCALIZE[31828]</value>
         <value condition="String.IsEqual(ListItem.Property(widget_style),Disc)">$LOCALIZE[31829]</value>
+        <value condition="String.IsEqual(ListItem.Property(widget_style),Shelf)">$LOCALIZE[31830]</value>
+        <value condition="String.IsEqual(ListItem.Property(widget_style),Timeline)">$LOCALIZE[31831]</value>
+        <value condition="String.IsEqual(ListItem.Property(widget_style),Gatefold)">$LOCALIZE[31832]</value>
         <value>$LOCALIZE[571]</value>
     </variable>
 
@@ -1382,6 +1432,9 @@
         <value condition="String.IsEqual(Container(22001).ListItem.Property(widget_style),Ranked)">$LOCALIZE[31827]</value>
         <value condition="String.IsEqual(Container(22001).ListItem.Property(widget_style),Stack)">$LOCALIZE[31828]</value>
         <value condition="String.IsEqual(Container(22001).ListItem.Property(widget_style),Disc)">$LOCALIZE[31829]</value>
+        <value condition="String.IsEqual(Container(22001).ListItem.Property(widget_style),Shelf)">$LOCALIZE[31830]</value>
+        <value condition="String.IsEqual(Container(22001).ListItem.Property(widget_style),Timeline)">$LOCALIZE[31831]</value>
+        <value condition="String.IsEqual(Container(22001).ListItem.Property(widget_style),Gatefold)">$LOCALIZE[31832]</value>
         <value>$LOCALIZE[571]</value>
     </variable>
 
@@ -1394,10 +1447,33 @@
         <value condition="!String.IsEmpty(Window(Home).Property(TMDBHelper.ListItem.biography))">$INFO[Window(Home).Property(TMDBHelper.ListItem.biography)]</value>
     </variable>
 
+    <!-- Hubs window (1115) header tag: type of the focused item -->
+    <variable name="Label_HubsWindow_Tag">
+        <value condition="String.IsEqual(Container(30000).ListItem.Property(editmenu),menu=search)">$LOCALIZE[137]</value>
+        <value condition="String.IsEqual(Container(30000).ListItem.Property(static),power)">$LOCALIZE[33063]</value>
+        <value>$VAR[Label_Setting_Hub_Type]</value>
+    </variable>
+
+    <!-- Hubs window (1115) header tag: where the focused item shows in the horizontal hubs menu.
+         Search, Home and the hubs in menu slots 0-3 are on the left, as text or with EnableIcons as icons (Search is always an icon);
+         the hubs in slots 4-7 and Power are icons on the right. Disabled hubs keep their slot -->
+    <variable name="Label_HubsWindow_Placement">
+        <value condition="Integer.IsGreater(Container(30000).ListItem.Property(item),3) | String.IsEqual(Container(30000).ListItem.Property(static),power)">$LOCALIZE[31844] · $LOCALIZE[31274]</value>
+        <value condition="String.IsEqual(Container(30000).ListItem.Property(static),search) | Skin.HasSetting(HomeSwitcher.EnableIcons)">$LOCALIZE[31843] · $LOCALIZE[31274]</value>
+        <value>$LOCALIZE[31843] · $LOCALIZE[31329]</value>
+    </variable>
+
+    <!-- Hubs window (1115) list rows: the side of the horizontal hubs menu the row shows on, as the header tag above.
+         Add hub and Power with LoopBack are not in the menu -->
+    <variable name="Label_HubsWindow_Row_Side">
+        <value condition="[!String.IsEmpty(ListItem.Property(url)) + Integer.IsLess(ListItem.Property(item),4)] | String.IsEqual(ListItem.Property(static),search) | String.IsEqual(ListItem.Property(static),home)">$LOCALIZE[31843]</value>
+        <value condition="Integer.IsGreater(ListItem.Property(item),3) | [String.IsEqual(ListItem.Property(static),power) + String.IsEmpty(ListItem.Property(add)) + !Skin.HasSetting(HomeSwitcher.LoopBack)]">$LOCALIZE[31844]</value>
+    </variable>
+
     <variable name="Label_Setting_Hub_Type">
-        <value condition="String.IsEqual(Container(30000).ListItem.Property(hubtype),NextAired)">$LOCALIZE[31605]</value>
-        <value condition="String.IsEqual(Container(30000).ListItem.Property(hubtype),LiveTV)">$LOCALIZE[31085] / PVR</value>
-        <value condition="String.IsEqual(Container(30000).ListItem.Property(hubtype),Addons)">$LOCALIZE[24001]</value>
+        <value condition="$EXP[Exp_HubsWindow_Type_NextAired]">$LOCALIZE[31605]</value>
+        <value condition="$EXP[Exp_HubsWindow_Type_LiveTV]">$LOCALIZE[31085] / PVR</value>
+        <value condition="$EXP[Exp_HubsWindow_Type_Addons]">$LOCALIZE[24001]</value>
         <value>$LOCALIZE[31639]</value>
     </variable>
     <variable name="Label_Setting_NextAired_Source">

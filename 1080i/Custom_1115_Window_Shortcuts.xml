@@ -8,14 +8,13 @@
     <onload>ClearProperty(guid)</onload>
     <onload>ClearProperty(list_id)</onload>
     <onload>ClearProperty(widgetonly_menu)</onload>
-    <onload>ClearProperty(show_all_hubs)</onload>
+    <!-- Migrate existing hub settings into the hubs menu before the hubs list can create it from the defaults -->
+    <onload>RunScript(script.skinvariables,run_executebuiltin=special://skin/shortcuts/skinvariables-migrate.json,use_rules=True)</onload>
     <include>Action_Blur_Onload</include>
     <include content="Hub_Onload_Window">
         <param name="window">1109</param>
-        <param name="defaultname">$LOCALIZE[31639]</param>
     </include>
-    <onload>SetFocus(30000,0,absolute)</onload>
-    <onload>Skin.SetString(Shortcuts.RebuildDateTime,$INFO[System.Date(yyyy-mm-dd)]_$INFO[System.Time(hh:mm:ss)])</onload>
+    <onload>SetFocus(30000,1,absolute)</onload>
     <include>Action_BuildShortcuts_OnUnLoad</include>
     <controls>
 
@@ -28,104 +27,123 @@
                 <include content="Settings_Left_Group">
                     <include content="Settings_Left_Content">
 
+                        <!-- Search, Home, the enabled hubs and Power, then Add hub (opens 1133 to enable a disabled item). Focus goes to the row buttons 30910.
+                             Moves still work with disabled hubs left out as they offset to the neighbour's menu index -->
                         <include content="List_DialogSelect">
                             <param name="id">30000</param>
                             <param name="itemlayout_include">Layout_ShortcutCategories</param>
                             <param name="textcolor">main_fg</param>
                             <param name="altfocus">!Control.HasFocus(20)</param>
-                            <param name="misc">!String.IsEmpty(ListItem.Property(enabled))</param>
-                            <param name="variation">!String.IsEmpty(ListItem.Property(checkmark))</param>
-                            <param name="control">fixedlist</param>
-                            <focusposition>4</focusposition>
-                            <movement>4</movement>
                             <right>40</right>
-                            <onright>340</onright>
                             <bottom>80</bottom>
-
-                            <content>
-                                <item id="0">
-                                    <label>$LOCALIZE[137]</label>
-                                    <icon>special://skin/extras/icons/search.png</icon>
-                                    <property name="checkmark">true</property>
-                                    <property name="editmenu">menu=search</property>
-                                    <property name="enabled">$VAR[Action_SearchEnabled]</property>
-                                    <onclick>Skin.ToggleSetting(HomeSwitcher.DisableSearch)</onclick>
-                                </item>
-                                <include content="DialogShortcuts_Hub_Category">
-                                    <param name="id">1</param>
-                                    <param name="window">home</param>
-                                    <param name="toggle">false</param>
-                                    <param name="enabled">true</param>
-                                </include>
-                                <include content="DialogShortcuts_Hub_Category">
-                                    <param name="id">2</param>
-                                    <param name="window">1101</param>
-                                    <param name="enabled">$INFO[Skin.String(HomeSwitcher.1101.Toggle)]</param>
-                                </include>
-                                <include content="DialogShortcuts_Hub_Category">
-                                    <param name="id">3</param>
-                                    <param name="window">1102</param>
-                                    <param name="enabled">$INFO[Skin.String(HomeSwitcher.1102.Toggle)]</param>
-                                </include>
-                                <include content="DialogShortcuts_Hub_Category">
-                                    <param name="id">4</param>
-                                    <param name="window">1103</param>
-                                    <param name="enabled">$INFO[Skin.String(HomeSwitcher.1103.Toggle)]</param>
-                                </include>
-                                <include content="DialogShortcuts_Hub_Category">
-                                    <param name="id">5</param>
-                                    <param name="window">1104</param>
-                                    <param name="enabled">$INFO[Skin.String(HomeSwitcher.1104.Toggle)]</param>
-                                </include>
-                                <include content="DialogShortcuts_Hub_Category">
-                                    <param name="id">6</param>
-                                    <param name="window">1106</param>
-                                    <param name="enabled">$INFO[Skin.String(HomeSwitcher.1106.Toggle)]</param>
-                                </include>
-                                <include content="DialogShortcuts_Hub_Category">
-                                    <param name="id">7</param>
-                                    <param name="window">1107</param>
-                                    <param name="enabled">$INFO[Skin.String(HomeSwitcher.1107.Toggle)]</param>
-                                </include>
-                                <include content="DialogShortcuts_Hub_Category">
-                                    <param name="id">8</param>
-                                    <param name="window">1108</param>
-                                    <param name="enabled">$INFO[Skin.String(HomeSwitcher.1108.Toggle)]</param>
-                                </include>
-                                <include content="DialogShortcuts_Hub_Category">
-                                    <param name="id">9</param>
-                                    <param name="window">1109</param>
-                                    <param name="enabled">$INFO[Skin.String(HomeSwitcher.1109.Toggle)]</param>
-                                </include>
-                                <item id="10">
-                                    <label>$LOCALIZE[33060]</label>
-                                    <icon>special://skin/extras/icons/power.png</icon>
-                                    <property name="editmenu">menu=power</property>
-                                    <property name="checkmark">true</property>
-                                    <property name="enabled">$VAR[Action_PowerEnabled]</property>
-                                    <onclick>Skin.ToggleSetting(HomeSwitcher.LoopBack)</onclick>
-                                </item>
-                            </content>
+                            <onfocus>SetFocus(30910)</onfocus>
+                            <include>DialogShortcuts_Hubs_StaticTop</include>
+                            <content>$VAR[Path_HubsWindow_Menu]&amp;exclude_key=disabled&amp;exclude_value=True</content>
+                            <include>DialogShortcuts_Hubs_StaticBottom</include>
                         </include>
+
+                        <include>HubsWindow_Disabled_Counter</include>
+                        <include>HubsWindow_Slots_List</include>
+
+                        <include content="HubsWindow_Menu_Counter">
+                            <param name="id">30920</param>
+                            <param name="suffix">submenu</param>
+                        </include>
+                        <include content="HubsWindow_Menu_Counter">
+                            <param name="id">30921</param>
+                            <param name="suffix">widgets</param>
+                        </include>
+
+                        <!-- Row buttons: the focus of the hubs list, placed over the focused row like the shortcuts editor (1116).
+                             Up/down moves through the list and the buttons move the item. Rows that cannot move have a blank button instead, which opens 1133 on Add hub -->
+                        <control type="grouplist" id="30910">
+                            <orientation>horizontal</orientation>
+                            <itemgap>-20</itemgap>
+                            <align>right</align>
+                            <right>50</right>
+                            <height>72</height>
+                            <centertop>40</centertop>
+                            <include>HubsWindow_Row_Positions</include>
+                            <onup condition="!String.IsEmpty(Container(30000).ListItemNoWrap(-1).Label)">Control.Move(30000,-1)</onup>
+                            <onup condition="String.IsEmpty(Container(30000).ListItemNoWrap(-1).Label)">SetFocus(30000,99999,absolute)</onup>
+                            <ondown condition="!String.IsEmpty(Container(30000).ListItemNoWrap(1).Label)">Control.Move(30000,1)</ondown>
+                            <ondown condition="String.IsEmpty(Container(30000).ListItemNoWrap(1).Label)">SetFocus(30000,0,absolute)</ondown>
+                            <onright>340</onright>
+                            <include content="DialogShortcuts_MoveButton">
+                                <param name="id">30911</param>
+                                <param name="move">-1</param>
+                                <param name="texture">special://skin/extras/icons/circle-arrow-up.png</param>
+                                <param name="container">30000</param>
+                                <param name="onback" />
+                                <param name="visible">$EXP[Exp_HubsWindow_CanMoveUp]</param>
+                            </include>
+                            <include content="DialogShortcuts_MoveButton">
+                                <param name="id">30912</param>
+                                <param name="move">1</param>
+                                <param name="texture">special://skin/extras/icons/circle-arrow-down.png</param>
+                                <param name="container">30000</param>
+                                <param name="onback" />
+                                <param name="visible">$EXP[Exp_HubsWindow_CanMoveDown]</param>
+                            </include>
+                            <control type="button" id="30913">
+                                <width>1</width>
+                                <height>72</height>
+                                <texturefocus />
+                                <texturenofocus />
+                                <font />
+                                <onclick condition="$EXP[Exp_HubsWindow_Item_Add]">ActivateWindow(1133)</onclick>
+                                <visible>!$EXP[Exp_HubsWindow_CanMoveUp] + !$EXP[Exp_HubsWindow_CanMoveDown]</visible>
+                            </control>
+                        </control>
                     </include>
                 </include>
 
 
                 <include content="Settings_Right_Group">
+                    <param name="header_include">HubsWindow_Header</param>
+                    <!-- Settings in the left half, the preview in the right half -->
                     <include content="Settings_Right_Scrollbar">
+                        <centerright>50%</centerright>
                         <onleft>3000</onleft>
                     </include>
 
                     <control type="group" id="340">
+                        <right>50%</right>
                         <include content="Settings_Right_Grouplist">
                             <param name="id">3000</param>
-                            <onleft>30000</onleft>
+                            <onleft>30910</onleft>
 
+                            <include content="DialogShortcuts_Items_Basic">
+                                <param name="container">30000</param>
+                                <param name="enabled">$EXP[Exp_HubsWindow_Item_Enabled]</param>
+                                <param name="toggle_icon">$VAR[Image_HubsWindow_EnableDisable]</param>
+                                <param name="toggle_label">$VAR[Label_HubsWindow_EnableDisable]</param>
+                                <param name="static">$EXP[Exp_HubsWindow_Item_Static]</param>
+                                <param name="static_home">$EXP[Exp_HubsWindow_Item_Home]</param>
+                                <param name="widgets">false</param>
+                                <param name="subgroups">false</param>
+                                <param name="onback">30000</param>
+                                <param name="window">shortcuts</param>
+                                <param name="include_after_toggle">DialogShortcuts_Window_Settings_Hubs_Main</param>
+                                <param name="shortcut_label">true</param>
+                                <param name="item_label2">true</param>
+                            </include>
+
+                            <!-- Options label when the item has its own options: Search, Power, Next Aired, Live TV and Add-ons -->
+                            <include content="Settings_Label">
+                                <param name="id">9001</param>
+                                <param name="window">shortcuts</param>
+                                <label>$LOCALIZE[33063]</label>
+                                <visible>$EXP[Exp_HubsWindow_Item_Enabled] | String.IsEqual(Container(30000).ListItem.Property(static),power)</visible>
+                                <visible>String.IsEqual(Container(30000).ListItem.Property(editmenu),menu=search) | String.IsEqual(Container(30000).ListItem.Property(editmenu),menu=power) | $EXP[Exp_HubsWindow_Type_NextAired] | $EXP[Exp_HubsWindow_Type_LiveTV] | $EXP[Exp_HubsWindow_Type_Addons]</visible>
+                            </include>
                             <include>DialogShortcuts_Window_Settings_Search</include>
                             <include>DialogShortcuts_Window_Settings_Hubs</include>
                             <include>DialogShortcuts_Window_Settings_Power</include>
                         </include>
                     </control>
+
+                    <include>HubsWindow_Preview</include>
 
                     <include>Settings_Right_InfoText</include>
                 </include>
