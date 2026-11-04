@@ -202,7 +202,7 @@
     <!-- Items -->
     <include name="DialogCustom_Settings_Items">
 
-
+        <include condition="String.IsEqual(Window(Home).Property(CustomDialogSettingsItems),DialogCustom_U3k_Items)">DialogCustom_U3k_Items</include>
         <include condition="String.IsEqual(Window(Home).Property(CustomDialogSettingsItems),DialogCustom_Settings_Items_BackgroundStyle)">DialogCustom_Settings_Items_BackgroundStyle</include>
         <include condition="String.IsEqual(Window(Home).Property(CustomDialogSettingsItems),DialogCustom_Settings_Items_Startup)">DialogCustom_Settings_Items_Startup</include>
 
