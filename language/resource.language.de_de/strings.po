@@ -2989,7 +2989,7 @@ msgstr "Die in diesem Hub angezeigten Widgets auswählen."
 #: /1080i/Dialog_DialogShortcuts.xml
 msgctxt "#31734"
 msgid "Select whether the next aired calendar uses your library or Trakt."
-msgstr "Wählen, ob der Kalender für nächste Ausstrahlungen deine Bibliothek oder Trakt verwendet."
+msgstr "Wählen, ob der Kalender für nächste Ausstrahlungen die Bibliothek oder Trakt verwendet."
 
 #: /1080i/Dialog_DialogShortcuts.xml
 msgctxt "#31735"
@@ -3094,7 +3094,7 @@ msgstr "Willkommen bei Arctic Fuse 3"
 #: /1080i/Dialog_DialogSetupWizard.xml
 msgctxt "#31755"
 msgid "Choose a recommended setup to get started straight away, or use the steps on the left to set things up yourself. You can change any of these later in Skin settings."
-msgstr "Wähle eine empfohlene Einrichtung, um sofort loszulegen, oder richte alles selbst über die Schritte links ein. Du kannst alles später in den Skin-Einstellungen ändern."
+msgstr "Eine empfohlene Einrichtung für einen sofortigen Start auswählen oder alles selbst über die Schritte links einrichten. Alle Einstellungen lassen sich später in den Skin-Einstellungen ändern."
 
 #: /1080i/Dialog_DialogSetupWizard.xml
 msgctxt "#31756"
@@ -3114,12 +3114,12 @@ msgstr "Startlayout"
 #: /1080i/Dialog_DialogSetupWizard.xml
 msgctxt "#31759"
 msgid "Choose how the main menu is arranged and what is shown at the top of Home."
-msgstr "Wähle, wie das Hauptmenü angeordnet ist und was oben auf dem Startbildschirm angezeigt wird."
+msgstr "Auswählen, wie das Hauptmenü angeordnet ist und was oben auf dem Startbildschirm angezeigt wird."
 
 #: /1080i/Dialog_DialogSetupWizard.xml
 msgctxt "#31760"
 msgid "Replace the Home widgets with a ready-made set. Kodi asks before your current widgets are overwritten. Customise them later in Skin settings."
-msgstr "Ersetzt die Widgets des Startbildschirms durch eine fertige Zusammenstellung. Kodi fragt nach, bevor deine aktuellen Widgets überschrieben werden. Passe sie später in den Skin-Einstellungen an."
+msgstr "Ersetzt die Widgets des Startbildschirms durch eine fertige Zusammenstellung. Kodi fragt nach, bevor die aktuellen Widgets überschrieben werden. Sie lassen sich später in den Skin-Einstellungen anpassen."
 
 #: /1080i/Dialog_DialogSetupWizard.xml
 msgctxt "#31761"
@@ -3139,7 +3139,7 @@ msgstr "Minimal"
 #: /1080i/Dialog_DialogSetupWizard.xml
 msgctxt "#31764"
 msgid "Movies, TV and music hubs with in progress, new and recent items from your library"
-msgstr "Film-, Serien- und Musik-Hubs mit laufenden, neuen und kürzlich hinzugefügten Einträgen aus deiner Bibliothek"
+msgstr "Film-, Serien- und Musik-Hubs mit laufenden, neuen und kürzlich hinzugefügten Einträgen aus der Bibliothek"
 
 #: /1080i/Dialog_DialogSetupWizard.xml
 msgctxt "#31765"
@@ -3159,7 +3159,7 @@ msgstr "Farben"
 #: /1080i/Dialog_DialogSetupWizard.xml
 msgctxt "#31768"
 msgid "A colour scheme sets the highlight colour, window background and dialog background together. Adjust each one afterwards if you like."
-msgstr "Ein Farbschema legt Hervorhebungsfarbe, Fensterhintergrund und Dialoghintergrund gemeinsam fest. Du kannst jedes davon anschließend einzeln anpassen."
+msgstr "Ein Farbschema legt Hervorhebungsfarbe, Fensterhintergrund und Dialoghintergrund gemeinsam fest. Jedes davon lässt sich anschließend einzeln anpassen."
 
 #: /1080i/Dialog_DialogSetupWizard.xml
 msgctxt "#31769"
@@ -3169,7 +3169,7 @@ msgstr "Hintergründe"
 #: /1080i/Dialog_DialogSetupWizard.xml
 msgctxt "#31770"
 msgid "Choose the window and dialog backgrounds and how artwork backgrounds are blurred."
-msgstr "Wähle die Fenster- und Dialoghintergründe und wie Artwork-Hintergründe weichgezeichnet werden."
+msgstr "Die Fenster- und Dialoghintergründe auswählen sowie festlegen, wie Artwork-Hintergründe weichgezeichnet werden."
 
 #: /1080i/Dialog_DialogSetupWizard.xml
 msgctxt "#31771"
@@ -3179,7 +3179,7 @@ msgstr "Fertigstellen"
 #: /1080i/Dialog_DialogSetupWizard.xml
 msgctxt "#31772"
 msgid "Select a choice to go back to that step. Select Finish on the left to save, rebuild the widgets and reload the skin."
-msgstr "Wähle eine Auswahl, um zu diesem Schritt zurückzukehren. Wähle links Fertigstellen, um zu speichern, die Widgets neu aufzubauen und den Skin neu zu laden."
+msgstr "Eine Auswahl wählen, um zu diesem Schritt zurückzukehren. Links Fertigstellen wählen, um zu speichern, die Widgets neu aufzubauen und den Skin neu zu laden."
 
 #: /1080i/Dialog_DialogSetupWizard.xml
 msgctxt "#31773"
@@ -3214,7 +3214,7 @@ msgstr "Willkommen"
 #: /1080i/Dialog_DialogSetupWizard.xml
 msgctxt "#31780"
 msgid "Choose how to get started"
-msgstr "Wähle, wie du beginnen möchtest"
+msgstr "Art des Einstiegs auswählen"
 
 #: /1080i/Dialog_DialogSetupWizard.xml
 msgctxt "#31781"
@@ -3294,7 +3294,7 @@ msgstr "Empfohlene Standards verwenden (TMDb Helper)"
 #: /1080i/Dialog_DialogSetupWizard.xml
 msgctxt "#31797"
 msgid "Default settings with movies, TV and music hubs and widgets from your library"
-msgstr "Standardeinstellungen mit Film-, Serien- und Musik-Hubs und Widgets aus deiner Bibliothek"
+msgstr "Standardeinstellungen mit Film-, Serien- und Musik-Hubs und Widgets aus der Bibliothek"
 
 #: /1080i/Dialog_DialogSetupWizard.xml
 msgctxt "#31798"
@@ -3304,7 +3304,7 @@ msgstr "Standardeinstellungen mit Film-, Serien- und Nächste-Ausstrahlungen-Hub
 #: /1080i/Dialog_DialogSetupWizard.xml
 msgctxt "#31799"
 msgid "Keep the current settings. Run this wizard again from Skin settings."
-msgstr "Aktuelle Einstellungen beibehalten. Starte diesen Assistenten erneut über die Skin-Einstellungen."
+msgstr "Aktuelle Einstellungen beibehalten. Der Assistent kann über die Skin-Einstellungen erneut gestartet werden."
 
 #: /1080i/Dialog_DialogSetupWizard.xml
 msgctxt "#31800"
@@ -3514,4 +3514,4 @@ msgstr "Fenster und Dialog"
 #: /1080i/Includes_Actions.xml
 msgctxt "#31848"
 msgid "This replaces your home screen hubs, menus, widgets and spotlights with this preset. Any changes you have made to them will be lost. Continue?"
-msgstr "Dies ersetzt die Hubs, Menüs, Widgets und Spotlights deines Startbildschirms durch diese Vorlage. Alle Änderungen, die du daran vorgenommen hast, gehen verloren. Fortfahren?"
+msgstr "Dies ersetzt die Hubs, Menüs, Widgets und Spotlights des Startbildschirms durch diese Vorlage. Alle daran vorgenommenen Änderungen gehen verloren. Fortfahren?"
