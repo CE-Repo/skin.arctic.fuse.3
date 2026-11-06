@@ -3119,7 +3119,7 @@ msgstr "Auswählen, wie das Hauptmenü angeordnet ist und was oben auf dem Start
 #: /1080i/Dialog_DialogSetupWizard.xml
 msgctxt "#31760"
 msgid "Replace the Home widgets with a ready-made set. Kodi asks before your current widgets are overwritten. Customise them later in Skin settings."
-msgstr "Ersetzt die Widgets des Startbildschirms durch eine fertige Zusammenstellung. Kodi fragt nach, bevor die aktuellen Widgets überschrieben werden. Sie lassen sich später in den Skin-Einstellungen anpassen."
+msgstr "Ersetzt die Widgets des Startbildschirms durch eine fertige Zusammenstellung. Kodi fragt nach, bevor die aktuellen Widgets überschrieben werden. Anpassungen sind später in den Skin-Einstellungen möglich."
 
 #: /1080i/Dialog_DialogSetupWizard.xml
 msgctxt "#31761"
