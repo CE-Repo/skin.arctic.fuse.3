@@ -6,6 +6,8 @@
         <param name="labelvisible">true</param>
         <param name="labeltop">widget_label_t</param>
         <param name="labelheight">widget_label_h</param>
+        <!-- Runs the spinner for a list that a window script fills, which never reports IsUpdating -->
+        <param name="busy_spinner">false</param>
         <definition>
             <control type="group" id="$PARAM[groupid]">
                 <nested />
@@ -22,7 +24,7 @@
                     <param name="left">0</param>
                     <param name="visible">!Integer.IsEqual(Container($PARAM[id]).NumItems,0) | Container($PARAM[id]).IsUpdating | $PARAM[busy_visible]</param>
                     <param name="use_spinner">true</param>
-                    <param name="run_spinner">Container($PARAM[id]).IsUpdating</param>
+                    <param name="run_spinner">Container($PARAM[id]).IsUpdating | $PARAM[busy_spinner]</param>
                 </include>
                 <include content="View_Line" condition="$PARAM[labelvisible] + [$PARAM[usewidgetlabel]]">
                     <param name="label">$INFO[Container($PARAM[id]).ListItem.Property(widget)]</param>
@@ -31,7 +33,7 @@
                     <param name="left">0</param>
                     <param name="visible">!Integer.IsEqual(Container($PARAM[id]).NumItems,0) | Container($PARAM[id]).IsUpdating | $PARAM[busy_visible]</param>
                     <param name="use_spinner">true</param>
-                    <param name="run_spinner">Container($PARAM[id]).IsUpdating</param>
+                    <param name="run_spinner">Container($PARAM[id]).IsUpdating | $PARAM[busy_spinner]</param>
                 </include>
 
                 <include content="Widget_Busy">
@@ -195,6 +197,7 @@
         <param name="include">List_Poster_Row</param>
         <param name="busy_visible">true</param>
         <param name="busy_isupdating">false</param>
+        <param name="busy_spinner">false</param>
         <param name="usewidgetlabel">false</param>
         <param name="widgettop">widget_items_t</param>
         <param name="widgetheight">widget_items_h</param>
@@ -212,6 +215,7 @@
                 <param name="id">$PARAM[id]</param>
                 <param name="visible">[Container($PARAM[id]).IsUpdating | !Integer.IsEqual(Container($PARAM[id]).NumItems,0) | $PARAM[altvisible]] + $PARAM[visible]</param>
                 <param name="busy_visible">[Container($PARAM[id]).IsUpdating | $PARAM[busy_isupdating]] + $PARAM[busy_visible]</param>
+                <param name="busy_spinner">$PARAM[busy_spinner]</param>
                 <param name="usewidgetlabel">$PARAM[usewidgetlabel]</param>
                 <param name="labelvisible">$PARAM[labelvisible]</param>
                 <param name="labeltop">$PARAM[labeltop]</param>
@@ -293,51 +297,6 @@
                 <visible>$PARAM[visible]</visible>
             </include>
         </definition>
-    </include>
-
-    <include name="Widget_Busy_Spinner_Images">
-        <control type="image" description="Back">
-            <aspectratio align="center" aligny="center">keep</aspectratio>
-            <texture>dialog/loading-back.png</texture>
-            <colordiffuse>main_fg_90</colordiffuse>
-        </control>
-        <include content="Object_BusySpinner_Image">
-            <param name="spinspinner">$PARAM[busy_visible]</param>
-        </include>
-        <control type="image">
-            <texture colordiffuse="main_fg_70">special://skin/extras/icons/kodi.png</texture>
-            <aspectratio>keep</aspectratio>
-            <bordersize>30</bordersize>
-        </control>
-    </include>
-
-    <include name="Widget_Busy_Spinner">
-        <control type="group">
-            <nested />
-            <top>80</top>
-            <include>Widget_Busy_Spinner_Height__$PARAM[include]</include>
-            <control type="group">
-                <left>0</left>
-                <centertop>50%</centertop>
-                <height>100</height>
-
-                <control type="group">
-                    <width>100</width>
-                    <include>Widget_Busy_Spinner_Images</include>
-                </control>
-                <control type="group">
-                    <left>100</left>
-                    <centertop>50%</centertop>
-                    <height>80</height>
-                    <include content="Object_InfoCircle_Text_Top">
-                        <label>$LOCALIZE[31023]</label>
-                    </include>
-                    <include content="Object_InfoCircle_Text_Sub">
-                        <label>$PARAM[label]</label>
-                    </include>
-                </control>
-            </control>
-        </control>
     </include>
 
     <include name="Widget_Busy_BlankItem_ItemBack_Circle">
@@ -434,18 +393,6 @@
         </include>
     </include>
 
-    <include name="Widget_Busy_BlankItem_Icon">
-        <include content="Widget_Busy_BlankItem">
-            <param name="item_w">view_poster_item_w</param>
-            <param name="item_h">view_poster_item_w</param>
-            <param name="itemlayout_w">view_poster_itemlayout_w</param>
-            <param name="itemlayout_h">view_poster_itemlayout_h</param>
-            <param name="colordiffuse">$PARAM[colordiffuse]</param>
-            <param name="second_row">false</param>
-            <param name="first_row">false</param>
-        </include>
-    </include>
-
     <include name="Widget_Busy_BlankItem_Poster">
         <include content="Widget_Busy_BlankItem">
             <param name="item_w">view_poster_item_w</param>
@@ -534,18 +481,6 @@
                 </control>
             </control>
         </definition>
-    </include>
-
-    <include name="Widget_Busy_BlankItem_Banner">
-        <include content="Widget_Busy_BlankItem">
-            <param name="item_w">view_banner_item_w</param>
-            <param name="item_h">view_poster_item_h</param>
-            <param name="itemlayout_w">view_banner_itemlayout_w</param>
-            <param name="itemlayout_h">view_poster_itemlayout_h</param>
-            <param name="second_row">false</param>
-            <param name="first_row">false</param>
-            <param name="colordiffuse">$PARAM[colordiffuse]</param>
-        </include>
     </include>
 
     <include name="Widget_Busy_BlankItem_Card">
@@ -674,9 +609,6 @@
             </control>
         </control>
     </include>
-    <include name="Widget_Busy_BlankItems__List_Banner_Row">
-        <include>Widget_Busy_BlankItem_Banner</include>
-    </include>
     <include name="Widget_Busy_BlankItems__List_Flyer_Row">
         <include>Widget_Busy_BlankItem_Flyer</include>
         <include>Widget_Busy_BlankItem_Flyer</include>
@@ -790,58 +722,6 @@
         <include>Widget_Busy_BlankItem_Reviews</include>
     </include>
 
-    <include name="Widget_Busy_Spinner_Height__List_Banner_Row">
-        <height>view_poster_item_h</height>
-    </include>
-    <include name="Widget_Busy_Spinner_Height__List_Poster_Row">
-        <height>view_poster_item_h</height>
-    </include>
-    <include name="Widget_Busy_Spinner_Height__List_Board_Row">
-        <height>view_poster_item_h</height>
-    </include>
-    <include name="Widget_Busy_Spinner_Height__List_Card_Row">
-        <height>view_poster_item_h</height>
-    </include>
-    <include name="Widget_Busy_Spinner_Height__List_Circle_Row">
-        <height>view_poster_item_h</height>
-    </include>
-    <include name="Widget_Busy_Spinner_Height__List_Ranked_Row">
-        <height>view_poster_item_h</height>
-    </include>
-    <include name="Widget_Busy_Spinner_Height__List_Stack_Row">
-        <height>view_poster_item_h</height>
-    </include>
-    <include name="Widget_Busy_Spinner_Height__List_Disc_Row">
-        <height>view_poster_item_h</height>
-    </include>
-    <include name="Widget_Busy_Spinner_Height__List_Shelf_Row">
-        <height>view_poster_item_h</height>
-    </include>
-    <include name="Widget_Busy_Spinner_Height__List_Gatefold_Row">
-        <height>view_poster_item_h</height>
-    </include>
-    <include name="Widget_Busy_Spinner_Height__List_Timeline_Row">
-        <height>view_landscape_item_h</height>
-    </include>
-    <include name="Widget_Busy_Spinner_Height__List_Landscape_Row">
-        <height>view_landscape_item_h</height>
-    </include>
-    <include name="Widget_Busy_Spinner_Height__List_Flyer_Row">
-        <height>view_landscape_item_h</height>
-    </include>
-    <include name="Widget_Busy_Spinner_Height__List_Square_Row">
-        <height>view_poster_item_w</height>
-    </include>
-    <include name="Widget_Busy_Spinner_Height__List_Overview_Row">
-        <height>view_poster_item_w</height>
-    </include>
-    <include name="Widget_Busy_Spinner_Height__List_Reviews_Row">
-        <height>390</height>
-    </include>
-    <include name="Widget_Busy_Spinner_Height__List_Gallery_Row">
-        <height>660</height>
-    </include>
-
     <include name="Widget_Busy">
         <control type="group">
             <nested />
@@ -893,6 +773,7 @@
         <param name="categorynavigationinclude">Widget_Categories_Navigation</param>
         <param name="labeltop">widget_label_t</param>
         <param name="labelheight">widget_label_h</param>
+        <param name="busy_spinner">false</param>
         <param name="widgettop">widget_items_t</param>
         <param name="widgetheight">widget_items_h</param>
         <definition>
@@ -920,6 +801,7 @@
                 <param name="altvisible">$PARAM[altvisible]</param>
                 <param name="detailed">$PARAM[detailed]</param>
                 <param name="busy_isupdating">$PARAM[busy_isupdating]</param>
+                <param name="busy_spinner">$PARAM[busy_spinner]</param>
                 <param name="busy_visible">$PARAM[busy_visible]</param>
                 <param name="labeltop">$PARAM[labeltop]</param>
                 <param name="labelheight">$PARAM[labelheight]</param>
@@ -939,6 +821,7 @@
         <param name="categorytarget" />
         <param name="grouplistid">5000</param>
         <param name="widgetconstants_affix" />
+        <param name="busy_spinner">false</param>
         <definition>
             <include content="_Widget_Row">
                 <param name="id">$PARAM[id]</param>
@@ -958,6 +841,7 @@
                 <param name="altvisible">$PARAM[altvisible]</param>
                 <param name="detailed">$PARAM[detailed]</param>
                 <param name="busy_isupdating">$PARAM[busy_isupdating]</param>
+                <param name="busy_spinner">$PARAM[busy_spinner]</param>
                 <param name="busy_visible">[Integer.IsEqual(Container($PARAM[id]).NumItems,0) | [Integer.IsEqual(Container($PARAM[id]).NumItems,1) + String.IsEqual(Container($PARAM[id]).ListItemAbsolute(0).Label,$LOCALIZE[31046]) + Container($PARAM[id]).IsUpdating]]</param>
                 <param name="widgetfade_include">$PARAM[widgetfade_include]</param>
                 <param name="widgetfade_disable">$PARAM[widgetfade_disable]</param>
@@ -1049,7 +933,7 @@
     </include>
 
     <include name="Widget_NoResults">
-        <include content="_Widget_NoResults" condition="!Skin.HasSetting(Widgets.DisableNoResultsItem) + !Window.IsVisible(1105)">
+        <include content="_Widget_NoResults" condition="!Skin.HasSetting(Widgets.DisableNoResultsItem)">
             <param name="id">$PARAM[id]</param>
         </include>
     </include>

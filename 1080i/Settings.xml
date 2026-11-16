@@ -500,7 +500,6 @@
 
                     </control>
                 </include>
-                <include>Settings_InfoText</include>
             </include>
         </include>
 
