@@ -433,7 +433,7 @@
                 <onfocus>ClearProperty(InfoPanel.FullSwitch,Home)</onfocus>
                 <include content="MultiSearch_OnBack" />
             </include>
-        </ontrol>
+        </control>
     </include>
 
     <!-- All results container for one widget style, placed like a combined hub widget. Only the container the script
