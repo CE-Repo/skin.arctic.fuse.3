@@ -23,7 +23,6 @@
     </variable>
 
     <variable name="Image_StyledBackground_Path">
-        <value condition="Skin.String(Background.Style,goldenage)">resource://resource.images.arctic.backgrounds.goldenage/midnight_champagne/</value>
         <value condition="String.IsEmpty(Skin.String(Background.Style))">resource://resource.images.arctic.backgrounds.surrealist/</value>
         <value>resource://resource.images.arctic.backgrounds.$INFO[Skin.String(Background.Style)]/</value>
     </variable>
@@ -327,6 +326,12 @@
         <value condition="String.IsEqual(Window(Home).Property(TMDbHelper.ListItem.Status),Released) | String.IsEqual(Window(Home).Property(TMDbHelper.ListItem.Status),Released)">flags/$VAR[Color_Directory]/status/calendar-check.png</value>
         <value condition="String.IsEqual(Window(Home).Property(TMDbHelper.ListItem.Status),In Production) | String.IsEqual(Window(Home).Property(TMDbHelper.ListItem.Status),In Production)">flags/$VAR[Color_Directory]/status/calendar-day.png</value>
         <value condition="String.IsEqual(Window(Home).Property(TMDbHelper.ListItem.Status),Planned) | String.IsEqual(Window(Home).Property(TMDbHelper.ListItem.Status),Planned)">flags/$VAR[Color_Directory]/status/calendar-day.png</value>
+        <value>flags/$VAR[Color_Directory]/status/calendar-day.png</value>
+    </variable>
+
+    <variable name="Image_C7000_Status">
+        <value condition="String.IsEqual(Container(7000).ListItem.Status,Canceled)">flags/$VAR[Color_Directory]/status/calendar-xmark.png</value>
+        <value condition="String.IsEqual(Container(7000).ListItem.Status,Ended) | String.IsEqual(Container(7000).ListItem.Status,Released)">flags/$VAR[Color_Directory]/status/calendar-check.png</value>
         <value>flags/$VAR[Color_Directory]/status/calendar-day.png</value>
     </variable>
 
@@ -669,6 +674,19 @@
 
     <variable name="Image_ListItem_RottenTomatoes_UserMeter">
         <value condition="Integer.IsGreater(Window(Home).Property(TMDbHelper.ListItem.RottenTomatoes_UserMeter),59) | String.IsEmpty(Window(Home).Property(TMDbHelper.ListItem.RottenTomatoes_UserMeter))">popcorn.png</value>
+        <value>popcorn_spilt.png</value>
+    </variable>
+
+    <variable name="Image_C7000_RottenTomatoes">
+        <value condition="String.IsEqual(Container(7000).ListItem.Property(RottenTomatoes_Image),certified)">certified.png</value>
+        <value condition="String.IsEqual(Container(7000).ListItem.Property(RottenTomatoes_Image),fresh)">rtfresh.png</value>
+        <value condition="String.IsEqual(Container(7000).ListItem.Property(RottenTomatoes_Image),rotten)">rtrotten.png</value>
+        <value condition="Integer.IsGreater(Container(7000).ListItem.Property(RottenTomatoes_Rating),59)">rtfresh.png</value>
+        <value>rtrotten.png</value>
+    </variable>
+
+    <variable name="Image_C7000_RottenTomatoes_UserMeter">
+        <value condition="Integer.IsGreater(Container(7000).ListItem.Property(RottenTomatoes_UserMeter),59) | String.IsEmpty(Container(7000).ListItem.Property(RottenTomatoes_UserMeter))">popcorn.png</value>
         <value>popcorn_spilt.png</value>
     </variable>
 
