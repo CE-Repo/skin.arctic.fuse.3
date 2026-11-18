@@ -1099,7 +1099,8 @@
                 <align>left</align>
 
                 <onleft>6005</onleft>
-                <onright>6009</onright>
+                <onright condition="System.AddonIsEnabled(script.tinyppi)">6009</onright>
+                <onright condition="!System.AddonIsEnabled(script.tinyppi)">6008</onright>
 
                 <include content="OSD_CustomDialog_FakeButton" condition="![$PARAM[button_1]]">
                     <param name="id">1</param>
