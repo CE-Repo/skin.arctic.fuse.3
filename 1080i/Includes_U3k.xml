@@ -645,7 +645,7 @@
                     <texture colordiffuse="main_fg_30" border="8">u3k/blank-bordered.png</texture>
                 </control>
                 <include content="Info_StarRating">
-                    <param name="colordiffuse">$PARAM[colordiffuse]</param>
+                    <param name="colordiffuse">$PARAM[colordiffuse]_90</param>
                     <param name="rating">$PARAM[rating]</param>
                     <itemgap>-16</itemgap>
                 </include>
