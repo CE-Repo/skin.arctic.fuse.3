@@ -16,10 +16,6 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Poedit 3.4.1\n"
 
-msgctxt "#31994"
-msgid "Information bar"
-msgstr "Informationsleiste"
-
 msgctxt "#31995"
 msgid "Two-line information bar"
 msgstr "Zweizeilige Informationsleiste"

@@ -456,7 +456,7 @@
         <param name="dbtype_count">1</param>
         <definition>
             <include content="Info_Line_Divider">
-                <param name="visible">$PARAM[visible] + !Skin.HasSetting(Info.EnablePillboxStyle)</param>
+                <param name="visible">$PARAM[visible]</param>
             </include>
             <control type="label">
                 <label fallback="$PARAM[label_fallback]">$PARAM[label]</label>
@@ -464,13 +464,8 @@
                 <textcolor>$PARAM[colordiffuse]_70</textcolor>
                 <width>auto</width>
                 <font>font_main</font>
-                <visible>$PARAM[visible] + !Skin.HasSetting(Info.EnablePillboxStyle)</visible>
+                <visible>$PARAM[visible]</visible>
             </control>
-            <include content="Info_Line_Label_Pillbox_U3k">
-                <param name="label">$PARAM[label]</param>
-                <param name="haspath">$PARAM[haspath]</param>
-                <param name="visible">$PARAM[visible]</param>
-            </include>
         </definition>
     </include>
 
@@ -977,9 +972,9 @@
         <param name="tags">false</param>
         <definition>
             <include content="Info_Line_Divider" condition="!$PARAM[tags]">
-                <param name="visible">$PARAM[visible] + !Skin.HasSetting(Info.EnablePillboxStyle)</param>
+                <param name="visible">$PARAM[visible]</param>
             </include>
-            <include content="Info_StarRating" condition="!$PARAM[tags] + !Skin.HasSetting(Info.EnablePillboxStyle)">
+            <include content="Info_StarRating" condition="!$PARAM[tags]">
                 <param name="colordiffuse">$PARAM[colordiffuse]_90</param>
                 <param name="rating">$PARAM[rating]</param>
                 <left>-10</left>
@@ -988,11 +983,6 @@
                 <centertop>50%</centertop>
                 <itemgap>-16</itemgap>
                 <visible>$PARAM[visible]</visible>
-            </include>
-            <include content="Info_StarRating_Pillbox_U3k" condition="!$PARAM[tags]">
-                <param name="colordiffuse">$PARAM[colordiffuse]</param>
-                <param name="rating">$PARAM[rating]</param>
-                <param name="visible">$PARAM[visible]</param>
             </include>
             <include content="Info_Line_Pill_Box" condition="$PARAM[tags]">
                 <param name="colordiffuse">$PARAM[colordiffuse]</param>

@@ -13,11 +13,6 @@
 		<include condition="Skin.HasSetting(InfoBar.TwoRow)">Info_Line_Two_Row</include>
 	</include>
 
-	<variable name="Label_Setting_InfoLineStyle">
-		<value condition="Skin.HasSetting(Info.EnablePillboxStyle)">$LOCALIZE[31209]</value>
-		<value>$LOCALIZE[31329]</value>
-	</variable>
-
 	<variable name="ArtworkStyle">
 		<value condition="String.IsEqual(Skin.String(OSD.ArtworkStyle),DiscArt)">$LOCALIZE[427]</value>
 		<value condition="String.IsEqual(Skin.String(OSD.ArtworkStyle),VHSArt)">VHS</value>
@@ -142,15 +137,6 @@
 			<param name="id">8001</param>
 			<param name="dialog">true</param>
 			<label>$LOCALIZE[19033]</label>
-		</include>
-		<include content="Settings_Button">
-			<param name="dialog">true</param>
-			<param name="id">8002</param>
-			<param name="control">button</param>
-			<label>$LOCALIZE[31994]</label>
-			<label2>$VAR[Label_Setting_InfoLineStyle]</label2>
-			<onclick>Skin.ToggleSetting(Info.EnablePillboxStyle)</onclick>
-			<include>DialogCustom_Reload_1118</include>
 		</include>
 		<include content="Settings_Button">
 			<param name="dialog">true</param>
@@ -540,49 +526,6 @@
                 <param name="visible">$PARAM[visible] + String.IsEqual($PARAM[container]$PARAM[listitem].AudioCodec,wav)</param>
                 <param name="width">auto</param>
             </include>
-        </definition>
-    </include>
-
-    <include name="Info_Line_Label_Pillbox_U3k">
-        <param name="visible">true</param>
-        <param name="haspath">false</param>
-        <definition>
-            <control type="button">
-                <label fallback="$PARAM[label_fallback]">$PARAM[label]</label>
-                <texturefocus colordiffuse="main_fg_30" border="8">u3k/blank-bordered.png</texturefocus>
-                <texturenofocus colordiffuse="main_fg_30" border="8">u3k/blank-bordered.png</texturenofocus>
-                <haspath>$PARAM[haspath]</haspath>
-                <width>auto</width>
-                <textoffsetx>10</textoffsetx>
-                <textoffsety>info_tag_offset_y</textoffsety>
-                <aligny>top</aligny>
-                <font>font_infotag_bold</font>
-                <textcolor>main_fg_90</textcolor>
-                <focusedcolor>main_fg_90</focusedcolor>
-                <include>Dimension_Info_Line_Pillbox</include>
-                <shadowcolor>main_bg_12</shadowcolor>
-                <visible>$PARAM[visible] + Skin.HasSetting(Info.EnablePillboxStyle)</visible>
-            </control>
-        </definition>
-    </include>
-
-    <include name="Info_StarRating_Pillbox_U3k">
-        <param name="visible">true</param>
-        <definition>
-            <control type="group">
-                <visible>$PARAM[visible]</visible>
-                <visible>Skin.HasSetting(Info.EnablePillboxStyle)</visible>
-                <width>155</width>
-                <include>Dimension_Info_Line_Pillbox</include>
-                <control type="image">
-                    <texture colordiffuse="main_fg_30" border="8">u3k/blank-bordered.png</texture>
-                </control>
-                <include content="Info_StarRating">
-                    <param name="colordiffuse">$PARAM[colordiffuse]_90</param>
-                    <param name="rating">$PARAM[rating]</param>
-                    <itemgap>-16</itemgap>
-                </include>
-            </control>
         </definition>
     </include>
 
