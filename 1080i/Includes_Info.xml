@@ -142,7 +142,7 @@
     <include name="Info_Meta_Ratings_Item">
         <definition>
             <include content="Info_Meta_Ratings_$PARAM[path]">
-                <param name="visible">[$PARAM[visible]] + !String.IsEmpty($PARAM[info]) + [!Control.IsVisible($PARAM[list]$PARAM[position]3) | [[$PARAM[extra_slots]] + !Control.IsVisible($PARAM[list]$PARAM[position]6)]]</param>
+                <param name="visible">[$PARAM[visible]] + Integer.IsGreater($PARAM[info],0) + [!Control.IsVisible($PARAM[list]$PARAM[position]3) | [[$PARAM[extra_slots]] + !Control.IsVisible($PARAM[list]$PARAM[position]6)]]</param>
                 <param name="info">$PARAM[info]</param>
                 <param name="service">$PARAM[service]</param>
                 <param name="source">$PARAM[source]</param>
@@ -226,18 +226,20 @@
 
     <!-- Uses the forecast day's time when the provider supplies one, otherwise today's. kind: Sunrise or Sunset -->
     <include name="Info_Meta_Weather_Sun">
+        <param name="property_prefix" />
+        <param name="visible">true</param>
         <definition>
             <include content="Info_Meta_Object">
                 <param name="bordersize">-12</param>
                 <param name="icon">$PARAM[icon]</param>
-                <param name="label">$INFO[$PARAM[container]$PARAM[listitem].Property($PARAM[kind])]</param>
-                <param name="visible">!String.IsEmpty($PARAM[container]$PARAM[listitem].Property(is_weather)) + !String.IsEmpty($PARAM[container]$PARAM[listitem].Property($PARAM[kind]))</param>
+                <param name="label">$INFO[$PARAM[source]($PARAM[property_prefix]$PARAM[kind])]</param>
+                <param name="visible">[$PARAM[visible]] + !String.IsEmpty($PARAM[source]($PARAM[property_prefix]$PARAM[kind]))</param>
             </include>
             <include content="Info_Meta_Object">
                 <param name="bordersize">-12</param>
                 <param name="icon">$PARAM[icon]</param>
                 <param name="label">$VAR[DialogWeather_$PARAM[kind]_Label]</param>
-                <param name="visible">!String.IsEmpty($PARAM[container]$PARAM[listitem].Property(is_weather)) + String.IsEmpty($PARAM[container]$PARAM[listitem].Property($PARAM[kind])) + [!String.IsEmpty(Window(Weather).Property(Current.$PARAM[kind])) | !String.IsEmpty(Window(Weather).Property(Today.$PARAM[kind]))]</param>
+                <param name="visible">[$PARAM[visible]] + String.IsEmpty($PARAM[source]($PARAM[property_prefix]$PARAM[kind])) + [!String.IsEmpty(Window(Weather).Property(Current.$PARAM[kind])) | !String.IsEmpty(Window(Weather).Property(Today.$PARAM[kind]))]</param>
             </include>
         </definition>
     </include>
@@ -344,20 +346,6 @@
                         <param name="service">$PARAM[service]</param>
                         <param name="source">$PARAM[source]</param>
                         <param name="source_prefix">$PARAM[source_prefix]</param>
-                    </include>
-
-                    <!-- Weather -->
-                    <include content="Info_Meta_Weather_Sun">
-                        <param name="kind">Sunrise</param>
-                        <param name="icon">special://skin/extras/icons/sunrise.png</param>
-                        <param name="container">$PARAM[container]</param>
-                        <param name="listitem">$PARAM[listitem]</param>
-                    </include>
-                    <include content="Info_Meta_Weather_Sun">
-                        <param name="kind">Sunset</param>
-                        <param name="icon">special://skin/extras/icons/sunset.png</param>
-                        <param name="container">$PARAM[container]</param>
-                        <param name="listitem">$PARAM[listitem]</param>
                     </include>
 
                     <!-- Total Episodes (Service Disabled) -->
@@ -704,7 +692,7 @@
                 <left>$PARAM[left]</left>
                 <height>80</height>
 
-                <visible>[String.IsEqual($PARAM[container]$PARAM[listitem].DBType,movie) | String.IsEqual($PARAM[container]$PARAM[listitem].DBType,tvshow) | String.IsEqual($PARAM[container]$PARAM[listitem].DBType,season) | String.IsEqual($PARAM[container]$PARAM[listitem].DBType,episode) | String.IsEqual($PARAM[container]$PARAM[listitem].DBType,video) | String.IsEqual($PARAM[container]$PARAM[listitem].DBType,album) | String.IsEqual($PARAM[container]$PARAM[listitem].DBType,song) | !String.IsEmpty($PARAM[container]$PARAM[listitem].ChannelNumberLabel) | !String.IsEmpty($PARAM[container]$PARAM[listitem].Property(is_weather)) | $PARAM[override]]</visible>
+                <visible>[String.IsEqual($PARAM[container]$PARAM[listitem].DBType,movie) | String.IsEqual($PARAM[container]$PARAM[listitem].DBType,tvshow) | String.IsEqual($PARAM[container]$PARAM[listitem].DBType,season) | String.IsEqual($PARAM[container]$PARAM[listitem].DBType,episode) | String.IsEqual($PARAM[container]$PARAM[listitem].DBType,video) | String.IsEqual($PARAM[container]$PARAM[listitem].DBType,album) | String.IsEqual($PARAM[container]$PARAM[listitem].DBType,song) | !String.IsEmpty($PARAM[container]$PARAM[listitem].ChannelNumberLabel) | $PARAM[override]]</visible>
 
 
                 <control type="grouplist">
@@ -787,20 +775,6 @@
     <!-- Info line labels: item is Info_Line_Label for plain text or Info_Line_Tag for Info_Line_Tags -->
     <include name="Info_Line_Labels">
         <definition>
-            <!-- Weather -->
-            <include content="$PARAM[item]">
-                <param name="colordiffuse">$PARAM[colordiffuse]</param>
-                <param name="font">$PARAM[font]</param>
-                <param name="label">$INFO[$PARAM[container]$PARAM[listitem].Property(hightemp),,°]$INFO[$PARAM[container]$PARAM[listitem].Property(lowtemp), / ,°]</param>
-                <param name="visible">!String.IsEmpty($PARAM[container]$PARAM[listitem].Property(is_weather)) + !String.IsEmpty($PARAM[container]$PARAM[listitem].Property(hightemp))</param>
-            </include>
-            <include content="$PARAM[item]">
-                <param name="colordiffuse">$PARAM[colordiffuse]</param>
-                <param name="font">$PARAM[font]</param>
-                <param name="label">$INFO[$PARAM[container]$PARAM[listitem].Property(rainamount)]</param>
-                <param name="visible">!String.IsEmpty($PARAM[container]$PARAM[listitem].Property(is_weather)) + !String.IsEmpty($PARAM[container]$PARAM[listitem].Property(rainamount)) + !String.IsEqual($PARAM[container]$PARAM[listitem].Property(rainamount),None)</param>
-            </include>
-
             <!-- Gender -->
             <include content="$PARAM[item]">
                 <param name="colordiffuse">$PARAM[colordiffuse]</param>
@@ -1254,8 +1228,7 @@
         </control>
     </include>
 
-    <!-- Bold headline over a shorter plot, or the plot at full height when there is no headline -->
-    <include name="Info_Plot_Headline">
+    <include name="Info_Plot_Main_Plotline_Content">
         <definition>
             <control type="group">
                 <visible>$PARAM[visible]</visible>
@@ -1268,7 +1241,7 @@
                     <width>$PARAM[width]</width>
                 </control>
                 <include content="Info_Plot_TextBox">
-                    <param name="label">$PARAM[plot]</param>
+                    <param name="label">$INFO[$PARAM[container]$PARAM[listitem].Plot]</param>
                     <param name="colordiffuse">$PARAM[colordiffuse]</param>
                     <param name="height">80</param>
                     <param name="width">$PARAM[width]</param>
@@ -1279,25 +1252,12 @@
             <control type="group">
                 <visible>![$PARAM[visible]]</visible>
                 <include content="Info_Plot_TextBox">
-                    <param name="label">$PARAM[plot]</param>
+                    <param name="label">$INFO[$PARAM[container]$PARAM[listitem].Plot]</param>
                     <param name="colordiffuse">$PARAM[colordiffuse]</param>
                     <param name="height">$PARAM[height]</param>
                     <param name="width">$PARAM[width]</param>
                 </include>
             </control>
-        </definition>
-    </include>
-
-    <include name="Info_Plot_Main_Plotline_Content">
-        <definition>
-            <include content="Info_Plot_Headline">
-                <param name="label">$PARAM[label]</param>
-                <param name="plot">$INFO[$PARAM[container]$PARAM[listitem].Plot]</param>
-                <param name="visible">$PARAM[visible]</param>
-                <param name="colordiffuse">$PARAM[colordiffuse]</param>
-                <param name="height">$PARAM[height]</param>
-                <param name="width">$PARAM[width]</param>
-            </include>
         </definition>
     </include>
 
@@ -1403,27 +1363,10 @@
         </control>
     </include>
 
-    <include name="Info_Plot_Weather">
-        <control type="group">
-            <height>$PARAM[height]</height>
-            <visible>$PARAM[visible]</visible>
-            <visible>!String.IsEmpty($PARAM[container]$PARAM[listitem].Property(is_weather))</visible>
-            <include content="Info_Plot_Headline">
-                <param name="label">$INFO[$PARAM[container]$PARAM[listitem].Property(CustomInfo02)]</param>
-                <param name="plot">$INFO[$PARAM[container]$PARAM[listitem].Property(biography)]</param>
-                <param name="visible">!String.IsEmpty($PARAM[container]$PARAM[listitem].Property(CustomInfo02))</param>
-                <param name="colordiffuse">$PARAM[colordiffuse]</param>
-                <param name="height">$PARAM[height]</param>
-                <param name="width">$PARAM[width]</param>
-            </include>
-        </control>
-    </include>
-
     <include name="Info_Plot_Other">
         <control type="group">
             <height>240</height>
             <visible>$PARAM[visible]</visible>
-            <visible>String.IsEmpty($PARAM[container]$PARAM[listitem].Property(is_weather))</visible>
             <visible>![String.IsEqual($PARAM[container]$PARAM[listitem].DBType,movie) | String.IsEqual($PARAM[container]$PARAM[listitem].DBType,tvshow) | String.IsEqual($PARAM[container]$PARAM[listitem].DBType,season) | String.IsEqual($PARAM[container]$PARAM[listitem].DBType,episode) | String.IsEqual($PARAM[container]$PARAM[listitem].DBType,video) | String.IsEqual($PARAM[container]$PARAM[listitem].DBType,album) | String.IsEqual($PARAM[container]$PARAM[listitem].DBType,song) | !String.IsEmpty($PARAM[container]$PARAM[listitem].ChannelNumberLabel)]</visible>
             <include content="Info_Plot_TextBox">
                 <param name="label">$INFO[$PARAM[container]$PARAM[listitem].Plot,, ]$INFO[$PARAM[container]$PARAM[listitem].Property(Album_Description),, ]$INFO[$PARAM[container]$PARAM[listitem].Property(Artist_Description),, ]$INFO[$PARAM[container]$PARAM[listitem].AddonDescription,, ]</param>
@@ -1465,16 +1408,6 @@
                 <param name="width">$PARAM[width]</param>
                 <param name="height">$PARAM[height]</param>
                 <param name="override">$PARAM[override]</param>
-                <param name="visible">$PARAM[visible]</param>
-            </include>
-
-            <!-- WEATHER -->
-            <include content="Info_Plot_Weather" condition="$PARAM[include_other]">
-                <param name="container">$PARAM[container]</param>
-                <param name="listitem">$PARAM[listitem]</param>
-                <param name="colordiffuse">$PARAM[colordiffuse]</param>
-                <param name="width">$PARAM[width]</param>
-                <param name="height">$PARAM[height]</param>
                 <param name="visible">$PARAM[visible]</param>
             </include>
 
