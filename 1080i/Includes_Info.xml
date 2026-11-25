@@ -280,7 +280,7 @@
 
             <control type="group">
                 <left>$PARAM[left]</left>
-                <height>60</height>
+                <include>Info_Line_Height_U3k</include>
                 <visible>$PARAM[visible]</visible>
 
                 <control type="grouplist">
@@ -631,7 +631,7 @@
         <param name="override">false</param>
         <definition>
             <control type="group">
-                <visible>$PARAM[visible]</visible>
+                <visible>$PARAM[visible] + !Skin.HasSetting(InfoBar.TwoRow)</visible>
                 <left>$PARAM[left]</left>
                 <height>80</height>
 
@@ -658,6 +658,11 @@
                         <param name="is_sd">[!String.IsEmpty($PARAM[container]$PARAM[listitem].VideoResolution)]</param>
                     </include>
                     <include content="Info_Line_VideoQuality_HDRType" condition="Skin.HasSetting(InfoTags.EnableHDR)">
+                        <param name="colordiffuse">$PARAM[colordiffuse]</param>
+                        <param name="container">$PARAM[container]</param>
+                        <param name="listitem">$PARAM[listitem]</param>
+                    </include>
+                    <include content="Info_Line_AudioCodec" condition="Skin.HasSetting(InfoTags.EnableAudioCodec)">
                         <param name="colordiffuse">$PARAM[colordiffuse]</param>
                         <param name="container">$PARAM[container]</param>
                         <param name="listitem">$PARAM[listitem]</param>
@@ -704,6 +709,14 @@
 
                 </control>
             </control>
+            <include content="Info_Line_TwoRow_U3k">
+                <param name="visible">$PARAM[visible]</param>
+                <param name="left">$PARAM[left]</param>
+                <param name="container">$PARAM[container]</param>
+                <param name="listitem">$PARAM[listitem]</param>
+                <param name="override">$PARAM[override]</param>
+                <param name="colordiffuse">$PARAM[colordiffuse]</param>
+            </include>
         </definition>
     </include>
 
@@ -927,6 +940,12 @@
                 <param name="colordiffuse">$PARAM[colordiffuse]</param>
                 <param name="label">HLG</param>
                 <param name="visible">$PARAM[visible] + String.IsEqual($PARAM[container]$PARAM[listitem].HdrType,hlg)</param>
+                <param name="width">auto</param>
+            </include>
+            <include content="Info_Line_Pill_Text">
+                <param name="colordiffuse">$PARAM[colordiffuse]</param>
+                <param name="label">SDR</param>
+                <param name="visible">$PARAM[visible] + String.IsEmpty($PARAM[container]$PARAM[listitem].HdrType) + !String.IsEmpty($PARAM[container]$PARAM[listitem].VideoResolution)</param>
                 <param name="width">auto</param>
             </include>
         </definition>
