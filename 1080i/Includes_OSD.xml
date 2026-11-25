@@ -331,10 +331,13 @@
 
     <!-- Short lists sit one 80px row lower for each row under five, so they end just above the spotlight -->
     <include name="OSD_Stream_ListSlide">
-        <animation effect="slide" end="0,320" condition="Integer.IsEqual(Container($PARAM[id]).NumItems,1)">Conditional</animation>
-        <animation effect="slide" end="0,240" condition="Integer.IsEqual(Container($PARAM[id]).NumItems,2)">Conditional</animation>
-        <animation effect="slide" end="0,160" condition="Integer.IsEqual(Container($PARAM[id]).NumItems,3)">Conditional</animation>
-        <animation effect="slide" end="0,80" condition="Integer.IsEqual(Container($PARAM[id]).NumItems,4)">Conditional</animation>
+        <param name="condition">true</param>
+        <definition>
+            <animation effect="slide" end="0,320" condition="[$PARAM[condition]] + Integer.IsEqual(Container($PARAM[id]).NumItems,1)">Conditional</animation>
+            <animation effect="slide" end="0,240" condition="[$PARAM[condition]] + Integer.IsEqual(Container($PARAM[id]).NumItems,2)">Conditional</animation>
+            <animation effect="slide" end="0,160" condition="[$PARAM[condition]] + Integer.IsEqual(Container($PARAM[id]).NumItems,3)">Conditional</animation>
+            <animation effect="slide" end="0,80" condition="[$PARAM[condition]] + Integer.IsEqual(Container($PARAM[id]).NumItems,4)">Conditional</animation>
+        </definition>
     </include>
 
     <!-- Download row after the offset row, opening Kodi's subtitle search -->
@@ -345,6 +348,7 @@
                 <label2>$LOCALIZE[24134]</label2>
                 <icon>special://skin/extras/icons/download.png</icon>
                 <property name="window">subtitlesearch</property>
+                <visible>!VideoPlayer.HasSubtitles</visible>
             </item>
         </content>
     </include>
@@ -367,6 +371,7 @@
                             <label2>$PARAM[slider_header]</label2>
                             <icon>special://skin/extras/icons/stopwatch.png</icon>
                             <property name="slider">$PARAM[slider]</property>
+                            <visible>$PARAM[enabled]</visible>
                         </item>
                     </content>
                     <include condition="$PARAM[download]">OSD_Stream_DownloadRow</include>
@@ -577,6 +582,20 @@
         <midtexture />
     </include>
 
+    <include name="OSD_Progress_Markers">
+        <param name="texture">progress/marker-dot.png</param>
+        <param name="colordiffuse">ffffffff</param>
+        <definition>
+            <control type="ranges">
+                <width>100%</width>
+                <height>12</height>
+                <texturebg colordiffuse="00ffffff">progress/marker-bg.png</texturebg>
+                <righttexture colordiffuse="$PARAM[colordiffuse]">$PARAM[texture]</righttexture>
+                <info>$PARAM[info]</info>
+            </control>
+        </definition>
+    </include>
+
     <include name="OSD_Progress_BarControls">
 
         <!-- Cache Line -->
@@ -619,20 +638,21 @@
             <visible>Pvr.IsPlayingTv</visible>
             <texturebg colordiffuse="00ffffff" border="12,0,12,0">progress/progress-nib.png</texturebg>
         </control>
-        <!-- CutList and Chapters Range -->
-        <control type="ranges">
-            <width>100%</width>
-            <height>12</height>
-            <texturebg colordiffuse="00ffffff">progress/marker-bg.png</texturebg>
-            <righttexture colordiffuse="main_fg_50">progress/marker.png</righttexture>
-            <info>Player.CutList</info>
-        </control>
-        <control type="ranges">
-            <width>100%</width>
-            <height>12</height>
-            <texturebg colordiffuse="00ffffff">progress/marker-bg.png</texturebg>
-            <righttexture colordiffuse="main_fg_50">progress/marker.png</righttexture>
-            <info>Player.Chapters</info>
+
+        <include content="OSD_Progress_Markers">
+            <param name="info">Player.Chapters</param>
+            <param name="texture">progress/marker.png</param>
+            <param name="colordiffuse">main_fg_50</param>
+        </include>
+
+        <control type="group">
+            <visible>Player.HasVideo + !Pvr.IsPlayingTv</visible>
+            <include content="OSD_Progress_Markers">
+                <param name="info">Player.Cuts</param>
+            </include>
+            <include content="OSD_Progress_Markers">
+                <param name="info">Player.SceneMarkers</param>
+            </include>
         </control>
 
         <!-- Seek Nib -->

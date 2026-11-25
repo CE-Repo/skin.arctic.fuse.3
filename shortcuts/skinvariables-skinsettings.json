@@ -740,6 +740,18 @@
                 }
             ]
         },
+        "views_icon_style": {
+            "label": "$LOCALIZE[31890]",
+            "control": "button",
+            "group": "views_viewtypes",
+            "description": "$LOCALIZE[31894]",
+            "label2": "$VAR[Label_Setting_GenericStyle]",
+            "onclick": [
+                {
+                    "action": "ActivateWindow(1138)"
+                }
+            ]
+        },
         "views_indicators": {
             "label": "$LOCALIZE[31235]",
             "control": "button",
@@ -955,6 +967,22 @@
                 "$LOCALIZE[19033]"
             ]
         },
+        "details_ratings_fallback": {
+            "label": "$LOCALIZE[31268]",
+            "control": "radiobutton",
+            "group": "details_ratings",
+            "description": "$LOCALIZE[31905]",
+            "visible": "$EXP[Exp_TMDbHelper_IsData]",
+            "selected": "Skin.HasSetting(Ratings.EnablePreferences)",
+            "onclick": [
+                {
+                    "action": "Skin.ToggleSetting(Ratings.EnablePreferences)"
+                }
+            ],
+            "tags": [
+                "$LOCALIZE[31203]"
+            ]
+        },
         "details_movie_ratings": {
             "label": "$LOCALIZE[342]",
             "control": "button",
@@ -1076,7 +1104,7 @@
             "label2": "$VAR[Label_Setting_InfoTags_Style]",
             "onclick": [
                 {
-                    "action": "Skin.ToggleSetting(InfoTags.DisableTags)"
+                    "action": "Skin.ToggleSetting(InfoTags.EnablePills)"
                 }
             ]
         },
@@ -1113,6 +1141,18 @@
             "onclick": [
                 {
                     "action": "Skin.ToggleSetting(InfoTags.EnableHDR)"
+                }
+            ]
+        },
+        "details_3d": {
+            "label": "$LOCALIZE[14232]",
+            "control": "radiobutton",
+            "group": "details_information",
+            "description": "$LOCALIZE[31906]",
+            "selected": "Skin.HasSetting(InfoTags.Enable3D)",
+            "onclick": [
+                {
+                    "action": "Skin.ToggleSetting(InfoTags.Enable3D)"
                 }
             ]
         },
