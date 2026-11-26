@@ -147,15 +147,6 @@
 			<selected>Skin.HasSetting(InfoBar.TwoRow)</selected>
 			<include>DialogCustom_Reload_1118</include>
 		</include>
-		<include content="Settings_Button">
-			<param name="dialog">true</param>
-			<param name="id">8004</param>
-			<param name="control">radiobutton</param>
-			<label>$LOCALIZE[21446]</label>
-			<onclick>Skin.ToggleSetting(InfoTags.EnableAudioCodec)</onclick>
-			<selected>Skin.HasSetting(InfoTags.EnableAudioCodec)</selected>
-			<include>DialogCustom_Reload_1118</include>
-		</include>
 		<include content="Settings_Label">
 			<param name="id">8005</param>
 			<param name="dialog">true</param>
