@@ -265,8 +265,7 @@
             <icon>special://skin/extras/icons/expand.png</icon>
             <property name="disabled">true</property>
             <visible>![Skin.HasSetting(InfoTags.EnableVideoAspect)]</visible>
-            <onclick condition="Skin.HasSetting(InfoBar.TwoRow)">Skin.SetBool(InfoTags.EnableVideoAspect)</onclick>
-            <onclick condition="!Skin.HasSetting(InfoBar.TwoRow)">RunScript(script.skinvariables,run_executebuiltin=special://skin/shortcuts/builtins/skinvariables-infoline-budget.json,use_rules=True,layout=Global_VideoAspect,reserved=VideoAspect,room=8,enable_item=Skin.SetBool(InfoTags.EnableVideoAspect))</onclick>
+            <onclick>RunScript(script.skinvariables,run_executebuiltin=special://skin/shortcuts/builtins/skinvariables-infoline-budget.json,use_rules=True,layout=Global_VideoAspect,reserved=VideoAspect,room=8,enable_item=Skin.SetBool(InfoTags.EnableVideoAspect))</onclick>
         </item>
         <item>
             <label>$LOCALIZE[21445] [•]</label>
@@ -280,8 +279,7 @@
             <icon>special://skin/extras/icons/file-video.png</icon>
             <property name="disabled">true</property>
             <visible>![Skin.HasSetting(InfoTags.EnableVideoCodec)]</visible>
-            <onclick condition="Skin.HasSetting(InfoBar.TwoRow)">Skin.SetBool(InfoTags.EnableVideoCodec)</onclick>
-            <onclick condition="!Skin.HasSetting(InfoBar.TwoRow)">RunScript(script.skinvariables,run_executebuiltin=special://skin/shortcuts/builtins/skinvariables-infoline-budget.json,use_rules=True,layout=Global_VideoCodec,reserved=VideoCodec,room=8,enable_item=Skin.SetBool(InfoTags.EnableVideoCodec))</onclick>
+            <onclick>RunScript(script.skinvariables,run_executebuiltin=special://skin/shortcuts/builtins/skinvariables-infoline-budget.json,use_rules=True,layout=Global_VideoCodec,reserved=VideoCodec,room=8,enable_item=Skin.SetBool(InfoTags.EnableVideoCodec))</onclick>
         </item>
         <item>
             <label>$LOCALIZE[20474] [•]</label>
@@ -295,8 +293,7 @@
             <icon>special://skin/extras/icons/circle-half-stroke.png</icon>
             <property name="disabled">true</property>
             <visible>![Skin.HasSetting(InfoTags.EnableHDR)]</visible>
-            <onclick condition="Skin.HasSetting(InfoBar.TwoRow)">Skin.SetBool(InfoTags.EnableHDR)</onclick>
-            <onclick condition="!Skin.HasSetting(InfoBar.TwoRow)">RunScript(script.skinvariables,run_executebuiltin=special://skin/shortcuts/builtins/skinvariables-infoline-budget.json,use_rules=True,layout=Global_HDR,reserved=HDR,room=8,enable_item=Skin.SetBool(InfoTags.EnableHDR))</onclick>
+            <onclick>RunScript(script.skinvariables,run_executebuiltin=special://skin/shortcuts/builtins/skinvariables-infoline-budget.json,use_rules=True,layout=Global_HDR,reserved=HDR,room=8,enable_item=Skin.SetBool(InfoTags.EnableHDR))</onclick>
         </item>
         <item>
             <label>$LOCALIZE[14232] [•]</label>
@@ -310,8 +307,7 @@
             <icon>special://skin/extras/icons/3dtv.png</icon>
             <property name="disabled">true</property>
             <visible>![Skin.HasSetting(InfoTags.Enable3D)]</visible>
-            <onclick condition="Skin.HasSetting(InfoBar.TwoRow)">Skin.SetBool(InfoTags.Enable3D)</onclick>
-            <onclick condition="!Skin.HasSetting(InfoBar.TwoRow)">RunScript(script.skinvariables,run_executebuiltin=special://skin/shortcuts/builtins/skinvariables-infoline-budget.json,use_rules=True,layout=Global_Stereo,reserved=Stereo,room=8,enable_item=Skin.SetBool(InfoTags.Enable3D))</onclick>
+            <onclick>RunScript(script.skinvariables,run_executebuiltin=special://skin/shortcuts/builtins/skinvariables-infoline-budget.json,use_rules=True,layout=Global_Stereo,reserved=Stereo,room=8,enable_item=Skin.SetBool(InfoTags.Enable3D))</onclick>
         </item>
         <item>
             <label>$LOCALIZE[21444] [•]</label>
@@ -325,8 +321,7 @@
             <icon>special://skin/extras/icons/volume-high.png</icon>
             <property name="disabled">true</property>
             <visible>![Skin.HasSetting(InfoTags.EnableAudioChannels)]</visible>
-            <onclick condition="Skin.HasSetting(InfoBar.TwoRow)">Skin.SetBool(InfoTags.EnableAudioChannels)</onclick>
-            <onclick condition="!Skin.HasSetting(InfoBar.TwoRow)">RunScript(script.skinvariables,run_executebuiltin=special://skin/shortcuts/builtins/skinvariables-infoline-budget.json,use_rules=True,layout=Global_Audio,reserved=Audio,room=8,enable_item=Skin.SetBool(InfoTags.EnableAudioChannels))</onclick>
+            <onclick>RunScript(script.skinvariables,run_executebuiltin=special://skin/shortcuts/builtins/skinvariables-infoline-budget.json,use_rules=True,layout=Global_Audio,reserved=Audio,room=8,enable_item=Skin.SetBool(InfoTags.EnableAudioChannels))</onclick>
         </item>
         <item>
             <label>$LOCALIZE[21446] [••]</label>
@@ -340,8 +335,7 @@
             <icon>special://skin/extras/icons/file-audio.png</icon>
             <property name="disabled">true</property>
             <visible>![Skin.HasSetting(InfoTags.EnableAudioCodec)]</visible>
-            <onclick condition="Skin.HasSetting(InfoBar.TwoRow)">Skin.SetBool(InfoTags.EnableAudioCodec)</onclick>
-            <onclick condition="!Skin.HasSetting(InfoBar.TwoRow)">RunScript(script.skinvariables,run_executebuiltin=special://skin/shortcuts/builtins/skinvariables-infoline-budget.json,use_rules=True,layout=Global_AudioCodec,reserved=AudioCodec,room=7,enable_item=Skin.SetBool(InfoTags.EnableAudioCodec))</onclick>
+            <onclick>RunScript(script.skinvariables,run_executebuiltin=special://skin/shortcuts/builtins/skinvariables-infoline-budget.json,use_rules=True,layout=Global_AudioCodec,reserved=AudioCodec,room=7,enable_item=Skin.SetBool(InfoTags.EnableAudioCodec))</onclick>
         </item>
         <item>
             <label>$LOCALIZE[33067] [••]</label>
@@ -355,8 +349,7 @@
             <icon>special://skin/extras/icons/star.png</icon>
             <property name="disabled">true</property>
             <visible>![!Skin.HasSetting(InfoLine.movie.DisableStars)]</visible>
-            <onclick condition="Skin.HasSetting(InfoBar.TwoRow)">Skin.Reset(InfoLine.movie.DisableStars)</onclick>
-            <onclick condition="!Skin.HasSetting(InfoBar.TwoRow)">RunScript(script.skinvariables,run_executebuiltin=special://skin/shortcuts/builtins/skinvariables-infoline-budget.json,use_rules=True,layout=movie,reserved=Stars,room=7,enable_item=Skin.Reset(InfoLine.movie.DisableStars))</onclick>
+            <onclick>RunScript(script.skinvariables,run_executebuiltin=special://skin/shortcuts/builtins/skinvariables-infoline-budget.json,use_rules=True,layout=movie,reserved=Stars,room=7,enable_item=Skin.Reset(InfoLine.movie.DisableStars))</onclick>
         </item>
         <item>
             <label>$LOCALIZE[20473] [••]</label>
@@ -371,9 +364,7 @@
             <icon>special://skin/extras/icons/calendar-day.png</icon>
             <property name="disabled">true</property>
             <visible>![[!Skin.HasSetting(InfoLine.movie.DisablePremiered) + !Skin.HasSetting(InfoLine.movie.EnableYear)]]</visible>
-            <onclick condition="Skin.HasSetting(InfoBar.TwoRow)">Skin.Reset(InfoLine.movie.EnableYear)</onclick>
-            <onclick condition="Skin.HasSetting(InfoBar.TwoRow)">Skin.Reset(InfoLine.movie.DisablePremiered)</onclick>
-            <onclick condition="!Skin.HasSetting(InfoBar.TwoRow)">RunScript(script.skinvariables,run_executebuiltin=special://skin/shortcuts/builtins/skinvariables-infoline-budget.json,use_rules=True,layout=movie,reserved=Premiered|Year,room=7,enable_item=Skin.Reset(InfoLine.movie.DisablePremiered),disable_peer=Skin.Reset(InfoLine.movie.EnableYear))</onclick>
+            <onclick>RunScript(script.skinvariables,run_executebuiltin=special://skin/shortcuts/builtins/skinvariables-infoline-budget.json,use_rules=True,layout=movie,reserved=Premiered|Year,room=7,enable_item=Skin.Reset(InfoLine.movie.DisablePremiered),disable_peer=Skin.Reset(InfoLine.movie.EnableYear))</onclick>
         </item>
         <item>
             <label>$LOCALIZE[562] [•]</label>
@@ -388,9 +379,7 @@
             <icon>special://skin/extras/icons/year.png</icon>
             <property name="disabled">true</property>
             <visible>![Skin.HasSetting(InfoLine.movie.EnableYear)]</visible>
-            <onclick condition="Skin.HasSetting(InfoBar.TwoRow)">Skin.SetBool(InfoLine.movie.DisablePremiered)</onclick>
-            <onclick condition="Skin.HasSetting(InfoBar.TwoRow)">Skin.SetBool(InfoLine.movie.EnableYear)</onclick>
-            <onclick condition="!Skin.HasSetting(InfoBar.TwoRow)">RunScript(script.skinvariables,run_executebuiltin=special://skin/shortcuts/builtins/skinvariables-infoline-budget.json,use_rules=True,layout=movie,reserved=Year|Premiered,room=8,enable_item=Skin.SetBool(InfoLine.movie.EnableYear),disable_peer=Skin.SetBool(InfoLine.movie.DisablePremiered))</onclick>
+            <onclick>RunScript(script.skinvariables,run_executebuiltin=special://skin/shortcuts/builtins/skinvariables-infoline-budget.json,use_rules=True,layout=movie,reserved=Year|Premiered,room=8,enable_item=Skin.SetBool(InfoLine.movie.EnableYear),disable_peer=Skin.SetBool(InfoLine.movie.DisablePremiered))</onclick>
         </item>
         <item>
             <label>$LOCALIZE[20074] [••]</label>
@@ -404,8 +393,7 @@
             <icon>special://skin/extras/icons/certificate.png</icon>
             <property name="disabled">true</property>
             <visible>![!Skin.HasSetting(InfoLine.movie.DisableMPAA)]</visible>
-            <onclick condition="Skin.HasSetting(InfoBar.TwoRow)">Skin.Reset(InfoLine.movie.DisableMPAA)</onclick>
-            <onclick condition="!Skin.HasSetting(InfoBar.TwoRow)">RunScript(script.skinvariables,run_executebuiltin=special://skin/shortcuts/builtins/skinvariables-infoline-budget.json,use_rules=True,layout=movie,reserved=MPAA,room=7,enable_item=Skin.Reset(InfoLine.movie.DisableMPAA))</onclick>
+            <onclick>RunScript(script.skinvariables,run_executebuiltin=special://skin/shortcuts/builtins/skinvariables-infoline-budget.json,use_rules=True,layout=movie,reserved=MPAA,room=7,enable_item=Skin.Reset(InfoLine.movie.DisableMPAA))</onclick>
         </item>
         <item>
             <label>$LOCALIZE[180] [••]</label>
@@ -419,8 +407,7 @@
             <icon>special://skin/extras/icons/clock.png</icon>
             <property name="disabled">true</property>
             <visible>![!Skin.HasSetting(InfoLine.movie.DisableDuration)]</visible>
-            <onclick condition="Skin.HasSetting(InfoBar.TwoRow)">Skin.Reset(InfoLine.movie.DisableDuration)</onclick>
-            <onclick condition="!Skin.HasSetting(InfoBar.TwoRow)">RunScript(script.skinvariables,run_executebuiltin=special://skin/shortcuts/builtins/skinvariables-infoline-budget.json,use_rules=True,layout=movie,reserved=Duration,room=7,enable_item=Skin.Reset(InfoLine.movie.DisableDuration))</onclick>
+            <onclick>RunScript(script.skinvariables,run_executebuiltin=special://skin/shortcuts/builtins/skinvariables-infoline-budget.json,use_rules=True,layout=movie,reserved=Duration,room=7,enable_item=Skin.Reset(InfoLine.movie.DisableDuration))</onclick>
         </item>
     </include>
     <variable name="InfoLine_Units_tvshow_Stars">
@@ -492,8 +479,7 @@
             <icon>special://skin/extras/icons/star.png</icon>
             <property name="disabled">true</property>
             <visible>![!Skin.HasSetting(InfoLine.tvshow.DisableStars)]</visible>
-            <onclick condition="Skin.HasSetting(InfoBar.TwoRow)">Skin.Reset(InfoLine.tvshow.DisableStars)</onclick>
-            <onclick condition="!Skin.HasSetting(InfoBar.TwoRow)">RunScript(script.skinvariables,run_executebuiltin=special://skin/shortcuts/builtins/skinvariables-infoline-budget.json,use_rules=True,layout=tvshow,reserved=Stars,room=7,enable_item=Skin.Reset(InfoLine.tvshow.DisableStars))</onclick>
+            <onclick>RunScript(script.skinvariables,run_executebuiltin=special://skin/shortcuts/builtins/skinvariables-infoline-budget.json,use_rules=True,layout=tvshow,reserved=Stars,room=7,enable_item=Skin.Reset(InfoLine.tvshow.DisableStars))</onclick>
         </item>
         <item>
             <label>$LOCALIZE[20473] [••]</label>
@@ -508,9 +494,7 @@
             <icon>special://skin/extras/icons/calendar-day.png</icon>
             <property name="disabled">true</property>
             <visible>![[!Skin.HasSetting(InfoLine.tvshow.DisablePremiered) + !Skin.HasSetting(InfoLine.tvshow.EnableYear)]]</visible>
-            <onclick condition="Skin.HasSetting(InfoBar.TwoRow)">Skin.Reset(InfoLine.tvshow.EnableYear)</onclick>
-            <onclick condition="Skin.HasSetting(InfoBar.TwoRow)">Skin.Reset(InfoLine.tvshow.DisablePremiered)</onclick>
-            <onclick condition="!Skin.HasSetting(InfoBar.TwoRow)">RunScript(script.skinvariables,run_executebuiltin=special://skin/shortcuts/builtins/skinvariables-infoline-budget.json,use_rules=True,layout=tvshow,reserved=Premiered|Year,room=7,enable_item=Skin.Reset(InfoLine.tvshow.DisablePremiered),disable_peer=Skin.Reset(InfoLine.tvshow.EnableYear))</onclick>
+            <onclick>RunScript(script.skinvariables,run_executebuiltin=special://skin/shortcuts/builtins/skinvariables-infoline-budget.json,use_rules=True,layout=tvshow,reserved=Premiered|Year,room=7,enable_item=Skin.Reset(InfoLine.tvshow.DisablePremiered),disable_peer=Skin.Reset(InfoLine.tvshow.EnableYear))</onclick>
         </item>
         <item>
             <label>$LOCALIZE[562] [•]</label>
@@ -525,9 +509,7 @@
             <icon>special://skin/extras/icons/year.png</icon>
             <property name="disabled">true</property>
             <visible>![Skin.HasSetting(InfoLine.tvshow.EnableYear)]</visible>
-            <onclick condition="Skin.HasSetting(InfoBar.TwoRow)">Skin.SetBool(InfoLine.tvshow.DisablePremiered)</onclick>
-            <onclick condition="Skin.HasSetting(InfoBar.TwoRow)">Skin.SetBool(InfoLine.tvshow.EnableYear)</onclick>
-            <onclick condition="!Skin.HasSetting(InfoBar.TwoRow)">RunScript(script.skinvariables,run_executebuiltin=special://skin/shortcuts/builtins/skinvariables-infoline-budget.json,use_rules=True,layout=tvshow,reserved=Year|Premiered,room=8,enable_item=Skin.SetBool(InfoLine.tvshow.EnableYear),disable_peer=Skin.SetBool(InfoLine.tvshow.DisablePremiered))</onclick>
+            <onclick>RunScript(script.skinvariables,run_executebuiltin=special://skin/shortcuts/builtins/skinvariables-infoline-budget.json,use_rules=True,layout=tvshow,reserved=Year|Premiered,room=8,enable_item=Skin.SetBool(InfoLine.tvshow.EnableYear),disable_peer=Skin.SetBool(InfoLine.tvshow.DisablePremiered))</onclick>
         </item>
         <item>
             <label>$LOCALIZE[20074] [••]</label>
@@ -541,8 +523,7 @@
             <icon>special://skin/extras/icons/certificate.png</icon>
             <property name="disabled">true</property>
             <visible>![!Skin.HasSetting(InfoLine.tvshow.DisableMPAA)]</visible>
-            <onclick condition="Skin.HasSetting(InfoBar.TwoRow)">Skin.Reset(InfoLine.tvshow.DisableMPAA)</onclick>
-            <onclick condition="!Skin.HasSetting(InfoBar.TwoRow)">RunScript(script.skinvariables,run_executebuiltin=special://skin/shortcuts/builtins/skinvariables-infoline-budget.json,use_rules=True,layout=tvshow,reserved=MPAA,room=7,enable_item=Skin.Reset(InfoLine.tvshow.DisableMPAA))</onclick>
+            <onclick>RunScript(script.skinvariables,run_executebuiltin=special://skin/shortcuts/builtins/skinvariables-infoline-budget.json,use_rules=True,layout=tvshow,reserved=MPAA,room=7,enable_item=Skin.Reset(InfoLine.tvshow.DisableMPAA))</onclick>
         </item>
     </include>
     <variable name="InfoLine_Units_season_Stars">
@@ -614,8 +595,7 @@
             <icon>special://skin/extras/icons/star.png</icon>
             <property name="disabled">true</property>
             <visible>![!Skin.HasSetting(InfoLine.season.DisableStars)]</visible>
-            <onclick condition="Skin.HasSetting(InfoBar.TwoRow)">Skin.Reset(InfoLine.season.DisableStars)</onclick>
-            <onclick condition="!Skin.HasSetting(InfoBar.TwoRow)">RunScript(script.skinvariables,run_executebuiltin=special://skin/shortcuts/builtins/skinvariables-infoline-budget.json,use_rules=True,layout=season,reserved=Stars,room=7,enable_item=Skin.Reset(InfoLine.season.DisableStars))</onclick>
+            <onclick>RunScript(script.skinvariables,run_executebuiltin=special://skin/shortcuts/builtins/skinvariables-infoline-budget.json,use_rules=True,layout=season,reserved=Stars,room=7,enable_item=Skin.Reset(InfoLine.season.DisableStars))</onclick>
         </item>
         <item>
             <label>$LOCALIZE[20473] [••]</label>
@@ -630,9 +610,7 @@
             <icon>special://skin/extras/icons/calendar-day.png</icon>
             <property name="disabled">true</property>
             <visible>![[!Skin.HasSetting(InfoLine.season.DisablePremiered) + !Skin.HasSetting(InfoLine.season.EnableYear)]]</visible>
-            <onclick condition="Skin.HasSetting(InfoBar.TwoRow)">Skin.Reset(InfoLine.season.EnableYear)</onclick>
-            <onclick condition="Skin.HasSetting(InfoBar.TwoRow)">Skin.Reset(InfoLine.season.DisablePremiered)</onclick>
-            <onclick condition="!Skin.HasSetting(InfoBar.TwoRow)">RunScript(script.skinvariables,run_executebuiltin=special://skin/shortcuts/builtins/skinvariables-infoline-budget.json,use_rules=True,layout=season,reserved=Premiered|Year,room=7,enable_item=Skin.Reset(InfoLine.season.DisablePremiered),disable_peer=Skin.Reset(InfoLine.season.EnableYear))</onclick>
+            <onclick>RunScript(script.skinvariables,run_executebuiltin=special://skin/shortcuts/builtins/skinvariables-infoline-budget.json,use_rules=True,layout=season,reserved=Premiered|Year,room=7,enable_item=Skin.Reset(InfoLine.season.DisablePremiered),disable_peer=Skin.Reset(InfoLine.season.EnableYear))</onclick>
         </item>
         <item>
             <label>$LOCALIZE[562] [•]</label>
@@ -647,9 +625,7 @@
             <icon>special://skin/extras/icons/year.png</icon>
             <property name="disabled">true</property>
             <visible>![Skin.HasSetting(InfoLine.season.EnableYear)]</visible>
-            <onclick condition="Skin.HasSetting(InfoBar.TwoRow)">Skin.SetBool(InfoLine.season.DisablePremiered)</onclick>
-            <onclick condition="Skin.HasSetting(InfoBar.TwoRow)">Skin.SetBool(InfoLine.season.EnableYear)</onclick>
-            <onclick condition="!Skin.HasSetting(InfoBar.TwoRow)">RunScript(script.skinvariables,run_executebuiltin=special://skin/shortcuts/builtins/skinvariables-infoline-budget.json,use_rules=True,layout=season,reserved=Year|Premiered,room=8,enable_item=Skin.SetBool(InfoLine.season.EnableYear),disable_peer=Skin.SetBool(InfoLine.season.DisablePremiered))</onclick>
+            <onclick>RunScript(script.skinvariables,run_executebuiltin=special://skin/shortcuts/builtins/skinvariables-infoline-budget.json,use_rules=True,layout=season,reserved=Year|Premiered,room=8,enable_item=Skin.SetBool(InfoLine.season.EnableYear),disable_peer=Skin.SetBool(InfoLine.season.DisablePremiered))</onclick>
         </item>
         <item>
             <label>$LOCALIZE[20074] [••]</label>
@@ -663,8 +639,7 @@
             <icon>special://skin/extras/icons/certificate.png</icon>
             <property name="disabled">true</property>
             <visible>![!Skin.HasSetting(InfoLine.season.DisableMPAA)]</visible>
-            <onclick condition="Skin.HasSetting(InfoBar.TwoRow)">Skin.Reset(InfoLine.season.DisableMPAA)</onclick>
-            <onclick condition="!Skin.HasSetting(InfoBar.TwoRow)">RunScript(script.skinvariables,run_executebuiltin=special://skin/shortcuts/builtins/skinvariables-infoline-budget.json,use_rules=True,layout=season,reserved=MPAA,room=7,enable_item=Skin.Reset(InfoLine.season.DisableMPAA))</onclick>
+            <onclick>RunScript(script.skinvariables,run_executebuiltin=special://skin/shortcuts/builtins/skinvariables-infoline-budget.json,use_rules=True,layout=season,reserved=MPAA,room=7,enable_item=Skin.Reset(InfoLine.season.DisableMPAA))</onclick>
         </item>
     </include>
     <variable name="InfoLine_Units_set_Stars">
@@ -736,8 +711,7 @@
             <icon>special://skin/extras/icons/star.png</icon>
             <property name="disabled">true</property>
             <visible>![!Skin.HasSetting(InfoLine.set.DisableStars)]</visible>
-            <onclick condition="Skin.HasSetting(InfoBar.TwoRow)">Skin.Reset(InfoLine.set.DisableStars)</onclick>
-            <onclick condition="!Skin.HasSetting(InfoBar.TwoRow)">RunScript(script.skinvariables,run_executebuiltin=special://skin/shortcuts/builtins/skinvariables-infoline-budget.json,use_rules=True,layout=set,reserved=Stars,room=7,enable_item=Skin.Reset(InfoLine.set.DisableStars))</onclick>
+            <onclick>RunScript(script.skinvariables,run_executebuiltin=special://skin/shortcuts/builtins/skinvariables-infoline-budget.json,use_rules=True,layout=set,reserved=Stars,room=7,enable_item=Skin.Reset(InfoLine.set.DisableStars))</onclick>
         </item>
         <item>
             <label>$LOCALIZE[20473] [••]</label>
@@ -752,9 +726,7 @@
             <icon>special://skin/extras/icons/calendar-day.png</icon>
             <property name="disabled">true</property>
             <visible>![[!Skin.HasSetting(InfoLine.set.DisablePremiered) + !Skin.HasSetting(InfoLine.set.EnableYear)]]</visible>
-            <onclick condition="Skin.HasSetting(InfoBar.TwoRow)">Skin.Reset(InfoLine.set.EnableYear)</onclick>
-            <onclick condition="Skin.HasSetting(InfoBar.TwoRow)">Skin.Reset(InfoLine.set.DisablePremiered)</onclick>
-            <onclick condition="!Skin.HasSetting(InfoBar.TwoRow)">RunScript(script.skinvariables,run_executebuiltin=special://skin/shortcuts/builtins/skinvariables-infoline-budget.json,use_rules=True,layout=set,reserved=Premiered|Year,room=7,enable_item=Skin.Reset(InfoLine.set.DisablePremiered),disable_peer=Skin.Reset(InfoLine.set.EnableYear))</onclick>
+            <onclick>RunScript(script.skinvariables,run_executebuiltin=special://skin/shortcuts/builtins/skinvariables-infoline-budget.json,use_rules=True,layout=set,reserved=Premiered|Year,room=7,enable_item=Skin.Reset(InfoLine.set.DisablePremiered),disable_peer=Skin.Reset(InfoLine.set.EnableYear))</onclick>
         </item>
         <item>
             <label>$LOCALIZE[562] [•]</label>
@@ -769,9 +741,7 @@
             <icon>special://skin/extras/icons/year.png</icon>
             <property name="disabled">true</property>
             <visible>![Skin.HasSetting(InfoLine.set.EnableYear)]</visible>
-            <onclick condition="Skin.HasSetting(InfoBar.TwoRow)">Skin.SetBool(InfoLine.set.DisablePremiered)</onclick>
-            <onclick condition="Skin.HasSetting(InfoBar.TwoRow)">Skin.SetBool(InfoLine.set.EnableYear)</onclick>
-            <onclick condition="!Skin.HasSetting(InfoBar.TwoRow)">RunScript(script.skinvariables,run_executebuiltin=special://skin/shortcuts/builtins/skinvariables-infoline-budget.json,use_rules=True,layout=set,reserved=Year|Premiered,room=8,enable_item=Skin.SetBool(InfoLine.set.EnableYear),disable_peer=Skin.SetBool(InfoLine.set.DisablePremiered))</onclick>
+            <onclick>RunScript(script.skinvariables,run_executebuiltin=special://skin/shortcuts/builtins/skinvariables-infoline-budget.json,use_rules=True,layout=set,reserved=Year|Premiered,room=8,enable_item=Skin.SetBool(InfoLine.set.EnableYear),disable_peer=Skin.SetBool(InfoLine.set.DisablePremiered))</onclick>
         </item>
         <item>
             <label>$LOCALIZE[20074] [••]</label>
@@ -785,8 +755,7 @@
             <icon>special://skin/extras/icons/certificate.png</icon>
             <property name="disabled">true</property>
             <visible>![!Skin.HasSetting(InfoLine.set.DisableMPAA)]</visible>
-            <onclick condition="Skin.HasSetting(InfoBar.TwoRow)">Skin.Reset(InfoLine.set.DisableMPAA)</onclick>
-            <onclick condition="!Skin.HasSetting(InfoBar.TwoRow)">RunScript(script.skinvariables,run_executebuiltin=special://skin/shortcuts/builtins/skinvariables-infoline-budget.json,use_rules=True,layout=set,reserved=MPAA,room=7,enable_item=Skin.Reset(InfoLine.set.DisableMPAA))</onclick>
+            <onclick>RunScript(script.skinvariables,run_executebuiltin=special://skin/shortcuts/builtins/skinvariables-infoline-budget.json,use_rules=True,layout=set,reserved=MPAA,room=7,enable_item=Skin.Reset(InfoLine.set.DisableMPAA))</onclick>
         </item>
     </include>
     <variable name="InfoLine_Units_episode_VideoAspect">
@@ -924,8 +893,7 @@
             <icon>special://skin/extras/icons/expand.png</icon>
             <property name="disabled">true</property>
             <visible>![Skin.HasSetting(InfoTags.EnableVideoAspect)]</visible>
-            <onclick condition="Skin.HasSetting(InfoBar.TwoRow)">Skin.SetBool(InfoTags.EnableVideoAspect)</onclick>
-            <onclick condition="!Skin.HasSetting(InfoBar.TwoRow)">RunScript(script.skinvariables,run_executebuiltin=special://skin/shortcuts/builtins/skinvariables-infoline-budget.json,use_rules=True,layout=Global_VideoAspect,reserved=VideoAspect,room=8,enable_item=Skin.SetBool(InfoTags.EnableVideoAspect))</onclick>
+            <onclick>RunScript(script.skinvariables,run_executebuiltin=special://skin/shortcuts/builtins/skinvariables-infoline-budget.json,use_rules=True,layout=Global_VideoAspect,reserved=VideoAspect,room=8,enable_item=Skin.SetBool(InfoTags.EnableVideoAspect))</onclick>
         </item>
         <item>
             <label>$LOCALIZE[21445] [•]</label>
@@ -939,8 +907,7 @@
             <icon>special://skin/extras/icons/file-video.png</icon>
             <property name="disabled">true</property>
             <visible>![Skin.HasSetting(InfoTags.EnableVideoCodec)]</visible>
-            <onclick condition="Skin.HasSetting(InfoBar.TwoRow)">Skin.SetBool(InfoTags.EnableVideoCodec)</onclick>
-            <onclick condition="!Skin.HasSetting(InfoBar.TwoRow)">RunScript(script.skinvariables,run_executebuiltin=special://skin/shortcuts/builtins/skinvariables-infoline-budget.json,use_rules=True,layout=Global_VideoCodec,reserved=VideoCodec,room=8,enable_item=Skin.SetBool(InfoTags.EnableVideoCodec))</onclick>
+            <onclick>RunScript(script.skinvariables,run_executebuiltin=special://skin/shortcuts/builtins/skinvariables-infoline-budget.json,use_rules=True,layout=Global_VideoCodec,reserved=VideoCodec,room=8,enable_item=Skin.SetBool(InfoTags.EnableVideoCodec))</onclick>
         </item>
         <item>
             <label>$LOCALIZE[20474] [•]</label>
@@ -954,8 +921,7 @@
             <icon>special://skin/extras/icons/circle-half-stroke.png</icon>
             <property name="disabled">true</property>
             <visible>![Skin.HasSetting(InfoTags.EnableHDR)]</visible>
-            <onclick condition="Skin.HasSetting(InfoBar.TwoRow)">Skin.SetBool(InfoTags.EnableHDR)</onclick>
-            <onclick condition="!Skin.HasSetting(InfoBar.TwoRow)">RunScript(script.skinvariables,run_executebuiltin=special://skin/shortcuts/builtins/skinvariables-infoline-budget.json,use_rules=True,layout=Global_HDR,reserved=HDR,room=8,enable_item=Skin.SetBool(InfoTags.EnableHDR))</onclick>
+            <onclick>RunScript(script.skinvariables,run_executebuiltin=special://skin/shortcuts/builtins/skinvariables-infoline-budget.json,use_rules=True,layout=Global_HDR,reserved=HDR,room=8,enable_item=Skin.SetBool(InfoTags.EnableHDR))</onclick>
         </item>
         <item>
             <label>$LOCALIZE[14232] [•]</label>
@@ -969,8 +935,7 @@
             <icon>special://skin/extras/icons/3dtv.png</icon>
             <property name="disabled">true</property>
             <visible>![Skin.HasSetting(InfoTags.Enable3D)]</visible>
-            <onclick condition="Skin.HasSetting(InfoBar.TwoRow)">Skin.SetBool(InfoTags.Enable3D)</onclick>
-            <onclick condition="!Skin.HasSetting(InfoBar.TwoRow)">RunScript(script.skinvariables,run_executebuiltin=special://skin/shortcuts/builtins/skinvariables-infoline-budget.json,use_rules=True,layout=Global_Stereo,reserved=Stereo,room=8,enable_item=Skin.SetBool(InfoTags.Enable3D))</onclick>
+            <onclick>RunScript(script.skinvariables,run_executebuiltin=special://skin/shortcuts/builtins/skinvariables-infoline-budget.json,use_rules=True,layout=Global_Stereo,reserved=Stereo,room=8,enable_item=Skin.SetBool(InfoTags.Enable3D))</onclick>
         </item>
         <item>
             <label>$LOCALIZE[21444] [•]</label>
@@ -984,8 +949,7 @@
             <icon>special://skin/extras/icons/volume-high.png</icon>
             <property name="disabled">true</property>
             <visible>![Skin.HasSetting(InfoTags.EnableAudioChannels)]</visible>
-            <onclick condition="Skin.HasSetting(InfoBar.TwoRow)">Skin.SetBool(InfoTags.EnableAudioChannels)</onclick>
-            <onclick condition="!Skin.HasSetting(InfoBar.TwoRow)">RunScript(script.skinvariables,run_executebuiltin=special://skin/shortcuts/builtins/skinvariables-infoline-budget.json,use_rules=True,layout=Global_Audio,reserved=Audio,room=8,enable_item=Skin.SetBool(InfoTags.EnableAudioChannels))</onclick>
+            <onclick>RunScript(script.skinvariables,run_executebuiltin=special://skin/shortcuts/builtins/skinvariables-infoline-budget.json,use_rules=True,layout=Global_Audio,reserved=Audio,room=8,enable_item=Skin.SetBool(InfoTags.EnableAudioChannels))</onclick>
         </item>
         <item>
             <label>$LOCALIZE[21446] [••]</label>
@@ -999,8 +963,7 @@
             <icon>special://skin/extras/icons/file-audio.png</icon>
             <property name="disabled">true</property>
             <visible>![Skin.HasSetting(InfoTags.EnableAudioCodec)]</visible>
-            <onclick condition="Skin.HasSetting(InfoBar.TwoRow)">Skin.SetBool(InfoTags.EnableAudioCodec)</onclick>
-            <onclick condition="!Skin.HasSetting(InfoBar.TwoRow)">RunScript(script.skinvariables,run_executebuiltin=special://skin/shortcuts/builtins/skinvariables-infoline-budget.json,use_rules=True,layout=Global_AudioCodec,reserved=AudioCodec,room=7,enable_item=Skin.SetBool(InfoTags.EnableAudioCodec))</onclick>
+            <onclick>RunScript(script.skinvariables,run_executebuiltin=special://skin/shortcuts/builtins/skinvariables-infoline-budget.json,use_rules=True,layout=Global_AudioCodec,reserved=AudioCodec,room=7,enable_item=Skin.SetBool(InfoTags.EnableAudioCodec))</onclick>
         </item>
         <item>
             <label>$LOCALIZE[33067] [••]</label>
@@ -1014,8 +977,7 @@
             <icon>special://skin/extras/icons/star.png</icon>
             <property name="disabled">true</property>
             <visible>![!Skin.HasSetting(InfoLine.episode.DisableStars)]</visible>
-            <onclick condition="Skin.HasSetting(InfoBar.TwoRow)">Skin.Reset(InfoLine.episode.DisableStars)</onclick>
-            <onclick condition="!Skin.HasSetting(InfoBar.TwoRow)">RunScript(script.skinvariables,run_executebuiltin=special://skin/shortcuts/builtins/skinvariables-infoline-budget.json,use_rules=True,layout=episode,reserved=Stars,room=7,enable_item=Skin.Reset(InfoLine.episode.DisableStars))</onclick>
+            <onclick>RunScript(script.skinvariables,run_executebuiltin=special://skin/shortcuts/builtins/skinvariables-infoline-budget.json,use_rules=True,layout=episode,reserved=Stars,room=7,enable_item=Skin.Reset(InfoLine.episode.DisableStars))</onclick>
         </item>
         <item>
             <label>$LOCALIZE[20473] [••]</label>
@@ -1030,9 +992,7 @@
             <icon>special://skin/extras/icons/calendar-day.png</icon>
             <property name="disabled">true</property>
             <visible>![[!Skin.HasSetting(InfoLine.episode.DisablePremiered) + !Skin.HasSetting(InfoLine.episode.EnableYear)]]</visible>
-            <onclick condition="Skin.HasSetting(InfoBar.TwoRow)">Skin.Reset(InfoLine.episode.EnableYear)</onclick>
-            <onclick condition="Skin.HasSetting(InfoBar.TwoRow)">Skin.Reset(InfoLine.episode.DisablePremiered)</onclick>
-            <onclick condition="!Skin.HasSetting(InfoBar.TwoRow)">RunScript(script.skinvariables,run_executebuiltin=special://skin/shortcuts/builtins/skinvariables-infoline-budget.json,use_rules=True,layout=episode,reserved=Premiered|Year,room=7,enable_item=Skin.Reset(InfoLine.episode.DisablePremiered),disable_peer=Skin.Reset(InfoLine.episode.EnableYear))</onclick>
+            <onclick>RunScript(script.skinvariables,run_executebuiltin=special://skin/shortcuts/builtins/skinvariables-infoline-budget.json,use_rules=True,layout=episode,reserved=Premiered|Year,room=7,enable_item=Skin.Reset(InfoLine.episode.DisablePremiered),disable_peer=Skin.Reset(InfoLine.episode.EnableYear))</onclick>
         </item>
         <item>
             <label>$LOCALIZE[562] [•]</label>
@@ -1047,9 +1007,7 @@
             <icon>special://skin/extras/icons/year.png</icon>
             <property name="disabled">true</property>
             <visible>![Skin.HasSetting(InfoLine.episode.EnableYear)]</visible>
-            <onclick condition="Skin.HasSetting(InfoBar.TwoRow)">Skin.SetBool(InfoLine.episode.DisablePremiered)</onclick>
-            <onclick condition="Skin.HasSetting(InfoBar.TwoRow)">Skin.SetBool(InfoLine.episode.EnableYear)</onclick>
-            <onclick condition="!Skin.HasSetting(InfoBar.TwoRow)">RunScript(script.skinvariables,run_executebuiltin=special://skin/shortcuts/builtins/skinvariables-infoline-budget.json,use_rules=True,layout=episode,reserved=Year|Premiered,room=8,enable_item=Skin.SetBool(InfoLine.episode.EnableYear),disable_peer=Skin.SetBool(InfoLine.episode.DisablePremiered))</onclick>
+            <onclick>RunScript(script.skinvariables,run_executebuiltin=special://skin/shortcuts/builtins/skinvariables-infoline-budget.json,use_rules=True,layout=episode,reserved=Year|Premiered,room=8,enable_item=Skin.SetBool(InfoLine.episode.EnableYear),disable_peer=Skin.SetBool(InfoLine.episode.DisablePremiered))</onclick>
         </item>
         <item>
             <label>$LOCALIZE[20074] [••]</label>
@@ -1063,8 +1021,7 @@
             <icon>special://skin/extras/icons/certificate.png</icon>
             <property name="disabled">true</property>
             <visible>![!Skin.HasSetting(InfoLine.episode.DisableMPAA)]</visible>
-            <onclick condition="Skin.HasSetting(InfoBar.TwoRow)">Skin.Reset(InfoLine.episode.DisableMPAA)</onclick>
-            <onclick condition="!Skin.HasSetting(InfoBar.TwoRow)">RunScript(script.skinvariables,run_executebuiltin=special://skin/shortcuts/builtins/skinvariables-infoline-budget.json,use_rules=True,layout=episode,reserved=MPAA,room=7,enable_item=Skin.Reset(InfoLine.episode.DisableMPAA))</onclick>
+            <onclick>RunScript(script.skinvariables,run_executebuiltin=special://skin/shortcuts/builtins/skinvariables-infoline-budget.json,use_rules=True,layout=episode,reserved=MPAA,room=7,enable_item=Skin.Reset(InfoLine.episode.DisableMPAA))</onclick>
         </item>
         <item>
             <label>$LOCALIZE[180] [••]</label>
@@ -1078,8 +1035,7 @@
             <icon>special://skin/extras/icons/clock.png</icon>
             <property name="disabled">true</property>
             <visible>![!Skin.HasSetting(InfoLine.episode.DisableDuration)]</visible>
-            <onclick condition="Skin.HasSetting(InfoBar.TwoRow)">Skin.Reset(InfoLine.episode.DisableDuration)</onclick>
-            <onclick condition="!Skin.HasSetting(InfoBar.TwoRow)">RunScript(script.skinvariables,run_executebuiltin=special://skin/shortcuts/builtins/skinvariables-infoline-budget.json,use_rules=True,layout=episode,reserved=Duration,room=7,enable_item=Skin.Reset(InfoLine.episode.DisableDuration))</onclick>
+            <onclick>RunScript(script.skinvariables,run_executebuiltin=special://skin/shortcuts/builtins/skinvariables-infoline-budget.json,use_rules=True,layout=episode,reserved=Duration,room=7,enable_item=Skin.Reset(InfoLine.episode.DisableDuration))</onclick>
         </item>
     </include>
     <variable name="InfoLine_Units_video_VideoAspect">
@@ -1217,8 +1173,7 @@
             <icon>special://skin/extras/icons/expand.png</icon>
             <property name="disabled">true</property>
             <visible>![Skin.HasSetting(InfoTags.EnableVideoAspect)]</visible>
-            <onclick condition="Skin.HasSetting(InfoBar.TwoRow)">Skin.SetBool(InfoTags.EnableVideoAspect)</onclick>
-            <onclick condition="!Skin.HasSetting(InfoBar.TwoRow)">RunScript(script.skinvariables,run_executebuiltin=special://skin/shortcuts/builtins/skinvariables-infoline-budget.json,use_rules=True,layout=Global_VideoAspect,reserved=VideoAspect,room=8,enable_item=Skin.SetBool(InfoTags.EnableVideoAspect))</onclick>
+            <onclick>RunScript(script.skinvariables,run_executebuiltin=special://skin/shortcuts/builtins/skinvariables-infoline-budget.json,use_rules=True,layout=Global_VideoAspect,reserved=VideoAspect,room=8,enable_item=Skin.SetBool(InfoTags.EnableVideoAspect))</onclick>
         </item>
         <item>
             <label>$LOCALIZE[21445] [•]</label>
@@ -1232,8 +1187,7 @@
             <icon>special://skin/extras/icons/file-video.png</icon>
             <property name="disabled">true</property>
             <visible>![Skin.HasSetting(InfoTags.EnableVideoCodec)]</visible>
-            <onclick condition="Skin.HasSetting(InfoBar.TwoRow)">Skin.SetBool(InfoTags.EnableVideoCodec)</onclick>
-            <onclick condition="!Skin.HasSetting(InfoBar.TwoRow)">RunScript(script.skinvariables,run_executebuiltin=special://skin/shortcuts/builtins/skinvariables-infoline-budget.json,use_rules=True,layout=Global_VideoCodec,reserved=VideoCodec,room=8,enable_item=Skin.SetBool(InfoTags.EnableVideoCodec))</onclick>
+            <onclick>RunScript(script.skinvariables,run_executebuiltin=special://skin/shortcuts/builtins/skinvariables-infoline-budget.json,use_rules=True,layout=Global_VideoCodec,reserved=VideoCodec,room=8,enable_item=Skin.SetBool(InfoTags.EnableVideoCodec))</onclick>
         </item>
         <item>
             <label>$LOCALIZE[20474] [•]</label>
@@ -1247,8 +1201,7 @@
             <icon>special://skin/extras/icons/circle-half-stroke.png</icon>
             <property name="disabled">true</property>
             <visible>![Skin.HasSetting(InfoTags.EnableHDR)]</visible>
-            <onclick condition="Skin.HasSetting(InfoBar.TwoRow)">Skin.SetBool(InfoTags.EnableHDR)</onclick>
-            <onclick condition="!Skin.HasSetting(InfoBar.TwoRow)">RunScript(script.skinvariables,run_executebuiltin=special://skin/shortcuts/builtins/skinvariables-infoline-budget.json,use_rules=True,layout=Global_HDR,reserved=HDR,room=8,enable_item=Skin.SetBool(InfoTags.EnableHDR))</onclick>
+            <onclick>RunScript(script.skinvariables,run_executebuiltin=special://skin/shortcuts/builtins/skinvariables-infoline-budget.json,use_rules=True,layout=Global_HDR,reserved=HDR,room=8,enable_item=Skin.SetBool(InfoTags.EnableHDR))</onclick>
         </item>
         <item>
             <label>$LOCALIZE[14232] [•]</label>
@@ -1262,8 +1215,7 @@
             <icon>special://skin/extras/icons/3dtv.png</icon>
             <property name="disabled">true</property>
             <visible>![Skin.HasSetting(InfoTags.Enable3D)]</visible>
-            <onclick condition="Skin.HasSetting(InfoBar.TwoRow)">Skin.SetBool(InfoTags.Enable3D)</onclick>
-            <onclick condition="!Skin.HasSetting(InfoBar.TwoRow)">RunScript(script.skinvariables,run_executebuiltin=special://skin/shortcuts/builtins/skinvariables-infoline-budget.json,use_rules=True,layout=Global_Stereo,reserved=Stereo,room=8,enable_item=Skin.SetBool(InfoTags.Enable3D))</onclick>
+            <onclick>RunScript(script.skinvariables,run_executebuiltin=special://skin/shortcuts/builtins/skinvariables-infoline-budget.json,use_rules=True,layout=Global_Stereo,reserved=Stereo,room=8,enable_item=Skin.SetBool(InfoTags.Enable3D))</onclick>
         </item>
         <item>
             <label>$LOCALIZE[21444] [•]</label>
@@ -1277,8 +1229,7 @@
             <icon>special://skin/extras/icons/volume-high.png</icon>
             <property name="disabled">true</property>
             <visible>![Skin.HasSetting(InfoTags.EnableAudioChannels)]</visible>
-            <onclick condition="Skin.HasSetting(InfoBar.TwoRow)">Skin.SetBool(InfoTags.EnableAudioChannels)</onclick>
-            <onclick condition="!Skin.HasSetting(InfoBar.TwoRow)">RunScript(script.skinvariables,run_executebuiltin=special://skin/shortcuts/builtins/skinvariables-infoline-budget.json,use_rules=True,layout=Global_Audio,reserved=Audio,room=8,enable_item=Skin.SetBool(InfoTags.EnableAudioChannels))</onclick>
+            <onclick>RunScript(script.skinvariables,run_executebuiltin=special://skin/shortcuts/builtins/skinvariables-infoline-budget.json,use_rules=True,layout=Global_Audio,reserved=Audio,room=8,enable_item=Skin.SetBool(InfoTags.EnableAudioChannels))</onclick>
         </item>
         <item>
             <label>$LOCALIZE[21446] [••]</label>
@@ -1292,8 +1243,7 @@
             <icon>special://skin/extras/icons/file-audio.png</icon>
             <property name="disabled">true</property>
             <visible>![Skin.HasSetting(InfoTags.EnableAudioCodec)]</visible>
-            <onclick condition="Skin.HasSetting(InfoBar.TwoRow)">Skin.SetBool(InfoTags.EnableAudioCodec)</onclick>
-            <onclick condition="!Skin.HasSetting(InfoBar.TwoRow)">RunScript(script.skinvariables,run_executebuiltin=special://skin/shortcuts/builtins/skinvariables-infoline-budget.json,use_rules=True,layout=Global_AudioCodec,reserved=AudioCodec,room=7,enable_item=Skin.SetBool(InfoTags.EnableAudioCodec))</onclick>
+            <onclick>RunScript(script.skinvariables,run_executebuiltin=special://skin/shortcuts/builtins/skinvariables-infoline-budget.json,use_rules=True,layout=Global_AudioCodec,reserved=AudioCodec,room=7,enable_item=Skin.SetBool(InfoTags.EnableAudioCodec))</onclick>
         </item>
         <item>
             <label>$LOCALIZE[33067] [••]</label>
@@ -1307,8 +1257,7 @@
             <icon>special://skin/extras/icons/star.png</icon>
             <property name="disabled">true</property>
             <visible>![!Skin.HasSetting(InfoLine.video.DisableStars)]</visible>
-            <onclick condition="Skin.HasSetting(InfoBar.TwoRow)">Skin.Reset(InfoLine.video.DisableStars)</onclick>
-            <onclick condition="!Skin.HasSetting(InfoBar.TwoRow)">RunScript(script.skinvariables,run_executebuiltin=special://skin/shortcuts/builtins/skinvariables-infoline-budget.json,use_rules=True,layout=video,reserved=Stars,room=7,enable_item=Skin.Reset(InfoLine.video.DisableStars))</onclick>
+            <onclick>RunScript(script.skinvariables,run_executebuiltin=special://skin/shortcuts/builtins/skinvariables-infoline-budget.json,use_rules=True,layout=video,reserved=Stars,room=7,enable_item=Skin.Reset(InfoLine.video.DisableStars))</onclick>
         </item>
         <item>
             <label>$LOCALIZE[20473] [••]</label>
@@ -1323,9 +1272,7 @@
             <icon>special://skin/extras/icons/calendar-day.png</icon>
             <property name="disabled">true</property>
             <visible>![[!Skin.HasSetting(InfoLine.video.DisablePremiered) + !Skin.HasSetting(InfoLine.video.EnableYear)]]</visible>
-            <onclick condition="Skin.HasSetting(InfoBar.TwoRow)">Skin.Reset(InfoLine.video.EnableYear)</onclick>
-            <onclick condition="Skin.HasSetting(InfoBar.TwoRow)">Skin.Reset(InfoLine.video.DisablePremiered)</onclick>
-            <onclick condition="!Skin.HasSetting(InfoBar.TwoRow)">RunScript(script.skinvariables,run_executebuiltin=special://skin/shortcuts/builtins/skinvariables-infoline-budget.json,use_rules=True,layout=video,reserved=Premiered|Year,room=7,enable_item=Skin.Reset(InfoLine.video.DisablePremiered),disable_peer=Skin.Reset(InfoLine.video.EnableYear))</onclick>
+            <onclick>RunScript(script.skinvariables,run_executebuiltin=special://skin/shortcuts/builtins/skinvariables-infoline-budget.json,use_rules=True,layout=video,reserved=Premiered|Year,room=7,enable_item=Skin.Reset(InfoLine.video.DisablePremiered),disable_peer=Skin.Reset(InfoLine.video.EnableYear))</onclick>
         </item>
         <item>
             <label>$LOCALIZE[562] [•]</label>
@@ -1340,9 +1287,7 @@
             <icon>special://skin/extras/icons/year.png</icon>
             <property name="disabled">true</property>
             <visible>![Skin.HasSetting(InfoLine.video.EnableYear)]</visible>
-            <onclick condition="Skin.HasSetting(InfoBar.TwoRow)">Skin.SetBool(InfoLine.video.DisablePremiered)</onclick>
-            <onclick condition="Skin.HasSetting(InfoBar.TwoRow)">Skin.SetBool(InfoLine.video.EnableYear)</onclick>
-            <onclick condition="!Skin.HasSetting(InfoBar.TwoRow)">RunScript(script.skinvariables,run_executebuiltin=special://skin/shortcuts/builtins/skinvariables-infoline-budget.json,use_rules=True,layout=video,reserved=Year|Premiered,room=8,enable_item=Skin.SetBool(InfoLine.video.EnableYear),disable_peer=Skin.SetBool(InfoLine.video.DisablePremiered))</onclick>
+            <onclick>RunScript(script.skinvariables,run_executebuiltin=special://skin/shortcuts/builtins/skinvariables-infoline-budget.json,use_rules=True,layout=video,reserved=Year|Premiered,room=8,enable_item=Skin.SetBool(InfoLine.video.EnableYear),disable_peer=Skin.SetBool(InfoLine.video.DisablePremiered))</onclick>
         </item>
         <item>
             <label>$LOCALIZE[20074] [••]</label>
@@ -1356,8 +1301,7 @@
             <icon>special://skin/extras/icons/certificate.png</icon>
             <property name="disabled">true</property>
             <visible>![!Skin.HasSetting(InfoLine.video.DisableMPAA)]</visible>
-            <onclick condition="Skin.HasSetting(InfoBar.TwoRow)">Skin.Reset(InfoLine.video.DisableMPAA)</onclick>
-            <onclick condition="!Skin.HasSetting(InfoBar.TwoRow)">RunScript(script.skinvariables,run_executebuiltin=special://skin/shortcuts/builtins/skinvariables-infoline-budget.json,use_rules=True,layout=video,reserved=MPAA,room=7,enable_item=Skin.Reset(InfoLine.video.DisableMPAA))</onclick>
+            <onclick>RunScript(script.skinvariables,run_executebuiltin=special://skin/shortcuts/builtins/skinvariables-infoline-budget.json,use_rules=True,layout=video,reserved=MPAA,room=7,enable_item=Skin.Reset(InfoLine.video.DisableMPAA))</onclick>
         </item>
         <item>
             <label>$LOCALIZE[180] [••]</label>
@@ -1371,8 +1315,7 @@
             <icon>special://skin/extras/icons/clock.png</icon>
             <property name="disabled">true</property>
             <visible>![!Skin.HasSetting(InfoLine.video.DisableDuration)]</visible>
-            <onclick condition="Skin.HasSetting(InfoBar.TwoRow)">Skin.Reset(InfoLine.video.DisableDuration)</onclick>
-            <onclick condition="!Skin.HasSetting(InfoBar.TwoRow)">RunScript(script.skinvariables,run_executebuiltin=special://skin/shortcuts/builtins/skinvariables-infoline-budget.json,use_rules=True,layout=video,reserved=Duration,room=7,enable_item=Skin.Reset(InfoLine.video.DisableDuration))</onclick>
+            <onclick>RunScript(script.skinvariables,run_executebuiltin=special://skin/shortcuts/builtins/skinvariables-infoline-budget.json,use_rules=True,layout=video,reserved=Duration,room=7,enable_item=Skin.Reset(InfoLine.video.DisableDuration))</onclick>
         </item>
     </include>
     <variable name="InfoLine_Units_Global_VideoAspect">

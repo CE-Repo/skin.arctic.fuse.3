@@ -1,30 +1,6 @@
 {
-    "description": "Reserve the selected cost in each affected line. Exclude the selected item and its exclusive peer, then evict the suffix of local units beyond the remaining room. Each unit carries an idempotent disable action.",
-    "infolabels": {
-        "units": "$VAR[InfoLine_Units_{layout}]"
-    },
-    "regex": {
-        "ordered": {
-            "input": "{units}",
-            "regex": "\\s+",
-            "value": ""
-        },
-        "candidates": {
-            "input": "{ordered}",
-            "regex": "\\b(?:{reserved})=[^|/]+\\|\\|",
-            "value": ""
-        },
-        "overflow": {
-            "input": "{candidates}",
-            "regex": "(?:^|/)(?:[^|/]+\\|\\|){{0,{room}}}",
-            "value": ""
-        },
-        "evictions": {
-            "input": "{overflow}",
-            "regex": "\\b\\w+=",
-            "value": ""
-        }
-    },
+    "description": "U3k: the info line has no unit limit. Turn off the exclusive peer (if any) and turn on the selected item, without evicting other items. Replaces the upstream budget rules; keep the parameters (layout, reserved, room, enable_item, disable_peer) compatible with the generated Includes_InfoLine.xml.",
+    "infolabels": {},
     "actions": [
         [
             {
@@ -34,6 +10,6 @@
                 "value": "{disable_peer}"
             }
         ],
-        "route=run_executebuiltin={evictions}{enable_item}"
+        "{enable_item}"
     ]
 }

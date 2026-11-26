@@ -1,16 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <includes>
-	<include name="Info_Line_One_Row">
-		<height>60</height>
-	</include>
-
-	<include name="Info_Line_Two_Row">
-		<height>50</height>
-	</include>
-
 	<include name="Info_Line_Height_U3k">
-		<include condition="!Skin.HasSetting(InfoBar.TwoRow)">Info_Line_One_Row</include>
-		<include condition="Skin.HasSetting(InfoBar.TwoRow)">Info_Line_Two_Row</include>
+		<height>50</height>
 	</include>
 
 	<variable name="ArtworkStyle">
@@ -134,20 +125,6 @@
 
 	<include name="DialogCustom_U3k_Items">
 		<include content="Settings_Label">
-			<param name="id">8001</param>
-			<param name="dialog">true</param>
-			<label>$LOCALIZE[19033]</label>
-		</include>
-		<include content="Settings_Button">
-			<param name="dialog">true</param>
-			<param name="id">8003</param>
-			<param name="control">radiobutton</param>
-			<label>$LOCALIZE[31995]</label>
-			<onclick>Skin.ToggleSetting(InfoBar.TwoRow)</onclick>
-			<selected>Skin.HasSetting(InfoBar.TwoRow)</selected>
-			<include>DialogCustom_Reload_1118</include>
-		</include>
-		<include content="Settings_Label">
 			<param name="id">8005</param>
 			<param name="dialog">true</param>
 			<label>$LOCALIZE[31434]</label>
@@ -204,49 +181,8 @@
 
     <include name="Info_Line_Content_U3k">
         <definition>
-            <!-- One row -->
             <control type="group">
-                <visible>$PARAM[visible] + !Skin.HasSetting(InfoBar.TwoRow)</visible>
-                <visible>[$PARAM[player] + !VideoPlayer.Content(livetv)] | [!$PARAM[player] + [String.IsEqual($PARAM[dbtype],movie) | String.IsEqual($PARAM[dbtype],tvshow) | String.IsEqual($PARAM[dbtype],season) | String.IsEqual($PARAM[dbtype],set) | String.IsEqual($PARAM[dbtype],episode) | String.IsEqual($PARAM[dbtype],video)]]</visible>
-                <left>$PARAM[left]</left>
-                <height>80</height>
-                <control type="grouplist">
-                    <hitrect x="0" y="0" w="0" h="0" />
-                    <orientation>horizontal</orientation>
-                    <itemgap>10</itemgap>
-                    <left>-20</left>
-                    <control type="group" description="Avoid grouplist chop with spacer">
-                        <left>-10</left>
-                        <width>20</width>
-                    </control>
-                    <include content="Info_Line_Media_U3k">
-                        <param name="colordiffuse">$PARAM[colordiffuse]</param>
-                        <param name="source">$PARAM[source]</param>
-                        <param name="end">$PARAM[end]</param>
-                        <param name="dbtype">$PARAM[dbtype]</param>
-                        <param name="player">$PARAM[player]</param>
-                        <param name="hours">$PARAM[hours]</param>
-                        <param name="minutes">$PARAM[minutes]</param>
-                        <param name="stereo">$PARAM[stereo]</param>
-                        <param name="resolution">Info_Line_VideoQuality_Resolution</param>
-                        <param name="hdr">Info_Line_VideoQuality_HDRType_Short_U3k</param>
-                    </include>
-                    <include content="Info_Line_Details_U3k">
-                        <param name="colordiffuse">$PARAM[colordiffuse]</param>
-                        <param name="source">$PARAM[source]</param>
-                        <param name="end">$PARAM[end]</param>
-                        <param name="dbtype">$PARAM[dbtype]</param>
-                        <param name="player">$PARAM[player]</param>
-                        <param name="hours">$PARAM[hours]</param>
-                        <param name="minutes">$PARAM[minutes]</param>
-                        <param name="stereo">$PARAM[stereo]</param>
-                    </include>
-                </control>
-            </control>
-
-            <!-- Two rows -->
-            <control type="group">
-                <visible>$PARAM[visible] + Skin.HasSetting(InfoBar.TwoRow)</visible>
+                <visible>$PARAM[visible]</visible>
                 <visible>[$PARAM[player] + !VideoPlayer.Content(livetv)] | [!$PARAM[player] + [String.IsEqual($PARAM[dbtype],movie) | String.IsEqual($PARAM[dbtype],tvshow) | String.IsEqual($PARAM[dbtype],season) | String.IsEqual($PARAM[dbtype],set) | String.IsEqual($PARAM[dbtype],episode) | String.IsEqual($PARAM[dbtype],video)]]</visible>
                 <left>$PARAM[left]</left>
                 <height>105</height>
@@ -284,7 +220,6 @@
                         <width>20</width>
                     </control>
                     <include content="Info_Line_Details_U3k">
-                        <param name="outline">Skin.HasSetting(InfoTags.EnablePills)</param>
                         <param name="colordiffuse">$PARAM[colordiffuse]</param>
                         <param name="source">$PARAM[source]</param>
                         <param name="end">$PARAM[end]</param>
@@ -299,7 +234,7 @@
         </definition>
     </include>
 
-    <!-- Video / audio pills. resolution + hdr: include names for short (one row) or long (two rows) labels -->
+    <!-- Video / audio pills (first row of the info line). resolution + hdr: include names for the labels -->
     <include name="Info_Line_Media_U3k">
         <definition>
             <include content="$PARAM[resolution]">
@@ -362,7 +297,7 @@
 
     <!-- Stars + labels/tags. Labels and tags come from upstream, so the Info line picker settings still apply -->
     <include name="Info_Line_Details_U3k">
-        <param name="outline">false</param>
+        <param name="outline">Skin.HasSetting(InfoTags.EnablePills)</param>
         <definition>
             <include content="InfoLine_Stars_Outline_U3k" condition="$PARAM[outline]">
                 <param name="colordiffuse">$PARAM[colordiffuse]</param>
@@ -442,25 +377,6 @@
                     <itemgap>-16</itemgap>
                 </include>
             </control>
-        </definition>
-    </include>
-
-    <!-- Short HDR labels for one row (upstream DV / HDR10 / HLG + SDR) -->
-    <include name="Info_Line_VideoQuality_HDRType_Short_U3k">
-        <param name="visible">true</param>
-        <definition>
-            <include content="Info_Line_VideoQuality_HDRType">
-                <param name="colordiffuse">$PARAM[colordiffuse]</param>
-                <param name="source">$PARAM[source]</param>
-                <param name="end">$PARAM[end]</param>
-                <param name="visible">$PARAM[visible]</param>
-            </include>
-            <include content="Info_Line_Pill_Text">
-                <param name="colordiffuse">$PARAM[colordiffuse]</param>
-                <param name="label">SDR</param>
-                <param name="visible">$PARAM[visible] + String.IsEmpty($PARAM[source]HdrType$PARAM[end]) + !String.IsEmpty($PARAM[source]VideoResolution$PARAM[end])</param>
-                <param name="width">auto</param>
-            </include>
         </definition>
     </include>
 
@@ -579,13 +495,7 @@
             <include content="Info_Line_Pill_Text">
                 <param name="colordiffuse">$PARAM[colordiffuse]</param>
                 <param name="label">Dolby Digital</param>
-                <param name="visible">$PARAM[visible] + !Skin.HasSetting(InfoBar.TwoRow) + [String.IsEqual($PARAM[source]AudioCodec$PARAM[end],ac3) | String.IsEqual($PARAM[source]AudioCodec$PARAM[end],dolbydigital)]</param>
-                <param name="width">auto</param>
-            </include>
-            <include content="Info_Line_Pill_Text">
-                <param name="colordiffuse">$PARAM[colordiffuse]</param>
-                <param name="label">Dolby Digital</param>
-                <param name="visible">$PARAM[visible] + Skin.HasSetting(InfoBar.TwoRow) + [String.IsEqual($PARAM[source]AudioCodec$PARAM[end],ac3) | String.IsEqual($PARAM[source]AudioCodec$PARAM[end],dolbydigital)] + ![Skin.HasSetting(InfoTags.EnableHDR) + String.IsEqual($PARAM[source]HdrType$PARAM[end],dolbyvision)]</param>
+                <param name="visible">$PARAM[visible] + [String.IsEqual($PARAM[source]AudioCodec$PARAM[end],ac3) | String.IsEqual($PARAM[source]AudioCodec$PARAM[end],dolbydigital)] + ![Skin.HasSetting(InfoTags.EnableHDR) + String.IsEqual($PARAM[source]HdrType$PARAM[end],dolbyvision)]</param>
                 <param name="width">auto</param>
             </include>
             <include content="Info_Line_Pill_Text">
@@ -602,14 +512,8 @@
             </include>
             <include content="Info_Line_Pill_Text">
                 <param name="colordiffuse">$PARAM[colordiffuse]</param>
-                <param name="label">DTS-HD MA</param>
-                <param name="visible">$PARAM[visible] + !Skin.HasSetting(InfoBar.TwoRow) + String.IsEqual($PARAM[source]AudioCodec$PARAM[end],dtshd_ma)</param>
-                <param name="width">auto</param>
-            </include>
-            <include content="Info_Line_Pill_Text">
-                <param name="colordiffuse">$PARAM[colordiffuse]</param>
                 <param name="label">DTS-HD Master Audio</param>
-                <param name="visible">$PARAM[visible] + Skin.HasSetting(InfoBar.TwoRow) + String.IsEqual($PARAM[source]AudioCodec$PARAM[end],dtshd_ma)</param>
+                <param name="visible">$PARAM[visible] + String.IsEqual($PARAM[source]AudioCodec$PARAM[end],dtshd_ma)</param>
                 <param name="width">auto</param>
             </include>
             <include content="Info_Line_Pill_Text">
@@ -632,26 +536,14 @@
             </include>
             <include content="Info_Line_Pill_Text">
                 <param name="colordiffuse">$PARAM[colordiffuse]</param>
-                <param name="label">Dolby Digital+</param>
-                <param name="visible">$PARAM[visible] + !Skin.HasSetting(InfoBar.TwoRow) + String.IsEqual($PARAM[source]AudioCodec$PARAM[end],eac3)</param>
-                <param name="width">auto</param>
-            </include>
-            <include content="Info_Line_Pill_Text">
-                <param name="colordiffuse">$PARAM[colordiffuse]</param>
                 <param name="label">Dolby Digital Plus</param>
-                <param name="visible">$PARAM[visible] + Skin.HasSetting(InfoBar.TwoRow) + String.IsEqual($PARAM[source]AudioCodec$PARAM[end],eac3) + ![Skin.HasSetting(InfoTags.EnableHDR) + String.IsEqual($PARAM[source]HdrType$PARAM[end],dolbyvision)]</param>
-                <param name="width">auto</param>
-            </include>
-            <include content="Info_Line_Pill_Text">
-                <param name="colordiffuse">$PARAM[colordiffuse]</param>
-                <param name="label">Dolby Atmos</param>
-                <param name="visible">$PARAM[visible] + !Skin.HasSetting(InfoBar.TwoRow) + String.IsEqual($PARAM[source]AudioCodec$PARAM[end],eac3_ddp_atmos)</param>
+                <param name="visible">$PARAM[visible] + String.IsEqual($PARAM[source]AudioCodec$PARAM[end],eac3) + ![Skin.HasSetting(InfoTags.EnableHDR) + String.IsEqual($PARAM[source]HdrType$PARAM[end],dolbyvision)]</param>
                 <param name="width">auto</param>
             </include>
             <include content="Info_Line_Pill_Text">
                 <param name="colordiffuse">$PARAM[colordiffuse]</param>
                 <param name="label">Dolby Digital Plus (Atmos)</param>
-                <param name="visible">$PARAM[visible] + Skin.HasSetting(InfoBar.TwoRow) + String.IsEqual($PARAM[source]AudioCodec$PARAM[end],eac3_ddp_atmos) + ![Skin.HasSetting(InfoTags.EnableHDR) + String.IsEqual($PARAM[source]HdrType$PARAM[end],dolbyvision)]</param>
+                <param name="visible">$PARAM[visible] + String.IsEqual($PARAM[source]AudioCodec$PARAM[end],eac3_ddp_atmos) + ![Skin.HasSetting(InfoTags.EnableHDR) + String.IsEqual($PARAM[source]HdrType$PARAM[end],dolbyvision)]</param>
                 <param name="width">auto</param>
             </include>
             <include content="Info_Line_Pill_Text">
@@ -687,25 +579,13 @@
             <include content="Info_Line_Pill_Text">
                 <param name="colordiffuse">$PARAM[colordiffuse]</param>
                 <param name="label">Dolby TrueHD</param>
-                <param name="visible">$PARAM[visible] + !Skin.HasSetting(InfoBar.TwoRow) + String.IsEqual($PARAM[source]AudioCodec$PARAM[end],truehd)</param>
-                <param name="width">auto</param>
-            </include>
-            <include content="Info_Line_Pill_Text">
-                <param name="colordiffuse">$PARAM[colordiffuse]</param>
-                <param name="label">Dolby TrueHD</param>
-                <param name="visible">$PARAM[visible] + Skin.HasSetting(InfoBar.TwoRow) + String.IsEqual($PARAM[source]AudioCodec$PARAM[end],truehd) + ![Skin.HasSetting(InfoTags.EnableHDR) + String.IsEqual($PARAM[source]HdrType$PARAM[end],dolbyvision)]</param>
-                <param name="width">auto</param>
-            </include>
-            <include content="Info_Line_Pill_Text">
-                <param name="colordiffuse">$PARAM[colordiffuse]</param>
-                <param name="label">Dolby Atmos</param>
-                <param name="visible">$PARAM[visible] + !Skin.HasSetting(InfoBar.TwoRow) + String.IsEqual($PARAM[source]AudioCodec$PARAM[end],truehd_atmos)</param>
+                <param name="visible">$PARAM[visible] + String.IsEqual($PARAM[source]AudioCodec$PARAM[end],truehd) + ![Skin.HasSetting(InfoTags.EnableHDR) + String.IsEqual($PARAM[source]HdrType$PARAM[end],dolbyvision)]</param>
                 <param name="width">auto</param>
             </include>
             <include content="Info_Line_Pill_Text">
                 <param name="colordiffuse">$PARAM[colordiffuse]</param>
                 <param name="label">Dolby TrueHD (Atmos)</param>
-                <param name="visible">$PARAM[visible] + Skin.HasSetting(InfoBar.TwoRow) + String.IsEqual($PARAM[source]AudioCodec$PARAM[end],truehd_atmos) + ![Skin.HasSetting(InfoTags.EnableHDR) + String.IsEqual($PARAM[source]HdrType$PARAM[end],dolbyvision)]</param>
+                <param name="visible">$PARAM[visible] + String.IsEqual($PARAM[source]AudioCodec$PARAM[end],truehd_atmos) + ![Skin.HasSetting(InfoTags.EnableHDR) + String.IsEqual($PARAM[source]HdrType$PARAM[end],dolbyvision)]</param>
                 <param name="width">auto</param>
             </include>
             <include content="Info_Line_Pill_Text">
