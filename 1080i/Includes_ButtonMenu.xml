@@ -394,7 +394,7 @@
                 <oninfo>$PARAM[onback]</oninfo>
                 <onback>$PARAM[onback]</onback>
                 <onclick>Action(Back)</onclick>
-                <onclick>ReplaceWindow(settings)</onclick>
+                <onclick>ActivateWindow(settings)</onclick>
                 <include>defs_dialog_button</include>
             </control>
         </include>
