@@ -1,9 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <includes>
-	<include name="Info_Line_Height_U3k">
-		<height>50</height>
-	</include>
-
 	<variable name="ArtworkStyle">
 		<value condition="String.IsEqual(Skin.String(OSD.ArtworkStyle),DiscArt)">$LOCALIZE[427]</value>
 		<value condition="String.IsEqual(Skin.String(OSD.ArtworkStyle),VHSArt)">VHS</value>
