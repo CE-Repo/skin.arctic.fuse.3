@@ -730,49 +730,19 @@
         </definition>
     </include>
 
-    <!-- Duration label. With pills (info tags) the units are uppercase (STD. / MIN.) to match the other tags -->
     <include name="InfoLine_Duration">
-        <definition>
-            <include content="InfoLine_Duration_Items" condition="Skin.HasSetting(InfoTags.EnablePills)">
-                <param name="case_start">[UPPERCASE]</param>
-                <param name="case_end">[/UPPERCASE]</param>
-                <param name="colordiffuse">$PARAM[colordiffuse]</param>
-                <param name="font">$PARAM[font]</param>
-                <param name="item">$PARAM[item]</param>
-                <param name="visible">$PARAM[visible]</param>
-                <param name="source">$PARAM[source]</param>
-                <param name="end">$PARAM[end]</param>
-                <param name="hours">$PARAM[hours]</param>
-                <param name="minutes">$PARAM[minutes]</param>
-            </include>
-            <include content="InfoLine_Duration_Items" condition="!Skin.HasSetting(InfoTags.EnablePills)">
-                <param name="case_start" />
-                <param name="case_end" />
-                <param name="colordiffuse">$PARAM[colordiffuse]</param>
-                <param name="font">$PARAM[font]</param>
-                <param name="item">$PARAM[item]</param>
-                <param name="visible">$PARAM[visible]</param>
-                <param name="source">$PARAM[source]</param>
-                <param name="end">$PARAM[end]</param>
-                <param name="hours">$PARAM[hours]</param>
-                <param name="minutes">$PARAM[minutes]</param>
-            </include>
-        </definition>
-    </include>
-
-    <include name="InfoLine_Duration_Items">
         <definition>
             <include content="$PARAM[item]">
                 <param name="colordiffuse">$PARAM[colordiffuse]</param>
                 <param name="font">$PARAM[font]</param>
                 <param name="visible">$PARAM[visible] + !String.IsEmpty($PARAM[source]Duration$PARAM[end]) + !Integer.IsEqual($PARAM[hours],0)</param>
-                <param name="label">$PARAM[case_start]$INFO[$PARAM[hours],, $LOCALIZE[31074] ]$INFO[$PARAM[minutes],, $LOCALIZE[31073]]$PARAM[case_end]</param>
+                <param name="label">$INFO[$PARAM[hours],, $LOCALIZE[31074] ]$INFO[$PARAM[minutes],, $LOCALIZE[31073]]</param>
             </include>
             <include content="$PARAM[item]">
                 <param name="colordiffuse">$PARAM[colordiffuse]</param>
                 <param name="font">$PARAM[font]</param>
                 <param name="visible">$PARAM[visible] + !String.IsEmpty($PARAM[source]Duration$PARAM[end]) + Integer.IsEqual($PARAM[hours],0)</param>
-                <param name="label">$PARAM[case_start]$INFO[$PARAM[minutes],, $LOCALIZE[31073]]$PARAM[case_end]</param>
+                <param name="label">$INFO[$PARAM[minutes],, $LOCALIZE[31073]]</param>
             </include>
         </definition>
     </include>
