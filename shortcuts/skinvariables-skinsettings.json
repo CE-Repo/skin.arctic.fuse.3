@@ -1150,6 +1150,40 @@
                 "$LOCALIZE[31103]"
             ]
         },
+        "playback_osd_artwork": {
+            "label": "$LOCALIZE[39123] $LOCALIZE[736]",
+            "control": "button",
+            "group": "playback_osd",
+            "description": "",
+            "label2": "$VAR[ArtworkStyle]",
+            "onclick": [
+                {
+                    "action": "Skin.SetString(OSD.ArtworkStyle,DiscArt)",
+                    "condition": "String.IsEmpty(Skin.String(OSD.ArtworkStyle)) | String.IsEqual(Skin.String(OSD.ArtworkStyle),Off)"
+                },
+                {
+                    "action": "Skin.SetString(OSD.ArtworkStyle,VHSArt)",
+                    "condition": "String.IsEqual(Skin.String(OSD.ArtworkStyle),DiscArt)"
+                },
+                {
+                    "action": "Skin.SetString(OSD.ArtworkStyle,Off)",
+                    "condition": "String.IsEqual(Skin.String(OSD.ArtworkStyle),VHSArt)"
+                }
+            ]
+        },
+        "playback_osd_discart_rotate": {
+            "label": "$LOCALIZE[35227]",
+            "control": "radiobutton",
+            "group": "playback_osd",
+            "description": "",
+            "selected": "!Skin.HasSetting(OSD.DiscArtNoRotate)",
+            "visible": "String.IsEqual(Skin.String(OSD.ArtworkStyle),DiscArt)",
+            "onclick": [
+                {
+                    "action": "Skin.ToggleSetting(OSD.DiscArtNoRotate)"
+                }
+            ]
+        },
         "playback_time_display": {
             "label": "$LOCALIZE[31355]",
             "control": "button",
