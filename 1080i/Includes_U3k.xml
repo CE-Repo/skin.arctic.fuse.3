@@ -284,6 +284,7 @@
                         <width>20</width>
                     </control>
                     <include content="Info_Line_Details_U3k">
+                        <param name="outline">Skin.HasSetting(InfoTags.EnablePills)</param>
                         <param name="colordiffuse">$PARAM[colordiffuse]</param>
                         <param name="source">$PARAM[source]</param>
                         <param name="end">$PARAM[end]</param>
@@ -361,8 +362,15 @@
 
     <!-- Stars + labels/tags. Labels and tags come from upstream, so the Info line picker settings still apply -->
     <include name="Info_Line_Details_U3k">
+        <param name="outline">false</param>
         <definition>
-            <include content="InfoLine_Stars">
+            <include content="InfoLine_Stars_Outline_U3k" condition="$PARAM[outline]">
+                <param name="colordiffuse">$PARAM[colordiffuse]</param>
+                <param name="source">$PARAM[source]</param>
+                <param name="end">$PARAM[end]</param>
+                <param name="visible">[[[[!$PARAM[player] + String.IsEqual($PARAM[dbtype],movie)] | [$PARAM[player] + VideoPlayer.Content(movies)]] + !Skin.HasSetting(InfoLine.movie.DisableStars)] | [!$PARAM[player] + String.IsEqual($PARAM[dbtype],tvshow) + !Skin.HasSetting(InfoLine.tvshow.DisableStars)] | [!$PARAM[player] + String.IsEqual($PARAM[dbtype],season) + !Skin.HasSetting(InfoLine.season.DisableStars)] | [!$PARAM[player] + String.IsEqual($PARAM[dbtype],set) + !Skin.HasSetting(InfoLine.set.DisableStars)] | [[[!$PARAM[player] + String.IsEqual($PARAM[dbtype],episode)] | [$PARAM[player] + VideoPlayer.Content(episodes)]] + !Skin.HasSetting(InfoLine.episode.DisableStars)] | [[[!$PARAM[player] + String.IsEqual($PARAM[dbtype],video)] | [$PARAM[player] + !VideoPlayer.Content(movies) + !VideoPlayer.Content(episodes) + !VideoPlayer.Content(livetv)]] + !Skin.HasSetting(InfoLine.video.DisableStars)]]</param>
+            </include>
+            <include content="InfoLine_Stars" condition="!$PARAM[outline]">
                 <param name="colordiffuse">$PARAM[colordiffuse]</param>
                 <param name="source">$PARAM[source]</param>
                 <param name="end">$PARAM[end]</param>
@@ -387,6 +395,50 @@
                 <param name="hours">$PARAM[hours]</param>
                 <param name="minutes">$PARAM[minutes]</param>
             </include>
+        </definition>
+    </include>
+
+    <!-- Star rating drawn like the outlined info line tags (date, MPAA, duration): the _lines font draws the tag outline
+         around six em spaces (about the width of the filled star pill) and the stars sit on top. Used by the two row info line with pills -->
+    <include name="InfoLine_Stars_Outline_U3k">
+        <definition>
+            <include content="Info_Line_StarRating_Outline_U3k">
+                <param name="colordiffuse">$PARAM[colordiffuse]</param>
+                <param name="rating">$PARAM[source]Rating$PARAM[end]</param>
+                <param name="visible">$PARAM[visible] + !String.IsEmpty($PARAM[source]Rating$PARAM[end]) + String.IsEmpty($PARAM[source]UserRating$PARAM[end])</param>
+            </include>
+            <include content="Info_Line_StarRating_Outline_U3k">
+                <param name="colordiffuse">$PARAM[colordiffuse]</param>
+                <param name="rating">$PARAM[source]UserRating$PARAM[end]</param>
+                <param name="visible">$PARAM[visible] + !String.IsEmpty($PARAM[source]UserRating$PARAM[end])</param>
+            </include>
+        </definition>
+    </include>
+
+    <include name="Info_Line_StarRating_Outline_U3k">
+        <param name="font">font_tiny_bold_lines</param>
+        <definition>
+            <control type="group">
+                <width>148</width>
+                <visible>$PARAM[visible]</visible>
+                <control type="label">
+                    <label>&#x2002;&#x2003;&#x2003;&#x2003;&#x2003;&#x2003;&#x2003;&#x2000;</label>
+                    <textcolor>$PARAM[colordiffuse]_90</textcolor>
+                    <width>auto</width>
+                    <aligny>center</aligny>
+                    <font>$PARAM[font]</font>
+                </control>
+                <include content="Info_StarRating">
+                    <param name="colordiffuse">$PARAM[colordiffuse]_90</param>
+                    <param name="rating">$PARAM[rating]</param>
+                    <param name="size">40</param>
+                    <height>40</height>
+                    <width>136</width>
+                    <left>6</left>
+                    <centertop>50%</centertop>
+                    <itemgap>-16</itemgap>
+                </include>
+            </control>
         </definition>
     </include>
 
