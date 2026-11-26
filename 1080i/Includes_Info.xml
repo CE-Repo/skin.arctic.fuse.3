@@ -639,7 +639,7 @@
         <param name="listitem">ListItem</param>
         <param name="player">false</param>
         <definition>
-            <include content="InfoLine_Content">
+            <include content="InfoLine_Content_TwoRow">
                 <param name="left">$PARAM[left]</param>
                 <param name="visible">$PARAM[visible]</param>
                 <param name="colordiffuse">$PARAM[colordiffuse]</param>
@@ -710,6 +710,326 @@
                     </include>
                 </control>
             </control>
+        </definition>
+    </include>
+
+    <!-- Two row info line (Info_Line): media pills in the first row, stars and labels / tags in the second -->
+    <include name="InfoLine_Content_TwoRow">
+        <definition>
+            <control type="group">
+                <visible>$PARAM[visible]</visible>
+                <visible>[$PARAM[player] + !VideoPlayer.Content(livetv)] | [!$PARAM[player] + [String.IsEqual($PARAM[dbtype],movie) | String.IsEqual($PARAM[dbtype],tvshow) | String.IsEqual($PARAM[dbtype],season) | String.IsEqual($PARAM[dbtype],set) | String.IsEqual($PARAM[dbtype],episode) | String.IsEqual($PARAM[dbtype],video)]]</visible>
+                <left>$PARAM[left]</left>
+                <height>105</height>
+                <control type="grouplist">
+                    <hitrect x="0" y="0" w="0" h="0" />
+                    <orientation>horizontal</orientation>
+                    <itemgap>10</itemgap>
+                    <left>-20</left>
+                    <centertop>35</centertop>
+                    <control type="group" description="Avoid grouplist chop with spacer">
+                        <left>-10</left>
+                        <width>20</width>
+                    </control>
+                    <include content="InfoLine_Media">
+                        <param name="colordiffuse">$PARAM[colordiffuse]</param>
+                        <param name="source">$PARAM[source]</param>
+                        <param name="end">$PARAM[end]</param>
+                        <param name="dbtype">$PARAM[dbtype]</param>
+                        <param name="player">$PARAM[player]</param>
+                        <param name="hours">$PARAM[hours]</param>
+                        <param name="minutes">$PARAM[minutes]</param>
+                        <param name="stereo">$PARAM[stereo]</param>
+                    </include>
+                </control>
+                <control type="grouplist">
+                    <hitrect x="0" y="0" w="0" h="0" />
+                    <orientation>horizontal</orientation>
+                    <itemgap>10</itemgap>
+                    <left>-20</left>
+                    <centertop>75</centertop>
+                    <control type="group" description="Avoid grouplist chop with spacer">
+                        <left>-10</left>
+                        <width>20</width>
+                    </control>
+                    <include content="InfoLine_Details">
+                        <param name="colordiffuse">$PARAM[colordiffuse]</param>
+                        <param name="source">$PARAM[source]</param>
+                        <param name="end">$PARAM[end]</param>
+                        <param name="dbtype">$PARAM[dbtype]</param>
+                        <param name="player">$PARAM[player]</param>
+                        <param name="hours">$PARAM[hours]</param>
+                        <param name="minutes">$PARAM[minutes]</param>
+                        <param name="stereo">$PARAM[stereo]</param>
+                    </include>
+                </control>
+            </control>
+        </definition>
+    </include>
+
+    <!-- Video / audio pills (first row of the info line): the upstream pills (resolution, InfoLine_Badges order and labels)
+         except the audio codec, which uses readable names (Info_Line_AudioCodec_Label) instead of the raw codec id. Stars are in the second row -->
+    <include name="InfoLine_Media">
+        <definition>
+            <include content="Info_Line_VideoQuality_Resolution">
+                <param name="colordiffuse">$PARAM[colordiffuse]</param>
+                <param name="playable">[[!$PARAM[player] + [String.IsEqual($PARAM[dbtype],movie) | String.IsEqual($PARAM[dbtype],episode) | String.IsEqual($PARAM[dbtype],video)]] | [$PARAM[player] + !VideoPlayer.Content(livetv)]]</param>
+                <param name="is_8k">[Integer.IsGreater($PARAM[source]VideoResolution$PARAM[end],2160) | String.IsEqual($PARAM[source]VideoResolution$PARAM[end],8K)]</param>
+                <param name="is_4k">[Integer.IsGreater($PARAM[source]VideoResolution$PARAM[end],1080) | String.IsEqual($PARAM[source]VideoResolution$PARAM[end],4K)]</param>
+                <param name="is_fd">[Integer.IsGreater($PARAM[source]VideoResolution$PARAM[end],720)]</param>
+                <param name="is_hd">[Integer.IsEqual($PARAM[source]VideoResolution$PARAM[end],720)]</param>
+                <param name="is_sd">[!String.IsEmpty($PARAM[source]VideoResolution$PARAM[end])]</param>
+            </include>
+            <include content="InfoLine_Media_Items">
+                <param name="colordiffuse">$PARAM[colordiffuse]</param>
+                <param name="source">$PARAM[source]</param>
+                <param name="end">$PARAM[end]</param>
+                <param name="stereo">$PARAM[stereo]</param>
+                <param name="playable">[[!$PARAM[player] + [String.IsEqual($PARAM[dbtype],movie) | String.IsEqual($PARAM[dbtype],episode) | String.IsEqual($PARAM[dbtype],video)]] | [$PARAM[player] + !VideoPlayer.Content(livetv)]]</param>
+            </include>
+        </definition>
+    </include>
+
+    <include name="InfoLine_Media_Items">
+        <definition>
+            <include content="Info_Line_Pill_Text" condition="Skin.HasSetting(InfoTags.EnableVideoAspect)">
+                <param name="colordiffuse">$PARAM[colordiffuse]</param>
+                <param name="label">$INFO[$PARAM[source]VideoAspect$PARAM[end],,:1]</param>
+                <param name="visible">$PARAM[playable] + !String.IsEmpty($PARAM[source]VideoAspect$PARAM[end])</param>
+            </include>
+            <include content="Info_Line_Pill_Text" condition="Skin.HasSetting(InfoTags.EnableVideoCodec)">
+                <param name="colordiffuse">$PARAM[colordiffuse]</param>
+                <param name="label">[UPPERCASE]$INFO[$PARAM[source]VideoCodec$PARAM[end]][/UPPERCASE]</param>
+                <param name="visible">$PARAM[playable] + !String.IsEmpty($PARAM[source]VideoCodec$PARAM[end])</param>
+            </include>
+            <include content="Info_Line_VideoQuality_HDRType" condition="Skin.HasSetting(InfoTags.EnableHDR)">
+                <param name="colordiffuse">$PARAM[colordiffuse]</param>
+                <param name="source">$PARAM[source]</param>
+                <param name="end">$PARAM[end]</param>
+                <param name="visible">$PARAM[playable]</param>
+            </include>
+            <include content="Info_Line_Pill_Text" condition="Skin.HasSetting(InfoTags.Enable3D)">
+                <param name="colordiffuse">$PARAM[colordiffuse]</param>
+                <param name="label">3D</param>
+                <param name="visible">$PARAM[playable] + [$PARAM[stereo]]</param>
+            </include>
+            <include content="Info_Line_AudioChannels_Resolution" condition="Skin.HasSetting(InfoTags.EnableAudioChannels)">
+                <param name="colordiffuse">$PARAM[colordiffuse]</param>
+                <param name="source">$PARAM[source]</param>
+                <param name="end">$PARAM[end]</param>
+                <param name="visible">$PARAM[playable]</param>
+            </include>
+            <include content="Info_Line_AudioCodec_Label" condition="Skin.HasSetting(InfoTags.EnableAudioCodec)">
+                <param name="colordiffuse">$PARAM[colordiffuse]</param>
+                <param name="source">$PARAM[source]</param>
+                <param name="end">$PARAM[end]</param>
+                <param name="visible">$PARAM[playable]</param>
+            </include>
+        </definition>
+    </include>
+
+    <!-- Stars + labels/tags. Labels and tags come from upstream, so the Info line picker settings still apply -->
+    <include name="InfoLine_Details">
+        <param name="outline">Skin.HasSetting(InfoTags.EnablePills)</param>
+        <definition>
+            <include content="InfoLine_Stars_Outline" condition="$PARAM[outline]">
+                <param name="colordiffuse">$PARAM[colordiffuse]</param>
+                <param name="source">$PARAM[source]</param>
+                <param name="end">$PARAM[end]</param>
+                <param name="visible">[[[[!$PARAM[player] + String.IsEqual($PARAM[dbtype],movie)] | [$PARAM[player] + VideoPlayer.Content(movies)]] + !Skin.HasSetting(InfoLine.movie.DisableStars)] | [!$PARAM[player] + String.IsEqual($PARAM[dbtype],tvshow) + !Skin.HasSetting(InfoLine.tvshow.DisableStars)] | [!$PARAM[player] + String.IsEqual($PARAM[dbtype],season) + !Skin.HasSetting(InfoLine.season.DisableStars)] | [!$PARAM[player] + String.IsEqual($PARAM[dbtype],set) + !Skin.HasSetting(InfoLine.set.DisableStars)] | [[[!$PARAM[player] + String.IsEqual($PARAM[dbtype],episode)] | [$PARAM[player] + VideoPlayer.Content(episodes)]] + !Skin.HasSetting(InfoLine.episode.DisableStars)] | [[[!$PARAM[player] + String.IsEqual($PARAM[dbtype],video)] | [$PARAM[player] + !VideoPlayer.Content(movies) + !VideoPlayer.Content(episodes) + !VideoPlayer.Content(livetv)]] + !Skin.HasSetting(InfoLine.video.DisableStars)]]</param>
+            </include>
+            <include content="InfoLine_Stars" condition="!$PARAM[outline]">
+                <param name="colordiffuse">$PARAM[colordiffuse]</param>
+                <param name="source">$PARAM[source]</param>
+                <param name="end">$PARAM[end]</param>
+                <param name="visible">[[[[!$PARAM[player] + String.IsEqual($PARAM[dbtype],movie)] | [$PARAM[player] + VideoPlayer.Content(movies)]] + !Skin.HasSetting(InfoLine.movie.DisableStars)] | [!$PARAM[player] + String.IsEqual($PARAM[dbtype],tvshow) + !Skin.HasSetting(InfoLine.tvshow.DisableStars)] | [!$PARAM[player] + String.IsEqual($PARAM[dbtype],season) + !Skin.HasSetting(InfoLine.season.DisableStars)] | [!$PARAM[player] + String.IsEqual($PARAM[dbtype],set) + !Skin.HasSetting(InfoLine.set.DisableStars)] | [[[!$PARAM[player] + String.IsEqual($PARAM[dbtype],episode)] | [$PARAM[player] + VideoPlayer.Content(episodes)]] + !Skin.HasSetting(InfoLine.episode.DisableStars)] | [[[!$PARAM[player] + String.IsEqual($PARAM[dbtype],video)] | [$PARAM[player] + !VideoPlayer.Content(movies) + !VideoPlayer.Content(episodes) + !VideoPlayer.Content(livetv)]] + !Skin.HasSetting(InfoLine.video.DisableStars)]]</param>
+            </include>
+            <include content="Info_Line_Labels" condition="!Skin.HasSetting(InfoTags.EnablePills)">
+                <param name="colordiffuse">$PARAM[colordiffuse]</param>
+                <param name="source">$PARAM[source]</param>
+                <param name="end">$PARAM[end]</param>
+                <param name="dbtype">$PARAM[dbtype]</param>
+                <param name="player">$PARAM[player]</param>
+                <param name="hours">$PARAM[hours]</param>
+                <param name="minutes">$PARAM[minutes]</param>
+                <param name="item">Info_Line_Label</param>
+            </include>
+            <include content="Info_Line_Tags" condition="Skin.HasSetting(InfoTags.EnablePills)">
+                <param name="colordiffuse">$PARAM[colordiffuse]</param>
+                <param name="source">$PARAM[source]</param>
+                <param name="end">$PARAM[end]</param>
+                <param name="dbtype">$PARAM[dbtype]</param>
+                <param name="player">$PARAM[player]</param>
+                <param name="hours">$PARAM[hours]</param>
+                <param name="minutes">$PARAM[minutes]</param>
+            </include>
+        </definition>
+    </include>
+
+    <!-- Star rating drawn like the outlined info line tags (date, MPAA, duration): the _lines font draws the tag outline
+         around six em spaces (about the width of the filled star pill) and the stars sit on top. Used by the two row info line with pills -->
+    <include name="InfoLine_Stars_Outline">
+        <definition>
+            <include content="Info_Line_StarRating_Outline">
+                <param name="colordiffuse">$PARAM[colordiffuse]</param>
+                <param name="rating">$PARAM[source]Rating$PARAM[end]</param>
+                <param name="visible">$PARAM[visible] + !String.IsEmpty($PARAM[source]Rating$PARAM[end]) + String.IsEmpty($PARAM[source]UserRating$PARAM[end])</param>
+            </include>
+            <include content="Info_Line_StarRating_Outline">
+                <param name="colordiffuse">$PARAM[colordiffuse]</param>
+                <param name="rating">$PARAM[source]UserRating$PARAM[end]</param>
+                <param name="visible">$PARAM[visible] + !String.IsEmpty($PARAM[source]UserRating$PARAM[end])</param>
+            </include>
+        </definition>
+    </include>
+
+    <include name="Info_Line_StarRating_Outline">
+        <param name="font">font_tiny_bold_lines</param>
+        <definition>
+            <control type="group">
+                <width>150</width>
+                <visible>$PARAM[visible]</visible>
+                <!-- Fixed width wider than the tag (about 148): a label narrower than its text scrolls or is cut -->
+                <control type="label">
+                    <label>&#x2002;&#x2003;&#x2003;&#x2003;&#x2003;&#x2003;&#x2003;&#x2000;</label>
+                    <textcolor>$PARAM[colordiffuse]_90</textcolor>
+                    <width>220</width>
+                    <align>left</align>
+                    <scroll>false</scroll>
+                    <aligny>center</aligny>
+                    <font>$PARAM[font]</font>
+                </control>
+                <include content="Info_StarRating">
+                    <param name="colordiffuse">$PARAM[colordiffuse]_90</param>
+                    <param name="rating">$PARAM[rating]</param>
+                    <param name="size">40</param>
+                    <height>40</height>
+                    <width>136</width>
+                    <left>6</left>
+                    <centertop>50%</centertop>
+                    <itemgap>-16</itemgap>
+                </include>
+            </control>
+        </definition>
+    </include>
+
+    <include name="Info_Line_AudioCodec_Label">
+        <param name="visible">true</param>
+        <definition>
+            <include content="Info_Line_Pill_Text">
+                <param name="colordiffuse">$PARAM[colordiffuse]</param>
+                <param name="label">AAC</param>
+                <param name="visible">$PARAM[visible] + [String.IsEqual($PARAM[source]AudioCodec$PARAM[end],aac) | String.IsEqual($PARAM[source]AudioCodec$PARAM[end],aac_latm) | String.IsEqual($PARAM[source]AudioCodec$PARAM[end],aac_lc) | String.IsEqual($PARAM[source]AudioCodec$PARAM[end],he_aac) | String.IsEqual($PARAM[source]AudioCodec$PARAM[end],he_aac_v2) | String.IsEqual($PARAM[source]AudioCodec$PARAM[end],aac_ssr) | String.IsEqual($PARAM[source]AudioCodec$PARAM[end],aac_ltp)]</param>
+                <param name="width">auto</param>
+            </include>
+            <include content="Info_Line_Pill_Text">
+                <param name="colordiffuse">$PARAM[colordiffuse]</param>
+                <param name="label">Dolby Digital</param>
+                <param name="visible">$PARAM[visible] + [String.IsEqual($PARAM[source]AudioCodec$PARAM[end],ac3) | String.IsEqual($PARAM[source]AudioCodec$PARAM[end],dolbydigital)]</param>
+                <param name="width">auto</param>
+            </include>
+            <include content="Info_Line_Pill_Text">
+                <param name="colordiffuse">$PARAM[colordiffuse]</param>
+                <param name="label">DTS</param>
+                <param name="visible">$PARAM[visible] + [String.IsEqual($PARAM[source]AudioCodec$PARAM[end],dca) | String.IsEqual($PARAM[source]AudioCodec$PARAM[end],dts)]</param>
+                <param name="width">auto</param>
+            </include>
+            <include content="Info_Line_Pill_Text">
+                <param name="colordiffuse">$PARAM[colordiffuse]</param>
+                <param name="label">DTS-HD</param>
+                <param name="visible">$PARAM[visible] + String.IsEqual($PARAM[source]AudioCodec$PARAM[end],dtshd)</param>
+                <param name="width">auto</param>
+            </include>
+            <include content="Info_Line_Pill_Text">
+                <param name="colordiffuse">$PARAM[colordiffuse]</param>
+                <param name="label">DTS-HD Master Audio</param>
+                <param name="visible">$PARAM[visible] + String.IsEqual($PARAM[source]AudioCodec$PARAM[end],dtshd_ma)</param>
+                <param name="width">auto</param>
+            </include>
+            <include content="Info_Line_Pill_Text">
+                <param name="colordiffuse">$PARAM[colordiffuse]</param>
+                <param name="label">DTS-HD HRA</param>
+                <param name="visible">$PARAM[visible] + String.IsEqual($PARAM[source]AudioCodec$PARAM[end],dtshd_hra)</param>
+                <param name="width">auto</param>
+            </include>
+            <include content="Info_Line_Pill_Text">
+                <param name="colordiffuse">$PARAM[colordiffuse]</param>
+                <param name="label">DTS:X</param>
+                <param name="visible">$PARAM[visible] + String.IsEqual($PARAM[source]AudioCodec$PARAM[end],dtshd_ma_x)</param>
+                <param name="width">auto</param>
+            </include>
+            <include content="Info_Line_Pill_Text">
+                <param name="colordiffuse">$PARAM[colordiffuse]</param>
+                <param name="label">DTS:X (IMAX)</param>
+                <param name="visible">$PARAM[visible] + String.IsEqual($PARAM[source]AudioCodec$PARAM[end],dtshd_ma_x_imax)</param>
+                <param name="width">auto</param>
+            </include>
+            <include content="Info_Line_Pill_Text">
+                <param name="colordiffuse">$PARAM[colordiffuse]</param>
+                <param name="label">Dolby Digital Plus</param>
+                <param name="visible">$PARAM[visible] + String.IsEqual($PARAM[source]AudioCodec$PARAM[end],eac3)</param>
+                <param name="width">auto</param>
+            </include>
+            <include content="Info_Line_Pill_Text">
+                <param name="colordiffuse">$PARAM[colordiffuse]</param>
+                <param name="label">Dolby Digital Plus (Atmos)</param>
+                <param name="visible">$PARAM[visible] + String.IsEqual($PARAM[source]AudioCodec$PARAM[end],eac3_ddp_atmos)</param>
+                <param name="width">auto</param>
+            </include>
+            <include content="Info_Line_Pill_Text">
+                <param name="colordiffuse">$PARAM[colordiffuse]</param>
+                <param name="label">FLAC</param>
+                <param name="visible">$PARAM[visible] + String.IsEqual($PARAM[source]AudioCodec$PARAM[end],flac)</param>
+                <param name="width">auto</param>
+            </include>
+            <include content="Info_Line_Pill_Text">
+                <param name="colordiffuse">$PARAM[colordiffuse]</param>
+                <param name="label">MP3</param>
+                <param name="visible">$PARAM[visible] + [String.IsEqual($PARAM[source]AudioCodec$PARAM[end],mp3) | String.IsEqual($PARAM[source]AudioCodec$PARAM[end],mp3float)]</param>
+                <param name="width">auto</param>
+            </include>
+            <include content="Info_Line_Pill_Text">
+                <param name="colordiffuse">$PARAM[colordiffuse]</param>
+                <param name="label">OGG</param>
+                <param name="visible">$PARAM[visible] + String.IsEqual($PARAM[source]AudioCodec$PARAM[end],ogg)</param>
+                <param name="width">auto</param>
+            </include>
+            <include content="Info_Line_Pill_Text">
+                <param name="colordiffuse">$PARAM[colordiffuse]</param>
+                <param name="label">OPUS</param>
+                <param name="visible">$PARAM[visible] + String.IsEqual($PARAM[source]AudioCodec$PARAM[end],opus)</param>
+                <param name="width">auto</param>
+            </include>
+            <include content="Info_Line_Pill_Text">
+                <param name="colordiffuse">$PARAM[colordiffuse]</param>
+                <param name="label">PCM</param>
+                <param name="visible">$PARAM[visible] + [String.IsEqual($PARAM[source]AudioCodec$PARAM[end],pcm) | String.IsEqual($PARAM[source]AudioCodec$PARAM[end],pcm_bluray) | String.IsEqual($PARAM[source]AudioCodec$PARAM[end],pcm_s16le) | String.IsEqual($PARAM[source]AudioCodec$PARAM[end],pcm_s24le)]</param>
+                <param name="width">auto</param>
+            </include>
+            <include content="Info_Line_Pill_Text">
+                <param name="colordiffuse">$PARAM[colordiffuse]</param>
+                <param name="label">Dolby TrueHD</param>
+                <param name="visible">$PARAM[visible] + String.IsEqual($PARAM[source]AudioCodec$PARAM[end],truehd)</param>
+                <param name="width">auto</param>
+            </include>
+            <include content="Info_Line_Pill_Text">
+                <param name="colordiffuse">$PARAM[colordiffuse]</param>
+                <param name="label">Dolby TrueHD (Atmos)</param>
+                <param name="visible">$PARAM[visible] + String.IsEqual($PARAM[source]AudioCodec$PARAM[end],truehd_atmos)</param>
+                <param name="width">auto</param>
+            </include>
+            <include content="Info_Line_Pill_Text">
+                <param name="colordiffuse">$PARAM[colordiffuse]</param>
+                <param name="label">WAV</param>
+                <param name="visible">$PARAM[visible] + String.IsEqual($PARAM[source]AudioCodec$PARAM[end],wav)</param>
+                <param name="width">auto</param>
+            </include>
+            <include content="Info_Line_Pill_Text" description="Any other codec: raw codec id, as upstream">
+                <param name="colordiffuse">$PARAM[colordiffuse]</param>
+                <param name="label">[UPPERCASE]$INFO[$PARAM[source]AudioCodec$PARAM[end]][/UPPERCASE]</param>
+                <param name="visible">$PARAM[visible] + !String.IsEmpty($PARAM[source]AudioCodec$PARAM[end]) + !String.IsEqual($PARAM[source]AudioCodec$PARAM[end],aac) + !String.IsEqual($PARAM[source]AudioCodec$PARAM[end],aac_latm) + !String.IsEqual($PARAM[source]AudioCodec$PARAM[end],aac_lc) + !String.IsEqual($PARAM[source]AudioCodec$PARAM[end],he_aac) + !String.IsEqual($PARAM[source]AudioCodec$PARAM[end],he_aac_v2) + !String.IsEqual($PARAM[source]AudioCodec$PARAM[end],aac_ssr) + !String.IsEqual($PARAM[source]AudioCodec$PARAM[end],aac_ltp) + !String.IsEqual($PARAM[source]AudioCodec$PARAM[end],ac3) + !String.IsEqual($PARAM[source]AudioCodec$PARAM[end],dolbydigital) + !String.IsEqual($PARAM[source]AudioCodec$PARAM[end],dca) + !String.IsEqual($PARAM[source]AudioCodec$PARAM[end],dts) + !String.IsEqual($PARAM[source]AudioCodec$PARAM[end],dtshd) + !String.IsEqual($PARAM[source]AudioCodec$PARAM[end],dtshd_ma) + !String.IsEqual($PARAM[source]AudioCodec$PARAM[end],dtshd_hra) + !String.IsEqual($PARAM[source]AudioCodec$PARAM[end],dtshd_ma_x) + !String.IsEqual($PARAM[source]AudioCodec$PARAM[end],dtshd_ma_x_imax) + !String.IsEqual($PARAM[source]AudioCodec$PARAM[end],eac3) + !String.IsEqual($PARAM[source]AudioCodec$PARAM[end],eac3_ddp_atmos) + !String.IsEqual($PARAM[source]AudioCodec$PARAM[end],flac) + !String.IsEqual($PARAM[source]AudioCodec$PARAM[end],mp3) + !String.IsEqual($PARAM[source]AudioCodec$PARAM[end],mp3float) + !String.IsEqual($PARAM[source]AudioCodec$PARAM[end],ogg) + !String.IsEqual($PARAM[source]AudioCodec$PARAM[end],opus) + !String.IsEqual($PARAM[source]AudioCodec$PARAM[end],pcm) + !String.IsEqual($PARAM[source]AudioCodec$PARAM[end],pcm_bluray) + !String.IsEqual($PARAM[source]AudioCodec$PARAM[end],pcm_s16le) + !String.IsEqual($PARAM[source]AudioCodec$PARAM[end],pcm_s24le) + !String.IsEqual($PARAM[source]AudioCodec$PARAM[end],truehd) + !String.IsEqual($PARAM[source]AudioCodec$PARAM[end],truehd_atmos) + !String.IsEqual($PARAM[source]AudioCodec$PARAM[end],wav)</param>
+                <param name="width">auto</param>
+            </include>
         </definition>
     </include>
 
