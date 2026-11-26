@@ -20,7 +20,7 @@
             "value": ""
         },
         "evictions": {
-            "input": "{overflow}",
+            "input": "",
             "regex": "\\b\\w+=",
             "value": ""
         }
