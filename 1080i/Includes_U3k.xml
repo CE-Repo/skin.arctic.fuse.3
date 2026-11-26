@@ -182,19 +182,83 @@
 		</include>
 	</include>
 
-    <!-- Two row info line. Uses the same params as InfoLine_Content (source/end/dbtype/player/hours/minutes/stereo) -->
-    <include name="Info_Line_TwoRow_U3k">
-        <param name="visible">true</param>
+    <!--
+        ==== U3k Info Line ====
+        Includes_U3k.xml is loaded first in Includes.xml and Kodi keeps the FIRST
+        definition of an include name. So "Info_Line" below replaces the upstream
+        wrapper from Includes_Info.xml without touching upstream files.
+        Same interface as upstream: container / listitem / left / visible / colordiffuse / player.
+        Upstream InfoLine_Content stays untouched (used by the Info line picker preview).
+        Run tools/u3k_check.py after merging upstream updates.
+    -->
+    <include name="Info_Line"> <!-- U3K OVERRIDE -->
         <param name="left">40</param>
+        <param name="visible">true</param>
+        <param name="listitem">ListItem</param>
         <param name="player">false</param>
         <definition>
+            <include content="Info_Line_Content_U3k">
+                <param name="left">$PARAM[left]</param>
+                <param name="visible">$PARAM[visible]</param>
+                <param name="colordiffuse">$PARAM[colordiffuse]</param>
+                <param name="player">$PARAM[player]</param>
+                <param name="source">$PARAM[container]$PARAM[listitem].</param>
+                <param name="dbtype">$PARAM[container]$PARAM[listitem].DBType</param>
+                <param name="stereo">$PARAM[container]$PARAM[listitem].IsStereoscopic + !String.IsEqual($PARAM[container]$PARAM[listitem].StereoscopicMode,mono)</param>
+                <param name="hours">$PARAM[container]$PARAM[listitem].Duration(h)</param>
+                <param name="minutes">$PARAM[container]$PARAM[listitem].Duration(m)</param>
+            </include>
+        </definition>
+    </include>
+
+    <include name="Info_Line_Content_U3k">
+        <definition>
+            <!-- One row -->
+            <control type="group">
+                <visible>$PARAM[visible] + !Skin.HasSetting(InfoBar.TwoRow)</visible>
+                <visible>[$PARAM[player] + !VideoPlayer.Content(livetv)] | [!$PARAM[player] + [String.IsEqual($PARAM[dbtype],movie) | String.IsEqual($PARAM[dbtype],tvshow) | String.IsEqual($PARAM[dbtype],season) | String.IsEqual($PARAM[dbtype],set) | String.IsEqual($PARAM[dbtype],episode) | String.IsEqual($PARAM[dbtype],video)]]</visible>
+                <left>$PARAM[left]</left>
+                <height>80</height>
+                <control type="grouplist">
+                    <hitrect x="0" y="0" w="0" h="0" />
+                    <orientation>horizontal</orientation>
+                    <itemgap>10</itemgap>
+                    <left>-20</left>
+                    <control type="group" description="Avoid grouplist chop with spacer">
+                        <left>-10</left>
+                        <width>20</width>
+                    </control>
+                    <include content="Info_Line_Media_U3k">
+                        <param name="colordiffuse">$PARAM[colordiffuse]</param>
+                        <param name="source">$PARAM[source]</param>
+                        <param name="end">$PARAM[end]</param>
+                        <param name="dbtype">$PARAM[dbtype]</param>
+                        <param name="player">$PARAM[player]</param>
+                        <param name="hours">$PARAM[hours]</param>
+                        <param name="minutes">$PARAM[minutes]</param>
+                        <param name="stereo">$PARAM[stereo]</param>
+                        <param name="resolution">Info_Line_VideoQuality_Resolution</param>
+                        <param name="hdr">Info_Line_VideoQuality_HDRType_Short_U3k</param>
+                    </include>
+                    <include content="Info_Line_Details_U3k">
+                        <param name="colordiffuse">$PARAM[colordiffuse]</param>
+                        <param name="source">$PARAM[source]</param>
+                        <param name="end">$PARAM[end]</param>
+                        <param name="dbtype">$PARAM[dbtype]</param>
+                        <param name="player">$PARAM[player]</param>
+                        <param name="hours">$PARAM[hours]</param>
+                        <param name="minutes">$PARAM[minutes]</param>
+                        <param name="stereo">$PARAM[stereo]</param>
+                    </include>
+                </control>
+            </control>
+
+            <!-- Two rows -->
             <control type="group">
                 <visible>$PARAM[visible] + Skin.HasSetting(InfoBar.TwoRow)</visible>
                 <visible>[$PARAM[player] + !VideoPlayer.Content(livetv)] | [!$PARAM[player] + [String.IsEqual($PARAM[dbtype],movie) | String.IsEqual($PARAM[dbtype],tvshow) | String.IsEqual($PARAM[dbtype],season) | String.IsEqual($PARAM[dbtype],set) | String.IsEqual($PARAM[dbtype],episode) | String.IsEqual($PARAM[dbtype],video)]]</visible>
                 <left>$PARAM[left]</left>
                 <height>105</height>
-
-                <!-- Row 1: Video / Audio -->
                 <control type="grouplist">
                     <hitrect x="0" y="0" w="0" h="0" />
                     <orientation>horizontal</orientation>
@@ -205,27 +269,7 @@
                         <left>-10</left>
                         <width>20</width>
                     </control>
-
-                    <include content="Info_Line_VideoQuality_Resolution_U3k">
-                        <param name="colordiffuse">$PARAM[colordiffuse]</param>
-                        <param name="playable">[[!$PARAM[player] + [String.IsEqual($PARAM[dbtype],movie) | String.IsEqual($PARAM[dbtype],episode) | String.IsEqual($PARAM[dbtype],video)]] | [$PARAM[player] + !VideoPlayer.Content(livetv)]]</param>
-                        <param name="is_8k">[Integer.IsGreater($PARAM[source]VideoResolution$PARAM[end],2160) | String.IsEqual($PARAM[source]VideoResolution$PARAM[end],8K)]</param>
-                        <param name="is_4k">[Integer.IsGreater($PARAM[source]VideoResolution$PARAM[end],1080) | String.IsEqual($PARAM[source]VideoResolution$PARAM[end],4K)]</param>
-                        <param name="is_fd">[Integer.IsGreater($PARAM[source]VideoResolution$PARAM[end],720)]</param>
-                        <param name="is_hd">[Integer.IsEqual($PARAM[source]VideoResolution$PARAM[end],720)]</param>
-                        <param name="is_sd">[!String.IsEmpty($PARAM[source]VideoResolution$PARAM[end])]</param>
-                    </include>
-                    <include content="Info_Line_Pill_Text" condition="Skin.HasSetting(InfoTags.EnableVideoAspect)">
-                        <param name="colordiffuse">$PARAM[colordiffuse]</param>
-                        <param name="label">$INFO[$PARAM[source]VideoAspect$PARAM[end],,:1]</param>
-                        <param name="visible">[[!$PARAM[player] + [String.IsEqual($PARAM[dbtype],movie) | String.IsEqual($PARAM[dbtype],episode) | String.IsEqual($PARAM[dbtype],video)]] | [$PARAM[player] + !VideoPlayer.Content(livetv)]] + !String.IsEmpty($PARAM[source]VideoAspect$PARAM[end])</param>
-                    </include>
-                    <include content="Info_Line_Pill_Text" condition="Skin.HasSetting(InfoTags.EnableVideoCodec)">
-                        <param name="colordiffuse">$PARAM[colordiffuse]</param>
-                        <param name="label">[UPPERCASE]$INFO[$PARAM[source]VideoCodec$PARAM[end]][/UPPERCASE]</param>
-                        <param name="visible">[[!$PARAM[player] + [String.IsEqual($PARAM[dbtype],movie) | String.IsEqual($PARAM[dbtype],episode) | String.IsEqual($PARAM[dbtype],video)]] | [$PARAM[player] + !VideoPlayer.Content(livetv)]] + !String.IsEmpty($PARAM[source]VideoCodec$PARAM[end])</param>
-                    </include>
-                    <include content="Info_Line_VideoQuality_HDRType_U3k" condition="Skin.HasSetting(InfoTags.EnableHDR)">
+                    <include content="Info_Line_Media_U3k">
                         <param name="colordiffuse">$PARAM[colordiffuse]</param>
                         <param name="source">$PARAM[source]</param>
                         <param name="end">$PARAM[end]</param>
@@ -233,36 +277,11 @@
                         <param name="player">$PARAM[player]</param>
                         <param name="hours">$PARAM[hours]</param>
                         <param name="minutes">$PARAM[minutes]</param>
-                        <param name="visible">[[!$PARAM[player] + [String.IsEqual($PARAM[dbtype],movie) | String.IsEqual($PARAM[dbtype],episode) | String.IsEqual($PARAM[dbtype],video)]] | [$PARAM[player] + !VideoPlayer.Content(livetv)]]</param>
-                    </include>
-                    <include content="Info_Line_AudioCodec" condition="Skin.HasSetting(InfoTags.EnableAudioCodec)">
-                        <param name="colordiffuse">$PARAM[colordiffuse]</param>
-                        <param name="source">$PARAM[source]</param>
-                        <param name="end">$PARAM[end]</param>
-                        <param name="dbtype">$PARAM[dbtype]</param>
-                        <param name="player">$PARAM[player]</param>
-                        <param name="hours">$PARAM[hours]</param>
-                        <param name="minutes">$PARAM[minutes]</param>
-                        <param name="visible">[[!$PARAM[player] + [String.IsEqual($PARAM[dbtype],movie) | String.IsEqual($PARAM[dbtype],episode) | String.IsEqual($PARAM[dbtype],video)]] | [$PARAM[player] + !VideoPlayer.Content(livetv)]]</param>
-                    </include>
-                    <include content="Info_Line_AudioChannels_Resolution" condition="Skin.HasSetting(InfoTags.EnableAudioChannels)">
-                        <param name="colordiffuse">$PARAM[colordiffuse]</param>
-                        <param name="source">$PARAM[source]</param>
-                        <param name="end">$PARAM[end]</param>
-                        <param name="dbtype">$PARAM[dbtype]</param>
-                        <param name="player">$PARAM[player]</param>
-                        <param name="hours">$PARAM[hours]</param>
-                        <param name="minutes">$PARAM[minutes]</param>
-                        <param name="visible">[[!$PARAM[player] + [String.IsEqual($PARAM[dbtype],movie) | String.IsEqual($PARAM[dbtype],episode) | String.IsEqual($PARAM[dbtype],video)]] | [$PARAM[player] + !VideoPlayer.Content(livetv)]]</param>
-                    </include>
-                    <include content="Info_Line_Pill_Text" condition="Skin.HasSetting(InfoTags.Enable3D)">
-                        <param name="colordiffuse">$PARAM[colordiffuse]</param>
-                        <param name="label">3D</param>
-                        <param name="visible">[[!$PARAM[player] + [String.IsEqual($PARAM[dbtype],movie) | String.IsEqual($PARAM[dbtype],episode) | String.IsEqual($PARAM[dbtype],video)]] | [$PARAM[player] + !VideoPlayer.Content(livetv)]] + [$PARAM[stereo]]</param>
+                        <param name="stereo">$PARAM[stereo]</param>
+                        <param name="resolution">Info_Line_VideoQuality_Resolution_U3k</param>
+                        <param name="hdr">Info_Line_VideoQuality_HDRType_U3k</param>
                     </include>
                 </control>
-
-                <!-- Row 2: Rating / Labels -->
                 <control type="grouplist">
                     <hitrect x="0" y="0" w="0" h="0" />
                     <orientation>horizontal</orientation>
@@ -273,8 +292,7 @@
                         <left>-10</left>
                         <width>20</width>
                     </control>
-
-                    <include content="InfoLine_Stars">
+                    <include content="Info_Line_Details_U3k">
                         <param name="colordiffuse">$PARAM[colordiffuse]</param>
                         <param name="source">$PARAM[source]</param>
                         <param name="end">$PARAM[end]</param>
@@ -282,29 +300,121 @@
                         <param name="player">$PARAM[player]</param>
                         <param name="hours">$PARAM[hours]</param>
                         <param name="minutes">$PARAM[minutes]</param>
-                        <param name="visible">[false | [[[!$PARAM[player] + String.IsEqual($PARAM[dbtype],movie)] | [$PARAM[player] + VideoPlayer.Content(movies)]] + !Skin.HasSetting(InfoLine.movie.DisableStars)] | [[[!$PARAM[player] + String.IsEqual($PARAM[dbtype],tvshow)]] + !Skin.HasSetting(InfoLine.tvshow.DisableStars)] | [[[!$PARAM[player] + String.IsEqual($PARAM[dbtype],season)]] + !Skin.HasSetting(InfoLine.season.DisableStars)] | [[[!$PARAM[player] + String.IsEqual($PARAM[dbtype],set)]] + !Skin.HasSetting(InfoLine.set.DisableStars)] | [[[!$PARAM[player] + String.IsEqual($PARAM[dbtype],episode)] | [$PARAM[player] + VideoPlayer.Content(episodes)]] + !Skin.HasSetting(InfoLine.episode.DisableStars)] | [[[!$PARAM[player] + String.IsEqual($PARAM[dbtype],video)] | [$PARAM[player] + [!VideoPlayer.Content(movies) + !VideoPlayer.Content(episodes) + !VideoPlayer.Content(livetv)]]] + !Skin.HasSetting(InfoLine.video.DisableStars)]] + [true]</param>
-                    </include>
-                    <include content="Info_Line_Labels" condition="!Skin.HasSetting(InfoTags.EnablePills)">
-                        <param name="colordiffuse">$PARAM[colordiffuse]</param>
-                        <param name="source">$PARAM[source]</param>
-                        <param name="end">$PARAM[end]</param>
-                        <param name="dbtype">$PARAM[dbtype]</param>
-                        <param name="player">$PARAM[player]</param>
-                        <param name="hours">$PARAM[hours]</param>
-                        <param name="minutes">$PARAM[minutes]</param>
-                        <param name="item">Info_Line_Label</param>
-                    </include>
-                    <include content="Info_Line_Tags" condition="Skin.HasSetting(InfoTags.EnablePills)">
-                        <param name="colordiffuse">$PARAM[colordiffuse]</param>
-                        <param name="source">$PARAM[source]</param>
-                        <param name="end">$PARAM[end]</param>
-                        <param name="dbtype">$PARAM[dbtype]</param>
-                        <param name="player">$PARAM[player]</param>
-                        <param name="hours">$PARAM[hours]</param>
-                        <param name="minutes">$PARAM[minutes]</param>
+                        <param name="stereo">$PARAM[stereo]</param>
                     </include>
                 </control>
             </control>
+        </definition>
+    </include>
+
+    <!-- Video / audio pills. resolution + hdr: include names for short (one row) or long (two rows) labels -->
+    <include name="Info_Line_Media_U3k">
+        <definition>
+            <include content="$PARAM[resolution]">
+                <param name="colordiffuse">$PARAM[colordiffuse]</param>
+                <param name="playable">[[!$PARAM[player] + [String.IsEqual($PARAM[dbtype],movie) | String.IsEqual($PARAM[dbtype],episode) | String.IsEqual($PARAM[dbtype],video)]] | [$PARAM[player] + !VideoPlayer.Content(livetv)]]</param>
+                <param name="is_8k">[Integer.IsGreater($PARAM[source]VideoResolution$PARAM[end],2160) | String.IsEqual($PARAM[source]VideoResolution$PARAM[end],8K)]</param>
+                <param name="is_4k">[Integer.IsGreater($PARAM[source]VideoResolution$PARAM[end],1080) | String.IsEqual($PARAM[source]VideoResolution$PARAM[end],4K)]</param>
+                <param name="is_fd">[Integer.IsGreater($PARAM[source]VideoResolution$PARAM[end],720)]</param>
+                <param name="is_hd">[Integer.IsEqual($PARAM[source]VideoResolution$PARAM[end],720)]</param>
+                <param name="is_sd">[!String.IsEmpty($PARAM[source]VideoResolution$PARAM[end])]</param>
+            </include>
+            <include content="Info_Line_Media_Items_U3k">
+                <param name="colordiffuse">$PARAM[colordiffuse]</param>
+                <param name="source">$PARAM[source]</param>
+                <param name="end">$PARAM[end]</param>
+                <param name="stereo">$PARAM[stereo]</param>
+                <param name="hdr">$PARAM[hdr]</param>
+                <param name="playable">[[!$PARAM[player] + [String.IsEqual($PARAM[dbtype],movie) | String.IsEqual($PARAM[dbtype],episode) | String.IsEqual($PARAM[dbtype],video)]] | [$PARAM[player] + !VideoPlayer.Content(livetv)]]</param>
+            </include>
+        </definition>
+    </include>
+
+    <include name="Info_Line_Media_Items_U3k">
+        <definition>
+            <include content="Info_Line_Pill_Text" condition="Skin.HasSetting(InfoTags.EnableVideoAspect)">
+                <param name="colordiffuse">$PARAM[colordiffuse]</param>
+                <param name="label">$INFO[$PARAM[source]VideoAspect$PARAM[end],,:1]</param>
+                <param name="visible">$PARAM[playable] + !String.IsEmpty($PARAM[source]VideoAspect$PARAM[end])</param>
+            </include>
+            <include content="Info_Line_Pill_Text" condition="Skin.HasSetting(InfoTags.EnableVideoCodec)">
+                <param name="colordiffuse">$PARAM[colordiffuse]</param>
+                <param name="label">[UPPERCASE]$INFO[$PARAM[source]VideoCodec$PARAM[end]][/UPPERCASE]</param>
+                <param name="visible">$PARAM[playable] + !String.IsEmpty($PARAM[source]VideoCodec$PARAM[end])</param>
+            </include>
+            <include content="$PARAM[hdr]" condition="Skin.HasSetting(InfoTags.EnableHDR)">
+                <param name="colordiffuse">$PARAM[colordiffuse]</param>
+                <param name="source">$PARAM[source]</param>
+                <param name="end">$PARAM[end]</param>
+                <param name="visible">$PARAM[playable]</param>
+            </include>
+            <include content="Info_Line_AudioCodec_U3k" condition="Skin.HasSetting(InfoTags.EnableAudioCodec)">
+                <param name="colordiffuse">$PARAM[colordiffuse]</param>
+                <param name="source">$PARAM[source]</param>
+                <param name="end">$PARAM[end]</param>
+                <param name="visible">$PARAM[playable]</param>
+            </include>
+            <include content="Info_Line_AudioChannels_Resolution" condition="Skin.HasSetting(InfoTags.EnableAudioChannels)">
+                <param name="colordiffuse">$PARAM[colordiffuse]</param>
+                <param name="source">$PARAM[source]</param>
+                <param name="end">$PARAM[end]</param>
+                <param name="visible">$PARAM[playable]</param>
+            </include>
+            <include content="Info_Line_Pill_Text" condition="Skin.HasSetting(InfoTags.Enable3D)">
+                <param name="colordiffuse">$PARAM[colordiffuse]</param>
+                <param name="label">3D</param>
+                <param name="visible">$PARAM[playable] + [$PARAM[stereo]]</param>
+            </include>
+        </definition>
+    </include>
+
+    <!-- Stars + labels/tags. Labels and tags come from upstream, so the Info line picker settings still apply -->
+    <include name="Info_Line_Details_U3k">
+        <definition>
+            <include content="InfoLine_Stars">
+                <param name="colordiffuse">$PARAM[colordiffuse]</param>
+                <param name="source">$PARAM[source]</param>
+                <param name="end">$PARAM[end]</param>
+                <param name="visible">[[[!$PARAM[player] + String.IsEqual($PARAM[dbtype],movie)] | [$PARAM[player] + VideoPlayer.Content(movies)]] + !Skin.HasSetting(InfoLine.movie.DisableStars)] | [!$PARAM[player] + String.IsEqual($PARAM[dbtype],tvshow) + !Skin.HasSetting(InfoLine.tvshow.DisableStars)] | [!$PARAM[player] + String.IsEqual($PARAM[dbtype],season) + !Skin.HasSetting(InfoLine.season.DisableStars)] | [!$PARAM[player] + String.IsEqual($PARAM[dbtype],set) + !Skin.HasSetting(InfoLine.set.DisableStars)] | [[[!$PARAM[player] + String.IsEqual($PARAM[dbtype],episode)] | [$PARAM[player] + VideoPlayer.Content(episodes)]] + !Skin.HasSetting(InfoLine.episode.DisableStars)] | [[[!$PARAM[player] + String.IsEqual($PARAM[dbtype],video)] | [$PARAM[player] + !VideoPlayer.Content(movies) + !VideoPlayer.Content(episodes) + !VideoPlayer.Content(livetv)]] + !Skin.HasSetting(InfoLine.video.DisableStars)]]</param>
+            </include>
+            <include content="Info_Line_Labels" condition="!Skin.HasSetting(InfoTags.EnablePills)">
+                <param name="colordiffuse">$PARAM[colordiffuse]</param>
+                <param name="source">$PARAM[source]</param>
+                <param name="end">$PARAM[end]</param>
+                <param name="dbtype">$PARAM[dbtype]</param>
+                <param name="player">$PARAM[player]</param>
+                <param name="hours">$PARAM[hours]</param>
+                <param name="minutes">$PARAM[minutes]</param>
+                <param name="item">Info_Line_Label</param>
+            </include>
+            <include content="Info_Line_Tags" condition="Skin.HasSetting(InfoTags.EnablePills)">
+                <param name="colordiffuse">$PARAM[colordiffuse]</param>
+                <param name="source">$PARAM[source]</param>
+                <param name="end">$PARAM[end]</param>
+                <param name="dbtype">$PARAM[dbtype]</param>
+                <param name="player">$PARAM[player]</param>
+                <param name="hours">$PARAM[hours]</param>
+                <param name="minutes">$PARAM[minutes]</param>
+            </include>
+        </definition>
+    </include>
+
+    <!-- Short HDR labels for one row (upstream DV / HDR10 / HLG + SDR) -->
+    <include name="Info_Line_VideoQuality_HDRType_Short_U3k">
+        <param name="visible">true</param>
+        <definition>
+            <include content="Info_Line_VideoQuality_HDRType">
+                <param name="colordiffuse">$PARAM[colordiffuse]</param>
+                <param name="source">$PARAM[source]</param>
+                <param name="end">$PARAM[end]</param>
+                <param name="visible">$PARAM[visible]</param>
+            </include>
+            <include content="Info_Line_Pill_Text">
+                <param name="colordiffuse">$PARAM[colordiffuse]</param>
+                <param name="label">SDR</param>
+                <param name="visible">$PARAM[visible] + String.IsEmpty($PARAM[source]HdrType$PARAM[end]) + !String.IsEmpty($PARAM[source]VideoResolution$PARAM[end])</param>
+                <param name="width">auto</param>
+            </include>
         </definition>
     </include>
 
@@ -411,7 +521,7 @@
         </definition>
     </include>
 
-    <include name="Info_Line_AudioCodec">
+    <include name="Info_Line_AudioCodec_U3k">
         <param name="visible">true</param>
         <definition>
             <include content="Info_Line_Pill_Text">

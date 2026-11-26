@@ -641,17 +641,6 @@
         <definition>
             <include content="InfoLine_Content">
                 <param name="left">$PARAM[left]</param>
-                <param name="visible">$PARAM[visible] + !Skin.HasSetting(InfoBar.TwoRow)</param>
-                <param name="colordiffuse">$PARAM[colordiffuse]</param>
-                <param name="player">$PARAM[player]</param>
-                <param name="source">$PARAM[container]$PARAM[listitem].</param>
-                <param name="dbtype">$PARAM[container]$PARAM[listitem].DBType</param>
-                <param name="stereo">$PARAM[container]$PARAM[listitem].IsStereoscopic + !String.IsEqual($PARAM[container]$PARAM[listitem].StereoscopicMode,mono)</param>
-                <param name="hours">$PARAM[container]$PARAM[listitem].Duration(h)</param>
-                <param name="minutes">$PARAM[container]$PARAM[listitem].Duration(m)</param>
-            </include>
-            <include content="Info_Line_TwoRow_U3k">
-                <param name="left">$PARAM[left]</param>
                 <param name="visible">$PARAM[visible]</param>
                 <param name="colordiffuse">$PARAM[colordiffuse]</param>
                 <param name="player">$PARAM[player]</param>
@@ -927,12 +916,6 @@
                 <param name="colordiffuse">$PARAM[colordiffuse]</param>
                 <param name="label">HLG</param>
                 <param name="visible">$PARAM[visible] + String.IsEqual($PARAM[source]HdrType$PARAM[end],hlg)</param>
-                <param name="width">auto</param>
-            </include>
-            <include content="Info_Line_Pill_Text">
-                <param name="colordiffuse">$PARAM[colordiffuse]</param>
-                <param name="label">SDR</param>
-                <param name="visible">$PARAM[visible] + String.IsEmpty($PARAM[source]HdrType$PARAM[end]) + !String.IsEmpty($PARAM[source]VideoResolution$PARAM[end])</param>
                 <param name="width">auto</param>
             </include>
         </definition>

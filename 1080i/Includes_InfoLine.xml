@@ -58,7 +58,7 @@
                 <param name="minutes">$PARAM[minutes]</param>
                 <param name="label"></param>
             </include>
-            <include content="Info_Line_AudioCodec"> <!-- U3k -->
+            <include content="Info_Line_Pill_Text">
                 <param name="visible">[false | [[[!$PARAM[player] + String.IsEqual($PARAM[dbtype],movie)] | [$PARAM[player] + VideoPlayer.Content(movies)]] + Skin.HasSetting(InfoTags.EnableAudioCodec)] | [[[!$PARAM[player] + String.IsEqual($PARAM[dbtype],episode)] | [$PARAM[player] + VideoPlayer.Content(episodes)]] + Skin.HasSetting(InfoTags.EnableAudioCodec)] | [[[!$PARAM[player] + String.IsEqual($PARAM[dbtype],video)] | [$PARAM[player] + [!VideoPlayer.Content(movies) + !VideoPlayer.Content(episodes) + !VideoPlayer.Content(livetv)]]] + Skin.HasSetting(InfoTags.EnableAudioCodec)]] + [!String.IsEmpty($PARAM[source]AudioCodec$PARAM[end])]</param>
                 <param name="colordiffuse">$PARAM[colordiffuse]</param>
                 <param name="source">$PARAM[source]</param>
@@ -67,7 +67,7 @@
                 <param name="font">$PARAM[font]</param>
                 <param name="hours">$PARAM[hours]</param>
                 <param name="minutes">$PARAM[minutes]</param>
-                <param name="label"></param>
+                <param name="label">[UPPERCASE]$INFO[$PARAM[source]AudioCodec$PARAM[end]][/UPPERCASE]</param>
             </include>
             <include content="InfoLine_Stars">
                 <param name="visible">[false | [[[!$PARAM[player] + String.IsEqual($PARAM[dbtype],movie)] | [$PARAM[player] + VideoPlayer.Content(movies)]] + !Skin.HasSetting(InfoLine.movie.DisableStars)] | [[[!$PARAM[player] + String.IsEqual($PARAM[dbtype],tvshow)]] + !Skin.HasSetting(InfoLine.tvshow.DisableStars)] | [[[!$PARAM[player] + String.IsEqual($PARAM[dbtype],season)]] + !Skin.HasSetting(InfoLine.season.DisableStars)] | [[[!$PARAM[player] + String.IsEqual($PARAM[dbtype],set)]] + !Skin.HasSetting(InfoLine.set.DisableStars)] | [[[!$PARAM[player] + String.IsEqual($PARAM[dbtype],episode)] | [$PARAM[player] + VideoPlayer.Content(episodes)]] + !Skin.HasSetting(InfoLine.episode.DisableStars)] | [[[!$PARAM[player] + String.IsEqual($PARAM[dbtype],video)] | [$PARAM[player] + [!VideoPlayer.Content(movies) + !VideoPlayer.Content(episodes) + !VideoPlayer.Content(livetv)]]] + !Skin.HasSetting(InfoLine.video.DisableStars)]] + [true]</param>
