@@ -419,12 +419,15 @@
         <param name="font">font_tiny_bold_lines</param>
         <definition>
             <control type="group">
-                <width>148</width>
+                <width>150</width>
                 <visible>$PARAM[visible]</visible>
+                <!-- Fixed width wider than the tag (about 148): a label narrower than its text scrolls or is cut -->
                 <control type="label">
                     <label>&#x2002;&#x2003;&#x2003;&#x2003;&#x2003;&#x2003;&#x2003;&#x2000;</label>
                     <textcolor>$PARAM[colordiffuse]_90</textcolor>
-                    <width>auto</width>
+                    <width>220</width>
+                    <align>left</align>
+                    <scroll>false</scroll>
                     <aligny>center</aligny>
                     <font>$PARAM[font]</font>
                 </control>
