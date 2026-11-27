@@ -121,7 +121,7 @@
                 <param name="source">$PARAM[source]</param>
                 <param name="item">$PARAM[item]</param>
                 <param name="font">$PARAM[font]</param>
-                <param name="label">$INFO[$PARAM[source].Duration(mins),, $LOCALIZE[31073]]</param>
+                <param name="label">$INFO[$PARAM[source].Duration(mins),, [UPPERCASE]$LOCALIZE[31073][/UPPERCASE]]</param> <!-- U3K OVERRIDE -->
             </include>
             <include content="$PARAM[item]">
                 <param name="visible">[false | [[[!$PARAM[player] + String.IsEqual($PARAM[dbtype],movie)] | [$PARAM[player] + VideoPlayer.Content(movies)]] + Skin.HasSetting(InfoLine.movie.EnableDurationClock)] | [[[!$PARAM[player] + String.IsEqual($PARAM[dbtype],episode)] | [$PARAM[player] + VideoPlayer.Content(episodes)]] + Skin.HasSetting(InfoLine.episode.EnableDurationClock)] | [[[!$PARAM[player] + String.IsEqual($PARAM[dbtype],video)] | [$PARAM[player] + [!VideoPlayer.Content(movies) + !VideoPlayer.Content(episodes) + !VideoPlayer.Content(livetv)]]] + Skin.HasSetting(InfoLine.video.EnableDurationClock)]] + [!String.IsEmpty($PARAM[source].Duration)]</param>
