@@ -24,8 +24,7 @@
                 <param name="source">$PARAM[container]$PARAM[listitem].</param>
                 <param name="dbtype">$PARAM[container]$PARAM[listitem].DBType</param>
                 <param name="stereo">$PARAM[container]$PARAM[listitem].IsStereoscopic + !String.IsEqual($PARAM[container]$PARAM[listitem].StereoscopicMode,mono)</param>
-                <param name="hours">$PARAM[container]$PARAM[listitem].Duration(h)</param>
-                <param name="minutes">$PARAM[container]$PARAM[listitem].Duration(m)</param>
+                <param name="duration">$PARAM[container]$PARAM[listitem].Duration(</param>
             </include>
         </definition>
     </include>
@@ -53,8 +52,7 @@
                         <param name="end">$PARAM[end]</param>
                         <param name="dbtype">$PARAM[dbtype]</param>
                         <param name="player">$PARAM[player]</param>
-                        <param name="hours">$PARAM[hours]</param>
-                        <param name="minutes">$PARAM[minutes]</param>
+                        <param name="duration">$PARAM[duration]</param>
                         <param name="stereo">$PARAM[stereo]</param>
                         <param name="resolution">Info_Line_VideoQuality_Resolution_U3k</param>
                         <param name="hdr">Info_Line_VideoQuality_HDRType_U3k</param>
@@ -77,8 +75,7 @@
                         <param name="end">$PARAM[end]</param>
                         <param name="dbtype">$PARAM[dbtype]</param>
                         <param name="player">$PARAM[player]</param>
-                        <param name="hours">$PARAM[hours]</param>
-                        <param name="minutes">$PARAM[minutes]</param>
+                        <param name="duration">$PARAM[duration]</param>
                         <param name="stereo">$PARAM[stereo]</param>
                     </include>
                 </control>
@@ -167,8 +164,7 @@
                 <param name="end">$PARAM[end]</param>
                 <param name="dbtype">$PARAM[dbtype]</param>
                 <param name="player">$PARAM[player]</param>
-                <param name="hours">$PARAM[hours]</param>
-                <param name="minutes">$PARAM[minutes]</param>
+                <param name="duration">$PARAM[duration]</param>
                 <param name="item">Info_Line_Label</param>
             </include>
             <include content="Info_Line_Tags" condition="Skin.HasSetting(InfoTags.EnablePills)">
@@ -177,8 +173,7 @@
                 <param name="end">$PARAM[end]</param>
                 <param name="dbtype">$PARAM[dbtype]</param>
                 <param name="player">$PARAM[player]</param>
-                <param name="hours">$PARAM[hours]</param>
-                <param name="minutes">$PARAM[minutes]</param>
+                <param name="duration">$PARAM[duration]</param>
             </include>
         </definition>
     </include>
@@ -449,14 +444,14 @@
             <include content="$PARAM[item]">
                 <param name="colordiffuse">$PARAM[colordiffuse]</param>
                 <param name="font">$PARAM[font]</param>
-                <param name="visible">$PARAM[visible] + !String.IsEmpty($PARAM[source]Duration$PARAM[end]) + !Integer.IsEqual($PARAM[hours],0)</param>
-                <param name="label">$INFO[$PARAM[hours],, [UPPERCASE]$LOCALIZE[31074][/UPPERCASE] ]$INFO[$PARAM[minutes],, [UPPERCASE]$LOCALIZE[31073][/UPPERCASE]]</param>
+                <param name="visible">$PARAM[visible] + !String.IsEmpty($PARAM[source]Duration$PARAM[end]) + !Integer.IsEqual($PARAM[duration]h),0)</param>
+                <param name="label">$INFO[$PARAM[duration]h),, [UPPERCASE]$LOCALIZE[31074][/UPPERCASE] ]$INFO[$PARAM[duration]m),, [UPPERCASE]$LOCALIZE[31073][/UPPERCASE]]</param>
             </include>
             <include content="$PARAM[item]">
                 <param name="colordiffuse">$PARAM[colordiffuse]</param>
                 <param name="font">$PARAM[font]</param>
-                <param name="visible">$PARAM[visible] + !String.IsEmpty($PARAM[source]Duration$PARAM[end]) + Integer.IsEqual($PARAM[hours],0)</param>
-                <param name="label">$INFO[$PARAM[minutes],, [UPPERCASE]$LOCALIZE[31073][/UPPERCASE]]</param>
+                <param name="visible">$PARAM[visible] + !String.IsEmpty($PARAM[source]Duration$PARAM[end]) + Integer.IsEqual($PARAM[duration]h),0)</param>
+                <param name="label">$INFO[$PARAM[duration]m),, [UPPERCASE]$LOCALIZE[31073][/UPPERCASE]]</param>
             </include>
         </definition>
     </include>
