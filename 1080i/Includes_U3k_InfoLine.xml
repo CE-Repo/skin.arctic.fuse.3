@@ -9,6 +9,7 @@
         Row 2 (centertop 75): stars + upstream Info_Line_Labels / Info_Line_Tags
         Upstream InfoLine_Content stays untouched (used by the Info line picker preview).
         Related: Includes_Info.xml height 50, skinvariables-infoline-budget.json (no evictions).
+        Includes_InfoLine.xml: Duration (mins) label uppercased (U3K OVERRIDE marker).
     -->
     <include name="Info_Line"> <!-- U3K OVERRIDE -->
         <param name="left">40</param>
