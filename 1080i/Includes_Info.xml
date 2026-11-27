@@ -280,7 +280,7 @@
 
             <control type="group">
                 <left>$PARAM[left]</left>
-                <height>60</height>
+                <height>50</height>
                 <visible>$PARAM[visible]</visible>
 
                 <control type="grouplist">

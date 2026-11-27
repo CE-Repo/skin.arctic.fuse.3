@@ -1855,6 +1855,8 @@
             <visible>Skin.HasSetting(OSD.DisplayInfoOnControls)</visible>
         </include>
 
+        <include>DialogCustom_VideoOSD_Artwork_U3k</include>
+
         <include content="Settings_Label">
             <param name="id">8004</param>
             <param name="dialog">true</param>
